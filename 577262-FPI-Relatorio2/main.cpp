@@ -507,8 +507,9 @@ void on_apply_convolution(GtkButton* button, gpointer user_data) {
     // Verifica se é single_channel ou three_channels
     bool single_channel = gtk_check_button_get_active(GTK_CHECK_BUTTON(cw->single_channel));
 
-    apply_3_by_3_convolution(current_image(), kernel, clamp_offset, single_channel);
-    refresh_current_image();
+    if (apply_3_by_3_convolution(current_image(), kernel, clamp_offset, single_channel)) {
+        refresh_current_image();
+    }
 }
 
 

@@ -9,6 +9,8 @@
 #include <cmath>
 #include <array>
 #include <algorithm>
+#include <cstdio>
+#include <cstdlib>
 
 #include "image_manipulation.h"
 
@@ -16,18 +18,24 @@ inline unsigned char clamp_value(float value) {
     return (unsigned char) std::max(0, std::min(255, (int)std::round(value)));
 }
 
-void apply_3_by_3_convolution(ImageState& img, float kernel[3][3], bool clamp_offset, bool single_channel){
+bool apply_3_by_3_convolution(ImageState& img, const float kernel[3][3], bool clamp_offset, bool single_channel){
 
-    if(img.width < 5 || img.height < 5){
-        printf("Imagem muito pequena para realizar operação de convolução 3x3!\n");
-        return;
+    if(img.width < 3 || img.height < 3){
+        fprintf(stderr, "Imagem muito pequena para realizar operação de convolução 3x3!\n");
+        return false;
     }
 
     // Como o kernel é 3x3, ignoramos as bordas deixando 1 linha/coluna de pixeis de bordas ignoradas (floor(n/2) e floor(m/2), sendo n x m a dimensão do kernel -> 3 x 3 = 1 x 1)
    
     int new_width = img.width - 2;
     int new_height = img.height - 2;
-    unsigned char* new_img_data = (unsigned char*) malloc(new_width * new_height * 3);
+    unsigned char* new_img_data = (unsigned char*) malloc(
+        static_cast<size_t>(new_width) * new_height * 3
+    );
+    if (!new_img_data) {
+        fprintf(stderr, "Falha ao alocar memória para convolução 3x3!\n");
+        return false;
+    }
 
     for(int j = 1; j < img.height - 1; j++){
         for(int i = 1; i < img.width - 1; i++){
@@ -81,6 +89,283 @@ void apply_3_by_3_convolution(ImageState& img, float kernel[3][3], bool clamp_of
     img.height = new_height;
     img.width = new_width;
 
+    return true;
+}
+
+bool apply_5_by_5_convolution(ImageState& img, const float kernel[5][5], bool clamp_offset, bool single_channel){
+
+    if(img.width < 5 || img.height < 5){
+        fprintf(stderr, "Imagem muito pequena para realizar operação de convolução 5x5!\n");
+        return false;
+    }
+
+    int new_width = img.width - 4;
+    int new_height = img.height - 4;
+    unsigned char* new_img_data = (unsigned char*) malloc(
+        static_cast<size_t>(new_width) * new_height * 3
+    );
+    if (!new_img_data) {
+        fprintf(stderr, "Falha ao alocar memória para convolução 5x5!\n");
+        return false;
+    }
+
+    for(int j = 2; j < img.height - 2; j++){
+        for(int i = 2; i < img.width - 2; i++){
+            float sum = 0.0f;
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+
+            for(int k = -2; k <= 2; k++){
+                for(int l = -2; l <= 2; l++){
+                    int source_index = ((j - k) * img.width + (i - l)) * 3;
+                    float weight = kernel[2 + k][2 + l];
+
+                    if(single_channel){
+                        sum += weight * img.data[source_index];
+                    }
+                    else{
+                        sum_r += weight * img.data[source_index];
+                        sum_g += weight * img.data[source_index + 1];
+                        sum_b += weight * img.data[source_index + 2];
+                    }
+                }
+            }
+
+            int index = ((j - 2) * new_width + (i - 2)) * 3;
+
+            if(single_channel){
+                if(clamp_offset)
+                    sum += 127;
+
+                unsigned char value = clamp_value(sum);
+                std::fill(new_img_data + index, new_img_data + index + 3, value);
+            }
+            else{
+                if(clamp_offset){
+                    sum_r += 127;
+                    sum_g += 127;
+                    sum_b += 127;
+                }
+
+                new_img_data[index] = clamp_value(sum_r);
+                new_img_data[index + 1] = clamp_value(sum_g);
+                new_img_data[index + 2] = clamp_value(sum_b);
+            }
+        }
+    }
+
+    free(img.data);
+    img.data = new_img_data;
+    img.height = new_height;
+    img.width = new_width;
+
+    return true;
+}
+
+bool apply_7_by_7_convolution(ImageState& img, const float kernel[7][7], bool clamp_offset, bool single_channel){
+
+    if(img.width < 7 || img.height < 7){
+        fprintf(stderr, "Imagem muito pequena para realizar operação de convolução 7x7!\n");
+        return false;
+    }
+
+    int new_width = img.width - 6;
+    int new_height = img.height - 6;
+    unsigned char* new_img_data = (unsigned char*) malloc(
+        static_cast<size_t>(new_width) * new_height * 3
+    );
+    if (!new_img_data) {
+        fprintf(stderr, "Falha ao alocar memória para convolução 7x7!\n");
+        return false;
+    }
+
+    for(int j = 3; j < img.height - 3; j++){
+        for(int i = 3; i < img.width - 3; i++){
+            float sum = 0.0f;
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+
+            for(int k = -3; k <= 3; k++){
+                for(int l = -3; l <= 3; l++){
+                    int source_index = ((j - k) * img.width + (i - l)) * 3;
+                    float weight = kernel[3 + k][3 + l];
+
+                    if(single_channel){
+                        sum += weight * img.data[source_index];
+                    }
+                    else{
+                        sum_r += weight * img.data[source_index];
+                        sum_g += weight * img.data[source_index + 1];
+                        sum_b += weight * img.data[source_index + 2];
+                    }
+                }
+            }
+
+            int index = ((j - 3) * new_width + (i - 3)) * 3;
+
+            if(single_channel){
+                if(clamp_offset)
+                    sum += 127;
+
+                unsigned char value = clamp_value(sum);
+                std::fill(new_img_data + index, new_img_data + index + 3, value);
+            }
+            else{
+                if(clamp_offset){
+                    sum_r += 127;
+                    sum_g += 127;
+                    sum_b += 127;
+                }
+
+                new_img_data[index] = clamp_value(sum_r);
+                new_img_data[index + 1] = clamp_value(sum_g);
+                new_img_data[index + 2] = clamp_value(sum_b);
+            }
+        }
+    }
+
+    free(img.data);
+    img.data = new_img_data;
+    img.height = new_height;
+    img.width = new_width;
+
+    return true;
+}
+
+bool apply_9_by_9_convolution(ImageState& img, const float kernel[9][9], bool clamp_offset, bool single_channel){
+
+    if(img.width < 9 || img.height < 9){
+        fprintf(stderr, "Imagem muito pequena para realizar operação de convolução 9x9!\n");
+        return false;
+    }
+
+    int new_width = img.width - 8;
+    int new_height = img.height - 8;
+    unsigned char* new_img_data = (unsigned char*) malloc(
+        static_cast<size_t>(new_width) * new_height * 3
+    );
+    if (!new_img_data) {
+        fprintf(stderr, "Falha ao alocar memória para convolução 9x9!\n");
+        return false;
+    }
+
+    for(int j = 4; j < img.height - 4; j++){
+        for(int i = 4; i < img.width - 4; i++){
+            float sum = 0.0f;
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+
+            for(int k = -4; k <= 4; k++){
+                for(int l = -4; l <= 4; l++){
+                    int source_index = ((j - k) * img.width + (i - l)) * 3;
+                    float weight = kernel[4 + k][4 + l];
+
+                    if(single_channel){
+                        sum += weight * img.data[source_index];
+                    }
+                    else{
+                        sum_r += weight * img.data[source_index];
+                        sum_g += weight * img.data[source_index + 1];
+                        sum_b += weight * img.data[source_index + 2];
+                    }
+                }
+            }
+
+            int index = ((j - 4) * new_width + (i - 4)) * 3;
+
+            if(single_channel){
+                if(clamp_offset)
+                    sum += 127;
+
+                unsigned char value = clamp_value(sum);
+                std::fill(new_img_data + index, new_img_data + index + 3, value);
+            }
+            else{
+                if(clamp_offset){
+                    sum_r += 127;
+                    sum_g += 127;
+                    sum_b += 127;
+                }
+
+                new_img_data[index] = clamp_value(sum_r);
+                new_img_data[index + 1] = clamp_value(sum_g);
+                new_img_data[index + 2] = clamp_value(sum_b);
+            }
+        }
+    }
+
+    free(img.data);
+    img.data = new_img_data;
+    img.height = new_height;
+    img.width = new_width;
+
+    return true;
+}
+
+bool apply_11_by_11_convolution(ImageState& img, const float kernel[11][11], bool clamp_offset, bool single_channel){
+
+    if(img.width < 11 || img.height < 11){
+        fprintf(stderr, "Imagem muito pequena para realizar operação de convolução 11x11!\n");
+        return false;
+    }
+
+    int new_width = img.width - 10;
+    int new_height = img.height - 10;
+    unsigned char* new_img_data = (unsigned char*) malloc(
+        static_cast<size_t>(new_width) * new_height * 3
+    );
+    if (!new_img_data) {
+        fprintf(stderr, "Falha ao alocar memória para convolução 11x11!\n");
+        return false;
+    }
+
+    for(int j = 5; j < img.height - 5; j++){
+        for(int i = 5; i < img.width - 5; i++){
+            float sum = 0.0f;
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+
+            for(int k = -5; k <= 5; k++){
+                for(int l = -5; l <= 5; l++){
+                    int source_index = ((j - k) * img.width + (i - l)) * 3;
+                    float weight = kernel[5 + k][5 + l];
+
+                    if(single_channel){
+                        sum += weight * img.data[source_index];
+                    }
+                    else{
+                        sum_r += weight * img.data[source_index];
+                        sum_g += weight * img.data[source_index + 1];
+                        sum_b += weight * img.data[source_index + 2];
+                    }
+                }
+            }
+
+            int index = ((j - 5) * new_width + (i - 5)) * 3;
+
+            if(single_channel){
+                if(clamp_offset)
+                    sum += 127;
+
+                unsigned char value = clamp_value(sum);
+                std::fill(new_img_data + index, new_img_data + index + 3, value);
+            }
+            else{
+                if(clamp_offset){
+                    sum_r += 127;
+                    sum_g += 127;
+                    sum_b += 127;
+                }
+
+                new_img_data[index] = clamp_value(sum_r);
+                new_img_data[index + 1] = clamp_value(sum_g);
+                new_img_data[index + 2] = clamp_value(sum_b);
+            }
+        }
+    }
+
+    free(img.data);
+    img.data = new_img_data;
+    img.height = new_height;
+    img.width = new_width;
+
+    return true;
 }
 
 

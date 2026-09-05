@@ -34,7 +34,11 @@ void zoom_out_image(ImageState& img, Rectangle& rec);
 void compute_rgb_avg_on_rectangle(unsigned char avg[3], int rec_x, int rec_y, int rec_width, int red_height, ImageState& img);
 void rotate_90_degrees_clockwise(ImageState& img);
 void rotate_90_degrees_counterclockwise(ImageState& img);
-void apply_3_by_3_convolution(ImageState& img, float kernel[3][3], bool clamp_offset, bool single_channel);
+bool apply_3_by_3_convolution(ImageState& img, const float kernel[3][3], bool clamp_offset, bool single_channel);
+bool apply_5_by_5_convolution(ImageState& img, const float kernel[5][5], bool clamp_offset, bool single_channel);
+bool apply_7_by_7_convolution(ImageState& img, const float kernel[7][7], bool clamp_offset, bool single_channel);
+bool apply_9_by_9_convolution(ImageState& img, const float kernel[9][9], bool clamp_offset, bool single_channel);
+bool apply_11_by_11_convolution(ImageState& img, const float kernel[11][11], bool clamp_offset, bool single_channel);
 inline unsigned char clamp_value(float value);
 
 

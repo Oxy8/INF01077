@@ -17,53 +17,98 @@ namespace fs = std::filesystem;
 #define BENCHMARK_QUANTIZATION_LEVELS 16
 #define BENCHMARK_ZOOM_OUT_WIDTH 2
 #define BENCHMARK_ZOOM_OUT_HEIGHT 2
-#define BENCHMARK_CONVOLUTION_KERNEL \
+#define BENCHMARK_GAUSSIAN_3X3_KERNEL \
     {{0.0625f, 0.125f, 0.0625f}, \
      {0.125f,  0.25f,  0.125f},  \
      {0.0625f, 0.125f, 0.0625f}}
+#define BENCHMARK_GAUSSIAN_5X5_KERNEL \
+    {{1.0f/256.0f,  4.0f/256.0f,  6.0f/256.0f,  4.0f/256.0f, 1.0f/256.0f}, \
+     {4.0f/256.0f, 16.0f/256.0f, 24.0f/256.0f, 16.0f/256.0f, 4.0f/256.0f}, \
+     {6.0f/256.0f, 24.0f/256.0f, 36.0f/256.0f, 24.0f/256.0f, 6.0f/256.0f}, \
+     {4.0f/256.0f, 16.0f/256.0f, 24.0f/256.0f, 16.0f/256.0f, 4.0f/256.0f}, \
+     {1.0f/256.0f,  4.0f/256.0f,  6.0f/256.0f,  4.0f/256.0f, 1.0f/256.0f}}
+#define BENCHMARK_GAUSSIAN_7X7_KERNEL \
+    {{1.0f/4096.0f,   6.0f/4096.0f,  15.0f/4096.0f,  20.0f/4096.0f,  15.0f/4096.0f,   6.0f/4096.0f, 1.0f/4096.0f}, \
+     {6.0f/4096.0f,  36.0f/4096.0f,  90.0f/4096.0f, 120.0f/4096.0f,  90.0f/4096.0f,  36.0f/4096.0f, 6.0f/4096.0f}, \
+     {15.0f/4096.0f, 90.0f/4096.0f, 225.0f/4096.0f, 300.0f/4096.0f, 225.0f/4096.0f, 90.0f/4096.0f, 15.0f/4096.0f}, \
+     {20.0f/4096.0f,120.0f/4096.0f, 300.0f/4096.0f, 400.0f/4096.0f, 300.0f/4096.0f,120.0f/4096.0f,20.0f/4096.0f}, \
+     {15.0f/4096.0f, 90.0f/4096.0f, 225.0f/4096.0f, 300.0f/4096.0f, 225.0f/4096.0f, 90.0f/4096.0f, 15.0f/4096.0f}, \
+     {6.0f/4096.0f,  36.0f/4096.0f,  90.0f/4096.0f, 120.0f/4096.0f,  90.0f/4096.0f,  36.0f/4096.0f, 6.0f/4096.0f}, \
+     {1.0f/4096.0f,   6.0f/4096.0f,  15.0f/4096.0f,  20.0f/4096.0f,  15.0f/4096.0f,   6.0f/4096.0f, 1.0f/4096.0f}}
+#define BENCHMARK_GAUSSIAN_9X9_KERNEL \
+    {{1.0f/65536.0f,   8.0f/65536.0f,  28.0f/65536.0f,  56.0f/65536.0f,  70.0f/65536.0f,  56.0f/65536.0f,  28.0f/65536.0f,   8.0f/65536.0f, 1.0f/65536.0f}, \
+     {8.0f/65536.0f,  64.0f/65536.0f, 224.0f/65536.0f, 448.0f/65536.0f, 560.0f/65536.0f, 448.0f/65536.0f, 224.0f/65536.0f,  64.0f/65536.0f, 8.0f/65536.0f}, \
+     {28.0f/65536.0f,224.0f/65536.0f, 784.0f/65536.0f,1568.0f/65536.0f,1960.0f/65536.0f,1568.0f/65536.0f, 784.0f/65536.0f,224.0f/65536.0f,28.0f/65536.0f}, \
+     {56.0f/65536.0f,448.0f/65536.0f,1568.0f/65536.0f,3136.0f/65536.0f,3920.0f/65536.0f,3136.0f/65536.0f,1568.0f/65536.0f,448.0f/65536.0f,56.0f/65536.0f}, \
+     {70.0f/65536.0f,560.0f/65536.0f,1960.0f/65536.0f,3920.0f/65536.0f,4900.0f/65536.0f,3920.0f/65536.0f,1960.0f/65536.0f,560.0f/65536.0f,70.0f/65536.0f}, \
+     {56.0f/65536.0f,448.0f/65536.0f,1568.0f/65536.0f,3136.0f/65536.0f,3920.0f/65536.0f,3136.0f/65536.0f,1568.0f/65536.0f,448.0f/65536.0f,56.0f/65536.0f}, \
+     {28.0f/65536.0f,224.0f/65536.0f, 784.0f/65536.0f,1568.0f/65536.0f,1960.0f/65536.0f,1568.0f/65536.0f, 784.0f/65536.0f,224.0f/65536.0f,28.0f/65536.0f}, \
+     {8.0f/65536.0f,  64.0f/65536.0f, 224.0f/65536.0f, 448.0f/65536.0f, 560.0f/65536.0f, 448.0f/65536.0f, 224.0f/65536.0f,  64.0f/65536.0f, 8.0f/65536.0f}, \
+     {1.0f/65536.0f,   8.0f/65536.0f,  28.0f/65536.0f,  56.0f/65536.0f,  70.0f/65536.0f,  56.0f/65536.0f,  28.0f/65536.0f,   8.0f/65536.0f, 1.0f/65536.0f}}
+#define BENCHMARK_GAUSSIAN_11X11_KERNEL \
+    {{1.0f/1048576.0f,    10.0f/1048576.0f,    45.0f/1048576.0f,   120.0f/1048576.0f,   210.0f/1048576.0f,   252.0f/1048576.0f,   210.0f/1048576.0f,   120.0f/1048576.0f,    45.0f/1048576.0f,    10.0f/1048576.0f, 1.0f/1048576.0f}, \
+     {10.0f/1048576.0f,  100.0f/1048576.0f,   450.0f/1048576.0f,  1200.0f/1048576.0f,  2100.0f/1048576.0f,  2520.0f/1048576.0f,  2100.0f/1048576.0f,  1200.0f/1048576.0f,   450.0f/1048576.0f,   100.0f/1048576.0f,10.0f/1048576.0f}, \
+     {45.0f/1048576.0f,  450.0f/1048576.0f,  2025.0f/1048576.0f,  5400.0f/1048576.0f,  9450.0f/1048576.0f, 11340.0f/1048576.0f,  9450.0f/1048576.0f,  5400.0f/1048576.0f,  2025.0f/1048576.0f,   450.0f/1048576.0f,45.0f/1048576.0f}, \
+     {120.0f/1048576.0f,1200.0f/1048576.0f,  5400.0f/1048576.0f, 14400.0f/1048576.0f, 25200.0f/1048576.0f, 30240.0f/1048576.0f, 25200.0f/1048576.0f, 14400.0f/1048576.0f,  5400.0f/1048576.0f,  1200.0f/1048576.0f,120.0f/1048576.0f}, \
+     {210.0f/1048576.0f,2100.0f/1048576.0f,  9450.0f/1048576.0f, 25200.0f/1048576.0f, 44100.0f/1048576.0f, 52920.0f/1048576.0f, 44100.0f/1048576.0f, 25200.0f/1048576.0f,  9450.0f/1048576.0f,  2100.0f/1048576.0f,210.0f/1048576.0f}, \
+     {252.0f/1048576.0f,2520.0f/1048576.0f, 11340.0f/1048576.0f, 30240.0f/1048576.0f, 52920.0f/1048576.0f, 63504.0f/1048576.0f, 52920.0f/1048576.0f, 30240.0f/1048576.0f, 11340.0f/1048576.0f,  2520.0f/1048576.0f,252.0f/1048576.0f}, \
+     {210.0f/1048576.0f,2100.0f/1048576.0f,  9450.0f/1048576.0f, 25200.0f/1048576.0f, 44100.0f/1048576.0f, 52920.0f/1048576.0f, 44100.0f/1048576.0f, 25200.0f/1048576.0f,  9450.0f/1048576.0f,  2100.0f/1048576.0f,210.0f/1048576.0f}, \
+     {120.0f/1048576.0f,1200.0f/1048576.0f,  5400.0f/1048576.0f, 14400.0f/1048576.0f, 25200.0f/1048576.0f, 30240.0f/1048576.0f, 25200.0f/1048576.0f, 14400.0f/1048576.0f,  5400.0f/1048576.0f,  1200.0f/1048576.0f,120.0f/1048576.0f}, \
+     {45.0f/1048576.0f,  450.0f/1048576.0f,  2025.0f/1048576.0f,  5400.0f/1048576.0f,  9450.0f/1048576.0f, 11340.0f/1048576.0f,  9450.0f/1048576.0f,  5400.0f/1048576.0f,  2025.0f/1048576.0f,   450.0f/1048576.0f,45.0f/1048576.0f}, \
+     {10.0f/1048576.0f,  100.0f/1048576.0f,   450.0f/1048576.0f,  1200.0f/1048576.0f,  2100.0f/1048576.0f,  2520.0f/1048576.0f,  2100.0f/1048576.0f,  1200.0f/1048576.0f,   450.0f/1048576.0f,   100.0f/1048576.0f,10.0f/1048576.0f}, \
+     {1.0f/1048576.0f,    10.0f/1048576.0f,    45.0f/1048576.0f,   120.0f/1048576.0f,   210.0f/1048576.0f,   252.0f/1048576.0f,   210.0f/1048576.0f,   120.0f/1048576.0f,    45.0f/1048576.0f,    10.0f/1048576.0f, 1.0f/1048576.0f}}
 #define BENCHMARK_CONVOLUTION_CLAMP_OFFSET false
 #define BENCHMARK_CONVOLUTION_SINGLE_CHANNEL false
 
-using Transformation = void (*)(ImageState&);
+using Transformation = bool (*)(ImageState&);
 
-void transform_grayscale(ImageState& image) {
+bool transform_grayscale(ImageState& image) {
     apply_gray_scale_inplace(image);
+    return true;
 }
 
-void transform_flip_horizontal(ImageState& image) {
+bool transform_flip_horizontal(ImageState& image) {
     flip_horizontal(image);
+    return true;
 }
 
-void transform_adjust_brightness(ImageState& image) {
+bool transform_adjust_brightness(ImageState& image) {
     adjust_brightness(image, BENCHMARK_BRIGHTNESS_ADJUSTMENT);
+    return true;
 }
 
-void transform_flip_vertical(ImageState& image) {
+bool transform_flip_vertical(ImageState& image) {
     flip_vertical(image);
+    return true;
 }
 
-void transform_quantize(ImageState& image) {
+bool transform_quantize(ImageState& image) {
     quantize_gray(image, BENCHMARK_QUANTIZATION_LEVELS);
+    return true;
 }
 
-void transform_adjust_contrast(ImageState& image) {
+bool transform_adjust_contrast(ImageState& image) {
     adjust_contrast(image, BENCHMARK_CONTRAST_FACTOR);
+    return true;
 }
 
-void transform_negative(ImageState& image) {
+bool transform_negative(ImageState& image) {
     apply_negative(image);
+    return true;
 }
 
-void transform_equalize_histogram(ImageState& image) {
+bool transform_equalize_histogram(ImageState& image) {
     unsigned int cumulative_histogram[256];
     equalize_histogram(image, cumulative_histogram);
+    return true;
 }
 
-void transform_zoom_in(ImageState& image) {
+bool transform_zoom_in(ImageState& image) {
     zoom_in_image(image);
+    return true;
 }
 
-void transform_zoom_out(ImageState& image) {
+bool transform_zoom_out(ImageState& image) {
     Rectangle rectangle{
         0,
         0,
@@ -71,19 +116,62 @@ void transform_zoom_out(ImageState& image) {
         BENCHMARK_ZOOM_OUT_HEIGHT
     };
     zoom_out_image(image, rectangle);
+    return true;
 }
 
-void transform_rotate_clockwise(ImageState& image) {
+bool transform_rotate_clockwise(ImageState& image) {
     rotate_90_degrees_clockwise(image);
+    return true;
 }
 
-void transform_rotate_counterclockwise(ImageState& image) {
+bool transform_rotate_counterclockwise(ImageState& image) {
     rotate_90_degrees_counterclockwise(image);
+    return true;
 }
 
-void transform_convolution(ImageState& image) {
-    float kernel[3][3] = BENCHMARK_CONVOLUTION_KERNEL;
-    apply_3_by_3_convolution(
+bool transform_gaussian_convolution_3x3(ImageState& image) {
+    const float kernel[3][3] = BENCHMARK_GAUSSIAN_3X3_KERNEL;
+    return apply_3_by_3_convolution(
+        image,
+        kernel,
+        BENCHMARK_CONVOLUTION_CLAMP_OFFSET,
+        BENCHMARK_CONVOLUTION_SINGLE_CHANNEL
+    );
+}
+
+bool transform_gaussian_convolution_5x5(ImageState& image) {
+    const float kernel[5][5] = BENCHMARK_GAUSSIAN_5X5_KERNEL;
+    return apply_5_by_5_convolution(
+        image,
+        kernel,
+        BENCHMARK_CONVOLUTION_CLAMP_OFFSET,
+        BENCHMARK_CONVOLUTION_SINGLE_CHANNEL
+    );
+}
+
+bool transform_gaussian_convolution_7x7(ImageState& image) {
+    const float kernel[7][7] = BENCHMARK_GAUSSIAN_7X7_KERNEL;
+    return apply_7_by_7_convolution(
+        image,
+        kernel,
+        BENCHMARK_CONVOLUTION_CLAMP_OFFSET,
+        BENCHMARK_CONVOLUTION_SINGLE_CHANNEL
+    );
+}
+
+bool transform_gaussian_convolution_9x9(ImageState& image) {
+    const float kernel[9][9] = BENCHMARK_GAUSSIAN_9X9_KERNEL;
+    return apply_9_by_9_convolution(
+        image,
+        kernel,
+        BENCHMARK_CONVOLUTION_CLAMP_OFFSET,
+        BENCHMARK_CONVOLUTION_SINGLE_CHANNEL
+    );
+}
+
+bool transform_gaussian_convolution_11x11(ImageState& image) {
+    const float kernel[11][11] = BENCHMARK_GAUSSIAN_11X11_KERNEL;
+    return apply_11_by_11_convolution(
         image,
         kernel,
         BENCHMARK_CONVOLUTION_CLAMP_OFFSET,
@@ -104,7 +192,11 @@ void transform_convolution(ImageState& image) {
 #define TRANSFORM_ZOOM_OUT transform_zoom_out
 #define TRANSFORM_ROTATE_CLOCKWISE transform_rotate_clockwise
 #define TRANSFORM_ROTATE_COUNTERCLOCKWISE transform_rotate_counterclockwise
-#define TRANSFORM_CONVOLUTION transform_convolution
+#define TRANSFORM_GAUSSIAN_CONVOLUTION_3X3 transform_gaussian_convolution_3x3
+#define TRANSFORM_GAUSSIAN_CONVOLUTION_5X5 transform_gaussian_convolution_5x5
+#define TRANSFORM_GAUSSIAN_CONVOLUTION_7X7 transform_gaussian_convolution_7x7
+#define TRANSFORM_GAUSSIAN_CONVOLUTION_9X9 transform_gaussian_convolution_9x9
+#define TRANSFORM_GAUSSIAN_CONVOLUTION_11X11 transform_gaussian_convolution_11x11
 
 // Edite esta lista para mudar quais transformações são executadas e a ordem.
 static constexpr Transformation TRANSFORMATIONS[] = {
@@ -120,7 +212,11 @@ static constexpr Transformation TRANSFORMATIONS[] = {
     TRANSFORM_ZOOM_OUT,
     TRANSFORM_ROTATE_CLOCKWISE,
     TRANSFORM_ROTATE_COUNTERCLOCKWISE,
-    TRANSFORM_CONVOLUTION,
+    TRANSFORM_GAUSSIAN_CONVOLUTION_3X3,
+    TRANSFORM_GAUSSIAN_CONVOLUTION_5X5,
+    TRANSFORM_GAUSSIAN_CONVOLUTION_7X7,
+    TRANSFORM_GAUSSIAN_CONVOLUTION_9X9,
+    TRANSFORM_GAUSSIAN_CONVOLUTION_11X11,
 };
 
 bool has_supported_extension(const fs::path& path) {
@@ -152,7 +248,11 @@ bool process_image(const fs::path& path) {
     }
 
     for (Transformation transformation : TRANSFORMATIONS) {
-        transformation(image);
+        if (!transformation(image)) {
+            fprintf(stderr, "Erro ao processar a imagem: %s\n", filename.c_str());
+            free(image.data);
+            return false;
+        }
     }
 
     free(image.data);
