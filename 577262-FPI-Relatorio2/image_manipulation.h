@@ -1,26 +1,9 @@
-#include <gtk/gtk.h>
-
-struct TwoSpins {
-    GtkWidget* spin_a;
-    GtkWidget* spin_b;
-};
-
-
-// Estrutura pra passar tudo que o callback precisa
-typedef struct {
-    GtkWidget* kernel_entries[3][3];
-    GtkWidget* clamp_direct;
-    GtkWidget* clamp_offset;
-    GtkWidget* single_channel;
-    GtkWidget* three_channels;
-} ConvolutionWidgets;
+#include <array>
 
 // Estrutura para armazenar estado da imagem atual
 struct ImageState {
     unsigned char* data;
     int width, height;
-    GtkWidget* picture;
-    GtkWidget* window;
     bool isGrayScale;
 
 };
@@ -39,7 +22,6 @@ void adjust_brightness(ImageState& img, int adjust_value);
 void flip_vertical(ImageState& img);
 std::array<unsigned char, 2> find_min_and_max_luminance_on_gray_scale_image(int width, int height, unsigned char* data);
 void quantize_gray(ImageState& img, int levels);
-void update_picture(ImageState& img);
 void compute_histogram(ImageState& img,  unsigned int hist[256], bool convert_to_gray_scale);
 void adjust_contrast(ImageState& img, float contrast_factor);
 void apply_negative(ImageState& img);

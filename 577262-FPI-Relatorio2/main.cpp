@@ -17,21 +17,69 @@ struct StartupOptions {
     int exit_status;
 };
 
+struct TwoSpins {
+    GtkWidget* spin_a;
+    GtkWidget* spin_b;
+};
+
+struct ConvolutionWidgets {
+    GtkWidget* kernel_entries[3][3];
+    GtkWidget* clamp_direct;
+    GtkWidget* clamp_offset;
+    GtkWidget* single_channel;
+    GtkWidget* three_channels;
+};
+
+struct DisplayedImage {
+    ImageState image;
+    GtkWidget* picture;
+    GtkWidget* window;
+};
+
 
 void on_activate(GtkApplication* app, gpointer user_data);
 void close_application(GtkApplication* app);
 void on_image_window_close(GtkWidget* widget, gpointer app_ptr);
 void on_tools_window_close(GtkWidget* widget, gpointer app_ptr);
 bool load_initial_image(ImageState& initial, const StartupOptions& options);
+void update_picture(DisplayedImage& displayed_image);
 
 
 
-std::vector<ImageState> images;  // máximo 2 cópias -> 3 elementos
+std::vector<DisplayedImage> images;  // máximo 2 cópias -> 3 elementos
 int num_images_saved = 0;
 unsigned char* original_data = nullptr;
 int original_width, original_height;
 
 unsigned int histogram[256];
+
+
+ImageState& current_image() {
+    return images.back().image;
+}
+
+void update_picture(DisplayedImage& displayed_image) {
+    ImageState& image = displayed_image.image;
+    GdkPixbuf* pixbuf = gdk_pixbuf_new_from_data(
+        image.data,
+        GDK_COLORSPACE_RGB,
+        FALSE,
+        8,
+        image.width,
+        image.height,
+        image.width * 3,
+        nullptr,
+        nullptr
+    );
+
+    gtk_picture_set_pixbuf(GTK_PICTURE(displayed_image.picture), pixbuf);
+    g_object_unref(pixbuf);
+    gtk_widget_queue_draw(displayed_image.picture);
+}
+
+void refresh_current_image() {
+    update_picture(images.back());
+}
 
 
 
@@ -141,7 +189,7 @@ void on_copy(GtkButton*, gpointer app_ptr) {
         return;
     }
 
-    ImageState base = images.back();
+    ImageState& base = current_image();
     unsigned char* new_data = (unsigned char*) malloc(base.width * base.height * 3);
     memcpy(new_data, base.data, base.width * base.height * 3);
 
@@ -153,31 +201,36 @@ void on_copy(GtkButton*, gpointer app_ptr) {
     gtk_window_set_child(GTK_WINDOW(win), pic);
     gtk_widget_show(win);
 
-    ImageState copy{new_data, base.width, base.height, pic, win};
-    images.push_back(copy);
+    ImageState copy{new_data, base.width, base.height, base.isGrayScale};
+    images.push_back(DisplayedImage{copy, pic, win});
 
     update_picture(images.back());
 }
 
 void on_gray(GtkButton*, gpointer) {
-    apply_gray_scale_inplace(images.back());
+    apply_gray_scale_inplace(current_image());
+    refresh_current_image();
 }
 
 void on_flip_h(GtkButton*, gpointer) {
-    flip_horizontal(images.back());
+    flip_horizontal(current_image());
+    refresh_current_image();
 }
 
 void on_flip_v(GtkButton*, gpointer) {
-    flip_vertical(images.back());
+    flip_vertical(current_image());
+    refresh_current_image();
 }
 
 void on_reset(GtkButton*, gpointer) {
-    reset(images.back(), original_data, original_width, original_height);
+    reset(current_image(), original_data, original_width, original_height);
+    refresh_current_image();
 }
 
 void on_adjust_brightness(GtkButton*, gpointer spin_brightness){
     int brightness_value = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spin_brightness));
-    adjust_brightness(images.back(), brightness_value);
+    adjust_brightness(current_image(), brightness_value);
+    refresh_current_image();
 }
 
 
@@ -207,13 +260,15 @@ void on_adjust_contrast(GtkButton*, gpointer entry_contrast){
 
     float contrast_value = parse_float(text);
 
-    adjust_contrast(images.back(), contrast_value);
+    adjust_contrast(current_image(), contrast_value);
+    refresh_current_image();
 }
 
 
 void on_equalize_histogram(GtkButton*, gpointer) {
     unsigned int cummulative_hist[256];
-    equalize_histogram(images.back(), cummulative_hist);
+    equalize_histogram(current_image(), cummulative_hist);
+    refresh_current_image();
 }
 
 
@@ -222,21 +277,24 @@ void on_save(GtkButton*, gpointer) {
     std::string file_name = "saida" + (num_images_saved > 0 ? std::to_string(num_images_saved) : "") + ".jpg";
     const char* c_file_name = file_name.c_str();
 
-    save_image(images.back(), c_file_name);
+    save_image(current_image(), c_file_name);
     num_images_saved++;
 }
 
 void on_quantize(GtkButton*, gpointer spin) {
     int levels = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spin));
-    quantize_gray(images.back(), levels);
+    quantize_gray(current_image(), levels);
+    refresh_current_image();
 }
 
 void on_apply_negative(GtkButton*, gpointer) {
-    apply_negative(images.back());
+    apply_negative(current_image());
+    refresh_current_image();
 }
 
 void on_zoom_in(GtkButton*, gpointer) {
-    zoom_in_image(images.back());
+    zoom_in_image(current_image());
+    refresh_current_image();
 }
 
 void on_zoom_out(GtkButton*, gpointer spins) {
@@ -253,20 +311,23 @@ void on_zoom_out(GtkButton*, gpointer spins) {
         return;
     }
 
-    zoom_out_image(images.back(), rec);
+    zoom_out_image(current_image(), rec);
+    refresh_current_image();
 }
 
 void on_rotate_90_clockise(GtkButton*, gpointer) {
-    rotate_90_degrees_clockwise(images.back());
+    rotate_90_degrees_clockwise(current_image());
+    refresh_current_image();
 }
 
 void on_rotate_90_counterclockise(GtkButton*, gpointer) {
-    rotate_90_degrees_counterclockwise(images.back());
+    rotate_90_degrees_counterclockwise(current_image());
+    refresh_current_image();
 }
 
 void on_hist_matching(GtkButton*, gpointer) {
-    ImageState target_image;
-    ImageState& src_image = images.back();
+    ImageState target_image{};
+    ImageState& src_image = current_image();
 
     std::string name;
     printf("Digite o nome do arquivo da imagem alvo (string vazia para cancelar): ");
@@ -289,13 +350,16 @@ void on_hist_matching(GtkButton*, gpointer) {
     }
 
     histogram_matching(src_image, target_image);
+    free(target_image.data);
+    refresh_current_image();
 }
 
 // Handler do botão de calcular histograma
 static void on_histogram_button_clicked(GtkWidget *button, gpointer user_data) {
-    ImageState& curr_image = images.back();
+    ImageState& curr_image = current_image();
 
     compute_histogram(curr_image, histogram, true);
+    refresh_current_image();
 
     // Criar nova janela
     GtkWidget *window = gtk_window_new();
@@ -321,7 +385,7 @@ void on_load_new_image(GtkButton*, gpointer app_ptr) {
         return;
     }
 
-    ImageState base = images.back();
+    ImageState base{};
 
     std::string name;
     printf("Digite o nome do arquivo (string vazia para cancelar): ");
@@ -341,9 +405,6 @@ void on_load_new_image(GtkButton*, gpointer app_ptr) {
         return;
 
 
-    unsigned char* new_data = (unsigned char*) malloc(base.width * base.height * 3);
-    memcpy(new_data, base.data, base.width * base.height * 3);
-
     GtkWidget* win = gtk_window_new();
     GtkWidget* pic = gtk_picture_new();
 
@@ -352,8 +413,7 @@ void on_load_new_image(GtkButton*, gpointer app_ptr) {
     gtk_window_set_child(GTK_WINDOW(win), pic);
     gtk_widget_show(win);
 
-    ImageState copy{new_data, base.width, base.height, pic, win};
-    images.push_back(copy);
+    images.push_back(DisplayedImage{base, pic, win});
 
     update_picture(images.back());
     
@@ -447,7 +507,8 @@ void on_apply_convolution(GtkButton* button, gpointer user_data) {
     // Verifica se é single_channel ou three_channels
     bool single_channel = gtk_check_button_get_active(GTK_CHECK_BUTTON(cw->single_channel));
 
-    apply_3_by_3_convolution(images.back(), kernel, clamp_offset, single_channel);
+    apply_3_by_3_convolution(current_image(), kernel, clamp_offset, single_channel);
+    refresh_current_image();
 }
 
 
@@ -602,10 +663,7 @@ void on_activate(GtkApplication* app, gpointer user_data) {
 
     gtk_widget_show(win);
 
-    initial.picture = pic;
-    initial.window = win;
-
-    images.push_back(initial);
+    images.push_back(DisplayedImage{initial, pic, win});
 
     update_picture(images.back());
 
@@ -766,7 +824,7 @@ void on_image_window_close(GtkWidget* widget, gpointer app_ptr) {
 
     for(int i = 0; i < images.size(); i++){
         if(images[i].window == win){
-            free(images[i].data);
+            free(images[i].image.data);
             images.erase(images.begin() + i);
             break;
         }

@@ -3,8 +3,6 @@
 #include "stb_image.h"
 #include "stb_image_write.h"
 
-#include <cairo.h>
-#include <gtk/gtk.h>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -83,8 +81,7 @@ void apply_3_by_3_convolution(ImageState& img, float kernel[3][3], bool clamp_of
     img.height = new_height;
     img.width = new_width;
 
-    update_picture(img);
-} 
+}
 
 
 
@@ -109,7 +106,6 @@ void rotate_90_degrees_clockwise(ImageState& img){
     img.data = new_data;
     img.width = new_img_width;
     img.height = new_img_height;
-    update_picture(img);
 }
 
 void rotate_90_degrees_counterclockwise(ImageState& img){
@@ -133,7 +129,6 @@ void rotate_90_degrees_counterclockwise(ImageState& img){
     img.data = new_data;
     img.width = new_img_width;
     img.height = new_img_height;
-    update_picture(img);
 }
 
 
@@ -212,8 +207,6 @@ void zoom_in_image(ImageState& img){
     img.width = new_width;
     img.height = new_height;
 
-    update_picture(img);
-
 }
 
 
@@ -243,7 +236,6 @@ void zoom_out_image(ImageState& img, Rectangle& rec){
     img.width = new_width;
     img.height = new_height;
 
-    update_picture(img);
 }
 
 void compute_rgb_avg_on_rectangle(unsigned char avg[3], int rec_x, int rec_y, int rec_width, int rec_height, ImageState& img){
@@ -303,7 +295,6 @@ void histogram_matching(ImageState& src_img, ImageState& target_img){
         }
     }
 
-    update_picture(src_img);
 }
 
 unsigned char find_shade_level_closest_to(int value, unsigned int target_hist[256]) {
@@ -335,9 +326,6 @@ void equalize_histogram(ImageState& img, unsigned int cummulative_hist[256]){
             }
         }
     }
-
-    update_picture(img);
-
 
 }
 
@@ -371,7 +359,6 @@ void apply_negative(ImageState& img){
         }
     }
 
-    update_picture(img);
 }
 
 
@@ -393,8 +380,6 @@ void adjust_contrast(ImageState& img, float contrast_factor){
             }
         }
     }
-
-    update_picture(img);
 
 }
 
@@ -433,30 +418,6 @@ void compute_histogram(ImageState& img,  unsigned int hist[256], bool convert_to
                 
         }
     }
-
-}
-
-
-void update_picture(ImageState& img) {
-    GdkPixbuf* pixbuf = gdk_pixbuf_new_from_data(
-        img.data,
-        GDK_COLORSPACE_RGB,
-        FALSE,
-        8,
-        img.width,
-        img.height,
-        img.width * 3,
-        nullptr,
-        nullptr
-    );
-
-    gtk_picture_set_pixbuf(GTK_PICTURE(img.picture), pixbuf);
-
-    // gtk_window_set_default_size(GTK_WINDOW(img.window), img.width, img.height);
-
-    g_object_unref(pixbuf);
-
-    gtk_widget_queue_draw(img.picture);
 
 }
 
@@ -513,7 +474,6 @@ void apply_gray_scale_inplace(ImageState& img) {
 
     img.isGrayScale = true;
 
-   update_picture(img);
 }
 
 
@@ -529,8 +489,6 @@ void adjust_brightness(ImageState& img, int adjust_value){
                 img.data[index + channel] = std::clamp(img.data[index + channel] + adjust_value, 0, 255);
         }
     }
-
-    update_picture(img);
 
 }
 
@@ -550,7 +508,6 @@ void flip_horizontal(ImageState& img) {
         }
     }
 
-    update_picture(img);
     free(pixel_buffer);
 }
 
@@ -567,7 +524,6 @@ void flip_vertical(ImageState& img){
         memcpy(img.data + (height - 1 - j) * width * 3, row_buffer, width * 3);
     }
 
-    update_picture(img);
     free(row_buffer);
 } 
 
@@ -615,7 +571,7 @@ void quantize_gray(ImageState& img, int levels) {
 
     for (int j = 0; j < img.height; j++) {
         for (int i = 0; i < img.width; i++) {
-                int index = (j * img.width + i) * 3; // Ainda trabalhamos em 3 canais de cores porque a gtk não suporta imagens com um canal apenas
+                int index = (j * img.width + i) * 3; // O buffer permanece com três canais RGB.
                 unsigned char luminance = img.data[index]; 
 
                 // Encontrando o intervalo em que o valor de luminância se encontra
@@ -635,8 +591,6 @@ void quantize_gray(ImageState& img, int levels) {
         }
     }
 
-    update_picture(img);
-
 }
 
 
@@ -652,7 +606,6 @@ void reset(ImageState& img, unsigned char* original_data, int original_width, in
         img.height = original_height;
 
         img.isGrayScale = false;
-        update_picture(img);
     }
     else
         printf("ERRO CRÍTICO: sem imagem original para resetar!\n");

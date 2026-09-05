@@ -5,32 +5,36 @@ PKG_CONFIG ?= pkg-config
 
 PROJECT_DIR := 577262-FPI-Relatorio2
 BUILD_DIR := build
-TARGET := $(BUILD_DIR)/image_editor
+BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
+GUI_TARGET := $(BUILD_DIR)/image_editor
 
-SOURCES := \
-	$(PROJECT_DIR)/main.cpp \
-	$(PROJECT_DIR)/image_manipulation.cpp
-OBJECTS := $(patsubst $(PROJECT_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
+CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
+BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
+GUI_OBJECT := $(BUILD_DIR)/main.o
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(GUI_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
-GTK_CFLAGS := $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
-GTK_LIBS := $(shell $(PKG_CONFIG) --libs gtk4 2>/dev/null)
+GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
+GTK_LIBS = $(shell $(PKG_CONFIG) --libs gtk4 2>/dev/null)
 
-CPPFLAGS += -I$(PROJECT_DIR) $(GTK_CFLAGS)
+CPPFLAGS += -I$(PROJECT_DIR)
 CXXFLAGS ?= -O2 -Wall -Wextra
 CXXFLAGS += -std=c++17
 DEPFLAGS := -MMD -MP
-LDLIBS += $(GTK_LIBS)
 
-.PHONY: all check-deps run run-image run-folder clean
+.PHONY: all gui check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
-all: $(TARGET)
+all: $(BENCHMARK_TARGET)
 
-check-deps:
+gui: $(GUI_TARGET)
+
+check-compiler:
 	@command -v "$(firstword $(CXX))" >/dev/null 2>&1 || { \
 		echo "Erro: compilador C++ '$(firstword $(CXX))' não encontrado." >&2; \
 		exit 1; \
 	}
+
+check-gtk: check-compiler
 	@command -v "$(firstword $(PKG_CONFIG))" >/dev/null 2>&1 || { \
 		echo "Erro: pkg-config não encontrado." >&2; \
 		exit 1; \
@@ -41,58 +45,40 @@ check-deps:
 		exit 1; \
 	}
 
-$(TARGET): $(OBJECTS)
+$(BENCHMARK_TARGET): $(CORE_OBJECT) $(BENCHMARK_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
-$(BUILD_DIR)/%.o: $(PROJECT_DIR)/%.cpp | check-deps $(BUILD_DIR)
+$(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
+
+$(CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(BENCHMARK_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(BUILD_DIR):
 	mkdir -p $@
 
-run: $(TARGET)
-	@$(TARGET)
+run: $(GUI_TARGET)
+	@$(GUI_TARGET)
 
-run-image: $(TARGET)
+run-benchmark-image: $(BENCHMARK_TARGET)
 	@if [[ -z "$(strip $(IMAGE))" ]]; then \
 		echo 'Erro: informe uma imagem com IMAGE="caminho/para/imagem".' >&2; \
 		exit 2; \
 	fi
-	@$(TARGET) "$(IMAGE)"
+	@$(BENCHMARK_TARGET) --image "$(IMAGE)"
 
-run-folder: $(TARGET)
+run-benchmark-folder: $(BENCHMARK_TARGET)
 	@if [[ -z "$(strip $(FOLDER))" ]]; then \
 		echo 'Erro: informe uma pasta com FOLDER="caminho/para/imagens".' >&2; \
 		exit 2; \
 	fi
-	@if [[ ! -d "$(FOLDER)" ]]; then \
-		echo "Erro: pasta não encontrada: $(FOLDER)" >&2; \
-		exit 2; \
-	fi
-	@status=0; count=0; \
-	while IFS= read -r -d '' image; do \
-		count=$$((count + 1)); \
-		printf 'Abrindo: %s\n' "$$image"; \
-		$(TARGET) "$$image"; \
-		result=$$?; \
-		if (( result != 0 )); then \
-			printf 'Falha ao abrir: %s\n' "$$image" >&2; \
-			status=1; \
-		fi; \
-	done < <(find "$(FOLDER)" -maxdepth 1 -type f \( \
-		-iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o \
-		-iname '*.bmp' -o -iname '*.tga' -o -iname '*.gif' -o \
-		-iname '*.psd' -o -iname '*.hdr' -o -iname '*.pic' -o \
-		-iname '*.pnm' -o -iname '*.ppm' -o -iname '*.pgm' \
-	\) -print0 | sort -z); \
-	if (( count == 0 )); then \
-		echo "Erro: nenhuma imagem suportada encontrada em: $(FOLDER)" >&2; \
-		exit 2; \
-	fi; \
-	if (( status != 0 )); then \
-		echo "Erro: uma ou mais imagens não puderam ser abertas." >&2; \
-	fi; \
-	exit $$status
+	@$(BENCHMARK_TARGET) --folder "$(FOLDER)"
 
 clean:
 	rm -rf -- "$(BUILD_DIR)"
