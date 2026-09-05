@@ -12,10 +12,17 @@
 #include "image_manipulation.h"
 
 
+struct StartupOptions {
+    const char* image_path;
+    int exit_status;
+};
+
+
 void on_activate(GtkApplication* app, gpointer user_data);
 void close_application(GtkApplication* app);
 void on_image_window_close(GtkWidget* widget, gpointer app_ptr);
 void on_tools_window_close(GtkWidget* widget, gpointer app_ptr);
+bool load_initial_image(ImageState& initial, const StartupOptions& options);
 
 
 
@@ -544,8 +551,15 @@ void create_convolution_window(GtkApplication* app) {
 //--------------------------------
 // Setup da UI
 //--------------------------------
-void on_activate(GtkApplication* app, gpointer) {
-    ImageState initial;
+bool load_initial_image(ImageState& initial, const StartupOptions& options) {
+    if (options.image_path != nullptr) {
+        if (!load_image(options.image_path, initial)) {
+            fprintf(stderr, "Erro ao carregar a imagem: %s\n", options.image_path);
+            return false;
+        }
+
+        return true;
+    }
 
     std::string name;
     printf("Digite o nome do arquivo: ");
@@ -560,6 +574,19 @@ void on_activate(GtkApplication* app, gpointer) {
         std::getline(std::cin, name);  // lê até o enter
         c_file_name = name.c_str();
 
+    }
+
+    return true;
+}
+
+void on_activate(GtkApplication* app, gpointer user_data) {
+    StartupOptions* options = static_cast<StartupOptions*>(user_data);
+    ImageState initial;
+
+    if (!load_initial_image(initial, *options)) {
+        options->exit_status = 1;
+        g_application_quit(G_APPLICATION(app));
+        return;
     }
 
     original_data = (unsigned char*) malloc(initial.width * initial.height * 3);
@@ -759,9 +786,22 @@ void on_tools_window_close(GtkWidget* widget, gpointer app_ptr) {
 // main
 //--------------------------------
 int main(int argc, char** argv) {
+    if (argc > 2) {
+        fprintf(stderr, "Uso: %s [imagem]\n", argv[0]);
+        return 2;
+    }
+
+    StartupOptions options{argc == 2 ? argv[1] : nullptr, 0};
+
     GtkApplication* app = gtk_application_new("org.exemplo.editor", G_APPLICATION_FLAGS_NONE);
-    g_signal_connect(app, "activate", G_CALLBACK(on_activate), nullptr);
-    int status = g_application_run(G_APPLICATION(app), argc, argv);
+    g_signal_connect(app, "activate", G_CALLBACK(on_activate), &options);
+
+    // O nome da imagem é um argumento da aplicação, não uma opção do GTK.
+    // Passe somente o nome do executável para o parser de argumentos do GTK.
+    int gtk_argc = 1;
+    char* gtk_argv[] = {argv[0], nullptr};
+    int status = g_application_run(G_APPLICATION(app), gtk_argc, gtk_argv);
     g_object_unref(app);
-    return status;
+
+    return options.exit_status != 0 ? options.exit_status : status;
 }
