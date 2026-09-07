@@ -11,8 +11,60 @@
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
+#include <limits>
+#include <new>
 
 #include "image_manipulation.h"
+
+const float GAUSSIAN_KERNEL_3X3[3][3] = {
+    {0.0625f, 0.125f, 0.0625f},
+    {0.125f,  0.25f,  0.125f},
+    {0.0625f, 0.125f, 0.0625f}
+};
+
+const float GAUSSIAN_KERNEL_5X5[5][5] = {
+    {1.0f/256.0f,  4.0f/256.0f,  6.0f/256.0f,  4.0f/256.0f, 1.0f/256.0f},
+    {4.0f/256.0f, 16.0f/256.0f, 24.0f/256.0f, 16.0f/256.0f, 4.0f/256.0f},
+    {6.0f/256.0f, 24.0f/256.0f, 36.0f/256.0f, 24.0f/256.0f, 6.0f/256.0f},
+    {4.0f/256.0f, 16.0f/256.0f, 24.0f/256.0f, 16.0f/256.0f, 4.0f/256.0f},
+    {1.0f/256.0f,  4.0f/256.0f,  6.0f/256.0f,  4.0f/256.0f, 1.0f/256.0f}
+};
+
+const float GAUSSIAN_KERNEL_7X7[7][7] = {
+    {1.0f/4096.0f,   6.0f/4096.0f,  15.0f/4096.0f,  20.0f/4096.0f,  15.0f/4096.0f,   6.0f/4096.0f, 1.0f/4096.0f},
+    {6.0f/4096.0f,  36.0f/4096.0f,  90.0f/4096.0f, 120.0f/4096.0f,  90.0f/4096.0f,  36.0f/4096.0f, 6.0f/4096.0f},
+    {15.0f/4096.0f, 90.0f/4096.0f, 225.0f/4096.0f, 300.0f/4096.0f, 225.0f/4096.0f, 90.0f/4096.0f, 15.0f/4096.0f},
+    {20.0f/4096.0f,120.0f/4096.0f, 300.0f/4096.0f, 400.0f/4096.0f, 300.0f/4096.0f,120.0f/4096.0f,20.0f/4096.0f},
+    {15.0f/4096.0f, 90.0f/4096.0f, 225.0f/4096.0f, 300.0f/4096.0f, 225.0f/4096.0f, 90.0f/4096.0f, 15.0f/4096.0f},
+    {6.0f/4096.0f,  36.0f/4096.0f,  90.0f/4096.0f, 120.0f/4096.0f,  90.0f/4096.0f,  36.0f/4096.0f, 6.0f/4096.0f},
+    {1.0f/4096.0f,   6.0f/4096.0f,  15.0f/4096.0f,  20.0f/4096.0f,  15.0f/4096.0f,   6.0f/4096.0f, 1.0f/4096.0f}
+};
+
+const float GAUSSIAN_KERNEL_9X9[9][9] = {
+    {1.0f/65536.0f,   8.0f/65536.0f,  28.0f/65536.0f,  56.0f/65536.0f,  70.0f/65536.0f,  56.0f/65536.0f,  28.0f/65536.0f,   8.0f/65536.0f, 1.0f/65536.0f},
+    {8.0f/65536.0f,  64.0f/65536.0f, 224.0f/65536.0f, 448.0f/65536.0f, 560.0f/65536.0f, 448.0f/65536.0f, 224.0f/65536.0f,  64.0f/65536.0f, 8.0f/65536.0f},
+    {28.0f/65536.0f,224.0f/65536.0f, 784.0f/65536.0f,1568.0f/65536.0f,1960.0f/65536.0f,1568.0f/65536.0f, 784.0f/65536.0f,224.0f/65536.0f,28.0f/65536.0f},
+    {56.0f/65536.0f,448.0f/65536.0f,1568.0f/65536.0f,3136.0f/65536.0f,3920.0f/65536.0f,3136.0f/65536.0f,1568.0f/65536.0f,448.0f/65536.0f,56.0f/65536.0f},
+    {70.0f/65536.0f,560.0f/65536.0f,1960.0f/65536.0f,3920.0f/65536.0f,4900.0f/65536.0f,3920.0f/65536.0f,1960.0f/65536.0f,560.0f/65536.0f,70.0f/65536.0f},
+    {56.0f/65536.0f,448.0f/65536.0f,1568.0f/65536.0f,3136.0f/65536.0f,3920.0f/65536.0f,3136.0f/65536.0f,1568.0f/65536.0f,448.0f/65536.0f,56.0f/65536.0f},
+    {28.0f/65536.0f,224.0f/65536.0f, 784.0f/65536.0f,1568.0f/65536.0f,1960.0f/65536.0f,1568.0f/65536.0f, 784.0f/65536.0f,224.0f/65536.0f,28.0f/65536.0f},
+    {8.0f/65536.0f,  64.0f/65536.0f, 224.0f/65536.0f, 448.0f/65536.0f, 560.0f/65536.0f, 448.0f/65536.0f, 224.0f/65536.0f,  64.0f/65536.0f, 8.0f/65536.0f},
+    {1.0f/65536.0f,   8.0f/65536.0f,  28.0f/65536.0f,  56.0f/65536.0f,  70.0f/65536.0f,  56.0f/65536.0f,  28.0f/65536.0f,   8.0f/65536.0f, 1.0f/65536.0f}
+};
+
+const float GAUSSIAN_KERNEL_11X11[11][11] = {
+    {1.0f/1048576.0f,    10.0f/1048576.0f,    45.0f/1048576.0f,   120.0f/1048576.0f,   210.0f/1048576.0f,   252.0f/1048576.0f,   210.0f/1048576.0f,   120.0f/1048576.0f,    45.0f/1048576.0f,    10.0f/1048576.0f, 1.0f/1048576.0f},
+    {10.0f/1048576.0f,  100.0f/1048576.0f,   450.0f/1048576.0f,  1200.0f/1048576.0f,  2100.0f/1048576.0f,  2520.0f/1048576.0f,  2100.0f/1048576.0f,  1200.0f/1048576.0f,   450.0f/1048576.0f,   100.0f/1048576.0f,10.0f/1048576.0f},
+    {45.0f/1048576.0f,  450.0f/1048576.0f,  2025.0f/1048576.0f,  5400.0f/1048576.0f,  9450.0f/1048576.0f, 11340.0f/1048576.0f,  9450.0f/1048576.0f,  5400.0f/1048576.0f,  2025.0f/1048576.0f,   450.0f/1048576.0f,45.0f/1048576.0f},
+    {120.0f/1048576.0f,1200.0f/1048576.0f,  5400.0f/1048576.0f, 14400.0f/1048576.0f, 25200.0f/1048576.0f, 30240.0f/1048576.0f, 25200.0f/1048576.0f, 14400.0f/1048576.0f,  5400.0f/1048576.0f,  1200.0f/1048576.0f,120.0f/1048576.0f},
+    {210.0f/1048576.0f,2100.0f/1048576.0f,  9450.0f/1048576.0f, 25200.0f/1048576.0f, 44100.0f/1048576.0f, 52920.0f/1048576.0f, 44100.0f/1048576.0f, 25200.0f/1048576.0f,  9450.0f/1048576.0f,  2100.0f/1048576.0f,210.0f/1048576.0f},
+    {252.0f/1048576.0f,2520.0f/1048576.0f, 11340.0f/1048576.0f, 30240.0f/1048576.0f, 52920.0f/1048576.0f, 63504.0f/1048576.0f, 52920.0f/1048576.0f, 30240.0f/1048576.0f, 11340.0f/1048576.0f,  2520.0f/1048576.0f,252.0f/1048576.0f},
+    {210.0f/1048576.0f,2100.0f/1048576.0f,  9450.0f/1048576.0f, 25200.0f/1048576.0f, 44100.0f/1048576.0f, 52920.0f/1048576.0f, 44100.0f/1048576.0f, 25200.0f/1048576.0f,  9450.0f/1048576.0f,  2100.0f/1048576.0f,210.0f/1048576.0f},
+    {120.0f/1048576.0f,1200.0f/1048576.0f,  5400.0f/1048576.0f, 14400.0f/1048576.0f, 25200.0f/1048576.0f, 30240.0f/1048576.0f, 25200.0f/1048576.0f, 14400.0f/1048576.0f,  5400.0f/1048576.0f,  1200.0f/1048576.0f,120.0f/1048576.0f},
+    {45.0f/1048576.0f,  450.0f/1048576.0f,  2025.0f/1048576.0f,  5400.0f/1048576.0f,  9450.0f/1048576.0f, 11340.0f/1048576.0f,  9450.0f/1048576.0f,  5400.0f/1048576.0f,  2025.0f/1048576.0f,   450.0f/1048576.0f,45.0f/1048576.0f},
+    {10.0f/1048576.0f,  100.0f/1048576.0f,   450.0f/1048576.0f,  1200.0f/1048576.0f,  2100.0f/1048576.0f,  2520.0f/1048576.0f,  2100.0f/1048576.0f,  1200.0f/1048576.0f,   450.0f/1048576.0f,   100.0f/1048576.0f,10.0f/1048576.0f},
+    {1.0f/1048576.0f,    10.0f/1048576.0f,    45.0f/1048576.0f,   120.0f/1048576.0f,   210.0f/1048576.0f,   252.0f/1048576.0f,   210.0f/1048576.0f,   120.0f/1048576.0f,    45.0f/1048576.0f,    10.0f/1048576.0f, 1.0f/1048576.0f}
+};
 
 inline unsigned char clamp_value(float value) {
     return (unsigned char) std::max(0, std::min(255, (int)std::round(value)));
@@ -248,6 +300,232 @@ static CONVOLUTION_ALWAYS_INLINE void apply_11_by_11_convolution_to_pixel(
     destination[2] = clamp_value(sum_b + offset);
 }
 
+static CONVOLUTION_ALWAYS_INLINE void apply_gaussian_3_by_3_to_border_pixel(
+    const ImageState& img,
+    int x,
+    int y,
+    unsigned char* destination
+) {
+    float sum_r = 0.0f;
+    float sum_g = 0.0f;
+    float sum_b = 0.0f;
+    float weight_sum = 0.0f;
+
+    const int first_k = std::max(-1, y - (img.height - 1));
+    const int last_k = std::min(1, y);
+    const int first_l = std::max(-1, x - (img.width - 1));
+    const int last_l = std::min(1, x);
+    for (int k = first_k; k <= last_k; ++k) {
+        for (int l = first_l; l <= last_l; ++l) {
+            const int source_index = ((y - k) * img.width + (x - l)) * 3;
+            const float weight = GAUSSIAN_KERNEL_3X3[1 + k][1 + l];
+            weight_sum += weight;
+            sum_r += weight * img.data[source_index];
+            sum_g += weight * img.data[source_index + 1];
+            sum_b += weight * img.data[source_index + 2];
+        }
+    }
+
+    destination[0] = clamp_value(sum_r / weight_sum);
+    destination[1] = clamp_value(sum_g / weight_sum);
+    destination[2] = clamp_value(sum_b / weight_sum);
+}
+
+static CONVOLUTION_ALWAYS_INLINE void apply_gaussian_5_by_5_to_border_pixel(
+    const ImageState& img,
+    int x,
+    int y,
+    unsigned char* destination
+) {
+    float sum_r = 0.0f;
+    float sum_g = 0.0f;
+    float sum_b = 0.0f;
+    float weight_sum = 0.0f;
+
+    const int first_k = std::max(-2, y - (img.height - 1));
+    const int last_k = std::min(2, y);
+    const int first_l = std::max(-2, x - (img.width - 1));
+    const int last_l = std::min(2, x);
+    for (int k = first_k; k <= last_k; ++k) {
+        for (int l = first_l; l <= last_l; ++l) {
+            const int source_index = ((y - k) * img.width + (x - l)) * 3;
+            const float weight = GAUSSIAN_KERNEL_5X5[2 + k][2 + l];
+            weight_sum += weight;
+            sum_r += weight * img.data[source_index];
+            sum_g += weight * img.data[source_index + 1];
+            sum_b += weight * img.data[source_index + 2];
+        }
+    }
+
+    destination[0] = clamp_value(sum_r / weight_sum);
+    destination[1] = clamp_value(sum_g / weight_sum);
+    destination[2] = clamp_value(sum_b / weight_sum);
+}
+
+static CONVOLUTION_ALWAYS_INLINE void apply_gaussian_7_by_7_to_border_pixel(
+    const ImageState& img,
+    int x,
+    int y,
+    unsigned char* destination
+) {
+    float sum_r = 0.0f;
+    float sum_g = 0.0f;
+    float sum_b = 0.0f;
+    float weight_sum = 0.0f;
+
+    const int first_k = std::max(-3, y - (img.height - 1));
+    const int last_k = std::min(3, y);
+    const int first_l = std::max(-3, x - (img.width - 1));
+    const int last_l = std::min(3, x);
+    for (int k = first_k; k <= last_k; ++k) {
+        for (int l = first_l; l <= last_l; ++l) {
+            const int source_index = ((y - k) * img.width + (x - l)) * 3;
+            const float weight = GAUSSIAN_KERNEL_7X7[3 + k][3 + l];
+            weight_sum += weight;
+            sum_r += weight * img.data[source_index];
+            sum_g += weight * img.data[source_index + 1];
+            sum_b += weight * img.data[source_index + 2];
+        }
+    }
+
+    destination[0] = clamp_value(sum_r / weight_sum);
+    destination[1] = clamp_value(sum_g / weight_sum);
+    destination[2] = clamp_value(sum_b / weight_sum);
+}
+
+static CONVOLUTION_ALWAYS_INLINE void apply_gaussian_9_by_9_to_border_pixel(
+    const ImageState& img,
+    int x,
+    int y,
+    unsigned char* destination
+) {
+    float sum_r = 0.0f;
+    float sum_g = 0.0f;
+    float sum_b = 0.0f;
+    float weight_sum = 0.0f;
+
+    const int first_k = std::max(-4, y - (img.height - 1));
+    const int last_k = std::min(4, y);
+    const int first_l = std::max(-4, x - (img.width - 1));
+    const int last_l = std::min(4, x);
+    for (int k = first_k; k <= last_k; ++k) {
+        for (int l = first_l; l <= last_l; ++l) {
+            const int source_index = ((y - k) * img.width + (x - l)) * 3;
+            const float weight = GAUSSIAN_KERNEL_9X9[4 + k][4 + l];
+            weight_sum += weight;
+            sum_r += weight * img.data[source_index];
+            sum_g += weight * img.data[source_index + 1];
+            sum_b += weight * img.data[source_index + 2];
+        }
+    }
+
+    destination[0] = clamp_value(sum_r / weight_sum);
+    destination[1] = clamp_value(sum_g / weight_sum);
+    destination[2] = clamp_value(sum_b / weight_sum);
+}
+
+static CONVOLUTION_ALWAYS_INLINE void apply_gaussian_11_by_11_to_border_pixel(
+    const ImageState& img,
+    int x,
+    int y,
+    unsigned char* destination
+) {
+    float sum_r = 0.0f;
+    float sum_g = 0.0f;
+    float sum_b = 0.0f;
+    float weight_sum = 0.0f;
+
+    const int first_k = std::max(-5, y - (img.height - 1));
+    const int last_k = std::min(5, y);
+    const int first_l = std::max(-5, x - (img.width - 1));
+    const int last_l = std::min(5, x);
+    for (int k = first_k; k <= last_k; ++k) {
+        for (int l = first_l; l <= last_l; ++l) {
+            const int source_index = ((y - k) * img.width + (x - l)) * 3;
+            const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+            weight_sum += weight;
+            sum_r += weight * img.data[source_index];
+            sum_g += weight * img.data[source_index + 1];
+            sum_b += weight * img.data[source_index + 2];
+        }
+    }
+
+    destination[0] = clamp_value(sum_r / weight_sum);
+    destination[1] = clamp_value(sum_g / weight_sum);
+    destination[2] = clamp_value(sum_b / weight_sum);
+}
+
+static CONVOLUTION_ALWAYS_INLINE int sobel_vertical_average(
+    const ImageState& image,
+    int x,
+    int y,
+    int channel
+) {
+    int weighted_sum = 0;
+    int weight_sum = 0;
+    for (int offset = -1; offset <= 1; ++offset) {
+        const int sample_y = y + offset;
+        if (sample_y < 0 || sample_y >= image.height) {
+            continue;
+        }
+
+        const int weight = offset == 0 ? 2 : 1;
+        weighted_sum += weight * image.data[(sample_y * image.width + x) * 3 + channel];
+        weight_sum += weight;
+    }
+
+    return (weighted_sum + weight_sum / 2) / weight_sum;
+}
+
+static CONVOLUTION_ALWAYS_INLINE int sobel_horizontal_average(
+    const ImageState& image,
+    int x,
+    int y,
+    int channel
+) {
+    int weighted_sum = 0;
+    int weight_sum = 0;
+    for (int offset = -1; offset <= 1; ++offset) {
+        const int sample_x = x + offset;
+        if (sample_x < 0 || sample_x >= image.width) {
+            continue;
+        }
+
+        const int weight = offset == 0 ? 2 : 1;
+        weighted_sum += weight * image.data[(y * image.width + sample_x) * 3 + channel];
+        weight_sum += weight;
+    }
+
+    return (weighted_sum + weight_sum / 2) / weight_sum;
+}
+
+static CONVOLUTION_ALWAYS_INLINE unsigned char compute_sobel_detail_at_pixel(
+    const ImageState& image,
+    int x,
+    int y
+) {
+    const int left_x = x > 0 ? x - 1 : x;
+    const int right_x = x + 1 < image.width ? x + 1 : x;
+    const int top_y = y > 0 ? y - 1 : y;
+    const int bottom_y = y + 1 < image.height ? y + 1 : y;
+
+    int detail = 0;
+    for (int channel = 0; channel < 3; ++channel) {
+        const int left = sobel_vertical_average(image, left_x, y, channel);
+        const int right = sobel_vertical_average(image, right_x, y, channel);
+        const int top = sobel_horizontal_average(image, x, top_y, channel);
+        const int bottom = sobel_horizontal_average(image, x, bottom_y, channel);
+
+        const int gradient_x = std::abs(right - left);
+        const int gradient_y = std::abs(bottom - top);
+        const int larger = std::max(gradient_x, gradient_y);
+        const int smaller = std::min(gradient_x, gradient_y);
+        detail = std::max(detail, std::min(255, larger + smaller / 2));
+    }
+
+    return static_cast<unsigned char>(detail);
+}
+
 #undef CONVOLUTION_ALWAYS_INLINE
 
 bool apply_3_by_3_convolution(ImageState& img, const float kernel[3][3], bool clamp_offset, bool single_channel) {
@@ -414,6 +692,193 @@ bool apply_11_by_11_convolution(ImageState& img, const float kernel[11][11], boo
     img.data = new_img_data;
     img.height = new_height;
     img.width = new_width;
+    return true;
+}
+
+static bool get_safe_pixel_count(const ImageState& image, size_t& pixel_count) {
+    if (!image.data || image.width <= 0 || image.height <= 0) {
+        return false;
+    }
+
+    const size_t width = static_cast<size_t>(image.width);
+    const size_t height = static_cast<size_t>(image.height);
+    if (height > std::numeric_limits<size_t>::max() / width) {
+        return false;
+    }
+
+    pixel_count = width * height;
+    return pixel_count <= static_cast<size_t>(std::numeric_limits<int>::max()) / 3;
+}
+
+bool compute_sobel_detail_map(
+    const ImageState& image,
+    std::vector<unsigned char>& detail_map
+) {
+    size_t pixel_count = 0;
+    if (!get_safe_pixel_count(image, pixel_count) || pixel_count > detail_map.max_size()) {
+        detail_map.clear();
+        fprintf(stderr, "Imagem inválida ou grande demais para calcular o mapa de detalhes!\n");
+        return false;
+    }
+
+    try {
+        detail_map.assign(pixel_count, 0);
+    }
+    catch (const std::bad_alloc&) {
+        detail_map.clear();
+        fprintf(stderr, "Falha ao alocar memória para o mapa de detalhes!\n");
+        return false;
+    }
+
+    // Sobel's [1, 2, 1] perpendicular smoothing is normalized before the
+    // horizontal/vertical differences are combined, keeping scores in bytes.
+    for (int y = 0; y < image.height; ++y) {
+        for (int x = 0; x < image.width; ++x) {
+            detail_map[static_cast<size_t>(y) * image.width + x] =
+                compute_sobel_detail_at_pixel(image, x, y);
+        }
+    }
+
+    return true;
+}
+
+static unsigned char nearest_rank_percentile(
+    const std::array<size_t, 256>& histogram,
+    size_t value_count,
+    unsigned int percentile
+) {
+    const size_t target_rank =
+        (value_count / 100) * percentile
+        + ((value_count % 100) * percentile + 99) / 100;
+
+    size_t cumulative_count = 0;
+    for (size_t value = 0; value < histogram.size(); ++value) {
+        cumulative_count += histogram[value];
+        if (cumulative_count >= target_rank) {
+            return static_cast<unsigned char>(value);
+        }
+    }
+
+    return 255;
+}
+
+bool apply_varying_window_gaussian_denoising(ImageState& image) {
+    size_t pixel_count = 0;
+    if (!get_safe_pixel_count(image, pixel_count)) {
+        fprintf(stderr, "Imagem inválida ou grande demais para realizar denoising adaptativo!\n");
+        return false;
+    }
+
+    std::vector<unsigned char> detail_map;
+    if (!compute_sobel_detail_map(image, detail_map)) {
+        return false;
+    }
+
+    std::array<size_t, 256> histogram{};
+    for (unsigned char detail : detail_map) {
+        ++histogram[detail];
+    }
+
+    const unsigned char percentile_20 = nearest_rank_percentile(histogram, pixel_count, 20);
+    const unsigned char percentile_40 = nearest_rank_percentile(histogram, pixel_count, 40);
+    const unsigned char percentile_60 = nearest_rank_percentile(histogram, pixel_count, 60);
+    const unsigned char percentile_80 = nearest_rank_percentile(histogram, pixel_count, 80);
+
+    unsigned char* new_image_data = static_cast<unsigned char*>(malloc(pixel_count * 3));
+    if (!new_image_data) {
+        fprintf(stderr, "Falha ao alocar memória para denoising adaptativo!\n");
+        return false;
+    }
+
+    for (int y = 0; y < image.height; ++y) {
+        for (int x = 0; x < image.width; ++x) {
+            const size_t pixel_index = static_cast<size_t>(y) * image.width + x;
+            unsigned char* destination = new_image_data + pixel_index * 3;
+            const unsigned char detail = detail_map[pixel_index];
+
+            int kernel_size;
+            if (detail <= percentile_20) {
+                kernel_size = 11;
+            }
+            else if (detail <= percentile_40) {
+                kernel_size = 9;
+            }
+            else if (detail <= percentile_60) {
+                kernel_size = 7;
+            }
+            else if (detail <= percentile_80) {
+                kernel_size = 5;
+            }
+            else {
+                kernel_size = 3;
+            }
+
+            const int radius = kernel_size / 2;
+            const bool kernel_fits =
+                x >= radius && x < image.width - radius
+                && y >= radius && y < image.height - radius;
+
+            switch (kernel_size) {
+                case 3:
+                    if (kernel_fits) {
+                        apply_3_by_3_convolution_to_pixel(
+                            image, x, y, GAUSSIAN_KERNEL_3X3, false, false, destination
+                        );
+                    }
+                    else {
+                        apply_gaussian_3_by_3_to_border_pixel(image, x, y, destination);
+                    }
+                    break;
+
+                case 5:
+                    if (kernel_fits) {
+                        apply_5_by_5_convolution_to_pixel(
+                            image, x, y, GAUSSIAN_KERNEL_5X5, false, false, destination
+                        );
+                    }
+                    else {
+                        apply_gaussian_5_by_5_to_border_pixel(image, x, y, destination);
+                    }
+                    break;
+
+                case 7:
+                    if (kernel_fits) {
+                        apply_7_by_7_convolution_to_pixel(
+                            image, x, y, GAUSSIAN_KERNEL_7X7, false, false, destination
+                        );
+                    }
+                    else {
+                        apply_gaussian_7_by_7_to_border_pixel(image, x, y, destination);
+                    }
+                    break;
+
+                case 9:
+                    if (kernel_fits) {
+                        apply_9_by_9_convolution_to_pixel(
+                            image, x, y, GAUSSIAN_KERNEL_9X9, false, false, destination
+                        );
+                    }
+                    else {
+                        apply_gaussian_9_by_9_to_border_pixel(image, x, y, destination);
+                    }
+                    break;
+
+                case 11:
+                    if (kernel_fits) {
+                        apply_11_by_11_convolution_to_pixel(
+                            image, x, y, GAUSSIAN_KERNEL_11X11, false, false, destination
+                        );
+                    }
+                    else {
+                        apply_gaussian_11_by_11_to_border_pixel(image, x, y, destination);
+                    }
+                    break;
+            }
+        }
+    }
+
+    free(image.data);
+    image.data = new_image_data;
     return true;
 }
 

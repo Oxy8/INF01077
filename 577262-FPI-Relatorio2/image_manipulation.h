@@ -1,4 +1,5 @@
 #include <array>
+#include <vector>
 
 // Estrutura para armazenar estado da imagem atual
 struct ImageState {
@@ -39,6 +40,14 @@ bool apply_5_by_5_convolution(ImageState& img, const float kernel[5][5], bool cl
 bool apply_7_by_7_convolution(ImageState& img, const float kernel[7][7], bool clamp_offset, bool single_channel);
 bool apply_9_by_9_convolution(ImageState& img, const float kernel[9][9], bool clamp_offset, bool single_channel);
 bool apply_11_by_11_convolution(ImageState& img, const float kernel[11][11], bool clamp_offset, bool single_channel);
+bool compute_sobel_detail_map(const ImageState& image, std::vector<unsigned char>& detail_map);
+bool apply_varying_window_gaussian_denoising(ImageState& image);
+
+extern const float GAUSSIAN_KERNEL_3X3[3][3];
+extern const float GAUSSIAN_KERNEL_5X5[5][5];
+extern const float GAUSSIAN_KERNEL_7X7[7][7];
+extern const float GAUSSIAN_KERNEL_9X9[9][9];
+extern const float GAUSSIAN_KERNEL_11X11[11][11];
 inline unsigned char clamp_value(float value);
 
 
