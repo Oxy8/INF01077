@@ -9,6 +9,12 @@
 #include <system_error>
 #include <vector>
 
+#include <chrono>
+#include <fstream>
+#include <iostream>
+#include <omp.h> // Para ler o número de threads
+
+
 namespace fs = std::filesystem;
 
 // Parâmetros usados pelas transformações configuráveis.
@@ -180,6 +186,15 @@ static constexpr Transformation TRANSFORMATIONS[] = {
     TRANSFORM_VARYING_WINDOW_GAUSSIAN_DENOISING,
 };
 
+// Array paralelo com os nomes para salvar no CSV
+static const char* TRANSFORMATION_NAMES[] = {
+    "Grayscale", "Flip_Horizontal", "Adjust_Brightness", "Flip_Vertical",
+    "Quantize", "Adjust_Contrast", "Negative", "Equalize_Histogram",
+    "Zoom_In", "Zoom_Out", "Rotate_CW", "Rotate_CCW",
+    "Gaussian_3x3", "Gaussian_5x5", "Gaussian_7x7", "Gaussian_9x9", "Gaussian_11x11",
+    "Adaptive_Median"
+};
+
 bool has_supported_extension(const fs::path& path) {
     std::string extension = path.extension().string();
     std::transform(extension.begin(), extension.end(), extension.begin(),
@@ -199,7 +214,7 @@ bool has_supported_extension(const fs::path& path) {
     ) != supported_extensions.end();
 }
 
-bool process_image(const fs::path& path) {
+bool process_image(const fs::path& path, std::ofstream& csv_file) {
     ImageState image{};
     const std::string filename = path.string();
 
@@ -208,19 +223,45 @@ bool process_image(const fs::path& path) {
         return false;
     }
 
-    for (Transformation transformation : TRANSFORMATIONS) {
-        if (!transformation(image)) {
+
+
+    // Pega o número máximo de threads que o OpenMP está autorizado a usar
+    int num_threads = omp_get_max_threads();
+    
+    // Escreve a identificação no CSV
+    csv_file << path.filename().string() << "," << num_threads;
+    printf("Imagem: %-25s | Threads: %2d\n", path.filename().string().c_str(), num_threads);
+    printf("Resolucao real: %dx%d (%d pixels)\n", image.width, image.height, image.width * image.height);
+
+    double total_time_ms = 0.0;
+
+    for (size_t i = 0; i < std::size(TRANSFORMATIONS); ++i) {
+        auto start = std::chrono::high_resolution_clock::now();
+        
+        if (!TRANSFORMATIONS[i](image)) {
             fprintf(stderr, "Erro ao processar a imagem: %s\n", filename.c_str());
             free(image.data);
             return false;
         }
+
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::milli> ms = end - start;
+        
+        // Salva o tempo dessa transformação específica no CSV e soma ao total
+        csv_file << "," << ms.count();
+        total_time_ms += ms.count();
     }
+
+    // Salva o tempo total na última coluna e pula linha
+    csv_file << "," << total_time_ms << "\n";
+    printf(" -> Tempo total: %.2f ms\n", total_time_ms);
 
     free(image.data);
     return true;
 }
 
-int process_folder(const fs::path& folder) {
+
+int process_folder(const fs::path& folder, std::ofstream& csv_file) {
     std::error_code error;
     if (!fs::is_directory(folder, error)) {
         fprintf(stderr, "Erro: pasta não encontrada: %s\n", folder.string().c_str());
@@ -254,7 +295,8 @@ int process_folder(const fs::path& folder) {
 
     bool all_succeeded = true;
     for (const fs::path& image : images) {
-        if (!process_image(image)) {
+        // Agora passamos o csv_file corretamente para a process_image!
+        if (!process_image(image, csv_file)) {
             all_succeeded = false;
         }
     }
@@ -263,26 +305,51 @@ int process_folder(const fs::path& folder) {
 }
 
 void print_usage(const char* executable) {
-    fprintf(stderr, "Uso: %s --image CAMINHO | --folder CAMINHO\n", executable);
+    fprintf(stderr, "Uso: %s --image CAMINHO [ARQUIVO_CSV] | --folder CAMINHO [ARQUIVO_CSV]\n", executable);
 }
 
 int main(int argc, char** argv) {
-    if (argc != 3) {
+    // Agora aceita 3 ou 4 argumentos (nome_programa, mode, path, [csv_filename])
+    if (argc < 3 || argc > 4) {
         print_usage(argv[0]);
         return 2;
     }
 
     const std::string mode = argv[1];
     const fs::path path = argv[2];
+    
+    // Se o usuário passou o nome do CSV, usa ele. Senão, usa o padrão.
+    const char* csv_filename = (argc == 4) ? argv[3] : "resultados_benchmark.csv";
 
+    // Prepara o arquivo CSV
+    bool file_exists = fs::exists(csv_filename);
+    
+    // Abre em modo append para não apagar execuções anteriores
+    std::ofstream csv_file(csv_filename, std::ios::app);
+    
+    if (!csv_file.is_open()) {
+        fprintf(stderr, "Erro ao criar o arquivo CSV: %s\n", csv_filename);
+        return 1;
+    }
+
+    // Se o arquivo acabou de ser criado, escrevemos o cabeçalho
+    if (!file_exists) {
+        csv_file << "Image,Num_Threads";
+        for (const char* name : TRANSFORMATION_NAMES) {
+            csv_file << "," << name;
+        }
+        csv_file << ",Total_Time_ms\n";
+    }
+
+    int status = 2;
     if (mode == "--image") {
-        return process_image(path) ? 0 : 1;
+        status = process_image(path, csv_file) ? 0 : 1;
+    } else if (mode == "--folder") {
+        status = process_folder(path, csv_file);
+    } else {
+        print_usage(argv[0]);
     }
 
-    if (mode == "--folder") {
-        return process_folder(path);
-    }
-
-    print_usage(argv[0]);
-    return 2;
+    csv_file.close();
+    return status;
 }

@@ -254,7 +254,7 @@ void on_adjust_contrast(GtkButton*, gpointer entry_contrast){
     const char* text = gtk_editable_get_text(GTK_EDITABLE(entry_contrast));
 
     if(text == NULL || *text == '\0'){
-        printf("Insira um valor de contraste para executar a operação!");
+        printf("Insira um valor de contraste para executar a operação!\n");
         return;
     }
 
@@ -323,6 +323,36 @@ void on_rotate_90_clockise(GtkButton*, gpointer) {
 void on_rotate_90_counterclockise(GtkButton*, gpointer) {
     rotate_90_degrees_counterclockwise(current_image());
     refresh_current_image();
+}
+
+void on_gaussian_5x5(GtkButton*, gpointer) {
+    if (apply_5_by_5_convolution(current_image(), GAUSSIAN_KERNEL_5X5, false, false)) {
+        refresh_current_image();
+    }
+}
+
+void on_gaussian_7x7(GtkButton*, gpointer) {
+    if (apply_7_by_7_convolution(current_image(), GAUSSIAN_KERNEL_7X7, false, false)) {
+        refresh_current_image();
+    }
+}
+
+void on_gaussian_9x9(GtkButton*, gpointer) {
+    if (apply_9_by_9_convolution(current_image(), GAUSSIAN_KERNEL_9X9, false, false)) {
+        refresh_current_image();
+    }
+}
+
+void on_gaussian_11x11(GtkButton*, gpointer) {
+    if (apply_11_by_11_convolution(current_image(), GAUSSIAN_KERNEL_11X11, false, false)) {
+        refresh_current_image();
+    }
+}
+
+void on_varying_window_denoise(GtkButton*, gpointer) {
+    if (apply_varying_window_gaussian_denoising(current_image())) {
+        refresh_current_image();
+    }
 }
 
 void on_hist_matching(GtkButton*, gpointer) {
@@ -746,6 +776,26 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     GtkWidget* btn_rotate_90_counterclockise = gtk_button_new_with_label("Rotacionar 90° Anti-Horário");
     g_signal_connect(btn_rotate_90_counterclockise, "clicked", G_CALLBACK(on_rotate_90_counterclockise), nullptr);
 
+    GtkWidget* btn_gaussian_5x5 = gtk_button_new_with_label("Gaussiano 5x5");
+    g_signal_connect(btn_gaussian_5x5, "clicked", G_CALLBACK(on_gaussian_5x5), nullptr);
+
+    GtkWidget* btn_gaussian_7x7 = gtk_button_new_with_label("Gaussiano 7x7");
+    g_signal_connect(btn_gaussian_7x7, "clicked", G_CALLBACK(on_gaussian_7x7), nullptr);
+
+    GtkWidget* btn_gaussian_9x9 = gtk_button_new_with_label("Gaussiano 9x9");
+    g_signal_connect(btn_gaussian_9x9, "clicked", G_CALLBACK(on_gaussian_9x9), nullptr);
+
+    GtkWidget* btn_gaussian_11x11 = gtk_button_new_with_label("Gaussiano 11x11");
+    g_signal_connect(btn_gaussian_11x11, "clicked", G_CALLBACK(on_gaussian_11x11), nullptr);
+
+    GtkWidget* btn_varying_window_denoise = gtk_button_new_with_label("Denoising Adaptativo");
+    g_signal_connect(
+        btn_varying_window_denoise,
+        "clicked",
+        G_CALLBACK(on_varying_window_denoise),
+        nullptr
+    );
+
 
     GtkWidget* spin_brightness = gtk_spin_button_new_with_range(-255, 255, 1);
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(spin_brightness), 127);
@@ -790,6 +840,18 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     gtk_box_append(GTK_BOX(hbox_rotate), btn_rotate_90_clockise);
     gtk_box_append(GTK_BOX(hbox_rotate), btn_rotate_90_counterclockise);
     gtk_box_append(GTK_BOX(box), hbox_rotate);
+
+    GtkWidget* hbox_gaussian_1 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+    gtk_box_append(GTK_BOX(hbox_gaussian_1), btn_gaussian_5x5);
+    gtk_box_append(GTK_BOX(hbox_gaussian_1), btn_gaussian_7x7);
+    gtk_box_append(GTK_BOX(box), hbox_gaussian_1);
+
+    GtkWidget* hbox_gaussian_2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
+    gtk_box_append(GTK_BOX(hbox_gaussian_2), btn_gaussian_9x9);
+    gtk_box_append(GTK_BOX(hbox_gaussian_2), btn_gaussian_11x11);
+    gtk_box_append(GTK_BOX(box), hbox_gaussian_2);
+
+    gtk_box_append(GTK_BOX(box), btn_varying_window_denoise);
 
     GtkWidget* hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 5);
     gtk_box_append(GTK_BOX(hbox), spin);

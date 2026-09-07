@@ -20,6 +20,9 @@ GTK_LIBS = $(shell $(PKG_CONFIG) --libs gtk4 2>/dev/null)
 CPPFLAGS += -I$(PROJECT_DIR)
 CXXFLAGS ?= -O2 -Wall -Wextra
 CXXFLAGS += -std=c++17
+OPENMP_FLAGS ?= -fopenmp
+CXXFLAGS += $(OPENMP_FLAGS)
+LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
 
 .PHONY: all gui check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
@@ -66,19 +69,21 @@ $(BUILD_DIR):
 run: $(GUI_TARGET)
 	@$(GUI_TARGET)
 
+CSV ?= resultados_benchmark.csv
+
 run-benchmark-image: $(BENCHMARK_TARGET)
 	@if [[ -z "$(strip $(IMAGE))" ]]; then \
 		echo 'Erro: informe uma imagem com IMAGE="caminho/para/imagem".' >&2; \
 		exit 2; \
 	fi
-	@$(BENCHMARK_TARGET) --image "$(IMAGE)"
+	@$(BENCHMARK_TARGET) --image "$(IMAGE)" "$(CSV)"
 
 run-benchmark-folder: $(BENCHMARK_TARGET)
 	@if [[ -z "$(strip $(FOLDER))" ]]; then \
 		echo 'Erro: informe uma pasta com FOLDER="caminho/para/imagens".' >&2; \
 		exit 2; \
 	fi
-	@$(BENCHMARK_TARGET) --folder "$(FOLDER)"
+	@$(BENCHMARK_TARGET) --folder "$(FOLDER)" "$(CSV)"
 
 clean:
 	rm -rf -- "$(BUILD_DIR)"
