@@ -134,6 +134,10 @@ bool transform_gaussian_convolution_11x11(ImageState& image) {
     );
 }
 
+bool transform_varying_window_gaussian_denoising(ImageState& image) {
+    return apply_varying_window_gaussian_denoising(image);
+}
+
 // Nomes que podem ser usados para montar a lista abaixo.
 #define TRANSFORM_GRAYSCALE transform_grayscale
 #define TRANSFORM_FLIP_HORIZONTAL transform_flip_horizontal
@@ -152,6 +156,7 @@ bool transform_gaussian_convolution_11x11(ImageState& image) {
 #define TRANSFORM_GAUSSIAN_CONVOLUTION_7X7 transform_gaussian_convolution_7x7
 #define TRANSFORM_GAUSSIAN_CONVOLUTION_9X9 transform_gaussian_convolution_9x9
 #define TRANSFORM_GAUSSIAN_CONVOLUTION_11X11 transform_gaussian_convolution_11x11
+#define TRANSFORM_VARYING_WINDOW_GAUSSIAN_DENOISING transform_varying_window_gaussian_denoising
 
 // Edite esta lista para mudar quais transformações são executadas e a ordem.
 static constexpr Transformation TRANSFORMATIONS[] = {
@@ -172,6 +177,7 @@ static constexpr Transformation TRANSFORMATIONS[] = {
     TRANSFORM_GAUSSIAN_CONVOLUTION_7X7,
     TRANSFORM_GAUSSIAN_CONVOLUTION_9X9,
     TRANSFORM_GAUSSIAN_CONVOLUTION_11X11,
+    TRANSFORM_VARYING_WINDOW_GAUSSIAN_DENOISING,
 };
 
 bool has_supported_extension(const fs::path& path) {
