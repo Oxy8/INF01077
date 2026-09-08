@@ -1,22 +1,38 @@
 #!/bin/bash
 
-# Garante que o benchmark está compilado e atualizado
+# Garante que o código está atualizado
 make
 
-# Você pode alterar este nome livremente!
-ARQUIVO_SAIDA="teste.csv"
+ARQUIVO_SAIDA="benchmark_escalonamento.csv"
+echo "Iniciando bateria de testes avançada..."
 
-echo "Iniciando bateria de testes. Os dados serão salvos em: $ARQUIVO_SAIDA"
-
-for i in {1..6}
+# Dica do Bash: {1..10} gera a lista de 1 a 10 automaticamente
+for THREADS in {1..10}
 do
-    echo "----------------------------------------"
-    echo "Executando benchmark com $i threads..."
-    
-    # Passamos o número de threads para o OpenMP e o nome do CSV para o Makefile
-    OMP_NUM_THREADS=$i make run-benchmark-folder FOLDER="images" CSV="$ARQUIVO_SAIDA"
+    # Se for apenas 1 thread, roda uma única vez e pula o laço dos chunks
+    if [ "$THREADS" -eq 1 ]; then
+        echo "----------------------------------------"
+        echo "Testando: 1 Thread | Schedule: Sequencial"
+        
+        # Injeta um valor padrão só para o CSV não ficar vazio nessa coluna
+        OMP_NUM_THREADS=1 OMP_SCHEDULE="dynamic,1" \
+        make run-benchmark-folder FOLDER="images" CSV="$ARQUIVO_SAIDA"
+        
+        # Pula direto para THREADS=2, ignorando o for do CHUNK abaixo
+        continue 
+    fi
+
+    # Testa os cenários de chunk size para o dynamic (apenas para 2+ threads)
+    for CHUNK in 1 16 32 64 128 256 512
+    do
+        echo "----------------------------------------"
+        echo "Testando: $THREADS Threads | Schedule: dynamic, $CHUNK"
+        
+        # Injeta as DUAS variáveis de ambiente para o OpenMP
+        OMP_NUM_THREADS=$THREADS OMP_SCHEDULE="dynamic,$CHUNK" \
+        make run-benchmark-folder FOLDER="images" CSV="$ARQUIVO_SAIDA"
+    done
 done
 
 echo "----------------------------------------"
-echo "Todos os testes concluídos com sucesso!"
-echo "Abra '$ARQUIVO_SAIDA' no Excel/Calc ou carregue num script Python para plotar os gráficos!"
+echo "Bateria finalizada! Abra o '$ARQUIVO_SAIDA' para ver o impacto."

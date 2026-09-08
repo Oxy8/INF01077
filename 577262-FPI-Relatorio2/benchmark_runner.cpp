@@ -228,10 +228,16 @@ bool process_image(const fs::path& path, std::ofstream& csv_file) {
     // Pega o número máximo de threads que o OpenMP está autorizado a usar
     int num_threads = omp_get_max_threads();
     
-    // Escreve a identificação no CSV
-    csv_file << path.filename().string() << "," << num_threads;
-    printf("Imagem: %-25s | Threads: %2d\n", path.filename().string().c_str(), num_threads);
-    printf("Resolucao real: %dx%d (%d pixels)\n", image.width, image.height, image.width * image.height);
+    // Tenta ler a variável de ambiente OMP_SCHEDULE injetada pelo Bash
+    const char* env_schedule = std::getenv("OMP_SCHEDULE");
+    std::string schedule_info = env_schedule ? env_schedule : "Padrao";
+    
+    // Escreve a identificação no CSV (agora com a terceira coluna)
+    csv_file << path.filename().string() << "," << num_threads << "," << schedule_info;
+    
+    // Atualiza o print do terminal para você acompanhar visualmente
+    printf("Imagem: %-25s | Threads: %2d | Schedule: %s\n", 
+           path.filename().string().c_str(), num_threads, schedule_info.c_str());
 
     double total_time_ms = 0.0;
 
@@ -334,7 +340,9 @@ int main(int argc, char** argv) {
 
     // Se o arquivo acabou de ser criado, escrevemos o cabeçalho
     if (!file_exists) {
-        csv_file << "Image,Num_Threads";
+        // ADICIONE A COLUNA AQUI:
+        csv_file << "Image,Num_Threads,OMP_Schedule";
+        
         for (const char* name : TRANSFORMATION_NAMES) {
             csv_file << "," << name;
         }
