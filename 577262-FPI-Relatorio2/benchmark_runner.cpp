@@ -8,6 +8,7 @@
 #include <string>
 #include <system_error>
 #include <vector>
+#include <cstring>
 
 #include <chrono>
 #include <fstream>
@@ -223,7 +224,21 @@ bool process_image(const fs::path& path, std::ofstream& csv_file) {
         return false;
     }
 
-
+    // BACKUP DA IMAGEM ORIGINAL
+    // =================================================================
+    int original_width = image.width;
+    int original_height = image.height;
+    size_t data_size = static_cast<size_t>(original_width) * original_height * 3;
+    
+    unsigned char* original_data = (unsigned char*)malloc(data_size);
+    if (!original_data) {
+        fprintf(stderr, "Erro ao alocar memória para o backup da imagem!\n");
+        free(image.data);
+        free(original_data);
+        return false;
+    }
+    memcpy(original_data, image.data, data_size);
+    // =================================================================
 
     // Pega o número máximo de threads que o OpenMP está autorizado a usar
     int num_threads = omp_get_max_threads();
@@ -239,23 +254,36 @@ bool process_image(const fs::path& path, std::ofstream& csv_file) {
     printf("Imagem: %-25s | Threads: %2d | Schedule: %s\n", 
            path.filename().string().c_str(), num_threads, schedule_info.c_str());
 
+    // Lê a chave para saber se devemos pular os estáticos
+    const char* env_only_adaptive = std::getenv("ONLY_ADAPTIVE");
+    bool only_adaptive = env_only_adaptive && std::string(env_only_adaptive) == "1";
+
     double total_time_ms = 0.0;
 
     for (size_t i = 0; i < std::size(TRANSFORMATIONS); ++i) {
-        auto start = std::chrono::high_resolution_clock::now();
-        
-        if (!TRANSFORMATIONS[i](image)) {
-            fprintf(stderr, "Erro ao processar a imagem: %s\n", filename.c_str());
-            free(image.data);
-            return false;
-        }
+        double ms_count = 0.0;
 
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::milli> ms = end - start;
+        if (only_adaptive && TRANSFORMATIONS[i] != transform_varying_window_gaussian_denoising) {
+            // Pula a operação, mantendo o tempo em 0.0 para não quebrar o CSV
+        } else {
+
+            reset(image, original_data, original_width, original_height);
+
+            auto start = std::chrono::high_resolution_clock::now();
+            
+            if (!TRANSFORMATIONS[i](image)) {
+                fprintf(stderr, "Erro ao processar a imagem: %s\n", filename.c_str());
+                free(image.data);
+                return false;
+            }
+
+            auto end = std::chrono::high_resolution_clock::now();
+            ms_count = std::chrono::duration<double, std::milli>(end - start).count();
+        }
         
-        // Salva o tempo dessa transformação específica no CSV e soma ao total
-        csv_file << "," << ms.count();
-        total_time_ms += ms.count();
+        // Salva o tempo (real ou 0.0) no CSV
+        csv_file << "," << ms_count;
+        total_time_ms += ms_count;
     }
 
     // Salva o tempo total na última coluna e pula linha
