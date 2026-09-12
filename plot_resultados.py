@@ -55,7 +55,7 @@ df_pipeline_completa = df[df['Grayscale'] > 0].copy()
 NUM_THREADS_MAX = df['Num_Threads'].max()
 df_max_threads = df[df['Num_Threads'] == NUM_THREADS_MAX].copy()
 
-ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 16, 32, 64, 128, 256, 512]]
+ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 2, 4, 8, 16, 32, 64, 128]]
 ordem_presente = [s for s in ordem_schedules if s in df_max_threads['OMP_Schedule'].unique()]
 
 # ==============================================================================
@@ -189,7 +189,7 @@ for img in imagens_unicas:
     plt.xlabel('Tamanho do Chunk (Escala Log)', fontsize=12)
     plt.ylabel('Tempo (ms)', fontsize=12)
     plt.xscale('log') 
-    plt.xticks([1, 16, 32, 64, 128, 256, 512], ['1', '16', '32', '64', '128', '256', '512'])
+    plt.xticks([1, 2, 4, 8, 16, 32, 64, 128], ['1', '2', '4', '8', '16', '32', '64', '128'])
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
     plt.tight_layout()
