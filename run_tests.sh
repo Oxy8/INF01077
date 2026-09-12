@@ -8,7 +8,7 @@ ARQUIVO_SAIDA="benchmark_escalonamento.csv"
 # Remove o arquivo anterior para a nova bateria estatística começar limpa
 rm -f "$ARQUIVO_SAIDA"
 
-NUM_REPETICOES=20
+NUM_REPETICOES=5
 
 echo "Iniciando bateria de testes estatísticos com $NUM_REPETICOES rodadas..."
 
@@ -19,7 +19,7 @@ do
     echo "       RODADA $RUN DE $NUM_REPETICOES       "
     echo "========================================"
 
-    for THREADS in {1..10}
+    for THREADS in {1..12}
     do
         if [ "$THREADS" -eq 1 ]; then
             echo "----------------------------------------"
@@ -43,7 +43,7 @@ do
         make run-benchmark-folder FOLDER="images" CSV="$ARQUIVO_SAIDA"
 
         # Testes das variações do dynamic
-        for CHUNK in 1 32 64 128 256
+        for CHUNK in 1 2 4 8 32 64 128
         do
             echo "Testando: $THREADS Threads | APENAS Adaptativo | Schedule: dynamic, $CHUNK"
             
