@@ -55,8 +55,7 @@ df_pipeline_completa = df[df['Grayscale'] > 0].copy()
 NUM_THREADS_MAX = df['Num_Threads'].max()
 df_max_threads = df[df['Num_Threads'] == NUM_THREADS_MAX].copy()
 
-# Ordena os schedules de forma lógica
-ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 2, 4, 8, 16, 32, 64, 128]]
+ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 16, 32, 64, 128, 256, 512]]
 ordem_presente = [s for s in ordem_schedules if s in df_max_threads['OMP_Schedule'].unique()]
 
 # ==============================================================================
@@ -64,16 +63,32 @@ ordem_presente = [s for s in ordem_schedules if s in df_max_threads['OMP_Schedul
 # ==============================================================================
 print("Calculando estatísticas e exportando tabelas...")
 
-# Tabela 1: Média e Desvio Padrão separados por Imagem e Schedule
+# Tabela 1 e 2: Tempos Brutos
 tabela_detalhada = df_max_threads.groupby(['Image', 'OMP_Schedule'])['Adaptive_Median'].agg(['mean', 'std']).reset_index()
 tabela_detalhada.rename(columns={'mean': 'Media_Tempo_ms', 'std': 'Desvio_Padrao_ms'}, inplace=True)
-
-# Tabela 2: Soma total do Dataset por Schedule
-# Calcula quanto tempo levaria para rodar a pasta TODA usando a média de cada imagem
 tabela_total_dataset = tabela_detalhada.groupby('OMP_Schedule')['Media_Tempo_ms'].sum().reset_index()
 tabela_total_dataset.rename(columns={'Media_Tempo_ms': 'Tempo_Total_Dataset_ms'}, inplace=True)
 
-# Salvando os arquivos
+# ------------------------------------------------------------------------------
+# NOVO: 3.2 CÁLCULO DE SPEEDUP E EFICIÊNCIA
+# ------------------------------------------------------------------------------
+# 1. Tira a média de tempo do pipeline completo por imagem e por thread
+df_speedup = df_pipeline_completa.groupby(['Image', 'Num_Threads'])['Total_Time_ms'].mean().reset_index()
+
+# 2. Isola o T1 (Tempo base executando com apenas 1 thread) para cada imagem
+t1_df = df_speedup[df_speedup['Num_Threads'] == 1][['Image', 'Total_Time_ms']].rename(columns={'Total_Time_ms': 'T1_ms'})
+
+# 3. Junta o T1 de volta na tabela geral
+df_speedup = pd.merge(df_speedup, t1_df, on='Image')
+
+# 4. Calcula Speedup (T1 / Tn) e Eficiencia (Speedup / N)
+df_speedup['Speedup'] = df_speedup['T1_ms'] / df_speedup['Total_Time_ms']
+df_speedup['Eficiencia_%'] = (df_speedup['Speedup'] / df_speedup['Num_Threads']) * 100
+
+# Exporta a tabela 3 contendo as métricas pedidas no trabalho
+df_speedup.to_csv(os.path.join(PASTA_RESULTADOS, 'tabela_03_speedup_eficiencia.csv'), index=False, float_format='%.2f')
+
+# Exporta tabelas 1 e 2
 tabela_detalhada.to_csv(os.path.join(PASTA_RESULTADOS, 'tabela_01_detalhada_imagem_schedule.csv'), index=False, float_format='%.2f')
 tabela_total_dataset.to_csv(os.path.join(PASTA_RESULTADOS, 'tabela_02_total_dataset_schedule.csv'), index=False, float_format='%.2f')
 
@@ -82,7 +97,7 @@ tabela_total_dataset.to_csv(os.path.join(PASTA_RESULTADOS, 'tabela_02_total_data
 # ==============================================================================
 print("Gerando gráficos gerais comparativos...")
 
-# 4.1 Tempo Total (Speedup Global)
+# 4.1 Tempo Total 
 plt.figure(figsize=(12, 7))
 sns.lineplot(data=df_pipeline_completa, x='Num_Threads', y='Total_Time_ms', hue='Image', marker='s', errorbar='sd', linewidth=2)
 plt.title('Tempo Total do Pipeline Completo por Número de Threads', fontsize=14, fontweight='bold')
@@ -95,22 +110,55 @@ plt.tight_layout()
 plt.savefig(os.path.join(PASTA_RESULTADOS, 'geral_01_tempo_total_por_thread.png'), dpi=300)
 plt.close()
 
-# 4.2 Tempo Total do DATASET INTEIRO por Schedule (O Campeão Geral)
+# 4.2 Tempo Total do DATASET
 plt.figure(figsize=(12, 7))
 sns.barplot(data=tabela_total_dataset, x='OMP_Schedule', y='Tempo_Total_Dataset_ms', order=ordem_presente, color='#1f77b4', edgecolor='black')
 plt.title(f'Tempo Total do Banco de Imagens por Escalonamento\n({NUM_THREADS_MAX} Threads)', fontsize=14, fontweight='bold')
 plt.xlabel('Estratégia de Escalonamento (Schedule)', fontsize=12)
 plt.ylabel('Soma do Tempo Médio de Todas as Imagens (ms)', fontsize=12)
 plt.grid(True, axis='y', linestyle='--', alpha=0.7)
-
-# Adiciona os números (rótulos) no topo de cada barra para facilitar a leitura no PDF
 for index, row in tabela_total_dataset.set_index('OMP_Schedule').reindex(ordem_presente).reset_index().iterrows():
     if pd.notna(row['Tempo_Total_Dataset_ms']):
         plt.text(index, row['Tempo_Total_Dataset_ms'] + (row['Tempo_Total_Dataset_ms'] * 0.01), 
                  f"{row['Tempo_Total_Dataset_ms']:.0f}ms", color='black', ha="center", fontweight='bold')
-
 plt.tight_layout()
 plt.savefig(os.path.join(PASTA_RESULTADOS, 'geral_02_total_dataset_por_schedule.png'), dpi=300)
+plt.close()
+
+# ------------------------------------------------------------------------------
+# NOVO: 4.3 GRÁFICO DE SPEEDUP
+# ------------------------------------------------------------------------------
+plt.figure(figsize=(12, 7))
+sns.lineplot(data=df_speedup, x='Num_Threads', y='Speedup', hue='Image', marker='o', linewidth=2.5, markersize=8)
+# Linha de Speedup Ideal (Diagonal Perfeita)
+plt.plot([1, NUM_THREADS_MAX], [1, NUM_THREADS_MAX], color='black', linestyle='--', linewidth=2, label='Speedup Ideal (Linear)')
+plt.title('Aceleração (Speedup) do Algoritmo por Imagem', fontsize=14, fontweight='bold')
+plt.xlabel('Número de Threads Ativas', fontsize=12)
+plt.ylabel('Fator de Speedup (S)', fontsize=12)
+plt.xticks(range(1, NUM_THREADS_MAX + 1))
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.savefig(os.path.join(PASTA_RESULTADOS, 'geral_03_curva_speedup.png'), dpi=300)
+plt.close()
+
+# ------------------------------------------------------------------------------
+# NOVO: 4.4 GRÁFICO DE EFICIÊNCIA
+# ------------------------------------------------------------------------------
+plt.figure(figsize=(12, 7))
+sns.lineplot(data=df_speedup, x='Num_Threads', y='Eficiencia_%', hue='Image', marker='s', linewidth=2.5, markersize=8)
+# Linha de Eficiência Ideal (Reta no 100%)
+plt.axhline(100, color='black', linestyle='--', linewidth=2, label='Eficiência Ideal (100%)')
+plt.title('Eficiência de Desempenho por Imagem', fontsize=14, fontweight='bold')
+plt.xlabel('Número de Threads Ativas', fontsize=12)
+plt.ylabel('Eficiência (%)', fontsize=12)
+plt.xticks(range(1, NUM_THREADS_MAX + 1))
+# Trava o eixo Y entre 0 e 110% para não distorcer o gráfico
+plt.ylim(0, 110)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.savefig(os.path.join(PASTA_RESULTADOS, 'geral_04_eficiencia.png'), dpi=300)
 plt.close()
 
 # ==============================================================================
@@ -131,30 +179,24 @@ for img in imagens_unicas:
     df_img_estatico = df_img_max[df_img_max['OMP_Schedule'] == 'static']
     df_img_completo = df_pipeline_completa[df_pipeline_completa['Image'] == img]
     
-    # ---------------------------------------------------------
-    # PLOT A: Impacto do Chunk (Curva + Baseline)
-    # ---------------------------------------------------------
+    # PLOT A: Impacto do Chunk
     plt.figure(figsize=(10, 6))
     sns.lineplot(data=df_img_dinamico, x='Chunk_Size', y='Adaptive_Median', color='#1f77b4', marker='o', linewidth=3, markersize=10, label='Dynamic (Média ± SD)', errorbar='sd')
-    
     if not df_img_estatico.empty:
         static_mean = df_img_estatico['Adaptive_Median'].mean()
         plt.axhline(y=static_mean, color='#d62728', linestyle='--', linewidth=3, label=f'Static Baseline (Média: {static_mean:.1f} ms)')
-    
     plt.title(f'[{img}] Impacto do Chunk Size no Filtro Adaptativo\n(CPU sob Estresse: {NUM_THREADS_MAX} Threads)', fontsize=13, fontweight='bold')
     plt.xlabel('Tamanho do Chunk (Escala Log)', fontsize=12)
     plt.ylabel('Tempo (ms)', fontsize=12)
     plt.xscale('log') 
-    plt.xticks([1, 2, 4, 8, 16, 32, 64, 128], ['1', '2', '4', '8', '16', '32', '64', '128'])
+    plt.xticks([1, 16, 32, 64, 128, 256, 512], ['1', '16', '32', '64', '128', '256', '512'])
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
     plt.tight_layout()
     plt.savefig(os.path.join(pasta_img, '01_analise_chunk.png'), dpi=300)
     plt.close()
 
-    # ---------------------------------------------------------
-    # PLOT B: Tempo Total de Todas as Operações por Thread
-    # ---------------------------------------------------------
+    # PLOT B: Tempo Total
     if not df_img_completo.empty:
         plt.figure(figsize=(10, 6))
         sns.lineplot(data=df_img_completo, x='Num_Threads', y='Total_Time_ms', color='#2ca02c', marker='s', linewidth=3, markersize=10, errorbar='sd')
@@ -167,9 +209,7 @@ for img in imagens_unicas:
         plt.savefig(os.path.join(pasta_img, '02_tempo_total_vs_threads.png'), dpi=300)
         plt.close()
 
-    # ---------------------------------------------------------
-    # PLOT C: Tempo por Schedule (Barplot com Pontos Reais)
-    # ---------------------------------------------------------
+    # PLOT C: Schedules
     plt.figure(figsize=(10, 6))
     sns.barplot(data=df_img_max, x='OMP_Schedule', y='Adaptive_Median', order=ordem_presente, color='#9467bd', errorbar='sd', capsize=0.1)
     sns.stripplot(data=df_img_max, x='OMP_Schedule', y='Adaptive_Median', order=ordem_presente, color='black', alpha=0.5, jitter=True)
@@ -182,4 +222,4 @@ for img in imagens_unicas:
     plt.close()
 
 print("========================================")
-print(f"Bateria finalizada! Confira a pasta '{PASTA_RESULTADOS}' para acessar as tabelas CSV e os gráficos.")
+print(f"Bateria finalizada! Confira a pasta '{PASTA_RESULTADOS}'.")
