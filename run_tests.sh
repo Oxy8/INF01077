@@ -55,8 +55,6 @@ done
 
 RAW_CSV="$OUTPUT_DIR/benchmark_raw.csv"
 REFERENCE_HASHES="$OUTPUT_DIR/reference_hashes.csv"
-export OMP_PLACES="${OMP_PLACES:-cores}"
-export OMP_PROC_BIND="${OMP_PROC_BIND:-close}"
 
 if [[ -e "$OUTPUT_DIR" ]]; then
     if [[ "$OVERWRITE" -ne 1 ]]; then

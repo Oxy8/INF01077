@@ -26,8 +26,8 @@ bash run_tests.sh --smoke --output resultados_smoke
 ```
 
 A campanha completa usa duas repetições cronometradas, uma execução de
-aquecimento, threads `1,2,4,8,12,16,20`, `OMP_PLACES=cores` e
-`OMP_PROC_BIND=close`:
+aquecimento e threads `1,2,4,8,12,16,20`. A afinidade e a política NUMA ficam
+nos padrões do ambiente OpenMP/Slurm:
 
 ```bash
 bash run_tests.sh --output resultados_experimentos
@@ -51,9 +51,9 @@ Depois execute a bateria formal em nó hype exclusivo:
 sbatch scripts/pcad_hype_benchmark.sbatch
 ```
 
-O job fixa `ARCH=haswell`, coleta a topologia de CPU/NUMA e executa com
-memória intercalada entre sockets. As coletas VTune devem ser feitas em uma
-alocação exclusiva separada, por exemplo:
+O job coleta a topologia de CPU e usa os padrões de afinidade, NUMA e
+compilação do ambiente. As coletas VTune devem ser feitas em uma alocação
+exclusiva separada, por exemplo:
 
 ```bash
 salloc -p hype -N 1 -c 20 --exclusive -t 02:00:00

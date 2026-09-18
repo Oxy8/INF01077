@@ -20,22 +20,12 @@ case "$SIMD" in
     off|omp) ;;
     *) echo "VTUNE_SIMD deve ser off ou omp." >&2; exit 2 ;;
 esac
-make SIMD="$SIMD" ARCH=haswell all
-
-export OMP_PLACES=cores
-export OMP_PROC_BIND=close
+make SIMD="$SIMD" all
 mkdir -p "$(dirname "$RESULT_DIR")"
-
-# Mantém a mesma política NUMA adotada pela campanha de tempos. O VTune coleta
-# o processo numactl e seu filho image_benchmark como uma única aplicação.
-NUMA_COMMAND=()
-if command -v numactl >/dev/null; then
-    NUMA_COMMAND=(numactl --interleave=all)
-fi
 
 OMP_NUM_THREADS="$THREADS" OMP_SCHEDULE="$SCHEDULE" \
 "$VTUNE_BIN" -collect "$ANALYSIS" -result-dir "$RESULT_DIR" -- \
-    "${NUMA_COMMAND[@]}" "build/$SIMD/image_benchmark" --image "$IMAGE" /tmp/vtune_benchmark.csv \
+    "build/$SIMD/image_benchmark" --image "$IMAGE" /tmp/vtune_benchmark.csv \
     --operations "$OPERATIONS" --run-id "vtune-${ANALYSIS}-${SIMD}" --repeat 0
 
 echo "Coleta salva em $RESULT_DIR"

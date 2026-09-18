@@ -27,19 +27,12 @@ cd "$WORK_DIR"
 
 hostname
 lscpu > "$RESULT_DIR/lscpu.txt"
-numactl --hardware > "$RESULT_DIR/numa.txt" 2>&1 || true
 g++ --version > "$RESULT_DIR/compiler.txt" 2>&1 || true
 env | grep '^OMP_' | sort > "$RESULT_DIR/openmp_environment.txt" || true
 
-export OMP_PLACES=cores
-export OMP_PROC_BIND=close
-export ARCH=haswell
-
-# Intercala páginas entre os dois sockets para que uma alocação NUMA local não
-# favoreça acidentalmente uma política de schedule.
 # Argumentos repassados pelo sbatch permitem dividir a campanha, por exemplo:
 # sbatch scripts/pcad_hype_benchmark.sbatch --regular-only
-numactl --interleave=all bash ./run_tests.sh --output resultados_experimentos "$@"
+bash ./run_tests.sh --output resultados_experimentos "$@"
 
 cp -a resultados_experimentos/. "$RESULT_DIR/"
 cp -a build/omp/vectorization-core.log "$RESULT_DIR/vectorization.log" 2>/dev/null || true
