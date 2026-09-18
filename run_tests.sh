@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT_DIR"
 
 THREADS=(1 2 4 8 12 16 20)
+TIMED_REPETITIONS=(1 2)
 REGULAR_IMAGES=("images/4000x3000.png" "images/6000x6000.png")
 ADAPTIVE_REAL_IMAGES=("images/sky.jpg" "images/stars.jpg" "images/rain_paisage.jpg" "images/firework.jpg")
 ADAPTIVE_CONTROL_IMAGES=(
@@ -124,7 +125,7 @@ run_regular_campaign() {
                 run_one "$binary" "$simd" "$threads" "$schedule" "$image" regular 0 1
             done
         done
-        for repetition in 1 2 3; do
+        for repetition in "${TIMED_REPETITIONS[@]}"; do
             local offset=$(((repetition - 1) % ${#configs[@]}))
             for ((position = 0; position < ${#configs[@]}; position++)); do
                 local config="${configs[$(((position + offset) % ${#configs[@]}))]}"
@@ -150,7 +151,7 @@ run_adaptive_campaign() {
             run_one "$binary" "$simd" 20 "$schedule" "$image" adaptive 0 1
         done
     done
-    for repetition in 1 2 3; do
+    for repetition in "${TIMED_REPETITIONS[@]}"; do
         local offset=$(((repetition - 1) % ${#chunk_configs[@]}))
         for ((position = 0; position < ${#chunk_configs[@]}; position++)); do
             local config="${chunk_configs[$(((position + offset) % ${#chunk_configs[@]}))]}"
@@ -172,7 +173,7 @@ run_adaptive_campaign() {
                 run_one "$binary" "$simd" "$threads" "$schedule" "$image" adaptive 0 1
             done
         done
-        for repetition in 1 2 3; do
+        for repetition in "${TIMED_REPETITIONS[@]}"; do
             local offset=$(((repetition - 1) % ${#scale_configs[@]}))
             for ((position = 0; position < ${#scale_configs[@]}; position++)); do
                 local config="${scale_configs[$(((position + offset) % ${#scale_configs[@]}))]}"
@@ -201,7 +202,7 @@ run_smt_campaign() {
             for schedule in "${schedules[@]}"; do
                 run_one "$SIMD_OMP" omp "$threads" "$schedule" "$workload_image" "$workload_operations" 0 1
             done
-            for repetition in 1 2 3; do
+            for repetition in "${TIMED_REPETITIONS[@]}"; do
                 local offset=$(((repetition - 1) % ${#schedules[@]}))
                 for ((position = 0; position < ${#schedules[@]}; position++)); do
                     local schedule="${schedules[$(((position + offset) % ${#schedules[@]}))]}"
