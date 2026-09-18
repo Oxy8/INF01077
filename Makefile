@@ -44,7 +44,10 @@ CXXFLAGS += -march=$(ARCH)
 endif
 
 CXXFLAGS += $(SIMD_FLAGS)
-CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" -DBENCHMARK_BUILD_FLAGS=\"$(CXXFLAGS)\"
+# BENCHMARK_BUILD_FLAGS contém espaços. As aspas simples fazem o shell entregar
+# toda a definição ao compilador como um único argumento; sem isso, a última
+# flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
+CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
 .PHONY: all gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 

@@ -66,6 +66,7 @@ fi
 mkdir -p "$OUTPUT_DIR"
 
 echo "Compilando variantes SIMD..."
+make clean
 make SIMD=off ARCH="$ARCH" all generator
 make SIMD=omp ARCH="$ARCH" all
 make SIMD=off ARCH="$ARCH" generate-controls
