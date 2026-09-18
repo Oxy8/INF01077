@@ -4,32 +4,58 @@ CXX ?= g++
 PKG_CONFIG ?= pkg-config
 
 PROJECT_DIR := 577262-FPI-Relatorio2
-BUILD_DIR := build
+SIMD ?= off
+ARCH ?=
+BUILD_DIR := build/$(SIMD)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
+CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
 CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
 BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(GUI_OBJECT)
+GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
 GTK_LIBS = $(shell $(PKG_CONFIG) --libs gtk4 2>/dev/null)
 
 CPPFLAGS += -I$(PROJECT_DIR)
-CXXFLAGS ?= -O2 -Wall -Wextra
+CXXFLAGS ?= -O3 -Wall -Wextra
 CXXFLAGS += -std=c++17
 OPENMP_FLAGS ?= -fopenmp
 CXXFLAGS += $(OPENMP_FLAGS)
 LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
 
-.PHONY: all gui check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+ifeq ($(SIMD),off)
+SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize
+VECTOR_REPORT_FLAG :=
+else ifeq ($(SIMD),omp)
+SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=1
+VECTOR_REPORT_FLAG := -fopt-info-vec-optimized=$(BUILD_DIR)/vectorization-core.log
+else
+$(error SIMD must be "off" or "omp"; got "$(SIMD)")
+endif
+
+ifneq ($(strip $(ARCH)),)
+CXXFLAGS += -march=$(ARCH)
+endif
+
+CXXFLAGS += $(SIMD_FLAGS)
+CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" -DBENCHMARK_BUILD_FLAGS=\"$(CXXFLAGS)\"
+
+.PHONY: all gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
 gui: $(GUI_TARGET)
+
+generator: $(CONTROL_GENERATOR)
+
+generate-controls: $(CONTROL_GENERATOR)
+	@$(CONTROL_GENERATOR) --output images/controls --width 6000 --height 6000 --seed 577262
 
 check-compiler:
 	@command -v "$(firstword $(CXX))" >/dev/null 2>&1 || { \
@@ -54,14 +80,20 @@ $(BENCHMARK_TARGET): $(CORE_OBJECT) $(BENCHMARK_OBJECT)
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
+$(CONTROL_GENERATOR): $(GENERATOR_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_DIR)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(DEPFLAGS) -c $< -o $@
 
 $(BENCHMARK_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(GENERATOR_OBJECT): $(PROJECT_DIR)/generate_images.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(BUILD_DIR):
 	mkdir -p $@
@@ -76,16 +108,16 @@ run-benchmark-image: $(BENCHMARK_TARGET)
 		echo 'Erro: informe uma imagem com IMAGE="caminho/para/imagem".' >&2; \
 		exit 2; \
 	fi
-	@$(BENCHMARK_TARGET) --image "$(IMAGE)" "$(CSV)"
+	@$(BENCHMARK_TARGET) --image "$(IMAGE)" "$(CSV)" $(BENCHMARK_ARGS)
 
 run-benchmark-folder: $(BENCHMARK_TARGET)
 	@if [[ -z "$(strip $(FOLDER))" ]]; then \
 		echo 'Erro: informe uma pasta com FOLDER="caminho/para/imagens".' >&2; \
 		exit 2; \
 	fi
-	@$(BENCHMARK_TARGET) --folder "$(FOLDER)" "$(CSV)"
+	@$(BENCHMARK_TARGET) --folder "$(FOLDER)" "$(CSV)" $(BENCHMARK_ARGS)
 
 clean:
-	rm -rf -- "$(BUILD_DIR)"
+	rm -rf -- build
 
 -include $(DEPS)

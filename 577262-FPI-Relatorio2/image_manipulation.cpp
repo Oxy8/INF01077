@@ -17,6 +17,18 @@
 
 #include "image_manipulation.h"
 
+// A variante SIMD é escolhida em tempo de compilação pelo Makefile. O pragma
+// fica propositalmente apenas nos loops cuja independência foi revisada.
+#ifndef OMP_EXPLICIT_SIMD
+#define OMP_EXPLICIT_SIMD 0
+#endif
+
+#if OMP_EXPLICIT_SIMD
+#define OMP_SIMD _Pragma("omp simd")
+#else
+#define OMP_SIMD
+#endif
+
 // =====================================================================
 // DEFINIÇÕES DE KERNELS (MANTIDAS INTACTAS)
 // =====================================================================
@@ -416,8 +428,9 @@ bool apply_3_by_3_convolution(ImageState& img, const float kernel[3][3], bool cl
     unsigned char* new_img_data = (unsigned char*) malloc(static_cast<size_t>(new_width) * new_height * 3);
     if (!new_img_data) return false;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 1; j < img.height - 1; ++j) {
+        OMP_SIMD
         for (int i = 1; i < img.width - 1; ++i) {
             unsigned char* destination = new_img_data + ((j - 1) * new_width + (i - 1)) * 3;
             apply_3_by_3_convolution_to_pixel(img, i, j, kernel, clamp_offset, single_channel, destination);
@@ -437,8 +450,9 @@ bool apply_5_by_5_convolution(ImageState& img, const float kernel[5][5], bool cl
     unsigned char* new_img_data = (unsigned char*) malloc(static_cast<size_t>(new_width) * new_height * 3);
     if (!new_img_data) return false;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 2; j < img.height - 2; ++j) {
+        OMP_SIMD
         for (int i = 2; i < img.width - 2; ++i) {
             unsigned char* destination = new_img_data + ((j - 2) * new_width + (i - 2)) * 3;
             apply_5_by_5_convolution_to_pixel(img, i, j, kernel, clamp_offset, single_channel, destination);
@@ -458,8 +472,9 @@ bool apply_7_by_7_convolution(ImageState& img, const float kernel[7][7], bool cl
     unsigned char* new_img_data = (unsigned char*) malloc(static_cast<size_t>(new_width) * new_height * 3);
     if (!new_img_data) return false;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 3; j < img.height - 3; ++j) {
+        OMP_SIMD
         for (int i = 3; i < img.width - 3; ++i) {
             unsigned char* destination = new_img_data + ((j - 3) * new_width + (i - 3)) * 3;
             apply_7_by_7_convolution_to_pixel(img, i, j, kernel, clamp_offset, single_channel, destination);
@@ -479,8 +494,9 @@ bool apply_9_by_9_convolution(ImageState& img, const float kernel[9][9], bool cl
     unsigned char* new_img_data = (unsigned char*) malloc(static_cast<size_t>(new_width) * new_height * 3);
     if (!new_img_data) return false;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 4; j < img.height - 4; ++j) {
+        OMP_SIMD
         for (int i = 4; i < img.width - 4; ++i) {
             unsigned char* destination = new_img_data + ((j - 4) * new_width + (i - 4)) * 3;
             apply_9_by_9_convolution_to_pixel(img, i, j, kernel, clamp_offset, single_channel, destination);
@@ -500,8 +516,9 @@ bool apply_11_by_11_convolution(ImageState& img, const float kernel[11][11], boo
     unsigned char* new_img_data = (unsigned char*) malloc(static_cast<size_t>(new_width) * new_height * 3);
     if (!new_img_data) return false;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 5; j < img.height - 5; ++j) {
+        OMP_SIMD
         for (int i = 5; i < img.width - 5; ++i) {
             unsigned char* destination = new_img_data + ((j - 5) * new_width + (i - 5)) * 3;
             apply_11_by_11_convolution_to_pixel(img, i, j, kernel, clamp_offset, single_channel, destination);
@@ -532,8 +549,9 @@ bool compute_sobel_detail_map(const ImageState& image, std::vector<unsigned char
         return false;
     }
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int y = 0; y < image.height; ++y) {
+        OMP_SIMD
         for (int x = 0; x < image.width; ++x) {
             detail_map[static_cast<size_t>(y) * image.width + x] = compute_sobel_detail_at_pixel(image, x, y);
         }
@@ -573,6 +591,7 @@ bool apply_varying_window_gaussian_denoising(ImageState& image) {
 
     #pragma omp parallel for schedule(runtime)
     for (int y = 0; y < image.height; ++y) {
+        OMP_SIMD
         for (int x = 0; x < image.width; ++x) {
             const size_t pixel_index = static_cast<size_t>(y) * image.width + x;
             unsigned char* destination = new_image_data + pixel_index * 3;
@@ -622,7 +641,7 @@ void rotate_90_degrees_clockwise(ImageState& img){
     int new_img_width = img.height;
     unsigned char* new_data = (unsigned char*) malloc(new_img_height * new_img_width * 3);
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < img.height; j++){
         for(int i = 0; i < img.width; i++){
             int old_index = (j * img.width + i) * 3;
@@ -641,7 +660,7 @@ void rotate_90_degrees_counterclockwise(ImageState& img){
     int new_img_width = img.height;
     unsigned char* new_data = (unsigned char*) malloc(new_img_height * new_img_width * 3);
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < img.height; j++){
         for(int i = 0; i < img.width; i++){
             int old_index = (j * img.width + i) * 3;
@@ -664,8 +683,9 @@ void zoom_in_image(ImageState& img){
     int new_width = (int) w;
     unsigned char* new_data = (unsigned char*) malloc(new_width * new_height * 3);
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < img.height; j++){
+        OMP_SIMD
         for(int i = 0; i < img.width; i++){
             int old_index = (j * img.width + i) * 3;
             int new_index = (j * 2 * new_width + i * 2) * 3;
@@ -673,8 +693,9 @@ void zoom_in_image(ImageState& img){
         }
     }
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < new_height; j += 2){
+        OMP_SIMD
         for(int i = 1; i < new_width; i += 2){
             int index = (j * new_width + i) * 3;
             new_data[index] = (unsigned char) ((new_data[index - 3] + new_data[index + 3]) / 2);
@@ -683,8 +704,9 @@ void zoom_in_image(ImageState& img){
         }
     }
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 1; j < new_height; j += 2){
+        OMP_SIMD
         for(int i = 0; i < new_width; i++){
             int index = (j * new_width + i) * 3;
             new_data[index] = (unsigned char) ((new_data[index - new_width * 3] + new_data[index + new_width * 3]) / 2);
@@ -703,7 +725,7 @@ void zoom_out_image(ImageState& img, Rectangle& rec){
     int new_width = ceil((float) img.width / rec.width);
     unsigned char* new_data = (unsigned char*) malloc(new_width * new_height * 3);
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < new_height; j++){
         // Armadilha Corrigida: a variável `avg` precisa ser declarada DENTRO do loop 
         // para que cada thread tenha a sua, evitando condição de corrida!
@@ -751,8 +773,9 @@ void histogram_matching(ImageState& src_img, ImageState& target_img){
     for(int i = 0; i < 256; i++)
         src_hist[i] = find_shade_level_closest_to(src_hist[i], target_hist);
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int i = 0; i < src_img.height; i++){
+        OMP_SIMD
         for(int j = 0; j < src_img.width; j++){
             int index = (i * src_img.width + j) * 3;
             for(int channel = 0; channel < 3; channel++){
@@ -776,8 +799,9 @@ unsigned char find_shade_level_closest_to(int value, unsigned int target_hist[25
 void equalize_histogram(ImageState& img, unsigned int cummulative_hist[256]){
     compute_normalized_cummulative_histogram(img, cummulative_hist);
     
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int i = 0; i < img.height; i++){
+        OMP_SIMD
         for(int j = 0; j < img.width; j++){
             int index = (i * img.width + j) * 3;
             for(int channel = 0; channel < 3; channel++){
@@ -800,8 +824,9 @@ void compute_normalized_cummulative_histogram(ImageState& img, unsigned int hist
 }
 
 void apply_negative(ImageState& img){
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int i = 0; i < img.height; i++){
+        OMP_SIMD
         for(int j = 0; j < img.width; j++){
             int index = (i * img.width + j) * 3;
             for(int channel = 0; channel < 3; channel++){
@@ -814,8 +839,9 @@ void apply_negative(ImageState& img){
 void adjust_contrast(ImageState& img, float contrast_factor){
     if(contrast_factor == 1.0f) return;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int i = 0; i < img.height; i++){
+        OMP_SIMD
         for(int j = 0; j < img.width; j++){
             int index = (i * img.width + j) * 3;
             for(int channel = 0; channel < 3; channel++){
@@ -836,7 +862,7 @@ void compute_histogram(ImageState& img,  unsigned int hist[256], bool convert_to
         if(convert_to_gray_scale)
             apply_gray_scale_inplace(img);
         else{
-            #pragma omp parallel for schedule(static) reduction(+:hist[:256])
+            #pragma omp parallel for schedule(runtime) reduction(+:hist[:256])
             for (int j = 0; j < img.height; j++) {
                 for (int i = 0; i < img.width; i++) {
                     int index = (j * img.width + i) * 3;
@@ -851,7 +877,7 @@ void compute_histogram(ImageState& img,  unsigned int hist[256], bool convert_to
         }
     }
     
-    #pragma omp parallel for schedule(static) reduction(+:hist[:256])
+    #pragma omp parallel for schedule(runtime) reduction(+:hist[:256])
     for(int i = 0; i < img.height; i++){
         for(int j = 0; j < img.width; j++){
             int index = (i * img.width + j) * 3;
@@ -886,8 +912,9 @@ bool load_image(const char* filename, ImageState& img) {
 void apply_gray_scale_inplace(ImageState& img) {
     if(img.isGrayScale) return;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 0; j < img.height; j++) {
+        OMP_SIMD
         for (int i = 0; i < img.width; i++) {
             int index = (j * img.width + i) * 3;
             unsigned char r = img.data[index];
@@ -903,8 +930,9 @@ void apply_gray_scale_inplace(ImageState& img) {
 void adjust_brightness(ImageState& img, int adjust_value){
     if(adjust_value == 0) return;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for(int i = 0; i < img.height; i++){
+        OMP_SIMD
         for(int j = 0; j < img.width; j++){
             int index = (i * img.width + j) * 3;
             for(int channel = 0; channel < 3; channel++)
@@ -917,7 +945,7 @@ void flip_horizontal(ImageState& img) {
     int width = img.width;
     int height = img.height;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 0; j < height; j++) {
         // Armadilha Corrigida: o buffer precisa ser local para não cruzar pixels das threads
         unsigned char pixel_buffer[3]; 
@@ -939,7 +967,7 @@ void flip_vertical(ImageState& img){
     {
         unsigned char *row_buffer = (unsigned char*) malloc(width * 3);
         
-        #pragma omp for schedule(static)
+        #pragma omp for schedule(runtime)
         for(int j = 0; j < height / 2; j++){
             memcpy(row_buffer, img.data + j * width * 3, width * 3);
             memcpy(img.data + j * width * 3, img.data + (height - 1 - j) * width * 3, width * 3);
@@ -955,7 +983,7 @@ std::array<unsigned char, 2> find_min_and_max_luminance_on_gray_scale_image(int 
     int local_min = 255;
     int local_max = 0;
 
-    #pragma omp parallel for schedule(static) reduction(min:local_min) reduction(max:local_max)
+    #pragma omp parallel for schedule(runtime) reduction(min:local_min) reduction(max:local_max)
     for(int j = 0; j < height; j++){
         for(int i = 0; i < width; i++){
             int index = (j * width + i) * 3;
@@ -979,8 +1007,9 @@ void quantize_gray(ImageState& img, int levels) {
     if (num_levels <= levels) return;
     float tb = (float) num_levels / levels;
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(runtime)
     for (int j = 0; j < img.height; j++) {
+        OMP_SIMD
         for (int i = 0; i < img.width; i++) {
                 int index = (j * img.width + i) * 3;
                 unsigned char luminance = img.data[index]; 

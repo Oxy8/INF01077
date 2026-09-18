@@ -1,90 +1,131 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
-#include <iostream>
-#include <vector>
 #include <cstdlib>
-#include <ctime>
+#include <filesystem>
+#include <iostream>
+#include <random>
+#include <string>
+#include <vector>
 
-const int WIDTH = 256;
-const int HEIGHT = 256;
-const int CHANNELS = 3;
+namespace fs = std::filesystem;
 
-// Função auxiliar para preencher um pixel RGB
-void set_pixel(std::vector<unsigned char>& img, int x, int y, unsigned char r, unsigned char g, unsigned char b) {
-    int idx = (y * WIDTH + x) * CHANNELS;
-    img[idx] = r;
-    img[idx + 1] = g;
-    img[idx + 2] = b;
+struct Options {
+    fs::path output = "images/controls";
+    int width = 6000;
+    int height = 6000;
+    unsigned int seed = 577262;
+};
+
+void set_pixel(std::vector<unsigned char>& image, int width, int x, int y, unsigned char value) {
+    const size_t index = (static_cast<size_t>(y) * width + x) * 3;
+    image[index] = value;
+    image[index + 1] = value;
+    image[index + 2] = value;
 }
 
-// 1. Ruído Puro (Mata o dynamic, 1)
-void gerar_ruido_puro() {
-    std::vector<unsigned char> img(WIDTH * HEIGHT * CHANNELS);
-    for (size_t i = 0; i < img.size(); ++i) {
-        img[i] = rand() % 256;
+bool write_image(const fs::path& path, const std::vector<unsigned char>& image, const Options& options) {
+    if (!stbi_write_png(path.string().c_str(), options.width, options.height, 3, image.data(), options.width * 3)) {
+        std::cerr << "Erro ao salvar " << path << "\n";
+        return false;
     }
-    stbi_write_png("images/adv_01_ruido_puro.png", WIDTH, HEIGHT, CHANNELS, img.data(), WIDTH * CHANNELS);
-    std::cout << "Criado: adv_01_ruido_puro.png" << std::endl;
+    std::cout << "Criado: " << path << "\n";
+    return true;
 }
 
-// 2. Metade Lisa / Metade Ruído (Mata o static e chunks gigantes)
-void gerar_meio_a_meio() {
-    std::vector<unsigned char> img(WIDTH * HEIGHT * CHANNELS);
-    for (int y = 0; y < HEIGHT; ++y) {
-        bool is_white = y < HEIGHT / 2;
-        for (int x = 0; x < WIDTH; ++x) {
-            if (is_white) {
-                set_pixel(img, x, y, 255, 255, 255);
-            } else {
-                unsigned char v = rand() % 256;
-                set_pixel(img, x, y, v, v, v);
-            }
+std::string dimensions(const Options& options) {
+    return std::to_string(options.width) + "x" + std::to_string(options.height) + ".png";
+}
+
+bool generate_smooth(const Options& options) {
+    std::vector<unsigned char> image(static_cast<size_t>(options.width) * options.height * 3, 255);
+    return write_image(options.output / ("control_smooth_" + dimensions(options)), image, options);
+}
+
+bool generate_noise(const Options& options) {
+    std::vector<unsigned char> image(static_cast<size_t>(options.width) * options.height * 3);
+    std::mt19937 generator(options.seed);
+    std::uniform_int_distribution<int> distribution(0, 255);
+    for (unsigned char& value : image) value = static_cast<unsigned char>(distribution(generator));
+    return write_image(options.output / ("control_noise_" + dimensions(options)), image, options);
+}
+
+bool generate_half_noise(const Options& options) {
+    std::vector<unsigned char> image(static_cast<size_t>(options.width) * options.height * 3);
+    std::mt19937 generator(options.seed + 1);
+    std::uniform_int_distribution<int> distribution(0, 255);
+    for (int y = 0; y < options.height; ++y) {
+        for (int x = 0; x < options.width; ++x) {
+            const unsigned char value = y < options.height / 2 ? 255 : static_cast<unsigned char>(distribution(generator));
+            set_pixel(image, options.width, x, y, value);
         }
     }
-    stbi_write_png("images/adv_02_meio_a_meio.png", WIDTH, HEIGHT, CHANNELS, img.data(), WIDTH * CHANNELS);
-    std::cout << "Criado: adv_02_meio_a_meio.png" << std::endl;
+    return write_image(options.output / ("control_half_noise_" + dimensions(options)), image, options);
 }
 
-// 3. Bandas Alternadas de 256 linhas (Destrói o dynamic, 256)
-void gerar_bandas_256() {
-    std::vector<unsigned char> img(WIDTH * HEIGHT * CHANNELS);
-    int band_size = 256;
-    for (int y = 0; y < HEIGHT; ++y) {
-        bool is_white = (y / band_size) % 2 == 0;
-        for (int x = 0; x < WIDTH; ++x) {
-            if (is_white) {
-                set_pixel(img, x, y, 255, 255, 255);
-            } else {
-                unsigned char v = rand() % 256;
-                set_pixel(img, x, y, v, v, v);
-            }
+bool generate_bands(const Options& options) {
+    constexpr int band_size = 256;
+    std::vector<unsigned char> image(static_cast<size_t>(options.width) * options.height * 3);
+    std::mt19937 generator(options.seed + 2);
+    std::uniform_int_distribution<int> distribution(0, 255);
+    for (int y = 0; y < options.height; ++y) {
+        const bool smooth = ((y / band_size) % 2) == 0;
+        for (int x = 0; x < options.width; ++x) {
+            const unsigned char value = smooth ? 255 : static_cast<unsigned char>(distribution(generator));
+            set_pixel(image, options.width, x, y, value);
         }
     }
-    stbi_write_png("images/adv_03_bandas_256.png", WIDTH, HEIGHT, CHANNELS, img.data(), WIDTH * CHANNELS);
-    std::cout << "Criado: adv_03_bandas_256.png" << std::endl;
+    return write_image(options.output / ("control_bands_256_" + dimensions(options)), image, options);
 }
 
-// 4. Liso Puro (Testa overhead desnecessário)
-void gerar_branco_puro() {
-    std::vector<unsigned char> img(WIDTH * HEIGHT * CHANNELS, 255);
-    stbi_write_png("images/adv_04_branco_puro.png", WIDTH, HEIGHT, CHANNELS, img.data(), WIDTH * CHANNELS);
-    std::cout << "Criado: adv_04_branco_puro.png" << std::endl;
+bool parse_positive_int(const char* text, int& value) {
+    try {
+        const int parsed = std::stoi(text);
+        if (parsed <= 0) return false;
+        value = parsed;
+        return true;
+    } catch (...) {
+        return false;
+    }
 }
 
-int main() {
-    srand(static_cast<unsigned int>(time(nullptr)));
-    
-    std::cout << "Gerando imagens adversárias em 6000x6000. Isso pode demorar alguns segundos..." << std::endl;
-    
-    // Garante que a pasta images existe
-    system("mkdir -p images");
+bool parse_options(int argc, char** argv, Options& options) {
+    for (int index = 1; index < argc; ++index) {
+        const std::string argument = argv[index];
+        if ((argument == "--output" || argument == "--width" || argument == "--height" || argument == "--seed") && index + 1 >= argc) {
+            return false;
+        }
+        if (argument == "--output") options.output = argv[++index];
+        else if (argument == "--width") {
+            if (!parse_positive_int(argv[++index], options.width)) return false;
+        } else if (argument == "--height") {
+            if (!parse_positive_int(argv[++index], options.height)) return false;
+        }
+        else if (argument == "--seed") {
+            int seed = 0;
+            if (!parse_positive_int(argv[++index], seed)) return false;
+            options.seed = static_cast<unsigned int>(seed);
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
 
-    gerar_ruido_puro();
-    gerar_meio_a_meio();
-    gerar_bandas_256();
-    gerar_branco_puro();
+int main(int argc, char** argv) {
+    Options options;
+    if (!parse_options(argc, argv, options)) {
+        std::cerr << "Uso: " << argv[0] << " [--output DIRETORIO] [--width N] [--height N] [--seed N]\n";
+        return 2;
+    }
 
-    std::cout << "Todas as imagens foram geradas com sucesso na pasta 'images/'!" << std::endl;
-    return 0;
+    std::error_code error;
+    fs::create_directories(options.output, error);
+    if (error) {
+        std::cerr << "Erro ao criar " << options.output << ": " << error.message() << "\n";
+        return 1;
+    }
+
+    std::cout << "Gerando controles determinísticos em " << options.width << "x" << options.height << "\n";
+    return generate_smooth(options) && generate_noise(options) && generate_half_noise(options) && generate_bands(options) ? 0 : 1;
 }
