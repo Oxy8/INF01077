@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Componentes do tempo SoA — Gaussian_11x11, 4000x3000.png, 20 threads">
+<title>Componentes do tempo SoA — Gaussian_11x11, 4000x3000.png, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Componentes do tempo SoA — Gaussian_11x11, 4000x3000.png, 20 threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">99.56 ms</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">199.12 ms</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">298.67 ms</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">398.23 ms</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="122.1">AoS: kernel</text>
+<rect x="255.0" y="82.6" width="341.7" height="17.6" fill="#555555"/>
+<text class="small" x="602.7" y="96.4">180.23 ms</text>
+<rect x="255.0" y="105.2" width="339.1" height="17.6" fill="#8a2be2"/>
+<text class="small" x="600.1" y="119.0">178.85 ms</text>
+<text class="axis" text-anchor="end" x="243" y="201.1">SoA: conversão</text>
+<rect x="255.0" y="161.6" width="3.3" height="17.6" fill="#555555"/>
+<text class="small" x="264.3" y="175.4">1.74 ms</text>
+<rect x="255.0" y="184.2" width="3.3" height="17.6" fill="#8a2be2"/>
+<text class="small" x="264.3" y="198.0">1.75 ms</text>
+<text class="axis" text-anchor="end" x="243" y="280.1">SoA: kernel</text>
+<rect x="255.0" y="240.6" width="343.5" height="17.6" fill="#555555"/>
+<text class="small" x="604.5" y="254.4">181.19 ms</text>
+<rect x="255.0" y="263.2" width="678.6" height="17.6" fill="#8a2be2"/>
+<text class="small" x="939.6" y="277.0">357.91 ms</text>
+<text class="axis" text-anchor="end" x="243" y="359.1">SoA: reconstrução</text>
+<rect x="255.0" y="319.6" width="4.6" height="17.6" fill="#555555"/>
+<text class="small" x="265.6" y="333.4">2.44 ms</text>
+<rect x="255.0" y="342.2" width="4.5" height="17.6" fill="#8a2be2"/>
+<text class="small" x="265.5" y="356.0">2.36 ms</text>
+<text class="axis" text-anchor="end" x="243" y="438.1">SoA: total</text>
+<rect x="255.0" y="398.6" width="351.4" height="17.6" fill="#555555"/>
+<text class="small" x="612.4" y="412.4">185.36 ms</text>
+<rect x="255.0" y="421.2" width="686.4" height="17.6" fill="#8a2be2"/>
+<text class="small" x="947.4" y="435.0">362.03 ms</text>
+<rect x="255" y="492" width="15" height="15" fill="#555555"/>
+<text class="legend" x="277" y="504">SIMD off</text>
+<rect x="435" y="492" width="15" height="15" fill="#8a2be2"/>
+<text class="legend" x="457" y="504">SIMD omp</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo médio (ms)</text>
+</svg>

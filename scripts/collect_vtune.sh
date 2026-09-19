@@ -13,12 +13,12 @@ OPERATIONS="${VTUNE_OPERATIONS:-adaptive}"
 SCHEDULE="${VTUNE_SCHEDULE:-dynamic,16}"
 THREADS="${VTUNE_THREADS:-20}"
 VTUNE_BIN="${VTUNE_BIN:-vtune}"
-SIMD="${VTUNE_SIMD:-omp}"
+SIMD="${VTUNE_SIMD:-omp-avx2}"
 
 command -v "$VTUNE_BIN" >/dev/null || { echo "VTune não encontrado. Rode primeiro o preflight." >&2; exit 1; }
 case "$SIMD" in
-    off|omp) ;;
-    *) echo "VTUNE_SIMD deve ser off ou omp." >&2; exit 2 ;;
+    off|off-avx2|omp|omp-avx2) ;;
+    *) echo "VTUNE_SIMD deve ser off, off-avx2, omp ou omp-avx2." >&2; exit 2 ;;
 esac
 make SIMD="$SIMD" all
 mkdir -p "$(dirname "$RESULT_DIR")"

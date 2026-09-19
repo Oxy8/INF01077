@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Kernel: AoS versus SoA — Grayscale, 4000x3000.png">
+<title>Kernel: AoS versus SoA — Grayscale, 4000x3000.png</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Kernel: AoS versus SoA — Grayscale, 4000x3000.png</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">-1.86 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">11.70 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">25.27 ms</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">38.84 ms</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">52.41 ms</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,132.8 148.4,349.9 235.3,460.1 408.9,513.4 582.6,532.7 756.3,542.7 930.0,548.4" fill="none" stroke="#555555" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="134.9" y2="130.6" stroke="#555555" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="354.4" y2="345.3" stroke="#555555" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="460.5" y2="459.6" stroke="#555555" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="513.7" y2="513.1" stroke="#555555" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="532.9" y2="532.4" stroke="#555555" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="543.0" y2="542.3" stroke="#555555" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="548.9" y2="547.8" stroke="#555555" stroke-width="1.2"/>
+<circle cx="105.0" cy="132.8" r="4" fill="#555555"/>
+<circle cx="148.4" cy="349.9" r="4" fill="#555555"/>
+<circle cx="235.3" cy="460.1" r="4" fill="#555555"/>
+<circle cx="408.9" cy="513.4" r="4" fill="#555555"/>
+<circle cx="582.6" cy="532.7" r="4" fill="#555555"/>
+<circle cx="756.3" cy="542.7" r="4" fill="#555555"/>
+<circle cx="930.0" cy="548.4" r="4" fill="#555555"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#555555" stroke-width="3"/>
+<text class="legend" x="980" y="76">AoS, SIMD off</text>
+<polyline points="105.0,208.0 148.4,393.3 235.3,487.4 408.9,532.8 582.6,549.3 756.3,558.4 930.0,564.2" fill="none" stroke="#777777" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="210.1" y2="206.0" stroke="#777777" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="393.9" y2="392.8" stroke="#777777" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="489.1" y2="485.7" stroke="#777777" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="533.4" y2="532.2" stroke="#777777" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="549.5" y2="549.2" stroke="#777777" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="558.9" y2="557.9" stroke="#777777" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="564.3" y2="564.1" stroke="#777777" stroke-width="1.2"/>
+<circle cx="105.0" cy="208.0" r="4" fill="#777777"/>
+<circle cx="148.4" cy="393.3" r="4" fill="#777777"/>
+<circle cx="235.3" cy="487.4" r="4" fill="#777777"/>
+<circle cx="408.9" cy="532.8" r="4" fill="#777777"/>
+<circle cx="582.6" cy="549.3" r="4" fill="#777777"/>
+<circle cx="756.3" cy="558.4" r="4" fill="#777777"/>
+<circle cx="930.0" cy="564.2" r="4" fill="#777777"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#777777" stroke-width="3"/>
+<text class="legend" x="980" y="98">SoA, SIMD off</text>
+<polyline points="105.0,115.0 148.4,336.8 235.3,456.4 408.9,511.4 582.6,531.3 756.3,541.1 930.0,546.9" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="117.4" y2="112.7" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="342.0" y2="331.6" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="458.7" y2="454.2" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="512.5" y2="510.4" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="531.9" y2="530.8" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="541.6" y2="540.6" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="547.6" y2="546.2" stroke="#8a2be2" stroke-width="1.2"/>
+<circle cx="105.0" cy="115.0" r="4" fill="#8a2be2"/>
+<circle cx="148.4" cy="336.8" r="4" fill="#8a2be2"/>
+<circle cx="235.3" cy="456.4" r="4" fill="#8a2be2"/>
+<circle cx="408.9" cy="511.4" r="4" fill="#8a2be2"/>
+<circle cx="582.6" cy="531.3" r="4" fill="#8a2be2"/>
+<circle cx="756.3" cy="541.1" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="546.9" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="120">AoS, SIMD omp</text>
+<polyline points="105.0,203.6 148.4,393.5 235.3,487.1 408.9,532.6 582.6,549.6 756.3,558.5 930.0,563.5" fill="none" stroke="#b46fe5" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="216.1" y2="191.2" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="395.9" y2="391.0" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="488.3" y2="485.8" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="532.9" y2="532.3" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="549.8" y2="549.3" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="558.7" y2="558.3" stroke="#b46fe5" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="564.3" y2="562.7" stroke="#b46fe5" stroke-width="1.2"/>
+<circle cx="105.0" cy="203.6" r="4" fill="#b46fe5"/>
+<circle cx="148.4" cy="393.5" r="4" fill="#b46fe5"/>
+<circle cx="235.3" cy="487.1" r="4" fill="#b46fe5"/>
+<circle cx="408.9" cy="532.6" r="4" fill="#b46fe5"/>
+<circle cx="582.6" cy="549.6" r="4" fill="#b46fe5"/>
+<circle cx="756.3" cy="558.5" r="4" fill="#b46fe5"/>
+<circle cx="930.0" cy="563.5" r="4" fill="#b46fe5"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#b46fe5" stroke-width="3"/>
+<text class="legend" x="980" y="142">SoA, SIMD omp</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo médio (ms)</text>
+</svg>

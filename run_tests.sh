@@ -6,6 +6,8 @@ cd "$ROOT_DIR"
 
 THREADS=(1 2 4 8 12 16 20)
 TIMED_REPETITIONS=(1 2 3 4 5)
+BUILD_VARIANTS=("off" "off-avx2" "omp" "omp-avx2")
+SIMD_VARIANTS=("omp" "omp-avx2")
 REGULAR_IMAGES=("images/4000x3000.png" "images/6000x6000.png")
 ADAPTIVE_REAL_IMAGES=("images/sky.jpg" "images/stars.jpg" "images/rain_paisage.jpg" "images/firework.jpg")
 ADAPTIVE_CONTROL_IMAGES=(
@@ -65,10 +67,12 @@ if [[ -e "$OUTPUT_DIR" ]]; then
 fi
 mkdir -p "$OUTPUT_DIR"
 
-echo "Compilando variantes SIMD..."
+echo "Compilando variantes escalar, SIMD genérica e SIMD AVX2..."
 make clean
-make SIMD=off ARCH="$ARCH" all generator
-make SIMD=omp ARCH="$ARCH" all
+for variant in "${BUILD_VARIANTS[@]}"; do
+    make SIMD="$variant" ARCH="$ARCH" all
+done
+make SIMD=off ARCH="$ARCH" generator
 make SIMD=off ARCH="$ARCH" generate-controls
 
 for image in "${REGULAR_IMAGES[@]}" "${ADAPTIVE_IMAGES[@]}"; do
@@ -76,8 +80,6 @@ for image in "${REGULAR_IMAGES[@]}" "${ADAPTIVE_IMAGES[@]}"; do
 done
 
 BASELINE="build/off/image_benchmark"
-SIMD_OFF="build/off/image_benchmark"
-SIMD_OMP="build/omp/image_benchmark"
 
 make_reference() {
     echo "Gerando hashes de referência..."
@@ -110,11 +112,17 @@ run_one() {
 }
 
 binary_for_simd() {
-    [[ "$1" == "off" ]] && printf '%s\n' "$SIMD_OFF" || printf '%s\n' "$SIMD_OMP"
+    printf '%s\n' "build/$1/image_benchmark"
 }
 
 run_regular_campaign() {
-    local configs=("off:static" "omp:static" "off:dynamic,1" "omp:dynamic,1" "off:dynamic,16" "omp:dynamic,16")
+    local configs=()
+    local schedule variant
+    for schedule in static dynamic,1 dynamic,16; do
+        for variant in "${BUILD_VARIANTS[@]}"; do
+            configs+=("$variant:$schedule")
+        done
+    done
     echo "Iniciando campanha das operações regulares..."
     for threads in "${THREADS[@]}"; do
         for config in "${configs[@]}"; do
@@ -141,7 +149,13 @@ run_regular_campaign() {
 }
 
 run_adaptive_campaign() {
-    local chunk_configs=("off:static" "omp:static" "off:dynamic,1" "omp:dynamic,1" "off:dynamic,4" "omp:dynamic,4" "off:dynamic,16" "omp:dynamic,16" "off:dynamic,64" "omp:dynamic,64" "off:dynamic,256" "omp:dynamic,256")
+    local chunk_configs=()
+    local schedule variant
+    for schedule in static dynamic,1 dynamic,4 dynamic,16 dynamic,64 dynamic,256; do
+        for variant in "${BUILD_VARIANTS[@]}"; do
+            chunk_configs+=("$variant:$schedule")
+        done
+    done
     echo "Iniciando varredura de chunks do filtro adaptativo..."
     for config in "${chunk_configs[@]}"; do
         local simd="${config%%:*}" schedule="${config#*:}" binary
@@ -164,7 +178,13 @@ run_adaptive_campaign() {
 
     echo "Iniciando escalabilidade static versus dynamic,16 do adaptativo..."
     for threads in 1 2 4 8 12 16; do
-        local scale_configs=("off:static" "omp:static" "off:dynamic,16" "omp:dynamic,16")
+        local scale_configs=()
+        local schedule variant
+        for schedule in static dynamic,16; do
+            for variant in "${BUILD_VARIANTS[@]}"; do
+                scale_configs+=("$variant:$schedule")
+            done
+        done
         for config in "${scale_configs[@]}"; do
             local simd="${config%%:*}" schedule="${config#*:}" binary
             binary="$(binary_for_simd "$simd")"
@@ -198,14 +218,25 @@ run_smt_campaign() {
         local workload_operations="${workload_spec#*|}"
         for threads in 20 40; do
             local schedules=(static dynamic,16)
+            local smt_configs=()
+            local schedule variant
             for schedule in "${schedules[@]}"; do
-                run_one "$SIMD_OMP" omp "$threads" "$schedule" "$workload_image" "$workload_operations" 0 1
+                for variant in "${SIMD_VARIANTS[@]}"; do
+                    smt_configs+=("$variant:$schedule")
+                done
+            done
+            for config in "${smt_configs[@]}"; do
+                local simd="${config%%:*}" schedule="${config#*:}" binary
+                binary="$(binary_for_simd "$simd")"
+                run_one "$binary" "$simd" "$threads" "$schedule" "$workload_image" "$workload_operations" 0 1
             done
             for repetition in "${TIMED_REPETITIONS[@]}"; do
-                local offset=$(((repetition - 1) % ${#schedules[@]}))
-                for ((position = 0; position < ${#schedules[@]}; position++)); do
-                    local schedule="${schedules[$(((position + offset) % ${#schedules[@]}))]}"
-                    run_one "$SIMD_OMP" omp "$threads" "$schedule" "$workload_image" "$workload_operations" "$repetition" 0
+                local offset=$(((repetition - 1) % ${#smt_configs[@]}))
+                for ((position = 0; position < ${#smt_configs[@]}; position++)); do
+                    local config="${smt_configs[$(((position + offset) % ${#smt_configs[@]}))]}"
+                    local simd="${config%%:*}" schedule="${config#*:}" binary
+                    binary="$(binary_for_simd "$simd")"
+                    run_one "$binary" "$simd" "$threads" "$schedule" "$workload_image" "$workload_operations" "$repetition" 0
                 done
             done
         done
@@ -215,9 +246,10 @@ run_smt_campaign() {
 make_reference
 
 if [[ "$SMOKE" -eq 1 ]]; then
-    run_one "$SIMD_OFF" off 1 static "images/4000x3000.png" Grayscale 0 1
-    run_one "$SIMD_OFF" off 1 static "images/4000x3000.png" Grayscale 1 0
-    run_one "$SIMD_OMP" omp 2 dynamic,1 "images/controls/control_half_noise_6000x6000.png" adaptive 1 0
+    run_one "$(binary_for_simd off)" off 1 static "images/4000x3000.png" Grayscale 0 1
+    run_one "$(binary_for_simd off)" off 1 static "images/4000x3000.png" Grayscale 1 0
+    run_one "$(binary_for_simd omp)" omp 2 dynamic,1 "images/controls/control_half_noise_6000x6000.png" adaptive 1 0
+    run_one "$(binary_for_simd omp-avx2)" omp-avx2 2 dynamic,1 "images/controls/control_half_noise_6000x6000.png" adaptive 1 0
 else
     [[ "$RUN_REGULAR" -eq 1 ]] && run_regular_campaign
     [[ "$RUN_ADAPTIVE" -eq 1 ]] && run_adaptive_campaign

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Filtro adaptativo: tempo por chunk — control_noise_6000x6000.png, 20 threads">
+<title>Filtro adaptativo: tempo por chunk — control_noise_6000x6000.png, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Filtro adaptativo: tempo por chunk — control_noise_6000x6000.png, 20 threads</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">497.63 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">615.66 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">733.68 ms</text>
+<line class="grid" x1="105" x2="930" y1="205.3" y2="205.3"/>
+<text class="axis" text-anchor="end" x="95" y="210.3">851.71 ms</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">969.73 ms</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">static</text>
+<line class="frame" x1="270.0" x2="270.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="270.0" y="632">dynamic,1</text>
+<line class="frame" x1="435.0" x2="435.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="435.0" y="632">dynamic,4</text>
+<line class="frame" x1="600.0" x2="600.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="600.0" y="632">dynamic,16</text>
+<line class="frame" x1="765.0" x2="765.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="765.0" y="632">dynamic,64</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">dynamic,256</text>
+<polyline points="105.0,511.9 270.0,525.8 435.0,518.6 600.0,518.3 765.0,489.3 930.0,146.3" fill="none" stroke="#555555" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="536.2" y2="487.7" stroke="#555555" stroke-width="1.2"/>
+<line x1="270.0" x2="270.0" y1="526.6" y2="525.0" stroke="#555555" stroke-width="1.2"/>
+<line x1="435.0" x2="435.0" y1="534.2" y2="503.1" stroke="#555555" stroke-width="1.2"/>
+<line x1="600.0" x2="600.0" y1="519.6" y2="517.1" stroke="#555555" stroke-width="1.2"/>
+<line x1="765.0" x2="765.0" y1="489.5" y2="489.1" stroke="#555555" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="155.8" y2="136.8" stroke="#555555" stroke-width="1.2"/>
+<circle cx="105.0" cy="511.9" r="4" fill="#555555"/>
+<circle cx="270.0" cy="525.8" r="4" fill="#555555"/>
+<circle cx="435.0" cy="518.6" r="4" fill="#555555"/>
+<circle cx="600.0" cy="518.3" r="4" fill="#555555"/>
+<circle cx="765.0" cy="489.3" r="4" fill="#555555"/>
+<circle cx="930.0" cy="146.3" r="4" fill="#555555"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#555555" stroke-width="3"/>
+<text class="legend" x="980" y="76">SIMD off</text>
+<polyline points="105.0,460.6 270.0,508.7 435.0,510.0 600.0,491.0 765.0,473.4 930.0,116.2" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="564.3" y2="356.9" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="270.0" x2="270.0" y1="512.5" y2="504.9" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="435.0" x2="435.0" y1="511.4" y2="508.7" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="600.0" x2="600.0" y1="507.4" y2="474.5" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="765.0" x2="765.0" y1="473.7" y2="473.1" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="119.8" y2="112.7" stroke="#8a2be2" stroke-width="1.2"/>
+<circle cx="105.0" cy="460.6" r="4" fill="#8a2be2"/>
+<circle cx="270.0" cy="508.7" r="4" fill="#8a2be2"/>
+<circle cx="435.0" cy="510.0" r="4" fill="#8a2be2"/>
+<circle cx="600.0" cy="491.0" r="4" fill="#8a2be2"/>
+<circle cx="765.0" cy="473.4" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="116.2" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="98">SIMD omp</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Schedule OpenMP</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo médio (ms)</text>
+</svg>

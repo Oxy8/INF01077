@@ -1,6 +1,7 @@
 #include "image_manipulation.h"
 
 #include <algorithm>
+#include <array>
 #include <chrono>
 #include <cmath>
 #include <cstdint>
@@ -60,6 +61,11 @@ struct PlanarRgb {
     std::vector<unsigned char> blue;
 };
 
+// A linha geradora dos kernels gaussianos binomiais do projeto. O produto
+// externo desta sequência consigo mesma produz exatamente o kernel 11x11.
+constexpr std::array<uint32_t, 11> BINOMIAL_11 = {1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1};
+constexpr uint64_t BINOMIAL_11_NORMALIZER = 1024ULL * 1024ULL;
+
 std::string environment(const char* name, const char* fallback = "") {
     const char* value = std::getenv(name);
     return value ? value : fallback;
@@ -117,11 +123,42 @@ std::string hash_image(const ImageState& image) {
     return output.str();
 }
 
+struct DifferenceStats {
+    unsigned int max_abs_error = 0;
+    size_t differing_bytes = 0;
+};
+
+DifferenceStats compare_images(const ImageState& candidate, const ImageState& reference) {
+    DifferenceStats stats;
+    if (candidate.width != reference.width || candidate.height != reference.height || candidate.isGrayScale != reference.isGrayScale) {
+        stats.max_abs_error = 255;
+        stats.differing_bytes = 1;
+        return stats;
+    }
+    const size_t bytes = static_cast<size_t>(candidate.width) * candidate.height * 3;
+    for (size_t index = 0; index < bytes; ++index) {
+        const unsigned int error = candidate.data[index] > reference.data[index]
+            ? candidate.data[index] - reference.data[index]
+            : reference.data[index] - candidate.data[index];
+        if (error) ++stats.differing_bytes;
+        stats.max_abs_error = std::max(stats.max_abs_error, error);
+    }
+    return stats;
+}
+
 void schedule_fields(std::string& schedule, std::string& chunk) {
     const std::string schedule_environment = environment("OMP_SCHEDULE", "default");
     const size_t comma = schedule_environment.find(',');
     schedule = schedule_environment.substr(0, comma);
     chunk = comma == std::string::npos ? "" : schedule_environment.substr(comma + 1);
+}
+
+template <typename Function>
+double measure_ms(Function&& function) {
+    const auto start = std::chrono::steady_clock::now();
+    function();
+    const auto end = std::chrono::steady_clock::now();
+    return std::chrono::duration<double, std::milli>(end - start).count();
 }
 
 void aos_to_soa(const unsigned char* source, PlanarRgb& planes, int width, int height) {
@@ -215,6 +252,77 @@ void gaussian_11_planar(const PlanarRgb& source, PlanarRgb& destination, int wid
     }
 }
 
+// As duas passadas mantêm o loop vetorizável em x. A primeira grava uma soma
+// horizontal sem normalização; a segunda aplica a soma vertical e normaliza.
+// O mesmo padrão funciona para kernels gaussianos binomiais 3, 5, 7 e 9 ao
+// trocar coeficientes, normalizador e tamanho da janela.
+void gaussian_11_horizontal_pass(
+    const std::vector<unsigned char>& source,
+    std::vector<uint32_t>& intermediate,
+    int width,
+    int height) {
+    const int output_width = width - 10;
+    const unsigned char* input = source.data();
+    uint32_t* output = intermediate.data();
+    #pragma omp parallel for schedule(runtime)
+    for (int y = 0; y < height; ++y) {
+        const size_t input_row = static_cast<size_t>(y) * width;
+        const size_t output_row = static_cast<size_t>(y) * output_width;
+        OMP_SIMD
+        for (int output_x = 0; output_x < output_width; ++output_x) {
+            uint32_t sum = 0;
+            for (int tap = 0; tap < 11; ++tap) {
+                sum += BINOMIAL_11[tap] * input[input_row + output_x + tap];
+            }
+            output[output_row + output_x] = sum;
+        }
+    }
+}
+
+void gaussian_11_vertical_pass(
+    const std::vector<uint32_t>& intermediate,
+    std::vector<unsigned char>& destination,
+    int output_width,
+    int output_height) {
+    const uint32_t* input = intermediate.data();
+    unsigned char* output = destination.data();
+    #pragma omp parallel for schedule(runtime)
+    for (int output_y = 0; output_y < output_height; ++output_y) {
+        const size_t output_row = static_cast<size_t>(output_y) * output_width;
+        OMP_SIMD
+        for (int x = 0; x < output_width; ++x) {
+            uint64_t sum = 0;
+            for (int tap = 0; tap < 11; ++tap) {
+                sum += BINOMIAL_11[tap] * input[static_cast<size_t>(output_y + tap) * output_width + x];
+            }
+            output[output_row + x] = static_cast<unsigned char>((sum + BINOMIAL_11_NORMALIZER / 2) / BINOMIAL_11_NORMALIZER);
+        }
+    }
+}
+
+struct SeparableTimes {
+    double horizontal_ms = 0.0;
+    double vertical_ms = 0.0;
+};
+
+SeparableTimes gaussian_11_separable_planar(
+    const PlanarRgb& source,
+    PlanarRgb& destination,
+    std::vector<uint32_t>& intermediate,
+    int width,
+    int height) {
+    const int output_width = width - 10;
+    const int output_height = height - 10;
+    SeparableTimes times;
+    const std::array<const std::vector<unsigned char>*, 3> inputs = {&source.red, &source.green, &source.blue};
+    const std::array<std::vector<unsigned char>*, 3> outputs = {&destination.red, &destination.green, &destination.blue};
+    for (size_t channel = 0; channel < inputs.size(); ++channel) {
+        times.horizontal_ms += measure_ms([&] { gaussian_11_horizontal_pass(*inputs[channel], intermediate, width, height); });
+        times.vertical_ms += measure_ms([&] { gaussian_11_vertical_pass(intermediate, *outputs[channel], output_width, output_height); });
+    }
+    return times;
+}
+
 void soa_to_aos(const PlanarRgb& planes, unsigned char* destination, int width, int height) {
     #pragma omp parallel for schedule(runtime)
     for (int y = 0; y < height; ++y) {
@@ -230,17 +338,9 @@ void soa_to_aos(const PlanarRgb& planes, unsigned char* destination, int width, 
     }
 }
 
-template <typename Function>
-double measure_ms(Function&& function) {
-    const auto start = std::chrono::steady_clock::now();
-    function();
-    const auto end = std::chrono::steady_clock::now();
-    return std::chrono::duration<double, std::milli>(end - start).count();
-}
-
 void write_header(std::ofstream& csv) {
     csv << "Run_ID,Timestamp_UTC,Image,Operation,Width,Height,Layout,Phase,Repeat,Threads,Schedule,Chunk,Simd_Build,"
-           "OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Elapsed_ms,Result_Hash,Validation\n";
+           "OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Elapsed_ms,Result_Hash,Validation,Reference_Max_Abs_Error,Reference_Differing_Bytes\n";
 }
 
 void write_measurement(
@@ -256,12 +356,14 @@ void write_measurement(
     const std::string& host,
     double elapsed_ms,
     const std::string& result_hash,
-    const char* validation) {
+    const char* validation,
+    const DifferenceStats& difference) {
     const std::vector<std::string> fields = {
         options.run_id, timestamp_utc(), image, options.operation, std::to_string(width), std::to_string(height), layout, phase,
         std::to_string(options.repeat), std::to_string(omp_get_max_threads()), schedule, chunk,
         BENCHMARK_SIMD_BUILD, environment("OMP_PLACES"), environment("OMP_PROC_BIND"), host,
         environment("CXX", "g++"), BENCHMARK_BUILD_FLAGS, std::to_string(elapsed_ms), result_hash, validation,
+        std::to_string(difference.max_abs_error), std::to_string(difference.differing_bytes),
     };
     for (size_t index = 0; index < fields.size(); ++index) {
         if (index) csv << ',';
@@ -327,9 +429,14 @@ int main(int argc, char* argv[]) {
     double unpack_ms = 0.0;
     double planar_kernel_ms = 0.0;
     double repack_ms = 0.0;
+    SeparableTimes separable_times{};
+    double separable_repack_ms = 0.0;
     std::string direct_hash;
     std::string planar_hash;
+    std::string separable_hash;
     std::string reference_hash;
+    DifferenceStats naive_difference{};
+    DifferenceStats separable_difference{};
     bool valid = false;
 
     if (options.operation == "Grayscale") {
@@ -379,17 +486,9 @@ int main(int argc, char* argv[]) {
         }
         PlanarRgb source_planes(input_pixels);
         PlanarRgb filtered_planes(output_pixels);
+        std::vector<uint32_t> intermediate(static_cast<size_t>(output_width) * loaded.height);
 
-        direct_ms = measure_ms([&] { gaussian_11_aos(original.data(), direct.data, loaded.width, loaded.height); });
-        direct_hash = hash_image(direct);
-
-        unpack_ms = measure_ms([&] { aos_to_soa(original.data(), source_planes, loaded.width, loaded.height); });
-        planar_kernel_ms = measure_ms([&] { gaussian_11_planar(source_planes, filtered_planes, loaded.width, loaded.height); });
-        repack_ms = measure_ms([&] { soa_to_aos(filtered_planes, planar_output.data, output_width, output_height); });
-        planar_hash = hash_image(planar_output);
-
-        // A referência chama a implementação de produção, fora da janela de
-        // tempo. Ela verifica tanto a cópia AoS do kernel quanto o SoA.
+        // Referência de produção fora da janela de tempo.
         std::memcpy(reference.data, original.data(), input_bytes);
         if (!apply_11_by_11_convolution(reference, GAUSSIAN_KERNEL_11X11, false, false)) {
             std::cerr << "Erro ao calcular a referência Gaussian_11x11.\n";
@@ -399,7 +498,26 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         reference_hash = hash_image(reference);
-        valid = direct_hash == reference_hash && planar_hash == reference_hash;
+
+        direct_ms = measure_ms([&] { gaussian_11_aos(original.data(), direct.data, loaded.width, loaded.height); });
+        direct_hash = hash_image(direct);
+
+        unpack_ms = measure_ms([&] { aos_to_soa(original.data(), source_planes, loaded.width, loaded.height); });
+        planar_kernel_ms = measure_ms([&] { gaussian_11_planar(source_planes, filtered_planes, loaded.width, loaded.height); });
+        repack_ms = measure_ms([&] { soa_to_aos(filtered_planes, planar_output.data, output_width, output_height); });
+        planar_hash = hash_image(planar_output);
+        naive_difference = compare_images(planar_output, reference);
+
+        // Reutiliza a mesma conversão de entrada e os mesmos buffers já
+        // alocados. O método separável sobrescreve filtered_planes depois que
+        // o hash do método ingênuo foi guardado.
+        separable_times = gaussian_11_separable_planar(source_planes, filtered_planes, intermediate, loaded.width, loaded.height);
+        separable_repack_ms = measure_ms([&] { soa_to_aos(filtered_planes, planar_output.data, output_width, output_height); });
+        separable_hash = hash_image(planar_output);
+        separable_difference = compare_images(planar_output, reference);
+        // O resultado inteiro separável pode diferir em 1 nível da soma float
+        // em ordem 2D, mas não pode ter erro maior. A métrica fica no CSV.
+        valid = direct_hash == reference_hash && planar_hash == reference_hash && separable_difference.max_abs_error <= 1;
         std::free(direct.data);
         std::free(planar_output.data);
         std::free(reference.data);
@@ -417,16 +535,30 @@ int main(int argc, char* argv[]) {
         if (new_file) write_header(csv);
         const std::string image_name = options.image.filename().string();
         const std::string host = hostname();
-        write_measurement(csv, options, image_name, output_width, output_height, "AoS", "Kernel", schedule, chunk, host, direct_ms, direct_hash, validation);
-        write_measurement(csv, options, image_name, output_width, output_height, "SoA", "AoS_to_SoA", schedule, chunk, host, unpack_ms, planar_hash, validation);
-        write_measurement(csv, options, image_name, output_width, output_height, "SoA", "Kernel", schedule, chunk, host, planar_kernel_ms, planar_hash, validation);
-        write_measurement(csv, options, image_name, output_width, output_height, "SoA", "SoA_to_AoS", schedule, chunk, host, repack_ms, planar_hash, validation);
-        write_measurement(csv, options, image_name, output_width, output_height, "SoA", "End_to_End", schedule, chunk, host, unpack_ms + planar_kernel_ms + repack_ms, planar_hash, validation);
+        if (options.operation == "Grayscale") {
+            write_measurement(csv, options, image_name, output_width, output_height, "AoS", "Kernel", schedule, chunk, host, direct_ms, direct_hash, validation, {});
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA", "AoS_to_SoA", schedule, chunk, host, unpack_ms, planar_hash, validation, {});
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA", "Kernel", schedule, chunk, host, planar_kernel_ms, planar_hash, validation, {});
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA", "SoA_to_AoS", schedule, chunk, host, repack_ms, planar_hash, validation, {});
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA", "End_to_End", schedule, chunk, host, unpack_ms + planar_kernel_ms + repack_ms, planar_hash, validation, {});
+        } else {
+            write_measurement(csv, options, image_name, output_width, output_height, "AoS_Naive", "Kernel", schedule, chunk, host, direct_ms, direct_hash, validation, {});
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Naive", "AoS_to_SoA", schedule, chunk, host, unpack_ms, planar_hash, validation, naive_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Naive", "Kernel", schedule, chunk, host, planar_kernel_ms, planar_hash, validation, naive_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Naive", "SoA_to_AoS", schedule, chunk, host, repack_ms, planar_hash, validation, naive_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Naive", "End_to_End", schedule, chunk, host, unpack_ms + planar_kernel_ms + repack_ms, planar_hash, validation, naive_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "AoS_to_SoA", schedule, chunk, host, unpack_ms, separable_hash, validation, separable_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "Horizontal_Passes", schedule, chunk, host, separable_times.horizontal_ms, separable_hash, validation, separable_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "Vertical_Passes", schedule, chunk, host, separable_times.vertical_ms, separable_hash, validation, separable_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "Kernel", schedule, chunk, host, separable_times.horizontal_ms + separable_times.vertical_ms, separable_hash, validation, separable_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "SoA_to_AoS", schedule, chunk, host, separable_repack_ms, separable_hash, validation, separable_difference);
+            write_measurement(csv, options, image_name, output_width, output_height, "SoA_Separable", "End_to_End", schedule, chunk, host, unpack_ms + separable_times.horizontal_ms + separable_times.vertical_ms + separable_repack_ms, separable_hash, validation, separable_difference);
+        }
     }
 
     if (!valid) {
-        std::cerr << "Validação falhou: AoS=" << direct_hash << ", SoA=" << planar_hash
-                  << ", referência=" << reference_hash << "\n";
+        std::cerr << "Validação falhou: AoS=" << direct_hash << ", SoA ingênuo=" << planar_hash
+                  << ", SoA separável=" << separable_hash << ", referência=" << reference_hash << "\n";
         return 1;
     }
     return 0;

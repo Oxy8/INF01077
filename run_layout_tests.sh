@@ -11,6 +11,7 @@ THREADS=(1 2 4 8 12 16 20)
 TIMED_REPETITIONS=(1 2 3 4 5)
 REGULAR_IMAGES=("images/4000x3000.png" "images/6000x6000.png")
 OPERATIONS=("Grayscale" "Gaussian_11x11")
+BUILD_VARIANTS=("off" "off-avx2" "omp" "omp-avx2")
 OUTPUT_DIR="resultados_layout"
 ARCH="${ARCH:-}"
 OVERWRITE=0
@@ -23,9 +24,11 @@ Uso: ./run_layout_tests.sh [opções]
   --overwrite         Permite substituir o diretório de saída informado.
   --help              Mostra esta ajuda.
 
-O experimento compara Grayscale e Gaussian_11x11 estáticos: RGB intercalado
-(AoS) contra R/G/B separados (SoA). Conversão AoS→SoA, kernel e SoA→AoS são
-cronometrados em linhas distintas; alocação e cópias de restauração não entram.
+O experimento compara Grayscale e Gaussian_11x11 estáticos. Grayscale usa
+RGB intercalado (AoS) e SoA; Gaussian acrescenta SoA separável. Cada caso é
+construído como escalar, escalar Haswell, omp simd genérico e omp simd com
+AVX2. Conversão AoS→SoA, kernel e SoA→AoS são cronometrados em linhas
+distintas; alocação e cópias de restauração não entram.
 EOF
 }
 
@@ -53,8 +56,9 @@ done
 
 echo "Compilando as variantes para o experimento de layout..."
 make clean
-make SIMD=off ARCH="$ARCH" layout
-make SIMD=omp ARCH="$ARCH" layout
+for variant in "${BUILD_VARIANTS[@]}"; do
+    make SIMD="$variant" ARCH="$ARCH" layout
+done
 
 RAW_CSV="$OUTPUT_DIR/layout_raw.csv"
 
@@ -73,11 +77,11 @@ run_one() {
 }
 
 binary_for_simd() {
-    [[ "$1" == "off" ]] && printf '%s\n' "build/off/layout_benchmark" || printf '%s\n' "build/omp/layout_benchmark"
+    printf '%s\n' "build/$1/layout_benchmark"
 }
 
 for threads in "${THREADS[@]}"; do
-    for simd in off omp; do
+    for simd in "${BUILD_VARIANTS[@]}"; do
         binary="$(binary_for_simd "$simd")"
         for operation in "${OPERATIONS[@]}"; do
             for image in "${REGULAR_IMAGES[@]}"; do
@@ -86,10 +90,14 @@ for threads in "${THREADS[@]}"; do
         done
     done
 
-    # Alternar a ordem off/omp a cada repetição reduz viés por aquecimento
-    # residual, frequência do processador ou pressão de memória.
+    # Rotacionar a ordem das variantes reduz viés por aquecimento residual,
+    # frequência do processador ou pressão de memória.
     for repetition in "${TIMED_REPETITIONS[@]}"; do
-        if (( repetition % 2 )); then configs=(off omp); else configs=(omp off); fi
+        offset=$(((repetition - 1) % ${#BUILD_VARIANTS[@]}))
+        configs=()
+        for ((position = 0; position < ${#BUILD_VARIANTS[@]}; position++)); do
+            configs+=("${BUILD_VARIANTS[$(((position + offset) % ${#BUILD_VARIANTS[@]}))]}")
+        done
         for simd in "${configs[@]}"; do
             binary="$(binary_for_simd "$simd")"
             for operation in "${OPERATIONS[@]}"; do

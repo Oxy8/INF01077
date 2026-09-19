@@ -35,5 +35,9 @@ env | grep '^OMP_' | sort > "$RESULT_DIR/openmp_environment.txt" || true
 bash ./run_tests.sh --output resultados_experimentos "$@"
 
 cp -a resultados_experimentos/. "$RESULT_DIR/"
-cp -a build/omp/vectorization-core.log "$RESULT_DIR/vectorization.log" 2>/dev/null || true
+for report in build/*/vectorization-core.log; do
+    [[ -f "$report" ]] || continue
+    variant="$(basename "$(dirname "$report")")"
+    cp -a "$report" "$RESULT_DIR/vectorization-${variant}.log"
+done
 echo "Resultados copiados para $RESULT_DIR"

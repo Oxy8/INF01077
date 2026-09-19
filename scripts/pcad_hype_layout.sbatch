@@ -5,11 +5,11 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
 #SBATCH --exclusive
-#SBATCH --time=04:00:00
+#SBATCH --time=08:00:00
 #SBATCH --output=slurm-layout-%j.out
 #SBATCH --error=slurm-layout-%j.err
 
-# Teste complementar: layout AoS (RGBRGB...) versus SoA (R[], G[], B[]).
+# Teste complementar: AoS (RGBRGB...), SoA ingênuo e SoA separável.
 # Mantém a configuração intencionalmente padrão: não força NUMA, afinidade ou
 # arquitetura, e deixa OMP_NUM_THREADS/OMP_SCHEDULE para o script da campanha.
 set -euo pipefail
@@ -36,5 +36,9 @@ env | grep '^OMP_' | sort > "$RESULT_DIR/openmp_environment.txt" || true
 bash ./run_layout_tests.sh --output resultados_layout
 
 cp -a resultados_layout/. "$RESULT_DIR/"
-cp -a build/omp/vectorization-core.log "$RESULT_DIR/vectorization-layout.log" 2>/dev/null || true
+for report in build/*/vectorization-core.log; do
+    [[ -f "$report" ]] || continue
+    variant="$(basename "$(dirname "$report")")"
+    cp -a "$report" "$RESULT_DIR/vectorization-layout-${variant}.log"
+done
 echo "Resultados copiados para $RESULT_DIR"

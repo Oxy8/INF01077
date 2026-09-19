@@ -34,11 +34,17 @@ DEPFLAGS := -MMD -MP
 ifeq ($(SIMD),off)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize
 VECTOR_REPORT_FLAG :=
+else ifeq ($(SIMD),off-avx2)
+SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell
+VECTOR_REPORT_FLAG :=
 else ifeq ($(SIMD),omp)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=1
 VECTOR_REPORT_FLAG := -fopt-info-vec-optimized=$(BUILD_DIR)/vectorization-core.log
+else ifeq ($(SIMD),omp-avx2)
+SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=1 -march=haswell
+VECTOR_REPORT_FLAG := -fopt-info-vec-optimized=$(BUILD_DIR)/vectorization-core.log
 else
-$(error SIMD must be "off" or "omp"; got "$(SIMD)")
+$(error SIMD must be "off", "off-avx2", "omp" or "omp-avx2"; got "$(SIMD)")
 endif
 
 ifneq ($(strip $(ARCH)),)

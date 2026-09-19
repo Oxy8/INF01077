@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Filtro adaptativo: soma dos tempos por chunk — 8 imagens, 20 threads">
+<title>Filtro adaptativo: soma dos tempos por chunk — 8 imagens, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Filtro adaptativo: soma dos tempos por chunk — 8 imagens, 20 threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">4.04 s</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">8.08 s</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">12.12 s</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">16.16 s</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="200.3">SIMD off</text>
+<rect x="255.0" y="101.6" width="659.9" height="20.5" fill="#1f77b4"/>
+<text class="small" x="920.9" y="117.7">14.12 s</text>
+<rect x="255.0" y="127.9" width="539.3" height="20.5" fill="#d62728"/>
+<text class="small" x="800.3" y="144.0">11.54 s</text>
+<rect x="255.0" y="154.3" width="538.5" height="20.5" fill="#2ca02c"/>
+<text class="small" x="799.5" y="170.3">11.52 s</text>
+<rect x="255.0" y="180.6" width="541.1" height="20.5" fill="#9467bd"/>
+<text class="small" x="802.1" y="196.7">11.58 s</text>
+<rect x="255.0" y="206.9" width="559.2" height="20.5" fill="#ff7f0e"/>
+<text class="small" x="820.2" y="223.0">11.96 s</text>
+<rect x="255.0" y="233.3" width="670.3" height="20.5" fill="#17becf"/>
+<text class="small" x="931.3" y="249.3">14.34 s</text>
+<text class="axis" text-anchor="end" x="243" y="397.9">SIMD omp</text>
+<rect x="255.0" y="299.1" width="678.6" height="20.5" fill="#1f77b4"/>
+<text class="small" x="939.6" y="315.2">14.52 s</text>
+<rect x="255.0" y="325.4" width="550.1" height="20.5" fill="#d62728"/>
+<text class="small" x="811.1" y="341.5">11.77 s</text>
+<rect x="255.0" y="351.8" width="551.1" height="20.5" fill="#2ca02c"/>
+<text class="small" x="812.1" y="367.8">11.79 s</text>
+<rect x="255.0" y="378.1" width="554.3" height="20.5" fill="#9467bd"/>
+<text class="small" x="815.3" y="394.2">11.86 s</text>
+<rect x="255.0" y="404.4" width="571.2" height="20.5" fill="#ff7f0e"/>
+<text class="small" x="832.2" y="420.5">12.22 s</text>
+<rect x="255.0" y="430.8" width="686.4" height="20.5" fill="#17becf"/>
+<text class="small" x="947.4" y="446.8">14.69 s</text>
+<rect x="255" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="504">static</text>
+<rect x="435" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="457" y="504">dynamic,1</text>
+<rect x="615" y="492" width="15" height="15" fill="#2ca02c"/>
+<text class="legend" x="637" y="504">dynamic,4</text>
+<rect x="795" y="492" width="15" height="15" fill="#9467bd"/>
+<text class="legend" x="817" y="504">dynamic,16</text>
+<rect x="975" y="492" width="15" height="15" fill="#ff7f0e"/>
+<text class="legend" x="997" y="504">dynamic,64</text>
+<rect x="1155" y="492" width="15" height="15" fill="#17becf"/>
+<text class="legend" x="1177" y="504">dynamic,256</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo médio (ms)</text>
+</svg>

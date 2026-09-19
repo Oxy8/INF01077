@@ -445,6 +445,7 @@ def adaptive_figures(rows: list[dict[str, object]], figures: Path, tables: Path)
     links: list[tuple[str, str]] = []
     images = sorted({str(row["Image"]) for row in rows})
     chunks = [1, 4, 16, 64, 256]
+    chunk_configs = [("static", "", "static")] + [("dynamic", str(chunk), f"dynamic,{chunk}") for chunk in chunks]
 
     # Chunk sweep: normalize each image to its own static reference, revealing load imbalance independent of size.
     chunk_table: list[dict[str, object]] = []
@@ -458,6 +459,43 @@ def adaptive_figures(rows: list[dict[str, object]], figures: Path, tables: Path)
                 if dynamic:
                     chunk_table.append({"Image": image, "Simd": simd, "Chunk": chunk, "Static_ms": static["Mean_ms"], "Dynamic_ms": dynamic["Mean_ms"], "Speedup_static_over_dynamic": safe_ratio(float(static["Mean_ms"]), float(dynamic["Mean_ms"]))})
     write_csv(tables / "adaptive_chunks_20_threads.csv", ["Image", "Simd", "Chunk", "Static_ms", "Dynamic_ms", "Speedup_static_over_dynamic"], chunk_table)
+
+    # Tempo absoluto por imagem: este é o gráfico principal da varredura.
+    # Diferente das curvas normalizadas abaixo, mantém static e todos os cinco
+    # chunks dinâmicos na escala original de cada imagem.
+    for image in images:
+        series = []
+        labels = [label for _, _, label in chunk_configs]
+        for simd in ("off", "omp"):
+            data = [lookup(rows, Image=image, Threads=20, Schedule=schedule, Chunk=chunk, Simd_Build=simd) for schedule, chunk, _ in chunk_configs]
+            if any(item is None for item in data):
+                continue
+            series.append((f"SIMD {simd}", [float(item["Mean_ms"]) for item in data if item], SIMD_COLORS[simd], [float(item["StdDev_ms"]) for item in data if item]))
+        if series:
+            path = figures / f"06_tempo_chunks_adaptativo_{Path(image).stem}.svg"
+            line_chart(path, f"Filtro adaptativo: tempo por chunk — {image}, 20 threads", labels, series, "Tempo médio (ms)", x_label="Schedule OpenMP")
+            links.append((path.name, f"Tempo static e dynamic por chunk — {image}"))
+
+    # Soma por configuração, útil como uma visão global da campanha. Não é
+    # confundida com a média de imagens: o título registra que é uma soma.
+    total_rows: list[dict[str, object]] = []
+    totals: dict[tuple[str, str], float] = {}
+    for simd in ("off", "omp"):
+        for schedule, chunk, label in chunk_configs:
+            selected = [lookup(rows, Image=image, Threads=20, Schedule=schedule, Chunk=chunk, Simd_Build=simd) for image in images]
+            if any(item is None for item in selected):
+                continue
+            total = sum(float(item["Mean_ms"]) for item in selected if item)
+            totals[(simd, label)] = total
+            total_rows.append({"Simd": simd, "Schedule": label, "Images": len(images), "Total_ms": total})
+    write_csv(tables / "adaptive_total_por_chunk_20_threads.csv", ["Simd", "Schedule", "Images", "Total_ms"], total_rows)
+    if len(totals) == len(chunk_configs) * 2:
+        path = figures / "06_tempo_total_chunks_adaptativo.svg"
+        bar_chart(path, "Filtro adaptativo: soma dos tempos por chunk — 8 imagens, 20 threads", ["SIMD off", "SIMD omp"], [(label, [totals[(simd, label)] for simd in ("off", "omp")], PALETTE[index % len(PALETTE)]) for index, (_, _, label) in enumerate(chunk_configs)], "Tempo médio (ms)")
+        links.append((path.name, "Soma dos tempos static e dynamic por chunk nas 8 imagens"))
+
+    # As curvas normalizadas respondem à pergunta complementar: quanto cada
+    # chunk ganha ou perde contra static na própria imagem.
     for simd in ("off", "omp"):
         series = []
         for index, image in enumerate(images):

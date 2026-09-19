@@ -1,0 +1,13 @@
+Simd,Schedule,Images,Total_ms
+off,static,8,14120.749551
+off,"dynamic,1",8,11540.947752
+off,"dynamic,4",8,11522.905343999999
+off,"dynamic,16",8,11579.452031
+off,"dynamic,64",8,11964.973757
+off,"dynamic,256",8,14342.859328
+omp,static,8,14520.730176000001
+omp,"dynamic,1",8,11770.033673
+omp,"dynamic,4",8,11792.84084
+omp,"dynamic,16",8,11860.286385
+omp,"dynamic,64",8,12221.523738
+omp,"dynamic,256",8,14686.763789

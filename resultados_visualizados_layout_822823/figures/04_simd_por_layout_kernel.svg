@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Efeito do SIMD explícito no kernel">
+<title>Efeito do SIMD explícito no kernel</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="250" y="34">Efeito do SIMD explícito no kernel</text>
+<text class="note" x="250" y="58">Acima de 1× favorece omp simd (tempo off / tempo omp).</text>
+<text class="axis" text-anchor="end" x="240" y="133.0">4000x3000.png · Grayscale · AoS</text>
+<rect x="250.0" y="105.0" width="118.6" height="44.4" fill="rgb(253,236,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="132.5">0.96×</text>
+<rect x="368.6" y="105.0" width="118.6" height="44.4" fill="rgb(252,233,220)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="132.5">0.95×</text>
+<rect x="487.1" y="105.0" width="118.6" height="44.4" fill="rgb(253,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="132.5">0.97×</text>
+<rect x="605.7" y="105.0" width="118.6" height="44.4" fill="rgb(253,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="132.5">0.97×</text>
+<rect x="724.3" y="105.0" width="118.6" height="44.4" fill="rgb(253,239,228)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="132.5">0.98×</text>
+<rect x="842.9" y="105.0" width="118.6" height="44.4" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="132.5">0.97×</text>
+<rect x="961.4" y="105.0" width="118.6" height="44.4" fill="rgb(253,236,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="132.5">0.96×</text>
+<text class="axis" text-anchor="end" x="240" y="177.3">4000x3000.png · Grayscale · SoA</text>
+<rect x="250.0" y="149.4" width="118.6" height="44.4" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="176.9">0.99×</text>
+<rect x="368.6" y="149.4" width="118.6" height="44.4" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="176.9">1.00×</text>
+<rect x="487.1" y="149.4" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="176.9">1.00×</text>
+<rect x="605.7" y="149.4" width="118.6" height="44.4" fill="rgb(254,244,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="176.9">1.00×</text>
+<rect x="724.3" y="149.4" width="118.6" height="44.4" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="176.9">1.01×</text>
+<rect x="842.9" y="149.4" width="118.6" height="44.4" fill="rgb(233,244,253)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="176.9">1.00×</text>
+<rect x="961.4" y="149.4" width="118.6" height="44.4" fill="rgb(253,238,226)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="176.9">0.97×</text>
+<text class="axis" text-anchor="end" x="240" y="221.7">4000x3000.png · Gaussian_11x11 · AoS</text>
+<rect x="250.0" y="193.8" width="118.6" height="44.4" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="221.3">1.00×</text>
+<rect x="368.6" y="193.8" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="221.3">1.00×</text>
+<rect x="487.1" y="193.8" width="118.6" height="44.4" fill="rgb(232,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="221.3">1.01×</text>
+<rect x="605.7" y="193.8" width="118.6" height="44.4" fill="rgb(254,243,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="221.3">0.99×</text>
+<rect x="724.3" y="193.8" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="221.3">1.00×</text>
+<rect x="842.9" y="193.8" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="221.3">1.00×</text>
+<rect x="961.4" y="193.8" width="118.6" height="44.4" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="221.3">1.01×</text>
+<text class="axis" text-anchor="end" x="240" y="266.1">4000x3000.png · Gaussian_11x11 · SoA</text>
+<rect x="250.0" y="238.1" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="265.6">0.50×</text>
+<rect x="368.6" y="238.1" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="265.6">0.50×</text>
+<rect x="487.1" y="238.1" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="265.6">0.50×</text>
+<rect x="605.7" y="238.1" width="118.6" height="44.4" fill="rgb(231,131,98)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="265.6">0.50×</text>
+<rect x="724.3" y="238.1" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="265.6">0.50×</text>
+<rect x="842.9" y="238.1" width="118.6" height="44.4" fill="rgb(231,132,99)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="265.6">0.51×</text>
+<rect x="961.4" y="238.1" width="118.6" height="44.4" fill="rgb(231,132,98)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="265.6">0.51×</text>
+<text class="axis" text-anchor="end" x="240" y="310.5">6000x6000.png · Grayscale · AoS</text>
+<rect x="250.0" y="282.5" width="118.6" height="44.4" fill="rgb(253,236,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="310.0">0.96×</text>
+<rect x="368.6" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="310.0">0.97×</text>
+<rect x="487.1" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,226)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="310.0">0.97×</text>
+<rect x="605.7" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="310.0">0.97×</text>
+<rect x="724.3" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="310.0">0.97×</text>
+<rect x="842.9" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,226)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="310.0">0.97×</text>
+<rect x="961.4" y="282.5" width="118.6" height="44.4" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="310.0">0.97×</text>
+<text class="axis" text-anchor="end" x="240" y="354.8">6000x6000.png · Grayscale · SoA</text>
+<rect x="250.0" y="326.9" width="118.6" height="44.4" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="354.4">0.99×</text>
+<rect x="368.6" y="326.9" width="118.6" height="44.4" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="354.4">1.00×</text>
+<rect x="487.1" y="326.9" width="118.6" height="44.4" fill="rgb(231,243,249)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="354.4">1.02×</text>
+<rect x="605.7" y="326.9" width="118.6" height="44.4" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="354.4">1.01×</text>
+<rect x="724.3" y="326.9" width="118.6" height="44.4" fill="rgb(230,243,248)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="354.4">1.02×</text>
+<rect x="842.9" y="326.9" width="118.6" height="44.4" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="354.4">0.99×</text>
+<rect x="961.4" y="326.9" width="118.6" height="44.4" fill="rgb(253,235,223)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="354.4">0.96×</text>
+<text class="axis" text-anchor="end" x="240" y="399.2">6000x6000.png · Gaussian_11x11 · AoS</text>
+<rect x="250.0" y="371.2" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="398.8">1.00×</text>
+<rect x="368.6" y="371.2" width="118.6" height="44.4" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="398.8">1.00×</text>
+<rect x="487.1" y="371.2" width="118.6" height="44.4" fill="rgb(232,244,251)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="398.8">1.01×</text>
+<rect x="605.7" y="371.2" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="398.8">1.00×</text>
+<rect x="724.3" y="371.2" width="118.6" height="44.4" fill="rgb(254,243,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="398.8">0.99×</text>
+<rect x="842.9" y="371.2" width="118.6" height="44.4" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="398.8">1.00×</text>
+<rect x="961.4" y="371.2" width="118.6" height="44.4" fill="rgb(253,239,228)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="398.8">0.98×</text>
+<text class="axis" text-anchor="end" x="240" y="443.6">6000x6000.png · Gaussian_11x11 · SoA</text>
+<rect x="250.0" y="415.6" width="118.6" height="44.4" fill="rgb(231,129,95)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="309.3" y="443.1">0.50×</text>
+<rect x="368.6" y="415.6" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="427.9" y="443.1">0.50×</text>
+<rect x="487.1" y="415.6" width="118.6" height="44.4" fill="rgb(231,130,97)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="546.4" y="443.1">0.50×</text>
+<rect x="605.7" y="415.6" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="665.0" y="443.1">0.50×</text>
+<rect x="724.3" y="415.6" width="118.6" height="44.4" fill="rgb(231,129,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="783.6" y="443.1">0.50×</text>
+<rect x="842.9" y="415.6" width="118.6" height="44.4" fill="rgb(231,130,96)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="902.1" y="443.1">0.50×</text>
+<rect x="961.4" y="415.6" width="118.6" height="44.4" fill="rgb(230,125,90)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1020.7" y="443.1">0.47×</text>
+<text class="axis" text-anchor="middle" x="309.3" y="93">1</text>
+<text class="axis" text-anchor="middle" x="427.9" y="93">2</text>
+<text class="axis" text-anchor="middle" x="546.4" y="93">4</text>
+<text class="axis" text-anchor="middle" x="665.0" y="93">8</text>
+<text class="axis" text-anchor="middle" x="783.6" y="93">12</text>
+<text class="axis" text-anchor="middle" x="902.1" y="93">16</text>
+<text class="axis" text-anchor="middle" x="1020.7" y="93">20</text>
+<rect class="frame" x="250" y="105" width="830" height="355"/>
+</svg>
