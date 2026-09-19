@@ -28,6 +28,11 @@ CXXFLAGS ?= -O3 -Wall -Wextra
 CXXFLAGS += -std=c++17
 OPENMP_FLAGS ?= -fopenmp
 CXXFLAGS += $(OPENMP_FLAGS)
+# Mantém a aritmética em ponto flutuante bit a bit comparável entre o alvo
+# genérico e Haswell. Sem isto, -march=haswell pode introduzir FMA e alterar
+# o arredondamento de expressões como a luminância, invalidando hashes mesmo
+# quando o algoritmo e os dados são os mesmos. AVX2 continua habilitado.
+CXXFLAGS += -ffp-contract=off
 LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
 
