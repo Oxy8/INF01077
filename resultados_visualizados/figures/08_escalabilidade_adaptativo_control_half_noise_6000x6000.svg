@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Escalabilidade do filtro adaptativo — control_half_noise_6000x6000.png">
+<title>Escalabilidade do filtro adaptativo — control_half_noise_6000x6000.png</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Escalabilidade do filtro adaptativo — control_half_noise_6000x6000.png</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">-205.75 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">2.43 s</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">5.07 s</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">7.71 s</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">10.35 s</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,125.3 148.4,267.8 235.3,427.8 408.9,505.2 582.6,531.1 756.3,545.5 930.0,551.8" fill="none" stroke="#555555" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="125.5" y2="125.1" stroke="#555555" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="268.5" y2="267.2" stroke="#555555" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="429.3" y2="426.3" stroke="#555555" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="507.1" y2="503.4" stroke="#555555" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="531.6" y2="530.6" stroke="#555555" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="545.7" y2="545.3" stroke="#555555" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="555.9" y2="547.6" stroke="#555555" stroke-width="1.2"/>
+<circle cx="105.0" cy="125.3" r="4" fill="#555555"/>
+<circle cx="148.4" cy="267.8" r="4" fill="#555555"/>
+<circle cx="235.3" cy="427.8" r="4" fill="#555555"/>
+<circle cx="408.9" cy="505.2" r="4" fill="#555555"/>
+<circle cx="582.6" cy="531.1" r="4" fill="#555555"/>
+<circle cx="756.3" cy="545.5" r="4" fill="#555555"/>
+<circle cx="930.0" cy="551.8" r="4" fill="#555555"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#555555" stroke-width="3"/>
+<text class="legend" x="980" y="76">off, static</text>
+<polyline points="105.0,125.1 148.4,355.1 235.3,472.8 408.9,526.3 582.6,546.1 756.3,557.4 930.0,563.9" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="125.5" y2="124.7" stroke="#d62728" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="356.8" y2="353.4" stroke="#d62728" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="473.9" y2="471.7" stroke="#d62728" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="526.4" y2="526.1" stroke="#d62728" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="546.1" y2="546.0" stroke="#d62728" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="557.5" y2="557.2" stroke="#d62728" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="564.3" y2="563.5" stroke="#d62728" stroke-width="1.2"/>
+<circle cx="105.0" cy="125.1" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="355.1" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="472.8" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="526.3" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="546.1" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="557.4" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="563.9" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="98">off, dynamic,16</text>
+<polyline points="105.0,113.0 148.4,260.9 235.3,424.0 408.9,504.4 582.6,530.2 756.3,544.2 930.0,553.3" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="113.3" y2="112.7" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="261.9" y2="259.8" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="426.7" y2="421.2" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="504.7" y2="504.2" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="530.3" y2="530.1" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="545.0" y2="543.4" stroke="#8a2be2" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="553.4" y2="553.1" stroke="#8a2be2" stroke-width="1.2"/>
+<circle cx="105.0" cy="113.0" r="4" fill="#8a2be2"/>
+<circle cx="148.4" cy="260.9" r="4" fill="#8a2be2"/>
+<circle cx="235.3" cy="424.0" r="4" fill="#8a2be2"/>
+<circle cx="408.9" cy="504.4" r="4" fill="#8a2be2"/>
+<circle cx="582.6" cy="530.2" r="4" fill="#8a2be2"/>
+<circle cx="756.3" cy="544.2" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="553.3" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="120">omp, static</text>
+<polyline points="105.0,113.1 148.4,349.8 235.3,469.4 408.9,524.2 582.6,544.7 756.3,556.4 930.0,563.1" fill="none" stroke="#ff7f0e" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="113.3" y2="112.9" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="148.4" x2="148.4" y1="351.1" y2="348.5" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="235.3" x2="235.3" y1="471.9" y2="466.9" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="408.9" x2="408.9" y1="524.4" y2="524.0" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="582.6" x2="582.6" y1="545.1" y2="544.2" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="756.3" x2="756.3" y1="556.6" y2="556.3" stroke="#ff7f0e" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="563.5" y2="562.7" stroke="#ff7f0e" stroke-width="1.2"/>
+<circle cx="105.0" cy="113.1" r="4" fill="#ff7f0e"/>
+<circle cx="148.4" cy="349.8" r="4" fill="#ff7f0e"/>
+<circle cx="235.3" cy="469.4" r="4" fill="#ff7f0e"/>
+<circle cx="408.9" cy="524.2" r="4" fill="#ff7f0e"/>
+<circle cx="582.6" cy="544.7" r="4" fill="#ff7f0e"/>
+<circle cx="756.3" cy="556.4" r="4" fill="#ff7f0e"/>
+<circle cx="930.0" cy="563.1" r="4" fill="#ff7f0e"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#ff7f0e" stroke-width="3"/>
+<text class="legend" x="980" y="142">omp, dynamic,16</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo médio (ms)</text>
+</svg>

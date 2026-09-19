@@ -37,6 +37,28 @@ O arquivo `benchmark_raw.csv` mantém cada medição individual e
 `benchmark_summary.csv` contém mediana, mínimo, máximo, média, desvio-padrão
 e speedup relativo ao `static` da mesma configuração.
 
+## Experimento complementar: layout de pixels
+
+`run_layout_tests.sh` testa a hipótese de que o layout intercalado usado pela
+biblioteca (`RGBRGB...`, também chamado AoS) reduz a oportunidade de
+vetorização. Ele usa `Grayscale` e `Gaussian_11x11`, `schedule(static)`, as
+duas imagens regulares e os mesmos sete níveis de threads da campanha
+principal. Para cada variante `SIMD=off` e `SIMD=omp`, há aquecimento e cinco
+amostras medidas:
+
+```bash
+bash run_layout_tests.sh --output resultados_layout
+```
+
+O benchmark aloca `R[]`, `G[]` e `B[]` uma vez e registra as fases separadas:
+`AoS_to_SoA`, `Kernel`, `SoA_to_AoS` e `End_to_End`. A cópia usada
+para restaurar a entrada e as alocações não entram no tempo. Cada amostra
+reconstrói a imagem RGB e compara seu hash ao resultado AoS; uma divergência
+interrompe o resumo. Para Gaussian_11x11, ambos também são comparados à função
+de produção, fora da janela cronometrada. Assim, a comparação central é entre
+as duas linhas `Kernel`; o total mostra se uma eventual vantagem do kernel
+compensa as conversões em uma aplicação que ainda recebe/devolve RGB.
+
 ## PCAD
 
 No nó de login, submeta primeiro a verificação de VTune:
@@ -49,6 +71,12 @@ Depois execute a bateria formal em nó hype exclusivo:
 
 ```bash
 sbatch scripts/pcad_hype_benchmark.sbatch
+```
+
+Para executar apenas o teste de layout no mesmo tipo de nó:
+
+```bash
+sbatch scripts/pcad_hype_layout.sbatch
 ```
 
 O job coleta a topologia de CPU e usa os padrões de afinidade, NUMA e

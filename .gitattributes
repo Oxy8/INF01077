@@ -1,0 +1,4 @@
+# Scripts executados no Linux do PCAD precisam de terminadores LF.
+*.sh text eol=lf
+*.sbatch text eol=lf
+Makefile text eol=lf

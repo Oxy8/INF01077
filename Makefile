@@ -8,14 +8,16 @@ SIMD ?= off
 ARCH ?=
 BUILD_DIR := build/$(SIMD)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
+LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
 CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
 CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
 BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
+LAYOUT_OBJECT := $(BUILD_DIR)/layout_benchmark.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
 GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
@@ -49,9 +51,11 @@ CXXFLAGS += $(SIMD_FLAGS)
 # flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
 CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
-.PHONY: all gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all layout gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
+
+layout: $(LAYOUT_TARGET)
 
 gui: $(GUI_TARGET)
 
@@ -80,6 +84,9 @@ check-gtk: check-compiler
 $(BENCHMARK_TARGET): $(CORE_OBJECT) $(BENCHMARK_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(LAYOUT_TARGET): $(CORE_OBJECT) $(LAYOUT_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -91,6 +98,9 @@ $(CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_D
 
 $(BENCHMARK_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(LAYOUT_OBJECT): $(PROJECT_DIR)/layout_benchmark.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@

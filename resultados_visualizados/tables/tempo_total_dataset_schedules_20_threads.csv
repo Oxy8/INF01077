@@ -1,0 +1,7 @@
+Simd,Schedule,Total_dataset_ms
+off,static,2301.174446
+off,"dynamic,1",2397.432496
+off,"dynamic,16",2280.0799420000003
+omp,static,2263.748273
+omp,"dynamic,1",2406.588763
+omp,"dynamic,16",2286.54025
