@@ -25,7 +25,7 @@ Faça uma validação curta da infraestrutura:
 bash run_tests.sh --smoke --output resultados_smoke
 ```
 
-A campanha completa usa duas repetições cronometradas, uma execução de
+A campanha completa usa cinco repetições cronometradas, uma execução de
 aquecimento e threads `1,2,4,8,12,16,20`. A afinidade e a política NUMA ficam
 nos padrões do ambiente OpenMP/Slurm:
 

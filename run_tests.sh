@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT_DIR"
 
 THREADS=(1 2 4 8 12 16 20)
-TIMED_REPETITIONS=(1 2)
+TIMED_REPETITIONS=(1 2 3 4 5)
 REGULAR_IMAGES=("images/4000x3000.png" "images/6000x6000.png")
 ADAPTIVE_REAL_IMAGES=("images/sky.jpg" "images/stars.jpg" "images/rain_paisage.jpg" "images/firework.jpg")
 ADAPTIVE_CONTROL_IMAGES=(
