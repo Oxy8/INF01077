@@ -1,0 +1,281 @@
+Image,Operation,Width,Height,Layout,Phase,Threads,Schedule,Chunk,Simd_Build,OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Samples,Median_ms,Min_ms,Max_ms,Mean_ms,StdDev_ms
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3062.561071,3059.688687,3080.365765,3066.799939,8.510035
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3063.725969,3059.364414,3064.778543,3062.527101,2.623588
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,295.766346,295.467010,296.002925,295.736427,0.215504
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,295.732699,295.571558,296.227539,295.788368,0.265843
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,222.155605,222.110238,222.956136,222.371656,0.362101
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,222.920115,222.090343,223.668825,222.749331,0.668347
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1533.200180,1531.492592,1559.443542,1538.027760,12.013025
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1533.359394,1530.932093,1562.057568,1538.560594,13.182637
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,179.002364,178.949566,185.168377,180.233419,2.759202
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,178.808367,178.778876,179.025273,178.852899,0.100916
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,774.217518,769.423628,793.690031,776.727488,9.706221
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,769.437527,766.283366,774.017976,770.219117,3.077262
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,427.136879,426.435132,461.206165,434.165294,15.172557
+4000x3000.png,Gaussian_11x11,3990,2990,AoS,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,434.852659,427.813332,455.379794,437.525007,10.694413
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,23.573035,23.200491,24.761131,23.901300,0.657666
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,24.594002,23.777338,24.723707,24.319399,0.475328
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.555350,2.449953,2.961814,2.603860,0.210262
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.482802,2.451543,2.492038,2.475237,0.016770
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.006230,1.906602,2.154064,1.996780,0.101208
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1.930864,1.895667,2.030404,1.952140,0.056864
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,11.838164,11.807800,12.423003,12.041564,0.300891
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,11.833361,11.820788,12.028478,11.870822,0.088371
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1.743357,1.633825,1.826996,1.736545,0.071764
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1.757045,1.681929,1.816126,1.752034,0.048303
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.504114,6.107969,7.153631,6.564434,0.475934
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.340320,6.199546,6.697009,6.385185,0.189072
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.532824,3.507748,3.677404,3.569539,0.071982
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,AoS_to_SoA,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3.574805,3.445235,3.665285,3.555714,0.087517
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3120.784494,3115.261209,3135.295359,3121.843254,8.068035
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6232.616898,6230.927688,6244.895023,6235.100927,5.618296
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,301.087969,300.879627,320.778343,304.980381,8.832222
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,602.534408,600.191560,629.932513,608.817135,12.575437
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,225.822435,225.726340,248.331950,230.759059,9.874972
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,450.295099,449.955691,452.688278,450.741623,1.115105
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1564.310257,1559.820020,1572.097725,1565.297912,4.476844
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3124.207739,3119.420137,3127.287080,3123.828306,3.539568
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,182.005885,181.662567,199.269619,185.360894,7.777275
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,361.811804,361.478028,363.110531,362.030257,0.655067
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,787.838952,785.512852,798.560888,789.501541,5.203899
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1574.493286,1565.164231,1584.904588,1574.722073,6.990861
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,439.518826,434.386194,460.858841,443.536020,11.076863
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,End_to_End,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,872.566334,870.787582,875.200123,872.899947,1.652299
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3072.462309,3067.306565,3085.355315,3073.051326,7.319604
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6183.122086,6182.363934,6195.127678,6185.836867,5.345163
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,295.562439,295.378215,315.430682,299.576175,8.866125
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,597.042692,594.682184,624.485519,603.426708,12.559106
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,221.596534,221.282200,243.770164,226.330334,9.788741
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,445.756541,445.556589,448.361648,446.264129,1.179402
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1539.821733,1535.177772,1547.751989,1540.590110,4.609757
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3099.854379,3094.727616,3102.921946,3099.271410,3.591506
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,177.811346,177.570152,195.018036,181.188371,7.731895
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,357.579656,357.490225,359.231156,357.913999,0.743190
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,774.771858,772.036177,786.238627,776.485223,5.620443
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1561.707264,1551.964740,1571.949029,1561.785806,7.078052
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,432.116632,426.922307,453.359627,436.069195,11.008148
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,865.105406,863.072052,867.540204,865.386314,1.684892
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,24.749150,24.693656,25.519626,24.890628,0.352426
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,25.014715,24.730025,25.101032,24.944661,0.174585
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.850008,2.642267,2.897708,2.800345,0.104532
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.964192,2.742798,3.040173,2.915191,0.133906
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.407722,2.277714,2.618944,2.431945,0.143935
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.449629,2.303483,2.859780,2.525355,0.214800
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,12.650360,12.537936,12.816825,12.666238,0.102343
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,12.664043,12.514935,12.952297,12.686074,0.177096
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.508226,2.161124,2.666406,2.435978,0.248968
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.267779,2.122330,2.639650,2.364224,0.254391
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.323044,6.208931,6.927569,6.451884,0.300193
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.556366,6.378761,6.731324,6.551082,0.128281
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.890302,3.724790,4.130616,3.897286,0.158440
+4000x3000.png,Gaussian_11x11,3990,2990,SoA,SoA_to_AoS,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4.063551,3.652084,4.214684,3.957919,0.255605
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,46.070000,46.050868,46.484506,46.219261,0.216587
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,47.859494,47.843199,48.328009,48.027262,0.239515
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,5.501540,5.459839,5.537520,5.501418,0.027988
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,5.613180,5.585099,5.714073,5.637723,0.053072
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,4.462924,4.450839,4.528975,4.483300,0.037759
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4.624265,4.574534,4.693435,4.639700,0.052054
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,24.366889,23.404831,24.525336,24.112984,0.460927
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,25.273686,25.022299,26.370340,25.446156,0.528842
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.894572,3.825765,3.955233,3.904738,0.053704
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4.051284,3.958100,4.141997,4.048747,0.070437
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,12.895834,12.823075,12.952589,12.893373,0.048022
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,13.270600,12.946626,13.562427,13.264120,0.227242
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.452124,7.433358,7.506230,7.462035,0.028361
+4000x3000.png,Grayscale,4000,3000,AoS,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.651279,7.562513,7.835797,7.664324,0.104695
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,24.887858,24.810806,24.984467,24.891983,0.072159
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,24.347469,23.458957,24.719274,24.163527,0.575103
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.789257,2.715157,2.826681,2.781625,0.046679
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.835133,2.767663,3.141585,2.886698,0.146402
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.445433,2.364480,2.469464,2.434376,0.040841
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.501958,2.369355,2.546713,2.462986,0.077943
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,11.831407,11.738882,12.113368,11.912917,0.171004
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,12.074226,11.799653,12.902920,12.231633,0.434546
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.312544,2.290621,2.408667,2.325573,0.047445
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.342955,2.298468,2.478887,2.359595,0.069405
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.163172,6.983010,7.615248,7.190345,0.252893
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.090733,7.003919,7.217699,7.107344,0.087340
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.884650,3.842571,4.114292,3.917830,0.112437
+4000x3000.png,Grayscale,4000,3000,SoA,AoS_to_SoA,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3.847162,3.776092,3.985986,3.868284,0.087092
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,88.585993,87.845650,88.854895,88.510534,0.388484
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,88.380826,87.057274,91.150861,88.468726,1.642367
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,9.773089,9.563415,9.967121,9.744385,0.156560
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,9.761217,9.575345,9.938499,9.766520,0.156256
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,8.018155,7.945321,8.276932,8.066475,0.128467
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,8.130899,7.944689,8.537446,8.167738,0.222343
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,45.018964,44.107039,45.285565,44.923328,0.477770
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,44.636114,44.305826,45.020635,44.672536,0.309914
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.607695,7.500059,7.661459,7.592295,0.063321
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.725819,7.117687,7.872894,7.639792,0.299719
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,25.811554,25.367409,25.892844,25.724154,0.220418
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,25.860139,25.220348,26.186742,25.791340,0.352473
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,13.706772,13.552742,13.902886,13.716150,0.164670
+4000x3000.png,Grayscale,4000,3000,SoA,End_to_End,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,13.701813,13.141989,13.766030,13.549700,0.270392
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,38.428166,38.377438,38.800320,38.554089,0.209227
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,38.452792,38.395426,41.266187,39.003435,1.265163
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.801299,3.788349,3.826714,3.804229,0.014598
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3.797029,3.743677,3.801969,3.782573,0.024771
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.874478,2.842454,2.966730,2.881785,0.049616
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.867945,2.842240,2.890804,2.868303,0.018734
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,19.667154,19.653351,19.790739,19.688715,0.057510
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,19.728022,19.249755,19.862471,19.674491,0.246615
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.288891,2.277286,2.312810,2.291062,0.015132
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.335808,2.306078,2.512097,2.362877,0.084430
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,10.145194,9.818568,10.232339,10.110477,0.168378
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,10.134451,9.985887,10.332132,10.145982,0.126746
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,5.480938,5.419813,5.576467,5.488801,0.060633
+4000x3000.png,Grayscale,4000,3000,SoA,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,5.510309,5.476701,5.559804,5.510413,0.032396
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,25.070108,24.475979,25.397749,25.064462,0.364674
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,25.347878,24.944433,25.537205,25.301764,0.218271
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,3.152442,3.011321,3.319376,3.158531,0.112832
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3.018429,2.972708,3.305162,3.097248,0.146277
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.802088,2.541030,2.947168,2.750315,0.155359
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2.782839,2.673085,3.167543,2.836449,0.191949
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,13.499381,12.651676,13.551350,13.321695,0.378834
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,12.653304,12.255244,13.423072,12.766411,0.426994
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2.975390,2.921533,3.018151,2.975659,0.038715
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,3.015640,2.481775,3.150739,2.917320,0.261957
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,8.489277,7.933593,8.765753,8.423332,0.302893
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,8.535617,8.143728,8.802905,8.538014,0.251357
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,4.257672,4.172667,4.446256,4.309519,0.126540
+4000x3000.png,Grayscale,4000,3000,SoA,SoA_to_AoS,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4.264050,3.889196,4.444404,4.171003,0.261034
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,9203.960844,9195.775452,9207.946107,9201.871827,5.004019
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,9200.106565,9198.263477,9214.152387,9203.744954,6.662871
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,884.474842,883.897236,885.664826,884.651132,0.759077
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,884.649480,883.909546,906.048090,891.558974,10.409693
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,665.419715,664.863594,678.811575,668.190016,5.973996
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,664.741173,664.219336,688.041238,669.341742,10.463205
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,4605.162887,4601.733946,4636.395069,4612.105964,14.355021
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4604.838337,4603.364553,4612.049426,4606.079862,3.435406
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,532.781040,532.187657,533.916664,533.008975,0.816123
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,547.781854,532.400879,560.141436,546.600923,13.403070
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2332.470610,2325.346490,2460.666790,2366.127913,57.408095
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2324.775409,2312.583395,2402.036369,2341.576232,35.742710
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1284.413895,1282.245638,1288.654040,1285.077994,2.363027
+6000x6000.png,Gaussian_11x11,5990,5990,AoS,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1281.057754,1278.386453,1320.997777,1289.402744,18.108103
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,73.890173,71.735383,78.943707,74.578713,2.691163
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,70.906032,70.789302,75.692129,72.686087,2.520656
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.614837,7.596157,7.903186,7.699484,0.139239
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.690982,7.596208,7.815733,7.695261,0.078522
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.480056,6.414162,6.573126,6.491539,0.070704
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.400887,6.276404,6.506101,6.404306,0.091350
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,35.489643,35.134161,36.418453,35.591706,0.485544
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,37.045799,36.561628,37.364637,36.952941,0.352226
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.004198,5.889559,6.126846,6.000324,0.103489
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.070988,5.690166,6.224765,6.027382,0.203664
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,19.385913,18.886236,21.292008,19.681275,0.945396
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,19.414074,19.129120,20.743959,19.633391,0.634929
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,10.669133,10.440955,11.190111,10.744655,0.296259
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,AoS_to_SoA,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,10.703558,10.625045,10.843954,10.735066,0.094317
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,9377.803617,9373.128873,9385.576841,9378.104396,4.736816
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,18746.534601,18740.298421,18883.449998,18775.690583,60.864096
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,905.970980,903.057427,914.784840,907.722540,4.769094
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1817.178402,1802.889034,1822.200748,1813.986648,8.495940
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,680.362951,679.466476,702.311965,684.917058,9.789621
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1366.680966,1355.773558,1367.098728,1364.457573,4.883435
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,4696.149765,4691.465941,4738.886357,4704.961263,19.637964
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,9404.880299,9383.982288,9437.541650,9406.610071,21.989121
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,546.015753,543.818801,578.342144,551.996871,14.770485
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1096.053585,1088.987116,1243.954532,1151.567188,81.888224
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2370.969033,2358.335379,2511.220567,2402.772226,63.975130
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4752.113321,4748.950595,4839.997387,4769.191078,39.614765
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1311.978753,1308.994900,1333.119662,1318.433937,11.182129
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,End_to_End,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2634.821076,2629.211836,2641.556460,2634.860056,5.680508
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,9229.799905,9225.864429,9233.447357,9229.913691,2.758772
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,18601.905363,18591.096856,18734.359348,18629.281989,59.563624
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,890.602206,888.172109,899.742235,892.584794,4.809118
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1802.263737,1787.769501,1807.028327,1798.866678,8.532664
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,667.914225,667.007620,689.769988,672.106154,9.883977
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1353.748264,1343.418205,1354.566311,1351.813996,4.732713
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,4623.689517,4619.099238,4665.512550,4631.579773,19.347514
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,9330.034668,9309.723763,9362.049431,9331.641232,21.482064
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,534.528755,532.615423,566.765256,540.710080,14.607746
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,1084.479655,1077.556837,1232.248870,1140.025928,81.955608
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,2333.048987,2320.786278,2470.626078,2364.272811,62.831706
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,4713.754777,4710.313492,4800.131381,4730.029548,39.220710
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,1291.090108,1287.641277,1311.458340,1297.017824,11.111510
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,2613.731885,2607.859421,2620.410055,2613.630368,5.676767
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,73.646968,73.185777,73.890565,73.611992,0.277837
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,73.774220,73.398521,74.013612,73.722507,0.244305
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.449501,7.289161,7.540969,7.438262,0.091807
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.445755,7.318457,7.481439,7.424709,0.062909
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,5.968670,5.902669,7.852931,6.319365,0.857916
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.392525,5.913880,6.477576,6.239271,0.280656
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,37.500541,36.877060,39.374588,37.789783,0.955233
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,37.799832,37.312996,38.930591,38.015899,0.643725
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,5.313819,5.042666,5.482800,5.286467,0.191096
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,5.529793,5.412704,5.634674,5.513878,0.089296
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,18.631397,18.378928,19.302481,18.818141,0.425495
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,19.166280,18.949565,20.736886,19.528139,0.729580
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,10.471211,10.447690,11.170405,10.671457,0.316157
+6000x6000.png,Gaussian_11x11,5990,5990,SoA,SoA_to_AoS,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,10.466068,10.383196,10.597697,10.494622,0.085622
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,138.509472,138.399627,138.541720,138.496297,0.055964
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,143.932310,143.825045,144.014713,143.929601,0.071005
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,14.867432,14.719520,14.968803,14.866244,0.100774
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,15.443233,15.215026,15.475343,15.404596,0.108197
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,11.550072,11.439538,11.780008,11.583435,0.128438
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,11.913752,11.842201,12.067022,11.954832,0.094807
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,72.566367,71.254597,72.643970,72.319830,0.596567
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,74.693309,74.552329,75.386385,74.858435,0.340417
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,9.594814,9.553957,9.627447,9.592844,0.027332
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,9.916002,9.886752,9.964504,9.921797,0.032900
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,37.488104,36.087833,38.864203,37.334082,1.096248
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,38.854070,37.331598,39.213142,38.537021,0.749992
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,21.146923,20.902911,21.171886,21.089823,0.112573
+6000x6000.png,Grayscale,6000,6000,AoS,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,21.827302,21.535520,22.064361,21.811265,0.192862
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,75.056259,74.065253,75.260702,74.883017,0.480665
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,74.981077,70.657921,76.097939,74.166914,2.156591
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,7.711642,7.658289,8.281775,7.845051,0.259459
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,7.810246,7.510203,7.952328,7.760994,0.163140
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.812438,6.670142,6.986333,6.804948,0.119882
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.686766,6.600966,6.871898,6.718247,0.100174
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,37.144591,35.378066,37.560757,36.589531,1.089449
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,36.804096,35.046106,36.981696,36.410448,0.807270
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.213792,6.155328,6.424628,6.273904,0.130233
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.243617,6.184554,6.515420,6.311132,0.138310
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,20.843823,19.838380,21.140723,20.699327,0.501541
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,20.889305,20.788924,20.980694,20.887077,0.068213
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,10.764296,10.607630,11.023425,10.796877,0.170258
+6000x6000.png,Grayscale,6000,6000,SoA,AoS_to_SoA,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,11.094660,10.675024,11.306145,11.000448,0.295932
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,264.503701,263.383228,264.999858,264.291181,0.731824
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,264.771273,260.078980,265.017965,263.802129,2.104888
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,27.361906,26.824123,28.646692,27.585694,0.694268
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,27.314066,26.638371,27.611637,27.277616,0.380880
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,22.101679,21.648040,22.513277,22.119925,0.319793
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,22.204406,21.895594,22.348616,22.151671,0.180040
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,133.190890,132.342404,136.181620,133.929594,1.569799
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,133.126321,131.559067,133.619178,132.716537,0.988627
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,19.443492,18.970565,21.677732,19.748588,1.099089
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,19.437049,19.033978,24.081921,20.292312,2.130280
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,73.014454,71.340231,73.230496,72.725495,0.792960
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,73.022158,71.265793,73.776368,72.735570,1.039749
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,38.540317,38.324244,39.275727,38.665540,0.371223
+6000x6000.png,Grayscale,6000,6000,SoA,End_to_End,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,38.595487,38.110621,39.325349,38.644074,0.435897
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,115.500495,115.411359,115.546666,115.489610,0.059677
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,116.324826,115.504749,117.419385,116.247845,0.794174
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,11.502175,11.454607,12.556433,11.706058,0.476419
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,11.493084,11.418349,11.513159,11.479542,0.037827
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,8.637963,8.400909,8.656960,8.556506,0.124521
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,8.635530,8.610669,8.662703,8.635631,0.018481
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,59.082450,57.619710,60.387279,58.984542,0.989946
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,59.091301,57.740564,59.277137,58.829718,0.621377
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.883857,6.760624,9.022330,7.288922,0.970618
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.924005,6.875971,10.352954,7.601749,1.538143
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,30.561387,30.528322,32.833551,31.008180,1.020525
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,30.624988,30.068735,30.676374,30.527420,0.258243
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,16.683275,16.540949,16.753472,16.667617,0.078929
+6000x6000.png,Grayscale,6000,6000,SoA,Kernel,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,16.616950,16.281569,16.738519,16.539633,0.197260
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,1,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,74.055441,73.108990,74.348455,73.918554,0.501689
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,1,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,73.712062,71.906666,74.081263,73.387371,0.875163
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,12,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,8.090608,7.626153,8.452272,8.034585,0.324578
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,12,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,8.082117,7.709819,8.211881,8.037081,0.203086
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,16,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.728065,6.419741,7.062876,6.758471,0.257590
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,16,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,6.815251,6.572918,6.906971,6.797793,0.132083
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,2,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,37.881888,37.317719,39.650068,38.355521,0.965925
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,2,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,37.421660,37.360345,37.704401,37.476370,0.137436
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,20,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,6.325235,5.863087,6.500074,6.185763,0.297181
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,20,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,5.998633,5.874374,7.485350,6.379431,0.669904
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,4,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,21.642309,18.668300,21.919494,21.017988,1.347275
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,4,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,21.507865,19.618798,22.201605,21.321072,1.045645
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,8,static,,off,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize,5,11.110097,11.018999,11.661547,11.201045,0.263815
+6000x6000.png,Grayscale,6000,6000,SoA,SoA_to_AoS,8,static,,omp,,,hype1,g++,-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1,5,11.172472,10.421138,11.613739,11.103993,0.431844

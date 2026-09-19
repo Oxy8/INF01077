@@ -1,0 +1,14 @@
+hype1
+Compilando as variantes para o experimento de layout...
+rm -rf -- build
+mkdir -p build/off
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize  -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/off/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize  -MMD -MP -c 577262-FPI-Relatorio2/layout_benchmark.cpp -o build/off/layout_benchmark.o
+g++ -fopenmp build/off/image_manipulation.o build/off/layout_benchmark.o  -o build/off/layout_benchmark
+mkdir -p build/omp
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -fopt-info-vec-optimized=build/omp/vectorization-core.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -fopt-info-vec-optimized=build/omp/vectorization-core.log -MMD -MP -c 577262-FPI-Relatorio2/layout_benchmark.cpp -o build/omp/layout_benchmark.o
+g++ -fopenmp build/omp/image_manipulation.o build/omp/layout_benchmark.o  -o build/omp/layout_benchmark
+Experimento de layout finalizado. Dados brutos: resultados_layout/layout_raw.csv
+Resumo: resultados_layout/layout_summary.csv
+Resultados copiados para /home/users/efsilva/teste/INF01077/resultados_pcad_hype_layout_822823
