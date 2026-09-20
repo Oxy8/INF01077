@@ -1,0 +1,30 @@
+Area,Finding,Reference,Tested,Metric,Value,Comparisons
+Regulares,SIMD no alvo padrão,off,omp,média geométrica de speedups das medianas,1.009411951882665,504
+Regulares,SIMD com AVX2,off-avx2,omp-avx2,média geométrica de speedups das medianas,1.0104545085919447,504
+Regulares,alvo Haswell mantendo omp simd,omp,omp-avx2,média geométrica de speedups das medianas,1.0189121848757219,504
+Regulares,"schedule em 20 threads: static sobre dynamic,1",static,"dynamic,1",média geométrica de speedups das medianas,0.8837762980831997,136
+Regulares,"schedule em 20 threads: static sobre dynamic,16",static,"dynamic,16",média geométrica de speedups das medianas,0.9893418312674626,136
+Adaptativo,melhor chunk em 20 threads,off,"dynamic,4",soma das medianas nas 8 imagens (ms),11503.662748,8
+Adaptativo,speedup do melhor chunk sobre static,off: static,"off: dynamic,4",static / melhor soma mediana,1.2222611521225726,8
+Adaptativo,melhor chunk em 20 threads,off-avx2,"dynamic,1",soma das medianas nas 8 imagens (ms),11961.241139,8
+Adaptativo,speedup do melhor chunk sobre static,off-avx2: static,"off-avx2: dynamic,1",static / melhor soma mediana,1.2141640076670308,8
+Adaptativo,melhor chunk em 20 threads,omp,"dynamic,4",soma das medianas nas 8 imagens (ms),11766.759053,8
+Adaptativo,speedup do melhor chunk sobre static,omp: static,"omp: dynamic,4",static / melhor soma mediana,1.2198459050914672,8
+Adaptativo,melhor chunk em 20 threads,omp-avx2,"dynamic,1",soma das medianas nas 8 imagens (ms),12145.906527,8
+Adaptativo,speedup do melhor chunk sobre static,omp-avx2: static,"omp-avx2: dynamic,1",static / melhor soma mediana,1.2144993406798017,8
+SMT,"20→40 threads: Adaptive_Median, static",omp,40 threads,mediana T20 / mediana T40,1.3947117128312725,1
+SMT,"20→40 threads: Adaptive_Median, dynamic,16",omp,40 threads,mediana T20 / mediana T40,1.041255049587566,1
+SMT,"20→40 threads: Gaussian_11x11, static",omp,40 threads,mediana T20 / mediana T40,1.0141166749718384,1
+SMT,"20→40 threads: Gaussian_11x11, dynamic,16",omp,40 threads,mediana T20 / mediana T40,0.9810033930016127,1
+SMT,"20→40 threads: Grayscale, static",omp,40 threads,mediana T20 / mediana T40,0.6683830388441123,1
+SMT,"20→40 threads: Grayscale, dynamic,16",omp,40 threads,mediana T20 / mediana T40,0.9252124509916481,1
+SMT,"20→40 threads: Adaptive_Median, static",omp-avx2,40 threads,mediana T20 / mediana T40,1.3943187166884339,1
+SMT,"20→40 threads: Adaptive_Median, dynamic,16",omp-avx2,40 threads,mediana T20 / mediana T40,1.018326182323319,1
+SMT,"20→40 threads: Gaussian_11x11, static",omp-avx2,40 threads,mediana T20 / mediana T40,1.0224936816723411,1
+SMT,"20→40 threads: Gaussian_11x11, dynamic,16",omp-avx2,40 threads,mediana T20 / mediana T40,0.9881363516477223,1
+SMT,"20→40 threads: Grayscale, static",omp-avx2,40 threads,mediana T20 / mediana T40,1.0368713599434198,1
+SMT,"20→40 threads: Grayscale, dynamic,16",omp-avx2,40 threads,mediana T20 / mediana T40,1.0223958117010967,1
+Layout,"Gaussian 11×11 separável sobre AoS ingênuo, 6000² T20",off: AoS_Naive,off: SoA_Separable,mediana AoS / mediana separável,11.758348493540442,1
+Layout,"Gaussian 11×11 separável sobre AoS ingênuo, 6000² T20",off-avx2: AoS_Naive,off-avx2: SoA_Separable,mediana AoS / mediana separável,11.858558525567913,1
+Layout,"Gaussian 11×11 separável sobre AoS ingênuo, 6000² T20",omp: AoS_Naive,omp: SoA_Separable,mediana AoS / mediana separável,14.862575109550916,1
+Layout,"Gaussian 11×11 separável sobre AoS ingênuo, 6000² T20",omp-avx2: AoS_Naive,omp-avx2: SoA_Separable,mediana AoS / mediana separável,16.005396383956988,1

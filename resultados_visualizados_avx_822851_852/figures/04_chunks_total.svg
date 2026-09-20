@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Adaptativo: soma das medianas nas imagens, 20 threads">
+<title>Adaptativo: soma das medianas nas imagens, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Adaptativo: soma das medianas nas imagens, 20 threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">4.18 s</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">8.36 s</text>
+<line class="grid" x1="821.3" x2="821.3" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.3" y="487">12.54 s</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">16.72 s</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="113.4">static</text>
+<rect x="255.0" y="80.5" width="635.0" height="9.3" fill="#555555"/>
+<text class="small" x="896.0" y="87.8">14.06 s</text>
+<rect x="255.0" y="92.5" width="655.9" height="9.3" fill="#d62728"/>
+<text class="small" x="916.9" y="99.8">14.52 s</text>
+<rect x="255.0" y="104.5" width="648.3" height="9.3" fill="#8a2be2"/>
+<text class="small" x="909.3" y="111.8">14.35 s</text>
+<rect x="255.0" y="116.4" width="666.2" height="9.3" fill="#1f77b4"/>
+<text class="small" x="927.2" y="123.7">14.75 s</text>
+<text class="axis" text-anchor="end" x="243" y="179.3">dynamic,1</text>
+<rect x="255.0" y="146.4" width="519.6" height="9.3" fill="#555555"/>
+<text class="small" x="780.6" y="153.7">11.50 s</text>
+<rect x="255.0" y="158.3" width="540.2" height="9.3" fill="#d62728"/>
+<text class="small" x="801.2" y="165.6">11.96 s</text>
+<rect x="255.0" y="170.3" width="531.8" height="9.3" fill="#8a2be2"/>
+<text class="small" x="792.8" y="177.6">11.77 s</text>
+<rect x="255.0" y="182.3" width="548.6" height="9.3" fill="#1f77b4"/>
+<text class="small" x="809.6" y="189.6">12.15 s</text>
+<text class="axis" text-anchor="end" x="243" y="245.1">dynamic,4</text>
+<rect x="255.0" y="212.2" width="519.5" height="9.3" fill="#555555"/>
+<text class="small" x="780.5" y="219.5">11.50 s</text>
+<rect x="255.0" y="224.2" width="540.4" height="9.3" fill="#d62728"/>
+<text class="small" x="801.4" y="231.5">11.96 s</text>
+<rect x="255.0" y="236.1" width="531.4" height="9.3" fill="#8a2be2"/>
+<text class="small" x="792.4" y="243.4">11.77 s</text>
+<rect x="255.0" y="248.1" width="548.8" height="9.3" fill="#1f77b4"/>
+<text class="small" x="809.8" y="255.4">12.15 s</text>
+<text class="axis" text-anchor="end" x="243" y="311.0">dynamic,16</text>
+<rect x="255.0" y="278.0" width="522.8" height="9.3" fill="#555555"/>
+<text class="small" x="783.8" y="285.3">11.57 s</text>
+<rect x="255.0" y="290.0" width="542.9" height="9.3" fill="#d62728"/>
+<text class="small" x="803.9" y="297.3">12.02 s</text>
+<rect x="255.0" y="302.0" width="533.3" height="9.3" fill="#8a2be2"/>
+<text class="small" x="794.3" y="309.3">11.81 s</text>
+<rect x="255.0" y="313.9" width="551.1" height="9.3" fill="#1f77b4"/>
+<text class="small" x="812.1" y="321.2">12.20 s</text>
+<text class="axis" text-anchor="end" x="243" y="376.8">dynamic,64</text>
+<rect x="255.0" y="343.9" width="539.1" height="9.3" fill="#555555"/>
+<text class="small" x="800.1" y="351.2">11.94 s</text>
+<rect x="255.0" y="355.8" width="560.8" height="9.3" fill="#d62728"/>
+<text class="small" x="821.8" y="363.1">12.42 s</text>
+<rect x="255.0" y="367.8" width="551.2" height="9.3" fill="#8a2be2"/>
+<text class="small" x="812.2" y="375.1">12.20 s</text>
+<rect x="255.0" y="379.8" width="570.3" height="9.3" fill="#1f77b4"/>
+<text class="small" x="831.3" y="387.1">12.63 s</text>
+<text class="axis" text-anchor="end" x="243" y="442.6">dynamic,256</text>
+<rect x="255.0" y="409.7" width="648.2" height="9.3" fill="#555555"/>
+<text class="small" x="909.2" y="417.0">14.35 s</text>
+<rect x="255.0" y="421.7" width="674.8" height="9.3" fill="#d62728"/>
+<text class="small" x="935.8" y="429.0">14.94 s</text>
+<rect x="255.0" y="433.6" width="663.4" height="9.3" fill="#8a2be2"/>
+<text class="small" x="924.4" y="440.9">14.69 s</text>
+<rect x="255.0" y="445.6" width="686.4" height="9.3" fill="#1f77b4"/>
+<text class="small" x="947.4" y="452.9">15.20 s</text>
+<rect x="255" y="492" width="15" height="15" fill="#555555"/>
+<text class="legend" x="277" y="504">off</text>
+<rect x="435" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="457" y="504">off-avx2</text>
+<rect x="615" y="492" width="15" height="15" fill="#8a2be2"/>
+<text class="legend" x="637" y="504">omp</text>
+<rect x="795" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="817" y="504">omp-avx2</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo mediano (ms)</text>
+</svg>

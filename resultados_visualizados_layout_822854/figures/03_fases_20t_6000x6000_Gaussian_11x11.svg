@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="684" viewBox="0 0 1200 684" role="img" aria-label="Componentes em 20 threads — Gaussian_11x11, 6000x6000.png">
+<title>Componentes em 20 threads — Gaussian_11x11, 6000x6000.png</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Componentes em 20 threads — Gaussian_11x11, 6000x6000.png</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="609"/>
+<text class="axis" text-anchor="middle" x="255.0" y="631">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="609"/>
+<text class="axis" text-anchor="middle" x="443.8" y="631">301.72 ms</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="609"/>
+<text class="axis" text-anchor="middle" x="632.5" y="631">603.44 ms</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="609"/>
+<text class="axis" text-anchor="middle" x="821.2" y="631">905.16 ms</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="609"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="631">1.21 s</text>
+<rect class="frame" x="255" y="70" width="755" height="539"/>
+<text class="axis" text-anchor="end" x="243" y="102.3">AoS direto: Kernel</text>
+<rect x="255.0" y="77.8" width="334.0" height="6.9" fill="#555555"/>
+<text class="small" x="595.0" y="83.3">533.94 ms</text>
+<rect x="255.0" y="86.7" width="332.4" height="6.9" fill="#d62728"/>
+<text class="small" x="593.4" y="92.2">531.41 ms</text>
+<rect x="255.0" y="95.7" width="333.1" height="6.9" fill="#8a2be2"/>
+<text class="small" x="594.1" y="101.1">532.42 ms</text>
+<rect x="255.0" y="104.6" width="332.4" height="6.9" fill="#1f77b4"/>
+<text class="small" x="593.4" y="110.0">531.27 ms</text>
+<text class="axis" text-anchor="end" x="243" y="151.3">SoA ingênuo: AoS_to_SoA</text>
+<rect x="255.0" y="126.8" width="3.7" height="6.9" fill="#555555"/>
+<text class="small" x="264.7" y="132.3">5.95 ms</text>
+<rect x="255.0" y="135.7" width="3.7" height="6.9" fill="#d62728"/>
+<text class="small" x="264.7" y="141.2">5.97 ms</text>
+<rect x="255.0" y="144.7" width="3.7" height="6.9" fill="#8a2be2"/>
+<text class="small" x="264.7" y="150.1">5.98 ms</text>
+<rect x="255.0" y="153.6" width="3.8" height="6.9" fill="#1f77b4"/>
+<text class="small" x="264.8" y="159.0">6.04 ms</text>
+<text class="axis" text-anchor="end" x="243" y="200.3">SoA ingênuo: End_to_End</text>
+<rect x="255.0" y="175.8" width="341.5" height="6.9" fill="#555555"/>
+<text class="small" x="602.5" y="181.3">545.84 ms</text>
+<rect x="255.0" y="184.7" width="341.2" height="6.9" fill="#d62728"/>
+<text class="small" x="602.2" y="190.2">545.33 ms</text>
+<rect x="255.0" y="193.7" width="686.4" height="6.9" fill="#8a2be2"/>
+<text class="small" x="947.4" y="199.1">1.10 s</text>
+<rect x="255.0" y="202.6" width="678.7" height="6.9" fill="#1f77b4"/>
+<text class="small" x="939.7" y="208.0">1.08 s</text>
+<text class="axis" text-anchor="end" x="243" y="249.3">SoA ingênuo: Kernel</text>
+<rect x="255.0" y="224.8" width="334.5" height="6.9" fill="#555555"/>
+<text class="small" x="595.5" y="230.3">534.70 ms</text>
+<rect x="255.0" y="233.7" width="334.1" height="6.9" fill="#d62728"/>
+<text class="small" x="595.1" y="239.2">534.08 ms</text>
+<rect x="255.0" y="242.7" width="679.2" height="6.9" fill="#8a2be2"/>
+<text class="small" x="940.2" y="248.1">1.09 s</text>
+<rect x="255.0" y="251.6" width="671.2" height="6.9" fill="#1f77b4"/>
+<text class="small" x="932.2" y="257.0">1.07 s</text>
+<text class="axis" text-anchor="end" x="243" y="298.3">SoA ingênuo: SoA_to_AoS</text>
+<rect x="255.0" y="273.8" width="3.3" height="6.9" fill="#555555"/>
+<text class="small" x="264.3" y="279.3">5.23 ms</text>
+<rect x="255.0" y="282.7" width="3.2" height="6.9" fill="#d62728"/>
+<text class="small" x="264.2" y="288.2">5.14 ms</text>
+<rect x="255.0" y="291.7" width="3.4" height="6.9" fill="#8a2be2"/>
+<text class="small" x="264.4" y="297.1">5.39 ms</text>
+<rect x="255.0" y="300.6" width="3.4" height="6.9" fill="#1f77b4"/>
+<text class="small" x="264.4" y="306.0">5.50 ms</text>
+<text class="axis" text-anchor="end" x="243" y="347.3">SoA separável: AoS_to_SoA</text>
+<rect x="255.0" y="322.8" width="3.7" height="6.9" fill="#555555"/>
+<text class="small" x="264.7" y="328.3">5.95 ms</text>
+<rect x="255.0" y="331.7" width="3.7" height="6.9" fill="#d62728"/>
+<text class="small" x="264.7" y="337.2">5.97 ms</text>
+<rect x="255.0" y="340.7" width="3.7" height="6.9" fill="#8a2be2"/>
+<text class="small" x="264.7" y="346.1">5.98 ms</text>
+<rect x="255.0" y="349.6" width="3.8" height="6.9" fill="#1f77b4"/>
+<text class="small" x="264.8" y="355.0">6.04 ms</text>
+<text class="axis" text-anchor="end" x="243" y="396.3">SoA separável: End_to_End</text>
+<rect x="255.0" y="371.8" width="34.4" height="6.9" fill="#555555"/>
+<text class="small" x="295.4" y="377.3">55.03 ms</text>
+<rect x="255.0" y="380.7" width="34.1" height="6.9" fill="#d62728"/>
+<text class="small" x="295.1" y="386.2">54.49 ms</text>
+<rect x="255.0" y="389.7" width="28.6" height="6.9" fill="#8a2be2"/>
+<text class="small" x="289.6" y="395.1">45.65 ms</text>
+<rect x="255.0" y="398.6" width="27.1" height="6.9" fill="#1f77b4"/>
+<text class="small" x="288.1" y="404.0">43.38 ms</text>
+<text class="axis" text-anchor="end" x="243" y="445.3">SoA separável: Horizontal_Passes</text>
+<rect x="255.0" y="420.8" width="12.2" height="6.9" fill="#555555"/>
+<text class="small" x="273.2" y="426.3">19.51 ms</text>
+<rect x="255.0" y="429.7" width="12.0" height="6.9" fill="#d62728"/>
+<text class="small" x="273.0" y="435.2">19.15 ms</text>
+<rect x="255.0" y="438.7" width="11.7" height="6.9" fill="#8a2be2"/>
+<text class="small" x="272.7" y="444.1">18.66 ms</text>
+<rect x="255.0" y="447.6" width="11.1" height="6.9" fill="#1f77b4"/>
+<text class="small" x="272.1" y="453.0">17.77 ms</text>
+<text class="axis" text-anchor="end" x="243" y="494.3">SoA separável: Kernel</text>
+<rect x="255.0" y="469.8" width="28.4" height="6.9" fill="#555555"/>
+<text class="small" x="289.4" y="475.3">45.41 ms</text>
+<rect x="255.0" y="478.7" width="28.0" height="6.9" fill="#d62728"/>
+<text class="small" x="289.0" y="484.2">44.81 ms</text>
+<rect x="255.0" y="487.7" width="22.4" height="6.9" fill="#8a2be2"/>
+<text class="small" x="283.4" y="493.1">35.82 ms</text>
+<rect x="255.0" y="496.6" width="20.8" height="6.9" fill="#1f77b4"/>
+<text class="small" x="281.8" y="502.0">33.19 ms</text>
+<text class="axis" text-anchor="end" x="243" y="543.3">SoA separável: SoA_to_AoS</text>
+<rect x="255.0" y="518.8" width="2.4" height="6.9" fill="#555555"/>
+<text class="small" x="263.4" y="524.3">3.80 ms</text>
+<rect x="255.0" y="527.7" width="2.3" height="6.9" fill="#d62728"/>
+<text class="small" x="263.3" y="533.2">3.68 ms</text>
+<rect x="255.0" y="536.7" width="2.4" height="6.9" fill="#8a2be2"/>
+<text class="small" x="263.4" y="542.1">3.81 ms</text>
+<rect x="255.0" y="545.6" width="2.4" height="6.9" fill="#1f77b4"/>
+<text class="small" x="263.4" y="551.0">3.76 ms</text>
+<text class="axis" text-anchor="end" x="243" y="592.3">SoA separável: Vertical_Passes</text>
+<rect x="255.0" y="567.8" width="16.2" height="6.9" fill="#555555"/>
+<text class="small" x="277.2" y="573.3">25.87 ms</text>
+<rect x="255.0" y="576.7" width="16.2" height="6.9" fill="#d62728"/>
+<text class="small" x="277.2" y="582.2">25.87 ms</text>
+<rect x="255.0" y="585.7" width="10.8" height="6.9" fill="#8a2be2"/>
+<text class="small" x="271.8" y="591.1">17.29 ms</text>
+<rect x="255.0" y="594.6" width="9.7" height="6.9" fill="#1f77b4"/>
+<text class="small" x="270.7" y="600.0">15.43 ms</text>
+<rect x="255" y="636" width="15" height="15" fill="#555555"/>
+<text class="legend" x="277" y="648">off</text>
+<rect x="435" y="636" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="457" y="648">off-avx2</text>
+<rect x="615" y="636" width="15" height="15" fill="#8a2be2"/>
+<text class="legend" x="637" y="648">omp</text>
+<rect x="795" y="636" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="817" y="648">omp-avx2</text>
+<text class="axis" text-anchor="middle" x="632.5" y="672">Tempo mediano (ms)</text>
+</svg>

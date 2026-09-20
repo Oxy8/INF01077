@@ -582,7 +582,7 @@ def write_index(output: Path, links: list[tuple[str, str]], overview: list[dict[
     content = f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><title>Visualização dos experimentos OpenMP</title>
 <style>body{{font-family:Arial,sans-serif;max-width:1100px;margin:32px auto;padding:0 18px;color:#202124}}h1{{margin-bottom:4px}}h2{{margin-top:32px}}table{{border-collapse:collapse;width:100%}}th,td{{border:1px solid #ddd;padding:8px;text-align:left}}th{{background:#f4f4f4}}li{{margin:9px 0}}a{{color:#0757a8}}</style></head>
-<body><h1>Experimentos OpenMP no PCAD</h1><p>Gráficos calculados com a média e o desvio-padrão das cinco amostras de cada configuração.</p>
+<body><h1>Experimentos OpenMP no PCAD</h1><p>Este painel legado mostra média e desvio-padrão das cinco amostras para preservar as figuras originais. Para comparações entre builds e conclusões finais, use também os painéis AVX/layout e a consolidação, que usam mediana, mínimo e máximo.</p>
 <h2>Campanhas usadas</h2><table><thead><tr><th>Campanha</th><th>Diretório</th><th>Grupos</th><th>Amostras</th><th>Nó</th><th>Operações</th><th>Imagens</th></tr></thead><tbody>{rows}</tbody></table>
 <h2>Figuras</h2><ol>{figures}</ol>
 <h2>Tabelas derivadas</h2><p>Consulte a pasta <code>tables/</code> para as tabelas usadas nas figuras.</p></body></html>"""

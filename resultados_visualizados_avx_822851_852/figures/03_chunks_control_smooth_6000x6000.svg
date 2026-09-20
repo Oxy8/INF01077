@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Adaptativo: static e chunks — control_smooth_6000x6000.png, 20 threads">
+<title>Adaptativo: static e chunks — control_smooth_6000x6000.png, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Adaptativo: static e chunks — control_smooth_6000x6000.png, 20 threads</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">766.95 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">919.51 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">1.07 s</text>
+<line class="grid" x1="105" x2="930" y1="205.3" y2="205.3"/>
+<text class="axis" text-anchor="end" x="95" y="210.3">1.22 s</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">1.38 s</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">static</text>
+<line class="frame" x1="270.0" x2="270.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="270.0" y="632">dynamic,1</text>
+<line class="frame" x1="435.0" x2="435.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="435.0" y="632">dynamic,4</text>
+<line class="frame" x1="600.0" x2="600.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="600.0" y="632">dynamic,16</text>
+<line class="frame" x1="765.0" x2="765.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="765.0" y="632">dynamic,64</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">dynamic,256</text>
+<polyline points="105.0,564.3 270.0,563.1 435.0,562.6 600.0,555.1 765.0,523.7 930.0,157.7" fill="none" stroke="#555555" stroke-width="2.5"/>
+<circle cx="105.0" cy="564.3" r="4" fill="#555555"/>
+<circle cx="270.0" cy="563.1" r="4" fill="#555555"/>
+<circle cx="435.0" cy="562.6" r="4" fill="#555555"/>
+<circle cx="600.0" cy="555.1" r="4" fill="#555555"/>
+<circle cx="765.0" cy="523.7" r="4" fill="#555555"/>
+<circle cx="930.0" cy="157.7" r="4" fill="#555555"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#555555" stroke-width="3"/>
+<text class="legend" x="980" y="76">off</text>
+<polyline points="105.0,546.9 270.0,546.3 435.0,544.9 600.0,537.7 765.0,504.5 930.0,131.9" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="546.9" r="4" fill="#d62728"/>
+<circle cx="270.0" cy="546.3" r="4" fill="#d62728"/>
+<circle cx="435.0" cy="544.9" r="4" fill="#d62728"/>
+<circle cx="600.0" cy="537.7" r="4" fill="#d62728"/>
+<circle cx="765.0" cy="504.5" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="131.9" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="98">off-avx2</text>
+<polyline points="105.0,552.0 270.0,548.6 435.0,549.8 600.0,541.9 765.0,509.3 930.0,143.6" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<circle cx="105.0" cy="552.0" r="4" fill="#8a2be2"/>
+<circle cx="270.0" cy="548.6" r="4" fill="#8a2be2"/>
+<circle cx="435.0" cy="549.8" r="4" fill="#8a2be2"/>
+<circle cx="600.0" cy="541.9" r="4" fill="#8a2be2"/>
+<circle cx="765.0" cy="509.3" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="143.6" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="120">omp</text>
+<polyline points="105.0,538.0 270.0,536.2 435.0,536.7 600.0,527.4 765.0,494.8 930.0,112.7" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="538.0" r="4" fill="#1f77b4"/>
+<circle cx="270.0" cy="536.2" r="4" fill="#1f77b4"/>
+<circle cx="435.0" cy="536.7" r="4" fill="#1f77b4"/>
+<circle cx="600.0" cy="527.4" r="4" fill="#1f77b4"/>
+<circle cx="765.0" cy="494.8" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="112.7" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="142">omp-avx2</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Schedule OpenMP</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo mediano (ms)</text>
+</svg>

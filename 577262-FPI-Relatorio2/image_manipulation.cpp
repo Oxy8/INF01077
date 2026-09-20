@@ -674,22 +674,19 @@ void rotate_90_degrees_counterclockwise(ImageState& img){
     img.height = new_img_height;
 }
 
-void zoom_in_image(ImageState& img){
-    long long h = 1LL * img.height * 2 - 1;
-    long long w  = 1LL * img.width * 2 - 1;
-    if(h > INT_MAX || w > INT_MAX || h * w * 3LL > INT_MAX) return;
-
-    int new_height = (int) h;
-    int new_width = (int) w;
-    unsigned char* new_data = (unsigned char*) malloc(new_width * new_height * 3);
+bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destination, int new_width, int new_height) {
+    if (!source.data || !destination || source.width <= 0 || source.height <= 0 ||
+        new_width != source.width * 2 - 1 || new_height != source.height * 2 - 1) {
+        return false;
+    }
 
     #pragma omp parallel for schedule(runtime)
-    for(int j = 0; j < img.height; j++){
+    for(int j = 0; j < source.height; j++){
         OMP_SIMD
-        for(int i = 0; i < img.width; i++){
-            int old_index = (j * img.width + i) * 3;
+        for(int i = 0; i < source.width; i++){
+            int old_index = (j * source.width + i) * 3;
             int new_index = (j * 2 * new_width + i * 2) * 3;
-            memcpy(new_data + new_index, img.data + old_index, 3);
+            memcpy(destination + new_index, source.data + old_index, 3);
         }
     }
 
@@ -698,9 +695,9 @@ void zoom_in_image(ImageState& img){
         OMP_SIMD
         for(int i = 1; i < new_width; i += 2){
             int index = (j * new_width + i) * 3;
-            new_data[index] = (unsigned char) ((new_data[index - 3] + new_data[index + 3]) / 2);
-            new_data[index + 1] = (unsigned char) ((new_data[index - 3 + 1] + new_data[index + 3 + 1]) / 2);
-            new_data[index + 2] = (unsigned char) ((new_data[index - 3 + 2] + new_data[index + 3 + 2]) / 2);
+            destination[index] = (unsigned char) ((destination[index - 3] + destination[index + 3]) / 2);
+            destination[index + 1] = (unsigned char) ((destination[index - 3 + 1] + destination[index + 3 + 1]) / 2);
+            destination[index + 2] = (unsigned char) ((destination[index - 3 + 2] + destination[index + 3 + 2]) / 2);
         }
     }
 
@@ -709,10 +706,27 @@ void zoom_in_image(ImageState& img){
         OMP_SIMD
         for(int i = 0; i < new_width; i++){
             int index = (j * new_width + i) * 3;
-            new_data[index] = (unsigned char) ((new_data[index - new_width * 3] + new_data[index + new_width * 3]) / 2);
-            new_data[index + 1] = (unsigned char) ((new_data[index - new_width * 3 + 1] + new_data[index + new_width * 3 + 1]) / 2);
-            new_data[index + 2] = (unsigned char) ((new_data[index - new_width * 3 + 2] + new_data[index + new_width * 3 + 2]) / 2);
+            destination[index] = (unsigned char) ((destination[index - new_width * 3] + destination[index + new_width * 3]) / 2);
+            destination[index + 1] = (unsigned char) ((destination[index - new_width * 3 + 1] + destination[index + new_width * 3 + 1]) / 2);
+            destination[index + 2] = (unsigned char) ((destination[index - new_width * 3 + 2] + destination[index + new_width * 3 + 2]) / 2);
         }
+    }
+
+    return true;
+}
+
+void zoom_in_image(ImageState& img){
+    long long h = 1LL * img.height * 2 - 1;
+    long long w  = 1LL * img.width * 2 - 1;
+    if(h > INT_MAX || w > INT_MAX || h * w * 3LL > INT_MAX) return;
+
+    int new_height = (int) h;
+    int new_width = (int) w;
+    unsigned char* new_data = (unsigned char*) malloc(new_width * new_height * 3);
+    if (!new_data) return;
+    if (!zoom_in_image_to_buffer(img, new_data, new_width, new_height)) {
+        free(new_data);
+        return;
     }
     free(img.data);
     img.data = new_data;

@@ -31,6 +31,10 @@ void equalize_histogram(ImageState& img, unsigned int cummulative_hist[256]);
 unsigned char find_shade_level_closest_to(int value, unsigned int target_hist[256]);
 void histogram_matching(ImageState& src_img, ImageState& target_img);
 void zoom_in_image(ImageState& img);
+// Executa somente o kernel de zoom, com entrada e saída já alocadas. É usado
+// pela coleta VTune para repetir o mesmo trabalho sem criações de imagem ou
+// cópias de restauração entre as iterações.
+bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destination, int destination_width, int destination_height);
 void zoom_out_image(ImageState& img, Rectangle& rec);
 void compute_rgb_avg_on_rectangle(unsigned char avg[3], int rec_x, int rec_y, int rec_width, int red_height, ImageState& img);
 void rotate_90_degrees_clockwise(ImageState& img);

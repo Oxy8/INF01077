@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Kernels — Grayscale, 6000x6000.png, omp">
+<title>Kernels — Grayscale, 6000x6000.png, omp</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Kernels — Grayscale, 6000x6000.png, omp</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">-5.49 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">35.05 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">75.59 ms</text>
+<line class="grid" x1="105" x2="930" y1="205.3" y2="205.3"/>
+<text class="axis" text-anchor="end" x="95" y="210.3">116.13 ms</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">156.67 ms</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,112.7 148.4,344.6 235.3,460.7 408.9,514.8 582.6,536.0 756.3,547.7 930.0,554.2" fill="none" stroke="#555555" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#555555"/>
+<circle cx="148.4" cy="344.6" r="4" fill="#555555"/>
+<circle cx="235.3" cy="460.7" r="4" fill="#555555"/>
+<circle cx="408.9" cy="514.8" r="4" fill="#555555"/>
+<circle cx="582.6" cy="536.0" r="4" fill="#555555"/>
+<circle cx="756.3" cy="547.7" r="4" fill="#555555"/>
+<circle cx="930.0" cy="554.2" r="4" fill="#555555"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#555555" stroke-width="3"/>
+<text class="legend" x="980" y="76">AoS direto</text>
+<polyline points="105.0,207.0 148.4,392.6 235.3,486.2 408.9,532.0 582.6,549.2 756.3,558.5 930.0,564.3" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="207.0" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="392.6" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="486.2" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="532.0" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="549.2" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="558.5" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="564.3" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="98">SoA ingênuo</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo mediano (ms)</text>
+</svg>

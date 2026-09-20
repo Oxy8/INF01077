@@ -115,6 +115,7 @@ struct Options {
     std::string operations = "all";
     std::string run_id = "manual";
     int repeat = 1;
+    int profile_iterations = 1;
     bool warmup = false;
     bool hash_only = false;
     fs::path reference_hashes;
@@ -241,6 +242,25 @@ bool append_hash(std::ofstream* output, const std::string& image, const std::str
     return output->good();
 }
 
+// Zoom_In aloca e substitui a imagem de entrada na implementação normal. Para
+// o VTune, repetimos apenas o kernel com a mesma entrada e um buffer de saída
+// já alocado; assim a coleta não é dominada por malloc/free ou por cópias.
+bool profile_zoom_in_kernel(const ImageState& source, int iterations) {
+    const long long output_width = 2LL * source.width - 1;
+    const long long output_height = 2LL * source.height - 1;
+    if (iterations < 1 || output_width <= 0 || output_height <= 0 ||
+        output_width > INT32_MAX || output_height > INT32_MAX ||
+        output_width * output_height * 3LL > INT32_MAX) {
+        return false;
+    }
+    const size_t output_size = static_cast<size_t>(output_width) * output_height * 3;
+    std::vector<unsigned char> output(output_size);
+    for (int iteration = 0; iteration < iterations; ++iteration) {
+        if (!zoom_in_image_to_buffer(source, output.data(), static_cast<int>(output_width), static_cast<int>(output_height))) return false;
+    }
+    return true;
+}
+
 bool process_image(const fs::path& path, std::ofstream* csv, std::ofstream* hash_output, const HashMap& references, const Options& options) {
     ImageState image{};
     const std::string filename = path.string();
@@ -271,6 +291,20 @@ bool process_image(const fs::path& path, std::ofstream* csv, std::ofstream* hash
     for (const TransformationInfo& transformation : TRANSFORMATIONS) {
         if (!selected(transformation, options.operations)) continue;
         reset(image, original_data, original_width, original_height);
+        if (options.profile_iterations > 1) {
+            if (std::string(transformation.name) != "Zoom_In") {
+                std::cerr << "--profile-iterations só é suportado para Zoom_In neste executável.\n";
+                success = false;
+                break;
+            }
+            if (!profile_zoom_in_kernel(image, options.profile_iterations)) {
+                std::cerr << "Erro ao repetir o kernel Zoom_In para profiling.\n";
+                success = false;
+                break;
+            }
+            // A execução normal abaixo preserva a validação por hash.
+            reset(image, original_data, original_width, original_height);
+        }
         const auto start = std::chrono::steady_clock::now();
         if (!transformation.apply(image)) {
             std::cerr << "Erro na operação " << transformation.name << " para " << filename << "\n";
@@ -357,7 +391,7 @@ void print_usage(const char* executable) {
               << "     " << executable << " --folder CAMINHO [CSV] [opções]\n\n"
               << "Opções:\n"
               << "  --operations all|regular|adaptive|NOME[,NOME...]\n"
-              << "  --run-id ID --repeat N --warmup --hash-only\n"
+              << "  --run-id ID --repeat N --profile-iterations N --warmup --hash-only\n"
               << "  --reference-hashes ARQUIVO --write-hashes ARQUIVO\n";
 }
 
@@ -378,6 +412,10 @@ bool parse_options(int argc, char** argv, Options& options) {
             const char* text = value(); if (!text) return false;
             try { options.repeat = std::stoi(text); } catch (...) { return false; }
             if (options.repeat < 0) return false;
+        } else if (argument == "--profile-iterations") {
+            const char* text = value(); if (!text) return false;
+            try { options.profile_iterations = std::stoi(text); } catch (...) { return false; }
+            if (options.profile_iterations < 1) return false;
         } else if (argument == "--reference-hashes") {
             const char* text = value(); if (!text) return false; options.reference_hashes = text;
         } else if (argument == "--write-hashes") {

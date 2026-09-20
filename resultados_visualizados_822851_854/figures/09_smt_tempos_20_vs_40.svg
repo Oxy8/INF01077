@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="SMT: 20 versus 40 threads">
+<title>SMT: 20 versus 40 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">SMT: 20 versus 40 threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">227.26 ms</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">454.51 ms</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">681.77 ms</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">909.02 ms</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="156.9">Adaptativo (meio-a-meio)</text>
+<rect x="255.0" y="91.1" width="686.4" height="18.7" fill="#1f77b4"/>
+<text class="small" x="947.4" y="105.7">826.39 ms</text>
+<rect x="255.0" y="115.0" width="512.4" height="18.7" fill="#d62728"/>
+<text class="small" x="773.4" y="129.6">616.94 ms</text>
+<rect x="255.0" y="138.9" width="516.2" height="18.7" fill="#2ca02c"/>
+<text class="small" x="777.2" y="153.5">621.53 ms</text>
+<rect x="255.0" y="162.9" width="494.7" height="18.7" fill="#9467bd"/>
+<text class="small" x="755.7" y="177.5">595.57 ms</text>
+<text class="axis" text-anchor="end" x="243" y="288.6">Gaussian 11×11</text>
+<rect x="255.0" y="222.7" width="468.0" height="18.7" fill="#1f77b4"/>
+<text class="small" x="729.0" y="237.3">563.44 ms</text>
+<rect x="255.0" y="246.7" width="462.2" height="18.7" fill="#d62728"/>
+<text class="small" x="723.2" y="261.3">556.47 ms</text>
+<rect x="255.0" y="270.6" width="471.9" height="18.7" fill="#2ca02c"/>
+<text class="small" x="732.9" y="285.2">568.16 ms</text>
+<rect x="255.0" y="294.6" width="473.6" height="18.7" fill="#9467bd"/>
+<text class="small" x="734.6" y="309.2">570.20 ms</text>
+<text class="axis" text-anchor="end" x="243" y="420.2">Grayscale</text>
+<rect x="255.0" y="354.4" width="8.3" height="18.7" fill="#1f77b4"/>
+<text class="small" x="269.3" y="369.0">9.96 ms</text>
+<rect x="255.0" y="378.3" width="11.0" height="18.7" fill="#d62728"/>
+<text class="small" x="272.0" y="392.9">13.23 ms</text>
+<rect x="255.0" y="402.3" width="8.3" height="18.7" fill="#2ca02c"/>
+<text class="small" x="269.3" y="416.9">9.99 ms</text>
+<rect x="255.0" y="426.2" width="9.1" height="18.7" fill="#9467bd"/>
+<text class="small" x="270.1" y="440.8">10.96 ms</text>
+<rect x="255" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="504">20 threads, static</text>
+<rect x="435" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="457" y="504">40 threads, static</text>
+<rect x="615" y="492" width="15" height="15" fill="#2ca02c"/>
+<text class="legend" x="637" y="504">20 threads, dynamic,16</text>
+<rect x="795" y="492" width="15" height="15" fill="#9467bd"/>
+<text class="legend" x="817" y="504">40 threads, dynamic,16</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo médio (ms)</text>
+</svg>

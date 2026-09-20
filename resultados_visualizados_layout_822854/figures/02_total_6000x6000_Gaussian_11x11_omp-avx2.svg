@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Custo total com conversões — Gaussian_11x11, 6000x6000.png, omp-avx2">
+<title>Custo total com conversões — Gaussian_11x11, 6000x6000.png, omp-avx2</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Custo total com conversões — Gaussian_11x11, 6000x6000.png, omp-avx2</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">-1603.46 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">3.79 s</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">9.19 s</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">14.59 s</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">19.99 s</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,112.7 148.4,338.9 235.3,449.8 408.9,501.8 582.6,521.5 756.3,532.3 930.0,538.6" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="338.9" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="449.8" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="501.8" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="521.5" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="532.3" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="538.6" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">SoA ingênuo total</text>
+<polyline points="105.0,555.6 148.4,560.3 235.3,562.5 408.9,563.8 582.6,564.2 756.3,564.3 930.0,564.3" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="555.6" r="4" fill="#2ca02c"/>
+<circle cx="148.4" cy="560.3" r="4" fill="#2ca02c"/>
+<circle cx="235.3" cy="562.5" r="4" fill="#2ca02c"/>
+<circle cx="408.9" cy="563.8" r="4" fill="#2ca02c"/>
+<circle cx="582.6" cy="564.2" r="4" fill="#2ca02c"/>
+<circle cx="756.3" cy="564.3" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="564.3" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="98">SoA separável total</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo mediano (ms)</text>
+</svg>

@@ -1,0 +1,4 @@
+Campaign,Source_directory,Summary_groups,Samples_per_group,Hostnames,Operations,Images
+regular,resultados_pcad_hype_822851,2856,5,hype5,17,2
+adaptive,resultados_pcad_hype_822852,576,5,hype2,1,8
+smt,resultados_pcad_hype_822853,24,5,hype1,3,2

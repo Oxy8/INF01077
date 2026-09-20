@@ -16,11 +16,13 @@ As quatro variantes separam dois efeitos diferentes:
 - `off`: controle escalar no alvo padrão, com auto-vetorização desativada;
 - `off-avx2`: o mesmo controle escalar, gerado para Haswell (`-march=haswell`);
 - `omp`: pragmas `omp simd` no alvo padrão;
-- `omp-avx2`: pragmas `omp simd` para Haswell, habilitando AVX2/FMA no hype.
+- `omp-avx2`: pragmas `omp simd` para Haswell, habilitando AVX2 no hype.
 
 As variantes `omp` gravam o relatório do compilador em
 `build/<variante>/vectorization-core.log`. O controle `off-avx2` evita atribuir
 ao SIMD explícito uma diferença causada apenas pelo alvo de compilação.
+Para preservar hashes entre os alvos, a contração FMA fica desativada; isso não
+desativa os vetores AVX2.
 
 Gere os controles determinísticos de 6000×6000 quando necessário:
 
@@ -93,14 +95,8 @@ Para executar apenas o teste de layout no mesmo tipo de nó:
 sbatch scripts/pcad_hype_layout.sbatch
 ```
 
-O job coleta a topologia de CPU e usa os padrões de afinidade, NUMA e
-compilação do ambiente. As coletas VTune devem ser feitas em uma alocação
-exclusiva separada, por exemplo:
-
-```bash
-salloc -p hype -N 1 -c 20 --exclusive -t 02:00:00
-bash scripts/collect_vtune.sh
-```
-
-É possível selecionar a coleta e o caso por variáveis de ambiente, por
-exemplo `VTUNE_ANALYSIS=threading VTUNE_SCHEDULE=static VTUNE_SIMD=omp-avx2`.
+O job coleta a topologia de CPU e usa a configuração padrão do ambiente. A
+campanha VTune é separada, roda apenas no nó de cálculo e não entra nas
+amostras temporizadas. Consulte [VTUNE_PCAD.md](VTUNE_PCAD.md): ele inclui o
+preflight para localizar o módulo VTune, o job exclusivo e os nove perfis
+selecionados para adaptativo, layouts e Zoom In.
