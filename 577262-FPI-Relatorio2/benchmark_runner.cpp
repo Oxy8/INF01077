@@ -260,7 +260,8 @@ static bool reset_for_schedule_benchmark(ImageState& image, const unsigned char*
 }
 
 static bool process_schedule_image(const fs::path& path, std::ofstream& csv_file,
-                                   int repetition, const std::string& schedule_name) {
+                                   int repetition, const std::string& schedule_name,
+                                   size_t selected_transformation) {
     ImageState image{};
     const std::string filename = path.string();
     if (!load_image(filename.c_str(), image)) {
@@ -281,6 +282,7 @@ static bool process_schedule_image(const fs::path& path, std::ofstream& csv_file
 
     bool succeeded = true;
     for (size_t i = 0; i < std::size(TRANSFORMATIONS); ++i) {
+        if (selected_transformation != std::size(TRANSFORMATIONS) && i != selected_transformation) continue;
         if (!reset_for_schedule_benchmark(image, original_data, original_width, original_height, data_size)) {
             fprintf(stderr, "Erro ao restaurar a imagem: %s\n", filename.c_str());
             succeeded = false;
@@ -313,7 +315,8 @@ static bool process_schedule_image(const fs::path& path, std::ofstream& csv_file
 }
 
 static int process_schedule_folder(const fs::path& folder, std::ofstream& csv_file,
-                                   int repetition, const std::string& schedule_name) {
+                                   int repetition, const std::string& schedule_name,
+                                   size_t selected_transformation) {
     std::error_code error;
     if (!fs::is_directory(folder, error)) {
         fprintf(stderr, "Erro: pasta nao encontrada: %s\n", folder.string().c_str());
@@ -338,15 +341,31 @@ static int process_schedule_folder(const fs::path& folder, std::ofstream& csv_fi
 
     std::sort(images.begin(), images.end());
     for (const fs::path& image : images) {
-        if (!process_schedule_image(image, csv_file, repetition, schedule_name)) return 1;
+        if (!process_schedule_image(image, csv_file, repetition, schedule_name,
+                                    selected_transformation)) return 1;
     }
     return 0;
 }
 
 int main(int argc, char** argv) {
-    if (argc != 5 || std::string(argv[1]) != "--folder") {
-        fprintf(stderr, "Uso: %s --folder PASTA ARQUIVO_CSV REPETICAO\n", argv[0]);
+    if ((argc != 5 && argc != 7) || std::string(argv[1]) != "--folder" ||
+        (argc == 7 && std::string(argv[5]) != "--transformation")) {
+        fprintf(stderr, "Uso: %s --folder PASTA ARQUIVO_CSV REPETICAO [--transformation NOME]\n", argv[0]);
         return 2;
+    }
+
+    size_t selected_transformation = std::size(TRANSFORMATIONS);
+    if (argc == 7) {
+        for (size_t i = 0; i < std::size(TRANSFORMATIONS); ++i) {
+            if (std::string(argv[6]) == TRANSFORMATION_NAMES[i]) {
+                selected_transformation = i;
+                break;
+            }
+        }
+        if (selected_transformation == std::size(TRANSFORMATIONS)) {
+            fprintf(stderr, "Erro: transformacao desconhecida: %s\n", argv[6]);
+            return 2;
+        }
     }
 
     const std::string schedule_name = schedule_name_from_environment();
@@ -380,7 +399,8 @@ int main(int argc, char** argv) {
         csv_file << "Repetition,Image,Num_Threads,OMP_Schedule,Transformation,Time_ms\n";
     }
     const int status = process_schedule_folder(argv[2], csv_file,
-                                               static_cast<int>(parsed_repetition), schedule_name);
+                                               static_cast<int>(parsed_repetition), schedule_name,
+                                               selected_transformation);
     csv_file.close();
     return !csv_file && status == 0 ? 1 : status;
 }
