@@ -6,12 +6,15 @@ PKG_CONFIG ?= pkg-config
 PROJECT_DIR := 577262-FPI-Relatorio2
 BUILD_DIR := build
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
+SCHEDULE_TARGET := $(BUILD_DIR)/image_schedule_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
 
 CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
 BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
+SCHEDULE_CORE_OBJECT := $(BUILD_DIR)/image_manipulation_schedule.o
+SCHEDULE_RUNNER_OBJECT := $(BUILD_DIR)/benchmark_runner_schedule.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(GUI_OBJECT)
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(SCHEDULE_CORE_OBJECT) $(SCHEDULE_RUNNER_OBJECT) $(GUI_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
@@ -25,11 +28,13 @@ CXXFLAGS += $(OPENMP_FLAGS)
 LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
 
-.PHONY: all gui check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all gui schedule-benchmark check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
 gui: $(GUI_TARGET)
+
+schedule-benchmark: $(SCHEDULE_TARGET)
 
 check-compiler:
 	@command -v "$(firstword $(CXX))" >/dev/null 2>&1 || { \
@@ -51,6 +56,9 @@ check-gtk: check-compiler
 $(BENCHMARK_TARGET): $(CORE_OBJECT) $(BENCHMARK_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(SCHEDULE_TARGET): $(SCHEDULE_CORE_OBJECT) $(SCHEDULE_RUNNER_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -59,6 +67,12 @@ $(CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_D
 
 $(BENCHMARK_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(SCHEDULE_CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) -DBENCHMARK_ALL_SCHEDULES $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(SCHEDULE_RUNNER_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) -DBENCHMARK_ALL_SCHEDULES $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@

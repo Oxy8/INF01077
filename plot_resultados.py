@@ -55,8 +55,14 @@ df_pipeline_completa = df[df['Grayscale'] > 0].copy()
 NUM_THREADS_MAX = df['Num_Threads'].max()
 df_max_threads = df[df['Num_Threads'] == NUM_THREADS_MAX].copy()
 
-ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 2, 4, 8, 16, 32, 64, 128]]
-ordem_presente = [s for s in ordem_schedules if s in df_max_threads['OMP_Schedule'].unique()]
+def ordem_schedule(schedule):
+    tipo, separador, tamanho = schedule.rpartition('_')
+    if separador and tamanho.isdecimal():
+        return (schedule != 'static', tipo, int(tamanho))
+    return (schedule != 'static', schedule, -1)
+
+
+ordem_presente = sorted(df_max_threads['OMP_Schedule'].dropna().unique(), key=ordem_schedule)
 
 # ==============================================================================
 # 3. GERAÇÃO DE TABELAS COM NÚMEROS REAIS (Excel/CSV)
@@ -172,9 +178,11 @@ for img in imagens_unicas:
     os.makedirs(pasta_img, exist_ok=True)
     
     df_img_max = df_max_threads[df_max_threads['Image'] == img]
-    df_img_dinamico = df_img_max[df_img_max['OMP_Schedule'].str.startswith('dynamic')].copy()
-    
-    df_img_dinamico['Chunk_Size'] = df_img_dinamico['OMP_Schedule'].apply(lambda x: int(x.split('_')[1]))
+    df_img_dinamico = df_img_max[
+        df_img_max['OMP_Schedule'].str.fullmatch(r'dynamic_\d+', na=False)
+    ].copy()
+    df_img_dinamico['Chunk_Size'] = df_img_dinamico['OMP_Schedule'].str.rsplit('_', n=1).str[-1].astype(int)
+    tamanhos_chunks = sorted(df_img_dinamico['Chunk_Size'].unique())
     
     df_img_estatico = df_img_max[df_img_max['OMP_Schedule'] == 'static']
     df_img_completo = df_pipeline_completa[df_pipeline_completa['Image'] == img]
@@ -189,7 +197,7 @@ for img in imagens_unicas:
     plt.xlabel('Tamanho do Chunk (Escala Log)', fontsize=12)
     plt.ylabel('Tempo (ms)', fontsize=12)
     plt.xscale('log') 
-    plt.xticks([1, 2, 4, 8, 16, 32, 64, 128], ['1', '2', '4', '8', '16', '32', '64', '128'])
+    plt.xticks(tamanhos_chunks, [str(tamanho) for tamanho in tamanhos_chunks])
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
     plt.tight_layout()

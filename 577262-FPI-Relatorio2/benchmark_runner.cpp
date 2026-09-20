@@ -11,8 +11,11 @@
 #include <cstring>
 
 #include <chrono>
+#include <cerrno>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
+#include <limits>
 #include <omp.h> // Para ler o número de threads
 
 
@@ -193,7 +196,11 @@ static const char* TRANSFORMATION_NAMES[] = {
     "Quantize", "Adjust_Contrast", "Negative", "Equalize_Histogram",
     "Zoom_In", "Zoom_Out", "Rotate_CW", "Rotate_CCW",
     "Gaussian_3x3", "Gaussian_5x5", "Gaussian_7x7", "Gaussian_9x9", "Gaussian_11x11",
+#ifdef BENCHMARK_ALL_SCHEDULES
+    "Adaptive_Gaussian"
+#else
     "Adaptive_Median"
+#endif
 };
 
 bool has_supported_extension(const fs::path& path) {
@@ -214,6 +221,172 @@ bool has_supported_extension(const fs::path& path) {
         extension
     ) != supported_extensions.end();
 }
+
+#ifdef BENCHMARK_ALL_SCHEDULES
+
+static std::string csv_field(const std::string& value) {
+    if (value.find_first_of(",\"\r\n") == std::string::npos) return value;
+    std::string escaped = "\"";
+    for (char character : value) {
+        if (character == '"') escaped += '"';
+        escaped += character;
+    }
+    return escaped + '"';
+}
+
+static std::string schedule_name_from_environment() {
+    const char* value = std::getenv("OMP_SCHEDULE");
+    if (!value) return {};
+    std::string schedule(value);
+    if (schedule == "static") return schedule;
+    if (schedule.rfind("dynamic,", 0) != 0) return {};
+    const std::string chunk = schedule.substr(std::strlen("dynamic,"));
+    if (chunk.empty() || chunk[0] == '0' ||
+        !std::all_of(chunk.begin(), chunk.end(), [](unsigned char digit) { return std::isdigit(digit); })) {
+        return {};
+    }
+    return "dynamic_" + chunk;
+}
+
+static bool reset_for_schedule_benchmark(ImageState& image, const unsigned char* original_data,
+                                         int width, int height, size_t data_size) {
+    free(image.data);
+    image.data = static_cast<unsigned char*>(malloc(data_size));
+    if (!image.data) return false;
+    memcpy(image.data, original_data, data_size);
+    image.width = width;
+    image.height = height;
+    image.isGrayScale = false;
+    return true;
+}
+
+static bool process_schedule_image(const fs::path& path, std::ofstream& csv_file,
+                                   int repetition, const std::string& schedule_name) {
+    ImageState image{};
+    const std::string filename = path.string();
+    if (!load_image(filename.c_str(), image)) {
+        fprintf(stderr, "Erro ao carregar a imagem: %s\n", filename.c_str());
+        return false;
+    }
+
+    const int original_width = image.width;
+    const int original_height = image.height;
+    const size_t data_size = static_cast<size_t>(original_width) * original_height * 3;
+    unsigned char* original_data = static_cast<unsigned char*>(malloc(data_size));
+    if (!original_data) {
+        fprintf(stderr, "Erro ao alocar backup da imagem: %s\n", filename.c_str());
+        free(image.data);
+        return false;
+    }
+    memcpy(original_data, image.data, data_size);
+
+    bool succeeded = true;
+    for (size_t i = 0; i < std::size(TRANSFORMATIONS); ++i) {
+        if (!reset_for_schedule_benchmark(image, original_data, original_width, original_height, data_size)) {
+            fprintf(stderr, "Erro ao restaurar a imagem: %s\n", filename.c_str());
+            succeeded = false;
+            break;
+        }
+
+        const auto start = std::chrono::steady_clock::now();
+        const bool transformed = TRANSFORMATIONS[i](image);
+        const auto end = std::chrono::steady_clock::now();
+        if (!transformed) {
+            fprintf(stderr, "Erro na transformacao %s: %s\n", TRANSFORMATION_NAMES[i], filename.c_str());
+            succeeded = false;
+            break;
+        }
+
+        const double elapsed_ms = std::chrono::duration<double, std::milli>(end - start).count();
+        csv_file << repetition << ',' << csv_field(path.filename().string()) << ','
+                 << omp_get_max_threads() << ',' << schedule_name << ','
+                 << TRANSFORMATION_NAMES[i] << ',' << std::setprecision(12) << elapsed_ms << '\n';
+        if (!csv_file) {
+            fprintf(stderr, "Erro ao escrever CSV: %s\n", filename.c_str());
+            succeeded = false;
+            break;
+        }
+    }
+
+    free(image.data);
+    free(original_data);
+    return succeeded;
+}
+
+static int process_schedule_folder(const fs::path& folder, std::ofstream& csv_file,
+                                   int repetition, const std::string& schedule_name) {
+    std::error_code error;
+    if (!fs::is_directory(folder, error)) {
+        fprintf(stderr, "Erro: pasta nao encontrada: %s\n", folder.string().c_str());
+        return 1;
+    }
+
+    std::vector<fs::path> images;
+    fs::directory_iterator iterator(folder, error);
+    const fs::directory_iterator end;
+    while (!error && iterator != end) {
+        const fs::directory_entry& entry = *iterator;
+        std::error_code entry_error;
+        if (entry.is_regular_file(entry_error) && !entry_error && has_supported_extension(entry.path())) {
+            images.push_back(entry.path());
+        }
+        iterator.increment(error);
+    }
+    if (error || images.empty()) {
+        fprintf(stderr, "Erro ao listar imagens em: %s\n", folder.string().c_str());
+        return 1;
+    }
+
+    std::sort(images.begin(), images.end());
+    for (const fs::path& image : images) {
+        if (!process_schedule_image(image, csv_file, repetition, schedule_name)) return 1;
+    }
+    return 0;
+}
+
+int main(int argc, char** argv) {
+    if (argc != 5 || std::string(argv[1]) != "--folder") {
+        fprintf(stderr, "Uso: %s --folder PASTA ARQUIVO_CSV REPETICAO\n", argv[0]);
+        return 2;
+    }
+
+    const std::string schedule_name = schedule_name_from_environment();
+    if (schedule_name.empty()) {
+        fprintf(stderr, "Erro: OMP_SCHEDULE deve ser static ou dynamic,N (N > 0).\n");
+        return 2;
+    }
+
+    errno = 0;
+    char* end = nullptr;
+    const long parsed_repetition = std::strtol(argv[4], &end, 10);
+    if (errno != 0 || end == argv[4] || *end != '\0' ||
+        parsed_repetition <= 0 || parsed_repetition > std::numeric_limits<int>::max()) {
+        fprintf(stderr, "Erro: repeticao invalida: %s\n", argv[4]);
+        return 2;
+    }
+
+    const fs::path csv_path = argv[3];
+    std::error_code error;
+    const bool needs_header = !fs::exists(csv_path, error) || fs::file_size(csv_path, error) == 0;
+    if (error) {
+        fprintf(stderr, "Erro ao verificar CSV: %s\n", csv_path.string().c_str());
+        return 1;
+    }
+    std::ofstream csv_file(csv_path, std::ios::app);
+    if (!csv_file) {
+        fprintf(stderr, "Erro ao abrir CSV: %s\n", csv_path.string().c_str());
+        return 1;
+    }
+    if (needs_header) {
+        csv_file << "Repetition,Image,Num_Threads,OMP_Schedule,Transformation,Time_ms\n";
+    }
+    const int status = process_schedule_folder(argv[2], csv_file,
+                                               static_cast<int>(parsed_repetition), schedule_name);
+    csv_file.close();
+    return !csv_file && status == 0 ? 1 : status;
+}
+
+#else
 
 bool process_image(const fs::path& path, std::ofstream& csv_file) {
     ImageState image{};
@@ -389,3 +562,4 @@ int main(int argc, char** argv) {
     csv_file.close();
     return status;
 }
+#endif

@@ -44,8 +44,14 @@ df = pd.read_csv(arquivo_limpo)
 num_threads_max = df['Num_Threads'].max()
 df_max_threads = df[df['Num_Threads'] == num_threads_max].copy()
 
-ordem_schedules = ['static'] + [f'dynamic_{c}' for c in [1, 2, 4, 8, 16, 32, 64, 128]]
-ordem_presente = [s for s in ordem_schedules if s in df_max_threads['OMP_Schedule'].unique()]
+def ordem_schedule(schedule):
+    tipo, separador, tamanho = schedule.rpartition('_')
+    if separador and tamanho.isdecimal():
+        return (schedule != 'static', tipo, int(tamanho))
+    return (schedule != 'static', schedule, -1)
+
+
+ordem_presente = sorted(df_max_threads['OMP_Schedule'].dropna().unique(), key=ordem_schedule)
 
 plt.figure(figsize=(14, 7))
 sns.barplot(
