@@ -15,6 +15,15 @@ run_dir="$runs_dir/$(date -u +%Y%m%dT%H%M%SZ)-$$"
 mkdir "$run_dir"
 csv_path="$run_dir/benchmark_transformacoes.csv"
 
+{
+    printf 'Affinity=%s\n' "${BENCHMARK_AFFINITY_LABEL:-unspecified}"
+    printf 'OMP_PLACES=%s\n' "${OMP_PLACES:-unset}"
+    printf 'OMP_PROC_BIND=%s\n' "${OMP_PROC_BIND:-unset}"
+    printf 'SLURM_JOB_ID=%s\n' "${SLURM_JOB_ID:-unset}"
+    printf 'SLURM_CPUS_PER_TASK=%s\n' "${SLURM_CPUS_PER_TASK:-unset}"
+    printf 'Host=%s\n' "$(hostname)"
+} > "$run_dir/config.txt"
+
 export OMP_DYNAMIC=FALSE
 unset ONLY_ADAPTIVE
 
