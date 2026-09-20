@@ -74,8 +74,7 @@ bool transform_equalize_histogram(ImageState& image) {
 }
 
 bool transform_zoom_in(ImageState& image) {
-    zoom_in_image(image);
-    return true;
+    return zoom_in_image(image);
 }
 
 bool transform_zoom_out(ImageState& image) {

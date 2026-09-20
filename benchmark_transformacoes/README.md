@@ -6,9 +6,9 @@ Execute a campanha completa a partir da raiz do repositório:
 ./benchmark_transformacoes/run.sh
 ```
 
-O script usa todas as imagens em `images/`, compila o executável dedicado e mede as 18 transformações com 20 e 40 threads. Para cada quantidade de threads, executa `static` e `dynamic` com chunks de 1 a 1024 (potências de 2), cinco vezes por condição. Cada execução cria uma nova pasta em `benchmark_transformacoes/runs/` com um CSV e dois PNGs.
+O script usa todas as imagens em `images/`, compila o executável dedicado e mede as 18 transformações com 20 e 40 threads. Para cada quantidade de threads, executa `static` e `dynamic` com chunks de 1 a 1024 (potências de 2), cinco vezes por condição. Cada execução cria uma nova pasta em `benchmark_transformacoes/runs/` com um CSV. O script não executa Python, portanto pode rodar em um nó de computação sem as bibliotecas de plotagem.
 
-Para recriar os gráficos de um CSV completo:
+Depois que a coleta terminar, gere os dois gráficos em um ambiente com `pandas`, `matplotlib` e `seaborn`:
 
 ```sh
 python3 benchmark_transformacoes/plot.py benchmark_transformacoes/runs/PASTA/benchmark_transformacoes.csv

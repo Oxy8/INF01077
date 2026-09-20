@@ -670,20 +670,25 @@ void rotate_90_degrees_counterclockwise(ImageState& img){
     img.height = new_img_height;
 }
 
-void zoom_in_image(ImageState& img){
-    long long h = 1LL * img.height * 2 - 1;
-    long long w  = 1LL * img.width * 2 - 1;
-    if(h > INT_MAX || w > INT_MAX || h * w * 3LL > INT_MAX) return;
+bool zoom_in_image(ImageState& img){
+    if (img.width <= 0 || img.height <= 0) return false;
+    const size_t height = static_cast<size_t>(img.height) * 2 - 1;
+    const size_t width = static_cast<size_t>(img.width) * 2 - 1;
+    if (height > INT_MAX || width > INT_MAX ||
+        width > std::numeric_limits<size_t>::max() / height / 3) return false;
 
-    int new_height = (int) h;
-    int new_width = (int) w;
-    unsigned char* new_data = (unsigned char*) malloc(new_width * new_height * 3);
+    const int new_height = static_cast<int>(height);
+    const int new_width = static_cast<int>(width);
+    unsigned char* new_data = static_cast<unsigned char*>(malloc(width * height * 3));
+    if (!new_data) return false;
+    const size_t row_stride = width * 3;
 
     OMP_PARALLEL_FOR
     for(int j = 0; j < img.height; j++){
         for(int i = 0; i < img.width; i++){
-            int old_index = (j * img.width + i) * 3;
-            int new_index = (j * 2 * new_width + i * 2) * 3;
+            const size_t old_index = (static_cast<size_t>(j) * img.width + i) * 3;
+            const size_t new_index = (static_cast<size_t>(j) * 2 * width +
+                                      static_cast<size_t>(i) * 2) * 3;
             memcpy(new_data + new_index, img.data + old_index, 3);
         }
     }
@@ -691,7 +696,7 @@ void zoom_in_image(ImageState& img){
     OMP_PARALLEL_FOR
     for(int j = 0; j < new_height; j += 2){
         for(int i = 1; i < new_width; i += 2){
-            int index = (j * new_width + i) * 3;
+            const size_t index = (static_cast<size_t>(j) * width + i) * 3;
             new_data[index] = (unsigned char) ((new_data[index - 3] + new_data[index + 3]) / 2);
             new_data[index + 1] = (unsigned char) ((new_data[index - 3 + 1] + new_data[index + 3 + 1]) / 2);
             new_data[index + 2] = (unsigned char) ((new_data[index - 3 + 2] + new_data[index + 3 + 2]) / 2);
@@ -701,16 +706,17 @@ void zoom_in_image(ImageState& img){
     OMP_PARALLEL_FOR
     for(int j = 1; j < new_height; j += 2){
         for(int i = 0; i < new_width; i++){
-            int index = (j * new_width + i) * 3;
-            new_data[index] = (unsigned char) ((new_data[index - new_width * 3] + new_data[index + new_width * 3]) / 2);
-            new_data[index + 1] = (unsigned char) ((new_data[index - new_width * 3 + 1] + new_data[index + new_width * 3 + 1]) / 2);
-            new_data[index + 2] = (unsigned char) ((new_data[index - new_width * 3 + 2] + new_data[index + new_width * 3 + 2]) / 2);
+            const size_t index = (static_cast<size_t>(j) * width + i) * 3;
+            new_data[index] = (unsigned char) ((new_data[index - row_stride] + new_data[index + row_stride]) / 2);
+            new_data[index + 1] = (unsigned char) ((new_data[index - row_stride + 1] + new_data[index + row_stride + 1]) / 2);
+            new_data[index + 2] = (unsigned char) ((new_data[index - row_stride + 2] + new_data[index + row_stride + 2]) / 2);
         }
     }
     free(img.data);
     img.data = new_data;
     img.width = new_width;
     img.height = new_height;
+    return true;
 }
 
 void zoom_out_image(ImageState& img, Rectangle& rec){

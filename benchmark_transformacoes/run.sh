@@ -8,10 +8,7 @@ cd "$repo_dir"
 
 runs_dir="$script_dir/runs"
 mkdir -p "$runs_dir"
-export MPLCONFIGDIR="$runs_dir/.matplotlib_cache"
 
-# Check plotting dependencies before starting the long benchmark campaign.
-python3 -c 'import pandas, matplotlib, seaborn' >/dev/null
 make schedule-benchmark
 
 run_dir="$runs_dir/$(date -u +%Y%m%dT%H%M%SZ)-$$"
@@ -38,5 +35,4 @@ for repetition in {1..5}; do
     done
 done
 
-python3 "$script_dir/plot.py" "$csv_path"
-printf 'CSV e gráficos concluídos em: %s\n' "$run_dir"
+printf 'CSV concluído em: %s\n' "$csv_path"
