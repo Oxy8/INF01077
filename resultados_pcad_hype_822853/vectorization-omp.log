@@ -1,0 +1,334 @@
+577262-FPI-Relatorio2/stb_image.h:3470:16: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3470:16: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:3470:16: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3652:19: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3652:19: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:3652:19: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:6686:10: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:359:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1119:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1119:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1119:27: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1120:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1120:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1120:27: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1121:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1121:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1122:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1122:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1123:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1123:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1124:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1124:27: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image_write.h:1124:27: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1835:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1835:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:10: optimized: loop vectorized using 4 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1838:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1838:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1839:10: optimized: loop vectorized using 4 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1840:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1840:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1841:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1841:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1844:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1844:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1845:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1845:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1846:10: optimized: loop vectorized using 4 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1836:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3536:14: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:7149:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:711:40: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:865:68: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:880:60: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:988:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3489:16: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3489:16: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:3489:16: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3483:14: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3249:30: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:645:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:645:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:645:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:645:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:113:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:144:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:175:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:206:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:237:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1778:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1778:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1781:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1781:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1783:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1783:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1784:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1784:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1787:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1787:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1788:10: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1788:10: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1779:35: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4833:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4833:27: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4838:30: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4838:30: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4844:30: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4844:30: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4761:35: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4761:35: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4761:35: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4765:24: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4765:24: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4765:24: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4771:35: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4771:35: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4769:24: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4769:24: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4777:35: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4777:35: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4775:24: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4775:24: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4775:24: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4782:35: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4782:35: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4845:29: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4353:50: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4353:50: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:4353:50: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4290:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1559:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1541:36: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1585:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5430:19: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3335:32: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3335:32: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5066:22: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5066:22: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4942:21: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4942:21: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4917:19: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4917:19: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:5248:33: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3076:16: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:3076:16: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:6707:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:6707:34: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:6033:46: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:6033:46: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:6033:46: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1620:28: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1199:18: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1199:18: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:1199:18: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1873:19: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1873:19: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:1873:19: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1215:18: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:1215:18: optimized:  loop versioned for vectorization because of possible aliasing
+577262-FPI-Relatorio2/stb_image.h:1215:18: optimized: loop vectorized using 8 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4513:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4513:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4513:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4513:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:4513:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:831:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:841:27: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image.h:891:18: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:834:24: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1158:27: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/stb_image_write.h:1080:4: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:592:13: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:654:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:673:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:719:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:899:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:899:15: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:948:13: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:966:13: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:996:63: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:986:13: optimized: basic block part vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:986:13: optimized: basic block part vectorized using 16 byte vectors

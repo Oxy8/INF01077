@@ -1,0 +1,28 @@
+hype2
+Compilando variantes escalar, SIMD genérica e SIMD AVX2...
+rm -rf -- build
+mkdir -p build/off
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize  -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/off/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -MMD -MP -c 577262-FPI-Relatorio2/benchmark_runner.cpp -o build/off/benchmark_runner.o
+g++ -fopenmp build/off/image_manipulation.o build/off/benchmark_runner.o  -o build/off/image_benchmark
+mkdir -p build/off-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell  -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/off-avx2/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell -MMD -MP -c 577262-FPI-Relatorio2/benchmark_runner.cpp -o build/off-avx2/benchmark_runner.o
+g++ -fopenmp build/off-avx2/image_manipulation.o build/off-avx2/benchmark_runner.o  -o build/off-avx2/image_benchmark
+mkdir -p build/omp
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -fopt-info-vec-optimized=build/omp/vectorization-core.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -MMD -MP -c 577262-FPI-Relatorio2/benchmark_runner.cpp -o build/omp/benchmark_runner.o
+g++ -fopenmp build/omp/image_manipulation.o build/omp/benchmark_runner.o  -o build/omp/image_benchmark
+mkdir -p build/omp-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -march=haswell -fopt-info-vec-optimized=build/omp-avx2/vectorization-core.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp-avx2/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=1 -march=haswell -MMD -MP -c 577262-FPI-Relatorio2/benchmark_runner.cpp -o build/omp-avx2/benchmark_runner.o
+g++ -fopenmp build/omp-avx2/image_manipulation.o build/omp-avx2/benchmark_runner.o  -o build/omp-avx2/image_benchmark
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -MMD -MP -c 577262-FPI-Relatorio2/generate_images.cpp -o build/off/generate_images.o
+g++ -fopenmp build/off/generate_images.o  -o build/off/generate_controls
+Gerando controles determinísticos em 6000x6000
+Criado: "images/controls/control_smooth_6000x6000.png"
+Criado: "images/controls/control_noise_6000x6000.png"
+Criado: "images/controls/control_half_noise_6000x6000.png"
+Criado: "images/controls/control_bands_256_6000x6000.png"
+Gerando hashes de referência...
+Iniciando varredura de chunks do filtro adaptativo...
