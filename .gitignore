@@ -1,3 +1,5 @@
 /build/
 /benchmark_affinity/runs/
 /benchmark_affinity/plots/
+/benchmark_transformacoes_vtune/runs/
+__pycache__/

@@ -18,6 +18,10 @@
 #include <limits>
 #include <omp.h> // Para ler o número de threads
 
+#ifdef BENCHMARK_VTUNE
+#include <ittnotify.h>
+#endif
+
 
 namespace fs = std::filesystem;
 
@@ -259,6 +263,257 @@ static bool reset_for_schedule_benchmark(ImageState& image, const unsigned char*
     return true;
 }
 
+#ifdef BENCHMARK_VTUNE
+
+struct VtuneArguments {
+    fs::path folder;
+    fs::path output;
+    std::string collection_id;
+    std::string transformation;
+    int collection_repetition = 0;
+    int iterations = 0;
+};
+
+struct VtuneImage {
+    fs::path path;
+    ImageState image{};
+    std::vector<unsigned char> original_data;
+    int original_width = 0;
+    int original_height = 0;
+};
+
+static bool parse_positive_int(const char* text, int& parsed) {
+    errno = 0;
+    char* end = nullptr;
+    const long value = std::strtol(text, &end, 10);
+    if (errno != 0 || end == text || *end != '\0' || value <= 0 ||
+        value > std::numeric_limits<int>::max()) {
+        return false;
+    }
+    parsed = static_cast<int>(value);
+    return true;
+}
+
+static void print_vtune_usage(const char* executable) {
+    fprintf(stderr,
+            "Uso: %s --folder PASTA --output CSV --collection-id ID "
+            "--repetition N --transformation NOME --iterations N\n",
+            executable);
+}
+
+static bool parse_vtune_arguments(int argc, char** argv, VtuneArguments& arguments) {
+    if (argc != 13) return false;
+    for (int index = 1; index < argc; index += 2) {
+        const std::string option(argv[index]);
+        const char* value = argv[index + 1];
+        if (option == "--folder") {
+            arguments.folder = value;
+        } else if (option == "--output") {
+            arguments.output = value;
+        } else if (option == "--collection-id") {
+            arguments.collection_id = value;
+        } else if (option == "--repetition") {
+            if (!parse_positive_int(value, arguments.collection_repetition)) return false;
+        } else if (option == "--transformation") {
+            arguments.transformation = value;
+        } else if (option == "--iterations") {
+            if (!parse_positive_int(value, arguments.iterations)) return false;
+        } else {
+            return false;
+        }
+    }
+    return !arguments.folder.empty() && !arguments.output.empty() &&
+           !arguments.collection_id.empty() && !arguments.transformation.empty() &&
+           arguments.collection_repetition > 0 && arguments.iterations > 0;
+}
+
+static size_t find_transformation(const std::string& name) {
+    for (size_t index = 0; index < std::size(TRANSFORMATIONS); ++index) {
+        if (name == TRANSFORMATION_NAMES[index]) return index;
+    }
+    return std::size(TRANSFORMATIONS);
+}
+
+static bool list_image_paths(const fs::path& folder, std::vector<fs::path>& images) {
+    std::error_code error;
+    if (!fs::is_directory(folder, error)) {
+        fprintf(stderr, "Erro: pasta nao encontrada: %s\n", folder.string().c_str());
+        return false;
+    }
+
+    fs::directory_iterator iterator(folder, error);
+    const fs::directory_iterator end;
+    while (!error && iterator != end) {
+        const fs::directory_entry& entry = *iterator;
+        std::error_code entry_error;
+        if (entry.is_regular_file(entry_error) && !entry_error &&
+            has_supported_extension(entry.path())) {
+            images.push_back(entry.path());
+        }
+        iterator.increment(error);
+    }
+    if (error || images.empty()) {
+        fprintf(stderr, "Erro ao listar imagens em: %s\n", folder.string().c_str());
+        return false;
+    }
+    std::sort(images.begin(), images.end());
+    return true;
+}
+
+static void release_vtune_images(std::vector<VtuneImage>& images) {
+    for (VtuneImage& loaded : images) {
+        free(loaded.image.data);
+        loaded.image.data = nullptr;
+    }
+}
+
+static bool load_vtune_images(const fs::path& folder, std::vector<VtuneImage>& loaded_images) {
+    std::vector<fs::path> paths;
+    if (!list_image_paths(folder, paths)) return false;
+    loaded_images.reserve(paths.size());
+
+    for (const fs::path& path : paths) {
+        VtuneImage loaded;
+        loaded.path = path;
+        const std::string filename = path.string();
+        if (!load_image(filename.c_str(), loaded.image)) {
+            fprintf(stderr, "Erro ao carregar a imagem: %s\n", filename.c_str());
+            release_vtune_images(loaded_images);
+            return false;
+        }
+
+        loaded.original_width = loaded.image.width;
+        loaded.original_height = loaded.image.height;
+        const size_t data_size = static_cast<size_t>(loaded.original_width) *
+                                 loaded.original_height * 3;
+        try {
+            loaded.original_data.assign(loaded.image.data, loaded.image.data + data_size);
+        } catch (const std::bad_alloc&) {
+            fprintf(stderr, "Erro ao alocar backup da imagem: %s\n", filename.c_str());
+            free(loaded.image.data);
+            release_vtune_images(loaded_images);
+            return false;
+        }
+        loaded_images.push_back(std::move(loaded));
+    }
+    return true;
+}
+
+static int run_vtune_benchmark(const VtuneArguments& arguments,
+                               const std::string& schedule_name,
+                               size_t transformation_index) {
+    std::vector<VtuneImage> images;
+    if (!load_vtune_images(arguments.folder, images)) return 1;
+
+    std::ofstream csv_file(arguments.output, std::ios::trunc);
+    if (!csv_file) {
+        fprintf(stderr, "Erro ao abrir CSV: %s\n", arguments.output.string().c_str());
+        release_vtune_images(images);
+        return 1;
+    }
+    csv_file << "Collection_ID,Collection_Repetition,Image,Num_Threads,OMP_Schedule,"
+                "Transformation,Workload_Iteration,Workload_Iterations,Frame_ID,Time_ms\n";
+    if (!csv_file) {
+        fprintf(stderr, "Erro ao escrever cabecalho CSV.\n");
+        release_vtune_images(images);
+        return 1;
+    }
+
+    const std::string domain_name = "inf01077.transform." + arguments.transformation;
+    __itt_domain* domain = __itt_domain_create(domain_name.c_str());
+    __itt_string_handle* task_name = __itt_string_handle_create(arguments.transformation.c_str());
+    unsigned long long frame_number = 0;
+    bool succeeded = true;
+
+    // The VTune command starts paused. Loading and backup creation above are not sampled.
+    __itt_resume();
+    for (VtuneImage& loaded : images) {
+        const size_t data_size = static_cast<size_t>(loaded.original_width) *
+                                 loaded.original_height * 3;
+        for (int iteration = 1; iteration <= arguments.iterations; ++iteration) {
+            if (!reset_for_schedule_benchmark(loaded.image, loaded.original_data.data(),
+                                              loaded.original_width, loaded.original_height,
+                                              data_size)) {
+                fprintf(stderr, "Erro ao restaurar a imagem: %s\n",
+                        loaded.path.string().c_str());
+                succeeded = false;
+                break;
+            }
+
+            ++frame_number;
+            __itt_id instance_id = __itt_id_make(domain, frame_number);
+            __itt_task_begin(domain, instance_id, __itt_null, task_name);
+            __itt_frame_begin_v3(domain, &instance_id);
+            const auto start = std::chrono::steady_clock::now();
+            const bool transformed = TRANSFORMATIONS[transformation_index](loaded.image);
+            const auto end = std::chrono::steady_clock::now();
+            __itt_frame_end_v3(domain, &instance_id);
+            __itt_task_end(domain);
+
+            if (!transformed) {
+                fprintf(stderr, "Erro na transformacao %s: %s\n",
+                        TRANSFORMATION_NAMES[transformation_index],
+                        loaded.path.string().c_str());
+                succeeded = false;
+                break;
+            }
+
+            const double elapsed_ms =
+                std::chrono::duration<double, std::milli>(end - start).count();
+            csv_file << csv_field(arguments.collection_id) << ','
+                     << arguments.collection_repetition << ','
+                     << csv_field(loaded.path.filename().string()) << ','
+                     << omp_get_max_threads() << ',' << schedule_name << ','
+                     << TRANSFORMATION_NAMES[transformation_index] << ','
+                     << iteration << ',' << arguments.iterations << ','
+                     << frame_number << ',' << std::setprecision(12) << elapsed_ms << '\n';
+            if (!csv_file) {
+                fprintf(stderr, "Erro ao escrever CSV: %s\n",
+                        arguments.output.string().c_str());
+                succeeded = false;
+                break;
+            }
+        }
+        if (!succeeded) break;
+    }
+    __itt_pause();
+
+    csv_file.close();
+    release_vtune_images(images);
+    if (!csv_file && succeeded) return 1;
+    return succeeded ? 0 : 1;
+}
+
+int main(int argc, char** argv) {
+    if (argc == 2 && std::string(argv[1]) == "--list-transformations") {
+        for (const char* name : TRANSFORMATION_NAMES) std::cout << name << '\n';
+        return 0;
+    }
+
+    VtuneArguments arguments;
+    if (!parse_vtune_arguments(argc, argv, arguments)) {
+        print_vtune_usage(argv[0]);
+        return 2;
+    }
+
+    const size_t transformation_index = find_transformation(arguments.transformation);
+    if (transformation_index == std::size(TRANSFORMATIONS)) {
+        fprintf(stderr, "Erro: transformacao desconhecida: %s\n",
+                arguments.transformation.c_str());
+        return 2;
+    }
+
+    const std::string schedule_name = schedule_name_from_environment();
+    if (schedule_name.empty()) {
+        fprintf(stderr, "Erro: OMP_SCHEDULE deve ser static ou dynamic,N (N > 0).\n");
+        return 2;
+    }
+
+    return run_vtune_benchmark(arguments, schedule_name, transformation_index);
+}
+
+#else
+
 static bool process_schedule_image(const fs::path& path, std::ofstream& csv_file,
                                    int repetition, const std::string& schedule_name,
                                    size_t selected_transformation) {
@@ -404,6 +659,8 @@ int main(int argc, char** argv) {
     csv_file.close();
     return !csv_file && status == 0 ? 1 : status;
 }
+
+#endif // BENCHMARK_VTUNE
 
 #else
 
