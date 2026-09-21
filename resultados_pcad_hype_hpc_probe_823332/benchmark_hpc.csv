@@ -1,0 +1,2 @@
+Run_ID,Timestamp_UTC,Image,Width,Height,Operation,Repeat,Threads,Schedule,Chunk,Simd_Build,Simd_Eligible,OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Elapsed_ms,Result_Hash,Validation
+hpc-probe,2026-09-21T16:48:15Z,rain_paisage.jpg,12288,16320,Adaptive_Median,0,20,static,,omp-avx2,yes,unset,unset,hype5,12.2.0,-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell,4689.030252,d0fdcd4b2e74abf3,not-requested
