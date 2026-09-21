@@ -424,9 +424,14 @@ static int run_vtune_benchmark(const VtuneArguments& arguments,
     __itt_string_handle* task_name = __itt_string_handle_create(arguments.transformation.c_str());
     unsigned long long frame_number = 0;
     bool succeeded = true;
+    const char* collection_control_value = std::getenv("VTUNE_COLLECTION_CONTROL");
+    const bool control_collection = collection_control_value &&
+                                    std::string(collection_control_value) == "1";
 
-    // The VTune command starts paused. Loading and backup creation above are not sampled.
-    __itt_resume();
+    // VTune 2021.1.1 crashes when hpc-performance is started paused and resumed
+    // through ITT. Newer versions can opt into collection control through the
+    // environment; frames always delimit the transformation itself.
+    if (control_collection) __itt_resume();
     for (VtuneImage& loaded : images) {
         const size_t data_size = static_cast<size_t>(loaded.original_width) *
                                  loaded.original_height * 3;
@@ -476,7 +481,7 @@ static int run_vtune_benchmark(const VtuneArguments& arguments,
         }
         if (!succeeded) break;
     }
-    __itt_pause();
+    if (control_collection) __itt_pause();
 
     csv_file.close();
     release_vtune_images(images);

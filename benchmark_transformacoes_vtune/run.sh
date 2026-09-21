@@ -96,6 +96,8 @@ help_text="$(vtune -help collect hpc-performance 2>&1 || true)"
 printf '%s\n' "$help_text" > "$run_dir/vtune-hpc-help.txt"
 knob_arguments=()
 knob_labels=()
+collection_arguments=()
+collection_control=1
 add_supported_knob() {
     local name="$1"
     local value="$2"
@@ -110,6 +112,18 @@ add_supported_knob dram-bandwidth-limits true
 add_supported_knob analyze-openmp true
 add_supported_knob collect-affinity true
 add_supported_knob enable-user-tasks true
+
+# This exact cluster version crashes inside the collector when hpc-performance
+# is resumed through ITT after -start-paused. Use the same default collection
+# configuration that already succeeded in benchmark_pre_vtune. ITT frames are
+# still collected and provide the transformation-only scope.
+if grep -Fq '2021.1.1' <<< "$vtune_version"; then
+    knob_arguments=()
+    knob_labels=("VTune_2021.1.1_defaults")
+    collection_control=0
+else
+    collection_arguments+=("-start-paused")
+fi
 vtune_knobs="${knob_labels[*]:-defaults}"
 
 cat > "$run_dir/campaign.env" <<EOF
@@ -126,6 +140,7 @@ OMP_PLACES=unset
 OMP_PROC_BIND=unset
 GOMP_CPU_AFFINITY=unset
 VTune_Knobs=$vtune_knobs
+VTune_Collection_Control=$collection_control
 Git_Commit=$git_commit
 Git_Status=$git_status
 EOF
@@ -283,6 +298,7 @@ OMP_PLACES=unset
 OMP_PROC_BIND=unset
 GOMP_CPU_AFFINITY=unset
 VTune_Knobs=$vtune_knobs
+VTune_Collection_Control=$collection_control
 Git_Commit=$git_commit
 Git_Status=$git_status
 EOF
@@ -354,7 +370,9 @@ run_collection() {
         "$workload_iterations"
 
     if ! OMP_NUM_THREADS="$threads" OMP_SCHEDULE="$schedule_raw" \
-        vtune -collect hpc-performance -start-paused \
+        VTUNE_COLLECTION_CONTROL="$collection_control" \
+        vtune -collect hpc-performance \
+            "${collection_arguments[@]}" \
             "${knob_arguments[@]}" \
             -result-dir "$result_dir" \
             -- "$binary" \

@@ -42,6 +42,7 @@ COMMON_FIELDS = [
     "OMP_PROC_BIND",
     "GOMP_CPU_AFFINITY",
     "VTune_Knobs",
+    "VTune_Collection_Control",
     "Git_Commit",
     "Git_Status",
     "Result_Dir",
@@ -153,6 +154,7 @@ def base_record(run_dir: Path, manifest: Mapping[str, str]) -> Dict[str, str]:
         "OMP_PROC_BIND",
         "GOMP_CPU_AFFINITY",
         "VTune_Knobs",
+        "VTune_Collection_Control",
         "Git_Commit",
         "Git_Status",
     ):

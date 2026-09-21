@@ -24,6 +24,8 @@ sbatch job.sh
 
 O job solicita um nó Hype exclusivo com 40 CPUs por 24 horas, carrega o VTune 2021.1.1 e deixa as variáveis de afinidade OpenMP sem definição para reproduzir a política padrão usada no benchmark original.
 
+O VTune 2021.1.1 instalado no cluster aborta ao combinar `hpc-performance`, `-start-paused` e retomada pela API ITT. Para essa versão, o script usa a configuração padrão de `hpc-performance`, já validada no benchmark preliminar, e usa os frames ITT para separar as transformações nos relatórios. Versões posteriores podem ativar o controle de início e fim da coleta.
+
 Não execute a campanha no nó de login. A coleta `hpc-performance` precisa do acesso aos contadores de hardware disponível dentro do job Slurm.
 
 ## Resultados e retomada
