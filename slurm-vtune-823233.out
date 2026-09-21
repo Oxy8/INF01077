@@ -1,0 +1,90 @@
+mkdir -p build/off
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -MMD -MP -c 577262-FPI-Relatorio2/generate_images.cpp -o build/off/generate_images.o
+g++ -fopenmp build/off/generate_images.o  -o build/off/generate_controls
+Gerando controles determinísticos em 6000x6000
+Criado: "images/controls/control_smooth_6000x6000.png"
+Criado: "images/controls/control_noise_6000x6000.png"
+Criado: "images/controls/control_half_noise_6000x6000.png"
+Criado: "images/controls/control_bands_256_6000x6000.png"
+Executando controle sem VTune...
+Controle sem VTune concluído.
+Elapsed Time: 7.004s
+    CPU Time: 70.758s
+        Effective Time: 70.758s
+            Idle: 0.010s
+            Poor: 70.748s
+            Ok: 0s
+            Ideal: 0s
+            Over: 0s
+        Spin Time: 0s
+        Overhead Time: 0s
+    Instructions Retired: 359,835,000,000
+    Microarchitecture Usage: 63.4% of Pipeline Slots
+        CPI Rate: 0.515
+    Total Thread Count: 20
+    Paused Time: 0s
+
+Top Hotspots
+Function                                           Module           CPU Time
+-------------------------------------------------  ---------------  --------
+apply_varying_window_gaussian_denoising._omp_fn.0  image_benchmark   36.935s
+compute_sobel_detail_map._omp_fn.0                 image_benchmark   27.684s
+roundf                                             libm.so.6          1.529s
+clear_page_erms                                    vmlinux            1.178s
+_Z10hash_imageB5cxx11RK10ImageState                image_benchmark    0.832s
+[Others]                                           N/A                2.601s
+Effective Physical Core Utilization: 44.3% (8.855 out of 20)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 25.3% (10.103 out of 40)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Collection and Platform Info
+    Application Command Line: build/omp-avx2/image_benchmark "--image" "images/rain_paisage.jpg" "/tmp/vtune_benchmark.csv" "--operations" "adaptive" "--run-id" "vtune-hotspots-omp-avx2" "--repeat" "0" "--warmup" 
+    Operating System: 6.1.0-45-amd64 12.15
+    Computer Name: hype5
+    Result Size: 31.4 MB 
+    Collection start time: 15:30:44 21/09/2026 UTC
+    Collection stop time: 15:30:51 21/09/2026 UTC
+    Collector Type: Driverless Perf per-process sampling
+    CPU
+        Name: Intel(R) Xeon(R) E5/E7 v3 Processor code named Haswell
+        Frequency: 2.295 GHz 
+        Logical CPU Count: 40
+        Cache Allocation Technology
+            Level 2 capability: not detected
+            Level 3 capability: not detected
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
+Coleta salva em resultados_vtune/00_adaptive_dynamic4_hotspots
+Intel(R) oneAPI VTune(TM) Profiler 2021.1.1 (build 613804) feedback tool
+Copyright (C) 2009-2020 Intel Corporation. All rights reserved.
+
+Intel(R) oneAPI VTune(TM) Profiler 2021.1.1 Gold; 613804 experienced an unexpected error.
+
+Please send a problem report: 
+amplxe-feedback --send-crash-report "/tmp/amplxe-log-efsilva/2026-09-21-12-30-57-446066.amplxe-runss/crash_info.txt"
+
+Report data may be used to improve product stability. Our apologies for the inconvenience and thank you for your assistance.
+
+Exception: 0x6, Aborted
+Module: libc.so.6
+Collecting modules information...
+Collecting system information...

@@ -1,0 +1,117 @@
+In file included from 577262-FPI-Relatorio2/generate_images.cpp:2:
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  514 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  522 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  613 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  621 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr_to_func(void (*)(void*, void*, int), void*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  789 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr(const char*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  796 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1609 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg(const char*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1618 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+In file included from 577262-FPI-Relatorio2/image_manipulation.cpp:4:
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  514 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  522 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  613 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  621 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr_to_func(void (*)(void*, void*, int), void*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  789 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr(const char*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  796 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1609 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg(const char*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1618 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+vtune: Warning: To profile kernel modules during the session, make sure they are available in the /lib/modules/kernel_version/ location.
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /tmp/efsilva_vtune_823160/project/resultados_vtune/00_adaptive_dynamic4_hotspots -command stop.
+vtune: Collection stopped.
+vtune: Using result path `/tmp/efsilva_vtune_823160/project/resultados_vtune/00_adaptive_dynamic4_hotspots'
+vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-3817107-hype1.sc' file  vtune: Executing actions 12 % Loading 'systemcollector-3817107-hype1.sc' file  vtune: Executing actions 12 % Loading '3817116.perf' file                      vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for `libgomp.so.1.0.0'     vtune: Executing actions 19 % Resolving information for `image_benchmark'      vtune: Executing actions 19 % Resolving information for `libm.so.6'            
+vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0'.
+vtune: Warning: Cannot locate debugging information for file `/tmp/efsilva_vtune_823160/project/build/omp-avx2/image_benchmark'.
+vtune: Executing actions 19 % Resolving information for `libc.so.6'            vtune: Executing actions 19 % Resolving information for `ext4.ko'              
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/fs/ext4/ext4.ko'.
+vtune: Executing actions 20 % Resolving information for `ext4.ko'              vtune: Executing actions 21 % Resolving information for `ext4.ko'              vtune: Executing actions 22 % Resolving information for `ext4.ko'              vtune: Executing actions 22 % Resolving information for `vmlinux'              
+vtune: Warning: Cannot locate debugging information for the Linux kernel. Source-level analysis will not be possible. Function-level analysis will be limited to kernel symbol tables. See the Enabling Linux Kernel Analysis topic in the product online help for instructions.
+vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 27 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 30 % Setting data model parameters                    vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 30 % Precomputing frequently used data                vtune: Executing actions 31 % Precomputing frequently used data                vtune: Executing actions 32 % Precomputing frequently used data                vtune: Executing actions 33 % Precomputing frequently used data                vtune: Executing actions 34 % Precomputing frequently used data                vtune: Executing actions 35 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 36 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Updating precomputed scalar metrics              vtune: Executing actions 37 % Discarding redundant overtime data               vtune: Executing actions 39 % Discarding redundant overtime data               vtune: Executing actions 39 % Saving the result                                vtune: Executing actions 41 % Saving the result                                vtune: Executing actions 42 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              vtune: Executing actions 100 % Generating a report                             vtune: Executing actions 100 % done                                            
+vtune: Warning: Due to hardware limitations some of the metrics will not be available on this platform when Intel Hyper-Threading Technology is on. Consider disabling the Hyper-Threading option in the BIOS before running the analysis.
+vtune: Warning: Vectorization analysis is limited for this platform. Only metrics based on binary static analysis such as vector instruction set will be available.
+vtune: Warning: To profile kernel modules during the session, make sure they are available in the /lib/modules/kernel_version/ location.
+vtune: Peak bandwidth measurement started.
+vtune: Peak bandwidth measurement finished.
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /tmp/efsilva_vtune_823160/project/resultados_vtune/01_adaptive_dynamic4_hpc_smoke -command stop.
+*** stack smashing detected ***: terminated

@@ -1,0 +1,4 @@
+VTune não foi encontrado no nó hype2.
+Envie primeiro: sbatch scripts/pcad_vtune_preflight.sbatch
+Se o preflight mostrar um módulo, reenvie este job com:
+  sbatch --export=ALL,VTUNE_MODULE=NOME_DO_MODULO scripts/pcad_hype_vtune.sbatch
