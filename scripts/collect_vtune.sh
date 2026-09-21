@@ -26,6 +26,12 @@ esac
 make SIMD="$SIMD" all
 mkdir -p "$(dirname "$RESULT_DIR")"
 vtune_args=(-collect "$ANALYSIS" -result-dir "$RESULT_DIR")
+# O VTune 2021 do PCAD usa Pin no modo padrão (software) de Hotspots. Pin não
+# consegue ler algumas seções ELF modernas do nó; hardware sampling evita esse
+# motor e usa os contadores perf, que o preflight confirmou estarem liberados.
+if [[ "$ANALYSIS" == "hotspots" && "$VTUNE_KNOBS" != *"sampling-mode="* ]]; then
+    vtune_args+=(-knob sampling-mode=hw)
+fi
 if [[ -n "$VTUNE_KNOBS" ]]; then
     # A variável aceita pares completos, por exemplo:
     # '-knob collect-memory-bandwidth=true -knob analyze-openmp=true'.

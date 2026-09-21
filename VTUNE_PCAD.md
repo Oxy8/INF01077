@@ -62,9 +62,11 @@ sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
 ```
 
 O VTune 2021.1.1 do PCAD abortou durante essa calibração quando
-`dram-bandwidth-limits=true` estava ativado. Por isso a campanha mede largura
-de banda observada e *Memory Bound*, mas não tenta estimar automaticamente o
-pico de banda da máquina.
+`dram-bandwidth-limits=true` estava ativado. Além disso, seu motor Pin não lê
+algumas seções ELF modernas. Por isso, Hotspots é forçado ao modo de amostragem
+por hardware e a campanha mede largura de banda observada e *Memory Bound*,
+mas não tenta estimar automaticamente o pico de banda da máquina nem atribuir
+tempo a regiões OpenMP pelo VTune.
 
 As repetições internas de profiling existem apenas para obter amostras VTune
 suficientes. Em Grayscale e Zoom In elas repetem o kernel com buffers já
@@ -79,8 +81,7 @@ vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/02_adaptive_dynamic4
 vtune -report hotspots -r resultados_pcad_hype_vtune_<jobid>/07_gaussian_omp_avx2_hotspots
 ```
 
-No resumo HPC, compare `Effective Physical Core Utilization`, `OpenMP`,
-`Memory Bound`, `DRAM Bandwidth Bound` e o histograma de utilização de banda.
-No resultado Memory Access, procure misses de cache, tráfego de DRAM e os
-objetos de memória predominantes. `Memory Bound` não significa
+No resumo HPC, compare `Effective Physical Core Utilization`, `Memory Bound`,
+`DRAM Bandwidth Bound` e o histograma de utilização de banda. No resultado
+Memory Access, procure misses de cache e tráfego de DRAM. `Memory Bound` não significa
 automaticamente DRAM saturada: pode ser latência ou misses de cache.

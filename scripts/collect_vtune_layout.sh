@@ -31,6 +31,9 @@ esac
 make SIMD="$SIMD" layout
 mkdir -p "$(dirname "$RESULT_DIR")"
 vtune_args=(-collect "$ANALYSIS" -result-dir "$RESULT_DIR")
+if [[ "$ANALYSIS" == "hotspots" && "$VTUNE_KNOBS" != *"sampling-mode="* ]]; then
+    vtune_args+=(-knob sampling-mode=hw)
+fi
 if [[ -n "$VTUNE_KNOBS" ]]; then
     read -r -a knobs <<< "$VTUNE_KNOBS"
     vtune_args+=("${knobs[@]}")

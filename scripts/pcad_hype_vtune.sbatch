@@ -53,11 +53,12 @@ printf '%s\n' "${VTUNE_MODULE_LOADED:-PATH}" > "$RESULT_DIR/vtune_module.txt"
 
 make SIMD=off generate-controls
 
-# VTune 2021.1.1 do PCAD abortou durante a calibração de pico acionada por
-# dram-bandwidth-limits=true. A coleta ainda mede banda observada, stalls de
-# memória e regiões OpenMP; apenas não a normaliza contra o pico calibrado.
-HPC_MEMORY_KNOBS='-knob collect-memory-bandwidth=true -knob analyze-openmp=true -knob collect-affinity=true'
-MEMORY_ACCESS_KNOBS='-knob analyze-openmp=true -knob analyze-mem-objects=true'
+# VTune 2021.1.1 do PCAD falha de duas formas com este sistema: a calibração
+# dram-bandwidth-limits aborta e o Pin não lê seções ELF modernas. Mantemos
+# coletas baseadas em contadores de hardware: banda observada e stalls de
+# memória, sem instrumentação de regiões OpenMP ou objetos alocados.
+HPC_MEMORY_KNOBS='-knob collect-memory-bandwidth=true -knob collect-affinity=true'
+MEMORY_ACCESS_KNOBS=''
 
 run_image_profile() {
     local name="$1"
