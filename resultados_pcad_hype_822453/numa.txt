@@ -1,1 +1,0 @@
-/var/spool/slurmd/job822453/slurm_script: line 30: numactl: command not found

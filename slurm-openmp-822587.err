@@ -1,2 +1,0 @@
-g++: error: unrecognized command-line option ‘-fno-tree-vectorize"’; did you mean ‘-fno-tree-vectorize’?
-make: *** [Makefile:87: build/off/image_manipulation.o] Error 1

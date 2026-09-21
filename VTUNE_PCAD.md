@@ -40,19 +40,18 @@ sbatch --export=ALL,VTUNE_MODULE=NOME_DO_MODULO scripts/pcad_hype_vtune.sbatch
 ```
 
 O job pede um nó hype exclusivo com 20 CPUs e produz
-`resultados_pcad_hype_vtune_<jobid>/`. Ele executa dez coletas (a primeira é
+`resultados_pcad_hype_vtune_<jobid>/`. Ele executa nove coletas (a primeira é
 uma confirmação leve de Hotspots):
 
 1. Adaptativo em `rain_paisage`: `dynamic,4`, Hotspots.
 2. Adaptativo em `rain_paisage`: `dynamic,4`, HPC Performance.
 3. Adaptativo em `rain_paisage`: `static`, HPC Performance.
-4. Mesmo adaptativo: Memory Access.
-5. Grayscale AoS/SoA, `off-avx2`, HPC Performance.
-6. Grayscale AoS/SoA, `omp-avx2`, HPC Performance.
-7. Gaussian 11x11 AoS/SoA/separável, `off-avx2`, Hotspots.
-8. Mesmo Gaussian, `omp-avx2`, Hotspots.
-9. Zoom In, `off-avx2`, HPC Performance.
-10. Zoom In, `omp-avx2`, HPC Performance.
+4. Grayscale AoS/SoA, `off-avx2`, HPC Performance.
+5. Grayscale AoS/SoA, `omp-avx2`, HPC Performance.
+6. Gaussian 11x11 AoS/SoA/separável, `off-avx2`, Hotspots.
+7. Mesmo Gaussian, `omp-avx2`, Hotspots.
+8. Zoom In, `off-avx2`, HPC Performance.
+9. Zoom In, `omp-avx2`, HPC Performance.
 
 Antes da campanha completa, execute a verificação curta abaixo. Ela coleta
 Hotspots e HPC Performance no adaptativo, sem a calibração de pico de DRAM:
@@ -61,12 +60,11 @@ Hotspots e HPC Performance no adaptativo, sem a calibração de pico de DRAM:
 sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
 ```
 
-O VTune 2021.1.1 do PCAD abortou durante essa calibração quando
-`dram-bandwidth-limits=true` estava ativado. Além disso, seu motor Pin não lê
+O VTune 2021.1.1 do PCAD abortou durante a calibração de pico, inclusive ao
+ativar `collect-memory-bandwidth=true`. Além disso, seu motor Pin não lê
 algumas seções ELF modernas. Por isso, Hotspots é forçado ao modo de amostragem
-por hardware e a campanha mede largura de banda observada e *Memory Bound*,
-mas não tenta estimar automaticamente o pico de banda da máquina nem atribuir
-tempo a regiões OpenMP pelo VTune.
+por hardware. A campanha não tenta medir largura de banda no VTune dessa
+versão, nem atribuir tempo a regiões OpenMP pelo VTune.
 
 As repetições internas de profiling existem apenas para obter amostras VTune
 suficientes. Em Grayscale e Zoom In elas repetem o kernel com buffers já
@@ -76,12 +74,13 @@ misturada ao trecho analisado.
 ## 3. Ler resultados no terminal
 
 ```bash
-vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/01_adaptive_static_hpc
-vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/02_adaptive_dynamic4_hpc
-vtune -report hotspots -r resultados_pcad_hype_vtune_<jobid>/07_gaussian_omp_avx2_hotspots
+vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/01_adaptive_dynamic4_hpc_smoke
+vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/02_adaptive_static_hpc
+vtune -report hotspots -r resultados_pcad_hype_vtune_<jobid>/06_gaussian_omp_avx2_hotspots
 ```
 
-No resumo HPC, compare `Effective Physical Core Utilization`, `Memory Bound`,
-`DRAM Bandwidth Bound` e o histograma de utilização de banda. No resultado
-Memory Access, procure misses de cache e tráfego de DRAM. `Memory Bound` não significa
-automaticamente DRAM saturada: pode ser latência ou misses de cache.
+No resumo HPC, compare `Effective Physical Core Utilization`, as métricas de
+CPU/FPU e a escalabilidade. Em Hotspots, compare os kernels e as funções mais
+custosas. A inferência sobre banda de DRAM deverá partir dos resultados de
+tempo e do padrão de acesso dos kernels; esse VTune não consegue coletá-la de
+forma estável nesse ambiente.

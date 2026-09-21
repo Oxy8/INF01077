@@ -25,6 +25,11 @@ WORK_DIR="$JOB_ROOT/project"
 RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_vtune_${SLURM_JOB_ID}"
 
 cleanup() {
+    # Preserva qualquer coleta já finalizada caso um perfil posterior do VTune
+    # falhe; o diretório temporário será removido em seguida.
+    if [[ -d "$WORK_DIR/resultados_vtune" ]]; then
+        cp -a "$WORK_DIR/resultados_vtune/." "$RESULT_DIR/" 2>/dev/null || true
+    fi
     rm -rf -- "$JOB_ROOT"
 }
 trap cleanup EXIT
@@ -53,12 +58,11 @@ printf '%s\n' "${VTUNE_MODULE_LOADED:-PATH}" > "$RESULT_DIR/vtune_module.txt"
 
 make SIMD=off generate-controls
 
-# VTune 2021.1.1 do PCAD falha de duas formas com este sistema: a calibração
-# dram-bandwidth-limits aborta e o Pin não lê seções ELF modernas. Mantemos
-# coletas baseadas em contadores de hardware: banda observada e stalls de
-# memória, sem instrumentação de regiões OpenMP ou objetos alocados.
-HPC_MEMORY_KNOBS='-knob collect-memory-bandwidth=true -knob collect-affinity=true'
-MEMORY_ACCESS_KNOBS=''
+# No VTune 2021.1.1, collect-memory-bandwidth também dispara a calibração de
+# pico que aborta neste nó. O perfil HPC abaixo mantém a caracterização de
+# CPU/FPU e escalabilidade, mas sem a medição de largura de banda. Hotspots em
+# hardware é a coleta estável para atribuir tempo aos kernels.
+HPC_SAFE_KNOBS='-knob collect-affinity=true'
 
 run_image_profile() {
     local name="$1"
@@ -90,7 +94,7 @@ run_layout_profile() {
 
 # Primeiro confirma que o coletor funciona sem a calibração de pico.
 run_image_profile 00_adaptive_dynamic4_hotspots hotspots omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 ''
-run_image_profile 01_adaptive_dynamic4_hpc_smoke hpc-performance omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$HPC_MEMORY_KNOBS"
+run_image_profile 01_adaptive_dynamic4_hpc_smoke hpc-performance omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$HPC_SAFE_KNOBS"
 
 if [[ "$SMOKE_ONLY" -eq 1 ]]; then
     cp -a resultados_vtune/. "$RESULT_DIR/"
@@ -100,21 +104,20 @@ fi
 
 # 2--4: adaptativo real, comparando balanceamento de static/dynamic,4 e
 # aprofundando o melhor caso na hierarquia de memória.
-run_image_profile 02_adaptive_static_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg static 1 "$HPC_MEMORY_KNOBS"
-run_image_profile 03_adaptive_dynamic4_memory memory-access omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$MEMORY_ACCESS_KNOBS"
+run_image_profile 02_adaptive_static_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg static 1 "$HPC_SAFE_KNOBS"
 
 # 4--5: Grayscale AoS/SoA. Repetição só do kernel dá amostras suficientes;
 # conversões permanecem fora dessa janela, como no experimento de layout.
-run_layout_profile 04_grayscale_off_avx2_hpc hpc-performance off-avx2 Grayscale 100 "$HPC_MEMORY_KNOBS"
-run_layout_profile 05_grayscale_omp_avx2_hpc hpc-performance omp-avx2 Grayscale 100 "$HPC_MEMORY_KNOBS"
+run_layout_profile 03_grayscale_off_avx2_hpc hpc-performance off-avx2 Grayscale 100 "$HPC_SAFE_KNOBS"
+run_layout_profile 04_grayscale_omp_avx2_hpc hpc-performance omp-avx2 Grayscale 100 "$HPC_SAFE_KNOBS"
 
 # 6--7: Gaussian inclui AoS direto, SoA ingênuo e separável no mesmo processo.
-run_layout_profile 06_gaussian_off_avx2_hotspots hotspots off-avx2 Gaussian_11x11 3 ''
-run_layout_profile 07_gaussian_omp_avx2_hotspots hotspots omp-avx2 Gaussian_11x11 3 ''
+run_layout_profile 05_gaussian_off_avx2_hotspots hotspots off-avx2 Gaussian_11x11 3 ''
+run_layout_profile 06_gaussian_omp_avx2_hotspots hotspots omp-avx2 Gaussian_11x11 3 ''
 
 # 8--9: Zoom_In é repetido em buffer de saída pré-alocado, sem medir alocação.
-run_image_profile 08_zoom_off_avx2_hpc hpc-performance off-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_MEMORY_KNOBS"
-run_image_profile 09_zoom_omp_avx2_hpc hpc-performance omp-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_MEMORY_KNOBS"
+run_image_profile 07_zoom_off_avx2_hpc hpc-performance off-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_SAFE_KNOBS"
+run_image_profile 08_zoom_omp_avx2_hpc hpc-performance omp-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_SAFE_KNOBS"
 
 cp -a resultados_vtune/. "$RESULT_DIR/"
 echo "Resultados VTune copiados para $RESULT_DIR"
