@@ -1,1 +1,3 @@
 /build/
+/benchmark_affinity/runs/
+/benchmark_affinity/plots/
