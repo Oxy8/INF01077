@@ -40,17 +40,31 @@ sbatch --export=ALL,VTUNE_MODULE=NOME_DO_MODULO scripts/pcad_hype_vtune.sbatch
 ```
 
 O job pede um nó hype exclusivo com 20 CPUs e produz
-`resultados_pcad_hype_vtune_<jobid>/`. Ele executa nove coletas:
+`resultados_pcad_hype_vtune_<jobid>/`. Ele executa dez coletas (a primeira é
+uma confirmação leve de Hotspots):
 
-1. Adaptativo em `rain_paisage`: `static`, HPC Performance.
+1. Adaptativo em `rain_paisage`: `dynamic,4`, Hotspots.
 2. Adaptativo em `rain_paisage`: `dynamic,4`, HPC Performance.
-3. Mesmo adaptativo: Memory Access.
-4. Grayscale AoS/SoA, `off-avx2`, HPC Performance.
-5. Grayscale AoS/SoA, `omp-avx2`, HPC Performance.
-6. Gaussian 11x11 AoS/SoA/separável, `off-avx2`, Hotspots.
-7. Mesmo Gaussian, `omp-avx2`, Hotspots.
-8. Zoom In, `off-avx2`, HPC Performance.
-9. Zoom In, `omp-avx2`, HPC Performance.
+3. Adaptativo em `rain_paisage`: `static`, HPC Performance.
+4. Mesmo adaptativo: Memory Access.
+5. Grayscale AoS/SoA, `off-avx2`, HPC Performance.
+6. Grayscale AoS/SoA, `omp-avx2`, HPC Performance.
+7. Gaussian 11x11 AoS/SoA/separável, `off-avx2`, Hotspots.
+8. Mesmo Gaussian, `omp-avx2`, Hotspots.
+9. Zoom In, `off-avx2`, HPC Performance.
+10. Zoom In, `omp-avx2`, HPC Performance.
+
+Antes da campanha completa, execute a verificação curta abaixo. Ela coleta
+Hotspots e HPC Performance no adaptativo, sem a calibração de pico de DRAM:
+
+```bash
+sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
+```
+
+O VTune 2021.1.1 do PCAD abortou durante essa calibração quando
+`dram-bandwidth-limits=true` estava ativado. Por isso a campanha mede largura
+de banda observada e *Memory Bound*, mas não tenta estimar automaticamente o
+pico de banda da máquina.
 
 As repetições internas de profiling existem apenas para obter amostras VTune
 suficientes. Em Grayscale e Zoom In elas repetem o kernel com buffers já

@@ -12,6 +12,13 @@
 # Campanha de explicação; não produz amostras de benchmark comparáveis.
 set -euo pipefail
 
+SMOKE_ONLY=0
+case "${1:-}" in
+    "") ;;
+    --smoke) SMOKE_ONLY=1 ;;
+    *) echo "Uso: sbatch scripts/pcad_hype_vtune.sbatch [--smoke]" >&2; exit 2 ;;
+esac
+
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute com sbatch a partir da raiz do projeto.}"
 JOB_ROOT="${SLURM_TMPDIR:-/tmp}/${USER}_vtune_${SLURM_JOB_ID}"
 WORK_DIR="$JOB_ROOT/project"
@@ -46,8 +53,11 @@ printf '%s\n' "${VTUNE_MODULE_LOADED:-PATH}" > "$RESULT_DIR/vtune_module.txt"
 
 make SIMD=off generate-controls
 
-HPC_MEMORY_KNOBS='-knob collect-memory-bandwidth=true -knob dram-bandwidth-limits=true -knob analyze-openmp=true -knob collect-affinity=true'
-MEMORY_ACCESS_KNOBS='-knob dram-bandwidth-limits=true -knob analyze-openmp=true -knob analyze-mem-objects=true'
+# VTune 2021.1.1 do PCAD abortou durante a calibração de pico acionada por
+# dram-bandwidth-limits=true. A coleta ainda mede banda observada, stalls de
+# memória e regiões OpenMP; apenas não a normaliza contra o pico calibrado.
+HPC_MEMORY_KNOBS='-knob collect-memory-bandwidth=true -knob analyze-openmp=true -knob collect-affinity=true'
+MEMORY_ACCESS_KNOBS='-knob analyze-openmp=true -knob analyze-mem-objects=true'
 
 run_image_profile() {
     local name="$1"
@@ -77,10 +87,19 @@ run_layout_profile() {
         VTUNE_RESULT_DIR="resultados_vtune/$name" bash scripts/collect_vtune_layout.sh
 }
 
-# 1--3: adaptativo real, comparando balanceamento de static/dynamic,4 e
+# Primeiro confirma que o coletor funciona sem a calibração de pico.
+run_image_profile 00_adaptive_dynamic4_hotspots hotspots omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 ''
+run_image_profile 01_adaptive_dynamic4_hpc_smoke hpc-performance omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$HPC_MEMORY_KNOBS"
+
+if [[ "$SMOKE_ONLY" -eq 1 ]]; then
+    cp -a resultados_vtune/. "$RESULT_DIR/"
+    echo "Smoke VTune concluído. Resultados copiados para $RESULT_DIR"
+    exit 0
+fi
+
+# 2--4: adaptativo real, comparando balanceamento de static/dynamic,4 e
 # aprofundando o melhor caso na hierarquia de memória.
-run_image_profile 01_adaptive_static_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg static 1 "$HPC_MEMORY_KNOBS"
-run_image_profile 02_adaptive_dynamic4_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$HPC_MEMORY_KNOBS"
+run_image_profile 02_adaptive_static_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg static 1 "$HPC_MEMORY_KNOBS"
 run_image_profile 03_adaptive_dynamic4_memory memory-access omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$MEMORY_ACCESS_KNOBS"
 
 # 4--5: Grayscale AoS/SoA. Repetição só do kernel dá amostras suficientes;
