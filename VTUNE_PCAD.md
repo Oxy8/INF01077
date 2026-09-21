@@ -61,6 +61,15 @@ Hotspots do adaptativo:
 sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
 ```
 
+Há também uma sonda isolada de HPC Performance, sem knobs VTune, que reproduz
+a configuração de referência do hype: 40 threads, `static`, imagem 4000x3000
+e todas as operações. Execute-a separadamente antes de reabilitar HPC na
+campanha principal:
+
+```bash
+sbatch scripts/pcad_hype_hpc_probe.sbatch
+```
+
 Antes de abrir o VTune, o job executa o mesmo filtro adaptativo no mesmo nó,
 sem instrumentação, e grava o resultado em `controle_sem_vtune.log`. Se esse
 controle concluir e o VTune abortar, o problema é do coletor, não do kernel.
