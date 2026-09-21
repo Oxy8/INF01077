@@ -1,0 +1,304 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="864" viewBox="0 0 1200 864" role="img" aria-label="Schedules regulares: cada imagem e build, 20 threads">
+<title>Schedules regulares: cada imagem e build, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="250" y="34">Schedules regulares: cada imagem e build, 20 threads</text>
+<text class="note" x="250" y="58">Cada célula é mediana(static) / mediana(dynamic); acima de 1× favorece dynamic. Consulte a tabela para mínimo--máximo.</text>
+<text class="axis" text-anchor="end" x="240" y="129.4">Adjust_Brightness</text>
+<rect x="250.0" y="105.0" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="129.0">1.00×</text>
+<rect x="353.8" y="105.0" width="103.8" height="38.8" fill="rgb(231,243,249)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="129.0">1.02×</text>
+<rect x="457.5" y="105.0" width="103.8" height="38.8" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="129.0">1.01×</text>
+<rect x="561.2" y="105.0" width="103.8" height="38.8" fill="rgb(132,209,109)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="129.0">1.58×</text>
+<rect x="665.0" y="105.0" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="129.0">0.99×</text>
+<rect x="768.8" y="105.0" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="129.0">0.99×</text>
+<rect x="872.5" y="105.0" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="129.0">0.98×</text>
+<rect x="976.2" y="105.0" width="103.8" height="38.8" fill="rgb(136,211,115)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="129.0">1.56×</text>
+<text class="axis" text-anchor="end" x="240" y="168.2">Adjust_Contrast</text>
+<rect x="250.0" y="143.8" width="103.8" height="38.8" fill="rgb(105,200,70)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="167.8">1.74×</text>
+<rect x="353.8" y="143.8" width="103.8" height="38.8" fill="rgb(233,244,253)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="167.8">1.01×</text>
+<rect x="457.5" y="143.8" width="103.8" height="38.8" fill="rgb(232,244,251)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="167.8">1.01×</text>
+<rect x="561.2" y="143.8" width="103.8" height="38.8" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="167.8">1.01×</text>
+<rect x="665.0" y="143.8" width="103.8" height="38.8" fill="rgb(112,202,80)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="167.8">1.69×</text>
+<rect x="768.8" y="143.8" width="103.8" height="38.8" fill="rgb(254,240,230)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="167.8">0.98×</text>
+<rect x="872.5" y="143.8" width="103.8" height="38.8" fill="rgb(254,240,230)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="167.8">0.98×</text>
+<rect x="976.2" y="143.8" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="167.8">0.99×</text>
+<text class="axis" text-anchor="end" x="240" y="207.0">Equalize_Histogram</text>
+<rect x="250.0" y="182.5" width="103.8" height="38.8" fill="rgb(125,207,99)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="206.6">1.62×</text>
+<rect x="353.8" y="182.5" width="103.8" height="38.8" fill="rgb(251,227,213)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="206.6">0.89×</text>
+<rect x="457.5" y="182.5" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="206.6">0.98×</text>
+<rect x="561.2" y="182.5" width="103.8" height="38.8" fill="rgb(229,243,246)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="206.6">1.03×</text>
+<rect x="665.0" y="182.5" width="103.8" height="38.8" fill="rgb(125,207,98)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="206.6">1.62×</text>
+<rect x="768.8" y="182.5" width="103.8" height="38.8" fill="rgb(252,233,220)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="206.6">0.93×</text>
+<rect x="872.5" y="182.5" width="103.8" height="38.8" fill="rgb(254,241,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="206.6">0.98×</text>
+<rect x="976.2" y="182.5" width="103.8" height="38.8" fill="rgb(227,242,243)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="206.6">1.04×</text>
+<text class="axis" text-anchor="end" x="240" y="245.7">Flip_Horizontal</text>
+<rect x="250.0" y="221.3" width="103.8" height="38.8" fill="rgb(202,233,208)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="245.3">1.18×</text>
+<rect x="353.8" y="221.3" width="103.8" height="38.8" fill="rgb(203,234,210)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="245.3">1.18×</text>
+<rect x="457.5" y="221.3" width="103.8" height="38.8" fill="rgb(215,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="245.3">1.11×</text>
+<rect x="561.2" y="221.3" width="103.8" height="38.8" fill="rgb(221,240,235)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="245.3">1.08×</text>
+<rect x="665.0" y="221.3" width="103.8" height="38.8" fill="rgb(224,241,239)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="245.3">1.06×</text>
+<rect x="768.8" y="221.3" width="103.8" height="38.8" fill="rgb(223,240,238)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="245.3">1.07×</text>
+<rect x="872.5" y="221.3" width="103.8" height="38.8" fill="rgb(221,240,235)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="245.3">1.08×</text>
+<rect x="976.2" y="221.3" width="103.8" height="38.8" fill="rgb(229,243,246)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="245.3">1.03×</text>
+<text class="axis" text-anchor="end" x="240" y="284.5">Flip_Vertical</text>
+<rect x="250.0" y="260.1" width="103.8" height="38.8" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="284.1">1.00×</text>
+<rect x="353.8" y="260.1" width="103.8" height="38.8" fill="rgb(223,240,238)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="284.1">1.07×</text>
+<rect x="457.5" y="260.1" width="103.8" height="38.8" fill="rgb(226,241,242)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="284.1">1.05×</text>
+<rect x="561.2" y="260.1" width="103.8" height="38.8" fill="rgb(226,242,243)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="284.1">1.05×</text>
+<rect x="665.0" y="260.1" width="103.8" height="38.8" fill="rgb(223,241,239)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="284.1">1.06×</text>
+<rect x="768.8" y="260.1" width="103.8" height="38.8" fill="rgb(208,235,217)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="284.1">1.15×</text>
+<rect x="872.5" y="260.1" width="103.8" height="38.8" fill="rgb(225,241,241)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="284.1">1.05×</text>
+<rect x="976.2" y="260.1" width="103.8" height="38.8" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="284.1">1.04×</text>
+<text class="axis" text-anchor="end" x="240" y="323.2">Gaussian_11x11</text>
+<rect x="250.0" y="298.8" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="322.9">0.99×</text>
+<rect x="353.8" y="298.8" width="103.8" height="38.8" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="322.9">1.00×</text>
+<rect x="457.5" y="298.8" width="103.8" height="38.8" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="322.9">1.00×</text>
+<rect x="561.2" y="298.8" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="322.9">1.00×</text>
+<rect x="665.0" y="298.8" width="103.8" height="38.8" fill="rgb(252,234,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="322.9">0.94×</text>
+<rect x="768.8" y="298.8" width="103.8" height="38.8" fill="rgb(252,234,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="322.9">0.93×</text>
+<rect x="872.5" y="298.8" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="322.9">0.98×</text>
+<rect x="976.2" y="298.8" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="322.9">0.99×</text>
+<text class="axis" text-anchor="end" x="240" y="362.0">Gaussian_3x3</text>
+<rect x="250.0" y="337.6" width="103.8" height="38.8" fill="rgb(250,222,207)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="361.6">0.86×</text>
+<rect x="353.8" y="337.6" width="103.8" height="38.8" fill="rgb(250,222,208)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="361.6">0.86×</text>
+<rect x="457.5" y="337.6" width="103.8" height="38.8" fill="rgb(250,222,208)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="361.6">0.86×</text>
+<rect x="561.2" y="337.6" width="103.8" height="38.8" fill="rgb(250,221,206)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="361.6">0.85×</text>
+<rect x="665.0" y="337.6" width="103.8" height="38.8" fill="rgb(253,235,223)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="361.6">0.94×</text>
+<rect x="768.8" y="337.6" width="103.8" height="38.8" fill="rgb(252,233,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="361.6">0.93×</text>
+<rect x="872.5" y="337.6" width="103.8" height="38.8" fill="rgb(253,236,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="361.6">0.95×</text>
+<rect x="976.2" y="337.6" width="103.8" height="38.8" fill="rgb(253,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="361.6">0.96×</text>
+<text class="axis" text-anchor="end" x="240" y="400.8">Gaussian_5x5</text>
+<rect x="250.0" y="376.4" width="103.8" height="38.8" fill="rgb(251,230,217)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="400.4">0.91×</text>
+<rect x="353.8" y="376.4" width="103.8" height="38.8" fill="rgb(252,231,219)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="400.4">0.92×</text>
+<rect x="457.5" y="376.4" width="103.8" height="38.8" fill="rgb(253,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="400.4">0.95×</text>
+<rect x="561.2" y="376.4" width="103.8" height="38.8" fill="rgb(252,235,223)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="400.4">0.94×</text>
+<rect x="665.0" y="376.4" width="103.8" height="38.8" fill="rgb(252,232,219)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="400.4">0.92×</text>
+<rect x="768.8" y="376.4" width="103.8" height="38.8" fill="rgb(252,234,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="400.4">0.93×</text>
+<rect x="872.5" y="376.4" width="103.8" height="38.8" fill="rgb(254,240,229)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="400.4">0.97×</text>
+<rect x="976.2" y="376.4" width="103.8" height="38.8" fill="rgb(253,239,228)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="400.4">0.97×</text>
+<text class="axis" text-anchor="end" x="240" y="439.5">Gaussian_7x7</text>
+<rect x="250.0" y="415.1" width="103.8" height="38.8" fill="rgb(254,241,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="439.2">0.98×</text>
+<rect x="353.8" y="415.1" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="439.2">0.99×</text>
+<rect x="457.5" y="415.1" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="439.2">0.99×</text>
+<rect x="561.2" y="415.1" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="439.2">0.99×</text>
+<rect x="665.0" y="415.1" width="103.8" height="38.8" fill="rgb(252,234,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="439.2">0.93×</text>
+<rect x="768.8" y="415.1" width="103.8" height="38.8" fill="rgb(252,233,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="439.2">0.93×</text>
+<rect x="872.5" y="415.1" width="103.8" height="38.8" fill="rgb(254,241,230)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="439.2">0.98×</text>
+<rect x="976.2" y="415.1" width="103.8" height="38.8" fill="rgb(254,241,230)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="439.2">0.98×</text>
+<text class="axis" text-anchor="end" x="240" y="478.3">Gaussian_9x9</text>
+<rect x="250.0" y="453.9" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="477.9">0.99×</text>
+<rect x="353.8" y="453.9" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="477.9">0.99×</text>
+<rect x="457.5" y="453.9" width="103.8" height="38.8" fill="rgb(254,244,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="477.9">0.99×</text>
+<rect x="561.2" y="453.9" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="477.9">0.99×</text>
+<rect x="665.0" y="453.9" width="103.8" height="38.8" fill="rgb(252,234,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="477.9">0.94×</text>
+<rect x="768.8" y="453.9" width="103.8" height="38.8" fill="rgb(252,234,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="477.9">0.93×</text>
+<rect x="872.5" y="453.9" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="477.9">0.98×</text>
+<rect x="976.2" y="453.9" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="477.9">0.98×</text>
+<text class="axis" text-anchor="end" x="240" y="517.1">Grayscale</text>
+<rect x="250.0" y="492.6" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="516.7">1.00×</text>
+<rect x="353.8" y="492.6" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="516.7">1.00×</text>
+<rect x="457.5" y="492.6" width="103.8" height="38.8" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="516.7">1.00×</text>
+<rect x="561.2" y="492.6" width="103.8" height="38.8" fill="rgb(254,244,234)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="516.7">1.00×</text>
+<rect x="665.0" y="492.6" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="516.7">0.99×</text>
+<rect x="768.8" y="492.6" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="516.7">0.98×</text>
+<rect x="872.5" y="492.6" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="516.7">0.99×</text>
+<rect x="976.2" y="492.6" width="103.8" height="38.8" fill="rgb(254,242,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="516.7">0.99×</text>
+<text class="axis" text-anchor="end" x="240" y="555.8">Negative</text>
+<rect x="250.0" y="531.4" width="103.8" height="38.8" fill="rgb(149,215,133)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="555.4">1.48×</text>
+<rect x="353.8" y="531.4" width="103.8" height="38.8" fill="rgb(229,243,247)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="555.4">1.03×</text>
+<rect x="457.5" y="531.4" width="103.8" height="38.8" fill="rgb(233,244,253)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="555.4">1.01×</text>
+<rect x="561.2" y="531.4" width="103.8" height="38.8" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="555.4">1.01×</text>
+<rect x="665.0" y="531.4" width="103.8" height="38.8" fill="rgb(143,213,125)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="555.4">1.52×</text>
+<rect x="768.8" y="531.4" width="103.8" height="38.8" fill="rgb(229,243,247)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="555.4">1.03×</text>
+<rect x="872.5" y="531.4" width="103.8" height="38.8" fill="rgb(254,242,231)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="555.4">0.98×</text>
+<rect x="976.2" y="531.4" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="555.4">1.00×</text>
+<text class="axis" text-anchor="end" x="240" y="594.6">Quantize</text>
+<rect x="250.0" y="570.2" width="103.8" height="38.8" fill="rgb(119,204,90)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="594.2">1.66×</text>
+<rect x="353.8" y="570.2" width="103.8" height="38.8" fill="rgb(254,241,230)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="594.2">0.98×</text>
+<rect x="457.5" y="570.2" width="103.8" height="38.8" fill="rgb(233,244,252)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="594.2">1.01×</text>
+<rect x="561.2" y="570.2" width="103.8" height="38.8" fill="rgb(232,244,251)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="594.2">1.01×</text>
+<rect x="665.0" y="570.2" width="103.8" height="38.8" fill="rgb(128,208,103)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="594.2">1.60×</text>
+<rect x="768.8" y="570.2" width="103.8" height="38.8" fill="rgb(252,234,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="594.2">0.94×</text>
+<rect x="872.5" y="570.2" width="103.8" height="38.8" fill="rgb(254,243,233)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="594.2">0.99×</text>
+<rect x="976.2" y="570.2" width="103.8" height="38.8" fill="rgb(234,244,254)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="594.2">1.00×</text>
+<text class="axis" text-anchor="end" x="240" y="633.4">Rotate_CCW</text>
+<rect x="250.0" y="608.9" width="103.8" height="38.8" fill="rgb(245,198,178)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="633.0">0.72×</text>
+<rect x="353.8" y="608.9" width="103.8" height="38.8" fill="rgb(244,193,173)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="633.0">0.69×</text>
+<rect x="457.5" y="608.9" width="103.8" height="38.8" fill="rgb(240,175,151)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="633.0">0.57×</text>
+<rect x="561.2" y="608.9" width="103.8" height="38.8" fill="rgb(239,171,146)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="633.0">0.55×</text>
+<rect x="665.0" y="608.9" width="103.8" height="38.8" fill="rgb(199,232,204)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="633.0">1.20×</text>
+<rect x="768.8" y="608.9" width="103.8" height="38.8" fill="rgb(200,233,206)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="633.0">1.19×</text>
+<rect x="872.5" y="608.9" width="103.8" height="38.8" fill="rgb(253,236,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="633.0">0.95×</text>
+<rect x="976.2" y="608.9" width="103.8" height="38.8" fill="rgb(252,230,217)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="633.0">0.91×</text>
+<text class="axis" text-anchor="end" x="240" y="672.1">Rotate_CW</text>
+<rect x="250.0" y="647.7" width="103.8" height="38.8" fill="rgb(245,201,181)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="671.7">0.73×</text>
+<rect x="353.8" y="647.7" width="103.8" height="38.8" fill="rgb(245,197,178)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="671.7">0.71×</text>
+<rect x="457.5" y="647.7" width="103.8" height="38.8" fill="rgb(240,176,151)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="671.7">0.58×</text>
+<rect x="561.2" y="647.7" width="103.8" height="38.8" fill="rgb(241,178,154)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="671.7">0.59×</text>
+<rect x="665.0" y="647.7" width="103.8" height="38.8" fill="rgb(201,233,207)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="671.7">1.19×</text>
+<rect x="768.8" y="647.7" width="103.8" height="38.8" fill="rgb(203,234,210)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="671.7">1.18×</text>
+<rect x="872.5" y="647.7" width="103.8" height="38.8" fill="rgb(253,236,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="671.7">0.95×</text>
+<rect x="976.2" y="647.7" width="103.8" height="38.8" fill="rgb(254,240,229)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="671.7">0.97×</text>
+<text class="axis" text-anchor="end" x="240" y="710.9">Zoom_In</text>
+<rect x="250.0" y="686.5" width="103.8" height="38.8" fill="rgb(237,159,131)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="710.5">0.48×</text>
+<rect x="353.8" y="686.5" width="103.8" height="38.8" fill="rgb(232,135,102)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="710.5">0.33×</text>
+<rect x="457.5" y="686.5" width="103.8" height="38.8" fill="rgb(232,136,103)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="710.5">0.33×</text>
+<rect x="561.2" y="686.5" width="103.8" height="38.8" fill="rgb(231,134,100)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="710.5">0.32×</text>
+<rect x="665.0" y="686.5" width="103.8" height="38.8" fill="rgb(216,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="710.5">1.11×</text>
+<rect x="768.8" y="686.5" width="103.8" height="38.8" fill="rgb(246,205,187)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="710.5">0.76×</text>
+<rect x="872.5" y="686.5" width="103.8" height="38.8" fill="rgb(251,228,215)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="710.5">0.90×</text>
+<rect x="976.2" y="686.5" width="103.8" height="38.8" fill="rgb(250,222,207)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="710.5">0.86×</text>
+<text class="axis" text-anchor="end" x="240" y="749.7">Zoom_Out</text>
+<rect x="250.0" y="725.2" width="103.8" height="38.8" fill="rgb(250,223,209)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="301.9" y="749.3">0.87×</text>
+<rect x="353.8" y="725.2" width="103.8" height="38.8" fill="rgb(248,215,199)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="405.6" y="749.3">0.82×</text>
+<rect x="457.5" y="725.2" width="103.8" height="38.8" fill="rgb(248,213,197)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="509.4" y="749.3">0.81×</text>
+<rect x="561.2" y="725.2" width="103.8" height="38.8" fill="rgb(248,212,196)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="613.1" y="749.3">0.80×</text>
+<rect x="665.0" y="725.2" width="103.8" height="38.8" fill="rgb(252,231,219)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="716.9" y="749.3">0.92×</text>
+<rect x="768.8" y="725.2" width="103.8" height="38.8" fill="rgb(249,220,205)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="820.6" y="749.3">0.85×</text>
+<rect x="872.5" y="725.2" width="103.8" height="38.8" fill="rgb(250,224,209)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="924.4" y="749.3">0.87×</text>
+<rect x="976.2" y="725.2" width="103.8" height="38.8" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1028.1" y="749.3">0.88×</text>
+<text class="axis" text-anchor="middle" x="301.9" y="93">d1 · 4000x3000 · off</text>
+<text class="axis" text-anchor="middle" x="405.6" y="93">d1 · 4000x3000 · omp</text>
+<text class="axis" text-anchor="middle" x="509.4" y="93">d1 · 6000x6000 · off</text>
+<text class="axis" text-anchor="middle" x="613.1" y="93">d1 · 6000x6000 · omp</text>
+<text class="axis" text-anchor="middle" x="716.9" y="93">d16 · 4000x3000 · off</text>
+<text class="axis" text-anchor="middle" x="820.6" y="93">d16 · 4000x3000 · omp</text>
+<text class="axis" text-anchor="middle" x="924.4" y="93">d16 · 6000x6000 · off</text>
+<text class="axis" text-anchor="middle" x="1028.1" y="93">d16 · 6000x6000 · omp</text>
+<rect class="frame" x="250" y="105" width="830" height="659"/>
+</svg>

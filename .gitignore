@@ -2,3 +2,12 @@
 /resultados/*
 /resultados_experimentos/
 /images/controls/
+
+# Artefatos transitórios de validação e logs do Slurm. Os resultados finais
+# escolhidos para análise são mantidos deliberadamente em seus diretórios.
+/577262-FPI-Relatorio2/hello_hpc
+/577262-FPI-Relatorio2/resultados_hello_hpc/
+/slurm-vtune-*.out
+/slurm-vtune-*.err
+/slurm-hpc-probe-*.out
+/slurm-hpc-probe-*.err

@@ -923,22 +923,40 @@ bool load_image(const char* filename, ImageState& img) {
     return true;
 }
 
+namespace {
+void apply_gray_scale_buffer(unsigned char* data, int width, int height) {
+    #pragma omp parallel for schedule(runtime)
+    for (int j = 0; j < height; j++) {
+        OMP_SIMD
+        for (int i = 0; i < width; i++) {
+            int index = (j * width + i) * 3;
+            unsigned char r = data[index];
+            unsigned char g = data[index + 1];
+            unsigned char b = data[index + 2];
+            unsigned char gray = (unsigned char)(0.299 * r + 0.587 * g + 0.114 * b);
+            data[index] = data[index + 1] = data[index + 2] = gray;
+        }
+    }
+}
+} // namespace
+
 void apply_gray_scale_inplace(ImageState& img) {
     if(img.isGrayScale) return;
-
-    #pragma omp parallel for schedule(runtime)
-    for (int j = 0; j < img.height; j++) {
-        OMP_SIMD
-        for (int i = 0; i < img.width; i++) {
-            int index = (j * img.width + i) * 3;
-            unsigned char r = img.data[index];
-            unsigned char g = img.data[index + 1];
-            unsigned char b = img.data[index + 2];
-            unsigned char gray = (unsigned char)(0.299 * r + 0.587 * g + 0.114 * b);
-            img.data[index] = img.data[index + 1] = img.data[index + 2] = gray;
-        }
-    } 
+    apply_gray_scale_buffer(img.data, img.width, img.height);
     img.isGrayScale = true;
+}
+
+bool profile_gray_scale_kernel(const ImageState& source, int iterations) {
+    if (!source.data || source.width <= 0 || source.height <= 0 || iterations < 1) return false;
+    const size_t size = static_cast<size_t>(source.width) * source.height * 3;
+    std::vector<unsigned char> working(source.data, source.data + size);
+    for (int iteration = 0; iteration < iterations; ++iteration) {
+        // Após a primeira passagem os dados já são cinza, mas o mesmo kernel
+        // de leitura, cálculo e escrita é exercitado. A cópia inicial ocorre
+        // uma única vez; não há cópias entre as iterações perfiladas.
+        apply_gray_scale_buffer(working.data(), source.width, source.height);
+    }
+    return true;
 }
 
 void adjust_brightness(ImageState& img, int adjust_value){

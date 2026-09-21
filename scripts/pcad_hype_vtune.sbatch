@@ -10,7 +10,8 @@
 #SBATCH --error=slurm-vtune-%j.err
 
 # Campanha de explicação por Hotspots hardware; não produz amostras de
-# benchmark comparáveis. O HPC Performance do VTune 2021 aborta neste nó.
+# benchmark comparáveis. HPC Performance é executado separadamente pelo
+# pcad_hype_hpc_probe.sbatch, na configuração mínima validada neste ambiente.
 set -euo pipefail
 
 SMOKE_ONLY=0
@@ -43,10 +44,7 @@ cd "$WORK_DIR"
 source scripts/vtune_env.sh
 
 if ! command -v vtune >/dev/null 2>&1; then
-    echo "VTune não foi encontrado no nó $(hostname)." >&2
-    echo "Envie primeiro: sbatch scripts/pcad_vtune_preflight.sbatch" >&2
-    echo "Se o preflight mostrar um módulo, reenvie este job com:" >&2
-    echo "  sbatch --export=ALL,VTUNE_MODULE=NOME_DO_MODULO scripts/pcad_hype_vtune.sbatch" >&2
+    echo "VTune não foi encontrado no nó $(hostname) após carregar /home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh." >&2
     exit 127
 fi
 

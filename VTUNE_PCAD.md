@@ -1,113 +1,88 @@
-# Campanha VTune no PCAD
+# VTune no PCAD / hype
 
-Esta campanha explica os resultados do benchmark; suas coletas instrumentadas
-não entram nos CSVs de tempo nem devem ser comparadas às cinco repetições.
+As coletas VTune explicam os benchmarks, mas não substituem as amostras de
+tempo da campanha principal. No PCAD, a versão disponível é o VTune 2021.1.1
+em nós `hype`, e há duas rotas que foram validadas separadamente.
 
-## 1. Verificar VTune no nó hype
+## Coletas preservadas
 
-No frontend, a ausência de `vtune` é esperada. O job carrega automaticamente
-`/home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh`, a instalação documentada
-para o hype. Envie o preflight, que executa em um nó hype e confirma o caminho:
+| Resultado | Análise | Estado |
+| --- | --- | --- |
+| `resultados_pcad_hype_vtune_823234` | Hotspots, amostragem de hardware | 9 coletas concluídas |
+| `resultados_pcad_hype_hpc_probe_823328` | HPC Performance, 4000x3000, todas as operações, 40 threads, `static` | concluída |
+| `resultados_pcad_hype_hpc_probe_823332` | HPC Performance, adaptativo em `rain_paisage`, 20 threads, `static` | concluída |
+| `resultados_pcad_hype_hpc_probe_823333` | HPC Performance, adaptativo em `rain_paisage`, 20 threads, `dynamic,4` | concluída |
+
+Os diretórios acima e os respectivos `summary.txt` são os dados a utilizar.
+Os logs e diretórios de tentativas abortadas foram removidos: o diagnóstico
+relevante ficou documentado nesta página.
+
+## Por que a configuração atual funciona
+
+| Etapa | Tentativa anterior | Evidência | Configuração mantida |
+| --- | --- | --- | --- |
+| Ambiente | `source vtune-vars.sh` sob `set -u` | `ZSH_VERSION: unbound variable` no job 823137 | `vtune_env.sh` suspende `nounset` somente durante o `source` do caminho oficial do PCAD. |
+| Hotspots | Modo padrão por instrumentação | O motor Pin do VTune 2021 abortou ao ler `.relr.dyn` (`unknown section type 0x13`) nos jobs 823145 e 823146. | `collect_vtune*.sh` força `sampling-mode=hw`; os 9 perfis do job 823234 encerraram normalmente. |
+| HPC Performance | Campanha grande, copiada para `/tmp`, com aquecimento/repetições e knobs experimentais | Nos jobs 823139, 823160, 823161, 823210, 823225 e 823233 a coleta começou e abortou com `stack smashing detected`; alguns também iniciaram a calibração de pico de banda. | `pcad_hype_hpc_probe.sbatch` faz uma única execução normal, compilada com `-O3 -g`, diretamente no diretório submetido e chama somente `vtune -collect hpc-performance`, sem knobs. Os jobs 823328, 823332 e 823333 concluíram. |
+
+As tentativas HPC que falharam alteravam mais de uma variável ao mesmo tempo.
+Portanto, não é correto atribuir o aborto a um único fator, como a cópia em
+`/tmp` ou `--warmup`. A conclusão experimental é mais restrita: **neste
+VTune/ambiente, a invocação mínima sem knobs é estável; adicionar knobs de
+afinidade ou de banda não foi validado e não deve ser usado no trabalho.**
+
+O probe HPC ainda mostra que a coleta não é limitada por DRAM na forma que
+esse VTune consegue observar com hyperthreading ativo: nos probes adaptativos,
+a banda média observada ficou abaixo de 1 GB/s, contra cerca de 58--59 GB/s de
+referência por pacote. A métrica `DRAM Bound` permanece indisponível nessa
+plataforma com HT ativo. Use isso como indício complementar, não como prova de
+ausência de gargalo de memória.
+
+## Como repetir uma coleta válida
+
+No frontend, envie o job; não é necessário carregar VTune ali:
 
 ```bash
 cd ~/teste/INF01077
-sbatch scripts/pcad_vtune_preflight.sbatch
-```
-
-Quando ele finalizar, leia `slurm-vtune-preflight-<job>.out`. Se o VTune não
-foi localizado automaticamente, consulte os módulos disponíveis no mesmo nó
-com uma alocação curta:
-
-```bash
-salloc -p hype -N 1 -n 1 -c 20 --exclusive -t 00:20:00
-module avail 2>&1 | grep -i vtune
-```
-
-Saia da alocação com `exit`. Com o nome encontrado, use-o em `VTUNE_MODULE`.
-
-## 2. Enviar a campanha
-
-Sem módulo adicional:
-
-```bash
 sbatch scripts/pcad_hype_vtune.sbatch
 ```
 
-Ou, se o preflight indicar que é necessário um módulo específico:
-
-```bash
-sbatch --export=ALL,VTUNE_MODULE=NOME_DO_MODULO scripts/pcad_hype_vtune.sbatch
-```
-
-O job pede um nó hype exclusivo com 20 CPUs e produz
-`resultados_pcad_hype_vtune_<jobid>/`. Ele executa nove coletas Hotspots por
-amostragem de hardware (a primeira é
-uma confirmação leve de Hotspots):
-
-1. Adaptativo em `rain_paisage`: `dynamic,4`, Hotspots.
-2. Adaptativo em `rain_paisage`: `static`, Hotspots.
-3. Adaptativo em `rain_paisage`: `dynamic,256`, Hotspots.
-4. Grayscale AoS/SoA, `off-avx2`, Hotspots.
-5. Grayscale AoS/SoA, `omp-avx2`, Hotspots.
-6. Gaussian 11x11 AoS/SoA/separável, `off-avx2`, Hotspots.
-7. Mesmo Gaussian, `omp-avx2`, Hotspots.
-8. Zoom In, `off-avx2`, Hotspots.
-9. Zoom In, `omp-avx2`, Hotspots.
-
-Antes da campanha completa, execute a verificação curta abaixo. Ela coleta
-Hotspots do adaptativo:
+Isso executa Hotspots por amostragem de hardware em 20 threads: adaptativo
+(`static`, `dynamic,4`, `dynamic,256`), Grayscale e Gaussian (AoS/SoA, sem e
+com AVX2) e Zoom In (sem e com AVX2). Para uma verificação curta:
 
 ```bash
 sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
 ```
 
-Há também uma sonda isolada de HPC Performance, sem knobs VTune, que reproduz
-a configuração de referência do hype: 40 threads, `static`, imagem 4000x3000
-e todas as operações. Execute-a separadamente antes de reabilitar HPC na
-campanha principal:
+Para HPC Performance, use o coletor mínimo. A configuração padrão é 40
+threads, `static`, imagem 4000x3000 e todas as operações:
 
 ```bash
 sbatch scripts/pcad_hype_hpc_probe.sbatch
 ```
 
-Após a sonda padrão concluir, isole o adaptativo da imagem de chuva em duas
-coletas, primeiro `static` e depois `dynamic,4`. O `-c 20` reduz a alocação e
-os 20 threads correspondem aos núcleos físicos estudados:
+Para o contraste já validado do filtro adaptativo, envie os dois jobs
+independentemente:
 
 ```bash
 sbatch -c 20 --export=ALL,HPC_PROBE_IMAGE=images/rain_paisage.jpg,HPC_PROBE_OPERATIONS=adaptive,HPC_PROBE_THREADS=20,HPC_PROBE_SCHEDULE=static scripts/pcad_hype_hpc_probe.sbatch
-
 sbatch -c 20 --export=ALL,HPC_PROBE_IMAGE=images/rain_paisage.jpg,HPC_PROBE_OPERATIONS=adaptive,HPC_PROBE_THREADS=20,HPC_PROBE_SCHEDULE=dynamic4 scripts/pcad_hype_hpc_probe.sbatch
 ```
 
-Não submeta a segunda antes de verificar que a primeira terminou. Isso separa
-o efeito de imagem/tamanho do efeito de escalonamento caso o VTune volte a
-falhar.
+Cada coleta produz `resultados_pcad_hype_hpc_probe_<jobid>/`, contendo o
+controle sem VTune, o resultado bruto e `summary.txt`. Não passe opções
+adicionais para `vtune` nem misture essas coletas com os CSVs de benchmark.
 
-Antes de abrir o VTune, o job executa o mesmo filtro adaptativo no mesmo nó,
-sem instrumentação, e grava o resultado em `controle_sem_vtune.log`. Se esse
-controle concluir e o VTune abortar, o problema é do coletor, não do kernel.
-
-O VTune 2021.1.1 do PCAD abortou durante HPC Performance/calibração de pico e
-seu motor Pin não lê algumas seções ELF modernas. Por isso, a campanha usa
-apenas Hotspots no modo de amostragem por hardware. Cada binário de profiling
-é construído com `-g` para permitir atribuição ao código-fonte, sem mudar `-O3`.
-
-As repetições internas de profiling existem apenas para obter amostras VTune
-suficientes. Em Grayscale e Zoom In elas repetem o kernel com buffers já
-alocados; nenhuma alocação, conversão de layout ou cópia de restauração é
-misturada ao trecho analisado.
-
-## 3. Ler resultados no terminal
+## Leitura dos resultados
 
 ```bash
-vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/00_adaptive_dynamic4_hotspots
-vtune -report summary -r resultados_pcad_hype_vtune_<jobid>/01_adaptive_static_hotspots
-vtune -report hotspots -r resultados_pcad_hype_vtune_<jobid>/06_gaussian_omp_avx2_hotspots
+vtune -report summary -r resultados_pcad_hype_vtune_823234/00_adaptive_dynamic4_hotspots
+vtune -report hotspots -r resultados_pcad_hype_vtune_823234/06_gaussian_omp_avx2_hotspots
+vtune -report summary -r resultados_pcad_hype_hpc_probe_823333/hpc_performance
 ```
 
-No resumo, compare tempo efetivo, utilização dos núcleos físicos/lógicos e o
-tempo de espera. Em Hotspots, compare os kernels e as funções mais custosas.
-A inferência sobre banda de DRAM deverá partir dos resultados de tempo e do
-padrão de acesso dos kernels; esse VTune não consegue coletá-la de forma
-estável nesse ambiente.
+No Hotspots, compare quais funções concentram CPU e a utilização efetiva dos
+núcleos. No HPC Performance, use CPI, utilização dos núcleos e as métricas de
+memória que estiverem disponíveis, registrando explicitamente a limitação de
+`DRAM Bound` sob hyperthreading.

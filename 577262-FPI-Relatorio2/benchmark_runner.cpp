@@ -292,13 +292,14 @@ bool process_image(const fs::path& path, std::ofstream* csv, std::ofstream* hash
         if (!selected(transformation, options.operations)) continue;
         reset(image, original_data, original_width, original_height);
         if (options.profile_iterations > 1) {
-            if (std::string(transformation.name) != "Zoom_In") {
-                std::cerr << "--profile-iterations só é suportado para Zoom_In neste executável.\n";
-                success = false;
-                break;
-            }
-            if (!profile_zoom_in_kernel(image, options.profile_iterations)) {
-                std::cerr << "Erro ao repetir o kernel Zoom_In para profiling.\n";
+            const std::string operation_name = transformation.name;
+            const bool profiled = operation_name == "Zoom_In"
+                ? profile_zoom_in_kernel(image, options.profile_iterations)
+                : operation_name == "Grayscale"
+                    ? profile_gray_scale_kernel(image, options.profile_iterations)
+                    : false;
+            if (!profiled) {
+                std::cerr << "--profile-iterations só é suportado para Zoom_In e Grayscale neste executável.\n";
                 success = false;
                 break;
             }

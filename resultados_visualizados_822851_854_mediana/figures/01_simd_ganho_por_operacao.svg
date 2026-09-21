@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="718" viewBox="0 0 1200 718" role="img" aria-label="SIMD explícito: ganho geométrico por operação">
+<title>SIMD explícito: ganho geométrico por operação</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">SIMD explícito: ganho geométrico por operação</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="643"/>
+<text class="axis" text-anchor="middle" x="255.0" y="665">0.95×</text>
+<line class="grid" x1="443.7" x2="443.7" y1="70" y2="643"/>
+<text class="axis" text-anchor="middle" x="443.7" y="665">1.00×</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="643"/>
+<text class="axis" text-anchor="middle" x="632.5" y="665">1.04×</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="643"/>
+<text class="axis" text-anchor="middle" x="821.2" y="665">1.09×</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="643"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="665">1.13×</text>
+<rect class="frame" x="255" y="70" width="755" height="573"/>
+<line x1="456.3" x2="456.3" y1="70" y2="643" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<text class="axis" text-anchor="end" x="243" y="101.5">Zoom_In</text>
+<rect x="255.0" y="77.6" width="692.1" height="14.9" fill="#8a2be2"/>
+<text class="small" x="953.1" y="89.3">1.12×</text>
+<text class="axis" text-anchor="end" x="243" y="149.3">Negative</text>
+<rect x="255.0" y="125.4" width="357.6" height="14.9" fill="#8a2be2"/>
+<text class="small" x="618.6" y="137.0">1.04×</text>
+<text class="axis" text-anchor="end" x="243" y="197.0">Gaussian_3x3</text>
+<rect x="255.0" y="173.1" width="288.6" height="14.9" fill="#8a2be2"/>
+<text class="small" x="549.6" y="184.8">1.02×</text>
+<text class="axis" text-anchor="end" x="243" y="244.8">Equalize_Histogram</text>
+<rect x="255.0" y="220.9" width="249.3" height="14.9" fill="#8a2be2"/>
+<text class="small" x="510.3" y="232.5">1.01×</text>
+<text class="axis" text-anchor="end" x="243" y="292.5">Adjust_Contrast</text>
+<rect x="255.0" y="268.6" width="228.3" height="14.9" fill="#8a2be2"/>
+<text class="small" x="489.3" y="280.3">1.01×</text>
+<text class="axis" text-anchor="end" x="243" y="340.3">Quantize</text>
+<rect x="255.0" y="316.4" width="222.2" height="14.9" fill="#8a2be2"/>
+<text class="small" x="483.2" y="328.0">1.01×</text>
+<text class="axis" text-anchor="end" x="243" y="388.0">Gaussian_11x11</text>
+<rect x="255.0" y="364.1" width="191.6" height="14.9" fill="#8a2be2"/>
+<text class="small" x="452.6" y="375.8">1.00×</text>
+<text class="axis" text-anchor="end" x="243" y="435.8">Gaussian_5x5</text>
+<rect x="255.0" y="411.9" width="185.7" height="14.9" fill="#8a2be2"/>
+<text class="small" x="446.7" y="423.5">1.00×</text>
+<text class="axis" text-anchor="end" x="243" y="483.5">Gaussian_9x9</text>
+<rect x="255.0" y="459.6" width="184.0" height="14.9" fill="#8a2be2"/>
+<text class="small" x="445.0" y="471.3">1.00×</text>
+<text class="axis" text-anchor="end" x="243" y="531.3">Gaussian_7x7</text>
+<rect x="255.0" y="507.4" width="183.4" height="14.9" fill="#8a2be2"/>
+<text class="small" x="444.4" y="519.0">1.00×</text>
+<text class="axis" text-anchor="end" x="243" y="579.0">Adjust_Brightness</text>
+<rect x="255.0" y="555.1" width="68.0" height="14.9" fill="#8a2be2"/>
+<text class="small" x="329.0" y="566.8">0.97×</text>
+<text class="axis" text-anchor="end" x="243" y="626.8">Grayscale</text>
+<rect x="255.0" y="602.9" width="62.9" height="14.9" fill="#8a2be2"/>
+<text class="small" x="323.9" y="614.5">0.97×</text>
+<rect x="255" y="670" width="15" height="15" fill="#8a2be2"/>
+<text class="legend" x="277" y="682">off / omp</text>
+<text class="axis" text-anchor="middle" x="632.5" y="706">Speedup (off / omp)</text>
+</svg>

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Sonda mínima de HPC Performance. Replica o padrão que funcionou em outro
-# trabalho no hype antes de voltar a misturar layouts, repetição interna e
-# opções adicionais na campanha principal.
+# Coleta mínima e validada de HPC Performance. VTune 2021.1.1 no hype aborta
+# quando se acrescentam knobs de afinidade/banda; mantenha esta invocação sem
+# knobs até que uma nova versão seja validada separadamente.
 #SBATCH --job-name=openmp-hpc-probe
 #SBATCH --partition=hype
 #SBATCH --nodes=1
@@ -60,4 +60,4 @@ vtune -collect hpc-performance -result-dir "$VTUNE_RESULT" -- \
     --operations "$OPERATIONS" --run-id hpc-probe --repeat 0
 
 vtune -report summary -r "$VTUNE_RESULT" -report-output "$RESULT_DIR/summary.txt"
-echo "Sonda concluída. Resultado: $VTUNE_RESULT"
+echo "Coleta HPC concluída. Resultado: $VTUNE_RESULT"

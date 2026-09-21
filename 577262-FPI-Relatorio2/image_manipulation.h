@@ -18,6 +18,9 @@ void reset(ImageState& img, unsigned char* original_data, int original_width, in
 bool load_image(const char* filename, ImageState& img);
 void save_image(ImageState& img, const char* filename);
 void apply_gray_scale_inplace(ImageState& img);
+// Reexecuta somente o kernel de luminância em um buffer privado já alocado.
+// É destinado a coletas de profiler: não substitui a transformação normal.
+bool profile_gray_scale_kernel(const ImageState& source, int iterations);
 void flip_horizontal(ImageState& img);
 void adjust_brightness(ImageState& img, int adjust_value);
 void flip_vertical(ImageState& img);

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Eficiência paralela — 4000x3000.png">
+<title>Eficiência paralela — 4000x3000.png</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Eficiência paralela — 4000x3000.png</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">38.65</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">55.26</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">71.86</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">88.46</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">105.07</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<line x1="105" x2="930" y1="112.7" y2="112.7" stroke="#555" stroke-width="2" stroke-dasharray="7,5"/>
+<text class="note" x="940" y="116.7">ideal: 100%</text>
+<polyline points="105.0,112.7 148.4,150.5 235.3,197.3 408.9,295.2 582.6,348.4 756.3,390.3 930.0,449.0" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="150.5" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="197.3" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="295.2" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="348.4" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="390.3" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="449.0" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">Grayscale (off)</text>
+<polyline points="105.0,112.7 148.4,148.8 235.3,183.3 408.9,287.5 582.6,347.1 756.3,389.4 930.0,437.5" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="148.8" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="183.3" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="287.5" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="347.1" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="389.4" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="437.5" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="98">Grayscale (omp)</text>
+<polyline points="105.0,112.7 148.4,148.4 235.3,192.8 408.9,259.8 582.6,295.9 756.3,324.2 930.0,522.9" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#2ca02c"/>
+<circle cx="148.4" cy="148.4" r="4" fill="#2ca02c"/>
+<circle cx="235.3" cy="192.8" r="4" fill="#2ca02c"/>
+<circle cx="408.9" cy="259.8" r="4" fill="#2ca02c"/>
+<circle cx="582.6" cy="295.9" r="4" fill="#2ca02c"/>
+<circle cx="756.3" cy="324.2" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="522.9" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="120">Negative (off)</text>
+<polyline points="105.0,112.7 148.4,149.0 235.3,192.1 408.9,266.5 582.6,301.5 756.3,333.9 930.0,353.4" fill="none" stroke="#9467bd" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#9467bd"/>
+<circle cx="148.4" cy="149.0" r="4" fill="#9467bd"/>
+<circle cx="235.3" cy="192.1" r="4" fill="#9467bd"/>
+<circle cx="408.9" cy="266.5" r="4" fill="#9467bd"/>
+<circle cx="582.6" cy="301.5" r="4" fill="#9467bd"/>
+<circle cx="756.3" cy="333.9" r="4" fill="#9467bd"/>
+<circle cx="930.0" cy="353.4" r="4" fill="#9467bd"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#9467bd" stroke-width="3"/>
+<text class="legend" x="980" y="142">Negative (omp)</text>
+<polyline points="105.0,112.7 148.4,143.5 235.3,307.9 408.9,357.6 582.6,401.0 756.3,429.1 930.0,564.3" fill="none" stroke="#ff7f0e" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#ff7f0e"/>
+<circle cx="148.4" cy="143.5" r="4" fill="#ff7f0e"/>
+<circle cx="235.3" cy="307.9" r="4" fill="#ff7f0e"/>
+<circle cx="408.9" cy="357.6" r="4" fill="#ff7f0e"/>
+<circle cx="582.6" cy="401.0" r="4" fill="#ff7f0e"/>
+<circle cx="756.3" cy="429.1" r="4" fill="#ff7f0e"/>
+<circle cx="930.0" cy="564.3" r="4" fill="#ff7f0e"/>
+<line x1="948" x2="972" y1="160" y2="160" stroke="#ff7f0e" stroke-width="3"/>
+<text class="legend" x="980" y="164">Zoom_In (off)</text>
+<polyline points="105.0,112.7 148.4,182.1 235.3,355.8 408.9,408.1 582.6,439.6 756.3,481.9 930.0,498.8" fill="none" stroke="#17becf" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#17becf"/>
+<circle cx="148.4" cy="182.1" r="4" fill="#17becf"/>
+<circle cx="235.3" cy="355.8" r="4" fill="#17becf"/>
+<circle cx="408.9" cy="408.1" r="4" fill="#17becf"/>
+<circle cx="582.6" cy="439.6" r="4" fill="#17becf"/>
+<circle cx="756.3" cy="481.9" r="4" fill="#17becf"/>
+<circle cx="930.0" cy="498.8" r="4" fill="#17becf"/>
+<line x1="948" x2="972" y1="182" y2="182" stroke="#17becf" stroke-width="3"/>
+<text class="legend" x="980" y="186">Zoom_In (omp)</text>
+<polyline points="105.0,112.7 148.4,115.9 235.3,159.6 408.9,214.4 582.6,245.6 756.3,255.7 930.0,264.2" fill="none" stroke="#8c564b" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#8c564b"/>
+<circle cx="148.4" cy="115.9" r="4" fill="#8c564b"/>
+<circle cx="235.3" cy="159.6" r="4" fill="#8c564b"/>
+<circle cx="408.9" cy="214.4" r="4" fill="#8c564b"/>
+<circle cx="582.6" cy="245.6" r="4" fill="#8c564b"/>
+<circle cx="756.3" cy="255.7" r="4" fill="#8c564b"/>
+<circle cx="930.0" cy="264.2" r="4" fill="#8c564b"/>
+<line x1="948" x2="972" y1="204" y2="204" stroke="#8c564b" stroke-width="3"/>
+<text class="legend" x="980" y="208">Gaussian_3x3 (off)</text>
+<polyline points="105.0,112.7 148.4,116.8 235.3,135.0 408.9,216.2 582.6,246.0 756.3,254.7 930.0,267.4" fill="none" stroke="#e377c2" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#e377c2"/>
+<circle cx="148.4" cy="116.8" r="4" fill="#e377c2"/>
+<circle cx="235.3" cy="135.0" r="4" fill="#e377c2"/>
+<circle cx="408.9" cy="216.2" r="4" fill="#e377c2"/>
+<circle cx="582.6" cy="246.0" r="4" fill="#e377c2"/>
+<circle cx="756.3" cy="254.7" r="4" fill="#e377c2"/>
+<circle cx="930.0" cy="267.4" r="4" fill="#e377c2"/>
+<line x1="948" x2="972" y1="226" y2="226" stroke="#e377c2" stroke-width="3"/>
+<text class="legend" x="980" y="230">Gaussian_3x3 (omp)</text>
+<polyline points="105.0,112.7 148.4,113.4 235.3,126.5 408.9,199.2 582.6,220.2 756.3,220.9 930.0,224.3" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="113.4" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="126.5" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="199.2" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="220.2" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="220.9" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="224.3" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="248" y2="248" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="252">Gaussian_11x11 (off)</text>
+<polyline points="105.0,112.7 148.4,114.3 235.3,124.3 408.9,199.4 582.6,221.6 756.3,221.1 930.0,224.1" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="114.3" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="124.3" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="199.4" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="221.6" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="221.1" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="224.1" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="270" y2="270" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="274">Gaussian_11x11 (omp)</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Eficiência (%)</text>
+</svg>

@@ -1,0 +1,7 @@
+Simd,Schedule,Total_median_ms
+off,static,2223.575448
+off,"dynamic,1",2391.339289
+off,"dynamic,16",2275.102231
+omp,static,2213.101968
+omp,"dynamic,1",2399.238922
+omp,"dynamic,16",2279.112663

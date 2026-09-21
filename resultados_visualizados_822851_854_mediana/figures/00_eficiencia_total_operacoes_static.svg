@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Eficiência do conjunto de operações regulares — static">
+<title>Eficiência do conjunto de operações regulares — static</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Eficiência do conjunto de operações regulares — static</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">75.27</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">81.97</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">88.66</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">95.35</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">102.04</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<line x1="105" x2="930" y1="112.7" y2="112.7" stroke="#555" stroke-width="2" stroke-dasharray="7,5"/>
+<text class="note" x="940" y="116.7">ideal: 100%</text>
+<polyline points="105.0,112.7 148.4,136.1 235.3,202.3 408.9,382.0 582.6,450.0 756.3,470.9 930.0,564.3" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="136.1" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="202.3" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="382.0" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="450.0" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="470.9" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="564.3" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">4000x3000.png (off)</text>
+<polyline points="105.0,112.7 148.4,140.3 235.3,192.4 408.9,383.0 582.6,451.3 756.3,472.1 930.0,510.7" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="140.3" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="192.4" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="383.0" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="451.3" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="472.1" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="510.7" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="98">4000x3000.png (omp)</text>
+<polyline points="105.0,112.7 148.4,127.3 235.3,178.0 408.9,369.6 582.6,429.3 756.3,444.8 930.0,465.9" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#2ca02c"/>
+<circle cx="148.4" cy="127.3" r="4" fill="#2ca02c"/>
+<circle cx="235.3" cy="178.0" r="4" fill="#2ca02c"/>
+<circle cx="408.9" cy="369.6" r="4" fill="#2ca02c"/>
+<circle cx="582.6" cy="429.3" r="4" fill="#2ca02c"/>
+<circle cx="756.3" cy="444.8" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="465.9" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="120">6000x6000.png (off)</text>
+<polyline points="105.0,112.7 148.4,125.3 235.3,180.0 408.9,370.7 582.6,433.8 756.3,449.9 930.0,475.0" fill="none" stroke="#9467bd" stroke-width="2.5"/>
+<circle cx="105.0" cy="112.7" r="4" fill="#9467bd"/>
+<circle cx="148.4" cy="125.3" r="4" fill="#9467bd"/>
+<circle cx="235.3" cy="180.0" r="4" fill="#9467bd"/>
+<circle cx="408.9" cy="370.7" r="4" fill="#9467bd"/>
+<circle cx="582.6" cy="433.8" r="4" fill="#9467bd"/>
+<circle cx="756.3" cy="449.9" r="4" fill="#9467bd"/>
+<circle cx="930.0" cy="475.0" r="4" fill="#9467bd"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#9467bd" stroke-width="3"/>
+<text class="legend" x="980" y="142">6000x6000.png (omp)</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Eficiência (%)</text>
+</svg>
