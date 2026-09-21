@@ -70,6 +70,20 @@ campanha principal:
 sbatch scripts/pcad_hype_hpc_probe.sbatch
 ```
 
+Após a sonda padrão concluir, isole o adaptativo da imagem de chuva em duas
+coletas, primeiro `static` e depois `dynamic,4`. O `-c 20` reduz a alocação e
+os 20 threads correspondem aos núcleos físicos estudados:
+
+```bash
+sbatch -c 20 --export=ALL,HPC_PROBE_IMAGE=images/rain_paisage.jpg,HPC_PROBE_OPERATIONS=adaptive,HPC_PROBE_THREADS=20,HPC_PROBE_SCHEDULE=static scripts/pcad_hype_hpc_probe.sbatch
+
+sbatch -c 20 --export=ALL,HPC_PROBE_IMAGE=images/rain_paisage.jpg,HPC_PROBE_OPERATIONS=adaptive,HPC_PROBE_THREADS=20,HPC_PROBE_SCHEDULE=dynamic4 scripts/pcad_hype_hpc_probe.sbatch
+```
+
+Não submeta a segunda antes de verificar que a primeira terminou. Isso separa
+o efeito de imagem/tamanho do efeito de escalonamento caso o VTune volte a
+falhar.
+
 Antes de abrir o VTune, o job executa o mesmo filtro adaptativo no mesmo nó,
 sem instrumentação, e grava o resultado em `controle_sem_vtune.log`. Se esse
 controle concluir e o VTune abortar, o problema é do coletor, não do kernel.
