@@ -1,0 +1,7 @@
+image=images/6000x6000.png
+threads=20
+repetitions=10
+OMP_DYNAMIC=FALSE
+OMP_PLACES=cores
+OMP_PROC_BIND=close
+OMP_DISPLAY_AFFINITY=true

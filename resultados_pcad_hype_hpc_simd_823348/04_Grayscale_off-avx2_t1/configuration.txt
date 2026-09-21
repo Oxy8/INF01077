@@ -1,0 +1,8 @@
+operation=Grayscale
+simd=off-avx2
+threads=1
+schedule=static
+profile_iterations=25
+image=images/6000x6000.png
+OMP_PLACES=unset
+OMP_PROC_BIND=unset
