@@ -16,6 +16,7 @@ from typing import Dict, Iterator, List, Mapping, Optional, Sequence, Set, Tuple
 COMMON_FIELDS = [
     "Record_Type",
     "Report_Type",
+    "Scope",
     "Campaign_ID",
     "Collection_ID",
     "Collection_Repetition",
@@ -201,24 +202,69 @@ def read_csv_rows(path: Path) -> List[List[str]]:
 
 
 def summary_metrics(path: Path) -> Tuple[Dict[str, str], List[str]]:
+    rows = read_csv_rows(path)
     metrics: Dict[str, str] = {}
     unsupported: List[str] = []
     counts: Counter[str] = Counter()
-    for row in read_csv_rows(path):
-        if len(row) != 2 or not row[0] or not row[1]:
-            continue
-        if row[0].strip().lower() in {"metric name", "metric", "name"}:
-            continue
-        base = f"Summary__{sanitize_column(row[0])}"
+
+    header_index = -1
+    name_index = -1
+    value_index = -1
+    for index, row in enumerate(rows):
+        normalized = [sanitize_column(cell).lower() for cell in row]
+        if "metric_name" in normalized and "metric_value" in normalized:
+            header_index = index
+            name_index = normalized.index("metric_name")
+            value_index = normalized.index("metric_value")
+            break
+    if header_index < 0:
+        raise AggregationError(f"cabecalho do resumo VTune nao reconhecido: {path}")
+
+    table_headers: Optional[List[str]] = None
+
+    def add_metric(name: str, value: str, detail: str = "") -> None:
+        name = name.strip()
+        value = value.strip()
+        if not name or not value:
+            return
+        base = f"Summary__{sanitize_column(name)}"
+        if detail:
+            base = f"{base}__{sanitize_column(detail)}"
         counts[base] += 1
         column = base if counts[base] == 1 else f"{base}_{counts[base]}"
-        metrics[column] = row[1]
-        normalized_value = row[1].strip().lower()
+        metrics[column] = value
+        normalized_value = value.lower()
         if normalized_value.startswith("n/a") or normalized_value in {
             "not available",
             "not supported",
         }:
-            unsupported.append(row[0].strip())
+            unsupported.append(name)
+
+    for row in rows[header_index + 1 :]:
+        if not any(row) or name_index >= len(row):
+            continue
+        name = row[name_index].strip()
+        if not name:
+            continue
+
+        # VTune 2021.1.1 embeds small tables in summary.csv. For example,
+        # "Bandwidth Domain" starts a header row and the following DRAM rows
+        # contain one value for each trailing heading. Flatten those cells into
+        # stable wide columns while preserving ordinary summary metrics.
+        if len(row) > value_index + 1:
+            if table_headers is None:
+                table_headers = [cell.strip() for cell in row[value_index:]]
+                continue
+            for offset, heading in enumerate(table_headers):
+                cell_index = value_index + offset
+                if heading and cell_index < len(row):
+                    add_metric(name, row[cell_index], heading)
+            continue
+
+        table_headers = None
+        value = row[value_index] if value_index < len(row) else ""
+        add_metric(name, value)
+
     if not metrics:
         raise AggregationError(f"resumo VTune sem metricas reconheciveis: {path}")
     return metrics, unsupported
@@ -285,6 +331,17 @@ def report_records(
                 record["Module"] = value
             elif normalized == "frame" and not record["Frame_ID"]:
                 record["Frame_ID"] = value
+        if report_type == "frames":
+            frame_domain = record.get("frames__Frame_Domain", "")
+            frame = record.get("frames__Frame", "")
+            if "outside" in f"{frame_domain} {frame}".lower():
+                record["Scope"] = "outside_frames"
+            else:
+                record["Scope"] = "transformation_frame"
+        elif report_type.startswith("task"):
+            record["Scope"] = "transformation_task"
+        else:
+            record["Scope"] = "whole_collection_function"
         yield record
 
 
@@ -299,6 +356,7 @@ def timing_records(path: Path, base: Mapping[str, str]) -> Iterator[Dict[str, st
             record = dict(base)
             record["Record_Type"] = "timing"
             record["Report_Type"] = "benchmark"
+            record["Scope"] = "transformation_call"
             for field in REQUIRED_TIMING_FIELDS:
                 record[field] = timing.get(field, "")
             yield record
@@ -320,6 +378,7 @@ def collection_records(
     collection = dict(base)
     collection["Record_Type"] = "collection"
     collection["Report_Type"] = "summary"
+    collection["Scope"] = "whole_collection"
     collection["Unsupported_Metrics"] = ";".join(unsupported)
     collection.update(summary)
     yield collection

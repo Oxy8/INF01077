@@ -56,6 +56,13 @@ A coluna `Record_Type` distingue:
 - `function`: hotspots e eventos de hardware por função/módulo;
 - `timing`: tempo de uma transformação para uma imagem e repetição interna.
 
+A coluna `Scope` registra o alcance de cada linha. Em especial,
+`transformation_frame` contém métricas dos frames ITT das transformações,
+enquanto `whole_collection` e `whole_collection_function` também incluem a
+leitura e a restauração das imagens. Linhas `outside_frames` medem o trabalho
+fora das chamadas instrumentadas. Essa distinção é necessária no VTune
+2021.1.1, no qual o controle de pausa causou falha no coletor.
+
 Todos os registros têm `Collection_ID`, permitindo relacionar tempos, configuração, relatórios e o diretório bruto. Métricas não fornecidas pelo processador ou pela versão do VTune ficam vazias e são relacionadas em `Unsupported_Metrics` ou `Unsupported_Reports`.
 
 Com as 13 imagens atuais, a validação final espera 432 coletas e 240.864 registros de tempo. O primeiro resultado é usado como preflight para verificar os relatórios e estimar o espaço necessário antes de continuar.
