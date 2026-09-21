@@ -16,6 +16,14 @@ source "$ROOT_DIR/scripts/vtune_env.sh"
 
 hostname
 lscpu
+echo "Módulos relacionados disponíveis neste nó:"
+if type module >/dev/null 2>&1; then
+    (module -t avail 2>&1 || true) | grep -Ei 'vtune|oneapi|intel' || true
+    echo "Busca de módulos ocultos via module spider:"
+    module spider vtune 2>&1 || true
+else
+    echo "Comando module não foi inicializado neste ambiente."
+fi
 echo "VTune no PATH:"
 command -v vtune || true
 vtune --version || true

@@ -5,8 +5,9 @@ não entram nos CSVs de tempo nem devem ser comparadas às cinco repetições.
 
 ## 1. Verificar VTune no nó hype
 
-No frontend, a ausência de `vtune` é esperada. Envie o preflight, que executa
-em um nó hype e registra o caminho ou o módulo necessário:
+No frontend, a ausência de `vtune` é esperada. O job carrega automaticamente
+`/home/intel/oneapi/vtune/2021.1.1/vtune-vars.sh`, a instalação documentada
+para o hype. Envie o preflight, que executa em um nó hype e confirma o caminho:
 
 ```bash
 cd ~/teste/INF01077
