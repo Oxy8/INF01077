@@ -58,6 +58,16 @@ printf '%s\n' "${VTUNE_MODULE_LOADED:-PATH}" > "$RESULT_DIR/vtune_module.txt"
 
 make SIMD=off generate-controls
 
+# Controle obrigatório no mesmo nó, sem VTune. Se isto falhar, há um problema
+# no programa; se passar e o VTune abortar, a falha pertence ao coletor antigo.
+echo "Executando controle sem VTune..." | tee "$RESULT_DIR/controle_sem_vtune.log"
+make SIMD=omp-avx2 all >> "$RESULT_DIR/controle_sem_vtune.log" 2>&1
+OMP_NUM_THREADS=20 OMP_SCHEDULE=dynamic,4 build/omp-avx2/image_benchmark \
+    --image images/rain_paisage.jpg /tmp/controle_sem_vtune.csv \
+    --operations adaptive --run-id controle-sem-vtune --repeat 0 --warmup \
+    >> "$RESULT_DIR/controle_sem_vtune.log" 2>&1
+echo "Controle sem VTune concluído." | tee -a "$RESULT_DIR/controle_sem_vtune.log"
+
 # No VTune 2021.1.1, collect-memory-bandwidth também dispara a calibração de
 # pico que aborta neste nó. O perfil HPC abaixo mantém a caracterização de
 # CPU/FPU e escalabilidade, mas sem a medição de largura de banda. Hotspots em

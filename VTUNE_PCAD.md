@@ -60,6 +60,10 @@ Hotspots e HPC Performance no adaptativo, sem a calibração de pico de DRAM:
 sbatch --time=00:20:00 scripts/pcad_hype_vtune.sbatch --smoke
 ```
 
+Antes de abrir o VTune, o job executa o mesmo filtro adaptativo no mesmo nó,
+sem instrumentação, e grava o resultado em `controle_sem_vtune.log`. Se esse
+controle concluir e o VTune abortar, o problema é do coletor, não do kernel.
+
 O VTune 2021.1.1 do PCAD abortou durante a calibração de pico, inclusive ao
 ativar `collect-memory-bandwidth=true`. Além disso, seu motor Pin não lê
 algumas seções ELF modernas. Por isso, Hotspots é forçado ao modo de amostragem
