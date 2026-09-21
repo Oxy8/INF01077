@@ -34,7 +34,7 @@ if [[ "$ANALYSIS" == "hotspots" && "$VTUNE_KNOBS" != *"sampling-mode="* ]]; then
 fi
 if [[ -n "$VTUNE_KNOBS" ]]; then
     # A variável aceita pares completos, por exemplo:
-    # '-knob collect-memory-bandwidth=true -knob analyze-openmp=true'.
+    # '-knob sampling-interval=1 -knob enable-stack-collection=true'.
     read -r -a knobs <<< "$VTUNE_KNOBS"
     vtune_args+=("${knobs[@]}")
 fi

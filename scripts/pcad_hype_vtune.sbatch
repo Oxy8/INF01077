@@ -9,7 +9,8 @@
 #SBATCH --output=slurm-vtune-%j.out
 #SBATCH --error=slurm-vtune-%j.err
 
-# Campanha de explicação; não produz amostras de benchmark comparáveis.
+# Campanha de explicação por Hotspots hardware; não produz amostras de
+# benchmark comparáveis. O HPC Performance do VTune 2021 aborta neste nó.
 set -euo pipefail
 
 SMOKE_ONLY=0
@@ -61,18 +62,16 @@ make SIMD=off generate-controls
 # Controle obrigatório no mesmo nó, sem VTune. Se isto falhar, há um problema
 # no programa; se passar e o VTune abortar, a falha pertence ao coletor antigo.
 echo "Executando controle sem VTune..." | tee "$RESULT_DIR/controle_sem_vtune.log"
-make SIMD=omp-avx2 all >> "$RESULT_DIR/controle_sem_vtune.log" 2>&1
+make DEBUG=1 SIMD=omp-avx2 all >> "$RESULT_DIR/controle_sem_vtune.log" 2>&1
 OMP_NUM_THREADS=20 OMP_SCHEDULE=dynamic,4 build/omp-avx2/image_benchmark \
     --image images/rain_paisage.jpg /tmp/controle_sem_vtune.csv \
     --operations adaptive --run-id controle-sem-vtune --repeat 0 --warmup \
     >> "$RESULT_DIR/controle_sem_vtune.log" 2>&1
 echo "Controle sem VTune concluído." | tee -a "$RESULT_DIR/controle_sem_vtune.log"
 
-# No VTune 2021.1.1, collect-memory-bandwidth também dispara a calibração de
-# pico que aborta neste nó. O perfil HPC abaixo mantém a caracterização de
-# CPU/FPU e escalabilidade, mas sem a medição de largura de banda. Hotspots em
-# hardware é a coleta estável para atribuir tempo aos kernels.
-HPC_SAFE_KNOBS='-knob collect-affinity=true'
+# Símbolos de depuração deixam o Hotspots atribuir amostras ao arquivo/linha;
+# -g não altera as otimizações usadas pelo benchmark.
+export DEBUG=1
 
 run_image_profile() {
     local name="$1"
@@ -102,9 +101,9 @@ run_layout_profile() {
         VTUNE_RESULT_DIR="resultados_vtune/$name" bash scripts/collect_vtune_layout.sh
 }
 
-# Primeiro confirma que o coletor funciona sem a calibração de pico.
+# Primeiro confirma o coletor que funciona neste ambiente: Hotspots por
+# amostragem de hardware. O script collect_vtune.sh força sampling-mode=hw.
 run_image_profile 00_adaptive_dynamic4_hotspots hotspots omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 ''
-run_image_profile 01_adaptive_dynamic4_hpc_smoke hpc-performance omp-avx2 adaptive images/rain_paisage.jpg dynamic,4 1 "$HPC_SAFE_KNOBS"
 
 if [[ "$SMOKE_ONLY" -eq 1 ]]; then
     cp -a resultados_vtune/. "$RESULT_DIR/"
@@ -112,22 +111,23 @@ if [[ "$SMOKE_ONLY" -eq 1 ]]; then
     exit 0
 fi
 
-# 2--4: adaptativo real, comparando balanceamento de static/dynamic,4 e
-# aprofundando o melhor caso na hierarquia de memória.
-run_image_profile 02_adaptive_static_hpc hpc-performance omp-avx2 adaptive images/rain_paisage.jpg static 1 "$HPC_SAFE_KNOBS"
+# 1--2: adaptativo real. static versus dynamic,4 é o contraste principal;
+# dynamic,256 acrescenta o caso de chunk grande que criou cauda nos tempos.
+run_image_profile 01_adaptive_static_hotspots hotspots omp-avx2 adaptive images/rain_paisage.jpg static 1 ''
+run_image_profile 02_adaptive_dynamic256_hotspots hotspots omp-avx2 adaptive images/rain_paisage.jpg dynamic,256 1 ''
 
-# 4--5: Grayscale AoS/SoA. Repetição só do kernel dá amostras suficientes;
+# 3--4: Grayscale AoS/SoA. Repetição só do kernel dá amostras suficientes;
 # conversões permanecem fora dessa janela, como no experimento de layout.
-run_layout_profile 03_grayscale_off_avx2_hpc hpc-performance off-avx2 Grayscale 100 "$HPC_SAFE_KNOBS"
-run_layout_profile 04_grayscale_omp_avx2_hpc hpc-performance omp-avx2 Grayscale 100 "$HPC_SAFE_KNOBS"
+run_layout_profile 03_grayscale_off_avx2_hotspots hotspots off-avx2 Grayscale 100 ''
+run_layout_profile 04_grayscale_omp_avx2_hotspots hotspots omp-avx2 Grayscale 100 ''
 
-# 6--7: Gaussian inclui AoS direto, SoA ingênuo e separável no mesmo processo.
+# 5--6: Gaussian inclui AoS direto, SoA ingênuo e separável no mesmo processo.
 run_layout_profile 05_gaussian_off_avx2_hotspots hotspots off-avx2 Gaussian_11x11 3 ''
 run_layout_profile 06_gaussian_omp_avx2_hotspots hotspots omp-avx2 Gaussian_11x11 3 ''
 
-# 8--9: Zoom_In é repetido em buffer de saída pré-alocado, sem medir alocação.
-run_image_profile 07_zoom_off_avx2_hpc hpc-performance off-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_SAFE_KNOBS"
-run_image_profile 08_zoom_omp_avx2_hpc hpc-performance omp-avx2 Zoom_In images/6000x6000.png static 50 "$HPC_SAFE_KNOBS"
+# 7--8: Zoom_In é repetido em buffer de saída pré-alocado, sem medir alocação.
+run_image_profile 07_zoom_off_avx2_hotspots hotspots off-avx2 Zoom_In images/6000x6000.png static 50 ''
+run_image_profile 08_zoom_omp_avx2_hotspots hotspots omp-avx2 Zoom_In images/6000x6000.png static 50 ''
 
 cp -a resultados_vtune/. "$RESULT_DIR/"
 echo "Resultados VTune copiados para $RESULT_DIR"

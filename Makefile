@@ -6,6 +6,7 @@ PKG_CONFIG ?= pkg-config
 PROJECT_DIR := 577262-FPI-Relatorio2
 SIMD ?= off
 ARCH ?=
+DEBUG ?= 0
 BUILD_DIR := build/$(SIMD)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
 LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
@@ -33,6 +34,10 @@ CXXFLAGS += $(OPENMP_FLAGS)
 # o arredondamento de expressões como a luminância, invalidando hashes mesmo
 # quando o algoritmo e os dados são os mesmos. AVX2 continua habilitado.
 CXXFLAGS += -ffp-contract=off
+ifeq ($(DEBUG),1)
+# Símbolos para atribuição de linhas pelo VTune; não altera as otimizações.
+CXXFLAGS += -g
+endif
 LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
 
