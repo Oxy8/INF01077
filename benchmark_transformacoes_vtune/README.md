@@ -92,6 +92,8 @@ python3 benchmark_transformacoes_vtune/plot.py \
 
 Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
 
+- gráficos `speedup_20_threads.png` e `speedup_40_threads.png` com o mesmo
+  formato do benchmark sem VTune, usando as medianas das repetições internas;
 - comparação entre os speedups original e observado sob VTune;
 - matrizes de speedup, trabalho CPU, paralelismo, instruções, CPI e gargalos;
 - estudos detalhados das rotações;

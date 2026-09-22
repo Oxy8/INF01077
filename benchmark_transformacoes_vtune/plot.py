@@ -713,6 +713,95 @@ def configurar_eixo_schedule(ax: plt.Axes, schedules: Sequence[str]) -> None:
     ax.grid(axis="y", linestyle="--", alpha=0.3)
 
 
+def plotar_speedup_barras(
+    resumo: pd.DataFrame,
+    schedules: Sequence[str],
+    transformacoes: Sequence[str],
+    quantidade_imagens: int,
+    threads: int,
+    destino: Path,
+    cores: dict[str, tuple[float, ...]],
+    limite_y: float,
+) -> None:
+    """Reproduz o gráfico de barras do benchmark sem VTune."""
+    dados = (
+        resumo[resumo["Num_Threads"].eq(threads)]
+        .pivot(
+            index="OMP_Schedule",
+            columns="Transformation",
+            values="VTune_Speedup_Mediana",
+        )
+        .reindex(index=schedules, columns=transformacoes)
+    )
+    if dados.isna().any().any():
+        raise PlotError(f"faltam barras de speedup VTune para {threads} threads")
+
+    fig, eixo = plt.subplots(figsize=(25, 11))
+    posicoes = np.arange(len(schedules))
+    largura = 0.88 / len(transformacoes)
+    for indice, transformacao in enumerate(transformacoes):
+        deslocamento = (indice - (len(transformacoes) - 1) / 2) * largura
+        eixo.bar(
+            posicoes + deslocamento,
+            dados[transformacao].to_numpy(),
+            width=largura,
+            color=cores[transformacao],
+            label=NOMES_TRANSFORMACOES.get(
+                transformacao, transformacao.replace("_", " ")
+            ),
+        )
+
+    eixo.set_xticks(
+        posicoes,
+        [rotulo_schedule(schedule) for schedule in schedules],
+        rotation=35,
+        ha="right",
+    )
+    eixo.set_xlim(-0.6, len(schedules) - 0.4)
+    eixo.set_ylim(0, limite_y)
+    eixo.axhline(
+        1.0,
+        color="black",
+        linestyle="--",
+        linewidth=1.4,
+        label="Referência estática (1×)",
+    )
+    eixo.set_title(
+        f"Aceleração por transformação e escalonamento sob VTune — {threads} threads",
+        fontsize=19,
+        weight="bold",
+    )
+    eixo.set_xlabel("Escalonamento (tamanho do chunk)", fontsize=13)
+    eixo.set_ylabel("Aceleração média geométrica vs. estático (×)", fontsize=13)
+    eixo.grid(axis="y", linestyle="--", alpha=0.35)
+    eixo.set_axisbelow(True)
+
+    handles, labels = eixo.get_legend_handles_labels()
+    fig.legend(
+        handles,
+        labels,
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.105),
+        ncol=5,
+        frameon=False,
+        fontsize=10,
+    )
+    fig.text(
+        0.5,
+        0.025,
+        "Cada imagem: mediana das repetições internas da coleta VTune; aceleração = "
+        f"mediana estática ÷ mediana do escalonamento, com {threads} threads.\n"
+        f"Cada barra: média geométrica das acelerações das {quantidade_imagens} imagens. "
+        "Acima de 1× indica ganho; abaixo de 1× indica perda.",
+        ha="center",
+        va="bottom",
+        fontsize=10,
+    )
+    fig.tight_layout(rect=(0.02, 0.22, 0.98, 0.98))
+    fig.savefig(destino, dpi=300)
+    plt.close(fig)
+
+
 def plotar_rotacoes(
     resumo: pd.DataFrame, schedules: Sequence[str], threads: int, destino: Path
 ) -> None:
@@ -1109,7 +1198,24 @@ def main(argv: Sequence[str] | None = None) -> int:
         salvar_relatorio_texto(resumo, cobertura, destino / "README.txt")
 
         plotar_reproducao(resumo, destino / "comparacao_speedup_original_vtune.png")
+        cores_transformacoes = dict(
+            zip(transformacoes, sns.color_palette("husl", len(transformacoes)))
+        )
+        limite_speedup = max(
+            1.1, float(resumo["VTune_Speedup_Mediana"].max()) * 1.08
+        )
+        quantidade_imagens = por_imagem["Image"].nunique()
         for quantidade_threads in threads:
+            plotar_speedup_barras(
+                resumo,
+                schedules,
+                transformacoes,
+                quantidade_imagens,
+                quantidade_threads,
+                destino / f"speedup_{quantidade_threads}_threads.png",
+                cores_transformacoes,
+                limite_speedup,
+            )
             plotar_diagnostico(
                 resumo,
                 schedules,
