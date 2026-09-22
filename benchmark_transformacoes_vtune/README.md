@@ -76,3 +76,40 @@ make vtune-schedule-benchmark VTUNE_DIR=/home/intel/oneapi/vtune/2021.1.1
 ```
 
 Esse target usa objetos separados com `-O2 -g`, `schedule(runtime)` e ITT. Os targets existentes continuam usando seus próprios objetos.
+
+## Análise e gráficos locais
+
+O arquivo consolidado pode ser analisado sem os diretórios brutos `result/`.
+O script `plot.py` lê o CSV de aproximadamente 700 MB em blocos e mantém em
+memória apenas os tempos e as métricas dos frames ITT. Informe também o CSV do
+benchmark que gerou os gráficos de speedup originais:
+
+```sh
+python3 benchmark_transformacoes_vtune/plot.py \
+    benchmark_transformacoes_vtune/runs/20260921T182804Z-823351/benchmark_transformacoes_vtune.csv \
+    benchmark_transformacoes/runs/20260920T052250Z-1089788/benchmark_transformacoes.csv
+```
+
+Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
+
+- comparação entre os speedups original e observado sob VTune;
+- matrizes de speedup, trabalho CPU, paralelismo, instruções, CPI e gargalos;
+- estudos detalhados das rotações;
+- estudos das transformações simples com trabalho uniforme por pixel;
+- comparação de ampliação, Gaussiano 11x11 e Gaussiano adaptativo como três
+  mecanismos contrastantes;
+- CSVs compactos por condição e por imagem para análises posteriores.
+
+O speedup medido sob VTune é decomposto como:
+
+```text
+speedup = (CPU-time static / CPU-time schedule)
+        x (núcleos ativos schedule / núcleos ativos static)
+```
+
+Essa identidade separa redução de trabalho CPU ou contenção da variação no
+paralelismo efetivo. Os gráficos usam somente os frames ITT das transformações;
+as métricas globais que incluem leitura e restauração de imagens ficam fora.
+Quando o VTune não reproduz o speedup original, a comparação marca a divergência
+e os contadores devem ser tratados como evidência do perfil observado, sem
+atribuir automaticamente a mesma causa ao benchmark original.
