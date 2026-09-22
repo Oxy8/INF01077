@@ -14,6 +14,35 @@ SPEC.loader.exec_module(plot)
 
 
 class PlotTest(unittest.TestCase):
+    def test_hardware_events_are_normalized_by_workload_iterations(self):
+        rows = []
+        for schedule, iterations, multiplier in (
+            ("static", 2, 1.0),
+            ("dynamic_1", 4, 3.0),
+        ):
+            for share in (0.25, 0.75):
+                row = {
+                    "Num_Threads": 40,
+                    "OMP_Schedule": schedule,
+                    "Transformation": "Zoom_In",
+                    "Workload_Iterations": iterations,
+                }
+                for name, column in plot.COLUNAS_EVENTOS_HW.items():
+                    baseline_per_iteration = 100.0 if name != "Instructions" else 1000.0
+                    row[column] = (
+                        baseline_per_iteration * iterations * multiplier * share
+                    )
+                rows.append(row)
+
+        result = plot.agregar_eventos_hardware(pd.DataFrame(rows))
+        static = result[result["OMP_Schedule"].eq("static")].iloc[0]
+        dynamic = result[result["OMP_Schedule"].eq("dynamic_1")].iloc[0]
+
+        self.assertAlmostEqual(static["L1_Pending_Cycles_por_iteracao"], 100.0)
+        self.assertAlmostEqual(dynamic["L1_Pending_Cycles_por_iteracao"], 300.0)
+        self.assertAlmostEqual(dynamic["Fator_L1_Pending_Cycles"], 3.0)
+        self.assertAlmostEqual(dynamic["Fator_Instructions"], 3.0)
+
     def test_speedup_decomposition_survives_equal_weight_image_normalization(self):
         rows = []
         values = {

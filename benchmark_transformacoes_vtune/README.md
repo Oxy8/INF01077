@@ -81,8 +81,9 @@ Esse target usa objetos separados com `-O2 -g`, `schedule(runtime)` e ITT. Os ta
 
 O arquivo consolidado pode ser analisado sem os diretórios brutos `result/`.
 O script `plot.py` lê o CSV de aproximadamente 700 MB em blocos e mantém em
-memória apenas os tempos e as métricas dos frames ITT. Informe também o CSV do
-benchmark que gerou os gráficos de speedup originais:
+memória apenas os tempos, as métricas dos frames ITT e os eventos de hardware
+das funções das transformações. Informe também o CSV do benchmark que gerou os
+gráficos de speedup originais:
 
 ```sh
 python3 benchmark_transformacoes_vtune/plot.py \
@@ -100,7 +101,16 @@ Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
 - estudos das transformações simples com trabalho uniforme por pixel;
 - comparação de ampliação, Gaussiano 11x11 e Gaussiano adaptativo como três
   mecanismos contrastantes;
+- `analysis/zoom/`, com L1/L2 pending cycles e store-buffer stalls para Zoom In
+  e Zoom Out por schedule, além da comparação com todas as transformações para
+  chunks dinâmicos 1, 2, 4 e 8;
 - CSVs compactos por condição e por imagem para análises posteriores.
+
+Em `analysis/zoom/`, `eventos_zoom.csv` contém as contagens dos dois zooms e
+`eventos_hardware_transformacoes.csv` preserva as contagens filtradas de todas
+as transformações usadas na comparação. As contagens são divididas pelas
+repetições internas antes da comparação com `static`; assim cada valor descreve
+uma passagem pelo conjunto completo de imagens.
 
 O speedup medido sob VTune é decomposto como:
 

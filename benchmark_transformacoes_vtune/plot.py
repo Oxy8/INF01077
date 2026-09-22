@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Gera diagnosticos que relacionam speedup e metricas VTune por frame.
+"""Gera diagnosticos que relacionam speedup e metricas VTune.
 
 O CSV consolidado e lido em blocos. Somente linhas de tempo e frames ITT das
-transformacoes sao mantidas em memoria; metricas globais da coleta nao entram
-nos graficos porque incluem leitura e restauracao de imagens.
+transformacoes, mais eventos de hardware das funcoes selecionadas, sao mantidos
+em memoria. Metricas globais da coleta nao entram nos graficos porque incluem
+leitura e restauracao de imagens.
 """
 
 from __future__ import annotations
@@ -73,9 +74,11 @@ COLUNAS_VTUNE = [
     "Num_Threads",
     "OMP_Schedule",
     "Transformation",
+    "Workload_Iterations",
     "Image",
     "Frame_ID",
     "Time_ms",
+    "Function",
     "frames__CPU_Time",
     "frames__CPU_Time_Effective_Time",
     "frames__CPU_Time_Effective_Time_Poor",
@@ -89,7 +92,60 @@ COLUNAS_VTUNE = [
     "frames__CPI_Rate",
     "frames__Instructions_Retired",
     "frames__Average_CPU_Frequency",
+    "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L1D_PENDING",
+    "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L2_PENDING",
+    "hw_events__Hardware_Event_Count_RESOURCE_STALLS_SB",
+    "hw_events__Hardware_Event_Count_MEM_UOPS_RETIRED_ALL_STORES_PS",
+    "hw_events__Hardware_Event_Count_INST_RETIRED_ANY",
 ]
+
+COLUNAS_EVENTOS_HW = {
+    "L1_Pending_Cycles": (
+        "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L1D_PENDING"
+    ),
+    "L2_Pending_Cycles": (
+        "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L2_PENDING"
+    ),
+    "Store_Buffer_Stalls": (
+        "hw_events__Hardware_Event_Count_RESOURCE_STALLS_SB"
+    ),
+    "Retired_Stores": (
+        "hw_events__Hardware_Event_Count_MEM_UOPS_RETIRED_ALL_STORES_PS"
+    ),
+    "Instructions": "hw_events__Hardware_Event_Count_INST_RETIRED_ANY",
+}
+
+# Os relatórios hw-events são por função e incluem também leitura de imagens,
+# restauração e código do kernel. Estes padrões mantêm apenas endereços das
+# funções que implementam cada transformação. As linhas de loop e de função
+# ocupam endereços distintos no relatório e, portanto, podem ser somadas.
+PADROES_FUNCAO_TRANSFORMACAO = {
+    "Grayscale": ("apply_gray_scale_inplace",),
+    "Flip_Horizontal": ("flip_horizontal",),
+    "Flip_Vertical": ("flip_vertical",),
+    "Adjust_Brightness": ("adjust_brightness",),
+    "Quantize": (
+        "quantize_gray",
+        "find_min_and_max_luminance",
+        "apply_gray_scale_inplace",
+    ),
+    "Adjust_Contrast": ("adjust_contrast",),
+    "Negative": ("apply_negative",),
+    "Equalize_Histogram": ("equalize_histogram", "compute_histogram"),
+    "Zoom_In": ("zoom_in_image",),
+    "Zoom_Out": ("zoom_out_image", "compute_rgb_avg_on_rectangle"),
+    "Rotate_CW": ("rotate_90_degrees_clockwise",),
+    "Rotate_CCW": ("rotate_90_degrees_counterclockwise",),
+    "Gaussian_3x3": ("apply_3_by_3_convolution",),
+    "Gaussian_5x5": ("apply_5_by_5_convolution",),
+    "Gaussian_7x7": ("apply_7_by_7_convolution",),
+    "Gaussian_9x9": ("apply_9_by_9_convolution",),
+    "Gaussian_11x11": ("apply_11_by_11_convolution",),
+    "Adaptive_Gaussian": (
+        "apply_varying_window_gaussian_denoising",
+        "compute_sobel_detail_map",
+    ),
+}
 
 CHAVES_FRAME = [
     "Collection_ID",
@@ -166,10 +222,13 @@ def validar_cabecalho(path: Path, colunas: Sequence[str]) -> None:
         raise PlotError(f"colunas ausentes em {path}: {', '.join(ausentes)}")
 
 
-def carregar_frames_vtune(path: Path, tamanho_bloco: int) -> tuple[pd.DataFrame, float]:
+def carregar_frames_vtune(
+    path: Path, tamanho_bloco: int
+) -> tuple[pd.DataFrame, float, pd.DataFrame]:
     validar_cabecalho(path, COLUNAS_VTUNE)
     tempos: list[pd.DataFrame] = []
     frames: list[pd.DataFrame] = []
+    eventos_funcoes: list[pd.DataFrame] = []
 
     for bloco in pd.read_csv(
         path,
@@ -197,8 +256,44 @@ def carregar_frames_vtune(path: Path, tamanho_bloco: int) -> tuple[pd.DataFrame,
             ]
             frames.append(linhas_frame[colunas_frame].copy())
 
-    if not tempos or not frames:
-        raise PlotError("o CSV nao contem tempos e frames ITT de transformacao")
+        linhas_eventos = bloco[
+            bloco["Record_Type"].eq("function")
+            & bloco["Report_Type"].eq("hw_events")
+            & bloco["Transformation"].isin(PADROES_FUNCAO_TRANSFORMACAO)
+        ]
+        if not linhas_eventos.empty:
+            partes: list[pd.DataFrame] = []
+            for transformacao, padroes in PADROES_FUNCAO_TRANSFORMACAO.items():
+                candidatas = linhas_eventos[
+                    linhas_eventos["Transformation"].eq(transformacao)
+                ]
+                if candidatas.empty:
+                    continue
+                mascara = pd.Series(False, index=candidatas.index)
+                for padrao in padroes:
+                    mascara |= candidatas["Function"].str.contains(
+                        padrao, regex=False, na=False
+                    )
+                selecionadas = candidatas[mascara]
+                if not selecionadas.empty:
+                    partes.append(selecionadas)
+            if partes:
+                colunas_eventos = [
+                    "Num_Threads",
+                    "OMP_Schedule",
+                    "Transformation",
+                    "Workload_Iterations",
+                    "Function",
+                    *COLUNAS_EVENTOS_HW.values(),
+                ]
+                eventos_funcoes.append(
+                    pd.concat(partes, ignore_index=True)[colunas_eventos].copy()
+                )
+
+    if not tempos or not frames or not eventos_funcoes:
+        raise PlotError(
+            "o CSV nao contem tempos, frames ITT e eventos de transformacao"
+        )
 
     tempos_df = pd.concat(tempos, ignore_index=True)
     frames_df = pd.concat(frames, ignore_index=True)
@@ -237,11 +332,67 @@ def carregar_frames_vtune(path: Path, tamanho_bloco: int) -> tuple[pd.DataFrame,
         raise PlotError(
             f"somente {cobertura:.1%} dos tempos possuem metricas de frame VTune"
         )
-    return combinado, cobertura
+    eventos_df = pd.concat(eventos_funcoes, ignore_index=True)
+    eventos_df["Num_Threads"] = pd.to_numeric(
+        eventos_df["Num_Threads"], errors="raise", downcast="integer"
+    )
+    eventos_df["Workload_Iterations"] = pd.to_numeric(
+        eventos_df["Workload_Iterations"], errors="raise", downcast="integer"
+    )
+    for coluna in COLUNAS_EVENTOS_HW.values():
+        eventos_df[coluna] = pd.to_numeric(eventos_df[coluna], errors="coerce")
+    return combinado, cobertura, eventos_df
 
 
 def soma_com_minimo(grupo: pd.core.groupby.DataFrameGroupBy, coluna: str) -> pd.Series:
     return grupo[coluna].sum(min_count=1)
+
+
+def agregar_eventos_hardware(eventos: pd.DataFrame) -> pd.DataFrame:
+    """Soma eventos nas funções da transformação e normaliza a carga repetida."""
+    chaves = ["Num_Threads", "OMP_Schedule", "Transformation"]
+    iteracoes = eventos.groupby(chaves, sort=False)["Workload_Iterations"].nunique()
+    if (iteracoes != 1).any():
+        raise PlotError("Workload_Iterations divergente nos eventos de uma condição")
+
+    grupo = eventos.groupby(chaves, sort=False)
+    agregado = grupo["Workload_Iterations"].first().reset_index()
+    for nome, coluna in COLUNAS_EVENTOS_HW.items():
+        soma = grupo[coluna].sum(min_count=1).rename(nome).reset_index()
+        agregado = agregado.merge(soma, on=chaves, validate="one_to_one")
+
+    if (agregado["Workload_Iterations"] <= 0).any():
+        raise PlotError("eventos com quantidade de iteracoes invalida")
+    for nome in COLUNAS_EVENTOS_HW:
+        agregado[f"{nome}_por_iteracao"] = (
+            agregado[nome] / agregado["Workload_Iterations"]
+        )
+
+    referencia = agregado[agregado["OMP_Schedule"].eq("static")][
+        ["Num_Threads", "Transformation"]
+        + [f"{nome}_por_iteracao" for nome in COLUNAS_EVENTOS_HW]
+    ].copy()
+    referencia = referencia.rename(
+        columns={
+            f"{nome}_por_iteracao": f"Estatico__{nome}_por_iteracao"
+            for nome in COLUNAS_EVENTOS_HW
+        }
+    )
+    if referencia.duplicated(["Num_Threads", "Transformation"]).any():
+        raise PlotError("referencia estatica de eventos duplicada")
+    agregado = agregado.merge(
+        referencia,
+        on=["Num_Threads", "Transformation"],
+        how="left",
+        validate="many_to_one",
+    )
+    for nome in COLUNAS_EVENTOS_HW:
+        atual = agregado[f"{nome}_por_iteracao"]
+        estatico = agregado[f"Estatico__{nome}_por_iteracao"]
+        agregado[f"Fator_{nome}"] = (atual / estatico).where(
+            atual.notna() & estatico.notna() & (estatico > 0)
+        )
+    return agregado
 
 
 def agregar_por_imagem(frames: pd.DataFrame) -> pd.DataFrame:
@@ -802,6 +953,201 @@ def plotar_speedup_barras(
     plt.close(fig)
 
 
+def plotar_eventos_zoom(
+    eventos: pd.DataFrame,
+    resumo: pd.DataFrame,
+    schedules: Sequence[str],
+    threads: int,
+    destino: Path,
+) -> None:
+    """Relaciona o speedup dos zooms aos eventos de espera da transformação."""
+    metricas = [
+        ("L1_Pending_Cycles_por_iteracao", "Ciclos aguardando L1"),
+        ("L2_Pending_Cycles_por_iteracao", "Ciclos aguardando L2"),
+        ("Store_Buffer_Stalls_por_iteracao", "Stalls do store buffer"),
+    ]
+    zooms = ["Zoom_In", "Zoom_Out"]
+    fig, eixos = plt.subplots(2, 4, figsize=(25, 13), sharex="col")
+    x = np.arange(len(schedules))
+
+    for linha, transformacao in enumerate(zooms):
+        dados_eventos = (
+            eventos[
+                eventos["Num_Threads"].eq(threads)
+                & eventos["Transformation"].eq(transformacao)
+            ]
+            .set_index("OMP_Schedule")
+            .reindex(schedules)
+        )
+        dados_speedup = (
+            resumo[
+                resumo["Num_Threads"].eq(threads)
+                & resumo["Transformation"].eq(transformacao)
+            ]
+            .set_index("OMP_Schedule")
+            .reindex(schedules)
+        )
+        if dados_eventos["Workload_Iterations"].isna().any():
+            raise PlotError(
+                f"faltam eventos de hardware de {transformacao} com {threads} threads"
+            )
+
+        eixo = eixos[linha, 0]
+        eixo.plot(
+            x,
+            dados_speedup["VTune_Speedup_Mediana"],
+            "o-",
+            color="#2c7fb8",
+            linewidth=2,
+            label="Sob VTune",
+        )
+        eixo.plot(
+            x,
+            dados_speedup["Speedup_Original"],
+            "s--",
+            color="#f28e2b",
+            linewidth=1.7,
+            label="Benchmark original",
+        )
+        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
+        eixo.set_ylabel("Speedup vs. static")
+        eixo.set_title(
+            f"{NOMES_TRANSFORMACOES[transformacao]} — speedup", weight="bold"
+        )
+        eixo.legend(fontsize=8)
+        eixo.grid(axis="y", linestyle="--", alpha=0.3)
+
+        for coluna, (metrica, titulo) in enumerate(metricas, start=1):
+            eixo = eixos[linha, coluna]
+            valores = dados_eventos[metrica] / 1e9
+            eixo.plot(x, valores, "o-", color="#d7301f", linewidth=2)
+            referencia = float(valores.iloc[0])
+            eixo.axhline(
+                referencia, color="black", linestyle="--", linewidth=1,
+                label="static",
+            )
+            eixo.set_title(titulo, weight="bold")
+            eixo.set_ylabel("Bilhões por passagem")
+            eixo.grid(axis="y", linestyle="--", alpha=0.3)
+
+        for eixo in eixos[linha]:
+            configurar_eixo_schedule(eixo, schedules)
+
+    fig.suptitle(
+        f"Zoom: ciclos de espera nas funções da transformação — {threads} threads",
+        fontsize=19,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.012,
+        "Contadores hw-events somados apenas nas funções de Zoom In/Out e divididos pelas repetições internas. "
+        "Cada passagem contém as 13 imagens; a linha tracejada é o valor static. Contagens são estimativas de amostragem.",
+        ha="center",
+        fontsize=10,
+    )
+    fig.tight_layout(rect=(0.02, 0.045, 0.99, 0.96), h_pad=2.5, w_pad=2.0)
+    fig.savefig(destino, dpi=240)
+    plt.close(fig)
+
+
+def plotar_comparacao_zoom(
+    eventos: pd.DataFrame,
+    resumo: pd.DataFrame,
+    transformacoes: Sequence[str],
+    threads: int,
+    destino: Path,
+) -> None:
+    """Compara a sensibilidade dos zooms com as demais transformações."""
+    schedules = [f"dynamic_{chunk}" for chunk in (1, 2, 4, 8)]
+    dados = resumo[
+        resumo["Num_Threads"].eq(threads)
+        & resumo["OMP_Schedule"].isin(schedules)
+    ][CHAVES_CONDICAO + ["VTune_Speedup_Mediana"]].merge(
+        eventos[
+            eventos["Num_Threads"].eq(threads)
+            & eventos["OMP_Schedule"].isin(schedules)
+        ][
+            CHAVES_CONDICAO
+            + [
+                "Fator_L1_Pending_Cycles",
+                "Fator_L2_Pending_Cycles",
+                "Fator_Store_Buffer_Stalls",
+            ]
+        ],
+        on=CHAVES_CONDICAO,
+        how="left",
+        validate="one_to_one",
+    )
+    paineis = [
+        ("VTune_Speedup_Mediana", "Speedup VTune"),
+        ("Fator_L1_Pending_Cycles", "Ciclos L1 / static"),
+        ("Fator_L2_Pending_Cycles", "Ciclos L2 / static"),
+        ("Fator_Store_Buffer_Stalls", "Store-buffer stalls / static"),
+    ]
+    fig, eixos = plt.subplots(1, 4, figsize=(25, 12))
+
+    for indice, (metrica, titulo) in enumerate(paineis):
+        pivo = (
+            dados.pivot(
+                index="Transformation", columns="OMP_Schedule", values=metrica
+            )
+            .reindex(index=transformacoes, columns=schedules)
+        )
+        positivos = pivo.where(pivo > 0)
+        log2 = np.log2(positivos)
+        limite = float(np.nanmax(np.abs(log2.to_numpy())))
+        limite = max(0.25, limite)
+        anotacoes = pivo.map(
+            lambda valor: "" if pd.isna(valor) else f"{valor:.2f}×"
+        )
+        sns.heatmap(
+            log2,
+            ax=eixos[indice],
+            cmap="RdYlGn" if indice == 0 else "RdYlGn_r",
+            center=0,
+            vmin=-limite,
+            vmax=limite,
+            annot=anotacoes,
+            fmt="",
+            linewidths=0.35,
+            linecolor="white",
+            cbar_kws={"label": "log2(fator)"},
+            mask=log2.isna(),
+        )
+        eixos[indice].set_title(titulo, weight="bold")
+        eixos[indice].set_xlabel("Chunk dinâmico")
+        eixos[indice].set_ylabel("" if indice else "Transformação")
+        eixos[indice].set_xticklabels(["1", "2", "4", "8"], rotation=0)
+        if indice:
+            eixos[indice].set_yticklabels([])
+        else:
+            eixos[indice].set_yticklabels(
+                [NOMES_TRANSFORMACOES.get(nome, nome) for nome in transformacoes],
+                rotation=0,
+            )
+            for rotulo, nome in zip(eixos[indice].get_yticklabels(), transformacoes):
+                if nome in {"Zoom_In", "Zoom_Out"}:
+                    rotulo.set_weight("bold")
+
+    fig.suptitle(
+        f"Chunks dinâmicos pequenos: zoom comparado às demais transformações — {threads} threads",
+        fontsize=18,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.012,
+        "Nas três matrizes de eventos, valores acima de 1 indicam mais ciclos de espera que static. "
+        "São somadas somente funções identificadas da transformação; células vazias não tiveram referência amostrada.",
+        ha="center",
+        fontsize=10,
+    )
+    fig.tight_layout(rect=(0.01, 0.045, 0.995, 0.96), w_pad=1.5)
+    fig.savefig(destino, dpi=240)
+    plt.close(fig)
+
+
 def plotar_rotacoes(
     resumo: pd.DataFrame, schedules: Sequence[str], threads: int, destino: Path
 ) -> None:
@@ -1136,6 +1482,125 @@ def salvar_relatorio_texto(
     destino.write_text("\n".join(linhas) + "\n", encoding="utf-8")
 
 
+def salvar_relatorio_zoom(
+    eventos: pd.DataFrame, resumo: pd.DataFrame, destino: Path
+) -> None:
+    """Documenta o calculo e os indícios observados nos dois zooms."""
+
+    def obter(
+        dados: pd.DataFrame, threads: int, schedule: str, transformacao: str
+    ) -> pd.Series:
+        selecao = dados[
+            dados["Num_Threads"].eq(threads)
+            & dados["OMP_Schedule"].eq(schedule)
+            & dados["Transformation"].eq(transformacao)
+        ]
+        if len(selecao) != 1:
+            raise PlotError(
+                "condição ausente na análise de zoom: "
+                f"{threads}, {schedule}, {transformacao}"
+            )
+        return selecao.iloc[0]
+
+    def fator(valor: object) -> str:
+        numero = float(valor)
+        return "indisponível" if not np.isfinite(numero) else f"{numero:.2f}×"
+
+    linhas = [
+        "Zoom In e Zoom Out: análise dos chunks dinâmicos pequenos",
+        "==========================================================",
+        "",
+        "O que foi medido",
+        "-----------------",
+        "",
+        "- Speedup: média geométrica, entre as imagens, da mediana static dividida pela mediana do schedule.",
+        "- Eventos: soma dos endereços pertencentes às funções da transformação no relatório hw-events, dividida por Workload_Iterations.",
+        "- Razão de evento: contagem por passagem do schedule dividida pela contagem por passagem de static, no mesmo número de threads.",
+        "- L1 pending: ciclos amostrados em CYCLE_ACTIVITY.STALLS_L1D_PENDING.",
+        "- L2 pending: ciclos amostrados em CYCLE_ACTIVITY.STALLS_L2_PENDING.",
+        "- Store-buffer stalls: ciclos amostrados em RESOURCE_STALLS.SB.",
+        "",
+        "Uma passagem corresponde a aplicar a transformação às 13 imagens. Os valores são estimativas do VTune, e não tempos exclusivos que possam ser somados entre si.",
+        "",
+        "Resultados em dynamic 1",
+        "------------------------",
+    ]
+
+    for threads in sorted(THREADS_ESPERADAS):
+        linhas.extend(["", f"{threads} threads:"])
+        dinamico_threads = resumo[
+            resumo["Num_Threads"].eq(threads)
+            & resumo["OMP_Schedule"].eq("dynamic_1")
+        ].sort_values("VTune_Speedup_Mediana")
+        ordem = dinamico_threads["Transformation"].tolist()
+        for transformacao in ("Zoom_In", "Zoom_Out"):
+            desempenho = obter(resumo, threads, "dynamic_1", transformacao)
+            evento = obter(eventos, threads, "dynamic_1", transformacao)
+            estatico = obter(resumo, threads, "static", transformacao)
+            posicao = ordem.index(transformacao) + 1
+            linhas.append(
+                f"- {NOMES_TRANSFORMACOES[transformacao]}: speedup original="
+                f"{desempenho['Speedup_Original']:.3f}×; sob VTune="
+                f"{desempenho['VTune_Speedup_Mediana']:.3f}× (posição {posicao}/18, "
+                "da maior perda para o maior ganho); L1 pending/static="
+                f"{fator(evento['Fator_L1_Pending_Cycles'])}; L2 pending/static="
+                f"{fator(evento['Fator_L2_Pending_Cycles'])}; store-buffer stalls/static="
+                f"{fator(evento['Fator_Store_Buffer_Stalls'])}."
+            )
+            linhas.append(
+                "  Nos frames: CPU-time dynamic/static="
+                f"{(1.0 / desempenho['Fator_Trabalho_CPU']):.2f}×; "
+                f"CPI dynamic/static={(1.0 / desempenho['Fator_CPI']):.2f}×; "
+                f"núcleos ativos={desempenho['Nucleos_ativos']:.2f} "
+                f"(static={estatico['Nucleos_ativos']:.2f}); Memory Bound="
+                f"{desempenho['Memory_Bound_Percent']:.1f}% "
+                f"(static={estatico['Memory_Bound_Percent']:.1f}%); Store Bound="
+                f"{desempenho['Memory_Bound_Store_Bound_Percent']:.1f}% "
+                f"(static={estatico['Memory_Bound_Store_Bound_Percent']:.1f}%)."
+            )
+
+    zoom_20_out = obter(resumo, 20, "dynamic_1", "Zoom_Out")
+    zoom_40_in = obter(resumo, 40, "dynamic_1", "Zoom_In")
+    zoom_40_out = obter(resumo, 40, "dynamic_1", "Zoom_Out")
+    evento_40_in = obter(eventos, 40, "dynamic_1", "Zoom_In")
+    evento_40_out = obter(eventos, 40, "dynamic_1", "Zoom_Out")
+
+    linhas.extend(
+        [
+            "",
+            "Interpretação",
+            "-------------",
+            "",
+            f"A perda de Zoom Out com 20 threads não foi reproduzida: o benchmark original mediu {zoom_20_out['Speedup_Original']:.3f}× em dynamic 1, enquanto a coleta VTune mediu {zoom_20_out['VTune_Speedup_Mediana']:.3f}×. Os contadores dessa coleta não explicam aquela perda original. Com 40 threads, as perdas de Zoom In ({zoom_40_in['Speedup_Original']:.3f}× original; {zoom_40_in['VTune_Speedup_Mediana']:.3f}× VTune) e Zoom Out ({zoom_40_out['Speedup_Original']:.3f}× original; {zoom_40_out['VTune_Speedup_Mediana']:.3f}× VTune) aparecem nos dois experimentos e podem ser relacionadas aos eventos abaixo.",
+            "",
+            "Zoom In executa três laços paralelos sobre uma saída com aproximadamente quatro vezes mais pixels: escreve posições pares, preenche lacunas horizontais e depois linhas ímpares. Chunks muito pequenos redistribuem as linhas entre threads em cada fase. Os aumentos simultâneos de ciclos com L1/L2 pendentes e de stalls do store buffer, junto ao CPI maior, mostram pressão no caminho de stores e na hierarquia de memória dentro da transformação.",
+            "",
+            "Zoom Out lê blocos 2x2 de duas linhas da entrada e grava uma linha de saída. O trabalho por pixel de saída é regular, portanto dynamic não oferece um ganho relevante de balanceamento. Quando seus eventos e CPI sobem, o custo de distribuir muitos chunks e as esperas de memória/stores ficam sem um benefício que os compense. Estes contadores não distinguem, sozinhos, cache misses, contenção e mudança de posse das linhas de cache.",
+            "",
+            f"Em 40 threads e dynamic 1, a quantidade de instruções nas funções praticamente não mudou: Zoom In={evento_40_in['Fator_Instructions']:.3f}× static e Zoom Out={evento_40_out['Fator_Instructions']:.3f}× static. Os stores retirados também não explicam a elevação dos stalls: Zoom In={evento_40_in['Fator_Retired_Stores']:.3f}× e Zoom Out={evento_40_out['Fator_Retired_Stores']:.3f}× static. Ao mesmo tempo, os núcleos ativos aumentaram ligeiramente. Portanto, os dados descartam mais trabalho algorítmico e falta global de threads como explicações principais. O sinal dominante é cada instrução custar mais ciclos, acompanhado de mais esperas na hierarquia de memória e no caminho de stores; o overhead do runtime OpenMP, que o filtro por função não mede, também pode contribuir.",
+            "",
+            "As matrizes de comparação mostram que um fator isolado pode ser enganoso. Escala de cinza, por exemplo, tem uma grande razão de L1 em 40 threads porque a referência static era muito pequena, mas L2 não cresce e o CPI permanece próximo de static. As rotações têm grandes razões de store-buffer stalls e também apresentam uma anomalia de desempenho própria. Nos zooms, a conclusão vem do conjunto coerente de sinais: perda de tempo reproduzida, instruções constantes, paralelismo preservado, CPI maior e aumento simultâneo dos eventos relevantes.",
+            "",
+            "Transformações in-place fazem uma passagem linear sem criar uma saída ampliada; os Gaussianos reutilizam mais dados e fazem muito mais cálculo por item, diluindo o custo do runtime; o Gaussiano adaptativo tem trabalho irregular e pode recuperar esse custo com melhor balanceamento.",
+            "",
+            "O resultado sustenta que os chunks pequenos pioraram os zooms por elevar o custo por instrução e a espera ligada à memória/stores, sem falta de threads ativas. Ele não demonstra page faults nem permite atribuir toda a perda a uma única cache.",
+            "",
+            "Nos chunks muito grandes, os eventos agregados caem porque há menos threads e menos ciclos ativos ao mesmo tempo, mas o speedup também cai. Esse extremo é explicado pela perda de paralelismo e deve ser separado do comportamento de chunks pequenos.",
+            "",
+            "Limites",
+            "-------",
+            "",
+            "- Os eventos são contadores amostrados e multiplexados pelo VTune; diferenças grandes e repetidas são mais confiáveis que variações pequenas.",
+            "- O filtro por símbolo inclui as funções dos zooms e exclui malloc, runtime OpenMP, kernel, leitura e restauração das imagens. Esses custos ainda afetam o tempo, mas não as contagens mostradas.",
+            "- L1/L2 pending contam ciclos com requisições pendentes; não equivalem diretamente a número de misses nem à latência média de cada acesso.",
+            "- RESOURCE_STALLS.SB indica ciclos em que a alocação de execução ficou bloqueada por falta de entradas no store buffer; não é uma contagem de stores.",
+            "- Cada condição foi coletada em um processo separado e há uma coleta por condição. A campanha demonstra associação entre schedule, eventos e tempo, sem isolar efeitos de ordem, alocador ou colocação NUMA.",
+            "- Células vazias nas matrizes significam evento ausente ou referência static igual a zero, não ausência comprovada do gargalo.",
+        ]
+    )
+    destino.write_text("\n".join(linhas) + "\n", encoding="utf-8")
+
+
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("vtune_csv", type=Path, help="benchmark_transformacoes_vtune.csv")
@@ -1168,12 +1633,15 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     try:
         print(f"Lendo CSV VTune em blocos: {vtune_csv}")
-        frames, cobertura = carregar_frames_vtune(vtune_csv, argumentos.chunk_size)
+        frames, cobertura, eventos_funcoes = carregar_frames_vtune(
+            vtune_csv, argumentos.chunk_size
+        )
         print(
             f"Tempos: {len(frames):,} | cobertura de frames: {cobertura:.2%}"
         )
         por_imagem = agregar_por_imagem(frames)
         resumo = resumir_condicoes(por_imagem)
+        eventos_hardware = agregar_eventos_hardware(eventos_funcoes)
         original, transformacoes = carregar_speedup_original(benchmark_csv)
         resumo = resumo.merge(
             original, on=CHAVES_CONDICAO, how="left", validate="one_to_one"
@@ -1196,6 +1664,32 @@ def main(argv: Sequence[str] | None = None) -> int:
         resumo.to_csv(destino / "vtune_diagnostic_metrics.csv", index=False)
         por_imagem.to_csv(destino / "vtune_metrics_by_image.csv", index=False)
         salvar_relatorio_texto(resumo, cobertura, destino / "README.txt")
+
+        destino_zoom = destino / "zoom"
+        destino_zoom.mkdir(parents=True, exist_ok=True)
+        eventos_hardware = eventos_hardware.sort_values(
+            ["Num_Threads", "Transformation", "OMP_Schedule"],
+            key=lambda coluna: (
+                coluna.map(
+                    {nome: indice for indice, nome in enumerate(transformacoes)}
+                )
+                if coluna.name == "Transformation"
+                else coluna.map(
+                    {nome: indice for indice, nome in enumerate(schedules)}
+                )
+                if coluna.name == "OMP_Schedule"
+                else coluna
+            ),
+        )
+        eventos_hardware.to_csv(
+            destino_zoom / "eventos_hardware_transformacoes.csv", index=False
+        )
+        eventos_hardware[
+            eventos_hardware["Transformation"].isin({"Zoom_In", "Zoom_Out"})
+        ].to_csv(destino_zoom / "eventos_zoom.csv", index=False)
+        salvar_relatorio_zoom(
+            eventos_hardware, resumo, destino_zoom / "README.txt"
+        )
 
         plotar_reproducao(resumo, destino / "comparacao_speedup_original_vtune.png")
         cores_transformacoes = dict(
@@ -1240,6 +1734,21 @@ def main(argv: Sequence[str] | None = None) -> int:
                 schedules,
                 quantidade_threads,
                 destino / f"casos_contrastantes_vtune_{quantidade_threads}_threads.png",
+            )
+            plotar_eventos_zoom(
+                eventos_hardware,
+                resumo,
+                schedules,
+                quantidade_threads,
+                destino_zoom / f"eventos_zoom_{quantidade_threads}_threads.png",
+            )
+            plotar_comparacao_zoom(
+                eventos_hardware,
+                resumo,
+                transformacoes,
+                quantidade_threads,
+                destino_zoom
+                / f"comparacao_dynamic_pequeno_{quantidade_threads}_threads.png",
             )
     except (OSError, ValueError, KeyError, pd.errors.ParserError, PlotError) as erro:
         print(f"Erro: {erro}", file=sys.stderr)
