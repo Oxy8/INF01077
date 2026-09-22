@@ -1,0 +1,6 @@
+Experiment,Build,Image,Width,Height,Threads,Schedule,Chunk,Samples,Elapsed_ms_Median,Elapsed_ms_Min,Elapsed_ms_Max,Elapsed_ms_Mean,Elapsed_ms_StdDev
+flip-schedule-confirmation,omp-avx2,6000x6000.png,6000,6000,20,dynamic,1,12,4.802278,4.767638,4.945167,4.813509,0.050251
+flip-schedule-confirmation,omp-avx2,6000x6000.png,6000,6000,20,dynamic,16,12,5.039063,4.832979,6.520484,5.151801,0.441532
+flip-schedule-confirmation,omp-avx2,6000x6000.png,6000,6000,20,static,,12,5.230911,5.172015,5.381826,5.248502,0.062933
+flip-schedule-confirmation,omp-avx2,6000x6000.png,6000,6000,20,static,1,12,4.915017,4.794148,4.985493,4.901334,0.069065
+flip-schedule-confirmation,omp-avx2,6000x6000.png,6000,6000,20,static,16,12,5.324120,5.232582,5.520374,5.360882,0.092306
