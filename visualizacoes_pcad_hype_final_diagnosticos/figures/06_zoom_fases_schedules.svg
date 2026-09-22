@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Zoom pré-tocado, 20 threads: onde cada schedule gasta tempo">
+<title>Zoom pré-tocado, 20 threads: onde cada schedule gasta tempo</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Zoom pré-tocado, 20 threads: onde cada schedule gasta tempo</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">3.71 ms</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">7.42 ms</text>
+<line class="grid" x1="821.3" x2="821.3" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.3" y="487">11.12 ms</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">14.83 ms</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="122.1">static (padrão)</text>
+<rect x="255.0" y="82.6" width="312.2" height="13.7" fill="#1f77b4"/>
+<text class="small" x="573.2" y="93.3">6.13 ms</text>
+<rect x="255.0" y="100.2" width="247.4" height="13.7" fill="#2ca02c"/>
+<text class="small" x="508.4" y="110.9">4.86 ms</text>
+<rect x="255.0" y="117.8" width="320.3" height="13.7" fill="#d62728"/>
+<text class="small" x="581.3" y="128.5">6.29 ms</text>
+<text class="axis" text-anchor="end" x="243" y="201.1">static,1</text>
+<rect x="255.0" y="161.6" width="446.3" height="13.7" fill="#1f77b4"/>
+<text class="small" x="707.3" y="172.3">8.77 ms</text>
+<rect x="255.0" y="179.2" width="399.7" height="13.7" fill="#2ca02c"/>
+<text class="small" x="660.7" y="189.9">7.85 ms</text>
+<rect x="255.0" y="196.8" width="623.0" height="13.7" fill="#d62728"/>
+<text class="small" x="884.0" y="207.5">12.24 ms</text>
+<text class="axis" text-anchor="end" x="243" y="280.1">dynamic,1</text>
+<rect x="255.0" y="240.6" width="447.9" height="13.7" fill="#1f77b4"/>
+<text class="small" x="708.9" y="251.3">8.80 ms</text>
+<rect x="255.0" y="258.2" width="390.0" height="13.7" fill="#2ca02c"/>
+<text class="small" x="651.0" y="268.9">7.66 ms</text>
+<rect x="255.0" y="275.8" width="686.4" height="13.7" fill="#d62728"/>
+<text class="small" x="947.4" y="286.5">13.48 ms</text>
+<text class="axis" text-anchor="end" x="243" y="359.1">dynamic,16</text>
+<rect x="255.0" y="319.6" width="439.5" height="13.7" fill="#1f77b4"/>
+<text class="small" x="700.5" y="330.3">8.63 ms</text>
+<rect x="255.0" y="337.2" width="389.0" height="13.7" fill="#2ca02c"/>
+<text class="small" x="650.0" y="347.9">7.64 ms</text>
+<rect x="255.0" y="354.8" width="632.9" height="13.7" fill="#d62728"/>
+<text class="small" x="893.9" y="365.5">12.43 ms</text>
+<text class="axis" text-anchor="end" x="243" y="438.1">dynamic,64</text>
+<rect x="255.0" y="398.6" width="445.1" height="13.7" fill="#1f77b4"/>
+<text class="small" x="706.1" y="409.3">8.74 ms</text>
+<rect x="255.0" y="416.2" width="393.1" height="13.7" fill="#2ca02c"/>
+<text class="small" x="654.1" y="426.9">7.72 ms</text>
+<rect x="255.0" y="433.8" width="618.7" height="13.7" fill="#d62728"/>
+<text class="small" x="879.7" y="444.5">12.15 ms</text>
+<rect x="255" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="504">Cópia</text>
+<rect x="435" y="492" width="15" height="15" fill="#2ca02c"/>
+<text class="legend" x="457" y="504">Horizontal</text>
+<rect x="615" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="637" y="504">Vertical</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo da fase (ms)</text>
+</svg>

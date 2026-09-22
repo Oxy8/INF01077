@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Flip Horizontal: razão pareada static / schedule">
+<title>Flip Horizontal: razão pareada static / schedule</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Flip Horizontal: razão pareada static / schedule</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">0.77</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">0.87</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">0.96</text>
+<line class="grid" x1="105" x2="930" y1="205.3" y2="205.3"/>
+<text class="axis" text-anchor="end" x="95" y="210.3">1.06</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">1.15</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="180.0" x2="180.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="180.0" y="632">2</text>
+<line class="frame" x1="255.0" x2="255.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="255.0" y="632">3</text>
+<line class="frame" x1="330.0" x2="330.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="330.0" y="632">4</text>
+<line class="frame" x1="405.0" x2="405.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="405.0" y="632">5</text>
+<line class="frame" x1="480.0" x2="480.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="480.0" y="632">6</text>
+<line class="frame" x1="555.0" x2="555.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="555.0" y="632">7</text>
+<line class="frame" x1="630.0" x2="630.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="630.0" y="632">8</text>
+<line class="frame" x1="705.0" x2="705.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="705.0" y="632">9</text>
+<line class="frame" x1="780.0" x2="780.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="780.0" y="632">10</text>
+<line class="frame" x1="855.0" x2="855.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="855.0" y="632">11</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">12</text>
+<line x1="105" x2="930" y1="284.5" y2="284.5" stroke="#555555" stroke-width="2" stroke-dasharray="7,5"/>
+<text class="note" x="940" y="288.5">empate</text>
+<polyline points="105.0,201.8 180.0,116.5 255.0,151.3 330.0,211.9 405.0,216.0 480.0,221.4 555.0,185.3 630.0,175.6 705.0,159.7 780.0,173.2 855.0,208.0 930.0,189.2" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="201.8" r="4" fill="#d62728"/>
+<circle cx="180.0" cy="116.5" r="4" fill="#d62728"/>
+<circle cx="255.0" cy="151.3" r="4" fill="#d62728"/>
+<circle cx="330.0" cy="211.9" r="4" fill="#d62728"/>
+<circle cx="405.0" cy="216.0" r="4" fill="#d62728"/>
+<circle cx="480.0" cy="221.4" r="4" fill="#d62728"/>
+<circle cx="555.0" cy="185.3" r="4" fill="#d62728"/>
+<circle cx="630.0" cy="175.6" r="4" fill="#d62728"/>
+<circle cx="705.0" cy="159.7" r="4" fill="#d62728"/>
+<circle cx="780.0" cy="173.2" r="4" fill="#d62728"/>
+<circle cx="855.0" cy="208.0" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="189.2" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="76">static,1</text>
+<polyline points="105.0,343.5 180.0,251.1 255.0,252.4 330.0,348.5 405.0,311.1 480.0,364.4 555.0,320.3 630.0,300.4 705.0,291.1 780.0,349.3 855.0,315.6 930.0,315.8" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="343.5" r="4" fill="#2ca02c"/>
+<circle cx="180.0" cy="251.1" r="4" fill="#2ca02c"/>
+<circle cx="255.0" cy="252.4" r="4" fill="#2ca02c"/>
+<circle cx="330.0" cy="348.5" r="4" fill="#2ca02c"/>
+<circle cx="405.0" cy="311.1" r="4" fill="#2ca02c"/>
+<circle cx="480.0" cy="364.4" r="4" fill="#2ca02c"/>
+<circle cx="555.0" cy="320.3" r="4" fill="#2ca02c"/>
+<circle cx="630.0" cy="300.4" r="4" fill="#2ca02c"/>
+<circle cx="705.0" cy="291.1" r="4" fill="#2ca02c"/>
+<circle cx="780.0" cy="349.3" r="4" fill="#2ca02c"/>
+<circle cx="855.0" cy="315.6" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="315.8" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="98">static,16</text>
+<polyline points="105.0,203.5 180.0,112.7 255.0,131.0 330.0,160.4 405.0,151.3 480.0,154.0 555.0,173.0 630.0,142.1 705.0,162.8 780.0,167.4 855.0,182.7 930.0,140.1" fill="none" stroke="#9467bd" stroke-width="2.5"/>
+<circle cx="105.0" cy="203.5" r="4" fill="#9467bd"/>
+<circle cx="180.0" cy="112.7" r="4" fill="#9467bd"/>
+<circle cx="255.0" cy="131.0" r="4" fill="#9467bd"/>
+<circle cx="330.0" cy="160.4" r="4" fill="#9467bd"/>
+<circle cx="405.0" cy="151.3" r="4" fill="#9467bd"/>
+<circle cx="480.0" cy="154.0" r="4" fill="#9467bd"/>
+<circle cx="555.0" cy="173.0" r="4" fill="#9467bd"/>
+<circle cx="630.0" cy="142.1" r="4" fill="#9467bd"/>
+<circle cx="705.0" cy="162.8" r="4" fill="#9467bd"/>
+<circle cx="780.0" cy="167.4" r="4" fill="#9467bd"/>
+<circle cx="855.0" cy="182.7" r="4" fill="#9467bd"/>
+<circle cx="930.0" cy="140.1" r="4" fill="#9467bd"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#9467bd" stroke-width="3"/>
+<text class="legend" x="980" y="120">dynamic,1</text>
+<polyline points="105.0,564.3 180.0,187.8 255.0,197.6 330.0,204.0 405.0,236.9 480.0,298.7 555.0,235.9 630.0,225.3 705.0,215.6 780.0,238.3 855.0,174.4 930.0,220.9" fill="none" stroke="#ff7f0e" stroke-width="2.5"/>
+<circle cx="105.0" cy="564.3" r="4" fill="#ff7f0e"/>
+<circle cx="180.0" cy="187.8" r="4" fill="#ff7f0e"/>
+<circle cx="255.0" cy="197.6" r="4" fill="#ff7f0e"/>
+<circle cx="330.0" cy="204.0" r="4" fill="#ff7f0e"/>
+<circle cx="405.0" cy="236.9" r="4" fill="#ff7f0e"/>
+<circle cx="480.0" cy="298.7" r="4" fill="#ff7f0e"/>
+<circle cx="555.0" cy="235.9" r="4" fill="#ff7f0e"/>
+<circle cx="630.0" cy="225.3" r="4" fill="#ff7f0e"/>
+<circle cx="705.0" cy="215.6" r="4" fill="#ff7f0e"/>
+<circle cx="780.0" cy="238.3" r="4" fill="#ff7f0e"/>
+<circle cx="855.0" cy="174.4" r="4" fill="#ff7f0e"/>
+<circle cx="930.0" cy="220.9" r="4" fill="#ff7f0e"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#ff7f0e" stroke-width="3"/>
+<text class="legend" x="980" y="142">dynamic,16</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Rodada embaralhada</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Speedup static / schedule (×)</text>
+</svg>

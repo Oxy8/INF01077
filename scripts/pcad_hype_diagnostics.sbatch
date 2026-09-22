@@ -22,6 +22,19 @@ FLIP_RAW="$RESULT_DIR/flip_raw.csv"
 FLIP_THREADS="$RESULT_DIR/flip_threads_raw.csv"
 REFERENCE_HASHES="$RESULT_DIR/reference_hashes.csv"
 
+# O PCAD pode disponibilizar apenas python3. O resumo usa somente a biblioteca
+# padrão (csv, statistics e argparse), sem pacotes instalados pelo usuário.
+PYTHON_BIN="${PYTHON_BIN:-}"
+if [[ -z "$PYTHON_BIN" ]]; then
+    for candidate in python3 python; do
+        if command -v "$candidate" >/dev/null 2>&1; then
+            PYTHON_BIN="$candidate"
+            break
+        fi
+    done
+fi
+[[ -n "$PYTHON_BIN" ]] || { echo "Python 3 não encontrado; os CSVs brutos serão preservados, mas o resumo não pode ser gerado." >&2; exit 127; }
+
 mkdir -p "$RESULT_DIR/compiler"
 cd "$SUBMIT_DIR"
 [[ -f "$IMAGE" ]] || { echo "Imagem ausente: $IMAGE" >&2; exit 2; }
@@ -82,7 +95,7 @@ OMP_NUM_THREADS=20 OMP_SCHEDULE=static build/omp-avx2/diagnostic_runner \
     --mode flip --image "$IMAGE" --output "$FLIP_RAW" --thread-output "$FLIP_THREADS" \
     --experiment flip-schedule-confirmation --touch fresh --repeats 12 --seed 823349
 
-python summarize_diagnostics.py \
+"$PYTHON_BIN" summarize_diagnostics.py \
     --zoom-raw "$ZOOM_RAW" --zoom-summary "$RESULT_DIR/zoom_phases_summary.csv" \
     --flip-raw "$FLIP_RAW" --flip-summary "$RESULT_DIR/flip_summary.csv"
 

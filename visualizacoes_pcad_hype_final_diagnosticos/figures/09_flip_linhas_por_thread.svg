@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Flip Horizontal: distribuição de linhas por thread">
+<title>Flip Horizontal: distribuição de linhas por thread</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="250" y="34">Flip Horizontal: distribuição de linhas por thread</text>
+<text class="note" x="250" y="58">Cada célula = linhas médias / 300; 1× é a divisão perfeitamente uniforme.</text>
+<text class="axis" text-anchor="end" x="240" y="149.7">static (padrão)</text>
+<rect x="250.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="270.8" y="149.0">1.00×</text>
+<rect x="291.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="312.2" y="149.0">1.00×</text>
+<rect x="333.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="353.8" y="149.0">1.00×</text>
+<rect x="374.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="395.2" y="149.0">1.00×</text>
+<rect x="416.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="436.8" y="149.0">1.00×</text>
+<rect x="457.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="478.2" y="149.0">1.00×</text>
+<rect x="499.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="519.8" y="149.0">1.00×</text>
+<rect x="540.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="561.2" y="149.0">1.00×</text>
+<rect x="582.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="602.8" y="149.0">1.00×</text>
+<rect x="623.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="644.2" y="149.0">1.00×</text>
+<rect x="665.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="685.8" y="149.0">1.00×</text>
+<rect x="706.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="727.2" y="149.0">1.00×</text>
+<rect x="748.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="768.8" y="149.0">1.00×</text>
+<rect x="789.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="810.2" y="149.0">1.00×</text>
+<rect x="831.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="851.8" y="149.0">1.00×</text>
+<rect x="872.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="893.2" y="149.0">1.00×</text>
+<rect x="914.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="934.8" y="149.0">1.00×</text>
+<rect x="955.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="976.2" y="149.0">1.00×</text>
+<rect x="997.0" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1017.8" y="149.0">1.00×</text>
+<rect x="1038.5" y="105.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1059.2" y="149.0">1.00×</text>
+<text class="axis" text-anchor="end" x="240" y="220.7">static,1</text>
+<rect x="250.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="270.8" y="220.0">1.00×</text>
+<rect x="291.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="312.2" y="220.0">1.00×</text>
+<rect x="333.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="353.8" y="220.0">1.00×</text>
+<rect x="374.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="395.2" y="220.0">1.00×</text>
+<rect x="416.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="436.8" y="220.0">1.00×</text>
+<rect x="457.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="478.2" y="220.0">1.00×</text>
+<rect x="499.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="519.8" y="220.0">1.00×</text>
+<rect x="540.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="561.2" y="220.0">1.00×</text>
+<rect x="582.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="602.8" y="220.0">1.00×</text>
+<rect x="623.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="644.2" y="220.0">1.00×</text>
+<rect x="665.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="685.8" y="220.0">1.00×</text>
+<rect x="706.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="727.2" y="220.0">1.00×</text>
+<rect x="748.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="768.8" y="220.0">1.00×</text>
+<rect x="789.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="810.2" y="220.0">1.00×</text>
+<rect x="831.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="851.8" y="220.0">1.00×</text>
+<rect x="872.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="893.2" y="220.0">1.00×</text>
+<rect x="914.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="934.8" y="220.0">1.00×</text>
+<rect x="955.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="976.2" y="220.0">1.00×</text>
+<rect x="997.0" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1017.8" y="220.0">1.00×</text>
+<rect x="1038.5" y="176.0" width="41.5" height="71.0" fill="rgb(235,245,255)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1059.2" y="220.0">1.00×</text>
+<text class="axis" text-anchor="end" x="240" y="291.7">static,16</text>
+<rect x="250.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="270.8" y="291.0">1.01×</text>
+<rect x="291.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="312.2" y="291.0">1.01×</text>
+<rect x="333.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="353.8" y="291.0">1.01×</text>
+<rect x="374.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="395.2" y="291.0">1.01×</text>
+<rect x="416.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="436.8" y="291.0">1.01×</text>
+<rect x="457.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="478.2" y="291.0">1.01×</text>
+<rect x="499.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="519.8" y="291.0">1.01×</text>
+<rect x="540.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="561.2" y="291.0">1.01×</text>
+<rect x="582.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="602.8" y="291.0">1.01×</text>
+<rect x="623.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="644.2" y="291.0">1.01×</text>
+<rect x="665.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="685.8" y="291.0">1.01×</text>
+<rect x="706.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="727.2" y="291.0">1.01×</text>
+<rect x="748.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="768.8" y="291.0">1.01×</text>
+<rect x="789.5" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="810.2" y="291.0">1.01×</text>
+<rect x="831.0" y="247.0" width="41.5" height="71.0" fill="rgb(228,242,245)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="851.8" y="291.0">1.01×</text>
+<rect x="872.5" y="247.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="893.2" y="291.0">0.96×</text>
+<rect x="914.0" y="247.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="934.8" y="291.0">0.96×</text>
+<rect x="955.5" y="247.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="976.2" y="291.0">0.96×</text>
+<rect x="997.0" y="247.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1017.8" y="291.0">0.96×</text>
+<rect x="1038.5" y="247.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1059.2" y="291.0">0.96×</text>
+<text class="axis" text-anchor="end" x="240" y="362.7">dynamic,1</text>
+<rect x="250.0" y="318.0" width="41.5" height="71.0" fill="rgb(148,215,132)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="270.8" y="362.0">1.17×</text>
+<rect x="291.5" y="318.0" width="41.5" height="71.0" fill="rgb(213,237,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="312.2" y="362.0">1.04×</text>
+<rect x="333.0" y="318.0" width="41.5" height="71.0" fill="rgb(213,237,224)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="353.8" y="362.0">1.04×</text>
+<rect x="374.5" y="318.0" width="41.5" height="71.0" fill="rgb(211,236,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="395.2" y="362.0">1.05×</text>
+<rect x="416.0" y="318.0" width="41.5" height="71.0" fill="rgb(212,237,222)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="436.8" y="362.0">1.04×</text>
+<rect x="457.5" y="318.0" width="41.5" height="71.0" fill="rgb(214,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="478.2" y="362.0">1.04×</text>
+<rect x="499.0" y="318.0" width="41.5" height="71.0" fill="rgb(215,238,227)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="519.8" y="362.0">1.04×</text>
+<rect x="540.5" y="318.0" width="41.5" height="71.0" fill="rgb(190,229,192)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="561.2" y="362.0">1.09×</text>
+<rect x="582.0" y="318.0" width="41.5" height="71.0" fill="rgb(212,237,223)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="602.8" y="362.0">1.04×</text>
+<rect x="623.5" y="318.0" width="41.5" height="71.0" fill="rgb(211,236,221)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="644.2" y="362.0">1.05×</text>
+<rect x="665.0" y="318.0" width="41.5" height="71.0" fill="rgb(249,217,201)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="685.8" y="362.0">0.94×</text>
+<rect x="706.5" y="318.0" width="41.5" height="71.0" fill="rgb(249,216,200)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="727.2" y="362.0">0.94×</text>
+<rect x="748.0" y="318.0" width="41.5" height="71.0" fill="rgb(249,216,200)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="768.8" y="362.0">0.94×</text>
+<rect x="789.5" y="318.0" width="41.5" height="71.0" fill="rgb(248,215,199)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="810.2" y="362.0">0.94×</text>
+<rect x="831.0" y="318.0" width="41.5" height="71.0" fill="rgb(249,220,205)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="851.8" y="362.0">0.95×</text>
+<rect x="872.5" y="318.0" width="41.5" height="71.0" fill="rgb(249,216,200)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="893.2" y="362.0">0.94×</text>
+<rect x="914.0" y="318.0" width="41.5" height="71.0" fill="rgb(248,215,199)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="934.8" y="362.0">0.94×</text>
+<rect x="955.5" y="318.0" width="41.5" height="71.0" fill="rgb(249,216,200)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="976.2" y="362.0">0.94×</text>
+<rect x="997.0" y="318.0" width="41.5" height="71.0" fill="rgb(248,214,198)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1017.8" y="362.0">0.94×</text>
+<rect x="1038.5" y="318.0" width="41.5" height="71.0" fill="rgb(249,218,202)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1059.2" y="362.0">0.94×</text>
+<text class="axis" text-anchor="end" x="240" y="433.7">dynamic,16</text>
+<rect x="250.0" y="389.0" width="41.5" height="71.0" fill="rgb(105,200,70)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="270.8" y="433.0">1.25×</text>
+<rect x="291.5" y="389.0" width="41.5" height="71.0" fill="rgb(223,241,238)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="312.2" y="433.0">1.02×</text>
+<rect x="333.0" y="389.0" width="41.5" height="71.0" fill="rgb(219,239,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="353.8" y="433.0">1.03×</text>
+<rect x="374.5" y="389.0" width="41.5" height="71.0" fill="rgb(219,239,232)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="395.2" y="433.0">1.03×</text>
+<rect x="416.0" y="389.0" width="41.5" height="71.0" fill="rgb(209,236,219)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="436.8" y="433.0">1.05×</text>
+<rect x="457.5" y="389.0" width="41.5" height="71.0" fill="rgb(216,238,229)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="478.2" y="433.0">1.04×</text>
+<rect x="499.0" y="389.0" width="41.5" height="71.0" fill="rgb(216,238,229)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="519.8" y="433.0">1.04×</text>
+<rect x="540.5" y="389.0" width="41.5" height="71.0" fill="rgb(175,224,170)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="561.2" y="433.0">1.12×</text>
+<rect x="582.0" y="389.0" width="41.5" height="71.0" fill="rgb(216,238,229)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="602.8" y="433.0">1.04×</text>
+<rect x="623.5" y="389.0" width="41.5" height="71.0" fill="rgb(214,237,225)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="644.2" y="433.0">1.04×</text>
+<rect x="665.0" y="389.0" width="41.5" height="71.0" fill="rgb(250,221,207)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="685.8" y="433.0">0.95×</text>
+<rect x="706.5" y="389.0" width="41.5" height="71.0" fill="rgb(248,213,196)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="727.2" y="433.0">0.93×</text>
+<rect x="748.0" y="389.0" width="41.5" height="71.0" fill="rgb(247,209,191)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="768.8" y="433.0">0.92×</text>
+<rect x="789.5" y="389.0" width="41.5" height="71.0" fill="rgb(248,213,196)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="810.2" y="433.0">0.93×</text>
+<rect x="831.0" y="389.0" width="41.5" height="71.0" fill="rgb(251,226,212)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="851.8" y="433.0">0.96×</text>
+<rect x="872.5" y="389.0" width="41.5" height="71.0" fill="rgb(247,211,194)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="893.2" y="433.0">0.93×</text>
+<rect x="914.0" y="389.0" width="41.5" height="71.0" fill="rgb(246,205,186)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="934.8" y="433.0">0.92×</text>
+<rect x="955.5" y="389.0" width="41.5" height="71.0" fill="rgb(247,209,191)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="976.2" y="433.0">0.92×</text>
+<rect x="997.0" y="389.0" width="41.5" height="71.0" fill="rgb(248,213,196)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1017.8" y="433.0">0.93×</text>
+<rect x="1038.5" y="389.0" width="41.5" height="71.0" fill="rgb(249,219,204)" stroke="#fff"/>
+<text class="small" text-anchor="middle" x="1059.2" y="433.0">0.95×</text>
+<text class="axis" text-anchor="middle" x="270.8" y="93">0</text>
+<text class="axis" text-anchor="middle" x="312.2" y="93">1</text>
+<text class="axis" text-anchor="middle" x="353.8" y="93">2</text>
+<text class="axis" text-anchor="middle" x="395.2" y="93">3</text>
+<text class="axis" text-anchor="middle" x="436.8" y="93">4</text>
+<text class="axis" text-anchor="middle" x="478.2" y="93">5</text>
+<text class="axis" text-anchor="middle" x="519.8" y="93">6</text>
+<text class="axis" text-anchor="middle" x="561.2" y="93">7</text>
+<text class="axis" text-anchor="middle" x="602.8" y="93">8</text>
+<text class="axis" text-anchor="middle" x="644.2" y="93">9</text>
+<text class="axis" text-anchor="middle" x="685.8" y="93">10</text>
+<text class="axis" text-anchor="middle" x="727.2" y="93">11</text>
+<text class="axis" text-anchor="middle" x="768.8" y="93">12</text>
+<text class="axis" text-anchor="middle" x="810.2" y="93">13</text>
+<text class="axis" text-anchor="middle" x="851.8" y="93">14</text>
+<text class="axis" text-anchor="middle" x="893.2" y="93">15</text>
+<text class="axis" text-anchor="middle" x="934.8" y="93">16</text>
+<text class="axis" text-anchor="middle" x="976.2" y="93">17</text>
+<text class="axis" text-anchor="middle" x="1017.8" y="93">18</text>
+<text class="axis" text-anchor="middle" x="1059.2" y="93">19</text>
+<rect class="frame" x="250" y="105" width="830" height="355"/>
+</svg>

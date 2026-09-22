@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Diagnósticos finais — PCAD Hype</title>
+<style>
+body{font-family:Arial,sans-serif;margin:32px;max-width:1400px;color:#202124;background:#fafafa}
+h1{margin-bottom:6px} .note{color:#555;max-width:1000px;line-height:1.45}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px}
+article{background:white;border:1px solid #ddd;padding:12px;border-radius:8px} img{width:100%;height:auto} p{margin:8px 3px 2px;line-height:1.35}
+a{color:#135aa0} code{background:#eee;padding:2px 4px}
+</style></head><body>
+<h1>Diagnósticos finais: Zoom, Flip e distribuição de trabalho</h1>
+<p class="note">Fonte: <code>resultados_pcad_hype_diagnostico_zoom_flip_compilador_823585</code>. Os gráficos de tempo resumido usam <strong>medianas</strong>; o gráfico de razões pareadas preserva cada rodada individual. As barras verticais em gráficos de linhas representam o intervalo mínimo–máximo das 10 repetições do Zoom. O Flip foi executado em 12 rodadas pareadas e com ordem embaralhada; por isso, os gráficos de razão comparam cada schedule à execução <em>static</em> da mesma rodada.</p>
+<p class="note">No pré-toque, a saída é escrita antes da região medida: ele isola o efeito de primeira alocação/páginas de memória do custo dos kernels. Nas razões do Flip, valor acima de 1× significa que o schedule comparado foi mais rápido que <em>static</em>.</p>
+<div class="grid"><article><a href="figures/01_zoom_escalabilidade_total.svg"><img src="figures/01_zoom_escalabilidade_total.svg" alt="Zoom: tempo total por threads; barras mostram mínimo–máximo."></a><p>Zoom: tempo total por threads; barras mostram mínimo–máximo.</p></article>
+<article><a href="figures/02_zoom_speedup_avx2.svg"><img src="figures/02_zoom_speedup_avx2.svg" alt="Zoom: speedup escalar de AVX2. A queda ao aumentar threads fica explícita."></a><p>Zoom: speedup escalar de AVX2. A queda ao aumentar threads fica explícita.</p></article>
+<article><a href="figures/03_zoom_fases_sem_avx2.svg"><img src="figures/03_zoom_fases_sem_avx2.svg" alt="Zoom: cópia, interpolação horizontal e interpolação vertical separadas."></a><p>Zoom: cópia, interpolação horizontal e interpolação vertical separadas.</p></article>
+<article><a href="figures/04_zoom_fases_com_avx2.svg"><img src="figures/04_zoom_fases_com_avx2.svg" alt="Zoom: cópia, interpolação horizontal e interpolação vertical separadas."></a><p>Zoom: cópia, interpolação horizontal e interpolação vertical separadas.</p></article>
+<article><a href="figures/05_zoom_schedules_pretouch.svg"><img src="figures/05_zoom_schedules_pretouch.svg" alt="Zoom, 20 threads: separar primeira escrita/páginas do custo do schedule."></a><p>Zoom, 20 threads: separar primeira escrita/páginas do custo do schedule.</p></article>
+<article><a href="figures/06_zoom_fases_schedules.svg"><img src="figures/06_zoom_fases_schedules.svg" alt="Zoom pré-tocado: cópia e as duas fases de interpolação, por schedule."></a><p>Zoom pré-tocado: cópia e as duas fases de interpolação, por schedule.</p></article>
+<article><a href="figures/07_flip_schedules_medianas.svg"><img src="figures/07_flip_schedules_medianas.svg" alt="Flip: medianas da campanha de confirmação; a tabela preserva mínimo, máximo e desvio."></a><p>Flip: medianas da campanha de confirmação; a tabela preserva mínimo, máximo e desvio.</p></article>
+<article><a href="figures/08_flip_razoes_pareadas.svg"><img src="figures/08_flip_razoes_pareadas.svg" alt="Flip: cada ponto usa a mesma rodada; acima de 1× favorece o schedule indicado."></a><p>Flip: cada ponto usa a mesma rodada; acima de 1× favorece o schedule indicado.</p></article>
+<article><a href="figures/09_flip_linhas_por_thread.svg"><img src="figures/09_flip_linhas_por_thread.svg" alt="Flip: distribuição de linhas; revela o balanceamento real das iterações."></a><p>Flip: distribuição de linhas; revela o balanceamento real das iterações.</p></article>
+<article><a href="figures/10_flip_tempo_por_thread.svg"><img src="figures/10_flip_tempo_por_thread.svg" alt="Flip: desequilíbrio temporal por thread, separado da simples contagem de linhas."></a><p>Flip: desequilíbrio temporal por thread, separado da simples contagem de linhas.</p></article></div>
+<h2>Tabelas de apoio</h2><ul><li><a href="tables/zoom_escalabilidade.csv">Zoom: medianas, intervalo mínimo–máximo e speedup AVX2</a></li>
+<li><a href="tables/zoom_schedule_pretouch.csv">Zoom: schedules, pré-toque, fases e intervalo mínimo–máximo</a></li>
+<li><a href="tables/flip_schedules_confirmacao.csv">Flip: 12 amostras por schedule, mediana, dispersão e razão contra static</a></li>
+<li><a href="tables/flip_razoes_pareadas_por_rodada.csv">Flip: razões static/schedule para cada rodada pareada</a></li>
+<li><a href="tables/flip_por_thread.csv">Flip: linhas e tempo médio por thread, normalizados por schedule</a></li></ul>
+<p class="note">Os artefatos de assembly da coleta estão em <code>resultados_pcad_hype_diagnostico_zoom_flip_compilador_823585/compiler/</code>. Os relatórios de vetorização vazios são uma limitação daquele job e não evidência de ausência de vetorização.</p>
+</body></html>

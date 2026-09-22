@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Zoom In com 20 threads: schedule e primeira escrita">
+<title>Zoom In com 20 threads: schedule e primeira escrita</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Zoom In com 20 threads: schedule e primeira escrita</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00 ms</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">19.84 ms</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">39.69 ms</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">59.53 ms</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">79.38 ms</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<text class="axis" text-anchor="end" x="243" y="113.4">static (padrão)</text>
+<rect x="255.0" y="80.5" width="201.7" height="14.7" fill="#d62728"/>
+<text class="small" x="462.7" y="92.0">21.21 ms</text>
+<rect x="255.0" y="99.3" width="164.9" height="14.7" fill="#1f77b4"/>
+<text class="small" x="425.9" y="110.8">17.34 ms</text>
+<text class="axis" text-anchor="end" x="243" y="179.3">static,1</text>
+<rect x="255.0" y="146.4" width="672.4" height="14.7" fill="#d62728"/>
+<text class="small" x="933.4" y="157.8">70.70 ms</text>
+<rect x="255.0" y="165.2" width="274.2" height="14.7" fill="#1f77b4"/>
+<text class="small" x="535.2" y="176.6">28.83 ms</text>
+<text class="axis" text-anchor="end" x="243" y="245.1">static,16</text>
+<rect x="255.0" y="212.2" width="241.5" height="14.7" fill="#d62728"/>
+<text class="small" x="502.5" y="223.7">25.39 ms</text>
+<rect x="255.0" y="231.0" width="265.6" height="14.7" fill="#1f77b4"/>
+<text class="small" x="526.6" y="242.5">27.92 ms</text>
+<text class="axis" text-anchor="end" x="243" y="311.0">dynamic,1</text>
+<rect x="255.0" y="278.0" width="686.4" height="14.7" fill="#d62728"/>
+<text class="small" x="947.4" y="289.5">72.16 ms</text>
+<rect x="255.0" y="296.8" width="285.1" height="14.7" fill="#1f77b4"/>
+<text class="small" x="546.1" y="308.3">29.97 ms</text>
+<text class="axis" text-anchor="end" x="243" y="376.8">dynamic,16</text>
+<rect x="255.0" y="343.9" width="258.5" height="14.7" fill="#d62728"/>
+<text class="small" x="519.5" y="355.3">27.17 ms</text>
+<rect x="255.0" y="362.7" width="273.2" height="14.7" fill="#1f77b4"/>
+<text class="small" x="534.2" y="374.1">28.72 ms</text>
+<text class="axis" text-anchor="end" x="243" y="442.6">dynamic,64</text>
+<rect x="255.0" y="409.7" width="223.6" height="14.7" fill="#d62728"/>
+<text class="small" x="484.6" y="421.2">23.51 ms</text>
+<rect x="255.0" y="428.5" width="271.9" height="14.7" fill="#1f77b4"/>
+<text class="small" x="532.9" y="440.0">28.58 ms</text>
+<rect x="255" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="277" y="504">Saída fresh</text>
+<rect x="435" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="457" y="504">Saída pré-tocada por static</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Tempo total (ms)</text>
+</svg>

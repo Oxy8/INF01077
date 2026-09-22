@@ -11,6 +11,8 @@ sbatch scripts/pcad_hype_diagnostics.sbatch
 ```
 
 O job de duas horas produz `resultados_pcad_hype_diagnostico_zoom_flip_compilador_<jobid>/`.
+O único uso de Python é o resumo final de CSVs; o script procura `python3` e
+usa somente a biblioteca padrão, sem dependências adicionais.
 
 | Arquivo | Conteúdo |
 | --- | --- |

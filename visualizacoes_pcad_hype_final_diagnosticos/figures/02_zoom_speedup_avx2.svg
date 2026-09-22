@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Zoom In: speedup de SIMD + AVX2">
+<title>Zoom In: speedup de SIMD + AVX2</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Zoom In: speedup de SIMD + AVX2</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">0.98</text>
+<line class="grid" x1="105" x2="930" y1="471.7" y2="471.7"/>
+<text class="axis" text-anchor="end" x="95" y="476.7">1.05</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">1.11</text>
+<line class="grid" x1="105" x2="930" y1="205.3" y2="205.3"/>
+<text class="axis" text-anchor="end" x="95" y="210.3">1.18</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">1.25</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="242.5" x2="242.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="242.5" y="632">2</text>
+<line class="frame" x1="380.0" x2="380.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="380.0" y="632">4</text>
+<line class="frame" x1="517.5" x2="517.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="517.5" y="632">8</text>
+<line class="frame" x1="655.0" x2="655.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="655.0" y="632">12</text>
+<line class="frame" x1="792.5" x2="792.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="792.5" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<line x1="105" x2="930" y1="564.3" y2="564.3" stroke="#555555" stroke-width="2" stroke-dasharray="7,5"/>
+<text class="note" x="940" y="568.3">sem ganho</text>
+<polyline points="105.0,120.3 242.5,112.7 380.0,186.4 517.5,430.6 655.0,479.5 792.5,441.2 930.0,487.2" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<circle cx="105.0" cy="120.3" r="4" fill="#8a2be2"/>
+<circle cx="242.5" cy="112.7" r="4" fill="#8a2be2"/>
+<circle cx="380.0" cy="186.4" r="4" fill="#8a2be2"/>
+<circle cx="517.5" cy="430.6" r="4" fill="#8a2be2"/>
+<circle cx="655.0" cy="479.5" r="4" fill="#8a2be2"/>
+<circle cx="792.5" cy="441.2" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="487.2" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="76">off-avx2 / omp-avx2</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Speedup (×)</text>
+</svg>

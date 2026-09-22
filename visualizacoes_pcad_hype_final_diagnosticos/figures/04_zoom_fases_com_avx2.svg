@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Zoom In com SIMD explícito + AVX2: fases internas">
+<title>Zoom In com SIMD explícito + AVX2: fases internas</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Zoom In com SIMD explícito + AVX2: fases internas</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">0.00 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">49.27 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">98.54 ms</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">147.80 ms</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">197.07 ms</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="242.5" x2="242.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="242.5" y="632">2</text>
+<line class="frame" x1="380.0" x2="380.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="380.0" y="632">4</text>
+<line class="frame" x1="517.5" x2="517.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="517.5" y="632">8</text>
+<line class="frame" x1="655.0" x2="655.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="655.0" y="632">12</text>
+<line class="frame" x1="792.5" x2="792.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="792.5" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,118.5 242.5,359.6 380.0,472.6 517.5,533.7 655.0,559.5 792.5,571.6 930.0,576.6" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="120.9" y2="116.0" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="242.5" x2="242.5" y1="361.9" y2="357.3" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="380.0" x2="380.0" y1="480.9" y2="464.2" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="517.5" x2="517.5" y1="536.3" y2="531.0" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="655.0" x2="655.0" y1="567.0" y2="551.9" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="792.5" x2="792.5" y1="577.6" y2="565.7" stroke="#1f77b4" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="582.6" y2="570.6" stroke="#1f77b4" stroke-width="1.2"/>
+<circle cx="105.0" cy="118.5" r="4" fill="#1f77b4"/>
+<circle cx="242.5" cy="359.6" r="4" fill="#1f77b4"/>
+<circle cx="380.0" cy="472.6" r="4" fill="#1f77b4"/>
+<circle cx="517.5" cy="533.7" r="4" fill="#1f77b4"/>
+<circle cx="655.0" cy="559.5" r="4" fill="#1f77b4"/>
+<circle cx="792.5" cy="571.6" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="576.6" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">Copy</text>
+<polyline points="105.0,447.2 242.5,525.0 380.0,560.5 517.5,579.7 655.0,584.9 792.5,590.1 930.0,593.0" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="453.5" y2="440.8" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="242.5" x2="242.5" y1="526.0" y2="524.0" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="380.0" x2="380.0" y1="565.0" y2="556.1" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="517.5" x2="517.5" y1="581.9" y2="577.4" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="655.0" x2="655.0" y1="585.7" y2="584.2" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="792.5" x2="792.5" y1="590.8" y2="589.5" stroke="#2ca02c" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="593.7" y2="592.3" stroke="#2ca02c" stroke-width="1.2"/>
+<circle cx="105.0" cy="447.2" r="4" fill="#2ca02c"/>
+<circle cx="242.5" cy="525.0" r="4" fill="#2ca02c"/>
+<circle cx="380.0" cy="560.5" r="4" fill="#2ca02c"/>
+<circle cx="517.5" cy="579.7" r="4" fill="#2ca02c"/>
+<circle cx="655.0" cy="584.9" r="4" fill="#2ca02c"/>
+<circle cx="792.5" cy="590.1" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="593.0" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="98">Horizontal</text>
+<polyline points="105.0,477.5 242.5,538.6 380.0,564.8 517.5,568.8 655.0,577.5 792.5,584.0 930.0,587.5" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<line x1="105.0" x2="105.0" y1="480.1" y2="474.8" stroke="#d62728" stroke-width="1.2"/>
+<line x1="242.5" x2="242.5" y1="539.9" y2="537.3" stroke="#d62728" stroke-width="1.2"/>
+<line x1="380.0" x2="380.0" y1="567.1" y2="562.5" stroke="#d62728" stroke-width="1.2"/>
+<line x1="517.5" x2="517.5" y1="569.3" y2="568.3" stroke="#d62728" stroke-width="1.2"/>
+<line x1="655.0" x2="655.0" y1="578.1" y2="577.0" stroke="#d62728" stroke-width="1.2"/>
+<line x1="792.5" x2="792.5" y1="584.3" y2="583.7" stroke="#d62728" stroke-width="1.2"/>
+<line x1="930.0" x2="930.0" y1="588.1" y2="587.0" stroke="#d62728" stroke-width="1.2"/>
+<circle cx="105.0" cy="477.5" r="4" fill="#d62728"/>
+<circle cx="242.5" cy="538.6" r="4" fill="#d62728"/>
+<circle cx="380.0" cy="564.8" r="4" fill="#d62728"/>
+<circle cx="517.5" cy="568.8" r="4" fill="#d62728"/>
+<circle cx="655.0" cy="577.5" r="4" fill="#d62728"/>
+<circle cx="792.5" cy="584.0" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="587.5" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="120">Vertical</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo da fase (ms)</text>
+</svg>

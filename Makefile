@@ -68,6 +68,13 @@ else
 $(error SIMD must be "off", "off-avx2", "omp" or "omp-avx2"; got "$(SIMD)")
 endif
 
+# O GCC aceita apenas um arquivo de saída para -fopt-info em uma compilação.
+# Na coleta de evidência, o relatório amplo substitui o relatório resumido;
+# sem isso, o segundo arquivo pode ficar vazio ou nem ser criado.
+ifeq ($(COMPILER_DIAGNOSTICS),1)
+VECTOR_REPORT_FLAG :=
+endif
+
 ifneq ($(strip $(ARCH)),)
 CXXFLAGS += -march=$(ARCH)
 endif
