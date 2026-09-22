@@ -16,7 +16,7 @@ set -euo pipefail
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute com sbatch a partir da raiz do projeto.}"
 IMAGE="${HPC_COMPLEMENTARY_IMAGE:-images/6000x6000.png}"
-RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_hpc_simd_${SLURM_JOB_ID}"
+RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_complementar_hpc_simd_zoom_grayscale_${SLURM_JOB_ID}"
 REFERENCE_HASHES="$RESULT_DIR/reference_hashes.csv"
 
 mkdir -p "$RESULT_DIR"

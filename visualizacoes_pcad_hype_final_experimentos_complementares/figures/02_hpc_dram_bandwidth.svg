@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="666" viewBox="0 0 1200 666" role="img" aria-label="VTune HPC: banda DRAM média">
+<title>VTune HPC: banda DRAM média</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.grid{stroke:#d9d9d9}.frame{fill:none;stroke:#555}.legend{font-size:12px}</style>
+<text class="title" x="280" y="34">VTune HPC: banda DRAM média</text>
+<line class="grid" x1="280.0" x2="280.0" y1="70" y2="584"/>
+<text class="axis" text-anchor="middle" x="280.0" y="607">0.0 GB/s</text>
+<line class="grid" x1="473.8" x2="473.8" y1="70" y2="584"/>
+<text class="axis" text-anchor="middle" x="473.8" y="607">9.4 GB/s</text>
+<line class="grid" x1="667.5" x2="667.5" y1="70" y2="584"/>
+<text class="axis" text-anchor="middle" x="667.5" y="607">18.7 GB/s</text>
+<line class="grid" x1="861.2" x2="861.2" y1="70" y2="584"/>
+<text class="axis" text-anchor="middle" x="861.2" y="607">28.1 GB/s</text>
+<line class="grid" x1="1055.0" x2="1055.0" y1="70" y2="584"/>
+<text class="axis" text-anchor="middle" x="1055.0" y="607">37.4 GB/s</text>
+<rect class="frame" x="280" y="70" width="775" height="514"/>
+<text class="axis" text-anchor="end" x="268" y="110.5">Zoom_In — sem SIMD, T1</text>
+<rect x="280.0" y="78.4" width="90.1" height="17.8" fill="#1f77b4"/>
+<text class="small" x="376.1" y="92.2">4.4 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="174.7">Zoom_In — sem SIMD, T20</text>
+<rect x="280.0" y="142.6" width="665.2" height="17.8" fill="#1f77b4"/>
+<text class="small" x="951.2" y="156.4">32.1 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="239.0">Zoom_In — SIMD, T1</text>
+<rect x="280.0" y="206.9" width="105.8" height="17.8" fill="#1f77b4"/>
+<text class="small" x="391.8" y="220.7">5.1 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="303.2">Zoom_In — SIMD, T20</text>
+<rect x="280.0" y="271.1" width="704.5" height="17.8" fill="#1f77b4"/>
+<text class="small" x="990.5" y="284.9">34.0 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="367.5">Grayscale — sem SIMD, T1</text>
+<rect x="280.0" y="335.4" width="49.6" height="17.8" fill="#1f77b4"/>
+<text class="small" x="335.6" y="349.2">2.4 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="431.7">Grayscale — sem SIMD, T20</text>
+<rect x="280.0" y="399.6" width="332.5" height="17.8" fill="#1f77b4"/>
+<text class="small" x="618.5" y="413.4">16.1 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="496.0">Grayscale — SIMD, T1</text>
+<rect x="280.0" y="463.9" width="46.8" height="17.8" fill="#1f77b4"/>
+<text class="small" x="332.8" y="477.7">2.3 GB/s</text>
+<text class="axis" text-anchor="end" x="268" y="560.2">Grayscale — SIMD, T20</text>
+<rect x="280.0" y="528.1" width="463.9" height="17.8" fill="#1f77b4"/>
+<text class="small" x="749.9" y="541.9">22.4 GB/s</text>
+<rect x="280" y="613" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="302" y="625">DRAM média</text>
+<text class="axis" text-anchor="middle" x="667.5" y="652">Banda DRAM média (GB/s)</text>
+</svg>

@@ -14,7 +14,13 @@ set -euo pipefail
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute com sbatch a partir da raiz do projeto.}"
 JOB_ROOT="${SLURM_TMPDIR:-/tmp}/${USER}_openmp_${SLURM_JOB_ID}"
 WORK_DIR="$JOB_ROOT/project"
-RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_${SLURM_JOB_ID}"
+CAMPAIGN="completa"
+case " $* " in
+    *" --regular-only "*) CAMPAIGN="regular" ;;
+    *" --adaptive-only "*) CAMPAIGN="adaptativo" ;;
+    *" --smt-only "*) CAMPAIGN="smt" ;;
+esac
+RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_benchmark_${CAMPAIGN}_${SLURM_JOB_ID}"
 
 cleanup() {
     rm -rf -- "$JOB_ROOT"

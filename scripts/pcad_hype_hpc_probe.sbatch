@@ -29,7 +29,7 @@ case "$SCHEDULE" in
 esac
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute com sbatch a partir da raiz do projeto.}"
-RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_hpc_probe_${SLURM_JOB_ID}"
+RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_vtune_hpc_probe_${SLURM_JOB_ID}"
 mkdir -p "$RESULT_DIR"
 
 source "$SUBMIT_DIR/scripts/vtune_env.sh"

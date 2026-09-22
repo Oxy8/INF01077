@@ -1,7 +1,0 @@
-Simd,Schedule,Total_dataset_ms
-off,static,2238.7933629999998
-off,"dynamic,1",2399.2664050000003
-off,"dynamic,16",2281.601829
-omp,static,2261.9941630000003
-omp,"dynamic,1",2408.454123
-omp,"dynamic,16",2284.321378

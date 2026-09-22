@@ -10,15 +10,17 @@ DEBUG ?= 0
 BUILD_DIR := build/$(SIMD)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
 LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
+DIAGNOSTIC_TARGET := $(BUILD_DIR)/diagnostic_runner
 GUI_TARGET := $(BUILD_DIR)/image_editor
 CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
 CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
 BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
 LAYOUT_OBJECT := $(BUILD_DIR)/layout_benchmark.o
+DIAGNOSTIC_OBJECT := $(BUILD_DIR)/diagnostic_runner.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
 GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
@@ -40,6 +42,15 @@ CXXFLAGS += -g
 endif
 LDFLAGS += $(OPENMP_FLAGS)
 DEPFLAGS := -MMD -MP
+COMPILER_DIAGNOSTICS ?= 0
+COMPILER_DIAGNOSTIC_CORE_FLAGS :=
+COMPILER_DIAGNOSTIC_LAYOUT_FLAGS :=
+ifeq ($(COMPILER_DIAGNOSTICS),1)
+# Relatório amplo: registra tanto laços aceitos quanto recusados pelo
+# vetorizador. É usado somente no job de evidência, não nos benchmarks.
+COMPILER_DIAGNOSTIC_CORE_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-core-all.log
+COMPILER_DIAGNOSTIC_LAYOUT_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-layout-all.log
+endif
 
 ifeq ($(SIMD),off)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize
@@ -67,11 +78,19 @@ CXXFLAGS += $(SIMD_FLAGS)
 # flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
 CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
-.PHONY: all layout gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all layout diagnostics compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
 layout: $(LAYOUT_TARGET)
+
+diagnostics: $(DIAGNOSTIC_TARGET)
+
+compiler-evidence:
+	$(MAKE) -B DEBUG=1 SIMD=off-avx2 COMPILER_DIAGNOSTICS=1 layout
+	objdump -d -C --no-show-raw-insn build/off-avx2/layout_benchmark > build/off-avx2/layout_benchmark.asm
+	$(MAKE) -B DEBUG=1 SIMD=omp-avx2 COMPILER_DIAGNOSTICS=1 layout
+	objdump -d -C --no-show-raw-insn build/omp-avx2/layout_benchmark > build/omp-avx2/layout_benchmark.asm
 
 gui: $(GUI_TARGET)
 
@@ -103,6 +122,9 @@ $(BENCHMARK_TARGET): $(CORE_OBJECT) $(BENCHMARK_OBJECT)
 $(LAYOUT_TARGET): $(CORE_OBJECT) $(LAYOUT_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(DIAGNOSTIC_TARGET): $(CORE_OBJECT) $(DIAGNOSTIC_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -110,13 +132,16 @@ $(CONTROL_GENERATOR): $(GENERATOR_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 $(CORE_OBJECT): $(PROJECT_DIR)/image_manipulation.cpp | check-compiler $(BUILD_DIR)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(DEPFLAGS) -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(COMPILER_DIAGNOSTIC_CORE_FLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(BENCHMARK_OBJECT): $(PROJECT_DIR)/benchmark_runner.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(LAYOUT_OBJECT): $(PROJECT_DIR)/layout_benchmark.cpp | check-compiler $(BUILD_DIR)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(DEPFLAGS) -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(COMPILER_DIAGNOSTIC_LAYOUT_FLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(DIAGNOSTIC_OBJECT): $(PROJECT_DIR)/diagnostic_runner.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="542" viewBox="0 0 1200 542" role="img" aria-label="Confirmação: dynamic versus static, 20 threads">
+<title>Confirmação: dynamic versus static, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.grid{stroke:#d9d9d9}.frame{fill:none;stroke:#555}.legend{font-size:12px}</style>
+<text class="title" x="280" y="34">Confirmação: dynamic versus static, 20 threads</text>
+<line class="grid" x1="280.0" x2="280.0" y1="70" y2="460"/>
+<text class="axis" text-anchor="middle" x="280.0" y="483">0.245×</text>
+<line class="grid" x1="473.8" x2="473.8" y1="70" y2="460"/>
+<text class="axis" text-anchor="middle" x="473.8" y="483">0.473×</text>
+<line class="grid" x1="667.5" x2="667.5" y1="70" y2="460"/>
+<text class="axis" text-anchor="middle" x="667.5" y="483">0.702×</text>
+<line class="grid" x1="861.3" x2="861.3" y1="70" y2="460"/>
+<text class="axis" text-anchor="middle" x="861.3" y="483">0.931×</text>
+<line class="grid" x1="1055.0" x2="1055.0" y1="70" y2="460"/>
+<text class="axis" text-anchor="middle" x="1055.0" y="483">1.160×</text>
+<rect class="frame" x="280" y="70" width="775" height="390"/>
+<line x1="919.3" x2="919.3" y1="70" y2="460" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<text class="axis" text-anchor="end" x="268" y="111.0">Adjust_Brightness</text>
+<rect x="280.0" y="78.5" width="639.9" height="13.2" fill="#d62728"/>
+<text class="small" x="925.9" y="88.6">1.001×</text>
+<rect x="280.0" y="96.0" width="631.7" height="13.2" fill="#2ca02c"/>
+<text class="small" x="917.7" y="106.2">0.991×</text>
+<text class="axis" text-anchor="end" x="268" y="175.9">Equalize_Histogram</text>
+<rect x="280.0" y="143.4" width="628.6" height="13.2" fill="#d62728"/>
+<text class="small" x="914.6" y="153.6">0.987×</text>
+<rect x="280.0" y="161.0" width="637.9" height="13.2" fill="#2ca02c"/>
+<text class="small" x="923.9" y="171.2">0.998×</text>
+<text class="axis" text-anchor="end" x="268" y="240.9">Flip_Horizontal</text>
+<rect x="280.0" y="208.4" width="710.4" height="13.2" fill="#d62728"/>
+<text class="small" x="996.4" y="218.6">1.084×</text>
+<rect x="280.0" y="226.0" width="687.0" height="13.2" fill="#2ca02c"/>
+<text class="small" x="973.0" y="236.2">1.056×</text>
+<text class="axis" text-anchor="end" x="268" y="305.9">Gaussian_11x11</text>
+<rect x="280.0" y="273.4" width="633.6" height="13.2" fill="#d62728"/>
+<text class="small" x="919.6" y="283.6">0.993×</text>
+<rect x="280.0" y="291.0" width="624.8" height="13.2" fill="#2ca02c"/>
+<text class="small" x="910.8" y="301.2">0.983×</text>
+<text class="axis" text-anchor="end" x="268" y="370.9">Negative</text>
+<rect x="280.0" y="338.4" width="641.3" height="13.2" fill="#d62728"/>
+<text class="small" x="927.3" y="348.6">1.002×</text>
+<rect x="280.0" y="356.0" width="633.2" height="13.2" fill="#2ca02c"/>
+<text class="small" x="919.2" y="366.2">0.993×</text>
+<text class="axis" text-anchor="end" x="268" y="435.9">Zoom_In</text>
+<rect x="280.0" y="403.4" width="64.6" height="13.2" fill="#d62728"/>
+<text class="small" x="350.6" y="413.6">0.321×</text>
+<rect x="280.0" y="421.0" width="496.2" height="13.2" fill="#2ca02c"/>
+<text class="small" x="782.2" y="431.2">0.831×</text>
+<rect x="280" y="489" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="302" y="501">dynamic,1</text>
+<rect x="470" y="489" width="15" height="15" fill="#2ca02c"/>
+<text class="legend" x="492" y="501">dynamic,16</text>
+<text class="axis" text-anchor="middle" x="667.5" y="528">Razão das medianas: static / dynamic</text>
+</svg>

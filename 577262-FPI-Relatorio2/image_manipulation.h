@@ -14,6 +14,24 @@ struct Rectangle {
     int width, height;
 };
 
+// Tempos das três passadas independentes do kernel de Zoom In. Usado somente
+// pelo executável de diagnóstico; a transformação normal continua sem medir
+// fases internamente.
+struct ZoomInPhaseTimes {
+    double copy_ms = 0.0;
+    double horizontal_ms = 0.0;
+    double vertical_ms = 0.0;
+    double total_ms = 0.0;
+};
+
+// Estatística por thread do Flip Horizontal, para distinguir desbalanceamento
+// real de variação de medição quando se compara schedules.
+struct ThreadWorkInfo {
+    int thread = -1;
+    int rows = 0;
+    double work_ms = 0.0;
+};
+
 void reset(ImageState& img, unsigned char* original_data, int original_width, int original_height);
 bool load_image(const char* filename, ImageState& img);
 void save_image(ImageState& img, const char* filename);
@@ -22,6 +40,7 @@ void apply_gray_scale_inplace(ImageState& img);
 // É destinado a coletas de profiler: não substitui a transformação normal.
 bool profile_gray_scale_kernel(const ImageState& source, int iterations);
 void flip_horizontal(ImageState& img);
+double flip_horizontal_profiled(ImageState& img, std::vector<ThreadWorkInfo>& per_thread);
 void adjust_brightness(ImageState& img, int adjust_value);
 void flip_vertical(ImageState& img);
 std::array<unsigned char, 2> find_min_and_max_luminance_on_gray_scale_image(int width, int height, unsigned char* data);
@@ -38,6 +57,7 @@ void zoom_in_image(ImageState& img);
 // pela coleta VTune para repetir o mesmo trabalho sem criações de imagem ou
 // cópias de restauração entre as iterações.
 bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destination, int destination_width, int destination_height);
+bool zoom_in_image_to_buffer_profiled(const ImageState& source, unsigned char* destination, int destination_width, int destination_height, ZoomInPhaseTimes& times);
 void zoom_out_image(ImageState& img, Rectangle& rec);
 void compute_rgb_avg_on_rectangle(unsigned char avg[3], int rec_x, int rec_y, int rec_width, int red_height, ImageState& img);
 void rotate_90_degrees_clockwise(ImageState& img);

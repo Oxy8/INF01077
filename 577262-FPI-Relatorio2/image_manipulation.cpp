@@ -9,6 +9,7 @@
 #include <cmath>
 #include <array>
 #include <algorithm>
+#include <chrono>
 #include <cstdio>
 #include <cstdlib>
 #include <limits>
@@ -674,12 +675,14 @@ void rotate_90_degrees_counterclockwise(ImageState& img){
     img.height = new_img_height;
 }
 
-bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destination, int new_width, int new_height) {
-    if (!source.data || !destination || source.width <= 0 || source.height <= 0 ||
-        new_width != source.width * 2 - 1 || new_height != source.height * 2 - 1) {
-        return false;
-    }
+namespace {
 
+bool valid_zoom_buffer(const ImageState& source, const unsigned char* destination, int new_width, int new_height) {
+    return source.data && destination && source.width > 0 && source.height > 0 &&
+        new_width == source.width * 2 - 1 && new_height == source.height * 2 - 1;
+}
+
+void zoom_copy_source_pixels(const ImageState& source, unsigned char* destination, int new_width) {
     #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < source.height; j++){
         OMP_SIMD
@@ -689,7 +692,9 @@ bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destinatio
             memcpy(destination + new_index, source.data + old_index, 3);
         }
     }
+}
 
+void zoom_interpolate_horizontal(unsigned char* destination, int new_width, int new_height) {
     #pragma omp parallel for schedule(runtime)
     for(int j = 0; j < new_height; j += 2){
         OMP_SIMD
@@ -700,7 +705,9 @@ bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destinatio
             destination[index + 2] = (unsigned char) ((destination[index - 3 + 2] + destination[index + 3 + 2]) / 2);
         }
     }
+}
 
+void zoom_interpolate_vertical(unsigned char* destination, int new_width, int new_height) {
     #pragma omp parallel for schedule(runtime)
     for(int j = 1; j < new_height; j += 2){
         OMP_SIMD
@@ -711,7 +718,48 @@ bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destinatio
             destination[index + 2] = (unsigned char) ((destination[index - new_width * 3 + 2] + destination[index + new_width * 3 + 2]) / 2);
         }
     }
+}
 
+void flip_horizontal_row(ImageState& img, int row) {
+    unsigned char pixel_buffer[3];
+    for (int i = 0; i < img.width / 2; i++) {
+        memcpy(pixel_buffer, img.data + (row * img.width + i) * 3, 3);
+        memcpy(img.data + (row * img.width + i) * 3,
+               img.data + (row * img.width + (img.width - 1 - i)) * 3, 3);
+        memcpy(img.data + (row * img.width + (img.width - 1 - i)) * 3, pixel_buffer, 3);
+    }
+}
+
+} // namespace
+
+bool zoom_in_image_to_buffer_profiled(const ImageState& source, unsigned char* destination, int new_width, int new_height, ZoomInPhaseTimes& times) {
+    if (!valid_zoom_buffer(source, destination, new_width, new_height)) return false;
+
+    const auto total_start = std::chrono::steady_clock::now();
+    auto phase_start = total_start;
+    zoom_copy_source_pixels(source, destination, new_width);
+    auto phase_end = std::chrono::steady_clock::now();
+    times.copy_ms = std::chrono::duration<double, std::milli>(phase_end - phase_start).count();
+
+    phase_start = phase_end;
+    zoom_interpolate_horizontal(destination, new_width, new_height);
+    phase_end = std::chrono::steady_clock::now();
+    times.horizontal_ms = std::chrono::duration<double, std::milli>(phase_end - phase_start).count();
+
+    phase_start = phase_end;
+    zoom_interpolate_vertical(destination, new_width, new_height);
+    phase_end = std::chrono::steady_clock::now();
+    times.vertical_ms = std::chrono::duration<double, std::milli>(phase_end - phase_start).count();
+    times.total_ms = std::chrono::duration<double, std::milli>(phase_end - total_start).count();
+
+    return true;
+}
+
+bool zoom_in_image_to_buffer(const ImageState& source, unsigned char* destination, int new_width, int new_height) {
+    if (!valid_zoom_buffer(source, destination, new_width, new_height)) return false;
+    zoom_copy_source_pixels(source, destination, new_width);
+    zoom_interpolate_horizontal(destination, new_width, new_height);
+    zoom_interpolate_vertical(destination, new_width, new_height);
     return true;
 }
 
@@ -974,20 +1022,31 @@ void adjust_brightness(ImageState& img, int adjust_value){
 }
 
 void flip_horizontal(ImageState& img) {
-    int width = img.width;
-    int height = img.height;
-
     #pragma omp parallel for schedule(runtime)
-    for (int j = 0; j < height; j++) {
-        // Armadilha Corrigida: o buffer precisa ser local para não cruzar pixels das threads
-        unsigned char pixel_buffer[3]; 
-        for (int i = 0; i < width / 2; i++) {
-            memcpy(pixel_buffer, img.data + (j * width + i) * 3, 3);
-            memcpy(img.data + (j * width + i) * 3,
-                   img.data + (j * width + (width - 1 - i)) * 3, 3);
-            memcpy(img.data + (j * width + (width - 1 - i)) * 3, pixel_buffer, 3);
-        }
+    for (int j = 0; j < img.height; j++) {
+        flip_horizontal_row(img, j);
     }
+}
+
+double flip_horizontal_profiled(ImageState& img, std::vector<ThreadWorkInfo>& per_thread) {
+    per_thread.assign(static_cast<size_t>(omp_get_max_threads()), {});
+    const auto total_start = std::chrono::steady_clock::now();
+    #pragma omp parallel
+    {
+        const int thread = omp_get_thread_num();
+        int rows = 0;
+        const double work_start = omp_get_wtime();
+        #pragma omp for schedule(runtime) nowait
+        for (int j = 0; j < img.height; ++j) {
+            flip_horizontal_row(img, j);
+            ++rows;
+        }
+        const double work_end = omp_get_wtime();
+        per_thread[static_cast<size_t>(thread)] = {thread, rows, (work_end - work_start) * 1000.0};
+        #pragma omp barrier
+    }
+    const auto total_end = std::chrono::steady_clock::now();
+    return std::chrono::duration<double, std::milli>(total_end - total_start).count();
 }
 
 void flip_vertical(ImageState& img){

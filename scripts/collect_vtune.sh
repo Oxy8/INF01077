@@ -17,6 +17,7 @@ VTUNE_BIN="${VTUNE_BIN:-vtune}"
 SIMD="${VTUNE_SIMD:-omp-avx2}"
 PROFILE_ITERATIONS="${VTUNE_PROFILE_ITERATIONS:-1}"
 VTUNE_KNOBS="${VTUNE_KNOBS:-}"
+REFERENCE_HASHES="${VTUNE_REFERENCE_HASHES:-}"
 
 command -v "$VTUNE_BIN" >/dev/null || { echo "VTune não encontrado neste nó. Consulte slurm-vtune-preflight-<job>.out para identificar o módulo necessário." >&2; exit 1; }
 case "$SIMD" in
@@ -43,6 +44,9 @@ benchmark_args=(--image "$IMAGE" /tmp/vtune_benchmark.csv --operations "$OPERATI
     --run-id "vtune-${ANALYSIS}-${SIMD}" --repeat 0 --warmup)
 if [[ "$PROFILE_ITERATIONS" != "1" ]]; then
     benchmark_args+=(--profile-iterations "$PROFILE_ITERATIONS")
+fi
+if [[ -n "$REFERENCE_HASHES" ]]; then
+    benchmark_args+=(--reference-hashes "$REFERENCE_HASHES")
 fi
 
 OMP_NUM_THREADS="$THREADS" OMP_SCHEDULE="$SCHEDULE" \

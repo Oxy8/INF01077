@@ -1,0 +1,4 @@
+Campaign,Source_directory,Summary_groups,Samples_per_group,Hostnames,Operations,Images
+regular,resultados_pcad_hype_final_regular_avx2_5reps_822851,2856,5,hype5,17,2
+adaptive,resultados_pcad_hype_final_adaptativo_chunks_avx2_5reps_822852,576,5,hype2,1,8
+smt,resultados_pcad_hype_final_smt_avx2_5reps_822853,24,5,hype1,3,2

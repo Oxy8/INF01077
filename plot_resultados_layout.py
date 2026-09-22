@@ -163,8 +163,8 @@ def simd_heatmaps(rows: list[dict[str, object]], figures: Path, tables: Path) ->
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Gera gráficos do experimento AoS/SoA/separável.")
-    parser.add_argument("--input", default="resultados_pcad_hype_layout_822823")
-    parser.add_argument("--out", default="resultados_visualizados_layout")
+    parser.add_argument("--input", default="resultados_pcad_hype_final_layout_aos_soa_avx2_5reps_822854")
+    parser.add_argument("--out", default="visualizacoes_pcad_hype_final_layout_aos_soa")
     args = parser.parse_args()
     source, output = Path(args.input), Path(args.out)
     source = source if source.is_absolute() else ROOT / source

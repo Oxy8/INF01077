@@ -68,7 +68,7 @@ O comando é:
 sbatch scripts/pcad_hype_schedules_confirmation.sbatch
 ```
 
-O resultado é salvo em `resultados_pcad_hype_schedules_<jobid>/`, com as dez
+O resultado é salvo em `resultados_pcad_hype_complementar_schedules_confirmacao_<jobid>/`, com as dez
 amostras brutas, resumo por mediana/mínimo/máximo e o mapeamento OpenMP em
 `openmp_affinity.log`.
 

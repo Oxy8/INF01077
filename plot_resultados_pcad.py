@@ -8,9 +8,11 @@ o mínimo e o máximo para expor dispersão e possíveis outliers.
 
 Uso:
     python plot_resultados_pcad.py
-    python plot_resultados_pcad.py --out resultados_visualizados
-    python plot_resultados_pcad.py --regular resultados_pcad_hype_822669 \
-        --adaptive resultados_pcad_hype_822670 --smt resultados_pcad_hype_822671
+    python plot_resultados_pcad.py --out visualizacoes_pcad_hype_final_benchmark_principal
+    python plot_resultados_pcad.py \
+        --regular resultados_pcad_hype_final_regular_avx2_5reps_822851 \
+        --adaptive resultados_pcad_hype_final_adaptativo_chunks_avx2_5reps_822852 \
+        --smt resultados_pcad_hype_final_smt_avx2_5reps_822853
 """
 
 from __future__ import annotations
@@ -624,7 +626,7 @@ def main() -> None:
     parser.add_argument("--regular", help="Diretório da campanha regular")
     parser.add_argument("--adaptive", help="Diretório da campanha adaptativa")
     parser.add_argument("--smt", help="Diretório da campanha SMT")
-    parser.add_argument("--out", default="resultados_visualizados", help="Diretório de saída")
+    parser.add_argument("--out", default="visualizacoes_pcad_hype_final_benchmark_principal", help="Diretório de saída")
     args = parser.parse_args()
     inputs = resolve_inputs(args)
     output = Path(args.out)

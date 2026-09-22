@@ -117,7 +117,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Gera gráficos específicos da campanha AVX2.")
     parser.add_argument("--regular", required=True, help="Diretório da campanha regular.")
     parser.add_argument("--adaptive", required=True, help="Diretório da campanha adaptativa.")
-    parser.add_argument("--out", default="resultados_visualizados_avx")
+    parser.add_argument("--out", default="visualizacoes_pcad_hype_final_simd_avx2_adaptativo")
     args = parser.parse_args()
     regular_dir, adaptive_dir, output = Path(args.regular), Path(args.adaptive), Path(args.out)
     regular_dir = regular_dir if regular_dir.is_absolute() else ROOT / regular_dir

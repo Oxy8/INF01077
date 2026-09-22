@@ -24,7 +24,7 @@ esac
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute com sbatch a partir da raiz do projeto.}"
 JOB_ROOT="${SLURM_TMPDIR:-/tmp}/${USER}_vtune_${SLURM_JOB_ID}"
 WORK_DIR="$JOB_ROOT/project"
-RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_vtune_${SLURM_JOB_ID}"
+RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_vtune_hotspots_${SLURM_JOB_ID}"
 
 cleanup() {
     # Preserva qualquer coleta já finalizada caso um perfil posterior do VTune

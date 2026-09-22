@@ -1,0 +1,9 @@
+Case,Operation,SIMD,Threads,Profile_iterations,CPI,Memory_Bound_pct,Cache_Bound_pct,DRAM_High_BW_pct,DRAM_Average_GBs,Physical_Cores_Effective
+00_Zoom_In_off-avx2_t1,Zoom_In,off-avx2,1,12,0.374,12.5,8.4,0.0,4.351,0.989
+01_Zoom_In_off-avx2_t20,Zoom_In,off-avx2,20,120,0.62,42.3,20.7,58.5,32.121,11.747
+02_Zoom_In_omp-avx2_t1,Zoom_In,omp-avx2,1,12,0.521,24.8,12.8,0.0,5.11,0.996
+03_Zoom_In_omp-avx2_t20,Zoom_In,omp-avx2,20,120,1.136,60.4,29.0,61.7,34.022,11.684
+04_Grayscale_off-avx2_t1,Grayscale,off-avx2,1,25,0.458,12.0,7.0,0.0,2.395,0.985
+05_Grayscale_off-avx2_t20,Grayscale,off-avx2,20,350,0.551,11.0,6.2,1.9,16.055,10.098
+06_Grayscale_omp-avx2_t1,Grayscale,omp-avx2,1,25,0.727,20.5,10.6,0.0,2.259,0.999
+07_Grayscale_omp-avx2_t20,Grayscale,omp-avx2,20,350,1.043,30.2,11.6,35.3,22.401,10.576

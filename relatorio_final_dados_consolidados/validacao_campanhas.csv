@@ -1,0 +1,5 @@
+Campaign,Directory,Raw_measurements,Summary_groups,Passed_measurements,Failed_measurements,Samples_per_group,Hostnames
+regular,resultados_pcad_hype_final_regular_avx2_5reps_822851,14280,2856,14280,0,5,hype5
+adaptive,resultados_pcad_hype_final_adaptativo_chunks_avx2_5reps_822852,2880,576,2880,0,5,hype2
+smt,resultados_pcad_hype_final_smt_avx2_5reps_822853,120,24,120,0,5,hype1
+layout,resultados_pcad_hype_final_layout_aos_soa_avx2_5reps_822854,4480,896,4480,0,5,hype1
