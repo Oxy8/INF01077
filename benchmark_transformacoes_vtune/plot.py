@@ -14,6 +14,8 @@ import csv
 import math
 import os
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -1770,6 +1772,24 @@ def main(argv: Sequence[str] | None = None) -> int:
         salvar_relatorio_zoom(
             eventos_hardware, resumo, destino_zoom / "README.txt"
         )
+
+        destino_rotacao = destino / "rotation"
+        destino_rotacao.mkdir(parents=True, exist_ok=True)
+        fonte_script_rotacao = (
+            Path(__file__).resolve().parent / "rotation" / "plot.py"
+        )
+        script_rotacao = destino_rotacao / "plot.py"
+        shutil.copy2(fonte_script_rotacao, script_rotacao)
+        execucao_rotacao = subprocess.run(
+            [sys.executable, str(script_rotacao)],
+            cwd=destino_rotacao,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if execucao_rotacao.returncode != 0:
+            detalhe = execucao_rotacao.stderr.strip() or execucao_rotacao.stdout.strip()
+            raise PlotError(f"falha ao gerar análise de rotações: {detalhe}")
 
         plotar_reproducao(resumo, destino / "comparacao_speedup_original_vtune.png")
         cores_transformacoes = dict(

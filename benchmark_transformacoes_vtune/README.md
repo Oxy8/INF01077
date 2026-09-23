@@ -104,6 +104,10 @@ Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
 - `analysis/zoom/`, com L1/L2 pending cycles e store-buffer stalls para Zoom In
   e Zoom Out por schedule, além da comparação com todas as transformações para
   chunks dinâmicos 1, 2, 4 e 8;
+- `analysis/rotation/`, com heatmaps verticais de `Rotate_CW` e `Rotate_CCW`
+  para todos os chunks dinâmicos detectados. A pasta contém uma cópia de
+  `plot.py`, que pode ser executada no próprio diretório para recriar os dois
+  gráficos;
 - CSVs compactos por condição e por imagem para análises posteriores.
 
 Em `analysis/zoom/`, `eventos_zoom.csv` contém as contagens dos dois zooms e
