@@ -1097,7 +1097,9 @@ def plotar_comparacao_zoom(
         positivos = pivo.where(pivo > 0)
         log2 = np.log2(positivos)
         limite = float(np.nanmax(np.abs(log2.to_numpy())))
-        limite = max(0.25, limite)
+        # A escala log2 mantém fatores recíprocos à mesma distância de 1x,
+        # mas a barra deve continuar sendo apresentada como fator multiplicativo.
+        limite = float(max(1, math.ceil(limite)))
         anotacoes = pivo.map(
             lambda valor: "" if pd.isna(valor) else f"{valor:.2f}×"
         )
@@ -1112,8 +1114,34 @@ def plotar_comparacao_zoom(
             fmt="",
             linewidths=0.35,
             linecolor="white",
-            cbar_kws={"label": "log2(fator)"},
+            cbar_kws={
+                "label": (
+                    "Aceleração vs. static (×)"
+                    if indice == 0
+                    else "Eventos vs. static (×)"
+                )
+            },
             mask=log2.isna(),
+        )
+        limite_inteiro = int(limite)
+        if limite_inteiro <= 4:
+            expoentes = list(range(-limite_inteiro, limite_inteiro + 1))
+        else:
+            meio = int(round(limite_inteiro / 2))
+            expoentes = [-limite_inteiro, -meio, 0, meio, limite_inteiro]
+        barra = eixos[indice].collections[0].colorbar
+        barra.set_ticks(expoentes)
+        barra.set_ticklabels(
+            [
+                "1.00×"
+                if expoente == 0
+                else (
+                    f"{2.0**expoente:.2f}×"
+                    if 0.01 <= 2.0**expoente < 100
+                    else f"{2.0**expoente:.3g}×"
+                )
+                for expoente in expoentes
+            ]
         )
         eixos[indice].set_title(titulo, weight="bold")
         eixos[indice].set_xlabel("Chunk dinâmico")
