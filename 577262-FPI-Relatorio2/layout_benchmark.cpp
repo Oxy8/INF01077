@@ -49,6 +49,9 @@ struct Options {
     std::string operation = "Grayscale";
     int repeat = 1;
     int profile_iterations = 1;
+    // Em coletas VTune, repete somente uma variante; as demais executam uma
+    // vez para manter a validação, sem dominar a amostra do profiler.
+    std::string profile_layout = "all";
     bool warmup = false;
 };
 
@@ -387,6 +390,8 @@ bool parse_arguments(int argc, char* argv[], Options& options) {
             options.repeat = std::stoi(argv[++index]);
         } else if (argument == "--profile-iterations" && index + 1 < argc) {
             options.profile_iterations = std::stoi(argv[++index]);
+        } else if (argument == "--profile-layout" && index + 1 < argc) {
+            options.profile_layout = argv[++index];
         } else if (argument == "--warmup") {
             options.warmup = true;
         } else if (!argument.empty() && argument[0] != '-' && options.csv_path == "layout_raw.csv") {
@@ -396,11 +401,13 @@ bool parse_arguments(int argc, char* argv[], Options& options) {
         }
     }
     return !options.image.empty() && options.repeat >= 0 && options.profile_iterations >= 1 &&
-           (options.operation == "Grayscale" || options.operation == "Gaussian_11x11");
+           (options.operation == "Grayscale" || options.operation == "Gaussian_11x11") &&
+           (options.profile_layout == "all" || options.profile_layout == "aos" ||
+            options.profile_layout == "soa-naive" || options.profile_layout == "soa-separable");
 }
 
 void usage() {
-    std::cerr << "Uso: layout_benchmark --image ARQUIVO CSV [--operation Grayscale|Gaussian_11x11] [--run-id ID] [--repeat N] [--profile-iterations N] [--warmup]\n";
+    std::cerr << "Uso: layout_benchmark --image ARQUIVO CSV [--operation Grayscale|Gaussian_11x11] [--run-id ID] [--repeat N] [--profile-iterations N] [--profile-layout all|aos|soa-naive|soa-separable] [--warmup]\n";
 }
 
 int main(int argc, char* argv[]) {
@@ -456,8 +463,9 @@ int main(int argc, char* argv[]) {
         // A cópia restaura a entrada antes do kernel AoS, mas não é cronometrada;
         // é a mesma convenção usada pelo benchmark principal para resetar imagens.
         std::memcpy(direct.data, original.data(), input_bytes);
+        const int direct_iterations = (options.profile_layout == "all" || options.profile_layout == "aos") ? options.profile_iterations : 1;
         direct_ms = measure_ms([&] {
-            for (int iteration = 0; iteration < options.profile_iterations; ++iteration) {
+            for (int iteration = 0; iteration < direct_iterations; ++iteration) {
                 // Depois da primeira passagem a imagem já é cinza, mas o
                 // kernel continua idêntico se a guarda for restaurada.
                 direct.isGrayScale = false;
@@ -467,8 +475,9 @@ int main(int argc, char* argv[]) {
         direct_hash = hash_image(direct);
 
         unpack_ms = measure_ms([&] { aos_to_soa(original.data(), planes, loaded.width, loaded.height); });
+        const int planar_iterations = (options.profile_layout == "all" || options.profile_layout == "soa-naive") ? options.profile_iterations : 1;
         planar_kernel_ms = measure_ms([&] {
-            for (int iteration = 0; iteration < options.profile_iterations; ++iteration) {
+            for (int iteration = 0; iteration < planar_iterations; ++iteration) {
                 grayscale_planar(planes, loaded.width, loaded.height);
             }
         });
@@ -513,16 +522,18 @@ int main(int argc, char* argv[]) {
         }
         reference_hash = hash_image(reference);
 
+        const int direct_iterations = (options.profile_layout == "all" || options.profile_layout == "aos") ? options.profile_iterations : 1;
         direct_ms = measure_ms([&] {
-            for (int iteration = 0; iteration < options.profile_iterations; ++iteration) {
+            for (int iteration = 0; iteration < direct_iterations; ++iteration) {
                 gaussian_11_aos(original.data(), direct.data, loaded.width, loaded.height);
             }
         });
         direct_hash = hash_image(direct);
 
         unpack_ms = measure_ms([&] { aos_to_soa(original.data(), source_planes, loaded.width, loaded.height); });
+        const int planar_iterations = (options.profile_layout == "all" || options.profile_layout == "soa-naive") ? options.profile_iterations : 1;
         planar_kernel_ms = measure_ms([&] {
-            for (int iteration = 0; iteration < options.profile_iterations; ++iteration) {
+            for (int iteration = 0; iteration < planar_iterations; ++iteration) {
                 gaussian_11_planar(source_planes, filtered_planes, loaded.width, loaded.height);
             }
         });
@@ -533,7 +544,8 @@ int main(int argc, char* argv[]) {
         // Reutiliza a mesma conversão de entrada e os mesmos buffers já
         // alocados. O método separável sobrescreve filtered_planes depois que
         // o hash do método ingênuo foi guardado.
-        for (int iteration = 0; iteration < options.profile_iterations; ++iteration) {
+        const int separable_iterations = (options.profile_layout == "all" || options.profile_layout == "soa-separable") ? options.profile_iterations : 1;
+        for (int iteration = 0; iteration < separable_iterations; ++iteration) {
             const SeparableTimes times = gaussian_11_separable_planar(source_planes, filtered_planes, intermediate, loaded.width, loaded.height);
             separable_times.horizontal_ms += times.horizontal_ms;
             separable_times.vertical_ms += times.vertical_ms;

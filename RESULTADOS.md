@@ -29,6 +29,11 @@ mínimo--máximo. Os resultados de campanhas preliminares e as visualizações q
 foram substituídas foram removidos para não serem confundidos com os dados
 finais.
 
+Para respostas rastreáveis às perguntas de interpretação — SIMD, schedules,
+Zoom, Flip e layouts — consulte [`ANALISE_EVIDENCIAS.md`](ANALISE_EVIDENCIAS.md).
+Os jobs que fecham as lacunas experimentais estão em
+[`EXPERIMENTOS_COMPLEMENTARES_FINAIS.md`](EXPERIMENTOS_COMPLEMENTARES_FINAIS.md).
+
 ## Regenerar as visualizações
 
 Na raiz do projeto:

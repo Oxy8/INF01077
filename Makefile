@@ -11,6 +11,8 @@ BUILD_DIR := build/$(SIMD)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
 LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
 DIAGNOSTIC_TARGET := $(BUILD_DIR)/diagnostic_runner
+FLIP_PROFILE_TARGET := $(BUILD_DIR)/flip_profile_runner
+GAUSSIAN_SIZES_TARGET := $(BUILD_DIR)/gaussian_sizes_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
 CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
@@ -18,6 +20,8 @@ CORE_OBJECT := $(BUILD_DIR)/image_manipulation.o
 BENCHMARK_OBJECT := $(BUILD_DIR)/benchmark_runner.o
 LAYOUT_OBJECT := $(BUILD_DIR)/layout_benchmark.o
 DIAGNOSTIC_OBJECT := $(BUILD_DIR)/diagnostic_runner.o
+FLIP_PROFILE_OBJECT := $(BUILD_DIR)/flip_profile_runner.o
+GAUSSIAN_SIZES_OBJECT := $(BUILD_DIR)/gaussian_sizes_benchmark.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
 GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
 OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
@@ -85,7 +89,7 @@ CXXFLAGS += $(SIMD_FLAGS)
 # flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
 CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
-.PHONY: all layout diagnostics compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all layout diagnostics flip-profile gaussian-sizes compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
@@ -93,11 +97,17 @@ layout: $(LAYOUT_TARGET)
 
 diagnostics: $(DIAGNOSTIC_TARGET)
 
+flip-profile: $(FLIP_PROFILE_TARGET)
+
+gaussian-sizes: $(GAUSSIAN_SIZES_TARGET)
+
 compiler-evidence:
-	$(MAKE) -B DEBUG=1 SIMD=off-avx2 COMPILER_DIAGNOSTICS=1 layout
+	$(MAKE) -B DEBUG=1 SIMD=off-avx2 COMPILER_DIAGNOSTICS=1 layout all
 	objdump -d -C --no-show-raw-insn build/off-avx2/layout_benchmark > build/off-avx2/layout_benchmark.asm
-	$(MAKE) -B DEBUG=1 SIMD=omp-avx2 COMPILER_DIAGNOSTICS=1 layout
+	objdump -d -C --no-show-raw-insn build/off-avx2/image_benchmark > build/off-avx2/image_benchmark.asm
+	$(MAKE) -B DEBUG=1 SIMD=omp-avx2 COMPILER_DIAGNOSTICS=1 layout all
 	objdump -d -C --no-show-raw-insn build/omp-avx2/layout_benchmark > build/omp-avx2/layout_benchmark.asm
+	objdump -d -C --no-show-raw-insn build/omp-avx2/image_benchmark > build/omp-avx2/image_benchmark.asm
 
 gui: $(GUI_TARGET)
 
@@ -132,6 +142,12 @@ $(LAYOUT_TARGET): $(CORE_OBJECT) $(LAYOUT_OBJECT)
 $(DIAGNOSTIC_TARGET): $(CORE_OBJECT) $(DIAGNOSTIC_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(FLIP_PROFILE_TARGET): $(CORE_OBJECT) $(FLIP_PROFILE_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(GAUSSIAN_SIZES_TARGET): $(CORE_OBJECT) $(GAUSSIAN_SIZES_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -148,6 +164,12 @@ $(LAYOUT_OBJECT): $(PROJECT_DIR)/layout_benchmark.cpp | check-compiler $(BUILD_D
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(VECTOR_REPORT_FLAG) $(COMPILER_DIAGNOSTIC_LAYOUT_FLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(DIAGNOSTIC_OBJECT): $(PROJECT_DIR)/diagnostic_runner.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(FLIP_PROFILE_OBJECT): $(PROJECT_DIR)/flip_profile_runner.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(GAUSSIAN_SIZES_OBJECT): $(PROJECT_DIR)/gaussian_sizes_benchmark.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
