@@ -1,0 +1,21 @@
+level 1 thread 0x7fe93d29d800 affinity 0,20
+level 1 thread 0x7fe93001d6c0 affinity 1,21
+level 1 thread 0x7fe92f81c6c0 affinity 2,22
+level 1 thread 0x7fe92f01b6c0 affinity 3,23
+level 1 thread 0x7fe92e81a6c0 affinity 4,24
+level 1 thread 0x7fe92e0196c0 affinity 5,25
+level 1 thread 0x7fe92d8186c0 affinity 6,26
+level 1 thread 0x7fe92d0176c0 affinity 7,27
+level 1 thread 0x7fe92c8166c0 affinity 8,28
+level 1 thread 0x7fe92c0156c0 affinity 9,29
+level 1 thread 0x7fe92b8146c0 affinity 10,30
+level 1 thread 0x7fe92b0136c0 affinity 11,31
+level 1 thread 0x7fe92a8126c0 affinity 12,32
+level 1 thread 0x7fe92a0116c0 affinity 13,33
+level 1 thread 0x7fe9298106c0 affinity 14,34
+level 1 thread 0x7fe92900f6c0 affinity 15,35
+level 1 thread 0x7fe92880e6c0 affinity 16,36
+level 1 thread 0x7fe92800d6c0 affinity 17,37
+level 1 thread 0x7fe92780c6c0 affinity 18,38
+level 1 thread 0x7fe92700b6c0 affinity 19,39
+Flip validado; init=serial, iterations=1, control_ms=6.86379

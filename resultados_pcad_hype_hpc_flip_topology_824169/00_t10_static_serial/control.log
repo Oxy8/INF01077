@@ -1,0 +1,11 @@
+level 1 thread 0x7f992763c800 affinity 0,20
+level 1 thread 0x7f991a3d56c0 affinity 1,21
+level 1 thread 0x7f9919bd46c0 affinity 2,22
+level 1 thread 0x7f99193d36c0 affinity 3,23
+level 1 thread 0x7f9918bd26c0 affinity 4,24
+level 1 thread 0x7f99183d16c0 affinity 5,25
+level 1 thread 0x7f9917bd06c0 affinity 6,26
+level 1 thread 0x7f99173cf6c0 affinity 7,27
+level 1 thread 0x7f9916bce6c0 affinity 8,28
+level 1 thread 0x7f99163cd6c0 affinity 9,29
+Flip validado; init=serial, iterations=1, control_ms=10.0535

@@ -1,0 +1,11 @@
+level 1 thread 0x7fd71d41a800 affinity 0,20
+level 1 thread 0x7fd7101b56c0 affinity 1,21
+level 1 thread 0x7fd70f9b46c0 affinity 2,22
+level 1 thread 0x7fd70f1b36c0 affinity 3,23
+level 1 thread 0x7fd70e9b26c0 affinity 4,24
+level 1 thread 0x7fd70e1b16c0 affinity 5,25
+level 1 thread 0x7fd70d9b06c0 affinity 6,26
+level 1 thread 0x7fd70d1af6c0 affinity 7,27
+level 1 thread 0x7fd70c9ae6c0 affinity 8,28
+level 1 thread 0x7fd70c1ad6c0 affinity 9,29
+Flip validado; init=parallel-static, iterations=1, control_ms=9.18696

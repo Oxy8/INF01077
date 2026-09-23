@@ -1,0 +1,5 @@
+threads=20
+schedule=dynamic,1
+init=serial
+iterations=500
+image=images/6000x6000.png

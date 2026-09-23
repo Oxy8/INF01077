@@ -1,0 +1,11 @@
+Thread,Rows,Work_ms,Init_Mode,Control_ms
+0,600,7.57575,parallel-static,9.20512
+1,600,7.61371,parallel-static,9.20512
+2,600,7.56899,parallel-static,9.20512
+3,600,7.57679,parallel-static,9.20512
+4,600,7.56892,parallel-static,9.20512
+5,600,9.15652,parallel-static,9.20512
+6,600,9.18148,parallel-static,9.20512
+7,600,9.16711,parallel-static,9.20512
+8,600,9.16159,parallel-static,9.20512
+9,600,9.186,parallel-static,9.20512

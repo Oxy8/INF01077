@@ -1,0 +1,5 @@
+threads=10
+schedule=dynamic,1
+init=parallel-static
+iterations=500
+image=images/6000x6000.png

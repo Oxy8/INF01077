@@ -1,0 +1,6 @@
+build=omp-avx2
+layout=soa-naive
+threads=20
+schedule=static
+profile_iterations=4
+image=images/6000x6000.png

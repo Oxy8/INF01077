@@ -1,0 +1,6 @@
+build=off-avx2
+layout=soa-separable
+threads=20
+schedule=static
+profile_iterations=100
+image=images/6000x6000.png

@@ -1,0 +1,5 @@
+mkdir -p build/omp-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell -fopt-info-vec-optimized=build/omp-avx2/vectorization-core.log  -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp-avx2/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell -MMD -MP -c 577262-FPI-Relatorio2/flip_profile_runner.cpp -o build/omp-avx2/flip_profile_runner.o
+g++ -fopenmp build/omp-avx2/image_manipulation.o build/omp-avx2/flip_profile_runner.o  -o build/omp-avx2/flip_profile_runner
+Coletas HPC de Flip/topologia salvas em /home/users/efsilva/teste/INF01077/resultados_pcad_hype_hpc_flip_topology_824169

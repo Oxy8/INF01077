@@ -1,0 +1,84 @@
+vtune: Warning: Due to hardware limitations some of the metrics will not be available on this platform when Intel Hyper-Threading Technology is on. Consider disabling the Hyper-Threading option in the BIOS before running the analysis.
+vtune: Warning: Vectorization analysis is limited for this platform. Only metrics based on binary static analysis such as vector instruction set will be available.
+vtune: Warning: To profile kernel modules during the session, make sure they are available in the /lib/modules/kernel_version/ location.
+vtune: Peak bandwidth measurement started.
+vtune: Peak bandwidth measurement finished.
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /home/users/efsilva/teste/INF01077/resultados_pcad_hype_hpc_flip_topology_824169/00_t10_static_serial/hpc_performance -command stop.
+level 1 thread 0x7f174b6cb800 affinity 0,20
+level 1 thread 0x7f173e41d6c0 affinity 1,21
+level 1 thread 0x7f173dc1c6c0 affinity 2,22
+level 1 thread 0x7f173d41b6c0 affinity 3,23
+level 1 thread 0x7f173cc1a6c0 affinity 4,24
+level 1 thread 0x7f173c4196c0 affinity 5,25
+level 1 thread 0x7f173bc186c0 affinity 6,26
+level 1 thread 0x7f173b4176c0 affinity 7,27
+level 1 thread 0x7f173ac166c0 affinity 8,28
+level 1 thread 0x7f173a4156c0 affinity 9,29
+Flip validado; init=serial, iterations=500, control_ms=25.7938
+vtune: Collection stopped.
+vtune: Using result path `/home/users/efsilva/teste/INF01077/resultados_pcad_hype_hpc_flip_topology_824169/00_t10_static_serial/hpc_performance'
+vtune: Executing actions  0 %                                                  vtune: Executing actions  0 % Finalizing results                               vtune: Executing actions  0 % Finalizing the result                            vtune: Executing actions  0 % Clearing the database                            vtune: Executing actions  7 % Clearing the database                            vtune: Executing actions  7 % Loading raw data to the database                 vtune: Executing actions  7 % Loading 'systemcollector-899009-hype5.sc' file   vtune: Executing actions 12 % Loading 'systemcollector-899009-hype5.sc' file   vtune: Executing actions 12 % Loading '899030.perf' file                       vtune: Executing actions 12 % Loading '899030.stat.perf' file                  vtune: Executing actions 12 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Updating precomputed scalar metrics              vtune: Executing actions 14 % Processing profile metrics and debug information vtune: Executing actions 19 % Processing profile metrics and debug information vtune: Executing actions 19 % Setting data model parameters                    vtune: Executing actions 19 % Resolving module symbols                         vtune: Executing actions 19 % Resolving information for `libgomp.so.1.0.0'     vtune: Executing actions 19 % Resolving information for `libc.so.6'            vtune: Executing actions 19 % Resolving information for `nf_conntrack.ko'      vtune: Executing actions 19 % Resolving information for `nf_tables.ko'         vtune: Executing actions 19 % Resolving information for `igb.ko'               
+vtune: Warning: Cannot locate debugging information for file `/usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0'.
+vtune: Executing actions 19 % Resolving information for `nfsv4.ko'             
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/net/netfilter/nf_conntrack.ko'.
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/net/netfilter/nf_tables.ko'.
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/drivers/net/ethernet/intel/igb/igb.ko'.
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/fs/nfs/nfsv4.ko'.
+vtune: Executing actions 19 % Resolving information for `flip_profile_runner'  vtune: Executing actions 20 % Resolving information for `flip_profile_runner'  vtune: Executing actions 20 % Resolving information for `kvm.ko'               
+vtune: Warning: Cannot locate debugging information for file `/lib/modules/6.1.0-45-amd64/kernel/arch/x86/kvm/kvm.ko'.
+vtune: Executing actions 21 % Resolving information for `kvm.ko'               vtune: Executing actions 22 % Resolving information for `kvm.ko'               vtune: Executing actions 22 % Resolving information for `vmlinux'              
+vtune: Warning: Cannot locate debugging information for the Linux kernel. Source-level analysis will not be possible. Function-level analysis will be limited to kernel symbol tables. See the Enabling Linux Kernel Analysis topic in the product online help for instructions.
+vtune: Executing actions 22 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving bottom user stack information          vtune: Executing actions 23 % Resolving thread name information                vtune: Executing actions 24 % Resolving thread name information                vtune: Executing actions 24 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving call target names for dynamic code     vtune: Executing actions 25 % Resolving interrupt name information             vtune: Executing actions 26 % Resolving interrupt name information             vtune: Executing actions 26 % Processing profile metrics and debug information vtune: Executing actions 27 % Processing profile metrics and debug information vtune: Executing actions 28 % Processing profile metrics and debug information vtune: Executing actions 29 % Processing profile metrics and debug information vtune: Executing actions 30 % Processing profile metrics and debug information vtune: Executing actions 31 % Processing profile metrics and debug information vtune: Executing actions 31 % Preparing output tree                            vtune: Executing actions 31 % Parsing columns in input tree                    vtune: Executing actions 32 % Parsing columns in input tree                    vtune: Executing actions 32 % Creating top-level columns                       vtune: Executing actions 32 % Creating top-level rows                          vtune: Executing actions 33 % Creating top-level rows                          vtune: Executing actions 33 % Preparing output tree                            vtune: Executing actions 33 % Parsing columns in input tree                    vtune: Executing actions 33 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level columns                       vtune: Executing actions 34 % Creating top-level rows                          vtune: Executing actions 35 % Creating top-level rows                          vtune: Executing actions 35 % Setting data model parameters                    vtune: Executing actions 35 % Precomputing frequently used data                vtune: Executing actions 35 % Precomputing frequently used data                vtune: Executing actions 36 % Precomputing frequently used data                vtune: Executing actions 37 % Precomputing frequently used data                vtune: Executing actions 38 % Precomputing frequently used data                vtune: Executing actions 39 % Precomputing frequently used data                vtune: Executing actions 40 % Precomputing frequently used data                vtune: Executing actions 41 % Precomputing frequently used data                vtune: Executing actions 41 % Updating precomputed scalar metrics              vtune: Executing actions 42 % Updating precomputed scalar metrics              vtune: Executing actions 42 % Discarding redundant overtime data               vtune: Executing actions 44 % Discarding redundant overtime data               vtune: Executing actions 44 % Saving the result                                vtune: Executing actions 46 % Saving the result                                vtune: Executing actions 48 % Saving the result                                vtune: Executing actions 49 % Saving the result                                vtune: Executing actions 50 % Saving the result                                vtune: Executing actions 50 % Generating a report                              vtune: Executing actions 50 % Setting data model parameters                    vtune: Executing actions 75 % Setting data model parameters                    vtune: Executing actions 75 % Generating a report                              Elapsed Time: 9.729s
+    CPI Rate: 0.299
+    Average CPU Frequency: 2.601 GHz 
+    Total Thread Count: 10
+Effective Physical Core Utilization: 41.9% (8.381 out of 20)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 21.0% (8.403 out of 40)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Memory Bound: 1.6% of Pipeline Slots
+    Cache Bound: 2.4% of Clockticks
+    DRAM Bound: N/A with HT on
+        DRAM Bandwidth Bound: 2.1% of Elapsed Time
+    NUMA: % of Remote Accesses: 0.0%
+
+    Bandwidth Utilization
+    Bandwidth Domain             Platform Maximum  Observed Maximum  Average  % of Elapsed Time with High BW Utilization(%)
+    ---------------------------  ----------------  ----------------  -------  ---------------------------------------------
+    DRAM, GB/sec                 116                         62.200   22.557                                           0.0%
+    DRAM Single-Package, GB/sec  58                          62.100   22.726                                           2.1%
+Collection and Platform Info
+    Application Command Line: build/omp-avx2/flip_profile_runner "--image" "images/6000x6000.png" "--iterations" "500" "--init" "serial" 
+    Operating System: 6.1.0-45-amd64 12.15
+    Computer Name: hype5
+    Result Size: 46.6 MB 
+    Collection start time: 22:15:06 23/09/2026 UTC
+    Collection stop time: 22:15:16 23/09/2026 UTC
+    Collector Type: Driverless Perf per-process sampling
+    CPU
+        Name: Intel(R) Xeon(R) E5/E7 v3 Processor code named Haswell
+        Frequency: 2.295 GHz 
+        Logical CPU Count: 40
+        Max DRAM Single-Package Bandwidth: 58.000 GB/s
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
+vtune: Executing actions 100 % Generating a report                             vtune: Executing actions 100 % done                                            

@@ -1,0 +1,6 @@
+build=omp-avx2
+layout=aos
+threads=20
+schedule=static
+profile_iterations=8
+image=images/6000x6000.png

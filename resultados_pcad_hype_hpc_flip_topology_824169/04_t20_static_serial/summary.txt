@@ -1,0 +1,63 @@
+Elapsed Time: 6.486s
+    CPI Rate: 0.357
+    Average CPU Frequency: 2.600 GHz 
+    Total Thread Count: 20
+Effective Physical Core Utilization: 76.3% (15.262 out of 20)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 38.0% (15.211 out of 40)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Memory Bound: 10.5% of Pipeline Slots
+    Cache Bound: 5.7% of Clockticks
+    DRAM Bound: N/A with HT on
+        DRAM Bandwidth Bound: 63.7% of Elapsed Time
+         | The system spent much time heavily utilizing DRAM bandwidth. Improve
+         | data accesses to reduce cacheline transfers from/to memory using
+         | these possible techniques: 1) consume all bytes of each cacheline
+         | before it is evicted (for example, reorder structure elements and
+         | split non-hot ones); 2) merge compute-limited and bandwidth-limited
+         | loops; 3) use NUMA optimizations on a multi-socket system. Note:
+         | software prefetches do not help a bandwidth-limited application. Run
+         | Memory Access analysis to identify data structures to be allocated in
+         | High Bandwidth Memory (HBM), if available.
+         |
+    NUMA: % of Remote Accesses: 0.0%
+
+    Bandwidth Utilization
+    Bandwidth Domain             Platform Maximum  Observed Maximum  Average  % of Elapsed Time with High BW Utilization(%)
+    ---------------------------  ----------------  ----------------  -------  ---------------------------------------------
+    DRAM, GB/sec                 116                         93.100   33.966                                           0.6%
+    DRAM Single-Package, GB/sec  58                          92.600   33.850                                          63.7%
+Collection and Platform Info
+    Application Command Line: build/omp-avx2/flip_profile_runner "--image" "images/6000x6000.png" "--iterations" "500" "--init" "serial" 
+    Operating System: 6.1.0-45-amd64 12.15
+    Computer Name: hype5
+    Result Size: 48.5 MB 
+    Collection start time: 22:17:38 23/09/2026 UTC
+    Collection stop time: 22:17:44 23/09/2026 UTC
+    Collector Type: Driverless Perf per-process sampling
+    CPU
+        Name: Intel(R) Xeon(R) E5/E7 v3 Processor code named Haswell
+        Frequency: 2.295 GHz 
+        Logical CPU Count: 40
+        Max DRAM Single-Package Bandwidth: 58.000 GB/s
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.

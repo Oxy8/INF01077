@@ -1,0 +1,175 @@
+Function	Hardware Event Count:CPU_CLK_UNHALTED.THREAD	Hardware Event Count:CPU_CLK_UNHALTED.REF_TSC	Hardware Event Count:INST_RETIRED.ANY	Hardware Event Count:CYCLE_ACTIVITY.STALLS_L1D_PENDING	Hardware Event Count:CPU_CLK_UNHALTED.REF_XCLK	Hardware Event Count:CPU_CLK_UNHALTED.ONE_THREAD_ACTIVE	Hardware Event Count:CYCLE_ACTIVITY.CYCLES_NO_EXECUTE	Hardware Event Count:CYCLE_ACTIVITY.STALLS_LDM_PENDING	Hardware Event Count:CYCLE_ACTIVITY.STALLS_L2_PENDING	Hardware Event Count:IDQ_UOPS_NOT_DELIVERED.CORE	Hardware Event Count:INT_MISC.RECOVERY_CYCLES	Hardware Event Count:MEM_LOAD_UOPS_RETIRED.L3_HIT_PS	Hardware Event Count:MEM_LOAD_UOPS_RETIRED.L3_MISS_PS	Hardware Event Count:OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_DATA_RD	Hardware Event Count:OFFCORE_REQUESTS_OUTSTANDING.ALL_DATA_RD:cmask=6	Hardware Event Count:RESOURCE_STALLS.SB	Hardware Event Count:RS_EVENTS.EMPTY_CYCLES	Hardware Event Count:UOPS_EXECUTED.CORE:cmask=1	Hardware Event Count:UOPS_EXECUTED.CORE:cmask=2	Hardware Event Count:UOPS_EXECUTED.CORE:cmask=3	Hardware Event Count:UOPS_ISSUED.ANY	Hardware Event Count:UOPS_RETIRED.RETIRE_SLOTS	Hardware Event Count:IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE	Hardware Event Count:MEM_UOPS_RETIRED.ALL_LOADS_PS	Hardware Event Count:MEM_UOPS_RETIRED.ALL_STORES_PS	Hardware Event Count:MEM_LOAD_UOPS_L3_MISS_RETIRED.LOCAL_DRAM_PS	Hardware Event Count:MEM_LOAD_UOPS_L3_MISS_RETIRED.REMOTE_DRAM_PS	Hardware Event Count:MEM_LOAD_UOPS_L3_MISS_RETIRED.REMOTE_HITM_PS	Hardware Event Count:MEM_LOAD_UOPS_L3_MISS_RETIRED.REMOTE_FWD_PS	Module	Function (Full)	Source File	Start Address
+[Loop@0xe850 in flip_horizontal._omp_fn.0]	196454500000	174167500000	686331500000	3220004830	6037681125	6016680495	10080015120	7560011340	6160009240	42980064470	70000105	0	0	81340122010	10080015120	140000210	2170003255	201040301560	195160292740	175070262605	723031084545	711271066905	770001155	147613428270	109287278520	0	0	0	0	flip_profile_runner	[Loop@0xe850 in flip_horizontal._omp_fn.0]	[Unknown]	0xe850
+[Loop@0xe850 in _Z15flip_horizontalR10ImageState._omp_fn.0]	3611000000	2794500000	12673000000	0	136504095	136504095	280000420	70000105	0	140000210	0	0	0	1890002835	140000210	0	0	3360005040	3500005250	4060006090	12600018900	13370020055	0	0	0	0	0	0	0	flip_profile_runner	[Loop@0xe850 in _Z15flip_horizontalR10ImageState._omp_fn.0]	[Unknown]	0xe850
+[Loop@0x20198 in stbi__parse_zlib]	2208000000	1644500000	4266500000	0	63001890	56001680	560000840	350000525	70000105	280000420	140000210	0	0	280000420	0	0	280000420	1750002625	1610002415	910001365	5740008610	3850005775	0	686020580	469014070	0	0	0	0	flip_profile_runner	[Loop@0x20198 in stbi__parse_zlib(stbi__zbuf*, int)]	[Unknown]	0x20198
+func@0xe704	667000000	506000000	195500000	0	21000630	17500525	770001155	560000840	70000105	70000105	0	0	0	140000210	0	0	0	140000210	0	0	70000105	70000105	0	31500945	3500105	0	0	0	0	libgomp.so.1.0.0	func@0xe704	[Unknown]	0xe704
+clear_page_erms	632500000	517500000	0	0	38501155	24500735	1470002205	0	0	0	0	0	0	70000105	0	420000630	280000420	70000105	0	70000105	0	70000105	0	3500105	45501365	0	0	0	0	vmlinux	clear_page_erms	[Unknown]	0xffffffff84deb980
+[Loop@0x205c0 in stbi__parse_zlib]	517500000	483000000	414000000	0	7000210	14000420	0	70000105	0	210000315	0	0	0	280000420	70000105	0	70000105	490000735	210000315	140000210	910001365	280000420	0	101503045	115503465	0	0	0	0	flip_profile_runner	[Loop@0x205c0 in stbi__parse_zlib(stbi__zbuf*, int)]	[Unknown]	0x205c0
+GOMP_loop_maybe_nonmonotonic_runtime_next	379500000	345000000	207000000	0	14000420	10500315	280000420	420000630	0	560000840	0	1750105	0	0	0	0	0	210000315	70000105	0	560000840	420000630	0	42001260	0	0	0	0	0	libgomp.so.1.0.0	GOMP_loop_maybe_nonmonotonic_runtime_next	[Unknown]	0xffe0
+[Loop@0x1dd60 in stbi__create_png_image_raw]	299000000	264500000	1299500000	0	10500315	10500315	0	0	0	0	0	0	0	210000315	0	0	0	490000735	420000630	280000420	910001365	770001155	0	255507665	91002730	0	0	0	0	flip_profile_runner	[Loop@0x1dd60 in stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)]	[Unknown]	0x1dd60
+[Loop@0x1f7d8 in func@0x1f784]	241500000	299000000	69000000	0	10500315	14000420	140000210	0	0	0	0	0	0	0	0	0	140000210	0	0	0	420000630	140000210	0	10500315	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1f7d8 in func@0x1f784]	[Unknown]	0x1f7d8
+[Loop@0xd438 in flip_horizontal_profiled._omp_fn.0]	218500000	126500000	701500000	0	3500105	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	flip_profile_runner	[Loop@0xd438 in flip_horizontal_profiled._omp_fn.0]	[Unknown]	0xd438
+[Loop@0x1f620 in func@0x1f5fd]	207000000	195500000	34500000	0	7000210	0	140000210	0	0	0	0	0	0	0	0	0	0	70000105	0	0	210000315	70000105	0	7000210	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1f620 in func@0x1f5fd]	[Unknown]	0x1f620
+__memcpy_avx_unaligned_erms	184000000	126500000	0	70000105	10500315	38501155	420000630	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	__memcpy_avx_unaligned_erms	[Unknown]	0x152a80
+[Loop@0x152f85 in __memcpy_avx_unaligned_erms]	80500000	80500000	11500000	0	0	3500105	140000210	70000105	70000105	0	0	0	0	70000105	0	0	0	0	70000105	0	70000105	0	0	14000420	10500315	0	0	0	0	libc.so.6	[Loop@0x152f85 in __memcpy_avx_unaligned_erms]	[Unknown]	0x152f85
+[Loop@0x203d0 in stbi__parse_zlib]	80500000	23000000	103500000	0	0	3500105	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	70000105	70000105	0	10500315	17500525	0	0	0	0	flip_profile_runner	[Loop@0x203d0 in stbi__parse_zlib(stbi__zbuf*, int)]	[Unknown]	0x203d0
+update_curr	69000000	115000000	0	140000210	7000210	0	140000210	210000315	70000105	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	update_curr	[Unknown]	0xffffffff844ec230
+[Loop@0x1524a0 in __memcmp_avx2_movbe]	57500000	34500000	11500000	0	0	0	0	0	0	70000105	0	15750945	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	[Loop@0x1524a0 in __memcmp_avx2_movbe]	[Unknown]	0x1524a0
+copy_user_enhanced_fast_string	57500000	0	0	0	0	3500105	70000105	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	copy_user_enhanced_fast_string	[Unknown]	0xffffffff84debf50
+hrtimer_interrupt	57500000	11500000	0	0	0	0	70000105	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	hrtimer_interrupt	[Unknown]	0xffffffff84555aa0
+task_tick_fair	57500000	34500000	11500000	0	0	0	70000105	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	7000210	0	0	0	0	0	vmlinux	task_tick_fair	[Unknown]	0xffffffff844ec9b0
+update_load_avg	46000000	0	23000000	0	0	0	0	0	0	140000210	0	0	0	0	0	0	0	70000105	0	0	70000105	0	0	7000210	0	0	0	0	0	vmlinux	update_load_avg	[Unknown]	0xffffffff844e8870
+[Loop@0x1ab20 in stbi__convert_format]	34500000	46000000	46000000	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	70000105	0	14000420	7000210	0	0	0	0	flip_profile_runner	[Loop@0x1ab20 in stbi__convert_format(unsigned char*, int, int, unsigned int, unsigned int)]	[Unknown]	0x1ab20
+[Loop@0xe800 in flip_horizontal._omp_fn.0]	34500000	11500000	57500000	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	70000105	70000105	0	0	31500945	0	0	0	0	flip_profile_runner	[Loop@0xe800 in flip_horizontal._omp_fn.0]	[Unknown]	0xe800
+__memset_avx2_unaligned_erms	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	libc.so.6	__memset_avx2_unaligned_erms	[Unknown]	0x153480
+asm_sysvec_apic_timer_interrupt	34500000	57500000	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	asm_sysvec_apic_timer_interrupt	[Unknown]	0xffffffff85000ef0
+func@0x3170	34500000	11500000	126500000	0	0	7000210	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	140000210	140000210	0	38501155	14000420	0	0	0	0	flip_profile_runner	func@0x3170	[Unknown]	0x3170
+psi_group_change	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	vmlinux	psi_group_change	[Unknown]	0xffffffff845066f0
+update_process_times	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	update_process_times	[Unknown]	0xffffffff84554320
+[Loop@0x11848 in stbi__zbuild_huffman]	23000000	11500000	57500000	0	0	0	70000105	70000105	0	70000105	0	0	0	70000105	0	0	0	0	0	0	0	210000315	0	3500105	3500105	0	0	0	0	flip_profile_runner	[Loop@0x11848 in stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)]	[Unknown]	0x11848
+[Loop@0x1cd60 in func@0x1cc44]	23000000	11500000	0	0	0	0	0	70000105	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1cd60 in func@0x1cc44]	[Unknown]	0x1cd60
+[Loop@0xe840 in flip_horizontal._omp_fn.0]	23000000	92000000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	210000315	70000105	0	17500525	0	0	0	0	0	flip_profile_runner	[Loop@0xe840 in flip_horizontal._omp_fn.0]	[Unknown]	0xe840
+__hrtimer_run_queues	23000000	34500000	23000000	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__hrtimer_run_queues	[Unknown]	0xffffffff84554ae0
+account_user_time	23000000	34500000	0	70000105	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	vmlinux	account_user_time	[Unknown]	0xffffffff844ffbf0
+clear_huge_page	23000000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	vmlinux	clear_huge_page	[Unknown]	0xffffffff846d0e70
+func@0x1e7c4	23000000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0x1e7c4	[Unknown]	0x1e7c4
+irq_enter_rcu	23000000	11500000	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	vmlinux	irq_enter_rcu	[Unknown]	0xffffffff844a9810
+ktime_get_update_offsets_now	23000000	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	ktime_get_update_offsets_now	[Unknown]	0xffffffff84558db0
+perf_event_task_tick	23000000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	perf_event_task_tick	[Unknown]	0xffffffff846686e0
+rcu_sched_clock_irq	23000000	11500000	0	0	0	0	0	0	0	0	0	0	1750105	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	rcu_sched_clock_irq	[Unknown]	0xffffffff8453c160
+scheduler_tick	23000000	11500000	0	0	0	0	0	0	70000105	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	scheduler_tick	[Unknown]	0xffffffff844e2c80
+[Loop@0x113f0 in stbi__zbuild_huffman]	11500000	0	23000000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	7000210	0	0	0	0	0	flip_profile_runner	[Loop@0x113f0 in stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)]	[Unknown]	0x113f0
+[Loop@0x11920 in stbi__zbuild_huffman]	11500000	0	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	7000210	0	0	0	0	flip_profile_runner	[Loop@0x11920 in stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)]	[Unknown]	0x11920
+[Loop@0x152c20 in __memcpy_avx_unaligned_erms]	11500000	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	[Loop@0x152c20 in __memcpy_avx_unaligned_erms]	[Unknown]	0x152c20
+[Loop@0x1fdd8 in stbi__compute_huffman_codes]	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	flip_profile_runner	[Loop@0x1fdd8 in stbi__compute_huffman_codes(stbi__zbuf*)]	[Unknown]	0x1fdd8
+[Loop@0x20800 in stbi__parse_zlib]	11500000	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	140000210	70000105	0	0	3500105	0	0	0	0	flip_profile_runner	[Loop@0x20800 in stbi__parse_zlib(stbi__zbuf*, int)]	[Unknown]	0x20800
+_IO_file_underflow	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	_IO_file_underflow	[Unknown]	0x81ff0
+__cgroup_account_cputime_field	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__cgroup_account_cputime_field	[Unknown]	0xffffffff84583480
+__get_user_8	11500000	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__get_user_8	[Unknown]	0xffffffff84dec8d0
+__schedule	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__schedule	[Unknown]	0xffffffff84e46f70
+__update_load_avg_cfs_rq	11500000	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	7000210	3500105	0	0	0	0	vmlinux	__update_load_avg_cfs_rq	[Unknown]	0xffffffff844fe560
+__update_load_avg_se	11500000	11500000	23000000	0	0	3500105	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	0	0	0	0	vmlinux	__update_load_avg_se	[Unknown]	0xffffffff844fe1b0
+_raw_spin_lock	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	_raw_spin_lock	[Unknown]	0xffffffff84e4f520
+acct_account_cputime	11500000	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	acct_account_cputime	[Unknown]	0xffffffff845abf10
+asm_exc_page_fault	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	asm_exc_page_fault	[Unknown]	0xffffffff85000be0
+common_interrupt_return	11500000	23000000	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	70000105	0	70000105	0	0	0	0	17500525	28000840	0	0	0	0	vmlinux	common_interrupt_return	[Unknown]	0xffffffff85001150
+cpuacct_charge	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	cpuacct_charge	[Unknown]	0xffffffff845080d0
+entry_SYSRETQ_unsafe_stack	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	entry_SYSRETQ_unsafe_stack	[Unknown]	0xffffffff8500021b
+error_entry	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	error_entry	[Unknown]	0xffffffff850014f0
+fib_table_lookup	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	fib_table_lookup	[Unknown]	0xffffffff84cd1150
+flip_horizontal._omp_fn.0	11500000	23000000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	flip_profile_runner	flip_horizontal._omp_fn.0	[Unknown]	0xe7b0
+fpregs_assert_state_consistent	11500000	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	fpregs_assert_state_consistent	[Unknown]	0xffffffff84440720
+func@0x1eae4	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0x1eae4	[Unknown]	0x1eae4
+func@0xe6a4	11500000	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0xe6a4	[Unknown]	0xe6a4
+hsw_hw_config	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	hsw_hw_config	[Unknown]	0xffffffff84412bb0
+igb_msix_ring	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	igb.ko	igb_msix_ring	[Unknown]	0x13c0
+ip_protocol_deliver_rcu	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	ip_protocol_deliver_rcu	[Unknown]	0xffffffff84c6c790
+ktime_get	11500000	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	ktime_get	[Unknown]	0xffffffff84557cb0
+memset_erms	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	memset_erms	[Unknown]	0xffffffff84deefd0
+mutex_unlock	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	mutex_unlock	[Unknown]	0xffffffff84e49380
+nf_nat_inet_fn	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	nf_nat.ko	nf_nat_inet_fn	[Unknown]	0x1720
+note_gp_changes	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	note_gp_changes	[Unknown]	0xffffffff845379c0
+perf_event_alloc	11500000	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	perf_event_alloc	[Unknown]	0xffffffff84666b40
+perf_iterate_ctx	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	perf_iterate_ctx	[Unknown]	0xffffffff846615d0
+pvclock_gtod_notify	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	kvm.ko	pvclock_gtod_notify	[Unknown]	0x1f110
+sync_regs	11500000	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	sync_regs	[Unknown]	0xffffffff84e39e30
+tick_sched_handle	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	tick_sched_handle	[Unknown]	0xffffffff84567e50
+unmap_page_range	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	unmap_page_range	[Unknown]	0xffffffff846c8850
+update_cfs_group	11500000	23000000	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10500315	0	0	0	0	0	vmlinux	update_cfs_group	[Unknown]	0xffffffff844ec590
+update_min_vruntime	11500000	34500000	0	0	0	0	0	0	70000105	0	0	0	0	70000105	0	0	0	0	0	0	0	140000210	0	0	0	0	0	0	0	vmlinux	update_min_vruntime	[Unknown]	0xffffffff844e5e70
+update_rt_rq_load_avg	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	update_rt_rq_load_avg	[Unknown]	0xffffffff844fe8b0
+GOMP_loop_nonmonotonic_runtime_start	0	11500000	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	GOMP_loop_nonmonotonic_runtime_start	[Unknown]	0xf100
+[Loop@0x153500 in __memset_avx2_unaligned_erms]	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	libc.so.6	[Loop@0x153500 in __memset_avx2_unaligned_erms]	[Unknown]	0x153500
+[Loop@0x1d478 in stbi__create_png_image_raw]	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	flip_profile_runner	[Loop@0x1d478 in stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)]	[Unknown]	0x1d478
+[Loop@0x1d578 in func@0x1d32f]	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1d578 in func@0x1d32f]	[Unknown]	0x1d578
+[Loop@0x1dcd0 in stbi__create_png_image_raw]	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	flip_profile_runner	[Loop@0x1dcd0 in stbi__create_png_image_raw(stbi__png*, unsigned char*, unsigned int, int, unsigned int, unsigned int, int, int)]	[Unknown]	0x1dcd0
+[Loop@0x1eb51 in func@0x1eae4]	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1eb51 in func@0x1eae4]	[Unknown]	0x1eb51
+[Loop@0x1f540 in stbi__compute_huffman_codes]	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	flip_profile_runner	[Loop@0x1f540 in stbi__compute_huffman_codes(stbi__zbuf*)]	[Unknown]	0x1f540
+[Loop@0x1f7b0 in func@0x1f784]	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	[Loop@0x1f7b0 in func@0x1f784]	[Unknown]	0x1f7b0
+[Loop@0x1fae8 in stbi__compute_huffman_codes]	0	11500000	34500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	3500105	0	0	0	0	flip_profile_runner	[Loop@0x1fae8 in stbi__compute_huffman_codes(stbi__zbuf*)]	[Unknown]	0x1fae8
+[Loop@0x1fb28 in stbi__compute_huffman_codes]	0	34500000	11500000	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	70000105	0	70000105	140000210	0	0	10500315	3500105	0	0	0	0	flip_profile_runner	[Loop@0x1fb28 in stbi__compute_huffman_codes(stbi__zbuf*)]	[Unknown]	0x1fb28
+_IO_fread	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	_IO_fread	[Unknown]	0x766a0
+__alloc_skb	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	vmlinux	__alloc_skb	[Unknown]	0xffffffff84bb53f0
+__bitmap_and	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	__bitmap_and	[Unknown]	0xffffffff8492be80
+__calc_delta	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__calc_delta	[Unknown]	0xffffffff844e60b0
+__get_obj_cgroup_from_memcg	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__get_obj_cgroup_from_memcg	[Unknown]	0xffffffff847450d0
+__ghes_peek_estatus.isra.0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	__ghes_peek_estatus.isra.0	[Unknown]	0xffffffff84a3cf70
+__hrtimer_next_event_base	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__hrtimer_next_event_base	[Unknown]	0xffffffff84554a10
+__irq_exit_rcu	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__irq_exit_rcu	[Unknown]	0xffffffff844a8fa0
+__list_del_entry_valid	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__list_del_entry_valid	[Unknown]	0xffffffff849430d0
+__mod_memcg_lruvec_state	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	__mod_memcg_lruvec_state	[Unknown]	0xffffffff84748710
+__mod_zone_page_state	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	__mod_zone_page_state	[Unknown]	0xffffffff846ad090
+__page_set_anon_rmap	0	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	__page_set_anon_rmap	[Unknown]	0xffffffff846e3da0
+__rcu_read_lock	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	__rcu_read_lock	[Unknown]	0xffffffff845334d0
+__rcu_read_unlock	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	__rcu_read_unlock	[Unknown]	0xffffffff84536fa0
+__read	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libc.so.6	__read	[Unknown]	0xf82a0
+__x86_indirect_thunk_array	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	__x86_indirect_thunk_array	[Unknown]	0xffffffff85201580
+_raw_spin_lock_irq	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	_raw_spin_lock_irq	[Unknown]	0xffffffff84e4f550
+_raw_spin_unlock	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	3500105	0	0	0	0	vmlinux	_raw_spin_unlock	[Unknown]	0xffffffff84e4f5b0
+_raw_spin_unlock_irqrestore	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	_raw_spin_unlock_irqrestore	[Unknown]	0xffffffff84e4f0a0
+acpi_os_read_memory	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	45501365	3500105	0	0	0	0	vmlinux	acpi_os_read_memory	[Unknown]	0xffffffff849ea710
+apei_check_gar	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10500315	0	0	0	0	vmlinux	apei_check_gar	[Unknown]	0xffffffff84a39df0
+apei_read	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	7000210	0	0	0	0	vmlinux	apei_read	[Unknown]	0xffffffff84a39e90
+asm_exc_nmi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	3500105	0	0	0	0	vmlinux	asm_exc_nmi	[Unknown]	0xffffffff85001640
+audit_reset_context	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	audit_reset_context	[Unknown]	0xffffffff845990a0
+cpuacct_account_field	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	cpuacct_account_field	[Unknown]	0xffffffff84508110
+cpuset_fork	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	cpuset_fork	[Unknown]	0xffffffff8458a6d0
+ct_nmi_exit	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	ct_nmi_exit	[Unknown]	0xffffffff84e3da20
+default_do_nmi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	default_do_nmi	[Unknown]	0xffffffff84e3a7f0
+deferred_split_huge_page	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	deferred_split_huge_page	[Unknown]	0xffffffff8473ba90
+dev_gro_receive	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	dev_gro_receive	[Unknown]	0xffffffff84c0ce00
+dput	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	dput	[Unknown]	0xffffffff84785330
+entry_SYSCALL_64_safe_stack	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	entry_SYSCALL_64_safe_stack	[Unknown]	0xffffffff850000a9
+exc_nmi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	0	0	0	0	0	vmlinux	exc_nmi	[Unknown]	0xffffffff84e3a970
+exit_to_user_mode_prepare	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	vmlinux	exit_to_user_mode_prepare	[Unknown]	0xffffffff84546170
+filemap_get_pages	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	filemap_get_pages	[Unknown]	0xffffffff84682bb0
+filemap_get_read_batch	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	filemap_get_read_batch	[Unknown]	0xffffffff84680660
+fill_pte	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	fill_pte	[Unknown]	0xffffffff84486070
+free_unref_page_commit	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	free_unref_page_commit	[Unknown]	0xffffffff846f07c0
+func@0x163a0	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0x163a0	[Unknown]	0x163a0
+func@0x1d32f	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0x1d32f	[Unknown]	0x1d32f
+func@0x1fbf4	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	libgomp.so.1.0.0	func@0x1fbf4	[Unknown]	0x1fbf4
+futex_wake	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	futex_wake	[Unknown]	0xffffffff8456e680
+get_page_from_freelist	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	get_page_from_freelist	[Unknown]	0xffffffff846f3f80
+ghes_copy_tofrom_phys	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10500315	0	0	0	0	0	vmlinux	ghes_copy_tofrom_phys	[Unknown]	0xffffffff84a3c850
+ghes_notify_nmi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	10500315	0	0	0	0	vmlinux	ghes_notify_nmi	[Unknown]	0xffffffff84a3e060
+hrtimer_active	0	0	0	0	0	3500105	0	70000105	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	hrtimer_active	[Unknown]	0xffffffff84554750
+hrtimer_forward	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	hrtimer_forward	[Unknown]	0xffffffff845546a0
+hrtimer_update_next_event	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	hrtimer_update_next_event	[Unknown]	0xffffffff84554e00
+intel_pmu_handle_irq	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	3500105	0	0	0	0	vmlinux	intel_pmu_handle_irq	[Unknown]	0xffffffff84413e60
+kmalloc_node_trace	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	kmalloc_node_trace	[Unknown]	0xffffffff846b6610
+lru_add_fn	0	11500000	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	lru_add_fn	[Unknown]	0xffffffff8468f5e0
+memcg_check_events	0	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	memcg_check_events	[Unknown]	0xffffffff84746dc0
+memcpy_fromio	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14000420	0	0	0	0	0	vmlinux	memcpy_fromio	[Unknown]	0xffffffff84979bd0
+native_apic_msr_eoi_write	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	vmlinux	native_apic_msr_eoi_write	[Unknown]	0xffffffff84475270
+native_flush_tlb_one_user	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	24500735	14000420	0	0	0	0	vmlinux	native_flush_tlb_one_user	[Unknown]	0xffffffff8448b5d0
+native_read_msr	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	native_read_msr	[Unknown]	0xffffffff8447e7c0
+native_sched_clock	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	10500315	7000210	0	0	0	0	vmlinux	native_sched_clock	[Unknown]	0xffffffff8443d490
+native_set_fixmap	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	native_set_fixmap	[Unknown]	0xffffffff84489e90
+native_write_msr	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	native_write_msr	[Unknown]	0xffffffff8447e910
+net_rx_action	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	net_rx_action	[Unknown]	0xffffffff84bd9270
+nfs4_have_delegation	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	nfsv4.ko	nfs4_have_delegation	[Unknown]	0x2a0b0
+nft_counter_eval	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	nf_tables.ko	nft_counter_eval	[Unknown]	0x204e0
+nmi_cpu_backtrace_handler	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	nmi_cpu_backtrace_handler	[Unknown]	0xffffffff84472070
+nmi_handle.part.0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	14000420	17500525	0	0	0	0	vmlinux	nmi_handle.part.0	[Unknown]	0xffffffff84436970
+nohz_balance_exit_idle	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	nohz_balance_exit_idle	[Unknown]	0xffffffff844f5310
+p4d_offset	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	p4d_offset	[Unknown]	0xffffffff844856e0
+page_remove_rmap	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	vmlinux	page_remove_rmap	[Unknown]	0xffffffff846e52c0
+perf_event_nmi_handler	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	0	0	0	0	0	vmlinux	perf_event_nmi_handler	[Unknown]	0xffffffff84409280
+perf_mux_hrtimer_handler	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	perf_mux_hrtimer_handler	[Unknown]	0xffffffff8466a000
+rb_erase	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	rb_erase	[Unknown]	0xffffffff84ddf0b0
+rb_next	0	11500000	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	rb_next	[Unknown]	0xffffffff84ddf8c0
+read_tsc	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	read_tsc	[Unknown]	0xffffffff8443d3c0
+reweight_entity	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	reweight_entity	[Unknown]	0xffffffff844ec430
+select_task_rq_fair	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	vmlinux	select_task_rq_fair	[Unknown]	0xffffffff844ea030
+set_pte_vaddr	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	0	vmlinux	set_pte_vaddr	[Unknown]	0xffffffff84486490
+set_pte_vaddr_p4d	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	7000210	0	0	0	0	vmlinux	set_pte_vaddr_p4d	[Unknown]	0xffffffff844863e0
+stbi__zbuild_huffman	0	0	0	0	3500105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	3500105	0	0	0	0	flip_profile_runner	stbi__zbuild_huffman(stbi__zhuffman*, unsigned char const*, int)	[Unknown]	0x11390
+syscall_return_via_sysret	0	11500000	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	syscall_return_via_sysret	[Unknown]	0xffffffff85000190
+tick_do_update_jiffies64	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	tick_do_update_jiffies64	[Unknown]	0xffffffff84567eb0
+tick_sched_do_timer	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	tick_sched_do_timer	[Unknown]	0xffffffff84567f80
+timerqueue_add	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	timerqueue_add	[Unknown]	0xffffffff84de20e0
+timerqueue_del	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	timerqueue_del	[Unknown]	0xffffffff84de21b0
+trigger_load_balance	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	trigger_load_balance	[Unknown]	0xffffffff844f5570
+update_rq_clock	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	vmlinux	update_rq_clock	[Unknown]	0xffffffff844dd280
+update_vsyscall	0	11500000	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	70000105	0	0	0	0	0	0	0	0	0	0	0	vmlinux	update_vsyscall	[Unknown]	0xffffffff845695b0
