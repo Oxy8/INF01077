@@ -94,6 +94,7 @@ COLUNAS_VTUNE = [
     "frames__CPI_Rate",
     "frames__Instructions_Retired",
     "frames__Average_CPU_Frequency",
+    "hw_events__Hardware_Event_Count_CPU_CLK_UNHALTED_THREAD",
     "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L1D_PENDING",
     "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L2_PENDING",
     "hw_events__Hardware_Event_Count_RESOURCE_STALLS_SB",
@@ -102,6 +103,9 @@ COLUNAS_VTUNE = [
 ]
 
 COLUNAS_EVENTOS_HW = {
+    "CPU_Clock_Unhalted_Thread": (
+        "hw_events__Hardware_Event_Count_CPU_CLK_UNHALTED_THREAD"
+    ),
     "L1_Pending_Cycles": (
         "hw_events__Hardware_Event_Count_CYCLE_ACTIVITY_STALLS_L1D_PENDING"
     ),
@@ -974,6 +978,150 @@ def plotar_eventos_zoom(
     plt.close(fig)
 
 
+def plotar_fracoes_ciclos(
+    eventos: pd.DataFrame,
+    transformacoes: Sequence[str],
+    schedules: Sequence[str],
+    threads: int,
+    destino: Path,
+    titulo_grupo: str,
+) -> None:
+    """Mostra clocks totais e eventos como percentual dos clocks da função."""
+    dados = eventos[
+        eventos["Num_Threads"].eq(threads)
+        & eventos["Transformation"].isin(transformacoes)
+    ].copy()
+    esperado = len(transformacoes) * len(schedules)
+    if len(dados) != esperado:
+        raise PlotError(
+            f"esperadas {esperado} condições de {titulo_grupo} com {threads} "
+            f"threads; encontradas {len(dados)}"
+        )
+
+    clocks = dados["CPU_Clock_Unhalted_Thread_por_iteracao"]
+    if clocks.isna().any() or (clocks <= 0).any():
+        raise PlotError(
+            f"CPU_CLK_UNHALTED.THREAD ausente ou inválido para {titulo_grupo}, "
+            f"{threads} threads"
+        )
+
+    percentuais = [
+        (
+            "L1_Percent_CPU_Clock",
+            "L1_Pending_Cycles_por_iteracao",
+            "CYCLE_ACTIVITY.STALLS_L1D_PENDING / CPU_CLK_UNHALTED.THREAD",
+        ),
+        (
+            "L2_Percent_CPU_Clock",
+            "L2_Pending_Cycles_por_iteracao",
+            "CYCLE_ACTIVITY.STALLS_L2_PENDING / CPU_CLK_UNHALTED.THREAD",
+        ),
+        (
+            "SB_Percent_CPU_Clock",
+            "Store_Buffer_Stalls_por_iteracao",
+            "RESOURCE_STALLS.SB / CPU_CLK_UNHALTED.THREAD",
+        ),
+    ]
+    for destino_percentual, evento, _ in percentuais:
+        dados[destino_percentual] = 100.0 * dados[evento] / clocks
+
+    rotulos_schedule = [
+        "static"
+        if schedule == "static"
+        else schedule.replace("dynamic_", "dynamic, ")
+        for schedule in schedules
+    ]
+    fig, eixos = plt.subplots(4, 1, figsize=(23, 15))
+
+    pivo_clocks = (
+        dados.pivot(
+            index="Transformation",
+            columns="OMP_Schedule",
+            values="CPU_Clock_Unhalted_Thread_por_iteracao",
+        )
+        .reindex(index=transformacoes, columns=schedules)
+        .astype(float)
+        / 1.0e9
+    )
+    anotacoes_clocks = pivo_clocks.map(
+        lambda valor: "" if pd.isna(valor) else f"{valor:.2f} B"
+    )
+    sns.heatmap(
+        pivo_clocks,
+        ax=eixos[0],
+        cmap="YlGnBu",
+        annot=anotacoes_clocks,
+        fmt="",
+        linewidths=0.6,
+        linecolor="white",
+        mask=pivo_clocks.isna(),
+        xticklabels=rotulos_schedule,
+        yticklabels=transformacoes,
+        cbar_kws={
+            "label": "Billion unhalted thread cycles per image-set pass",
+            "shrink": 0.90,
+        },
+    )
+    eixos[0].set_title(
+        "CPU_CLK_UNHALTED.THREAD per complete image-set pass",
+        fontsize=13,
+        weight="bold",
+    )
+
+    for eixo, (metrica, _, titulo) in zip(eixos[1:], percentuais):
+        pivo = (
+            dados.pivot(
+                index="Transformation", columns="OMP_Schedule", values=metrica
+            )
+            .reindex(index=transformacoes, columns=schedules)
+            .astype(float)
+        )
+        anotacoes = pivo.map(
+            lambda valor: "" if pd.isna(valor) else f"{valor:.2f}%"
+        )
+        sns.heatmap(
+            pivo,
+            ax=eixo,
+            cmap="YlOrRd",
+            vmin=0,
+            annot=anotacoes,
+            fmt="",
+            linewidths=0.6,
+            linecolor="white",
+            mask=pivo.isna(),
+            xticklabels=rotulos_schedule,
+            yticklabels=transformacoes,
+            cbar_kws={"label": "% of unhalted thread cycles", "shrink": 0.90},
+        )
+        eixo.set_title(titulo, fontsize=13, weight="bold")
+
+    for eixo in eixos:
+        eixo.set_xlabel("Schedule and chunk size")
+        eixo.set_ylabel("Transformation")
+        eixo.tick_params(axis="x", rotation=45, labelsize=8)
+        eixo.tick_params(axis="y", rotation=0)
+
+    fig.suptitle(
+        f"{titulo_grupo}: hardware-event share of unhalted cycles — "
+        f"{threads} threads",
+        fontsize=19,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.008,
+        "Percentages use function-filtered counts from the same schedule and scope: "
+        "100 × event / CPU_CLK_UNHALTED.THREAD. CPU clocks are divided by the internal "
+        "workload iterations.\nL1, L2 and SB conditions can overlap and must not be added. "
+        "VTune hardware-event counts are sampled estimates.",
+        ha="center",
+        fontsize=9.5,
+    )
+    fig.tight_layout(rect=(0.02, 0.055, 0.99, 0.96), h_pad=2.0)
+    fig.savefig(destino, dpi=240)
+    plt.close(fig)
+
+
 def plotar_comparacao_zoom(
     eventos: pd.DataFrame,
     resumo: pd.DataFrame,
@@ -1354,8 +1502,9 @@ def salvar_relatorio_zoom(
         "- L1 pending: ciclos amostrados em CYCLE_ACTIVITY.STALLS_L1D_PENDING.",
         "- L2 pending: ciclos amostrados em CYCLE_ACTIVITY.STALLS_L2_PENDING.",
         "- Store-buffer stalls: ciclos amostrados em RESOURCE_STALLS.SB.",
+        "- Fração do clock: 100 × evento / CPU_CLK_UNHALTED.THREAD, usando as mesmas funções e o mesmo schedule.",
         "",
-        "Uma passagem corresponde a aplicar a transformação às 13 imagens. Os valores são estimativas do VTune, e não tempos exclusivos que possam ser somados entre si.",
+        "Uma passagem corresponde a aplicar a transformação às 13 imagens. Os valores são estimativas do VTune, e não tempos exclusivos que possam ser somados entre si. L1, L2 e SB podem contar o mesmo ciclo e seus percentuais não devem ser somados.",
         "",
         "Resultados em dynamic 1",
         "------------------------",
@@ -1575,6 +1724,15 @@ def main(argv: Sequence[str] | None = None) -> int:
                 schedules,
                 quantidade_threads,
                 destino_zoom / f"eventos_zoom_{quantidade_threads}_threads.png",
+            )
+            plotar_fracoes_ciclos(
+                eventos_hardware,
+                ["Zoom_In", "Zoom_Out"],
+                schedules,
+                quantidade_threads,
+                destino_zoom
+                / f"cycle_percentages_all_schedules_{quantidade_threads}_threads.png",
+                "Zoom In and Zoom Out",
             )
             plotar_comparacao_zoom(
                 eventos_hardware,

@@ -40,6 +40,12 @@ class PlotTest(unittest.TestCase):
 
         self.assertAlmostEqual(static["L1_Pending_Cycles_por_iteracao"], 100.0)
         self.assertAlmostEqual(dynamic["L1_Pending_Cycles_por_iteracao"], 300.0)
+        self.assertAlmostEqual(
+            static["CPU_Clock_Unhalted_Thread_por_iteracao"], 100.0
+        )
+        self.assertAlmostEqual(
+            dynamic["CPU_Clock_Unhalted_Thread_por_iteracao"], 300.0
+        )
         self.assertAlmostEqual(dynamic["Fator_L1_Pending_Cycles"], 3.0)
         self.assertAlmostEqual(dynamic["Fator_Instructions"], 3.0)
 

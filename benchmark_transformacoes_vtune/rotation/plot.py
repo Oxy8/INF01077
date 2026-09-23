@@ -186,6 +186,143 @@ def plot_thread(
     plt.close(fig)
 
 
+def plot_cycle_percentages(
+    events: pd.DataFrame,
+    schedules: Sequence[str],
+    threads: int,
+    output: Path,
+) -> None:
+    """Plot absolute clocks and stall events as a share of matching clocks."""
+    thread_data = events[events["Num_Threads"].eq(threads)].copy()
+    expected = len(ROTATIONS) * len(schedules)
+    if len(thread_data) != expected:
+        raise RotationPlotError(
+            f"expected {expected} rotation event conditions for {threads} threads; "
+            f"found {len(thread_data)}"
+        )
+
+    clocks = thread_data["CPU_Clock_Unhalted_Thread_por_iteracao"]
+    if clocks.isna().any() or (clocks <= 0).any():
+        raise RotationPlotError(
+            f"CPU_CLK_UNHALTED.THREAD is missing or invalid for {threads} threads"
+        )
+
+    percentages = [
+        (
+            "L1_Percent_CPU_Clock",
+            "L1_Pending_Cycles_por_iteracao",
+            "CYCLE_ACTIVITY.STALLS_L1D_PENDING / CPU_CLK_UNHALTED.THREAD",
+        ),
+        (
+            "L2_Percent_CPU_Clock",
+            "L2_Pending_Cycles_por_iteracao",
+            "CYCLE_ACTIVITY.STALLS_L2_PENDING / CPU_CLK_UNHALTED.THREAD",
+        ),
+        (
+            "SB_Percent_CPU_Clock",
+            "Store_Buffer_Stalls_por_iteracao",
+            "RESOURCE_STALLS.SB / CPU_CLK_UNHALTED.THREAD",
+        ),
+    ]
+    for destination, event, _ in percentages:
+        thread_data[destination] = 100.0 * thread_data[event] / clocks
+
+    schedule_labels = [
+        "static"
+        if schedule == "static"
+        else schedule.replace("dynamic_", "dynamic, ")
+        for schedule in schedules
+    ]
+    fig, axes = plt.subplots(4, 1, figsize=(23, 15))
+
+    clock_values = (
+        thread_data.pivot(
+            index="Transformation",
+            columns="OMP_Schedule",
+            values="CPU_Clock_Unhalted_Thread_por_iteracao",
+        )
+        .reindex(index=ROTATIONS, columns=schedules)
+        .astype(float)
+        / 1.0e9
+    )
+    clock_annotations = clock_values.map(
+        lambda value: "" if pd.isna(value) else f"{value:.2f} B"
+    )
+    sns.heatmap(
+        clock_values,
+        ax=axes[0],
+        cmap="YlGnBu",
+        annot=clock_annotations,
+        fmt="",
+        linewidths=0.6,
+        linecolor="white",
+        mask=clock_values.isna(),
+        xticklabels=schedule_labels,
+        yticklabels=ROTATIONS,
+        cbar_kws={
+            "label": "Billion unhalted thread cycles per image-set pass",
+            "shrink": 0.90,
+        },
+    )
+    axes[0].set_title(
+        "CPU_CLK_UNHALTED.THREAD per complete image-set pass",
+        fontsize=13,
+        weight="bold",
+    )
+
+    for axis, (metric, _, title) in zip(axes[1:], percentages):
+        values = (
+            thread_data.pivot(
+                index="Transformation", columns="OMP_Schedule", values=metric
+            )
+            .reindex(index=ROTATIONS, columns=schedules)
+            .astype(float)
+        )
+        annotations = values.map(
+            lambda value: "" if pd.isna(value) else f"{value:.2f}%"
+        )
+        sns.heatmap(
+            values,
+            ax=axis,
+            cmap="YlOrRd",
+            vmin=0,
+            annot=annotations,
+            fmt="",
+            linewidths=0.6,
+            linecolor="white",
+            mask=values.isna(),
+            xticklabels=schedule_labels,
+            yticklabels=ROTATIONS,
+            cbar_kws={"label": "% of unhalted thread cycles", "shrink": 0.90},
+        )
+        axis.set_title(title, fontsize=13, weight="bold")
+
+    for axis in axes:
+        axis.set_xlabel("Schedule and chunk size")
+        axis.set_ylabel("Transformation")
+        axis.tick_params(axis="x", rotation=45, labelsize=8)
+        axis.tick_params(axis="y", rotation=0)
+
+    fig.suptitle(
+        f"Rotations: hardware-event share of unhalted cycles — {threads} threads",
+        fontsize=19,
+        weight="bold",
+    )
+    fig.text(
+        0.5,
+        0.008,
+        "Percentages use function-filtered counts from the same schedule and scope: "
+        "100 × event / CPU_CLK_UNHALTED.THREAD. CPU clocks are divided by the internal "
+        "workload iterations.\nL1, L2 and SB conditions can overlap and must not be added. "
+        "VTune hardware-event counts are sampled estimates.",
+        ha="center",
+        fontsize=9.5,
+    )
+    fig.tight_layout(rect=(0.02, 0.055, 0.99, 0.96), h_pad=2.0)
+    fig.savefig(output, dpi=240)
+    plt.close(fig)
+
+
 def write_readme(output_dir: Path, schedules: Sequence[str], threads: Sequence[int]) -> None:
     chunks = ", ".join(str(dynamic_chunk(schedule)) for schedule in schedules)
     lines = [
@@ -204,6 +341,9 @@ def write_readme(output_dir: Path, schedules: Sequence[str], threads: Sequence[i
         "2. CYCLE_ACTIVITY.STALLS_L1D_PENDING relative to static.",
         "3. CYCLE_ACTIVITY.STALLS_L2_PENDING relative to static.",
         "4. RESOURCE_STALLS.SB relative to static.",
+        "",
+        "The cycle_percentages_all_schedules files use static and every dynamic chunk. Their first panel shows function-filtered CPU_CLK_UNHALTED.THREAD in billions per complete image-set pass. The other panels show 100 × event / CPU_CLK_UNHALTED.THREAD for the same schedule.",
+        "L1, L2 and SB conditions can overlap, so their percentages must not be added.",
         "",
         "The heatmaps use log2 internally so reciprocal factors receive equal color intensity, but labels and colorbars display multiplicative factors. Beige is 1.00×.",
         "Large RESOURCE_STALLS.SB ratios can result from a very small sampled static denominator, so interpret their magnitude together with the absolute event CSV and the sampling caveat.",
@@ -260,6 +400,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "Fator_L1_Pending_Cycles",
                 "Fator_L2_Pending_Cycles",
                 "Fator_Store_Buffer_Stalls",
+                "CPU_Clock_Unhalted_Thread_por_iteracao",
+                "L1_Pending_Cycles_por_iteracao",
+                "L2_Pending_Cycles_por_iteracao",
+                "Store_Buffer_Stalls_por_iteracao",
             ],
             events_path,
         )
@@ -273,12 +417,29 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "Fator_L1_Pending_Cycles",
                 "Fator_L2_Pending_Cycles",
                 "Fator_Store_Buffer_Stalls",
+                "CPU_Clock_Unhalted_Thread_por_iteracao",
+                "L1_Pending_Cycles_por_iteracao",
+                "L2_Pending_Cycles_por_iteracao",
+                "Store_Buffer_Stalls_por_iteracao",
             ]
         ]
         schedules = find_dynamic_schedules(metrics)
+        all_schedules = ["static", *schedules]
         metrics = metrics[metrics["OMP_Schedule"].isin(schedules)]
-        events = events[events["OMP_Schedule"].isin(schedules)]
-        data = metrics.merge(events, on=KEYS, how="left", validate="one_to_one")
+        dynamic_events = events[events["OMP_Schedule"].isin(schedules)]
+        data = metrics.merge(
+            dynamic_events[
+                KEYS
+                + [
+                    "Fator_L1_Pending_Cycles",
+                    "Fator_L2_Pending_Cycles",
+                    "Fator_Store_Buffer_Stalls",
+                ]
+            ],
+            on=KEYS,
+            how="left",
+            validate="one_to_one",
+        )
         if data.duplicated(KEYS).any():
             raise RotationPlotError("duplicate rotation conditions")
 
@@ -293,6 +454,13 @@ def main(argv: Sequence[str] | None = None) -> int:
                 thread_count,
                 output_dir
                 / f"rotation_dynamic_all_chunks_{thread_count}_threads.png",
+            )
+            plot_cycle_percentages(
+                events[events["OMP_Schedule"].isin(all_schedules)],
+                all_schedules,
+                thread_count,
+                output_dir
+                / f"cycle_percentages_all_schedules_{thread_count}_threads.png",
             )
         write_readme(output_dir, schedules, threads)
     except (OSError, ValueError, KeyError, pd.errors.ParserError, RotationPlotError) as error:

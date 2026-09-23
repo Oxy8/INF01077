@@ -99,10 +99,14 @@ Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
 - estudos detalhados das rotações;
 - `analysis/zoom/`, com L1/L2 pending cycles e store-buffer stalls para Zoom In
   e Zoom Out por schedule, além da comparação com todas as transformações para
-  chunks dinâmicos 1, 2, 4 e 8;
+  chunks dinâmicos 1, 2, 4 e 8. Os gráficos
+  `cycle_percentages_all_schedules_*_threads.png` mostram também o total de
+  `CPU_CLK_UNHALTED.THREAD` e cada evento como percentual desses clocks para
+  `static` e todos os chunks dinâmicos;
 - `analysis/rotation/`, com heatmaps verticais de `Rotate_CW` e `Rotate_CCW`
-  para todos os chunks dinâmicos detectados. A pasta contém uma cópia de
-  `plot.py`, que pode ser executada no próprio diretório para recriar os dois
+  para todos os chunks dinâmicos detectados, incluindo a mesma análise
+  percentual em relação a `CPU_CLK_UNHALTED.THREAD`. A pasta contém uma cópia
+  de `plot.py`, que pode ser executada no próprio diretório para recriar os
   gráficos;
 - CSVs compactos por condição e por imagem para análises posteriores.
 
