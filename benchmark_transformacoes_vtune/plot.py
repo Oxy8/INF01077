@@ -179,15 +179,6 @@ COLUNAS_PONDERADAS_CPU = [
 ]
 
 ROTACOES = ["Rotate_CW", "Rotate_CCW"]
-CASOS_SIMPLES = [
-    "Grayscale",
-    "Flip_Horizontal",
-    "Flip_Vertical",
-    "Adjust_Brightness",
-    "Adjust_Contrast",
-    "Negative",
-]
-CASOS_CONTRASTANTES = ["Zoom_In", "Gaussian_11x11", "Adaptive_Gaussian"]
 
 
 class PlotError(RuntimeError):
@@ -624,128 +615,6 @@ def validar_campanha(
     if len(resumo) != esperado:
         raise PlotError(f"esperadas {esperado} condicoes; encontradas {len(resumo)}")
     return schedules, threads
-
-
-def preparar_pivo(
-    dados: pd.DataFrame,
-    coluna: str,
-    schedules: Sequence[str],
-    transformacoes: Sequence[str],
-) -> pd.DataFrame:
-    return (
-        dados.pivot(index="Transformation", columns="OMP_Schedule", values=coluna)
-        .reindex(index=transformacoes, columns=schedules)
-        .rename(index=NOMES_TRANSFORMACOES)
-    )
-
-
-def heatmap_fator(
-    ax: plt.Axes,
-    valores: pd.DataFrame,
-    titulo: str,
-    mostrar_y: bool,
-) -> None:
-    log2 = np.log2(valores.astype(float)).clip(-2.0, 2.0)
-    sns.heatmap(
-        log2,
-        ax=ax,
-        cmap="RdBu_r",
-        center=0,
-        vmin=-2,
-        vmax=2,
-        xticklabels=[rotulo_schedule(s).replace("Din. ", "") for s in valores.columns],
-        yticklabels=mostrar_y,
-        cbar_kws={"label": "log2(fator)", "ticks": [-2, -1, 0, 1, 2]},
-    )
-    barra = ax.collections[0].colorbar
-    barra.set_ticklabels(["0,25x", "0,5x", "1x", "2x", "4x"])
-    ax.set_title(titulo, fontsize=12, weight="bold")
-    ax.set_xlabel("Chunk dinâmico")
-    ax.set_ylabel("")
-    ax.tick_params(axis="x", rotation=45, labelsize=8)
-    ax.tick_params(axis="y", rotation=0, labelsize=8)
-
-
-def heatmap_delta(
-    ax: plt.Axes,
-    valores: pd.DataFrame,
-    titulo: str,
-    mostrar_y: bool,
-) -> None:
-    limite = float(np.nanpercentile(np.abs(valores.to_numpy(dtype=float)), 95))
-    limite = max(limite, 1.0)
-    sns.heatmap(
-        valores,
-        ax=ax,
-        cmap="RdBu_r",
-        center=0,
-        vmin=-limite,
-        vmax=limite,
-        xticklabels=[rotulo_schedule(s).replace("Din. ", "") for s in valores.columns],
-        yticklabels=mostrar_y,
-        cbar_kws={"label": "pontos percentuais"},
-    )
-    ax.set_title(titulo, fontsize=12, weight="bold")
-    ax.set_xlabel("Chunk dinâmico")
-    ax.set_ylabel("")
-    ax.tick_params(axis="x", rotation=45, labelsize=8)
-    ax.tick_params(axis="y", rotation=0, labelsize=8)
-
-
-def plotar_diagnostico(
-    resumo: pd.DataFrame,
-    schedules: Sequence[str],
-    transformacoes: Sequence[str],
-    threads: int,
-    destino: Path,
-) -> None:
-    dados = resumo[resumo["Num_Threads"].eq(threads)]
-    dinamicos = [schedule for schedule in schedules if schedule != "static"]
-    paineis = [
-        ("Speedup_Original", "Speedup original", "fator"),
-        ("VTune_Speedup_Perfil", "Speedup durante o VTune", "fator"),
-        ("Fator_Trabalho_CPU", "Fator de trabalho CPU", "fator"),
-        ("Fator_Paralelismo", "Fator de paralelismo", "fator"),
-        ("Fator_Instrucoes", "Fator de instruções", "fator"),
-        ("Fator_CPI", "Fator de CPI", "fator"),
-        (
-            "Melhora_Baixa_Utilizacao_pp",
-            "Redução do tempo em baixa utilização",
-            "delta",
-        ),
-        ("Melhora_Memory_Bound_pp", "Redução de Memory Bound", "delta"),
-    ]
-
-    fig, eixos = plt.subplots(2, 4, figsize=(31, 20), constrained_layout=False)
-    for indice, (coluna, titulo, tipo) in enumerate(paineis):
-        eixo = eixos.flat[indice]
-        valores = preparar_pivo(dados, coluna, dinamicos, transformacoes)
-        mostrar_y = indice in {0, 4}
-        if tipo == "fator":
-            heatmap_fator(eixo, valores, titulo, mostrar_y)
-        else:
-            heatmap_delta(eixo, valores, titulo, mostrar_y)
-
-    fig.suptitle(
-        f"Diagnóstico VTune por transformação e schedule — {threads} threads",
-        fontsize=20,
-        weight="bold",
-        y=0.995,
-    )
-    fig.text(
-        0.5,
-        0.012,
-        "Valores por imagem e normalizados pelo static; fatores usam média geométrica entre imagens. "
-        "Speedup VTune = fator de trabalho CPU x fator de paralelismo.\n"
-        "Valores positivos nas duas últimas matrizes indicam menos tempo em baixa utilização ou menos Memory Bound. "
-        "Métricas usam apenas frames ITT das transformações.",
-        ha="center",
-        va="bottom",
-        fontsize=10,
-    )
-    fig.tight_layout(rect=(0.015, 0.045, 0.995, 0.975), h_pad=3.0, w_pad=2.0)
-    fig.savefig(destino, dpi=220)
-    plt.close(fig)
 
 
 def plotar_reproducao(resumo: pd.DataFrame, destino: Path) -> None:
@@ -1326,122 +1195,6 @@ def plotar_rotacoes(
     plt.close(fig)
 
 
-def plotar_casos_simples(
-    resumo: pd.DataFrame, schedules: Sequence[str], threads: int, destino: Path
-) -> None:
-    fig, eixos = plt.subplots(2, 3, figsize=(22, 11), sharex=True, sharey=True)
-    dados_threads = resumo[resumo["Num_Threads"].eq(threads)]
-    x = np.arange(len(schedules))
-    for eixo, transformacao in zip(eixos.flat, CASOS_SIMPLES):
-        dados = (
-            dados_threads[dados_threads["Transformation"].eq(transformacao)]
-            .set_index("OMP_Schedule")
-            .reindex(schedules)
-        )
-        eixo.plot(x, dados["Speedup_Original"], "o-", label="Speedup original")
-        eixo.plot(x, dados["VTune_Speedup_Perfil"], "s-", label="Speedup VTune")
-        eixo.plot(x, dados["Fator_Trabalho_CPU"], "^-", label="Trabalho CPU")
-        eixo.plot(x, dados["Fator_Paralelismo"], "D-", label="Paralelismo")
-        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
-        eixo.set_title(NOMES_TRANSFORMACOES[transformacao], weight="bold")
-        eixo.set_ylabel("Fator vs. static")
-        configurar_eixo_schedule(eixo, schedules)
-    handles, labels = eixos[0, 0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=4, frameon=False)
-    fig.suptitle(
-        f"Transformações com custo quase uniforme por pixel — {threads} threads",
-        fontsize=18,
-        weight="bold",
-    )
-    fig.text(
-        0.5,
-        0.045,
-        "Fator acima de 1 indica melhora. O ganho pode vir de menos trabalho CPU, maior paralelismo efetivo, ou ambos.",
-        ha="center",
-        fontsize=10,
-    )
-    fig.tight_layout(rect=(0.02, 0.10, 0.98, 0.94), h_pad=2.2)
-    fig.savefig(destino, dpi=240)
-    plt.close(fig)
-
-
-def plotar_casos_contrastantes(
-    resumo: pd.DataFrame, schedules: Sequence[str], threads: int, destino: Path
-) -> None:
-    fig, eixos = plt.subplots(3, 3, figsize=(22, 15), sharex="col")
-    dados_threads = resumo[resumo["Num_Threads"].eq(threads)]
-    x = np.arange(len(schedules))
-
-    for coluna, transformacao in enumerate(CASOS_CONTRASTANTES):
-        dados = (
-            dados_threads[dados_threads["Transformation"].eq(transformacao)]
-            .set_index("OMP_Schedule")
-            .reindex(schedules)
-        )
-
-        eixo = eixos[0, coluna]
-        eixo.plot(x, dados["Speedup_Original"], "o-", label="Speedup original")
-        eixo.plot(x, dados["VTune_Speedup_Perfil"], "s-", label="Speedup VTune")
-        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
-        eixo.set_title(NOMES_TRANSFORMACOES[transformacao], weight="bold", fontsize=13)
-        eixo.set_ylabel("Speedup vs. static")
-        eixo.grid(axis="y", linestyle="--", alpha=0.3)
-
-        eixo = eixos[1, coluna]
-        eixo.plot(x, dados["Fator_Trabalho_CPU"], "o-", label="Trabalho CPU")
-        eixo.plot(x, dados["Fator_Paralelismo"], "s-", label="Paralelismo")
-        eixo.plot(x, dados["VTune_Speedup_Perfil"], "^-", label="Produto / speedup")
-        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
-        eixo.set_yscale("log", base=2)
-        eixo.set_ylabel("Fator (log2)")
-        eixo.grid(axis="y", which="both", linestyle="--", alpha=0.3)
-
-        eixo = eixos[2, coluna]
-        eixo.plot(x, dados["Fator_Instrucoes"], "o-", label="Instruções")
-        eixo.plot(x, dados["Fator_CPI"], "s-", label="CPI")
-        eixo.plot(x, dados["Fator_Frequencia"], "^-", label="Frequência")
-        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
-        eixo.set_yscale("log", base=2)
-        eixo.set_ylabel("Fator vs. static")
-        outro = eixo.twinx()
-        linha_memoria = outro.plot(
-            x,
-            dados["Memory_Bound_Percent"],
-            "D--",
-            color="#1b7837",
-            label="Memory Bound",
-        )
-        outro.set_ylabel("Memory Bound (%)", color="#1b7837")
-        configurar_eixo_schedule(eixo, schedules)
-
-        if coluna == 0:
-            eixos[0, coluna].legend(fontsize=8)
-            eixos[1, coluna].legend(fontsize=8)
-            linhas, rotulos = eixo.get_legend_handles_labels()
-            eixo.legend(
-                linhas + linha_memoria,
-                rotulos + ["Memory Bound"],
-                fontsize=8,
-            )
-
-    fig.suptitle(
-        f"Três mecanismos contrastantes de escalonamento — {threads} threads",
-        fontsize=19,
-        weight="bold",
-    )
-    fig.text(
-        0.5,
-        0.012,
-        "Ampliação: chunks pequenos elevam CPI e Memory Bound. Gaussiano 11x11: chunks grandes reduzem trabalho CPU, "
-        "mas perdem mais paralelismo. Adaptativo: chunks pequenos melhoram o balanceamento de carga.",
-        ha="center",
-        fontsize=10,
-    )
-    fig.tight_layout(rect=(0.02, 0.04, 0.98, 0.965), h_pad=2.2, w_pad=2.5)
-    fig.savefig(destino, dpi=240)
-    plt.close(fig)
-
-
 def salvar_relatorio_texto(
     resumo: pd.DataFrame, cobertura: float, destino: Path
 ) -> None:
@@ -1810,30 +1563,11 @@ def main(argv: Sequence[str] | None = None) -> int:
                 cores_transformacoes,
                 limite_speedup,
             )
-            plotar_diagnostico(
-                resumo,
-                schedules,
-                transformacoes,
-                quantidade_threads,
-                destino / f"diagnostico_vtune_{quantidade_threads}_threads.png",
-            )
             plotar_rotacoes(
                 resumo,
                 schedules,
                 quantidade_threads,
                 destino / f"rotacoes_vtune_{quantidade_threads}_threads.png",
-            )
-            plotar_casos_simples(
-                resumo,
-                schedules,
-                quantidade_threads,
-                destino / f"transformacoes_simples_vtune_{quantidade_threads}_threads.png",
-            )
-            plotar_casos_contrastantes(
-                resumo,
-                schedules,
-                quantidade_threads,
-                destino / f"casos_contrastantes_vtune_{quantidade_threads}_threads.png",
             )
             plotar_eventos_zoom(
                 eventos_hardware,

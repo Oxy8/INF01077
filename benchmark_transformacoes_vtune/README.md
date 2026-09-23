@@ -96,11 +96,7 @@ Os resultados ficam em `analysis/` ao lado do CSV VTune. A análise gera:
 - gráficos `speedup_20_threads.png` e `speedup_40_threads.png` com o mesmo
   formato do benchmark sem VTune, usando as medianas das repetições internas;
 - comparação entre os speedups original e observado sob VTune;
-- matrizes de speedup, trabalho CPU, paralelismo, instruções, CPI e gargalos;
 - estudos detalhados das rotações;
-- estudos das transformações simples com trabalho uniforme por pixel;
-- comparação de ampliação, Gaussiano 11x11 e Gaussiano adaptativo como três
-  mecanismos contrastantes;
 - `analysis/zoom/`, com L1/L2 pending cycles e store-buffer stalls para Zoom In
   e Zoom Out por schedule, além da comparação com todas as transformações para
   chunks dinâmicos 1, 2, 4 e 8;
