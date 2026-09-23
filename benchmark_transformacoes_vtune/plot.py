@@ -962,13 +962,25 @@ def plotar_eventos_zoom(
 ) -> None:
     """Relaciona o speedup dos zooms aos eventos de espera da transformação."""
     metricas = [
-        ("L1_Pending_Cycles_por_iteracao", "Ciclos aguardando L1"),
-        ("L2_Pending_Cycles_por_iteracao", "Ciclos aguardando L2"),
-        ("Store_Buffer_Stalls_por_iteracao", "Stalls do store buffer"),
+        (
+            "Fator_L1_Pending_Cycles",
+            "CYCLE_ACTIVITY.STALLS_\nL1D_PENDING",
+        ),
+        (
+            "Fator_L2_Pending_Cycles",
+            "CYCLE_ACTIVITY.STALLS_\nL2_PENDING",
+        ),
+        ("Fator_Store_Buffer_Stalls", "RESOURCE_STALLS.SB"),
     ]
     zooms = ["Zoom_In", "Zoom_Out"]
     fig, eixos = plt.subplots(2, 4, figsize=(25, 13), sharex="col")
     x = np.arange(len(schedules))
+    rotulos_schedule = [
+        "static"
+        if schedule == "static"
+        else schedule.replace("dynamic_", "dynamic, ")
+        for schedule in schedules
+    ]
 
     for linha, transformacao in enumerate(zooms):
         dados_eventos = (
@@ -999,7 +1011,7 @@ def plotar_eventos_zoom(
             "o-",
             color="#2c7fb8",
             linewidth=2,
-            label="Sob VTune",
+            label="VTune run",
         )
         eixo.plot(
             x,
@@ -1007,46 +1019,86 @@ def plotar_eventos_zoom(
             "s--",
             color="#f28e2b",
             linewidth=1.7,
-            label="Benchmark original",
+            label="Original benchmark",
         )
-        eixo.axhline(1, color="black", linestyle="--", linewidth=1)
-        eixo.set_ylabel("Speedup vs. static")
-        eixo.set_title(
-            f"{NOMES_TRANSFORMACOES[transformacao]} — speedup", weight="bold"
-        )
+        eixo.set_ylabel("Speedup / static (×)")
+        if linha == 0:
+            eixo.set_title("Performance speedup", weight="bold")
         eixo.legend(fontsize=8)
-        eixo.grid(axis="y", linestyle="--", alpha=0.3)
 
         for coluna, (metrica, titulo) in enumerate(metricas, start=1):
             eixo = eixos[linha, coluna]
-            valores = dados_eventos[metrica] / 1e9
-            eixo.plot(x, valores, "o-", color="#d7301f", linewidth=2)
-            referencia = float(valores.iloc[0])
-            eixo.axhline(
-                referencia, color="black", linestyle="--", linewidth=1,
-                label="static",
+            valores = dados_eventos[metrica]
+            if valores.isna().any():
+                raise PlotError(
+                    f"referencia static ausente para {metrica}, "
+                    f"{transformacao}, {threads} threads"
+                )
+            eixo.plot(
+                x,
+                valores,
+                "o-",
+                color="#7b3294",
+                linewidth=2,
+                label="Hardware-event ratio",
             )
-            eixo.set_title(titulo, weight="bold")
-            eixo.set_ylabel("Bilhões por passagem")
-            eixo.grid(axis="y", linestyle="--", alpha=0.3)
+            if linha == 0:
+                eixo.set_title(titulo, weight="bold")
+            eixo.set_ylabel("Event count / static (×)")
 
         for eixo in eixos[linha]:
-            configurar_eixo_schedule(eixo, schedules)
+            eixo.axhline(1.0, color="black", linestyle="--", linewidth=1.2)
+            eixo.annotate(
+                "static baseline = 1.00×",
+                xy=(0.99, 1.0),
+                xycoords=("axes fraction", "data"),
+                xytext=(-3, 4),
+                textcoords="offset points",
+                ha="right",
+                va="bottom",
+                fontsize=7.5,
+                color="black",
+            )
+            eixo.set_xticks(x, rotulos_schedule)
+            eixo.tick_params(axis="x", rotation=45, labelsize=8)
+            eixo.set_ylim(bottom=0)
+            eixo.grid(axis="y", linestyle="--", alpha=0.3)
+
+        eixos[linha, 0].annotate(
+            transformacao,
+            xy=(-0.30, 0.5),
+            xycoords="axes fraction",
+            ha="center",
+            va="center",
+            rotation=90,
+            fontsize=16,
+            weight="bold",
+            bbox={
+                "boxstyle": "round,pad=0.45",
+                "facecolor": "#e8eef5",
+                "edgecolor": "#68788a",
+            },
+            annotation_clip=False,
+        )
+
+    for eixo in eixos[1]:
+        eixo.set_xlabel("Schedule and chunk size")
 
     fig.suptitle(
-        f"Zoom: ciclos de espera nas funções da transformação — {threads} threads",
+        f"Zoom scheduling: performance and hardware-event ratios — {threads} threads",
         fontsize=19,
         weight="bold",
     )
     fig.text(
         0.5,
         0.012,
-        "Contadores hw-events somados apenas nas funções de Zoom In/Out e divididos pelas repetições internas. "
-        "Cada passagem contém as 13 imagens; a linha tracejada é o valor static. Contagens são estimativas de amostragem.",
+        "Every panel is normalized to static with the same thread count; dashed line = 1.00× static baseline. "
+        "For speedup, below 1× is slower. For hardware events, above 1× means more pending/stall cycles.\n"
+        "Events are sampled estimates filtered to the Zoom_In/Zoom_Out functions and normalized per complete pass over all 13 images.",
         ha="center",
         fontsize=10,
     )
-    fig.tight_layout(rect=(0.02, 0.045, 0.99, 0.96), h_pad=2.5, w_pad=2.0)
+    fig.tight_layout(rect=(0.075, 0.065, 0.99, 0.96), h_pad=2.5, w_pad=2.0)
     fig.savefig(destino, dpi=240)
     plt.close(fig)
 
