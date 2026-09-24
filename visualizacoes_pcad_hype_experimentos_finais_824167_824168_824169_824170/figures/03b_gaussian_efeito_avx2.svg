@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Gaussian genérica: efeito isolado de AVX2">
+<title>Gaussian genérica: efeito isolado de AVX2</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Gaussian genérica: efeito isolado de AVX2</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">0.84</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">0.94</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">1.04</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">1.15</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">1.25</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">3</text>
+<line class="frame" x1="311.2" x2="311.2" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="311.2" y="632">5</text>
+<line class="frame" x1="517.5" x2="517.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="517.5" y="632">7</text>
+<line class="frame" x1="723.8" x2="723.8" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="723.8" y="632">9</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">11</text>
+<line x1="105" x2="930" y1="394.4" y2="394.4" stroke="#555555" stroke-width="2" stroke-dasharray="7,5"/>
+<text class="note" x="940" y="398.4">empate</text>
+<polyline points="105.0,470.6 311.2,549.9 517.5,560.4 723.8,547.9 930.0,551.7" fill="none" stroke="#8a2be2" stroke-width="2.5"/>
+<circle cx="105.0" cy="470.6" r="4" fill="#8a2be2"/>
+<circle cx="311.2" cy="549.9" r="4" fill="#8a2be2"/>
+<circle cx="517.5" cy="560.4" r="4" fill="#8a2be2"/>
+<circle cx="723.8" cy="547.9" r="4" fill="#8a2be2"/>
+<circle cx="930.0" cy="551.7" r="4" fill="#8a2be2"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#8a2be2" stroke-width="3"/>
+<text class="legend" x="980" y="76">1t — AoS direto</text>
+<polyline points="105.0,451.1 311.2,478.5 517.5,394.7 723.8,242.4 930.0,339.6" fill="none" stroke="#17becf" stroke-width="2.5"/>
+<circle cx="105.0" cy="451.1" r="4" fill="#17becf"/>
+<circle cx="311.2" cy="478.5" r="4" fill="#17becf"/>
+<circle cx="517.5" cy="394.7" r="4" fill="#17becf"/>
+<circle cx="723.8" cy="242.4" r="4" fill="#17becf"/>
+<circle cx="930.0" cy="339.6" r="4" fill="#17becf"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#17becf" stroke-width="3"/>
+<text class="legend" x="980" y="98">1t — SoA separável</text>
+<polyline points="105.0,468.0 311.2,546.5 517.5,560.3 723.8,547.3 930.0,564.3" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="468.0" r="4" fill="#d62728"/>
+<circle cx="311.2" cy="546.5" r="4" fill="#d62728"/>
+<circle cx="517.5" cy="560.3" r="4" fill="#d62728"/>
+<circle cx="723.8" cy="547.3" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="564.3" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="120">20t — AoS direto</text>
+<polyline points="105.0,387.1 311.2,478.7 517.5,403.9 723.8,112.7 930.0,379.9" fill="none" stroke="#ff7f0e" stroke-width="2.5"/>
+<circle cx="105.0" cy="387.1" r="4" fill="#ff7f0e"/>
+<circle cx="311.2" cy="478.7" r="4" fill="#ff7f0e"/>
+<circle cx="517.5" cy="403.9" r="4" fill="#ff7f0e"/>
+<circle cx="723.8" cy="112.7" r="4" fill="#ff7f0e"/>
+<circle cx="930.0" cy="379.9" r="4" fill="#ff7f0e"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#ff7f0e" stroke-width="3"/>
+<text class="legend" x="980" y="142">20t — SoA separável</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Taps por dimensão</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Speedup (off-avx2 / omp-avx2)</text>
+</svg>

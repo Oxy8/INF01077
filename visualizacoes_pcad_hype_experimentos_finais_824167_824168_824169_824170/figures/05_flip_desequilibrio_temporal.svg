@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Flip: quanto dynamic,1 reduz a variação temporal entre threads">
+<title>Flip: quanto dynamic,1 reduz a variação temporal entre threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Flip: quanto dynamic,1 reduz a variação temporal entre threads</text>
+<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="nan" y="487">0.00×</text>
+<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="nan" y="487">1.00×</text>
+<rect class="frame" x="255" y="70" width="755" height="395"/>
+<line x1="nan" x2="nan" y1="70" y2="465" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<text class="axis" text-anchor="end" x="243" y="156.9">10 threads / init paralelo-static</text>
+<rect x="nan" y="91.1" width="0.0" height="41.1" fill="#d62728"/>
+<text class="small" x="962.0" y="123.2">nan×</text>
+<text class="axis" text-anchor="end" x="243" y="288.6">20 threads / init serial</text>
+<rect x="nan" y="222.7" width="0.0" height="41.1" fill="#d62728"/>
+<text class="small" x="962.0" y="254.9">nan×</text>
+<text class="axis" text-anchor="end" x="243" y="420.2">20 threads / init paralelo-static</text>
+<rect x="nan" y="354.4" width="0.0" height="41.1" fill="#d62728"/>
+<text class="small" x="962.0" y="386.5">nan×</text>
+<rect x="255" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="277" y="504">CV(static) / CV(dynamic,1)</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">Speedup de uniformidade temporal</text>
+</svg>

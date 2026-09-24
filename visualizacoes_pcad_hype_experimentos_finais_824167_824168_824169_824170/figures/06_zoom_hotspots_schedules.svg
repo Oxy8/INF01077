@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Zoom, 20 threads: Hotspots confirmam piora de todas as fases com dynamic">
+<title>Zoom, 20 threads: Hotspots confirmam piora de todas as fases com dynamic</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Zoom, 20 threads: Hotspots confirmam piora de todas as fases com dynamic</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">0.00</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">3.58</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">7.16</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">10.75</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">14.33</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">static</text>
+<line class="frame" x1="517.5" x2="517.5" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="517.5" y="632">dynamic,1</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">dynamic,16</text>
+<polyline points="105.0,273.6 517.5,256.2 930.0,257.1" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="273.6" r="4" fill="#1f77b4"/>
+<circle cx="517.5" cy="256.2" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="257.1" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">Copy</text>
+<polyline points="105.0,330.9 517.5,299.6 930.0,301.1" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="330.9" r="4" fill="#2ca02c"/>
+<circle cx="517.5" cy="299.6" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="301.1" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="98">Horizontal</text>
+<polyline points="105.0,193.5 517.5,116.0 930.0,171.3" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="193.5" r="4" fill="#d62728"/>
+<circle cx="517.5" cy="116.0" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="171.3" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="120">Vertical</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Schedule</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">CPU time acumulado (s)</text>
+</svg>

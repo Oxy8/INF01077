@@ -1,0 +1,4 @@
+Schedule,Copy,Horizontal,Vertical,Elapsed_s,CPU_s,CPI,Physical_Cores,Physical_Cores_Used
+static,8.91,7.369,11.063,3.882,32.688,1.11,41.8,8.362
+"dynamic,1",9.376,8.21,13.145,3.859,34.625,1.223,44.6,8.92
+"dynamic,16",9.351,8.169,11.658,3.747,32.222,1.134,42.9,8.581

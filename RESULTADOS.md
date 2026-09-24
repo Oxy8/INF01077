@@ -23,6 +23,7 @@ origem no cluster PCAD, partição `hype`.
 | `visualizacoes_pcad_hype_final_layout_aos_soa` | Campanha de layouts 822854, com kernel separado das conversões |
 | `visualizacoes_pcad_hype_final_experimentos_complementares` | Campanhas HPC/SIMD 823348 e confirmação de schedules 823349 |
 | `relatorio_final_dados_consolidados` | Tabelas consolidadas, validação e texto de resultados |
+| `visualizacoes_pcad_hype_experimentos_finais_824167_824168_824169_824170` | Coletas finais: Zoom/Hotspots, HPC dos layouts Gaussianos, Flip/topologia replicado e tamanhos Gaussianos |
 
 As figuras e tabelas usam **mediana** como estimativa central e preservam
 mínimo--máximo. Os resultados de campanhas preliminares e as visualizações que
@@ -31,6 +32,8 @@ finais.
 
 Para respostas rastreáveis às perguntas de interpretação — SIMD, schedules,
 Zoom, Flip e layouts — consulte [`ANALISE_EVIDENCIAS.md`](ANALISE_EVIDENCIAS.md).
+Os resultados das lacunas experimentais executadas e suas ressalvas
+metodológicas estão em [`ANALISE_COMPLEMENTAR_FINAL.md`](ANALISE_COMPLEMENTAR_FINAL.md).
 Os jobs que fecham as lacunas experimentais estão em
 [`EXPERIMENTOS_COMPLEMENTARES_FINAIS.md`](EXPERIMENTOS_COMPLEMENTARES_FINAIS.md).
 
@@ -52,6 +55,7 @@ python plot_resultados_avx.py \
 
 python plot_resultados_layout.py
 python plot_experimentos_complementares.py
+python plot_experimentos_finais.py
 ```
 
 Os dois jobs diagnósticos adicionais estão descritos em

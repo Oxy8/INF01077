@@ -2,10 +2,9 @@
 
 Este documento responde às nove perguntas com uma separação deliberada entre
 **evidência medida**, **explicação sustentada** e **inferência que ainda precisa
-de experimento**. Ele usa somente as campanhas finais listadas em
-[`RESULTADOS.md`](RESULTADOS.md): a campanha regular (job 822851), a de
-layouts (822854), as confirmações de schedules (823349), a coleta HPC do
-VTune (823348) e o diagnóstico Zoom/Flip (823585).
+de experimento**. Ele usa as campanhas finais listadas em
+[`RESULTADOS.md`](RESULTADOS.md), incluindo as coletas complementares 823586
+e 824167--824170.
 
 ## Convenções e rastreabilidade
 
@@ -94,12 +93,13 @@ fase vertical passa a 47,16 ms, abaixo da horizontal.
 ### Conclusão e limite da evidência
 
 Há evidência forte de que AVX2 acelera a fase vertical, onde o laço interno
-tem acessos lineares em `i` e trabalho aritmético simples. A campanha não
-preserva um relatório detalhado e não vazio do vetorizador para esse job;
-logo, ela demonstra o efeito e o laço candidato, mas não a sequência exata de
-instruções gerada. Para provar isso no nível de assembly, o experimento novo
-mínimo é compilar somente esse arquivo com `-S -fopt-info-vec-all` (sem outro
-`-fopt-info` redirecionado ao mesmo tempo) e anexar o trecho do laço 710.
+tem acessos lineares em `i` e trabalho aritmético simples. O job de evidência
+do compilador (823585) preservou os binários assembly, mas os arquivos
+textuais de `-fopt-info-vec-all` ficaram vazios e não há relatório estruturado
+que associe cada laço a uma decisão de vetorização. Portanto, a conclusão é
+experimental e baseada em tempos por fase, não uma prova da sequência exata de
+instruções emitida. A análise de assembly por função ainda é um possível
+aprofundamento, não um resultado já obtido.
 
 ---
 
@@ -167,9 +167,11 @@ Não existe uma causa única para “as outras operações”: os limites podem 
 banda, layout RGB, custo de shuffles, pouca aritmética por byte ou uma decisão
 do compilador. As medições sustentam fortemente a falta de ganho em Grayscale
 e mostram pressão de memória; elas não permitem atribuir, operação por
-operação, uma porcentagem a cada causa. Um relatório de vetorização/assembly
-por kernel, junto de métricas normalizadas de cache, seria necessário para
-essa atribuição fina.
+operação, uma porcentagem a cada causa. O job 823585 não produziu relatórios
+textuais utilizáveis do vetorizador; preservou apenas assembly e, portanto,
+não permite afirmar qual laço o compilador escolheu ou rejeitou em cada
+operação. Essa atribuição fina ainda exigiria uma coleta de compilação
+corrigida, com logs separados por arquivo e inspeção do assembly do kernel.
 
 ---
 
@@ -347,26 +349,28 @@ for (int y = 5; y < height - 5; ++y) {
 }
 ```
 
-Ao forçar SIMD nesse padrão de 121 taps, o compilador gera uma estratégia
-claramente desfavorável para este processador/layout: o mesmo kernel fica
+Ao forçar SIMD nesse padrão de 121 taps, o resultado é consistente com uma
+estratégia desfavorável para este processador/layout: o mesmo kernel fica
 quase duas vezes mais lento, enquanto AoS direto permanece estável. A
 evidência é experimental, não apenas visual: sem SIMD, AoS e SoA ingênuo são
-praticamente iguais; a regressão aparece somente com `omp simd`.
+praticamente iguais; a regressão aparece somente com `omp simd`. Como o
+relatório textual do vetorizador ficou vazio, não se deve afirmar qual
+decisão interna do compilador causou a regressão.
 
-### O que **não** foi provado
+### O que agora foi medido e o que continua aberto
 
-Não há coleta HPC/Memory Access específica para os três layouts. Portanto,
-não é válido dizer que “SoA ingênuo é pior por cache misses” com os dados
-atuais. O layout SoA torna os canais contíguos, algo normalmente favorável à
-vetorização; aqui, a grande regressão está associada ao código vetorizado do
-laço direto, possivelmente por excesso de vetores temporários, pressão de
-registradores, spills e/ou organização desfavorável de cargas e reduções.
+O job HPC 824167 mediu os três layouts com a conversão fora da região longa.
+No build `omp-avx2`, SoA ingênuo teve 9,4% de Memory Bound e 9,1% de Cache
+Bound, contra 3,3% e 2,7% no AoS direto. Isso dá suporte quantitativo à
+hipótese de maior pressão de cache/memória no kernel vetorizado ingênuo e
+elimina a conversão como explicação.
 
-Experimento necessário para quantificar: coletar `hpc-performance` com os
-kernels AoS direto e SoA ingênuo, mesma imagem, 20 threads, `static`, conversão
-fora da janela. Comparar `Cache Bound`, stalls L1/L2, misses L3 por instrução,
-banda DRAM e `RESOURCE_STALLS.SB`. Só então cache poderá ser apontado como
-causa quantificada, em vez de hipótese.
+Ainda não é correto chamar esses percentuais de contagem direta de misses L1
+ou L2: são métricas normalizadas do VTune HPC e não isolam spills, redução
+vetorial, cache e latência. Também não há relatório textual confiável do
+vetorizador para afirmar qual estratégia foi escolhida. A explicação permanece
+a combinação de 121 taps, redução longa e SIMD explícito induzindo um kernel
+com pressão de recursos muito maior.
 
 ---
 
@@ -418,14 +422,27 @@ ms e a vertical 15,43 ms. Fonte: `kernels_por_layout.csv`,
 `fases_20_threads.csv`, figuras `01_kernels_6000x6000_Gaussian_11x11_omp-avx2.svg`
 e `03_fases_20t_6000x6000_Gaussian_11x11.svg`.
 
-### Limite
+### Atualização e limite
 
-“Eficiência de vetorização” é uma explicação coerente, mas o ganho enorme não
-deve ser atribuído somente a AVX2: reduzir 121 para 22 contribuições remove a
-maior parte do trabalho antes de qualquer vetorização. Os dados só validam a
-versão separável para Gaussian 11×11. Para afirmar que ela vale
-experimentalmente para 3×3, 5×5, 7×7 e 9×9, esses tamanhos precisam ser
-implementados e medidos.
+O job 824170 validou hashes e cinco repetições para 3×3, 5×5, 7×7, 9×9 e
+11×11. Na implementação genérica, a razão AoS direto / separável em 20
+threads foi 0,87×, 1,22×, 1,52×, 1,63× e 2,50× sem AVX2; com AVX2, 0,93×,
+1,29×, 1,73×, 2,25× e 2,92×. O cruzamento ocorre em 5×5 e o benefício cresce
+com N. Consulte o painel final e gaussian_sizes_summary.csv.
+
+Esse executável genérico usa acumuladores inteiros e não é o mesmo kernel
+11×11 especializado de layout_benchmark.cpp. Portanto, os números confirmam
+generalização e tendência, mas não substituem o speedup especializado de
+16,0×. O ganho enorme continua sendo principalmente algorítmico (121 para 22
+contribuições), com SIMD favorecendo as duas passadas lineares.
+
+O gráfico novo 03b_gaussian_efeito_avx2.svg separa corretamente os efeitos:
+ele compara off-avx2 / omp-avx2 dentro do mesmo algoritmo. Nesse executável,
+AVX2 não apresenta ganho sistemático. AoS direto piora de aproximadamente 6%
+a 15%; no SoA separável, somente 9 taps tem ganho claro (1,12× em uma thread
+e 1,22× em 20), e 11 taps fica próximo de empate (1,04× e 1,01×). Portanto,
+as razões de até 2,92× no gráfico de separabilidade são AoS direto /
+separável, isto é, ganho algorítmico, não ganho de AVX2.
 
 ---
 
@@ -487,8 +504,8 @@ A campanha controlada de dez repetições confirmou o sinal:
 | dynamic,16 | 5,531 ms | 5,436--5,570 | 1,056× |
 
 Os intervalos de dynamic não se sobrepõem ao de static nessa coleta. Isso
-reproduz a observação inicial, mas não prova ainda reprodutibilidade entre
-vários nós/alocações Slurm independentes.
+reproduz a observação inicial; os jobs 824168 e 824169 acrescentaram duas
+alocações exclusivas independentes e testaram a preparação das páginas.
 
 O diagnóstico posterior fortalece a evidência: fez 12 rodadas pareadas, com
 ordem dos cinco schedules embaralhada. A figura
@@ -517,30 +534,21 @@ e 282 ao segundo, e ambos terminaram perto de 4,71 ms. Veja
 `09_flip_linhas_por_thread.svg`, `10_flip_tempo_por_thread.svg` e
 `tables/flip_por_thread.csv`.
 
-Isso explica a melhora: dynamic equilibra **tempo de término**, não número de
-linhas. A causa da diferença entre grupos não foi isolada definitivamente. O
-nó possui dois sockets de dez núcleos e a afinidade usada tende a separar os
-grupos por socket, de modo que memória, banda e topologia são hipóteses
-plausíveis. Mas as coletas HPC de Zoom e Grayscale reportaram 0,0% de acessos
-remotos; elas não medem o Flip e, por isso, não autorizam afirmar “o ganho do
-Flip é causado por NUMA”. Frequência, estado do sistema e a própria colocação
-de páginas também permanecem possíveis.
+Isso explica a melhora observada em parte: dynamic equilibra **tempo de
+término**, não número de linhas. Com inicialização serial em 20 threads, a
+mediana foi 6,78 ms para static e 6,22 ms para dynamic,1. Quando o buffer foi
+pré-tocado com parallel-static, o sinal inverteu: 4,20 ms contra 4,53 ms,
+favorecendo static. O primeiro toque/colocação das páginas é, portanto, uma
+causa demonstrada para parte do efeito.
 
-### Experimento necessário para concluir além deste nó
+Ainda resta uma assimetria em 10 threads: mesmo dentro do primeiro nó NUMA,
+dynamic,1 ficou em 8,38 ms contra 9,20 ms de static após pre-touch. Static
+atribuiu 600 linhas a cada thread, mas o CV temporal foi 8--9%; dynamic
+redistribuiu 585--654 linhas e reduziu o CV para 0,02--0,04%. Logo, dynamic
+compensa heterogeneidade temporal do mapeamento neste nó, mas não uma carga
+algoritmicamente irregular. Para isolar a causa restante, seria necessário
+rotacionar os lugares OpenMP entre núcleos e registrar frequência por núcleo.
 
-Para chamar a vantagem de reprodutível, submeter o diagnóstico Flip em pelo
-menos duas novas alocações exclusivas, salvando `OMP_DISPLAY_AFFINITY=true` e
-o mapeamento dos CPUs. Para separar a hipótese NUMA:
-
-1. executar 10 threads em um socket e 20 threads nos dois sockets;
-2. fazer pré-toque paralelo das páginas com a mesma divisão de linhas do
-   kernel, antes da janela cronometrada;
-3. medir por thread linhas, tempo e contadores HPC (banda, L3/DRAM local e
-   remota), mantendo static e `dynamic,1` pareados.
-
-Se o pre-touch eliminar a diferença 0--9 versus 10--19 e a vantagem do
-dynamic, haverá evidência causal forte de colocação de memória/topologia. Se
-não eliminar, será necessário investigar frequência/OS e o acesso em si.
 
 ---
 

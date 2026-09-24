@@ -1,0 +1,7 @@
+Build,Layout,Profile_Iterations,Elapsed_s,CPI,Physical_Cores,Physical_Cores_Used,Memory_Bound_pct,Cache_Bound_pct,DRAM_Bound_pct,NUMA_Remote_pct
+off-avx2,aos,8,7.968,0.446,69.7,13.93,1.1,0.6,0.0,0.0
+off-avx2,soa-naive,4,5.873,0.448,58.8,11.761,1.6,0.8,0.0,0.0
+off-avx2,soa-separable,100,8.719,0.365,71.7,14.345,1.7,1.8,3.2,0.0
+omp-avx2,aos,8,8.642,0.463,70.3,14.054,3.3,2.7,0.3,0.0
+omp-avx2,soa-naive,4,8.016,0.515,69.2,13.846,9.4,9.1,0.4,0.0
+omp-avx2,soa-separable,100,7.941,0.684,69.0,13.807,27.3,9.3,38.8,14.3
