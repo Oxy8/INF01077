@@ -1,0 +1,20 @@
+Escopo e interpretação
+======================
+Há dois escopos deliberadamente separados:
+1. regular/: aplicação completa por operação. Os contadores incluem carga PNG,
+   cópia de backup, kernel e hash. Compare somente a mesma operação, build,
+   threads e grupo de eventos. Isto identifica pressão global, mas não permite
+   atribuir cada miss exclusivamente ao loop da transformação.
+2. gaussian11_kernel/: a variante de layout escolhida é repetida com buffers
+   pré-alocados; o kernel domina a janela. É a evidência adequada para AoS
+   direto versus SoA ingênuo versus SoA separável.
+
+Métricas principais
+-------------------
+- Tempo e speedup vêm de pcad_hype_regular_1_20_simd.sbatch, não de perf.
+- Para cache, normalize misses por pixel de saída e, como apoio, use MPKI.
+- Nunca conclua ganho SIMD por CPI: SIMD altera o número/tipo de instruções.
+  CPI é no máximo diagnóstico secundário no mesmo binário e mesma contagem
+  de threads; use tempo por pixel e razão de medianas para desempenho.
+- Compare apenas arquivos do mesmo grupo (basic ou cache), pois perf não mede
+  todos os eventos simultaneamente.

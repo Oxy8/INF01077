@@ -1,0 +1,7 @@
+scope=end-to-end (load+backup+kernel+hash)
+operation=Gaussian_3x3
+build=omp-avx2
+threads=20
+schedule=static
+events=L1-dcache-loads,L1-dcache-load-misses,LLC-loads,LLC-load-misses
+image=images/6000x6000.png

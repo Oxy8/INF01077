@@ -1,0 +1,8 @@
+scope=kernel-dominated (profile-layout)
+layout=soa-naive
+build=omp-avx2
+threads=20
+schedule=static
+profile_iterations=12
+events=L1-dcache-loads,L1-dcache-load-misses,LLC-loads,LLC-load-misses
+image=images/6000x6000.png

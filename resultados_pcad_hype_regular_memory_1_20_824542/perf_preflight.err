@@ -1,0 +1,12 @@
+
+ Performance counter stats for 'true':
+
+         1,051,931      cycles                                                             
+           743,725      instructions                     #    0.71  insn per cycle         
+
+       0.005841750 seconds time elapsed
+
+       0.001105000 seconds user
+       0.000000000 seconds sys
+
+

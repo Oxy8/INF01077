@@ -1,0 +1,8 @@
+scope=kernel-dominated (profile-layout)
+layout=soa-naive
+build=omp-avx2
+threads=1
+schedule=static
+profile_iterations=12
+events=cycles,instructions,cache-references,cache-misses
+image=images/6000x6000.png

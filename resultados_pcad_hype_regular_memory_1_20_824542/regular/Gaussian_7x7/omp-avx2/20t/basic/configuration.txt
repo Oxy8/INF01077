@@ -1,0 +1,7 @@
+scope=end-to-end (load+backup+kernel+hash)
+operation=Gaussian_7x7
+build=omp-avx2
+threads=20
+schedule=static
+events=cycles,instructions,cache-references,cache-misses
+image=images/6000x6000.png
