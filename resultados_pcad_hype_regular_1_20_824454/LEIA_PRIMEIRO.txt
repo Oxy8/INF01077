@@ -1,0 +1,15 @@
+Escopo da campanha
+==================
+regular_raw.csv contém todas as 17 operações regulares, dez amostras por
+build (off-avx2/omp-avx2) e por número de threads (1/20). É a fonte para
+mediana, intervalo min--máx, speedup AVX2 e speedup/eficiência de threads.
+
+layout_gaussian11_raw.csv contém fases separadas do Gaussian 11x11: AoS
+direto, conversão AoS->SoA, SoA ingênuo, SoA separável (passadas horizontal e
+vertical) e conversão de volta. Para comparar kernels, use somente as fases
+do kernel; não some as conversões, que foram propositalmente medidas à parte.
+
+Não use CPI para concluir sobre SIMD. A métrica principal é tempo por pixel
+e a razão de medianas off-avx2 / omp-avx2. A compilação é independente do
+número de threads; os relatórios detalhados do GCC vêm do job separado
+pcad_hype_compiler_evidence.sbatch.

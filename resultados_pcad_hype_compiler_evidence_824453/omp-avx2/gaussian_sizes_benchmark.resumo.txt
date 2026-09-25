@@ -1,0 +1,587 @@
+Arquivo: gaussian_sizes_benchmark.cpp
+
+Laços aceitos/recusados pelo vetorizador:
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:78:13: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:78:13: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:74:38: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:78:29: missed: not vectorized: data ref analysis failed: *_47 = _29;
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:76:41: missed: couldn't vectorize loop
+/usr/include/c++/12/bits/stl_vector.h:1124:25: missed: not vectorized: no vectype for stmt: _46 = MEM[(struct vector *)_30].D.94398._M_impl.D.93706._M_start;
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: missed: statement clobbers memory: _14 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (0, _12, 1, &.istart0.37, &.iend0.38);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: missed: statement clobbers memory: _21 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.37, &.iend0.38);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:92:103: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:92:103: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:87:52: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:87:52: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:89:55: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:89:55: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:91:39: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:94:49: missed: not vectorized: complicated access pattern.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:91:82: optimized: loop vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: note: vectorized 1 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: missed: statement clobbers memory: _26 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (_24, _23, 1, &.istart0.45, &.iend0.46);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: missed: statement clobbers memory: _37 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.45, &.iend0.46);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:97:33: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:97:33: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:52: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:52: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:107:38: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:107:38: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:38: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:38: missed: not vectorized: control flow in loop.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:38: optimized: loop vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:111:38: optimized: loop vectorized using 16 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: note: vectorized 1 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: missed: statement clobbers memory: _17 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (0, _15, 1, &.istart0.56, &.iend0.57);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: missed: statement clobbers memory: _24 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.56, &.iend0.57);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:125:52: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:125:52: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:121:45: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:121:45: missed: not vectorized: multiple nested loops.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:125:38: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:125:38: missed: not vectorized: control flow in loop.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:125:38: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: not vectorized: unsupported data-type uint64_t
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: statement clobbers memory: _17 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (0, _15, 1, &.istart0.65, &.iend0.66);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: statement clobbers memory: _24 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.65, &.iend0.66);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _17 = std::__cxx11::basic_string<char>::_M_create (this_1(D), &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_29, __s_3(D), __n_5(D));
+/usr/include/c++/12/bits/basic_string.h:618:28: missed: statement clobbers memory: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (_9, _8);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_4, _7);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:34: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: not vectorized: unsupported use in stmt.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:34: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: not vectorized: unsupported use in stmt.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:28: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:28: missed: splitting region at control altering definition _48 = std::__ostream_insert<char, std::char_traits<char> > (_2, _36, _37);
+/usr/include/c++/12/bits/fs_path.h:1329:43: missed: statement clobbers memory: _128 = std::filesystem::__cxx11::path::_List::end (_127);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.96904 + 32B]);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _179 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.96904], &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_162, _169, _170);
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.96904 + 32B], _173);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_174, _176);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.96904 + 32B]);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _155 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.96904], &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_186, _145, _114);
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.96904 + 32B], _149);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_150, _152);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.96904 + 32B]);
+/usr/include/c++/12/bits/fs_path.h:1139:58: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .isra (&D.96905, _42, _41);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _48 = std::__ostream_insert<char, std::char_traits<char> > (_2, _36, _37);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb35
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _16 = std::operator<< <std::char_traits<char> > (_48, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:117: missed: not vectorized: statement can throw an exception: _16 = std::operator<< <std::char_traits<char> > (_48, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:117: missed: splitting region at control altering definition _18 = std::basic_ostream<char>::operator<< (_16, _6);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:140: missed: not vectorized: statement can throw an exception: _18 = std::basic_ostream<char>::operator<< (_16, _6);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:140: missed: splitting region at control altering definition _20 = std::operator<< <std::char_traits<char> > (_18, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:140: missed: not vectorized: statement can throw an exception: _20 = std::operator<< <std::char_traits<char> > (_18, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:140: missed: splitting region at control altering definition _23 = std::basic_ostream<char>::operator<< (_20, _7);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: statement clobbers memory: _7 = omp_get_max_threads ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: not vectorized: statement can throw an exception: _23 = std::basic_ostream<char>::operator<< (_20, _7);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: splitting region at control altering definition _25 = std::operator<< <std::char_traits<char> > (_23, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: not vectorized: statement can throw an exception: _25 = std::operator<< <std::char_traits<char> > (_23, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: splitting region at control altering definition _27 = std::operator<< <std::char_traits<char> > (_25, 44);
+/usr/include/c++/12/ostream:620:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_25, "unknown", 7);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: not vectorized: statement can throw an exception: _27 = std::operator<< <std::char_traits<char> > (_25, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: splitting region at control altering definition _30 = std::operator<< <std::char_traits<char> > (_27, component_28(D));
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: not vectorized: statement can throw an exception: _30 = std::operator<< <std::char_traits<char> > (_27, component_28(D));
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: splitting region at control altering definition _32 = std::operator<< <std::char_traits<char> > (_30, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: not vectorized: statement can throw an exception: _32 = std::operator<< <std::char_traits<char> > (_30, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:223: missed: splitting region at control altering definition _53 = std::basic_ostream<char>::_M_insert<double> (_32, elapsed_33(D));
+/usr/include/c++/12/ostream:221:25: missed: not vectorized: statement can throw an exception: _53 = std::basic_ostream<char>::_M_insert<double> (_32, elapsed_33(D));
+/usr/include/c++/12/ostream:221:25: missed: splitting region at dominance boundary bb55
+/usr/include/c++/12/ostream:221:25: missed: splitting region at control altering definition _35 = std::operator<< <std::char_traits<char> > (_53, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:279: missed: not vectorized: statement can throw an exception: _35 = std::operator<< <std::char_traits<char> > (_53, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:279: missed: splitting region at control altering definition _58 = std::basic_ostream<char>::_M_insert<long unsigned int> (_35, value_257);
+/usr/include/c++/12/ostream:171:25: missed: not vectorized: statement can throw an exception: _58 = std::basic_ostream<char>::_M_insert<long unsigned int> (_35, value_257);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: splitting region at dominance boundary bb61
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: splitting region at control altering definition _40 = std::operator<< <std::char_traits<char> > (_58, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:356: missed: not vectorized: statement can throw an exception: _40 = std::operator<< <std::char_traits<char> > (_58, 44);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:356: missed: splitting region at control altering definition _72 = std::basic_ostream<char>::_M_insert<long unsigned int> (_40, value_203);
+/usr/include/c++/12/ostream:171:25: missed: not vectorized: statement can throw an exception: _72 = std::basic_ostream<char>::_M_insert<long unsigned int> (_40, value_203);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: splitting region at dominance boundary bb67
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: splitting region at dominance boundary bb81
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:433: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_72, ",passed\n");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_89, _91);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:102: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.96904);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb62
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb82
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb56
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb52
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb50
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb48
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb44
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb42
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb40
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb38
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb36
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb73
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb78
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_92, _94);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:28: missed: not vectorized: statement can throw an exception: resx 4
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:102: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.96904);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:37:26: missed: splitting region at control altering definition _57 = operator new (count_10(D));
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: statement clobbers memory: _46 = operator new (count_10(D));
+/usr/include/c++/12/bits/stl_algobase.h:942:18: missed: statement clobbers memory: __builtin_memset (__first_49, 0, _50);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: not vectorized: statement can throw an exception: _57 = operator new (count_10(D));
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb10
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at control altering definition _73 = operator new (count_10(D));
+/usr/include/c++/12/bits/stl_algobase.h:942:18: missed: statement clobbers memory: __builtin_memset (__first_60, 0, _50);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: not vectorized: statement can throw an exception: _73 = operator new (count_10(D));
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb20
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_22, _20);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:37:26: missed: not vectorized: statement can throw an exception: resx 10
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb14
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_18, _12);
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb16
+/usr/include/c++/12/bits/stl_algobase.h:942:18: missed: statement clobbers memory: __builtin_memset (__first_76, 0, _50);
+/usr/include/c++/12/bits/stl_algobase.h:942:18: missed: splitting region at dominance boundary bb3
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: statement clobbers memory: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:41:9: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:41:9: missed: not vectorized: control flow in loop.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: missed: splitting region at control altering definition _189 = std::__cxx11::basic_string<char>::_M_create (&D.113912._M_pathname, &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _92 = __builtin_strlen (_4);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _96 = std::__cxx11::basic_string<char>::_M_create (&argument, &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_273, _4, _92);
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _42 = std::__cxx11::basic_string<char>::compare (&argument, "--image");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _40 = std::__cxx11::basic_string<char>::compare (&argument, "--taps");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _57 = std::__cxx11::basic_string<char>::compare (&argument, "--repeat");
+/usr/include/stdlib.h:364:23: missed: statement clobbers memory: _35 = strtol (_15, 0B, 10);
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: std::__cxx11::basic_string<char>::compare (&argument, "--repeat");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _58 = std::__cxx11::basic_string<char>::compare (&argument, "--warmup");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (pretmp_208, _64);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _189 = std::__cxx11::basic_string<char>::_M_create (&D.113912._M_pathname, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb65
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb68
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb69
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_111, pretmp_207, _59);
+/usr/include/c++/12/bits/basic_string.h:234:28: missed: splitting region at loop 1 exit at bb75
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&D.113912._M_cmpts);
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: splitting region at dominance boundary bb70
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: splitting region at loop 1 exit at bb71
+/usr/include/c++/12/bits/fs_path.h:331:23: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_M_split_cmpts (&D.113912);
+/usr/include/c++/12/bits/fs_path.h:331:23: missed: splitting region at dominance boundary bb76
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (&MEM[(struct _Head_base &)&D.113912 + 32]._M_head_impl, _176);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: missed: not vectorized: statement can throw an exception: resx 15
+/usr/include/c++/12/bits/fs_path.h:693:7: missed: splitting region at dominance boundary bb80
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_178, _181);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: missed: not vectorized: statement can throw an exception: resx 14
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb57
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_213, &MEM[(const struct basic_string *)&D.113912].D.41761._M_local_buf, _220);
+/usr/include/c++/12/bits/unique_ptr.h:203:16: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (_211, __old_p_210);
+/usr/include/c++/12/bits/fs_path.h:440:64: missed: statement clobbers memory: std::filesystem::__cxx11::path::_M_split_cmpts (&D.113912);
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (&MEM[(struct _Head_base &)&D.113912 + 32]._M_head_impl, _201);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_203, _206);
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: missed: splitting region at dominance boundary bb118
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:46:57: missed: splitting region at dominance boundary bb15
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:46:57: missed: splitting region at control altering definition _127 = std::__cxx11::basic_string<char>::_M_create (&D.113652._M_pathname, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _56 = std::__cxx11::basic_string<char>::compare (&argument, "--image");
+/usr/include/stdlib.h:364:23: missed: statement clobbers memory: _55 = strtol (_9, 0B, 10);
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _95 = __builtin_strlen (_9);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _127 = std::__cxx11::basic_string<char>::_M_create (&D.113652._M_pathname, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb19
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb23
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb24
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_110, _9, _95);
+/usr/include/c++/12/bits/basic_string.h:234:28: missed: splitting region at loop 1 exit at bb30
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&D.113652._M_cmpts);
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: splitting region at dominance boundary bb25
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: splitting region at loop 1 exit at bb26
+/usr/include/c++/12/bits/fs_path.h:331:23: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_M_split_cmpts (&D.113652);
+/usr/include/c++/12/bits/fs_path.h:331:23: missed: splitting region at dominance boundary bb31
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (&MEM[(struct _Head_base &)&D.113652 + 32]._M_head_impl, _114);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: missed: not vectorized: statement can throw an exception: resx 12
+/usr/include/c++/12/bits/fs_path.h:693:7: missed: splitting region at dominance boundary bb110
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_116, _119);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:39:6: missed: not vectorized: statement can throw an exception: resx 11
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb35
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_72, _74);
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb119
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_151, &MEM[(const struct basic_string *)&D.113652].D.41761._M_local_buf, _158);
+/usr/include/c++/12/bits/unique_ptr.h:203:16: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (_149, __old_p_148);
+/usr/include/c++/12/bits/fs_path.h:440:64: missed: statement clobbers memory: std::filesystem::__cxx11::path::_M_split_cmpts (&D.113652);
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (&MEM[(struct _Head_base &)&D.113652 + 32]._M_head_impl, _139);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_141, _144);
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: missed: splitting region at dominance boundary bb100
+/usr/include/c++/12/bits/basic_string.h:229:26: missed: splitting region at dominance boundary bb3
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_65, _67);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:40:31: missed: splitting region at dominance boundary bb120
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:50:82: missed: splitting region at dominance boundary bb108
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:50:82: missed: splitting region at dominance boundary bb115
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:50:82: missed: splitting region at dominance boundary bb5
+/usr/include/c++/12/bits/basic_string.h:639:28: missed: statement clobbers memory: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:56:31: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:57:85: missed: not vectorized, possible dependence between data-refs *_27 and *_23
+/usr/include/c++/12/bits/stl_algobase.h:921:22: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_algobase.h:921:22: optimized: loop vectorized using 16 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:54:23: note: vectorized 1 loops in function.
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: statement clobbers memory: _45 = operator new (_44);
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: statement clobbers memory: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:395:25: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:395:25: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:34: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:68:60: missed: not vectorized: unsupported use in stmt.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:66:10: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:72:6: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:72:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z6unpackPKhR6Planesii._omp_fn.0, &.omp_data_o.36, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:73:13: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_numeric.h:140:22: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_numeric.h:140:22: optimized: loop vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:83:6: note: vectorized 2 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:83:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z6directPKhPhiiRKSt6vectorIjSaIjEE._omp_fn.0, &.omp_data_o.44, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:86:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:104:6: note: vectorized 0 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:104:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10horizontalRKSt6vectorIhSaIhEERS_IjSaIjEEiiRKS5_._omp_fn.0, &.omp_data_o.55, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:106:13: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_numeric.h:140:22: optimized: loop vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:117:6: note: vectorized 1 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:117:6: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z8verticalRKSt6vectorIjSaIjEERS_IhSaIhEEiiS3_._omp_fn.0, &.omp_data_o.64, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_12, _15);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_8, _11);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_4, _7);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: statement clobbers memory: _24 = operator new (__n_5(D));
+/usr/include/c++/12/bits/stl_algobase.h:942:18: missed: statement clobbers memory: __builtin_memset (__first_27, 0, _28);
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: statement clobbers memory: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:150:34: missed: couldn't vectorize loop
+/usr/include/c++/12/bits/stl_vector.h:1124:25: missed: not vectorized: no vectype for stmt: _193 = output.D.94398._M_impl.D.93706._M_start;
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:145:61: missed: couldn't vectorize loop
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:145:61: missed: not vectorized: control flow in loop.
+/usr/include/c++/12/bits/stl_numeric.h:140:22: optimized: loop vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: note: vectorized 1 loops in function.
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: splitting region at control altering definition _70 = parse (argc_67(D), argv_68(D), &options);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM[(struct path *)&options]._M_cmpts);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM[(struct path *)&options + 40B]._M_cmpts);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:132:32: missed: not vectorized: statement can throw an exception: _70 = parse (argc_67(D), argv_68(D), &options);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: missed: splitting region at control altering definition _75 = load_image (_177, &image);
+/usr/include/c++/12/bits/fs_path.h:1139:58: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .isra (&D.96427, _173, _175);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:133:40: missed: not vectorized: statement can throw an exception: _75 = load_image (_177, &image);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:133:40: missed: splitting region at control altering definition _300 = operator new (input_bytes_78);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_120, _144);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: not vectorized: statement can throw an exception: _300 = operator new (input_bytes_78);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: splitting region at dominance boundary bb17
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: splitting region at control altering definition _316 = operator new (_315);
+/usr/include/c++/12/bits/stl_algobase.h:431:23: missed: statement clobbers memory: __builtin_memcpy (iftmp.82_301, _6, input_bytes_78);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:135:87: missed: statement clobbers memory: free (_9);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:138:63: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&direct_output, _20, &D.96567);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:138:97: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&planar_output, _20, &D.96569);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:139:65: missed: not vectorized: statement can throw an exception: Planes::Planes (&input, _25);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:139:88: missed: not vectorized: statement can throw an exception: Planes::Planes (&output, output_pixels_86);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: not vectorized: statement can throw an exception: _316 = operator new (_315);
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb32
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb35
+/usr/include/c++/12/bits/stl_algobase.h:922:11: missed: statement clobbers memory: __builtin_memset (__first_317, 0, _503);
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:395:25: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:395:25: missed: splitting region at control altering definition weights = binomial (_31); [return slot optimization]
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:141:64: missed: not vectorized: statement can throw an exception: weights = binomial (_31); [return slot optimization]
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:141:64: missed: splitting region at control altering definition D.112086 = std::filesystem::status (&options.csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:62:54: missed: statement clobbers memory: begin = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z6unpackPKhR6Planesii._omp_fn.0, &.omp_data_o.36, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:63:84: missed: statement clobbers memory: D.114869 = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:62:54: missed: statement clobbers memory: begin = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:144:37: missed: statement clobbers memory: direct (iftmp.82_301, _345, _343, _342, &weights);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:63:84: missed: statement clobbers memory: D.114839 = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:62:54: missed: statement clobbers memory: begin = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z10horizontalRKSt6vectorIhSaIhEERS_IjSaIjEEiiRKS5_._omp_fn.0, &.omp_data_o.55, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:63:84: missed: statement clobbers memory: D.114916 = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:62:54: missed: statement clobbers memory: begin = std::chrono::_V2::steady_clock::now ();
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_Z8verticalRKSt6vectorIjSaIjEERS_IhSaIhEEiiS3_._omp_fn.0, &.omp_data_o.64, 0, 0);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:63:84: missed: statement clobbers memory: D.114959 = std::chrono::_V2::steady_clock::now ();
+/usr/include/c++/12/bits/stl_algobase.h:105:25: missed: statement clobbers memory: _397 = __builtin_memcmp (_286, _288, _393);
+/usr/include/c++/12/bits/fs_ops.h:134:18: missed: not vectorized: statement can throw an exception: D.112086 = std::filesystem::status (&options.csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: splitting region at dominance boundary bb52
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:120:13: missed: splitting region at control altering definition _123 = std::filesystem::file_size (&options.csv);
+/usr/include/c++/12/fstream:849:38: missed: not vectorized: statement can throw an exception: std::basic_ofstream<char>::basic_ofstream (&csv, _199, 1);
+/usr/include/c++/12/fstream:849:38: missed: not vectorized: statement can throw an exception: std::basic_ofstream<char>::basic_ofstream (&csv, _312, 1);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:154:72: missed: not vectorized: statement can throw an exception: _123 = std::filesystem::file_size (&options.csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:154:72: missed: splitting region at dominance boundary bb66
+/usr/include/c++/12/fstream:849:38: missed: not vectorized: statement can throw an exception: std::basic_ofstream<char>::basic_ofstream (&csv, pretmp_510, 1);
+/usr/include/c++/12/fstream:849:38: missed: not vectorized: statement can throw an exception: std::basic_ofstream<char>::basic_ofstream (&csv, pretmp_510, 1);
+/usr/include/c++/12/fstream:849:38: missed: splitting region at dominance boundary bb62
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:156:30: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&csv.D.91476, "Image,Taps,Threads,Build,Component,Elapsed_ms,Direct_Hash,Separable_Hash,Validation\n");
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:156:30: missed: splitting region at dominance boundary bb174
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:158:14: missed: not vectorized: statement can throw an exception: main(int, char**)::<lambda(const char*, double)>::operator() (&write, "AoS_Direct", _328);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:158:46: missed: not vectorized: statement can throw an exception: main(int, char**)::<lambda(const char*, double)>::operator() (&write, "AoS_to_SoA", _333);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:158:82: missed: not vectorized: statement can throw an exception: main(int, char**)::<lambda(const char*, double)>::operator() (&write, "SoA_Separable_Horizontal", horizontal_ms_318);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:158:132: missed: not vectorized: statement can throw an exception: main(int, char**)::<lambda(const char*, double)>::operator() (&write, "SoA_Separable_Vertical", vertical_ms_53);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:158:178: missed: not vectorized: statement can throw an exception: main(int, char**)::<lambda(const char*, double)>::operator() (&write, "SoA_Separable_Kernel", _41);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:159:5: missed: statement clobbers memory: std::basic_ofstream<char>::~basic_ofstream (&csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: note: Basic block will be vectorized using SLP
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: optimized: basic block part vectorized using 32 byte vectors
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb75
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb73
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb71
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb69
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb67
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb93
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb94
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:157:446: missed: splitting region at dominance boundary bb57
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:159:5: missed: statement clobbers memory: std::basic_ofstream<char>::~basic_ofstream (&csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 43
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:159:5: missed: splitting region at dominance boundary bb48
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:159:5: missed: splitting region at dominance boundary bb77
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:152:32: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "Valida\xc3\xa7\xc3\xa3o falhou.\n");
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:152:32: missed: splitting region at dominance boundary bb96
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_213, _216);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_209, _212);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: statement clobbers memory: Planes::~Planes (&output);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: statement clobbers memory: Planes::~Planes (&input);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_205, _208);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_201, _204);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (iftmp.82_301, input_bytes_78);
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb97
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb132
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_220, _223);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 29
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb133
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb134
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb101
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb102
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb27
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_224, _227);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 28
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb107
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb109
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: statement clobbers memory: Planes::~Planes (&output);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 23
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: splitting region at dominance boundary bb110
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: splitting region at dominance boundary bb112
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: statement clobbers memory: Planes::~Planes (&input);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 22
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: splitting region at dominance boundary bb113
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:161:1: missed: splitting region at dominance boundary bb117
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_228, _231);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 21
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb118
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb122
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_232, _235);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 16
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb123
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb13
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (iftmp.82_301, input_bytes_78);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 11
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb21
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb89
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 57
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb4
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_217, _219);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: not vectorized: statement can throw an exception: resx 4
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb88
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:132:70: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "Uso: gaussian_sizes_benchmark --image ARQUIVO CSV --taps 3|5|7|9|11 [--repeat N] [--warmup]\n");
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:132:70: missed: splitting region at dominance boundary bb5
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&options.csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&options.image);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: splitting region at dominance boundary bb127
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:131:5: missed: splitting region at dominance boundary bb128
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&options.csv);
+/home/users/efsilva/teste/INF01077/577262-FPI-Relatorio2/gaussian_sizes_benchmark.cpp:36:8: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&options.image);
+/usr/include/c++/12/iostream:74:25: missed: statement clobbers memory: std::ios_base::Init::Init (&__ioinit);
+/usr/include/c++/12/iostream:74:25: missed: statement clobbers memory: __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+
+Instruções AVX/AVX2 no assembly:
+0000000000000110 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     184:	e8 00 00 00 00       	call   189 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x79>
+     18b:	0f 84 ae 0b 00 00    	je     d3f <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc2f>
+     286:	0f 8d 9c 0a 00 00    	jge    d28 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc18>
+     312:	0f 8c 4d 0a 00 00    	jl     d65 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc55>
+     38c:	0f 86 c6 09 00 00    	jbe    d58 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc48>
+     392:	c4 c1 79 6e c2       	vmovd  xmm0,r10d
+     397:	c5 d9 ef e4          	vpxor  xmm4,xmm4,xmm4
+     3a6:	c5 fd 7f a4 24 80 01 	vmovdqa YMMWORD PTR [rsp+0x180],ymm4
+     3af:	c4 e2 7d 58 c0       	vpbroadcastd ymm0,xmm0
+     3b4:	c5 fd 7f a4 24 60 01 	vmovdqa YMMWORD PTR [rsp+0x160],ymm4
+     3bd:	c4 e3 fd 00 c0 d8    	vpermq ymm0,ymm0,0xd8
+     3c3:	c5 fd 7f a4 24 a0 01 	vmovdqa YMMWORD PTR [rsp+0x1a0],ymm4
+     3cc:	c5 fd 70 e8 fa       	vpshufd ymm5,ymm0,0xfa
+     3d1:	c5 fd 70 e0 50       	vpshufd ymm4,ymm0,0x50
+     3d6:	c5 fd 7f a4 24 00 01 	vmovdqa YMMWORD PTR [rsp+0x100],ymm4
+     3df:	c5 fd 7f ac 24 e0 00 	vmovdqa YMMWORD PTR [rsp+0xe0],ymm5
+     3f0:	c4 e3 fd 00 3a d8    	vpermq ymm7,YMMWORD PTR [rdx],0xd8
+     3f6:	c4 e3 fd 00 72 20 d8 	vpermq ymm6,YMMWORD PTR [rdx+0x20],0xd8
+     405:	c4 e3 fd 00 6a c0 d8 	vpermq ymm5,YMMWORD PTR [rdx-0x40],0xd8
+     40c:	c4 e3 fd 00 62 e0 d8 	vpermq ymm4,YMMWORD PTR [rdx-0x20],0xd8
+     413:	c5 7d 70 df 50       	vpshufd ymm11,ymm7,0x50
+     418:	c5 7d 70 d6 50       	vpshufd ymm10,ymm6,0x50
+     41d:	c5 fd 6f 94 24 e0 00 	vmovdqa ymm2,YMMWORD PTR [rsp+0xe0]
+     426:	c5 fd 70 ff fa       	vpshufd ymm7,ymm7,0xfa
+     42b:	c5 7d 70 cd 50       	vpshufd ymm9,ymm5,0x50
+     430:	c5 7d 70 c4 50       	vpshufd ymm8,ymm4,0x50
+     435:	c5 fd 70 f6 fa       	vpshufd ymm6,ymm6,0xfa
+     43a:	c5 fd 6f 84 24 00 01 	vmovdqa ymm0,YMMWORD PTR [rsp+0x100]
+     443:	c5 fd 70 ed fa       	vpshufd ymm5,ymm5,0xfa
+     448:	c5 fd 70 e4 fa       	vpshufd ymm4,ymm4,0xfa
+     44d:	c5 7e 6f 61 c0       	vmovdqu ymm12,YMMWORD PTR [rcx-0x40]
+     452:	c5 fe 6f 59 e0       	vmovdqu ymm3,YMMWORD PTR [rcx-0x20]
+     457:	c5 c5 f4 fa          	vpmuludq ymm7,ymm7,ymm2
+     45b:	c5 cd f4 f2          	vpmuludq ymm6,ymm6,ymm2
+     45f:	c5 d5 f4 ea          	vpmuludq ymm5,ymm5,ymm2
+     463:	c5 dd f4 e2          	vpmuludq ymm4,ymm4,ymm2
+     467:	c5 fe 6f 51 a0       	vmovdqu ymm2,YMMWORD PTR [rcx-0x60]
+     46c:	c4 62 1d 00 2d 00 00 	vpshufb ymm13,ymm12,YMMWORD PTR [rip+0x0]        # 475 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x365>
+     475:	c5 25 f4 d8          	vpmuludq ymm11,ymm11,ymm0
+     479:	c5 2d f4 d0          	vpmuludq ymm10,ymm10,ymm0
+     47d:	c4 62 1d 00 35 00 00 	vpshufb ymm14,ymm12,YMMWORD PTR [rip+0x0]        # 486 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x376>
+     486:	c5 35 f4 c8          	vpmuludq ymm9,ymm9,ymm0
+     48a:	c5 3d f4 c0          	vpmuludq ymm8,ymm8,ymm0
+     48e:	c4 e2 6d 00 05 00 00 	vpshufb ymm0,ymm2,YMMWORD PTR [rip+0x0]        # 497 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x387>
+     497:	c4 e2 6d 00 0d 00 00 	vpshufb ymm1,ymm2,YMMWORD PTR [rip+0x0]        # 4a0 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x390>
+     4a0:	c4 e3 fd 00 c0 4e    	vpermq ymm0,ymm0,0x4e
+     4a6:	c4 62 1d 00 25 00 00 	vpshufb ymm12,ymm12,YMMWORD PTR [rip+0x0]        # 4af <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x39f>
+     4af:	c5 f5 eb c8          	vpor   ymm1,ymm1,ymm0
+     4b3:	c4 e2 65 00 05 00 00 	vpshufb ymm0,ymm3,YMMWORD PTR [rip+0x0]        # 4bc <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3ac>
+     4bc:	c4 c1 75 eb cd       	vpor   ymm1,ymm1,ymm13
+     4c1:	c4 62 65 00 2d 00 00 	vpshufb ymm13,ymm3,YMMWORD PTR [rip+0x0]        # 4ca <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3ba>
+     4ca:	c4 e2 75 00 0d 00 00 	vpshufb ymm1,ymm1,YMMWORD PTR [rip+0x0]        # 4d3 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3c3>
+     4d3:	c4 43 fd 00 ed 4e    	vpermq ymm13,ymm13,0x4e
+     4d9:	c4 c1 7d eb c5       	vpor   ymm0,ymm0,ymm13
+     4de:	c4 62 6d 00 2d 00 00 	vpshufb ymm13,ymm2,YMMWORD PTR [rip+0x0]        # 4e7 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3d7>
+     4e7:	c5 f5 eb c8          	vpor   ymm1,ymm1,ymm0
+     4eb:	c4 43 fd 00 ed 4e    	vpermq ymm13,ymm13,0x4e
+     4f1:	c4 e2 6d 00 05 00 00 	vpshufb ymm0,ymm2,YMMWORD PTR [rip+0x0]        # 4fa <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3ea>
+     4fa:	c4 c1 7d eb c5       	vpor   ymm0,ymm0,ymm13
+     4ff:	c4 62 65 00 2d 00 00 	vpshufb ymm13,ymm3,YMMWORD PTR [rip+0x0]        # 508 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x3f8>
+     508:	c4 c1 7d eb c6       	vpor   ymm0,ymm0,ymm14
+     50d:	c4 62 65 00 35 00 00 	vpshufb ymm14,ymm3,YMMWORD PTR [rip+0x0]        # 516 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x406>
+     516:	c4 e2 7d 00 05 00 00 	vpshufb ymm0,ymm0,YMMWORD PTR [rip+0x0]        # 51f <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x40f>
+     51f:	c4 43 fd 00 f6 4e    	vpermq ymm14,ymm14,0x4e
+     525:	c4 41 15 eb ee       	vpor   ymm13,ymm13,ymm14
+     52a:	c4 c1 7d eb c5       	vpor   ymm0,ymm0,ymm13
+     52f:	c4 62 6d 00 2d 00 00 	vpshufb ymm13,ymm2,YMMWORD PTR [rip+0x0]        # 538 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x428>
+     538:	c4 e2 6d 00 15 00 00 	vpshufb ymm2,ymm2,YMMWORD PTR [rip+0x0]        # 541 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x431>
+     541:	c5 fd 7f 84 24 20 01 	vmovdqa YMMWORD PTR [rsp+0x120],ymm0
+     54a:	c4 43 fd 00 ed 4e    	vpermq ymm13,ymm13,0x4e
+     550:	c5 fd 73 d7 20       	vpsrlq ymm0,ymm7,0x20
+     555:	c5 fd 7f 84 24 80 02 	vmovdqa YMMWORD PTR [rsp+0x280],ymm0
+     55e:	c4 c1 6d eb d5       	vpor   ymm2,ymm2,ymm13
+     563:	c4 c1 7d 73 d3 20    	vpsrlq ymm0,ymm11,0x20
+     569:	c5 fd 7f 84 24 60 02 	vmovdqa YMMWORD PTR [rsp+0x260],ymm0
+     572:	c4 c1 6d eb d4       	vpor   ymm2,ymm2,ymm12
+     577:	c4 62 65 00 25 00 00 	vpshufb ymm12,ymm3,YMMWORD PTR [rip+0x0]        # 580 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x470>
+     580:	c4 e2 65 00 1d 00 00 	vpshufb ymm3,ymm3,YMMWORD PTR [rip+0x0]        # 589 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x479>
+     589:	c4 43 fd 00 e4 4e    	vpermq ymm12,ymm12,0x4e
+     58f:	c5 fd 73 d6 20       	vpsrlq ymm0,ymm6,0x20
+     594:	c4 e2 6d 00 15 00 00 	vpshufb ymm2,ymm2,YMMWORD PTR [rip+0x0]        # 59d <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x48d>
+     59d:	c4 c1 65 eb dc       	vpor   ymm3,ymm3,ymm12
+     5a2:	c4 62 7d 30 e1       	vpmovzxbw ymm12,xmm1
+     5a7:	c4 e3 7d 39 c9 01    	vextracti128 xmm1,ymm1,0x1
+     5ad:	c4 42 7d 33 ec       	vpmovzxwd ymm13,xmm12
+     5b2:	c5 ed eb d3          	vpor   ymm2,ymm2,ymm3
+     5b6:	c4 43 7d 39 e4 01    	vextracti128 xmm12,ymm12,0x1
+     5bc:	c4 43 7d 39 ee 01    	vextracti128 xmm14,ymm13,0x1
+     5c2:	c4 42 7d 35 ed       	vpmovzxdq ymm13,xmm13
+     5c7:	c4 42 7d 33 e4       	vpmovzxwd ymm12,xmm12
+     5cc:	c5 fd 7f 94 24 40 01 	vmovdqa YMMWORD PTR [rsp+0x140],ymm2
+     5d5:	c4 42 7d 35 f6       	vpmovzxdq ymm14,xmm14
+     5da:	c4 e2 7d 30 c9       	vpmovzxbw ymm1,xmm1
+     5df:	c4 c1 05 73 d6 20    	vpsrlq ymm15,ymm14,0x20
+     5e5:	c5 8d f4 d7          	vpmuludq ymm2,ymm14,ymm7
+     5e9:	c4 e2 7d 33 d9       	vpmovzxwd ymm3,xmm1
+     5ee:	c5 0d f4 b4 24 80 02 	vpmuludq ymm14,ymm14,YMMWORD PTR [rsp+0x280]
+     5f7:	c5 05 f4 ff          	vpmuludq ymm15,ymm15,ymm7
+     5fb:	c4 e3 7d 39 c9 01    	vextracti128 xmm1,ymm1,0x1
+     601:	c4 e2 7d 33 c9       	vpmovzxwd ymm1,xmm1
+     606:	c4 41 05 d4 fe       	vpaddq ymm15,ymm15,ymm14
+     60b:	c4 c1 0d 73 d5 20    	vpsrlq ymm14,ymm13,0x20
+     611:	c4 41 0d f4 f3       	vpmuludq ymm14,ymm14,ymm11
+     616:	c4 c1 05 73 f7 20    	vpsllq ymm15,ymm15,0x20
+     61c:	c4 c1 6d d4 d7       	vpaddq ymm2,ymm2,ymm15
+     621:	c4 41 15 f4 fb       	vpmuludq ymm15,ymm13,ymm11
+     626:	c5 15 f4 ac 24 60 02 	vpmuludq ymm13,ymm13,YMMWORD PTR [rsp+0x260]
+     62f:	c5 fd 7f 84 24 40 02 	vmovdqa YMMWORD PTR [rsp+0x240],ymm0
+     638:	c4 c1 7d 73 d2 20    	vpsrlq ymm0,ymm10,0x20
+     63e:	c5 fd 7f 84 24 20 02 	vmovdqa YMMWORD PTR [rsp+0x220],ymm0
+     647:	c4 41 0d d4 f5       	vpaddq ymm14,ymm14,ymm13
+     64c:	c4 43 7d 39 e5 01    	vextracti128 xmm13,ymm12,0x1
+     652:	c4 42 7d 35 e4       	vpmovzxdq ymm12,xmm12
+     657:	c4 c1 0d 73 f6 20    	vpsllq ymm14,ymm14,0x20
+     65d:	c4 42 7d 35 ed       	vpmovzxdq ymm13,xmm13
+     662:	c4 41 05 d4 fe       	vpaddq ymm15,ymm15,ymm14
+     667:	c5 15 f4 f6          	vpmuludq ymm14,ymm13,ymm6
+     66b:	c4 c1 6d d4 d7       	vpaddq ymm2,ymm2,ymm15
+     670:	c4 c1 05 73 d5 20    	vpsrlq ymm15,ymm13,0x20
+     676:	c5 15 f4 ac 24 40 02 	vpmuludq ymm13,ymm13,YMMWORD PTR [rsp+0x240]
+     67f:	c5 05 f4 fe          	vpmuludq ymm15,ymm15,ymm6
+     683:	c4 41 05 d4 fd       	vpaddq ymm15,ymm15,ymm13
+     688:	c4 c1 15 73 d4 20    	vpsrlq ymm13,ymm12,0x20
+     68e:	c4 41 15 f4 ea       	vpmuludq ymm13,ymm13,ymm10
+     693:	c4 c1 05 73 f7 20    	vpsllq ymm15,ymm15,0x20
+     699:	c4 41 0d d4 f7       	vpaddq ymm14,ymm14,ymm15
+     69e:	c4 41 1d f4 fa       	vpmuludq ymm15,ymm12,ymm10
+     6a3:	c5 1d f4 a4 24 20 02 	vpmuludq ymm12,ymm12,YMMWORD PTR [rsp+0x220]
+     6ac:	c4 41 15 d4 ec       	vpaddq ymm13,ymm13,ymm12
+     6b1:	c4 c1 15 73 f5 20    	vpsllq ymm13,ymm13,0x20
+     6b7:	c4 41 05 d4 fd       	vpaddq ymm15,ymm15,ymm13
+     6bc:	c4 c3 7d 39 dd 01    	vextracti128 xmm13,ymm3,0x1
+     6c2:	c4 e2 7d 35 db       	vpmovzxdq ymm3,xmm3
+     6c7:	c4 42 7d 35 ed       	vpmovzxdq ymm13,xmm13
+     6cc:	c4 41 0d d4 f7       	vpaddq ymm14,ymm14,ymm15
+     6d1:	c4 c1 1d 73 d5 20    	vpsrlq ymm12,ymm13,0x20
+     6d7:	c5 85 73 d5 20       	vpsrlq ymm15,ymm5,0x20
+     6dc:	c4 c1 6d d4 d6       	vpaddq ymm2,ymm2,ymm14
+     6e1:	c5 1d f4 e5          	vpmuludq ymm12,ymm12,ymm5
+     6e5:	c5 15 f4 f5          	vpmuludq ymm14,ymm13,ymm5
+     6e9:	c5 7d 7f bc 24 00 02 	vmovdqa YMMWORD PTR [rsp+0x200],ymm15
+     6f2:	c5 15 f4 ac 24 00 02 	vpmuludq ymm13,ymm13,YMMWORD PTR [rsp+0x200]
+     6fb:	c4 41 65 f4 f9       	vpmuludq ymm15,ymm3,ymm9
+     700:	c4 41 1d d4 e5       	vpaddq ymm12,ymm12,ymm13
+     705:	c5 95 73 d3 20       	vpsrlq ymm13,ymm3,0x20
+     70a:	c4 c1 1d 73 f4 20    	vpsllq ymm12,ymm12,0x20
+     710:	c4 41 15 f4 e9       	vpmuludq ymm13,ymm13,ymm9
+     715:	c4 41 0d d4 f4       	vpaddq ymm14,ymm14,ymm12
+     71a:	c4 c1 1d 73 d1 20    	vpsrlq ymm12,ymm9,0x20
+     720:	c5 9d f4 db          	vpmuludq ymm3,ymm12,ymm3
+     724:	c5 15 d4 eb          	vpaddq ymm13,ymm13,ymm3
+     728:	c4 e3 7d 39 cb 01    	vextracti128 xmm3,ymm1,0x1
+     72e:	c4 e2 7d 35 c9       	vpmovzxdq ymm1,xmm1
+     733:	c4 c1 15 73 f5 20    	vpsllq ymm13,ymm13,0x20
+     739:	c4 e2 7d 35 db       	vpmovzxdq ymm3,xmm3
+     73e:	c4 41 05 d4 fd       	vpaddq ymm15,ymm15,ymm13
+     743:	c5 65 f4 ec          	vpmuludq ymm13,ymm3,ymm4
+     747:	c4 41 0d d4 f7       	vpaddq ymm14,ymm14,ymm15
+     74c:	c5 85 73 d4 20       	vpsrlq ymm15,ymm4,0x20

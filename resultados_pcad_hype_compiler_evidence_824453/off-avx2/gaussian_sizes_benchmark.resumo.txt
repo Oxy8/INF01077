@@ -1,0 +1,116 @@
+Arquivo: gaussian_sizes_benchmark.cpp
+
+Laços aceitos/recusados pelo vetorizador:
+
+Instruções AVX/AVX2 no assembly:
+0000000000000110 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     17d:	e8 00 00 00 00       	call   182 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x72>
+     184:	0f 84 d8 02 00 00    	je     462 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x352>
+     241:	0f 8d 01 02 00 00    	jge    448 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x338>
+     310:	0f 8c 63 01 00 00    	jl     479 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x369>
+     391:	75 cd                	jne    360 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x250>
+     39d:	75 b1                	jne    350 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x240>
+     3e6:	0f 85 1c ff ff ff    	jne    308 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x1f8>
+     432:	0f 8f 68 fe ff ff    	jg     2a0 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x190>
+     455:	e8 00 00 00 00       	call   45a <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x34a>
+     45c:	0f 85 b1 fd ff ff    	jne    213 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x103>
+     462:	e8 00 00 00 00       	call   467 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x357>
+     482:	e9 2c ff ff ff       	jmp    3b3 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x2a3>
+0000000000000490 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     4cc:	e8 00 00 00 00       	call   4d1 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x41>
+     4d3:	0f 84 10 01 00 00    	je     5e9 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x159>
+     50e:	0f 8e b6 00 00 00    	jle    5ca <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x13a>
+     57e:	74 24                	je     5a4 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x114>
+     5a2:	72 ec                	jb     590 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x100>
+     5af:	75 c7                	jne    578 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xe8>
+     5c0:	7f 9e                	jg     560 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xd0>
+     5d8:	e8 00 00 00 00       	call   5dd <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x14d>
+     5e3:	0f 85 08 ff ff ff    	jne    4f1 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x61>
+     5e9:	e8 00 00 00 00       	call   5ee <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x15e>
+0000000000000600 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     644:	e8 00 00 00 00       	call   649 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x49>
+     64b:	0f 84 1d 01 00 00    	je     76e <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x16e>
+     688:	0f 8e c9 00 00 00    	jle    757 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x157>
+     6dc:	0f 84 a6 00 00 00    	je     788 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x188>
+     707:	72 e7                	jb     6f0 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xf0>
+     72d:	75 99                	jne    6c8 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc8>
+     747:	0f 8f 63 ff ff ff    	jg     6b0 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xb0>
+     761:	e8 00 00 00 00       	call   766 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x166>
+     768:	0f 85 fd fe ff ff    	jne    66b <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x6b>
+     76e:	e8 00 00 00 00       	call   773 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x173>
+     78d:	eb 82                	jmp    711 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x111>
+     84b:	c5 fb 11 44 24 08    	vmovsd QWORD PTR [rsp+0x8],xmm0
+     979:	c5 fb 10 44 24 08    	vmovsd xmm0,QWORD PTR [rsp+0x8]
+     c6a:	c5 f8 77             	vzeroupper
+    13d9:	c5 f8 77             	vzeroupper
+    13e4:	c5 f8 77             	vzeroupper
+    13ff:	c5 f8 77             	vzeroupper
+0000000000001540 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    1576:	74 68                	je     15e0 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0xa0>
+    1589:	75 f5                	jne    1580 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x40>
+    1599:	75 f5                	jne    1590 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x50>
+    15b3:	48 8d 3d 56 eb ff ff 	lea    rdi,[rip+0xffffffffffffeb56]        # 110 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    15d2:	e8 00 00 00 00       	call   15d7 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x97>
+    15e2:	eb bb                	jmp    159f <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x5f>
+00000000000015f0 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    1610:	48 8d 3d 79 ee ff ff 	lea    rdi,[rip+0xffffffffffffee79]        # 490 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    1632:	e8 00 00 00 00       	call   1637 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x47>
+0000000000001640 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    1654:	74 52                	je     16a8 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x68>
+    1669:	75 f5                	jne    1660 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x20>
+    1674:	48 8d 3d 85 ef ff ff 	lea    rdi,[rip+0xffffffffffffef85]        # 600 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    1698:	e8 00 00 00 00       	call   169d <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x5d>
+    16aa:	eb c3                	jmp    166f <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x2f>
+  18:	c5 f8 77             	vzeroupper
+  3a:	c5 f8 77             	vzeroupper
+  4f:	c5 f8 77             	vzeroupper
+  5a:	c5 f8 77             	vzeroupper
+  68:	c5 f8 77             	vzeroupper
+  7b:	c5 f8 77             	vzeroupper
+  8f:	c5 f8 77             	vzeroupper
+  dd:	c5 f8 77             	vzeroupper
+ 102:	c5 f8 77             	vzeroupper
+ 10a:	c5 f8 77             	vzeroupper
+ 11a:	c5 f8 77             	vzeroupper
+ 1ff:	c5 f8 77             	vzeroupper
+ 211:	c5 f8 77             	vzeroupper
+ 1b7:	c5 f8 77             	vzeroupper
+ 1ce:	c5 f8 77             	vzeroupper
+ 1d9:	c5 f8 77             	vzeroupper
+0000000000000000 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)>:
+   7:	78 72                	js     7b <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x7b>
+  23:	74 4b                	je     70 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x70>
+  2b:	e8 00 00 00 00       	call   30 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x30>
+  45:	75 09                	jne    50 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x50>
+  55:	e8 00 00 00 00       	call   5a <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x5a>
+  7b:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 82 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x82>
+  cc:	c5 f9 ef c0          	vpxor  xmm0,xmm0,xmm0
+  df:	c5 f9 7f 84 24 a0 00 	vmovdqa XMMWORD PTR [rsp+0xa0],xmm0
+ 484:	c5 f1 57 c9          	vxorpd xmm1,xmm1,xmm1
+ 490:	c4 e1 f3 2a c0       	vcvtsi2sd xmm0,xmm1,rax
+ 495:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 49d <main+0x49d>
+ 49d:	c5 fb 58 54 24 10    	vaddsd xmm2,xmm0,QWORD PTR [rsp+0x10]
+ 4a8:	c5 fb 11 54 24 10    	vmovsd QWORD PTR [rsp+0x10],xmm2
+ 55b:	c5 d9 57 e4          	vxorpd xmm4,xmm4,xmm4
+ 562:	c4 e1 db 2a c0       	vcvtsi2sd xmm0,xmm4,rax
+ 567:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 56f <main+0x56f>
+ 56f:	c5 fb 58 6c 24 18    	vaddsd xmm5,xmm0,QWORD PTR [rsp+0x18]
+ 575:	c5 fb 11 6c 24 18    	vmovsd QWORD PTR [rsp+0x18],xmm5
+ 79a:	c5 c1 57 ff          	vxorpd xmm7,xmm7,xmm7
+ 7dd:	c4 e1 c3 2a c0       	vcvtsi2sd xmm0,xmm7,rax
+ 7e2:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 7ea <main+0x7ea>
+ 7ff:	c5 c1 57 ff          	vxorpd xmm7,xmm7,xmm7
+ 810:	c4 e1 c3 2a c0       	vcvtsi2sd xmm0,xmm7,rax
+ 815:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 81d <main+0x81d>
+ 822:	c5 fb 10 44 24 10    	vmovsd xmm0,QWORD PTR [rsp+0x10]
+ 837:	c5 fb 10 44 24 18    	vmovsd xmm0,QWORD PTR [rsp+0x18]
+ 84c:	c5 fb 10 7c 24 10    	vmovsd xmm7,QWORD PTR [rsp+0x10]
+ 852:	c5 c3 58 44 24 18    	vaddsd xmm0,xmm7,QWORD PTR [rsp+0x18]
+ 8df:	c5 f8 77             	vzeroupper
+ 8fa:	c5 f8 77             	vzeroupper
+ 90d:	c5 f8 77             	vzeroupper
+ 920:	c5 f8 77             	vzeroupper
+ 933:	c5 f8 77             	vzeroupper
+ 946:	c5 f8 77             	vzeroupper
+ 951:	c5 f8 77             	vzeroupper
+ 96c:	c5 f8 77             	vzeroupper

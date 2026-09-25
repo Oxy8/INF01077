@@ -1,0 +1,5 @@
+Imagem=images/6000x6000.png
+Repeticoes=10
+Schedule=static
+Threads=1,20
+Builds=off-avx2,omp-avx2

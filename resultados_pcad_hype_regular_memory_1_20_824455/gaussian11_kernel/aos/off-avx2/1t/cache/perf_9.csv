@@ -1,0 +1,6 @@
+# started on Thu Sep 24 11:34:06 2026
+
+486413253945,,L1-dcache-loads,188322753302,75.00,,
+762285269,,L1-dcache-load-misses,125541593332,49.00,0.16,of all L1-dcache accesses
+47385178,,LLC-loads,125553108783,50.00,,
+5938067,,LLC-load-misses,188327088012,75.00,12.53,of all LL-cache accesses

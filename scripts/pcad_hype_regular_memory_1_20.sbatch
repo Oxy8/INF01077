@@ -11,7 +11,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
 #SBATCH --exclusive
-#SBATCH --time=06:00:00
+#SBATCH --time=24:00:00
 #SBATCH --output=slurm-regular-memory-%j.out
 #SBATCH --error=slurm-regular-memory-%j.err
 
@@ -19,7 +19,7 @@ set -euo pipefail
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Execute sbatch a partir da raiz do projeto.}"
 IMAGE="${REGULAR_MEMORY_IMAGE:-images/6000x6000.png}"
-REPEATS="${REGULAR_MEMORY_REPEATS:-10}"
+REPEATS="${REGULAR_MEMORY_REPEATS:-5}"
 RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_regular_memory_1_20_${SLURM_JOB_ID}"
 HASHES="$RESULT_DIR/reference_hashes_off-avx2.txt"
 OPERATIONS=(

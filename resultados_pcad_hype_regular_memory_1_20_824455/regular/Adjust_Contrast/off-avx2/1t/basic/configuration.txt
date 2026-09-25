@@ -1,0 +1,7 @@
+scope=end-to-end (load+backup+kernel+hash)
+operation=Adjust_Contrast
+build=off-avx2
+threads=1
+schedule=static
+events=cycles,instructions,cache-references,cache-misses
+image=images/6000x6000.png

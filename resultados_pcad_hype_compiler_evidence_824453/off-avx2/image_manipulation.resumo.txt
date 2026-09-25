@@ -1,0 +1,165 @@
+Arquivo: image_manipulation.cpp
+
+Laços aceitos/recusados pelo vetorizador:
+
+Instruções AVX/AVX2 no assembly:
+     2bd:	c4 c1 7a 10 10       	vmovss xmm2,DWORD PTR [r8]
+     2c2:	c4 c1 7a 10 31       	vmovss xmm6,DWORD PTR [r9]
+     2c7:	c5 fa 10 39          	vmovss xmm7,DWORD PTR [rcx]
+     2cb:	c4 c1 7a 10 22       	vmovss xmm4,DWORD PTR [r10]
+     2d0:	c5 fa 10 0f          	vmovss xmm1,DWORD PTR [rdi]
+     2d4:	c5 fa 10 1e          	vmovss xmm3,DWORD PTR [rsi]
+     2d8:	c5 7a 10 02          	vmovss xmm8,DWORD PTR [rdx]
+     2dc:	c5 fa 10 00          	vmovss xmm0,DWORD PTR [rax]
+     2e0:	c5 f2 58 ec          	vaddss xmm5,xmm1,xmm4
+     2e4:	c5 f2 5c cc          	vsubss xmm1,xmm1,xmm4
+     2e8:	c5 3a 58 ce          	vaddss xmm9,xmm8,xmm6
+     2ec:	c5 e2 58 e7          	vaddss xmm4,xmm3,xmm7
+     2f0:	c5 3a 5c c6          	vsubss xmm8,xmm8,xmm6
+     2f4:	c5 e2 5c df          	vsubss xmm3,xmm3,xmm7
+     2f8:	c5 fa 58 fa          	vaddss xmm7,xmm0,xmm2
+     2fc:	c5 fa 5c c2          	vsubss xmm0,xmm0,xmm2
+     300:	c5 f2 58 d3          	vaddss xmm2,xmm1,xmm3
+     304:	c4 c1 62 58 d8       	vaddss xmm3,xmm3,xmm8
+     309:	c4 c1 7a 58 c0       	vaddss xmm0,xmm0,xmm8
+     30e:	c5 d2 58 f7          	vaddss xmm6,xmm5,xmm7
+     312:	c5 d2 5c ef          	vsubss xmm5,xmm5,xmm7
+     316:	c4 c1 5a 58 f9       	vaddss xmm7,xmm4,xmm9
+     31b:	c4 c1 5a 5c e1       	vsubss xmm4,xmm4,xmm9
+     320:	c5 7a 10 0d 00 00 00 	vmovss xmm9,DWORD PTR [rip+0x0]        # 328 <stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*)+0x78>
+     328:	c5 7a 5c d2          	vsubss xmm10,xmm0,xmm2
+     32c:	c5 fa 59 05 00 00 00 	vmulss xmm0,xmm0,DWORD PTR [rip+0x0]        # 334 <stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*)+0x84>
+     334:	c4 c1 62 59 d9       	vmulss xmm3,xmm3,xmm9
+     339:	c5 2a 59 15 00 00 00 	vmulss xmm10,xmm10,DWORD PTR [rip+0x0]        # 341 <stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*)+0x91>
+     341:	c5 da 58 e5          	vaddss xmm4,xmm4,xmm5
+     345:	c5 ea 59 15 00 00 00 	vmulss xmm2,xmm2,DWORD PTR [rip+0x0]        # 34d <stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*)+0x9d>
+     34d:	c4 c1 5a 59 e1       	vmulss xmm4,xmm4,xmm9
+     352:	c5 72 58 c3          	vaddss xmm8,xmm1,xmm3
+     356:	c5 f2 5c cb          	vsubss xmm1,xmm1,xmm3
+     35a:	c4 c1 7a 58 c2       	vaddss xmm0,xmm0,xmm10
+     35f:	c4 c1 6a 58 d2       	vaddss xmm2,xmm2,xmm10
+     364:	c5 fa 58 d9          	vaddss xmm3,xmm0,xmm1
+     368:	c5 f2 5c c8          	vsubss xmm1,xmm1,xmm0
+     36c:	c4 c1 6a 58 c0       	vaddss xmm0,xmm2,xmm8
+     371:	c5 3a 5c c2          	vsubss xmm8,xmm8,xmm2
+     375:	c4 c1 7a 11 19       	vmovss DWORD PTR [r9],xmm3
+     37a:	c5 fa 11 08          	vmovss DWORD PTR [rax],xmm1
+     37e:	c5 fa 11 06          	vmovss DWORD PTR [rsi],xmm0
+     382:	c5 ca 58 c7          	vaddss xmm0,xmm6,xmm7
+     386:	c5 ca 5c f7          	vsubss xmm6,xmm6,xmm7
+     38a:	c4 41 7a 11 02       	vmovss DWORD PTR [r10],xmm8
+     38f:	c5 fa 11 07          	vmovss DWORD PTR [rdi],xmm0
+     393:	c5 d2 58 c4          	vaddss xmm0,xmm5,xmm4
+     397:	c5 d2 5c ec          	vsubss xmm5,xmm5,xmm4
+     39b:	c5 fa 11 02          	vmovss DWORD PTR [rdx],xmm0
+     39f:	c4 c1 7a 11 30       	vmovss DWORD PTR [r8],xmm6
+     3a4:	c5 fa 11 29          	vmovss DWORD PTR [rcx],xmm5
+00000000000003b0 <stbi__stdio_eof(void*)>:
+     3b4:	e8 00 00 00 00       	call   3b9 <stbi__stdio_eof(void*)+0x9>
+     3c2:	74 0c                	je     3d0 <stbi__stdio_eof(void*)+0x20>
+     3d3:	e8 00 00 00 00       	call   3d8 <stbi__stdio_eof(void*)+0x28>
+00000000000003f0 <stbi__stdio_skip(void*, int)>:
+     3fc:	e8 00 00 00 00       	call   401 <stbi__stdio_skip(void*, int)+0x11>
+     404:	e8 00 00 00 00       	call   409 <stbi__stdio_skip(void*, int)+0x19>
+     40c:	75 02                	jne    410 <stbi__stdio_skip(void*, int)+0x20>
+     416:	e9 00 00 00 00       	jmp    41b <stbi__stdio_skip(void*, int)+0x2b>
+0000000000000420 <stbi__stdio_read(void*, char*, int)>:
+     432:	e8 00 00 00 00       	call   437 <stbi__stdio_read(void*, char*, int)+0x17>
+0000000000000860 <stbi__vertical_flip(void*, int, int, int)>:
+     885:	0f 8e a0 00 00 00    	jle    92b <stbi__vertical_flip(void*, int, int, int)+0xcb>
+     88e:	0f 84 97 00 00 00    	je     92b <stbi__vertical_flip(void*, int, int, int)+0xcb>
+     8e5:	e8 00 00 00 00       	call   8ea <stbi__vertical_flip(void*, int, int, int)+0x8a>
+     8f3:	e8 00 00 00 00       	call   8f8 <stbi__vertical_flip(void*, int, int, int)+0x98>
+     901:	e8 00 00 00 00       	call   906 <stbi__vertical_flip(void*, int, int, int)+0xa6>
+     90f:	75 bf                	jne    8d0 <stbi__vertical_flip(void*, int, int, int)+0x70>
+     929:	75 95                	jne    8c0 <stbi__vertical_flip(void*, int, int, int)+0x60>
+    12b3:	c5 f9 6e e0          	vmovd  xmm4,eax
+    12b7:	c4 e2 79 79 e4       	vpbroadcastw xmm4,xmm4
+    12c0:	c4 e2 79 30 1c 16    	vpmovzxbw xmm3,QWORD PTR [rsi+rdx*1]
+    12c6:	c4 e2 79 30 04 17    	vpmovzxbw xmm0,QWORD PTR [rdi+rdx*1]
+    12d1:	c5 d1 71 f3 02       	vpsllw xmm5,xmm3,0x2
+    12d6:	c5 d1 fd e8          	vpaddw xmm5,xmm5,xmm0
+    12dd:	c5 d1 f9 d3          	vpsubw xmm2,xmm5,xmm3
+    12e1:	c5 e1 f9 dd          	vpsubw xmm3,xmm3,xmm5
+    12e5:	c5 f9 73 fa 02       	vpslldq xmm0,xmm2,0x2
+    12ea:	c5 c9 73 da 02       	vpsrldq xmm6,xmm2,0x2
+    12ef:	c5 f9 c4 c1 00       	vpinsrw xmm0,xmm0,ecx,0x0
+    12f9:	c5 e9 71 f2 02       	vpsllw xmm2,xmm2,0x2
+    12fe:	c5 e9 fd d4          	vpaddw xmm2,xmm2,xmm4
+    1304:	c5 f9 fd c2          	vpaddw xmm0,xmm0,xmm2
+    1308:	c5 c9 c4 c8 07       	vpinsrw xmm1,xmm6,eax,0x7
+    130d:	c5 f9 fd c3          	vpaddw xmm0,xmm0,xmm3
+    1311:	c5 f1 fd ca          	vpaddw xmm1,xmm1,xmm2
+    1315:	c5 f1 fd cb          	vpaddw xmm1,xmm1,xmm3
+    1319:	c5 f9 61 d1          	vpunpcklwd xmm2,xmm0,xmm1
+    131d:	c5 f9 69 c1          	vpunpckhwd xmm0,xmm0,xmm1
+    1321:	c5 f9 71 d0 04       	vpsrlw xmm0,xmm0,0x4
+    1326:	c5 f1 71 d2 04       	vpsrlw xmm1,xmm2,0x4
+    132b:	c5 f1 67 c0          	vpackuswb xmm0,xmm1,xmm0
+    132f:	c4 c1 7a 7f 04 50    	vmovdqu XMMWORD PTR [r8+rdx*2],xmm0
+    1503:	c5 e1 ef db          	vpxor  xmm3,xmm3,xmm3
+    1507:	c5 79 6e cd          	vmovd  xmm9,ebp
+    1518:	c4 e1 f9 6e d5       	vmovq  xmm2,rbp
+    1527:	c5 79 6e c5          	vmovd  xmm8,ebp
+    1530:	c5 e9 6c d2          	vpunpcklqdq xmm2,xmm2,xmm2
+    1537:	c5 f9 6e fd          	vmovd  xmm7,ebp
+    1540:	c4 42 79 78 c9       	vpbroadcastb xmm9,xmm9
+    1545:	c5 f9 6e f5          	vmovd  xmm6,ebp
+    154e:	c4 42 79 79 c0       	vpbroadcastw xmm8,xmm8
+    1553:	c5 f9 6e ed          	vmovd  xmm5,ebp
+    155c:	c4 e2 79 79 ff       	vpbroadcastw xmm7,xmm7
+    1561:	c5 f9 6e e5          	vmovd  xmm4,ebp
+    1565:	c4 e2 79 79 f6       	vpbroadcastw xmm6,xmm6
+    156a:	c4 e2 79 79 ed       	vpbroadcastw xmm5,xmm5
+    1577:	c4 e2 79 79 e4       	vpbroadcastw xmm4,xmm4
+    1580:	c4 c1 7a 7e 04 02    	vmovq  xmm0,QWORD PTR [r10+rax*1]
+    1586:	c5 7a 7e 1c 01       	vmovq  xmm11,QWORD PTR [rcx+rax*1]
+    158b:	c5 7a 7e 24 06       	vmovq  xmm12,QWORD PTR [rsi+rax*1]
+    1590:	c5 f9 ef c2          	vpxor  xmm0,xmm0,xmm2
+    1594:	c5 21 ef da          	vpxor  xmm11,xmm11,xmm2
+    1598:	c5 e1 60 c0          	vpunpcklbw xmm0,xmm3,xmm0
+    159c:	c4 41 61 60 db       	vpunpcklbw xmm11,xmm3,xmm11
+    15a1:	c4 41 31 60 e4       	vpunpcklbw xmm12,xmm9,xmm12
+    15a6:	c5 c1 e5 c8          	vpmulhw xmm1,xmm7,xmm0
+    15aa:	c4 41 39 e5 d3       	vpmulhw xmm10,xmm8,xmm11
+    15af:	c5 f9 e5 c6          	vpmulhw xmm0,xmm0,xmm6
+    15b3:	c5 21 e5 dd          	vpmulhw xmm11,xmm11,xmm5
+    15b7:	c4 c1 19 71 d4 04    	vpsrlw xmm12,xmm12,0x4
+    15bd:	c4 c1 71 fd cc       	vpaddw xmm1,xmm1,xmm12
+    15c2:	c4 41 29 fd d4       	vpaddw xmm10,xmm10,xmm12
+    15c7:	c4 c1 79 fd c4       	vpaddw xmm0,xmm0,xmm12
+    15cc:	c4 c1 71 fd cb       	vpaddw xmm1,xmm1,xmm11
+    15d1:	c4 c1 29 71 e2 04    	vpsraw xmm10,xmm10,0x4
+    15d7:	c5 f9 71 e0 04       	vpsraw xmm0,xmm0,0x4
+    15dc:	c5 f1 71 e1 04       	vpsraw xmm1,xmm1,0x4
+    15e1:	c5 29 67 d0          	vpackuswb xmm10,xmm10,xmm0
+    15e5:	c5 f1 67 c4          	vpackuswb xmm0,xmm1,xmm4
+    15e9:	c5 a9 60 c8          	vpunpcklbw xmm1,xmm10,xmm0
+    15ed:	c5 a9 68 c0          	vpunpckhbw xmm0,xmm10,xmm0
+    15f1:	c5 71 61 d0          	vpunpcklwd xmm10,xmm1,xmm0
+    15f5:	c5 f1 69 c8          	vpunpckhwd xmm1,xmm1,xmm0
+    15f9:	c5 7a 7f 14 87       	vmovdqu XMMWORD PTR [rdi+rax*4],xmm10
+    15fe:	c5 fa 7f 4c 87 10    	vmovdqu XMMWORD PTR [rdi+rax*4+0x10],xmm1
+    1630:	c5 f9 6f 5a 60       	vmovdqa xmm3,XMMWORD PTR [rdx+0x60]
+    1635:	c5 f9 6f 42 20       	vmovdqa xmm0,XMMWORD PTR [rdx+0x20]
+    1642:	c5 f9 6f 62 40       	vmovdqa xmm4,XMMWORD PTR [rdx+0x40]
+    1647:	c5 f9 6f 6a 30       	vmovdqa xmm5,XMMWORD PTR [rdx+0x30]
+    164c:	c5 f9 61 cb          	vpunpcklwd xmm1,xmm0,xmm3
+    1650:	c5 f9 69 c3          	vpunpckhwd xmm0,xmm0,xmm3
+    1654:	c5 f9 6f 1a          	vmovdqa xmm3,XMMWORD PTR [rdx]
+    1658:	c5 f9 f5 3d 00 00 00 	vpmaddwd xmm7,xmm0,XMMWORD PTR [rip+0x0]        # 1660 <stbi__idct_simd(unsigned char*, int, short*)+0x30>
+    1660:	c5 f9 f5 05 00 00 00 	vpmaddwd xmm0,xmm0,XMMWORD PTR [rip+0x0]        # 1668 <stbi__idct_simd(unsigned char*, int, short*)+0x38>
+    1668:	c5 71 f5 35 00 00 00 	vpmaddwd xmm14,xmm1,XMMWORD PTR [rip+0x0]        # 1670 <stbi__idct_simd(unsigned char*, int, short*)+0x40>
+    1670:	c5 f9 7f 7c 24 98    	vmovdqa XMMWORD PTR [rsp-0x68],xmm7
+    1676:	c5 79 6f 4a 70       	vmovdqa xmm9,XMMWORD PTR [rdx+0x70]
+    167b:	c5 f9 6f 52 10       	vmovdqa xmm2,XMMWORD PTR [rdx+0x10]
+    1680:	c5 71 f5 3d 00 00 00 	vpmaddwd xmm15,xmm1,XMMWORD PTR [rip+0x0]        # 1688 <stbi__idct_simd(unsigned char*, int, short*)+0x58>
+    1688:	c5 f9 7f 44 24 a8    	vmovdqa XMMWORD PTR [rsp-0x58],xmm0
+    168e:	c5 e1 fd cc          	vpaddw xmm1,xmm3,xmm4
+    1692:	c5 f9 ef c0          	vpxor  xmm0,xmm0,xmm0
+    1696:	c5 f9 61 f9          	vpunpcklwd xmm7,xmm0,xmm1
+    169a:	c5 f9 69 c9          	vpunpckhwd xmm1,xmm0,xmm1
+    169e:	c5 e1 f9 dc          	vpsubw xmm3,xmm3,xmm4
+    16a2:	c5 f9 6f 72 50       	vmovdqa xmm6,XMMWORD PTR [rdx+0x50]
+    16a7:	c5 f1 72 e1 04       	vpsrad xmm1,xmm1,0x4
+    16ac:	c5 a1 72 e7 04       	vpsrad xmm11,xmm7,0x4

@@ -1,0 +1,15 @@
+Como interpretar:
+1. *.opt-info.txt: cada mensagem possui arquivo:linha e diz se o GCC
+   vectorized ou missed/not vectorized, em geral com a razão.
+2. *.vect.txt: detalhe da passagem interna vect do GCC; é mais verboso.
+3. *.s e *.objdump.txt: confirmação da instrução emitida. Procure registradores
+   ymm e instruções v* no build omp-avx2; o build off-avx2 não deve conter
+   vetorização automática.
+
+Loops de interesse:
+- image_manipulation.cpp: Zoom horizontal e vertical;
+- layout_benchmark.cpp: gaussian_11_aos, gaussian_11_planar e as passadas
+  horizontal/vertical separáveis.
+- gaussian_sizes_benchmark.cpp: versões generalizadas de 3, 5, 7, 9 e 11
+  taps. Este arquivo distingue a evidência do kernel especializado daquela
+  produzida pelos tamanhos generalizados.

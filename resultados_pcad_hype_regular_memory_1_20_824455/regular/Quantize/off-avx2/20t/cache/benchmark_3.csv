@@ -1,0 +1,2 @@
+Run_ID,Timestamp_UTC,Image,Width,Height,Operation,Repeat,Threads,Schedule,Chunk,Simd_Build,Simd_Eligible,OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Elapsed_ms,Result_Hash,Validation
+perf-Quantize-off-avx2-20t-cache,2026-09-24T17:15:40Z,6000x6000.png,6000,6000,Quantize,3,20,static,,off-avx2,yes,unset,unset,hype1,12.2.0,-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell,32.426497,b2e8843413e8e7a6,passed

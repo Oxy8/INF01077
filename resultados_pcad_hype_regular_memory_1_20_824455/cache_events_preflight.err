@@ -1,0 +1,14 @@
+
+ Performance counter stats for 'true':
+
+           186,280      L1-dcache-loads                                                    
+            11,174      L1-dcache-load-misses            #    6.00% of all L1-dcache accesses
+     <not counted>      LLC-loads                                                     (0.00%)
+     <not counted>      LLC-load-misses                                               (0.00%)
+
+       0.000900864 seconds time elapsed
+
+       0.000997000 seconds user
+       0.000000000 seconds sys
+
+

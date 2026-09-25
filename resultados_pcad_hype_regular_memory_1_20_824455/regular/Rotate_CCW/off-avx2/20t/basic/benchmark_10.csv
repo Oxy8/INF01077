@@ -1,0 +1,2 @@
+Run_ID,Timestamp_UTC,Image,Width,Height,Operation,Repeat,Threads,Schedule,Chunk,Simd_Build,Simd_Eligible,OMP_Places,OMP_Proc_Bind,Hostname,Compiler,Build_Flags,Elapsed_ms,Result_Hash,Validation
+perf-Rotate_CCW-off-avx2-20t-basic,2026-09-24T17:20:06Z,6000x6000.png,6000,6000,Rotate_CCW,10,20,static,,off-avx2,no,unset,unset,hype1,12.2.0,-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell,39.819422,51196bd3ed2b4ba4,passed

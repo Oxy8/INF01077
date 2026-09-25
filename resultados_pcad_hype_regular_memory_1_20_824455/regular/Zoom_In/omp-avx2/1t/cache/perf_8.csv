@@ -1,0 +1,6 @@
+# started on Thu Sep 24 14:45:17 2026
+
+2019752284,,L1-dcache-loads,1715990974,75.00,,
+97018252,,L1-dcache-load-misses,1145204038,50.00,4.80,of all L1-dcache accesses
+10709828,,LLC-loads,1143920397,49.00,,
+3177207,,LLC-load-misses,1714497156,74.00,29.67,of all LL-cache accesses

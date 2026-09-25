@@ -1,0 +1,8 @@
+scope=kernel-dominated (profile-layout)
+layout=soa-separable
+build=off-avx2
+threads=1
+schedule=static
+profile_iterations=400
+events=cycles,instructions,cache-references,cache-misses
+image=images/6000x6000.png

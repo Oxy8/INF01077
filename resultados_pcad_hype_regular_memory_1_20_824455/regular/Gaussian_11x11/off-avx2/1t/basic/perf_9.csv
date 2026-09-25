@@ -1,0 +1,6 @@
+# started on Thu Sep 24 10:22:14 2026
+
+33227724829,,cycles,11123892845,100.00,,
+73540531392,,instructions,11123892845,100.00,2.21,insn per cycle
+9552690,,cache-references,11123892845,100.00,,
+2117518,,cache-misses,11123892845,100.00,22.167,of all cache refs

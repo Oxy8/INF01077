@@ -1,0 +1,165 @@
+Arquivo: layout_benchmark.cpp
+
+Laços aceitos/recusados pelo vetorizador:
+
+Instruções AVX/AVX2 no assembly:
+     129:	c5 fb 10 2d 00 00 00 	vmovsd xmm5,QWORD PTR [rip+0x0]        # 131 <grayscale_planar(PlanarRgb&, int, int) [clone ._omp_fn.0]+0x41>
+     131:	c5 fb 10 25 00 00 00 	vmovsd xmm4,QWORD PTR [rip+0x0]        # 139 <grayscale_planar(PlanarRgb&, int, int) [clone ._omp_fn.0]+0x49>
+     139:	c5 e8 57 d2          	vxorps xmm2,xmm2,xmm2
+     140:	c5 fb 10 1d 00 00 00 	vmovsd xmm3,QWORD PTR [rip+0x0]        # 148 <grayscale_planar(PlanarRgb&, int, int) [clone ._omp_fn.0]+0x58>
+     17e:	c5 eb 2a c1          	vcvtsi2sd xmm0,xmm2,ecx
+     185:	c5 eb 2a c9          	vcvtsi2sd xmm1,xmm2,ecx
+     18d:	c5 fb 59 c5          	vmulsd xmm0,xmm0,xmm5
+     195:	c5 f3 59 cc          	vmulsd xmm1,xmm1,xmm4
+     199:	c5 fb 58 c1          	vaddsd xmm0,xmm0,xmm1
+     19d:	c5 eb 2a c9          	vcvtsi2sd xmm1,xmm2,ecx
+     1a1:	c5 f3 59 cb          	vmulsd xmm1,xmm1,xmm3
+     1a5:	c5 fb 58 c1          	vaddsd xmm0,xmm0,xmm1
+     1a9:	c5 fb 2c c8          	vcvttsd2si ecx,xmm0
+     1eb:	c5 e8 57 d2          	vxorps xmm2,xmm2,xmm2
+     1f8:	c4 e1 f9 6e e8       	vmovq  xmm5,rax
+     204:	c4 e1 f9 6e e0       	vmovq  xmm4,rax
+     210:	c4 e1 f9 6e d8       	vmovq  xmm3,rax
+0000000000000230 <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]>:
+     269:	e8 00 00 00 00       	call   26e <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x3e>
+     270:	0f 84 00 01 00 00    	je     376 <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x146>
+     28c:	0f 8e c5 00 00 00    	jle    357 <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x127>
+     334:	75 8a                	jne    2c0 <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x90>
+     34a:	0f 8f 5b ff ff ff    	jg     2ab <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x7b>
+     364:	e8 00 00 00 00       	call   369 <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x139>
+     370:	0f 85 07 ff ff ff    	jne    27d <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x4d>
+     376:	e8 00 00 00 00       	call   37b <gaussian_11_horizontal_pass(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int) [clone ._omp_fn.0]+0x14b>
+0000000000000390 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]>:
+     3d5:	e8 00 00 00 00       	call   3da <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x4a>
+     3dc:	0f 84 c1 01 00 00    	je     5a3 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x213>
+     40f:	0f 8e 77 01 00 00    	jle    58c <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x1fc>
+     548:	0f 85 7a ff ff ff    	jne    4c8 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x138>
+     586:	0f 8f 2a ff ff ff    	jg     4b6 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x126>
+     596:	e8 00 00 00 00       	call   59b <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x20b>
+     59d:	0f 85 56 fe ff ff    	jne    3f9 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x69>
+     5a3:	e8 00 00 00 00       	call   5a8 <gaussian_11_vertical_pass(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int) [clone ._omp_fn.0]+0x218>
+     846:	c5 f0 57 c9          	vxorps xmm1,xmm1,xmm1
+     8d0:	c5 e8 57 d2          	vxorps xmm2,xmm2,xmm2
+     8e0:	c5 f8 28 da          	vmovaps xmm3,xmm2
+     8e6:	c5 f8 28 e2          	vmovaps xmm4,xmm2
+     90e:	c5 fa 10 2a          	vmovss xmm5,DWORD PTR [rdx]
+     916:	c5 fa 10 72 d8       	vmovss xmm6,DWORD PTR [rdx-0x28]
+     91b:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     926:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     92a:	c5 fa 58 e4          	vaddss xmm4,xmm0,xmm4
+     92e:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     939:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     93d:	c5 fa 58 db          	vaddss xmm3,xmm0,xmm3
+     941:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     94c:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     950:	c5 fa 58 d2          	vaddss xmm2,xmm0,xmm2
+     954:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     95f:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     963:	c5 fa 58 ec          	vaddss xmm5,xmm0,xmm4
+     967:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     972:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     976:	c5 fa 58 e3          	vaddss xmm4,xmm0,xmm3
+     97a:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     985:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     989:	c5 fa 10 72 dc       	vmovss xmm6,DWORD PTR [rdx-0x24]
+     98e:	c5 fa 58 c2          	vaddss xmm0,xmm0,xmm2
+     992:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     99d:	c5 ea 59 d6          	vmulss xmm2,xmm2,xmm6
+     9a1:	c5 ea 58 dd          	vaddss xmm3,xmm2,xmm5
+     9a5:	c5 fa 10 6a e0       	vmovss xmm5,DWORD PTR [rdx-0x20]
+     9aa:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     9b5:	c5 ea 59 d6          	vmulss xmm2,xmm2,xmm6
+     9b9:	c5 ea 58 e4          	vaddss xmm4,xmm2,xmm4
+     9bd:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     9c8:	c5 ea 59 d6          	vmulss xmm2,xmm2,xmm6
+     9cc:	c5 ea 58 d0          	vaddss xmm2,xmm2,xmm0
+     9d0:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     9db:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     9df:	c5 fa 58 db          	vaddss xmm3,xmm0,xmm3
+     9e3:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     9ee:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     9f2:	c5 fa 58 e4          	vaddss xmm4,xmm0,xmm4
+     9f6:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     a01:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     a05:	c5 fa 10 6a e4       	vmovss xmm5,DWORD PTR [rdx-0x1c]
+     a0a:	c5 fa 58 c2          	vaddss xmm0,xmm0,xmm2
+     a0e:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     a19:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     a1d:	c5 ea 58 db          	vaddss xmm3,xmm2,xmm3
+     a21:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     a2c:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     a30:	c5 ea 58 e4          	vaddss xmm4,xmm2,xmm4
+     a34:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     a3e:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     a42:	c5 fa 10 6a e8       	vmovss xmm5,DWORD PTR [rdx-0x18]
+     a47:	c5 ea 58 d0          	vaddss xmm2,xmm2,xmm0
+     a4b:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     a55:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     a59:	c5 fa 58 db          	vaddss xmm3,xmm0,xmm3
+     a5d:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     a67:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     a6b:	c5 fa 58 e4          	vaddss xmm4,xmm0,xmm4
+     a6f:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     a7a:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     a7e:	c5 fa 10 6a ec       	vmovss xmm5,DWORD PTR [rdx-0x14]
+     a83:	c5 fa 58 c2          	vaddss xmm0,xmm0,xmm2
+     a87:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     a92:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     a96:	c5 ea 58 db          	vaddss xmm3,xmm2,xmm3
+     a9a:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     aa5:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     aa9:	c5 ea 58 e4          	vaddss xmm4,xmm2,xmm4
+     aad:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     ab8:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     abc:	c5 fa 10 6a f0       	vmovss xmm5,DWORD PTR [rdx-0x10]
+     ac1:	c5 ea 58 d0          	vaddss xmm2,xmm2,xmm0
+     ac5:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     ad0:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     ad4:	c5 fa 58 db          	vaddss xmm3,xmm0,xmm3
+     ad8:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     ae3:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     ae7:	c5 fa 58 e4          	vaddss xmm4,xmm0,xmm4
+     aeb:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     af0:	c5 fa 59 c5          	vmulss xmm0,xmm0,xmm5
+     af4:	c5 fa 10 6a f4       	vmovss xmm5,DWORD PTR [rdx-0xc]
+     aff:	c5 fa 10 72 f8       	vmovss xmm6,DWORD PTR [rdx-0x8]
+     b04:	c5 fa 58 c2          	vaddss xmm0,xmm0,xmm2
+     b08:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     b13:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     b17:	c5 ea 58 db          	vaddss xmm3,xmm2,xmm3
+     b1b:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     b26:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     b2a:	c5 ea 58 e4          	vaddss xmm4,xmm2,xmm4
+     b2e:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     b39:	c5 ea 59 d5          	vmulss xmm2,xmm2,xmm5
+     b3d:	c5 ea 58 d0          	vaddss xmm2,xmm2,xmm0
+     b41:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     b4c:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     b50:	c5 fa 58 db          	vaddss xmm3,xmm0,xmm3
+     b54:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     b5f:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     b63:	c5 fa 58 ec          	vaddss xmm5,xmm0,xmm4
+     b67:	c4 c1 72 2a c0       	vcvtsi2ss xmm0,xmm1,r8d
+     b72:	c4 c1 72 2a e0       	vcvtsi2ss xmm4,xmm1,r8d
+     b7d:	c5 fa 59 c6          	vmulss xmm0,xmm0,xmm6
+     b81:	c5 fa 10 72 fc       	vmovss xmm6,DWORD PTR [rdx-0x4]
+     b86:	c5 da 59 e6          	vmulss xmm4,xmm4,xmm6
+     b8a:	c5 fa 58 c2          	vaddss xmm0,xmm0,xmm2
+     b8e:	c5 da 58 e3          	vaddss xmm4,xmm4,xmm3
+     b92:	c4 c1 72 2a d8       	vcvtsi2ss xmm3,xmm1,r8d
+     ba0:	c4 c1 72 2a d0       	vcvtsi2ss xmm2,xmm1,r8d
+     ba5:	c5 e2 59 de          	vmulss xmm3,xmm3,xmm6
+     ba9:	c5 ea 59 d6          	vmulss xmm2,xmm2,xmm6
+     bad:	c5 e2 58 dd          	vaddss xmm3,xmm3,xmm5
+     bb1:	c5 ea 58 d0          	vaddss xmm2,xmm2,xmm0
+     bc3:	c5 f8 28 c4          	vmovaps xmm0,xmm4
+     bc7:	c5 fa 11 54 24 04    	vmovss DWORD PTR [rsp+0x4],xmm2
+     bcd:	c5 fa 11 1c 24       	vmovss DWORD PTR [rsp],xmm3
+     bdb:	c5 fa 10 1c 24       	vmovss xmm3,DWORD PTR [rsp]
+     be0:	c5 fa 10 54 24 04    	vmovss xmm2,DWORD PTR [rsp+0x4]
+     be6:	c5 fa 2c c0          	vcvttss2si eax,xmm0
+     bfc:	c5 f8 28 c3          	vmovaps xmm0,xmm3
+     c00:	c5 fa 11 14 24       	vmovss DWORD PTR [rsp],xmm2
+     c0e:	c5 fa 10 14 24       	vmovss xmm2,DWORD PTR [rsp]
+     c13:	c5 fa 2c c0          	vcvttss2si eax,xmm0
+     c29:	c5 f8 28 c2          	vmovaps xmm0,xmm2

@@ -1,0 +1,2549 @@
+
+/home/users/efsilva/teste/INF01077/resultados_pcad_hype_compiler_evidence_824453/off-avx2/gaussian_sizes_benchmark.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]>:
+       0:	41 57                	push   r15
+       2:	ba 01 00 00 00       	mov    edx,0x1
+       7:	41 56                	push   r14
+       9:	49 89 fe             	mov    r14,rdi
+       c:	41 55                	push   r13
+       e:	41 54                	push   r12
+      10:	55                   	push   rbp
+      11:	53                   	push   rbx
+      12:	48 83 ec 28          	sub    rsp,0x28
+      16:	48 8b 07             	mov    rax,QWORD PTR [rdi]
+      19:	48 63 77 14          	movsxd rsi,DWORD PTR [rdi+0x14]
+      1d:	48 8d 5c 24 18       	lea    rbx,[rsp+0x18]
+      22:	48 8d 6c 24 10       	lea    rbp,[rsp+0x10]
+      27:	44 8b 67 10          	mov    r12d,DWORD PTR [rdi+0x10]
+      2b:	31 ff                	xor    edi,edi
+      2d:	49 89 d8             	mov    r8,rbx
+      30:	48 89 e9             	mov    rcx,rbp
+      33:	48 89 44 24 08       	mov    QWORD PTR [rsp+0x8],rax
+      38:	e8 00 00 00 00       	call   3d <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0x3d>
+      3d:	84 c0                	test   al,al
+      3f:	0f 84 ae 00 00 00    	je     f3 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0xf3>
+      45:	4d 63 fc             	movsxd r15,r12d
+      48:	48 89 1c 24          	mov    QWORD PTR [rsp],rbx
+      4c:	4f 8d 2c 7f          	lea    r13,[r15+r15*2]
+      50:	4c 89 eb             	mov    rbx,r13
+      53:	4c 8b 6c 24 08       	mov    r13,QWORD PTR [rsp+0x8]
+      58:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+      5f:	00 
+      60:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+      65:	44 8b 5c 24 18       	mov    r11d,DWORD PTR [rsp+0x18]
+      6a:	49 8b 4e 08          	mov    rcx,QWORD PTR [r14+0x8]
+      6e:	41 89 c2             	mov    r10d,eax
+      71:	45 85 e4             	test   r12d,r12d
+      74:	7e 69                	jle    df <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0xdf>
+      76:	48 98                	cdqe
+      78:	48 89 c2             	mov    rdx,rax
+      7b:	48 8d 78 01          	lea    rdi,[rax+0x1]
+      7f:	49 0f af d7          	imul   rdx,r15
+      83:	49 0f af ff          	imul   rdi,r15
+      87:	4c 8d 0c 52          	lea    r9,[rdx+rdx*2]
+      8b:	4d 01 e9             	add    r9,r13
+      8e:	66 90                	xchg   ax,ax
+      90:	48 89 f8             	mov    rax,rdi
+      93:	4c 89 ca             	mov    rdx,r9
+      96:	4c 29 f8             	sub    rax,r15
+      99:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+      a0:	44 0f b6 02          	movzx  r8d,BYTE PTR [rdx]
+      a4:	48 8b 31             	mov    rsi,QWORD PTR [rcx]
+      a7:	48 83 c2 03          	add    rdx,0x3
+      ab:	44 88 04 06          	mov    BYTE PTR [rsi+rax*1],r8b
+      af:	44 0f b6 42 fe       	movzx  r8d,BYTE PTR [rdx-0x2]
+      b4:	48 8b 71 18          	mov    rsi,QWORD PTR [rcx+0x18]
+      b8:	44 88 04 06          	mov    BYTE PTR [rsi+rax*1],r8b
+      bc:	44 0f b6 42 ff       	movzx  r8d,BYTE PTR [rdx-0x1]
+      c1:	48 8b 71 30          	mov    rsi,QWORD PTR [rcx+0x30]
+      c5:	44 88 04 06          	mov    BYTE PTR [rsi+rax*1],r8b
+      c9:	48 ff c0             	inc    rax
+      cc:	48 39 c7             	cmp    rdi,rax
+      cf:	75 cf                	jne    a0 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0xa0>
+      d1:	41 ff c2             	inc    r10d
+      d4:	49 01 d9             	add    r9,rbx
+      d7:	4c 01 ff             	add    rdi,r15
+      da:	45 39 d3             	cmp    r11d,r10d
+      dd:	7f b1                	jg     90 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0x90>
+      df:	48 8b 34 24          	mov    rsi,QWORD PTR [rsp]
+      e3:	48 89 ef             	mov    rdi,rbp
+      e6:	e8 00 00 00 00       	call   eb <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0xeb>
+      eb:	84 c0                	test   al,al
+      ed:	0f 85 6d ff ff ff    	jne    60 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0x60>
+      f3:	e8 00 00 00 00       	call   f8 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]+0xf8>
+      f8:	48 83 c4 28          	add    rsp,0x28
+      fc:	5b                   	pop    rbx
+      fd:	5d                   	pop    rbp
+      fe:	41 5c                	pop    r12
+     100:	41 5d                	pop    r13
+     102:	41 5e                	pop    r14
+     104:	41 5f                	pop    r15
+     106:	c3                   	ret
+     107:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+     10e:	00 00 
+
+0000000000000110 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     110:	41 57                	push   r15
+     112:	ba 01 00 00 00       	mov    edx,0x1
+     117:	41 56                	push   r14
+     119:	41 55                	push   r13
+     11b:	41 54                	push   r12
+     11d:	55                   	push   rbp
+     11e:	48 89 fd             	mov    rbp,rdi
+     121:	53                   	push   rbx
+     122:	48 81 ec e8 00 00 00 	sub    rsp,0xe8
+     129:	8b 5f 2c             	mov    ebx,DWORD PTR [rdi+0x2c]
+     12c:	48 8b 47 18          	mov    rax,QWORD PTR [rdi+0x18]
+     130:	8b 75 24             	mov    esi,DWORD PTR [rbp+0x24]
+     133:	48 63 7f 28          	movsxd rdi,DWORD PTR [rdi+0x28]
+     137:	4c 8d 84 24 d8 00 00 	lea    r8,[rsp+0xd8]
+     13e:	00 
+     13f:	48 8d 8c 24 d0 00 00 	lea    rcx,[rsp+0xd0]
+     146:	00 
+     147:	89 5c 24 48          	mov    DWORD PTR [rsp+0x48],ebx
+     14b:	44 8b 65 20          	mov    r12d,DWORD PTR [rbp+0x20]
+     14f:	29 fe                	sub    esi,edi
+     151:	48 89 44 24 18       	mov    QWORD PTR [rsp+0x18],rax
+     156:	4c 8b 6d 08          	mov    r13,QWORD PTR [rbp+0x8]
+     15a:	41 89 fe             	mov    r14d,edi
+     15d:	48 63 f6             	movsxd rsi,esi
+     160:	89 7c 24 20          	mov    DWORD PTR [rsp+0x20],edi
+     164:	48 8b 5d 00          	mov    rbx,QWORD PTR [rbp+0x0]
+     168:	49 89 ff             	mov    r15,rdi
+     16b:	4c 89 84 24 80 00 00 	mov    QWORD PTR [rsp+0x80],r8
+     172:	00 
+     173:	48 89 4c 24 78       	mov    QWORD PTR [rsp+0x78],rcx
+     178:	48 89 7c 24 68       	mov    QWORD PTR [rsp+0x68],rdi
+     17d:	e8 00 00 00 00       	call   182 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x72>
+     182:	84 c0                	test   al,al
+     184:	0f 84 d8 02 00 00    	je     462 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x352>
+     18a:	48 8b 44 24 18       	mov    rax,QWORD PTR [rsp+0x18]
+     18f:	44 89 f6             	mov    esi,r14d
+     192:	44 89 f2             	mov    edx,r14d
+     195:	44 89 e7             	mov    edi,r12d
+     198:	f7 de                	neg    esi
+     19a:	44 01 f2             	add    edx,r14d
+     19d:	44 29 f7             	sub    edi,r14d
+     1a0:	4d 63 c4             	movsxd r8,r12d
+     1a3:	48 d1 e8             	shr    rax,1
+     1a6:	89 d2                	mov    edx,edx
+     1a8:	4c 63 de             	movsxd r11,esi
+     1ab:	89 bc 24 98 00 00 00 	mov    DWORD PTR [rsp+0x98],edi
+     1b2:	48 89 44 24 50       	mov    QWORD PTR [rsp+0x50],rax
+     1b7:	4b 8d 04 7f          	lea    rax,[r15+r15*2]
+     1bb:	4f 8d 34 40          	lea    r14,[r8+r8*2]
+     1bf:	4c 01 e8             	add    rax,r13
+     1c2:	89 74 24 24          	mov    DWORD PTR [rsp+0x24],esi
+     1c6:	4d 89 f4             	mov    r12,r14
+     1c9:	4d 89 de             	mov    r14,r11
+     1cc:	48 89 44 24 60       	mov    QWORD PTR [rsp+0x60],rax
+     1d1:	49 8d 04 13          	lea    rax,[r11+rdx*1]
+     1d5:	48 8d 0c 40          	lea    rcx,[rax+rax*2]
+     1d9:	4c 01 f8             	add    rax,r15
+     1dc:	48 c1 e0 02          	shl    rax,0x2
+     1e0:	48 01 cb             	add    rbx,rcx
+     1e3:	4b 8d 0c 3b          	lea    rcx,[r11+r15*1]
+     1e7:	48 89 44 24 38       	mov    QWORD PTR [rsp+0x38],rax
+     1ec:	48 8d 42 01          	lea    rax,[rdx+0x1]
+     1f0:	48 8d 14 85 00 00 00 	lea    rdx,[rax*4+0x0]
+     1f7:	00 
+     1f8:	48 89 5c 24 58       	mov    QWORD PTR [rsp+0x58],rbx
+     1fd:	48 8d 1c 8d 00 00 00 	lea    rbx,[rcx*4+0x0]
+     204:	00 
+     205:	48 29 d0             	sub    rax,rdx
+     208:	48 89 5c 24 40       	mov    QWORD PTR [rsp+0x40],rbx
+     20d:	4c 89 c3             	mov    rbx,r8
+     210:	49 89 c7             	mov    r15,rax
+     213:	8b bc 24 d8 00 00 00 	mov    edi,DWORD PTR [rsp+0xd8]
+     21a:	48 8b 84 24 d0 00 00 	mov    rax,QWORD PTR [rsp+0xd0]
+     221:	00 
+     222:	8b 4c 24 20          	mov    ecx,DWORD PTR [rsp+0x20]
+     226:	44 8b 9c 24 98 00 00 	mov    r11d,DWORD PTR [rsp+0x98]
+     22d:	00 
+     22e:	89 7c 24 4c          	mov    DWORD PTR [rsp+0x4c],edi
+     232:	48 8b 7d 10          	mov    rdi,QWORD PTR [rbp+0x10]
+     236:	41 89 c1             	mov    r9d,eax
+     239:	48 89 7c 24 30       	mov    QWORD PTR [rsp+0x30],rdi
+     23e:	44 39 d9             	cmp    ecx,r11d
+     241:	0f 8d 01 02 00 00    	jge    448 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x338>
+     247:	48 98                	cdqe
+     249:	48 8b 7c 24 68       	mov    rdi,QWORD PTR [rsp+0x68]
+     24e:	4c 63 54 24 48       	movsxd r10,DWORD PTR [rsp+0x48]
+     253:	4c 89 b4 24 88 00 00 	mov    QWORD PTR [rsp+0x88],r14
+     25a:	00 
+     25b:	48 89 c2             	mov    rdx,rax
+     25e:	4c 01 f0             	add    rax,r14
+     261:	48 89 ac 24 90 00 00 	mov    QWORD PTR [rsp+0x90],rbp
+     268:	00 
+     269:	48 0f af c3          	imul   rax,rbx
+     26d:	48 29 fa             	sub    rdx,rdi
+     270:	49 0f af d2          	imul   rdx,r10
+     274:	4c 8d 04 38          	lea    r8,[rax+rdi*1]
+     278:	48 8b 44 24 58       	mov    rax,QWORD PTR [rsp+0x58]
+     27d:	48 89 d6             	mov    rsi,rdx
+     280:	48 8d 50 03          	lea    rdx,[rax+0x3]
+     284:	44 89 d8             	mov    eax,r11d
+     287:	48 29 fe             	sub    rsi,rdi
+     28a:	29 c8                	sub    eax,ecx
+     28c:	48 89 d5             	mov    rbp,rdx
+     28f:	48 01 f8             	add    rax,rdi
+     292:	48 89 44 24 70       	mov    QWORD PTR [rsp+0x70],rax
+     297:	4c 89 d0             	mov    rax,r10
+     29a:	4d 89 c2             	mov    r10,r8
+     29d:	49 89 c0             	mov    r8,rax
+     2a0:	48 8b 44 24 60       	mov    rax,QWORD PTR [rsp+0x60]
+     2a5:	4c 8d 1c 76          	lea    r11,[rsi+rsi*2]
+     2a9:	44 89 8c 24 9c 00 00 	mov    DWORD PTR [rsp+0x9c],r9d
+     2b0:	00 
+     2b1:	4c 89 ac 24 a0 00 00 	mov    QWORD PTR [rsp+0xa0],r13
+     2b8:	00 
+     2b9:	49 01 c3             	add    r11,rax
+     2bc:	4b 8d 04 52          	lea    rax,[r10+r10*2]
+     2c0:	4c 89 94 24 a8 00 00 	mov    QWORD PTR [rsp+0xa8],r10
+     2c7:	00 
+     2c8:	48 8d 0c 28          	lea    rcx,[rax+rbp*1]
+     2cc:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+     2d1:	4c 89 84 24 b0 00 00 	mov    QWORD PTR [rsp+0xb0],r8
+     2d8:	00 
+     2d9:	48 89 b4 24 b8 00 00 	mov    QWORD PTR [rsp+0xb8],rsi
+     2e0:	00 
+     2e1:	48 01 f0             	add    rax,rsi
+     2e4:	48 89 ac 24 c8 00 00 	mov    QWORD PTR [rsp+0xc8],rbp
+     2eb:	00 
+     2ec:	48 8d 04 40          	lea    rax,[rax+rax*2]
+     2f0:	48 89 9c 24 c0 00 00 	mov    QWORD PTR [rsp+0xc0],rbx
+     2f7:	00 
+     2f8:	48 8b 5c 24 50       	mov    rbx,QWORD PTR [rsp+0x50]
+     2fd:	4c 01 e8             	add    rax,r13
+     300:	48 89 44 24 28       	mov    QWORD PTR [rsp+0x28],rax
+     305:	0f 1f 00             	nop    DWORD PTR [rax]
+     308:	8b 7c 24 24          	mov    edi,DWORD PTR [rsp+0x24]
+     30c:	39 7c 24 20          	cmp    DWORD PTR [rsp+0x20],edi
+     310:	0f 8c 63 01 00 00    	jl     479 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x369>
+     316:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+     31b:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+     320:	49 89 ca             	mov    r10,rcx
+     323:	45 31 c0             	xor    r8d,r8d
+     326:	48 89 5c 24 08       	mov    QWORD PTR [rsp+0x8],rbx
+     32b:	45 31 c9             	xor    r9d,r9d
+     32e:	48 8b 00             	mov    rax,QWORD PTR [rax]
+     331:	48 89 4c 24 10       	mov    QWORD PTR [rsp+0x10],rcx
+     336:	4c 8d 2c 38          	lea    r13,[rax+rdi*1]
+     33a:	48 8b 7c 24 38       	mov    rdi,QWORD PTR [rsp+0x38]
+     33f:	4c 89 ed             	mov    rbp,r13
+     342:	4c 8d 74 38 04       	lea    r14,[rax+rdi*1+0x4]
+     347:	31 ff                	xor    edi,edi
+     349:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+     350:	8b 5d 00             	mov    ebx,DWORD PTR [rbp+0x0]
+     353:	4b 8d 04 17          	lea    rax,[r15+r10*1]
+     357:	4c 89 ee             	mov    rsi,r13
+     35a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+     360:	8b 16                	mov    edx,DWORD PTR [rsi]
+     362:	0f b6 08             	movzx  ecx,BYTE PTR [rax]
+     365:	48 83 c0 03          	add    rax,0x3
+     369:	48 83 c6 04          	add    rsi,0x4
+     36d:	48 0f af d3          	imul   rdx,rbx
+     371:	48 0f af ca          	imul   rcx,rdx
+     375:	49 01 c9             	add    r9,rcx
+     378:	0f b6 48 fe          	movzx  ecx,BYTE PTR [rax-0x2]
+     37c:	48 0f af ca          	imul   rcx,rdx
+     380:	49 01 c8             	add    r8,rcx
+     383:	0f b6 48 ff          	movzx  ecx,BYTE PTR [rax-0x1]
+     387:	48 0f af ca          	imul   rcx,rdx
+     38b:	48 01 cf             	add    rdi,rcx
+     38e:	49 39 c2             	cmp    r10,rax
+     391:	75 cd                	jne    360 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x250>
+     393:	48 83 c5 04          	add    rbp,0x4
+     397:	4d 01 e2             	add    r10,r12
+     39a:	49 39 ee             	cmp    r14,rbp
+     39d:	75 b1                	jne    350 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x240>
+     39f:	48 8b 5c 24 08       	mov    rbx,QWORD PTR [rsp+0x8]
+     3a4:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     3a9:	4a 8d 04 0b          	lea    rax,[rbx+r9*1]
+     3ad:	49 01 d8             	add    r8,rbx
+     3b0:	48 01 df             	add    rdi,rbx
+     3b3:	48 8b 74 24 18       	mov    rsi,QWORD PTR [rsp+0x18]
+     3b8:	31 d2                	xor    edx,edx
+     3ba:	49 83 c3 03          	add    r11,0x3
+     3be:	48 83 c1 03          	add    rcx,0x3
+     3c2:	48 f7 f6             	div    rsi
+     3c5:	31 d2                	xor    edx,edx
+     3c7:	41 88 43 fd          	mov    BYTE PTR [r11-0x3],al
+     3cb:	4c 89 c0             	mov    rax,r8
+     3ce:	48 f7 f6             	div    rsi
+     3d1:	31 d2                	xor    edx,edx
+     3d3:	41 88 43 fe          	mov    BYTE PTR [r11-0x2],al
+     3d7:	48 89 f8             	mov    rax,rdi
+     3da:	48 f7 f6             	div    rsi
+     3dd:	41 88 43 ff          	mov    BYTE PTR [r11-0x1],al
+     3e1:	4c 39 5c 24 28       	cmp    QWORD PTR [rsp+0x28],r11
+     3e6:	0f 85 1c ff ff ff    	jne    308 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x1f8>
+     3ec:	44 8b 8c 24 9c 00 00 	mov    r9d,DWORD PTR [rsp+0x9c]
+     3f3:	00 
+     3f4:	4c 8b 94 24 a8 00 00 	mov    r10,QWORD PTR [rsp+0xa8]
+     3fb:	00 
+     3fc:	4c 8b 84 24 b0 00 00 	mov    r8,QWORD PTR [rsp+0xb0]
+     403:	00 
+     404:	48 8b b4 24 b8 00 00 	mov    rsi,QWORD PTR [rsp+0xb8]
+     40b:	00 
+     40c:	48 8b 9c 24 c0 00 00 	mov    rbx,QWORD PTR [rsp+0xc0]
+     413:	00 
+     414:	4c 8b ac 24 a0 00 00 	mov    r13,QWORD PTR [rsp+0xa0]
+     41b:	00 
+     41c:	41 ff c1             	inc    r9d
+     41f:	48 8b ac 24 c8 00 00 	mov    rbp,QWORD PTR [rsp+0xc8]
+     426:	00 
+     427:	4c 01 c6             	add    rsi,r8
+     42a:	49 01 da             	add    r10,rbx
+     42d:	44 39 4c 24 4c       	cmp    DWORD PTR [rsp+0x4c],r9d
+     432:	0f 8f 68 fe ff ff    	jg     2a0 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x190>
+     438:	4c 8b b4 24 88 00 00 	mov    r14,QWORD PTR [rsp+0x88]
+     43f:	00 
+     440:	48 8b ac 24 90 00 00 	mov    rbp,QWORD PTR [rsp+0x90]
+     447:	00 
+     448:	48 8b b4 24 80 00 00 	mov    rsi,QWORD PTR [rsp+0x80]
+     44f:	00 
+     450:	48 8b 7c 24 78       	mov    rdi,QWORD PTR [rsp+0x78]
+     455:	e8 00 00 00 00       	call   45a <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x34a>
+     45a:	84 c0                	test   al,al
+     45c:	0f 85 b1 fd ff ff    	jne    213 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x103>
+     462:	e8 00 00 00 00       	call   467 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x357>
+     467:	48 81 c4 e8 00 00 00 	add    rsp,0xe8
+     46e:	5b                   	pop    rbx
+     46f:	5d                   	pop    rbp
+     470:	41 5c                	pop    r12
+     472:	41 5d                	pop    r13
+     474:	41 5e                	pop    r14
+     476:	41 5f                	pop    r15
+     478:	c3                   	ret
+     479:	48 89 df             	mov    rdi,rbx
+     47c:	49 89 d8             	mov    r8,rbx
+     47f:	48 89 d8             	mov    rax,rbx
+     482:	e9 2c ff ff ff       	jmp    3b3 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x2a3>
+     487:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+     48e:	00 00 
+
+0000000000000490 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     490:	41 57                	push   r15
+     492:	ba 01 00 00 00       	mov    edx,0x1
+     497:	41 56                	push   r14
+     499:	41 55                	push   r13
+     49b:	41 54                	push   r12
+     49d:	55                   	push   rbp
+     49e:	53                   	push   rbx
+     49f:	48 83 ec 48          	sub    rsp,0x48
+     4a3:	8b 5f 20             	mov    ebx,DWORD PTR [rdi+0x20]
+     4a6:	48 63 77 1c          	movsxd rsi,DWORD PTR [rdi+0x1c]
+     4aa:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+     4ae:	4c 63 7f 18          	movsxd r15,DWORD PTR [rdi+0x18]
+     4b2:	4c 8d 44 24 38       	lea    r8,[rsp+0x38]
+     4b7:	31 ff                	xor    edi,edi
+     4b9:	48 8d 4c 24 30       	lea    rcx,[rsp+0x30]
+     4be:	89 5c 24 14          	mov    DWORD PTR [rsp+0x14],ebx
+     4c2:	4c 89 44 24 20       	mov    QWORD PTR [rsp+0x20],r8
+     4c7:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+     4cc:	e8 00 00 00 00       	call   4d1 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x41>
+     4d1:	84 c0                	test   al,al
+     4d3:	0f 84 10 01 00 00    	je     5e9 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x159>
+     4d9:	4c 63 f3             	movsxd r14,ebx
+     4dc:	4c 8b 0c 24          	mov    r9,QWORD PTR [rsp]
+     4e0:	4c 89 f0             	mov    rax,r14
+     4e3:	4c 29 f8             	sub    rax,r15
+     4e6:	48 8d 14 85 00 00 00 	lea    rdx,[rax*4+0x0]
+     4ed:	00 
+     4ee:	49 89 d4             	mov    r12,rdx
+     4f1:	48 8b 54 24 30       	mov    rdx,QWORD PTR [rsp+0x30]
+     4f6:	8b 44 24 14          	mov    eax,DWORD PTR [rsp+0x14]
+     4fa:	44 8b 6c 24 38       	mov    r13d,DWORD PTR [rsp+0x38]
+     4ff:	49 8b 71 10          	mov    rsi,QWORD PTR [r9+0x10]
+     503:	49 8b 29             	mov    rbp,QWORD PTR [r9]
+     506:	49 8b 49 08          	mov    rcx,QWORD PTR [r9+0x8]
+     50a:	89 d7                	mov    edi,edx
+     50c:	85 c0                	test   eax,eax
+     50e:	0f 8e b6 00 00 00    	jle    5ca <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x13a>
+     514:	48 63 d2             	movsxd rdx,edx
+     517:	4d 89 f0             	mov    r8,r14
+     51a:	48 8b 5e 08          	mov    rbx,QWORD PTR [rsi+0x8]
+     51e:	48 8b 36             	mov    rsi,QWORD PTR [rsi]
+     521:	48 8d 04 95 00 00 00 	lea    rax,[rdx*4+0x0]
+     528:	00 
+     529:	44 89 6c 24 10       	mov    DWORD PTR [rsp+0x10],r13d
+     52e:	48 f7 d8             	neg    rax
+     531:	4c 0f af c2          	imul   r8,rdx
+     535:	4c 89 4c 24 28       	mov    QWORD PTR [rsp+0x28],r9
+     53a:	49 0f af d7          	imul   rdx,r15
+     53e:	49 0f af c7          	imul   rax,r15
+     542:	4e 8d 14 32          	lea    r10,[rdx+r14*1]
+     546:	48 8b 11             	mov    rdx,QWORD PTR [rcx]
+     549:	4a 8d 04 80          	lea    rax,[rax+r8*4]
+     54d:	49 89 d8             	mov    r8,rbx
+     550:	49 29 f0             	sub    r8,rsi
+     553:	48 89 54 24 08       	mov    QWORD PTR [rsp+0x8],rdx
+     558:	4c 89 e2             	mov    rdx,r12
+     55b:	49 c1 f8 02          	sar    r8,0x2
+     55f:	90                   	nop
+     560:	48 8b 4c 24 08       	mov    rcx,QWORD PTR [rsp+0x8]
+     565:	89 3c 24             	mov    DWORD PTR [rsp],edi
+     568:	4d 89 d4             	mov    r12,r10
+     56b:	4d 29 f4             	sub    r12,r14
+     56e:	4c 8d 2c 01          	lea    r13,[rcx+rax*1]
+     572:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+     578:	45 31 c9             	xor    r9d,r9d
+     57b:	48 39 f3             	cmp    rbx,rsi
+     57e:	74 24                	je     5a4 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x114>
+     580:	4c 8b 5d 00          	mov    r11,QWORD PTR [rbp+0x0]
+     584:	31 c9                	xor    ecx,ecx
+     586:	45 31 c9             	xor    r9d,r9d
+     589:	4d 01 e3             	add    r11,r12
+     58c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     590:	41 0f b6 3c 0b       	movzx  edi,BYTE PTR [r11+rcx*1]
+     595:	0f af 3c 8e          	imul   edi,DWORD PTR [rsi+rcx*4]
+     599:	48 ff c1             	inc    rcx
+     59c:	41 01 f9             	add    r9d,edi
+     59f:	4c 39 c1             	cmp    rcx,r8
+     5a2:	72 ec                	jb     590 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x100>
+     5a4:	47 89 4c a5 00       	mov    DWORD PTR [r13+r12*4+0x0],r9d
+     5a9:	49 ff c4             	inc    r12
+     5ac:	4d 39 e2             	cmp    r10,r12
+     5af:	75 c7                	jne    578 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xe8>
+     5b1:	8b 3c 24             	mov    edi,DWORD PTR [rsp]
+     5b4:	48 01 d0             	add    rax,rdx
+     5b7:	4d 01 fa             	add    r10,r15
+     5ba:	ff c7                	inc    edi
+     5bc:	39 7c 24 10          	cmp    DWORD PTR [rsp+0x10],edi
+     5c0:	7f 9e                	jg     560 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xd0>
+     5c2:	4c 8b 4c 24 28       	mov    r9,QWORD PTR [rsp+0x28]
+     5c7:	49 89 d4             	mov    r12,rdx
+     5ca:	48 8b 74 24 20       	mov    rsi,QWORD PTR [rsp+0x20]
+     5cf:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+     5d4:	4c 89 0c 24          	mov    QWORD PTR [rsp],r9
+     5d8:	e8 00 00 00 00       	call   5dd <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x14d>
+     5dd:	4c 8b 0c 24          	mov    r9,QWORD PTR [rsp]
+     5e1:	84 c0                	test   al,al
+     5e3:	0f 85 08 ff ff ff    	jne    4f1 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x61>
+     5e9:	e8 00 00 00 00       	call   5ee <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x15e>
+     5ee:	48 83 c4 48          	add    rsp,0x48
+     5f2:	5b                   	pop    rbx
+     5f3:	5d                   	pop    rbp
+     5f4:	41 5c                	pop    r12
+     5f6:	41 5d                	pop    r13
+     5f8:	41 5e                	pop    r14
+     5fa:	41 5f                	pop    r15
+     5fc:	c3                   	ret
+     5fd:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000000600 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>:
+     600:	41 57                	push   r15
+     602:	ba 01 00 00 00       	mov    edx,0x1
+     607:	41 56                	push   r14
+     609:	41 55                	push   r13
+     60b:	41 54                	push   r12
+     60d:	55                   	push   rbp
+     60e:	53                   	push   rbx
+     60f:	48 83 ec 58          	sub    rsp,0x58
+     613:	48 8b 5f 18          	mov    rbx,QWORD PTR [rdi+0x18]
+     617:	44 8b 77 20          	mov    r14d,DWORD PTR [rdi+0x20]
+     61b:	48 63 77 24          	movsxd rsi,DWORD PTR [rdi+0x24]
+     61f:	48 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],rdi
+     624:	4c 8d 44 24 48       	lea    r8,[rsp+0x48]
+     629:	31 ff                	xor    edi,edi
+     62b:	48 8d 4c 24 40       	lea    rcx,[rsp+0x40]
+     630:	48 89 5c 24 08       	mov    QWORD PTR [rsp+0x8],rbx
+     635:	44 89 74 24 24       	mov    DWORD PTR [rsp+0x24],r14d
+     63a:	4c 89 44 24 30       	mov    QWORD PTR [rsp+0x30],r8
+     63f:	48 89 4c 24 28       	mov    QWORD PTR [rsp+0x28],rcx
+     644:	e8 00 00 00 00       	call   649 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x49>
+     649:	84 c0                	test   al,al
+     64b:	0f 84 1d 01 00 00    	je     76e <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x16e>
+     651:	49 63 c6             	movsxd rax,r14d
+     654:	48 d1 eb             	shr    rbx,1
+     657:	4c 8b 64 24 10       	mov    r12,QWORD PTR [rsp+0x10]
+     65c:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+     660:	49 89 df             	mov    r15,rbx
+     663:	4c 8d 34 85 00 00 00 	lea    r14,[rax*4+0x0]
+     66a:	00 
+     66b:	8b 54 24 24          	mov    edx,DWORD PTR [rsp+0x24]
+     66f:	48 8b 44 24 40       	mov    rax,QWORD PTR [rsp+0x40]
+     674:	8b 7c 24 48          	mov    edi,DWORD PTR [rsp+0x48]
+     678:	4d 8b 5c 24 10       	mov    r11,QWORD PTR [r12+0x10]
+     67d:	49 8b 2c 24          	mov    rbp,QWORD PTR [r12]
+     681:	49 8b 5c 24 08       	mov    rbx,QWORD PTR [r12+0x8]
+     686:	85 d2                	test   edx,edx
+     688:	0f 8e c9 00 00 00    	jle    757 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x157>
+     68e:	4c 8b 2c 24          	mov    r13,QWORD PTR [rsp]
+     692:	48 63 d0             	movsxd rdx,eax
+     695:	89 7c 24 20          	mov    DWORD PTR [rsp+0x20],edi
+     699:	89 c6                	mov    esi,eax
+     69b:	4c 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],r15
+     6a0:	48 89 d1             	mov    rcx,rdx
+     6a3:	29 d6                	sub    esi,edx
+     6a5:	4c 0f af ea          	imul   r13,rdx
+     6a9:	4c 89 64 24 38       	mov    QWORD PTR [rsp+0x38],r12
+     6ae:	66 90                	xchg   ax,ax
+     6b0:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+     6b5:	4e 8d 14 ad 00 00 00 	lea    r10,[r13*4+0x0]
+     6bc:	00 
+     6bd:	45 31 c9             	xor    r9d,r9d
+     6c0:	89 f7                	mov    edi,esi
+     6c2:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+     6c8:	49 8b 43 08          	mov    rax,QWORD PTR [r11+0x8]
+     6cc:	4d 8b 03             	mov    r8,QWORD PTR [r11]
+     6cf:	49 89 c4             	mov    r12,rax
+     6d2:	4d 29 c4             	sub    r12,r8
+     6d5:	49 c1 fc 02          	sar    r12,0x2
+     6d9:	4c 39 c0             	cmp    rax,r8
+     6dc:	0f 84 a6 00 00 00    	je     788 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x188>
+     6e2:	48 8b 75 00          	mov    rsi,QWORD PTR [rbp+0x0]
+     6e6:	31 d2                	xor    edx,edx
+     6e8:	31 c0                	xor    eax,eax
+     6ea:	4c 01 d6             	add    rsi,r10
+     6ed:	0f 1f 00             	nop    DWORD PTR [rax]
+     6f0:	41 8b 0c 90          	mov    ecx,DWORD PTR [r8+rdx*4]
+     6f4:	44 8b 3e             	mov    r15d,DWORD PTR [rsi]
+     6f7:	48 ff c2             	inc    rdx
+     6fa:	4c 01 f6             	add    rsi,r14
+     6fd:	49 0f af cf          	imul   rcx,r15
+     701:	48 01 c8             	add    rax,rcx
+     704:	4c 39 e2             	cmp    rdx,r12
+     707:	72 e7                	jb     6f0 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xf0>
+     709:	48 8b 74 24 10       	mov    rsi,QWORD PTR [rsp+0x10]
+     70e:	48 01 f0             	add    rax,rsi
+     711:	31 d2                	xor    edx,edx
+     713:	48 8b 0b             	mov    rcx,QWORD PTR [rbx]
+     716:	49 83 c2 04          	add    r10,0x4
+     71a:	48 f7 74 24 08       	div    QWORD PTR [rsp+0x8]
+     71f:	4c 01 e9             	add    rcx,r13
+     722:	42 88 04 09          	mov    BYTE PTR [rcx+r9*1],al
+     726:	49 ff c1             	inc    r9
+     729:	4c 39 0c 24          	cmp    QWORD PTR [rsp],r9
+     72d:	75 99                	jne    6c8 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xc8>
+     72f:	48 8b 4c 24 18       	mov    rcx,QWORD PTR [rsp+0x18]
+     734:	48 8b 04 24          	mov    rax,QWORD PTR [rsp]
+     738:	89 fe                	mov    esi,edi
+     73a:	48 ff c1             	inc    rcx
+     73d:	49 01 c5             	add    r13,rax
+     740:	8d 04 0f             	lea    eax,[rdi+rcx*1]
+     743:	39 44 24 20          	cmp    DWORD PTR [rsp+0x20],eax
+     747:	0f 8f 63 ff ff ff    	jg     6b0 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0xb0>
+     74d:	4c 8b 7c 24 10       	mov    r15,QWORD PTR [rsp+0x10]
+     752:	4c 8b 64 24 38       	mov    r12,QWORD PTR [rsp+0x38]
+     757:	48 8b 74 24 30       	mov    rsi,QWORD PTR [rsp+0x30]
+     75c:	48 8b 7c 24 28       	mov    rdi,QWORD PTR [rsp+0x28]
+     761:	e8 00 00 00 00       	call   766 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x166>
+     766:	84 c0                	test   al,al
+     768:	0f 85 fd fe ff ff    	jne    66b <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x6b>
+     76e:	e8 00 00 00 00       	call   773 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x173>
+     773:	48 83 c4 58          	add    rsp,0x58
+     777:	5b                   	pop    rbx
+     778:	5d                   	pop    rbp
+     779:	41 5c                	pop    r12
+     77b:	41 5d                	pop    r13
+     77d:	41 5e                	pop    r14
+     77f:	41 5f                	pop    r15
+     781:	c3                   	ret
+     782:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+     788:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+     78d:	eb 82                	jmp    711 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]+0x111>
+     78f:	90                   	nop
+
+0000000000000790 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]>:
+     790:	41 54                	push   r12
+     792:	49 89 f4             	mov    r12,rsi
+     795:	55                   	push   rbp
+     796:	48 89 d5             	mov    rbp,rdx
+     799:	53                   	push   rbx
+     79a:	48 89 fb             	mov    rbx,rdi
+     79d:	48 83 c7 10          	add    rdi,0x10
+     7a1:	48 83 ec 10          	sub    rsp,0x10
+     7a5:	48 89 3b             	mov    QWORD PTR [rbx],rdi
+     7a8:	48 85 f6             	test   rsi,rsi
+     7ab:	75 05                	jne    7b2 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x22>
+     7ad:	48 85 d2             	test   rdx,rdx
+     7b0:	75 64                	jne    816 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x86>
+     7b2:	48 89 6c 24 08       	mov    QWORD PTR [rsp+0x8],rbp
+     7b7:	48 83 fd 0f          	cmp    rbp,0xf
+     7bb:	77 2e                	ja     7eb <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x5b>
+     7bd:	48 83 fd 01          	cmp    rbp,0x1
+     7c1:	75 21                	jne    7e4 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x54>
+     7c3:	41 0f b6 04 24       	movzx  eax,BYTE PTR [r12]
+     7c8:	88 43 10             	mov    BYTE PTR [rbx+0x10],al
+     7cb:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+     7d0:	48 8b 13             	mov    rdx,QWORD PTR [rbx]
+     7d3:	48 89 43 08          	mov    QWORD PTR [rbx+0x8],rax
+     7d7:	c6 04 02 00          	mov    BYTE PTR [rdx+rax*1],0x0
+     7db:	48 83 c4 10          	add    rsp,0x10
+     7df:	5b                   	pop    rbx
+     7e0:	5d                   	pop    rbp
+     7e1:	41 5c                	pop    r12
+     7e3:	c3                   	ret
+     7e4:	48 85 ed             	test   rbp,rbp
+     7e7:	74 e2                	je     7cb <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x3b>
+     7e9:	eb 1e                	jmp    809 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x79>
+     7eb:	48 89 df             	mov    rdi,rbx
+     7ee:	48 8d 74 24 08       	lea    rsi,[rsp+0x8]
+     7f3:	31 d2                	xor    edx,edx
+     7f5:	e8 00 00 00 00       	call   7fa <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x6a>
+     7fa:	48 89 03             	mov    QWORD PTR [rbx],rax
+     7fd:	48 89 c7             	mov    rdi,rax
+     800:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+     805:	48 89 43 10          	mov    QWORD PTR [rbx+0x10],rax
+     809:	48 89 ea             	mov    rdx,rbp
+     80c:	4c 89 e6             	mov    rsi,r12
+     80f:	e8 00 00 00 00       	call   814 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x84>
+     814:	eb b5                	jmp    7cb <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x3b>
+     816:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 81d <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x8d>
+     81d:	e8 00 00 00 00       	call   822 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]+0x92>
+     822:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+     829:	00 00 00 00 
+     82d:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000000830 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const>:
+     830:	41 57                	push   r15
+     832:	41 56                	push   r14
+     834:	41 55                	push   r13
+     836:	49 89 f5             	mov    r13,rsi
+     839:	41 54                	push   r12
+     83b:	55                   	push   rbp
+     83c:	48 89 fd             	mov    rbp,rdi
+     83f:	53                   	push   rbx
+     840:	48 83 ec 78          	sub    rsp,0x78
+     844:	4c 8b 7f 08          	mov    r15,QWORD PTR [rdi+0x8]
+     848:	4c 8b 27             	mov    r12,QWORD PTR [rdi]
+     84b:	c5 fb 11 44 24 08    	vmovsd QWORD PTR [rsp+0x8],xmm0
+     851:	49 8b 4f 08          	mov    rcx,QWORD PTR [r15+0x8]
+     855:	48 85 c9             	test   rcx,rcx
+     858:	0f 84 5a 02 00 00    	je     ab8 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x288>
+     85e:	49 8b 47 20          	mov    rax,QWORD PTR [r15+0x20]
+     862:	83 e0 03             	and    eax,0x3
+     865:	3c 03                	cmp    al,0x3
+     867:	0f 84 75 02 00 00    	je     ae2 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x2b2>
+     86d:	84 c0                	test   al,al
+     86f:	75 33                	jne    8a4 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x74>
+     871:	49 8b 07             	mov    rax,QWORD PTR [r15]
+     874:	80 7c 08 ff 2f       	cmp    BYTE PTR [rax+rcx*1-0x1],0x2f
+     879:	0f 84 bc 02 00 00    	je     b3b <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x30b>
+     87f:	49 8d 7f 20          	lea    rdi,[r15+0x20]
+     883:	e8 00 00 00 00       	call   888 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x58>
+     888:	41 f6 47 20 03       	test   BYTE PTR [r15+0x20],0x3
+     88d:	48 8d 48 d0          	lea    rcx,[rax-0x30]
+     891:	49 0f 45 cf          	cmovne rcx,r15
+     895:	48 8b 41 20          	mov    rax,QWORD PTR [rcx+0x20]
+     899:	83 e0 03             	and    eax,0x3
+     89c:	3c 03                	cmp    al,0x3
+     89e:	0f 84 c1 02 00 00    	je     b65 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x335>
+     8a4:	48 8d 44 24 50       	lea    rax,[rsp+0x50]
+     8a9:	48 8d 7c 24 60       	lea    rdi,[rsp+0x60]
+     8ae:	c6 44 24 50 00       	mov    BYTE PTR [rsp+0x50],0x0
+     8b3:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     8b8:	31 c0                	xor    eax,eax
+     8ba:	48 8d 5c 24 40       	lea    rbx,[rsp+0x40]
+     8bf:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+     8c4:	e8 00 00 00 00       	call   8c9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x99>
+     8c9:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+     8ce:	48 8b 74 24 40       	mov    rsi,QWORD PTR [rsp+0x40]
+     8d3:	48 8d 7c 24 20       	lea    rdi,[rsp+0x20]
+     8d8:	e8 b3 fe ff ff       	call   790 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, unsigned long, std::allocator<char> const&) [clone .isra.0]>
+     8dd:	48 8b 54 24 28       	mov    rdx,QWORD PTR [rsp+0x28]
+     8e2:	48 8b 74 24 20       	mov    rsi,QWORD PTR [rsp+0x20]
+     8e7:	4c 89 e7             	mov    rdi,r12
+     8ea:	e8 00 00 00 00       	call   8ef <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xbf>
+     8ef:	48 89 c7             	mov    rdi,rax
+     8f2:	be 2c 00 00 00       	mov    esi,0x2c
+     8f7:	e8 00 00 00 00       	call   8fc <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xcc>
+     8fc:	48 89 c7             	mov    rdi,rax
+     8ff:	48 8b 45 08          	mov    rax,QWORD PTR [rbp+0x8]
+     903:	8b 70 50             	mov    esi,DWORD PTR [rax+0x50]
+     906:	e8 00 00 00 00       	call   90b <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xdb>
+     90b:	48 89 c7             	mov    rdi,rax
+     90e:	be 2c 00 00 00       	mov    esi,0x2c
+     913:	e8 00 00 00 00       	call   918 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xe8>
+     918:	49 89 c4             	mov    r12,rax
+     91b:	e8 00 00 00 00       	call   920 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xf0>
+     920:	4c 89 e7             	mov    rdi,r12
+     923:	89 c6                	mov    esi,eax
+     925:	e8 00 00 00 00       	call   92a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0xfa>
+     92a:	48 89 c7             	mov    rdi,rax
+     92d:	be 2c 00 00 00       	mov    esi,0x2c
+     932:	e8 00 00 00 00       	call   937 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x107>
+     937:	ba 07 00 00 00       	mov    edx,0x7
+     93c:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 943 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x113>
+     943:	48 89 c7             	mov    rdi,rax
+     946:	49 89 c4             	mov    r12,rax
+     949:	e8 00 00 00 00       	call   94e <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x11e>
+     94e:	be 2c 00 00 00       	mov    esi,0x2c
+     953:	4c 89 e7             	mov    rdi,r12
+     956:	e8 00 00 00 00       	call   95b <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x12b>
+     95b:	48 89 c7             	mov    rdi,rax
+     95e:	4c 89 ee             	mov    rsi,r13
+     961:	e8 00 00 00 00       	call   966 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x136>
+     966:	48 89 c7             	mov    rdi,rax
+     969:	be 2c 00 00 00       	mov    esi,0x2c
+     96e:	e8 00 00 00 00       	call   973 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x143>
+     973:	48 89 c7             	mov    rdi,rax
+     976:	48 8b 00             	mov    rax,QWORD PTR [rax]
+     979:	c5 fb 10 44 24 08    	vmovsd xmm0,QWORD PTR [rsp+0x8]
+     97f:	48 8b 50 e8          	mov    rdx,QWORD PTR [rax-0x18]
+     983:	48 01 fa             	add    rdx,rdi
+     986:	8b 42 18             	mov    eax,DWORD PTR [rdx+0x18]
+     989:	48 c7 42 08 06 00 00 	mov    QWORD PTR [rdx+0x8],0x6
+     990:	00 
+     991:	25 fb fe ff ff       	and    eax,0xfffffefb
+     996:	83 c8 04             	or     eax,0x4
+     999:	89 42 18             	mov    DWORD PTR [rdx+0x18],eax
+     99c:	e8 00 00 00 00       	call   9a1 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x171>
+     9a1:	48 89 c7             	mov    rdi,rax
+     9a4:	be 2c 00 00 00       	mov    esi,0x2c
+     9a9:	e8 00 00 00 00       	call   9ae <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x17e>
+     9ae:	48 be 83 03 9d 73 b0 	movabs rsi,0x14650fb0739d0383
+     9b5:	0f 65 14 
+     9b8:	49 89 c0             	mov    r8,rax
+     9bb:	48 8b 00             	mov    rax,QWORD PTR [rax]
+     9be:	48 8b 50 e8          	mov    rdx,QWORD PTR [rax-0x18]
+     9c2:	4c 01 c2             	add    rdx,r8
+     9c5:	8b 42 18             	mov    eax,DWORD PTR [rdx+0x18]
+     9c8:	83 e0 b5             	and    eax,0xffffffb5
+     9cb:	83 c8 08             	or     eax,0x8
+     9ce:	89 42 18             	mov    DWORD PTR [rdx+0x18],eax
+     9d1:	48 8b 55 10          	mov    rdx,QWORD PTR [rbp+0x10]
+     9d5:	48 8b 02             	mov    rax,QWORD PTR [rdx]
+     9d8:	48 8b 4a 08          	mov    rcx,QWORD PTR [rdx+0x8]
+     9dc:	48 29 c1             	sub    rcx,rax
+     9df:	74 21                	je     a02 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x1d2>
+     9e1:	48 bf b3 01 00 00 00 	movabs rdi,0x100000001b3
+     9e8:	01 00 00 
+     9eb:	48 01 c1             	add    rcx,rax
+     9ee:	66 90                	xchg   ax,ax
+     9f0:	0f b6 10             	movzx  edx,BYTE PTR [rax]
+     9f3:	48 ff c0             	inc    rax
+     9f6:	48 31 d6             	xor    rsi,rdx
+     9f9:	48 0f af f7          	imul   rsi,rdi
+     9fd:	48 39 c1             	cmp    rcx,rax
+     a00:	75 ee                	jne    9f0 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x1c0>
+     a02:	4c 89 c7             	mov    rdi,r8
+     a05:	e8 00 00 00 00       	call   a0a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x1da>
+     a0a:	48 89 c7             	mov    rdi,rax
+     a0d:	be 2c 00 00 00       	mov    esi,0x2c
+     a12:	e8 00 00 00 00       	call   a17 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x1e7>
+     a17:	48 be 83 03 9d 73 b0 	movabs rsi,0x14650fb0739d0383
+     a1e:	0f 65 14 
+     a21:	48 89 c7             	mov    rdi,rax
+     a24:	48 8b 45 18          	mov    rax,QWORD PTR [rbp+0x18]
+     a28:	48 8b 10             	mov    rdx,QWORD PTR [rax]
+     a2b:	4c 8b 40 08          	mov    r8,QWORD PTR [rax+0x8]
+     a2f:	49 29 d0             	sub    r8,rdx
+     a32:	74 26                	je     a5a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x22a>
+     a34:	49 b9 b3 01 00 00 00 	movabs r9,0x100000001b3
+     a3b:	01 00 00 
+     a3e:	49 01 d0             	add    r8,rdx
+     a41:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+     a48:	0f b6 0a             	movzx  ecx,BYTE PTR [rdx]
+     a4b:	48 ff c2             	inc    rdx
+     a4e:	48 31 ce             	xor    rsi,rcx
+     a51:	49 0f af f1          	imul   rsi,r9
+     a55:	49 39 d0             	cmp    r8,rdx
+     a58:	75 ee                	jne    a48 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x218>
+     a5a:	e8 00 00 00 00       	call   a5f <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x22f>
+     a5f:	48 89 c7             	mov    rdi,rax
+     a62:	48 8b 00             	mov    rax,QWORD PTR [rax]
+     a65:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # a6c <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x23c>
+     a6c:	48 8b 50 e8          	mov    rdx,QWORD PTR [rax-0x18]
+     a70:	48 01 fa             	add    rdx,rdi
+     a73:	8b 42 18             	mov    eax,DWORD PTR [rdx+0x18]
+     a76:	83 e0 b5             	and    eax,0xffffffb5
+     a79:	83 c8 02             	or     eax,0x2
+     a7c:	89 42 18             	mov    DWORD PTR [rdx+0x18],eax
+     a7f:	e8 00 00 00 00       	call   a84 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x254>
+     a84:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+     a89:	48 8d 44 24 30       	lea    rax,[rsp+0x30]
+     a8e:	48 39 c7             	cmp    rdi,rax
+     a91:	74 0e                	je     aa1 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x271>
+     a93:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+     a98:	48 8d 70 01          	lea    rsi,[rax+0x1]
+     a9c:	e8 00 00 00 00       	call   aa1 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x271>
+     aa1:	48 89 df             	mov    rdi,rbx
+     aa4:	e8 00 00 00 00       	call   aa9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x279>
+     aa9:	48 83 c4 78          	add    rsp,0x78
+     aad:	5b                   	pop    rbx
+     aae:	5d                   	pop    rbp
+     aaf:	41 5c                	pop    r12
+     ab1:	41 5d                	pop    r13
+     ab3:	41 5e                	pop    r14
+     ab5:	41 5f                	pop    r15
+     ab7:	c3                   	ret
+     ab8:	48 8d 44 24 50       	lea    rax,[rsp+0x50]
+     abd:	31 c9                	xor    ecx,ecx
+     abf:	48 8d 7c 24 60       	lea    rdi,[rsp+0x60]
+     ac4:	c6 44 24 50 00       	mov    BYTE PTR [rsp+0x50],0x0
+     ac9:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     ace:	48 8d 5c 24 40       	lea    rbx,[rsp+0x40]
+     ad3:	48 89 4c 24 48       	mov    QWORD PTR [rsp+0x48],rcx
+     ad8:	e8 00 00 00 00       	call   add <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x2ad>
+     add:	e9 e7 fd ff ff       	jmp    8c9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x99>
+     ae2:	4c 8d 74 24 50       	lea    r14,[rsp+0x50]
+     ae7:	48 8d 5c 24 40       	lea    rbx,[rsp+0x40]
+     aec:	4c 89 74 24 40       	mov    QWORD PTR [rsp+0x40],r14
+     af1:	4d 8b 07             	mov    r8,QWORD PTR [r15]
+     af4:	48 89 4c 24 20       	mov    QWORD PTR [rsp+0x20],rcx
+     af9:	48 83 f9 0f          	cmp    rcx,0xf
+     afd:	0f 87 bc 00 00 00    	ja     bbf <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x38f>
+     b03:	48 83 f9 01          	cmp    rcx,0x1
+     b07:	0f 85 f7 00 00 00    	jne    c04 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3d4>
+     b0d:	41 0f b6 00          	movzx  eax,BYTE PTR [r8]
+     b11:	88 44 24 50          	mov    BYTE PTR [rsp+0x50],al
+     b15:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+     b1a:	48 8b 54 24 40       	mov    rdx,QWORD PTR [rsp+0x40]
+     b1f:	49 8d 77 20          	lea    rsi,[r15+0x20]
+     b23:	48 8d 7c 24 60       	lea    rdi,[rsp+0x60]
+     b28:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+     b2d:	c6 04 02 00          	mov    BYTE PTR [rdx+rax*1],0x0
+     b31:	e8 00 00 00 00       	call   b36 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x306>
+     b36:	e9 8e fd ff ff       	jmp    8c9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x99>
+     b3b:	48 8d 44 24 50       	lea    rax,[rsp+0x50]
+     b40:	31 d2                	xor    edx,edx
+     b42:	48 8d 7c 24 60       	lea    rdi,[rsp+0x60]
+     b47:	c6 44 24 50 00       	mov    BYTE PTR [rsp+0x50],0x0
+     b4c:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     b51:	48 8d 5c 24 40       	lea    rbx,[rsp+0x40]
+     b56:	48 89 54 24 48       	mov    QWORD PTR [rsp+0x48],rdx
+     b5b:	e8 00 00 00 00       	call   b60 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x330>
+     b60:	e9 64 fd ff ff       	jmp    8c9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x99>
+     b65:	4c 8b 79 08          	mov    r15,QWORD PTR [rcx+0x8]
+     b69:	4c 8d 74 24 50       	lea    r14,[rsp+0x50]
+     b6e:	48 8d 5c 24 40       	lea    rbx,[rsp+0x40]
+     b73:	4c 89 74 24 40       	mov    QWORD PTR [rsp+0x40],r14
+     b78:	4c 8b 01             	mov    r8,QWORD PTR [rcx]
+     b7b:	4c 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],r15
+     b80:	49 83 ff 0f          	cmp    r15,0xf
+     b84:	0f 87 89 00 00 00    	ja     c13 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3e3>
+     b8a:	49 83 ff 01          	cmp    r15,0x1
+     b8e:	74 79                	je     c09 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3d9>
+     b90:	4d 85 ff             	test   r15,r15
+     b93:	0f 85 c9 00 00 00    	jne    c62 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x432>
+     b99:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+     b9e:	48 8b 54 24 40       	mov    rdx,QWORD PTR [rsp+0x40]
+     ba3:	48 8d 71 20          	lea    rsi,[rcx+0x20]
+     ba7:	48 8d 7c 24 60       	lea    rdi,[rsp+0x60]
+     bac:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+     bb1:	c6 04 02 00          	mov    BYTE PTR [rdx+rax*1],0x0
+     bb5:	e8 00 00 00 00       	call   bba <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x38a>
+     bba:	e9 0a fd ff ff       	jmp    8c9 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x99>
+     bbf:	48 89 df             	mov    rdi,rbx
+     bc2:	48 8d 74 24 20       	lea    rsi,[rsp+0x20]
+     bc7:	31 d2                	xor    edx,edx
+     bc9:	4c 89 44 24 18       	mov    QWORD PTR [rsp+0x18],r8
+     bce:	48 89 4c 24 10       	mov    QWORD PTR [rsp+0x10],rcx
+     bd3:	e8 00 00 00 00       	call   bd8 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3a8>
+     bd8:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     bdd:	4c 8b 44 24 18       	mov    r8,QWORD PTR [rsp+0x18]
+     be2:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     be7:	48 89 c7             	mov    rdi,rax
+     bea:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+     bef:	48 89 44 24 50       	mov    QWORD PTR [rsp+0x50],rax
+     bf4:	48 89 ca             	mov    rdx,rcx
+     bf7:	4c 89 c6             	mov    rsi,r8
+     bfa:	e8 00 00 00 00       	call   bff <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3cf>
+     bff:	e9 11 ff ff ff       	jmp    b15 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x2e5>
+     c04:	4c 89 f7             	mov    rdi,r14
+     c07:	eb eb                	jmp    bf4 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3c4>
+     c09:	41 0f b6 00          	movzx  eax,BYTE PTR [r8]
+     c0d:	88 44 24 50          	mov    BYTE PTR [rsp+0x50],al
+     c11:	eb 86                	jmp    b99 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x369>
+     c13:	48 89 df             	mov    rdi,rbx
+     c16:	48 8d 74 24 20       	lea    rsi,[rsp+0x20]
+     c1b:	31 d2                	xor    edx,edx
+     c1d:	4c 89 44 24 18       	mov    QWORD PTR [rsp+0x18],r8
+     c22:	48 89 4c 24 10       	mov    QWORD PTR [rsp+0x10],rcx
+     c27:	e8 00 00 00 00       	call   c2c <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x3fc>
+     c2c:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     c31:	4c 8b 44 24 18       	mov    r8,QWORD PTR [rsp+0x18]
+     c36:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+     c3b:	48 89 c7             	mov    rdi,rax
+     c3e:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+     c43:	48 89 44 24 50       	mov    QWORD PTR [rsp+0x50],rax
+     c48:	4c 89 fa             	mov    rdx,r15
+     c4b:	4c 89 c6             	mov    rsi,r8
+     c4e:	48 89 4c 24 10       	mov    QWORD PTR [rsp+0x10],rcx
+     c53:	e8 00 00 00 00       	call   c58 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x428>
+     c58:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     c5d:	e9 37 ff ff ff       	jmp    b99 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x369>
+     c62:	4c 89 f7             	mov    rdi,r14
+     c65:	eb e1                	jmp    c48 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x418>
+     c67:	48 89 c5             	mov    rbp,rax
+     c6a:	c5 f8 77             	vzeroupper
+     c6d:	e9 00 00 00 00       	jmp    c72 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x442>
+     c72:	48 89 c3             	mov    rbx,rax
+     c75:	e9 00 00 00 00       	jmp    c7a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x44a>
+     c7a:	48 89 c5             	mov    rbp,rax
+     c7d:	e9 00 00 00 00       	jmp    c82 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x452>
+     c82:	48 89 c3             	mov    rbx,rax
+     c85:	e9 00 00 00 00       	jmp    c8a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const+0x45a>
+     c8a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+
+0000000000000c90 <parse(int, char**, Options&)>:
+     c90:	41 57                	push   r15
+     c92:	41 56                	push   r14
+     c94:	41 55                	push   r13
+     c96:	41 54                	push   r12
+     c98:	55                   	push   rbp
+     c99:	48 89 d5             	mov    rbp,rdx
+     c9c:	53                   	push   rbx
+     c9d:	bb 01 00 00 00       	mov    ebx,0x1
+     ca2:	48 81 ec a8 00 00 00 	sub    rsp,0xa8
+     ca9:	48 8d 44 24 20       	lea    rax,[rsp+0x20]
+     cae:	89 7c 24 0c          	mov    DWORD PTR [rsp+0xc],edi
+     cb2:	4c 8d 64 24 30       	lea    r12,[rsp+0x30]
+     cb7:	48 89 74 24 10       	mov    QWORD PTR [rsp+0x10],rsi
+     cbc:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+     cc0:	83 ff 01             	cmp    edi,0x1
+     cc3:	0f 8e da 00 00 00    	jle    da3 <parse(int, char**, Options&)+0x113>
+     cc9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+     cd0:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+     cd5:	48 63 c3             	movsxd rax,ebx
+     cd8:	4c 89 64 24 20       	mov    QWORD PTR [rsp+0x20],r12
+     cdd:	4c 8d 34 c5 00 00 00 	lea    r14,[rax*8+0x0]
+     ce4:	00 
+     ce5:	4c 8b 3c c1          	mov    r15,QWORD PTR [rcx+rax*8]
+     ce9:	4d 85 ff             	test   r15,r15
+     cec:	0f 84 d8 06 00 00    	je     13ca <parse(int, char**, Options&)+0x73a>
+     cf2:	4c 89 ff             	mov    rdi,r15
+     cf5:	e8 00 00 00 00       	call   cfa <parse(int, char**, Options&)+0x6a>
+     cfa:	48 89 44 24 70       	mov    QWORD PTR [rsp+0x70],rax
+     cff:	49 89 c5             	mov    r13,rax
+     d02:	48 83 f8 0f          	cmp    rax,0xf
+     d06:	0f 87 f4 00 00 00    	ja     e00 <parse(int, char**, Options&)+0x170>
+     d0c:	48 83 f8 01          	cmp    rax,0x1
+     d10:	0f 85 d2 00 00 00    	jne    de8 <parse(int, char**, Options&)+0x158>
+     d16:	41 0f b6 17          	movzx  edx,BYTE PTR [r15]
+     d1a:	88 54 24 30          	mov    BYTE PTR [rsp+0x30],dl
+     d1e:	4c 89 e2             	mov    rdx,r12
+     d21:	48 89 44 24 28       	mov    QWORD PTR [rsp+0x28],rax
+     d26:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     d2a:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # d31 <parse(int, char**, Options&)+0xa1>
+     d31:	c6 04 02 00          	mov    BYTE PTR [rdx+rax*1],0x0
+     d35:	e8 00 00 00 00       	call   d3a <parse(int, char**, Options&)+0xaa>
+     d3a:	85 c0                	test   eax,eax
+     d3c:	0f 85 fe 00 00 00    	jne    e40 <parse(int, char**, Options&)+0x1b0>
+     d42:	8b 44 24 0c          	mov    eax,DWORD PTR [rsp+0xc]
+     d46:	44 8d 6b 01          	lea    r13d,[rbx+0x1]
+     d4a:	41 39 c5             	cmp    r13d,eax
+     d4d:	0f 8c bd 02 00 00    	jl     1010 <parse(int, char**, Options&)+0x380>
+     d53:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     d57:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # d5e <parse(int, char**, Options&)+0xce>
+     d5e:	e8 00 00 00 00       	call   d63 <parse(int, char**, Options&)+0xd3>
+     d63:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     d67:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # d6e <parse(int, char**, Options&)+0xde>
+     d6e:	e8 00 00 00 00       	call   d73 <parse(int, char**, Options&)+0xe3>
+     d73:	85 c0                	test   eax,eax
+     d75:	0f 85 2d 01 00 00    	jne    ea8 <parse(int, char**, Options&)+0x218>
+     d7b:	c6 45 58 01          	mov    BYTE PTR [rbp+0x58],0x1
+     d7f:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+     d84:	4c 39 e7             	cmp    rdi,r12
+     d87:	74 3f                	je     dc8 <parse(int, char**, Options&)+0x138>
+     d89:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+     d8e:	ff c3                	inc    ebx
+     d90:	48 8d 70 01          	lea    rsi,[rax+0x1]
+     d94:	e8 00 00 00 00       	call   d99 <parse(int, char**, Options&)+0x109>
+     d99:	39 5c 24 0c          	cmp    DWORD PTR [rsp+0xc],ebx
+     d9d:	0f 8f 2d ff ff ff    	jg     cd0 <parse(int, char**, Options&)+0x40>
+     da3:	48 83 7d 08 00       	cmp    QWORD PTR [rbp+0x8],0x0
+     da8:	0f 85 52 05 00 00    	jne    1300 <parse(int, char**, Options&)+0x670>
+     dae:	66 90                	xchg   ax,ax
+     db0:	31 c0                	xor    eax,eax
+     db2:	48 81 c4 a8 00 00 00 	add    rsp,0xa8
+     db9:	5b                   	pop    rbx
+     dba:	5d                   	pop    rbp
+     dbb:	41 5c                	pop    r12
+     dbd:	41 5d                	pop    r13
+     dbf:	41 5e                	pop    r14
+     dc1:	41 5f                	pop    r15
+     dc3:	c3                   	ret
+     dc4:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     dc8:	ff c3                	inc    ebx
+     dca:	39 5c 24 0c          	cmp    DWORD PTR [rsp+0xc],ebx
+     dce:	0f 8f fc fe ff ff    	jg     cd0 <parse(int, char**, Options&)+0x40>
+     dd4:	48 83 7d 08 00       	cmp    QWORD PTR [rbp+0x8],0x0
+     dd9:	0f 85 21 05 00 00    	jne    1300 <parse(int, char**, Options&)+0x670>
+     ddf:	eb cf                	jmp    db0 <parse(int, char**, Options&)+0x120>
+     de1:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+     de8:	48 85 c0             	test   rax,rax
+     deb:	0f 84 2d ff ff ff    	je     d1e <parse(int, char**, Options&)+0x8e>
+     df1:	4c 89 e7             	mov    rdi,r12
+     df4:	eb 2c                	jmp    e22 <parse(int, char**, Options&)+0x192>
+     df6:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+     dfd:	00 00 00 
+     e00:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     e04:	48 8d 74 24 70       	lea    rsi,[rsp+0x70]
+     e09:	31 d2                	xor    edx,edx
+     e0b:	e8 00 00 00 00       	call   e10 <parse(int, char**, Options&)+0x180>
+     e10:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+     e15:	48 89 c7             	mov    rdi,rax
+     e18:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+     e1d:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+     e22:	4c 89 ea             	mov    rdx,r13
+     e25:	4c 89 fe             	mov    rsi,r15
+     e28:	e8 00 00 00 00       	call   e2d <parse(int, char**, Options&)+0x19d>
+     e2d:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+     e32:	48 8b 54 24 20       	mov    rdx,QWORD PTR [rsp+0x20]
+     e37:	e9 e5 fe ff ff       	jmp    d21 <parse(int, char**, Options&)+0x91>
+     e3c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+     e40:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     e44:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # e4b <parse(int, char**, Options&)+0x1bb>
+     e4b:	e8 00 00 00 00       	call   e50 <parse(int, char**, Options&)+0x1c0>
+     e50:	85 c0                	test   eax,eax
+     e52:	0f 84 ea fe ff ff    	je     d42 <parse(int, char**, Options&)+0xb2>
+     e58:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+     e5c:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # e63 <parse(int, char**, Options&)+0x1d3>
+     e63:	e8 00 00 00 00       	call   e68 <parse(int, char**, Options&)+0x1d8>
+     e68:	85 c0                	test   eax,eax
+     e6a:	0f 85 f3 fe ff ff    	jne    d63 <parse(int, char**, Options&)+0xd3>
+     e70:	8b 44 24 0c          	mov    eax,DWORD PTR [rsp+0xc]
+     e74:	44 8d 6b 01          	lea    r13d,[rbx+0x1]
+     e78:	41 39 c5             	cmp    r13d,eax
+     e7b:	0f 8d e2 fe ff ff    	jge    d63 <parse(int, char**, Options&)+0xd3>
+     e81:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+     e86:	ba 0a 00 00 00       	mov    edx,0xa
+     e8b:	31 f6                	xor    esi,esi
+     e8d:	4a 8b 7c 30 08       	mov    rdi,QWORD PTR [rax+r14*1+0x8]
+     e92:	e8 00 00 00 00       	call   e97 <parse(int, char**, Options&)+0x207>
+     e97:	89 45 54             	mov    DWORD PTR [rbp+0x54],eax
+     e9a:	44 89 eb             	mov    ebx,r13d
+     e9d:	e9 dd fe ff ff       	jmp    d7f <parse(int, char**, Options&)+0xef>
+     ea2:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+     ea8:	4c 8b 6c 24 28       	mov    r13,QWORD PTR [rsp+0x28]
+     ead:	4c 8b 7c 24 20       	mov    r15,QWORD PTR [rsp+0x20]
+     eb2:	4d 85 ed             	test   r13,r13
+     eb5:	0f 84 bd 04 00 00    	je     1378 <parse(int, char**, Options&)+0x6e8>
+     ebb:	41 80 3f 2d          	cmp    BYTE PTR [r15],0x2d
+     ebf:	0f 84 b3 04 00 00    	je     1378 <parse(int, char**, Options&)+0x6e8>
+     ec5:	48 83 7d 30 00       	cmp    QWORD PTR [rbp+0x30],0x0
+     eca:	0f 85 a8 04 00 00    	jne    1378 <parse(int, char**, Options&)+0x6e8>
+     ed0:	48 8d 44 24 70       	lea    rax,[rsp+0x70]
+     ed5:	4c 8d b4 24 80 00 00 	lea    r14,[rsp+0x80]
+     edc:	00 
+     edd:	4c 89 6c 24 40       	mov    QWORD PTR [rsp+0x40],r13
+     ee2:	48 89 44 24 18       	mov    QWORD PTR [rsp+0x18],rax
+     ee7:	4c 89 74 24 70       	mov    QWORD PTR [rsp+0x70],r14
+     eec:	49 83 fd 0f          	cmp    r13,0xf
+     ef0:	0f 87 8a 02 00 00    	ja     1180 <parse(int, char**, Options&)+0x4f0>
+     ef6:	49 83 fd 01          	cmp    r13,0x1
+     efa:	0f 85 00 03 00 00    	jne    1200 <parse(int, char**, Options&)+0x570>
+     f00:	41 0f b6 07          	movzx  eax,BYTE PTR [r15]
+     f04:	88 84 24 80 00 00 00 	mov    BYTE PTR [rsp+0x80],al
+     f0b:	4c 89 f0             	mov    rax,r14
+     f0e:	4c 89 6c 24 78       	mov    QWORD PTR [rsp+0x78],r13
+     f13:	42 c6 04 28 00       	mov    BYTE PTR [rax+r13*1],0x0
+     f18:	4c 8d ac 24 90 00 00 	lea    r13,[rsp+0x90]
+     f1f:	00 
+     f20:	4c 89 ef             	mov    rdi,r13
+     f23:	e8 00 00 00 00       	call   f28 <parse(int, char**, Options&)+0x298>
+     f28:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+     f2d:	e8 00 00 00 00       	call   f32 <parse(int, char**, Options&)+0x2a2>
+     f32:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+     f37:	48 8b 7d 28          	mov    rdi,QWORD PTR [rbp+0x28]
+     f3b:	4c 39 f0             	cmp    rax,r14
+     f3e:	0f 84 7c 02 00 00    	je     11c0 <parse(int, char**, Options&)+0x530>
+     f44:	48 8d 55 38          	lea    rdx,[rbp+0x38]
+     f48:	48 39 d7             	cmp    rdi,rdx
+     f4b:	0f 84 b7 02 00 00    	je     1208 <parse(int, char**, Options&)+0x578>
+     f51:	48 89 45 28          	mov    QWORD PTR [rbp+0x28],rax
+     f55:	48 8b 44 24 78       	mov    rax,QWORD PTR [rsp+0x78]
+     f5a:	48 8b 55 38          	mov    rdx,QWORD PTR [rbp+0x38]
+     f5e:	48 89 45 30          	mov    QWORD PTR [rbp+0x30],rax
+     f62:	48 8b 84 24 80 00 00 	mov    rax,QWORD PTR [rsp+0x80]
+     f69:	00 
+     f6a:	48 89 45 38          	mov    QWORD PTR [rbp+0x38],rax
+     f6e:	48 85 ff             	test   rdi,rdi
+     f71:	0f 84 aa 02 00 00    	je     1221 <parse(int, char**, Options&)+0x591>
+     f77:	48 89 7c 24 70       	mov    QWORD PTR [rsp+0x70],rdi
+     f7c:	48 89 94 24 80 00 00 	mov    QWORD PTR [rsp+0x80],rdx
+     f83:	00 
+     f84:	48 c7 44 24 78 00 00 	mov    QWORD PTR [rsp+0x78],0x0
+     f8b:	00 00 
+     f8d:	c6 07 00             	mov    BYTE PTR [rdi],0x0
+     f90:	48 8b 84 24 90 00 00 	mov    rax,QWORD PTR [rsp+0x90]
+     f97:	00 
+     f98:	48 c7 84 24 90 00 00 	mov    QWORD PTR [rsp+0x90],0x0
+     f9f:	00 00 00 00 00 
+     fa4:	48 8b 75 48          	mov    rsi,QWORD PTR [rbp+0x48]
+     fa8:	48 89 45 48          	mov    QWORD PTR [rbp+0x48],rax
+     fac:	48 85 f6             	test   rsi,rsi
+     faf:	74 09                	je     fba <parse(int, char**, Options&)+0x32a>
+     fb1:	48 8d 7d 48          	lea    rdi,[rbp+0x48]
+     fb5:	e8 00 00 00 00       	call   fba <parse(int, char**, Options&)+0x32a>
+     fba:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+     fbf:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+     fc4:	48 c7 44 24 78 00 00 	mov    QWORD PTR [rsp+0x78],0x0
+     fcb:	00 00 
+     fcd:	c6 00 00             	mov    BYTE PTR [rax],0x0
+     fd0:	e8 00 00 00 00       	call   fd5 <parse(int, char**, Options&)+0x345>
+     fd5:	48 8b b4 24 90 00 00 	mov    rsi,QWORD PTR [rsp+0x90]
+     fdc:	00 
+     fdd:	48 85 f6             	test   rsi,rsi
+     fe0:	74 08                	je     fea <parse(int, char**, Options&)+0x35a>
+     fe2:	4c 89 ef             	mov    rdi,r13
+     fe5:	e8 00 00 00 00       	call   fea <parse(int, char**, Options&)+0x35a>
+     fea:	48 8b 7c 24 70       	mov    rdi,QWORD PTR [rsp+0x70]
+     fef:	4c 39 f7             	cmp    rdi,r14
+     ff2:	0f 84 87 fd ff ff    	je     d7f <parse(int, char**, Options&)+0xef>
+     ff8:	48 8b 84 24 80 00 00 	mov    rax,QWORD PTR [rsp+0x80]
+     fff:	00 
+    1000:	48 8d 70 01          	lea    rsi,[rax+0x1]
+    1004:	e8 00 00 00 00       	call   1009 <parse(int, char**, Options&)+0x379>
+    1009:	e9 71 fd ff ff       	jmp    d7f <parse(int, char**, Options&)+0xef>
+    100e:	66 90                	xchg   ax,ax
+    1010:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+    1015:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+    1019:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 1020 <parse(int, char**, Options&)+0x390>
+    1020:	4e 8b 74 30 08       	mov    r14,QWORD PTR [rax+r14*1+0x8]
+    1025:	e8 00 00 00 00       	call   102a <parse(int, char**, Options&)+0x39a>
+    102a:	85 c0                	test   eax,eax
+    102c:	0f 85 2e 01 00 00    	jne    1160 <parse(int, char**, Options&)+0x4d0>
+    1032:	4c 89 f7             	mov    rdi,r14
+    1035:	4c 8d 7c 24 50       	lea    r15,[rsp+0x50]
+    103a:	e8 00 00 00 00       	call   103f <parse(int, char**, Options&)+0x3af>
+    103f:	48 8d 4c 24 40       	lea    rcx,[rsp+0x40]
+    1044:	4c 89 7c 24 40       	mov    QWORD PTR [rsp+0x40],r15
+    1049:	48 89 4c 24 18       	mov    QWORD PTR [rsp+0x18],rcx
+    104e:	48 89 c3             	mov    rbx,rax
+    1051:	48 89 44 24 70       	mov    QWORD PTR [rsp+0x70],rax
+    1056:	48 83 f8 0f          	cmp    rax,0xf
+    105a:	0f 87 f0 01 00 00    	ja     1250 <parse(int, char**, Options&)+0x5c0>
+    1060:	48 83 f8 01          	cmp    rax,0x1
+    1064:	0f 84 d6 01 00 00    	je     1240 <parse(int, char**, Options&)+0x5b0>
+    106a:	48 85 c0             	test   rax,rax
+    106d:	0f 85 2d 03 00 00    	jne    13a0 <parse(int, char**, Options&)+0x710>
+    1073:	4c 89 fa             	mov    rdx,r15
+    1076:	48 89 44 24 48       	mov    QWORD PTR [rsp+0x48],rax
+    107b:	48 8d 5c 24 60       	lea    rbx,[rsp+0x60]
+    1080:	c6 04 02 00          	mov    BYTE PTR [rdx+rax*1],0x0
+    1084:	48 89 df             	mov    rdi,rbx
+    1087:	e8 00 00 00 00       	call   108c <parse(int, char**, Options&)+0x3fc>
+    108c:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    1091:	e8 00 00 00 00       	call   1096 <parse(int, char**, Options&)+0x406>
+    1096:	48 8b 44 24 40       	mov    rax,QWORD PTR [rsp+0x40]
+    109b:	48 8b 7d 00          	mov    rdi,QWORD PTR [rbp+0x0]
+    109f:	4c 39 f8             	cmp    rax,r15
+    10a2:	0f 84 e8 01 00 00    	je     1290 <parse(int, char**, Options&)+0x600>
+    10a8:	48 8d 55 10          	lea    rdx,[rbp+0x10]
+    10ac:	48 39 d7             	cmp    rdi,rdx
+    10af:	0f 84 1b 02 00 00    	je     12d0 <parse(int, char**, Options&)+0x640>
+    10b5:	48 89 45 00          	mov    QWORD PTR [rbp+0x0],rax
+    10b9:	48 8b 44 24 48       	mov    rax,QWORD PTR [rsp+0x48]
+    10be:	48 8b 55 10          	mov    rdx,QWORD PTR [rbp+0x10]
+    10c2:	48 89 45 08          	mov    QWORD PTR [rbp+0x8],rax
+    10c6:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+    10cb:	48 89 45 10          	mov    QWORD PTR [rbp+0x10],rax
+    10cf:	48 85 ff             	test   rdi,rdi
+    10d2:	0f 84 0e 02 00 00    	je     12e6 <parse(int, char**, Options&)+0x656>
+    10d8:	48 89 7c 24 40       	mov    QWORD PTR [rsp+0x40],rdi
+    10dd:	48 89 54 24 50       	mov    QWORD PTR [rsp+0x50],rdx
+    10e2:	48 c7 44 24 48 00 00 	mov    QWORD PTR [rsp+0x48],0x0
+    10e9:	00 00 
+    10eb:	c6 07 00             	mov    BYTE PTR [rdi],0x0
+    10ee:	48 8b 44 24 60       	mov    rax,QWORD PTR [rsp+0x60]
+    10f3:	48 c7 44 24 60 00 00 	mov    QWORD PTR [rsp+0x60],0x0
+    10fa:	00 00 
+    10fc:	48 8b 75 20          	mov    rsi,QWORD PTR [rbp+0x20]
+    1100:	48 89 45 20          	mov    QWORD PTR [rbp+0x20],rax
+    1104:	48 85 f6             	test   rsi,rsi
+    1107:	74 09                	je     1112 <parse(int, char**, Options&)+0x482>
+    1109:	48 8d 7d 20          	lea    rdi,[rbp+0x20]
+    110d:	e8 00 00 00 00       	call   1112 <parse(int, char**, Options&)+0x482>
+    1112:	48 8b 44 24 40       	mov    rax,QWORD PTR [rsp+0x40]
+    1117:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    111c:	48 c7 44 24 48 00 00 	mov    QWORD PTR [rsp+0x48],0x0
+    1123:	00 00 
+    1125:	c6 00 00             	mov    BYTE PTR [rax],0x0
+    1128:	e8 00 00 00 00       	call   112d <parse(int, char**, Options&)+0x49d>
+    112d:	48 8b 74 24 60       	mov    rsi,QWORD PTR [rsp+0x60]
+    1132:	48 85 f6             	test   rsi,rsi
+    1135:	74 08                	je     113f <parse(int, char**, Options&)+0x4af>
+    1137:	48 89 df             	mov    rdi,rbx
+    113a:	e8 00 00 00 00       	call   113f <parse(int, char**, Options&)+0x4af>
+    113f:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+    1144:	4c 39 ff             	cmp    rdi,r15
+    1147:	0f 84 4d fd ff ff    	je     e9a <parse(int, char**, Options&)+0x20a>
+    114d:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+    1152:	48 8d 70 01          	lea    rsi,[rax+0x1]
+    1156:	e8 00 00 00 00       	call   115b <parse(int, char**, Options&)+0x4cb>
+    115b:	e9 3a fd ff ff       	jmp    e9a <parse(int, char**, Options&)+0x20a>
+    1160:	ba 0a 00 00 00       	mov    edx,0xa
+    1165:	31 f6                	xor    esi,esi
+    1167:	4c 89 f7             	mov    rdi,r14
+    116a:	e8 00 00 00 00       	call   116f <parse(int, char**, Options&)+0x4df>
+    116f:	89 45 50             	mov    DWORD PTR [rbp+0x50],eax
+    1172:	e9 23 fd ff ff       	jmp    e9a <parse(int, char**, Options&)+0x20a>
+    1177:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    117e:	00 00 
+    1180:	48 8d 74 24 40       	lea    rsi,[rsp+0x40]
+    1185:	31 d2                	xor    edx,edx
+    1187:	48 89 c7             	mov    rdi,rax
+    118a:	e8 00 00 00 00       	call   118f <parse(int, char**, Options&)+0x4ff>
+    118f:	48 89 44 24 70       	mov    QWORD PTR [rsp+0x70],rax
+    1194:	48 89 c7             	mov    rdi,rax
+    1197:	48 8b 44 24 40       	mov    rax,QWORD PTR [rsp+0x40]
+    119c:	48 89 84 24 80 00 00 	mov    QWORD PTR [rsp+0x80],rax
+    11a3:	00 
+    11a4:	4c 89 ea             	mov    rdx,r13
+    11a7:	4c 89 fe             	mov    rsi,r15
+    11aa:	e8 00 00 00 00       	call   11af <parse(int, char**, Options&)+0x51f>
+    11af:	4c 8b 6c 24 40       	mov    r13,QWORD PTR [rsp+0x40]
+    11b4:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+    11b9:	e9 50 fd ff ff       	jmp    f0e <parse(int, char**, Options&)+0x27e>
+    11be:	66 90                	xchg   ax,ax
+    11c0:	48 8b 54 24 78       	mov    rdx,QWORD PTR [rsp+0x78]
+    11c5:	48 85 d2             	test   rdx,rdx
+    11c8:	74 1b                	je     11e5 <parse(int, char**, Options&)+0x555>
+    11ca:	48 83 fa 01          	cmp    rdx,0x1
+    11ce:	0f 84 7c 01 00 00    	je     1350 <parse(int, char**, Options&)+0x6c0>
+    11d4:	4c 89 f6             	mov    rsi,r14
+    11d7:	e8 00 00 00 00       	call   11dc <parse(int, char**, Options&)+0x54c>
+    11dc:	48 8b 54 24 78       	mov    rdx,QWORD PTR [rsp+0x78]
+    11e1:	48 8b 7d 28          	mov    rdi,QWORD PTR [rbp+0x28]
+    11e5:	48 89 55 30          	mov    QWORD PTR [rbp+0x30],rdx
+    11e9:	c6 04 17 00          	mov    BYTE PTR [rdi+rdx*1],0x0
+    11ed:	48 8b 7c 24 70       	mov    rdi,QWORD PTR [rsp+0x70]
+    11f2:	e9 8d fd ff ff       	jmp    f84 <parse(int, char**, Options&)+0x2f4>
+    11f7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    11fe:	00 00 
+    1200:	4c 89 f7             	mov    rdi,r14
+    1203:	eb 9f                	jmp    11a4 <parse(int, char**, Options&)+0x514>
+    1205:	0f 1f 00             	nop    DWORD PTR [rax]
+    1208:	48 89 45 28          	mov    QWORD PTR [rbp+0x28],rax
+    120c:	48 8b 44 24 78       	mov    rax,QWORD PTR [rsp+0x78]
+    1211:	48 89 45 30          	mov    QWORD PTR [rbp+0x30],rax
+    1215:	48 8b 84 24 80 00 00 	mov    rax,QWORD PTR [rsp+0x80]
+    121c:	00 
+    121d:	48 89 45 38          	mov    QWORD PTR [rbp+0x38],rax
+    1221:	4c 89 74 24 70       	mov    QWORD PTR [rsp+0x70],r14
+    1226:	4c 8d b4 24 80 00 00 	lea    r14,[rsp+0x80]
+    122d:	00 
+    122e:	4c 89 f7             	mov    rdi,r14
+    1231:	e9 4e fd ff ff       	jmp    f84 <parse(int, char**, Options&)+0x2f4>
+    1236:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    123d:	00 00 00 
+    1240:	41 0f b6 16          	movzx  edx,BYTE PTR [r14]
+    1244:	88 54 24 50          	mov    BYTE PTR [rsp+0x50],dl
+    1248:	e9 26 fe ff ff       	jmp    1073 <parse(int, char**, Options&)+0x3e3>
+    124d:	0f 1f 00             	nop    DWORD PTR [rax]
+    1250:	48 8d 74 24 70       	lea    rsi,[rsp+0x70]
+    1255:	31 d2                	xor    edx,edx
+    1257:	48 89 cf             	mov    rdi,rcx
+    125a:	e8 00 00 00 00       	call   125f <parse(int, char**, Options&)+0x5cf>
+    125f:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+    1264:	48 89 c7             	mov    rdi,rax
+    1267:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+    126c:	48 89 44 24 50       	mov    QWORD PTR [rsp+0x50],rax
+    1271:	48 89 da             	mov    rdx,rbx
+    1274:	4c 89 f6             	mov    rsi,r14
+    1277:	e8 00 00 00 00       	call   127c <parse(int, char**, Options&)+0x5ec>
+    127c:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+    1281:	48 8b 54 24 40       	mov    rdx,QWORD PTR [rsp+0x40]
+    1286:	e9 eb fd ff ff       	jmp    1076 <parse(int, char**, Options&)+0x3e6>
+    128b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+    1290:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    1295:	48 85 d2             	test   rdx,rdx
+    1298:	74 1b                	je     12b5 <parse(int, char**, Options&)+0x625>
+    129a:	48 83 fa 01          	cmp    rdx,0x1
+    129e:	0f 84 04 01 00 00    	je     13a8 <parse(int, char**, Options&)+0x718>
+    12a4:	4c 89 fe             	mov    rsi,r15
+    12a7:	e8 00 00 00 00       	call   12ac <parse(int, char**, Options&)+0x61c>
+    12ac:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    12b1:	48 8b 7d 00          	mov    rdi,QWORD PTR [rbp+0x0]
+    12b5:	48 89 55 08          	mov    QWORD PTR [rbp+0x8],rdx
+    12b9:	c6 04 17 00          	mov    BYTE PTR [rdi+rdx*1],0x0
+    12bd:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+    12c2:	e9 1b fe ff ff       	jmp    10e2 <parse(int, char**, Options&)+0x452>
+    12c7:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    12ce:	00 00 
+    12d0:	48 89 45 00          	mov    QWORD PTR [rbp+0x0],rax
+    12d4:	48 8b 44 24 48       	mov    rax,QWORD PTR [rsp+0x48]
+    12d9:	48 89 45 08          	mov    QWORD PTR [rbp+0x8],rax
+    12dd:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+    12e2:	48 89 45 10          	mov    QWORD PTR [rbp+0x10],rax
+    12e6:	4c 89 7c 24 40       	mov    QWORD PTR [rsp+0x40],r15
+    12eb:	4c 8d 7c 24 50       	lea    r15,[rsp+0x50]
+    12f0:	4c 89 ff             	mov    rdi,r15
+    12f3:	e9 ea fd ff ff       	jmp    10e2 <parse(int, char**, Options&)+0x452>
+    12f8:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    12ff:	00 
+    1300:	48 83 7d 30 00       	cmp    QWORD PTR [rbp+0x30],0x0
+    1305:	0f 84 a5 fa ff ff    	je     db0 <parse(int, char**, Options&)+0x120>
+    130b:	8b 45 54             	mov    eax,DWORD PTR [rbp+0x54]
+    130e:	85 c0                	test   eax,eax
+    1310:	0f 88 9a fa ff ff    	js     db0 <parse(int, char**, Options&)+0x120>
+    1316:	8b 55 50             	mov    edx,DWORD PTR [rbp+0x50]
+    1319:	b8 01 00 00 00       	mov    eax,0x1
+    131e:	8d 4a fd             	lea    ecx,[rdx-0x3]
+    1321:	83 e1 fd             	and    ecx,0xfffffffd
+    1324:	0f 84 88 fa ff ff    	je     db2 <parse(int, char**, Options&)+0x122>
+    132a:	83 fa 0b             	cmp    edx,0xb
+    132d:	0f 87 7d fa ff ff    	ja     db0 <parse(int, char**, Options&)+0x120>
+    1333:	b8 80 0a 00 00       	mov    eax,0xa80
+    1338:	48 0f a3 d0          	bt     rax,rdx
+    133c:	0f 92 c0             	setb   al
+    133f:	84 c0                	test   al,al
+    1341:	0f 85 6b fa ff ff    	jne    db2 <parse(int, char**, Options&)+0x122>
+    1347:	e9 64 fa ff ff       	jmp    db0 <parse(int, char**, Options&)+0x120>
+    134c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+    1350:	0f b6 84 24 80 00 00 	movzx  eax,BYTE PTR [rsp+0x80]
+    1357:	00 
+    1358:	88 07                	mov    BYTE PTR [rdi],al
+    135a:	48 8b 54 24 78       	mov    rdx,QWORD PTR [rsp+0x78]
+    135f:	48 8b 7d 28          	mov    rdi,QWORD PTR [rbp+0x28]
+    1363:	48 89 55 30          	mov    QWORD PTR [rbp+0x30],rdx
+    1367:	c6 04 17 00          	mov    BYTE PTR [rdi+rdx*1],0x0
+    136b:	48 8b 7c 24 70       	mov    rdi,QWORD PTR [rsp+0x70]
+    1370:	e9 0f fc ff ff       	jmp    f84 <parse(int, char**, Options&)+0x2f4>
+    1375:	0f 1f 00             	nop    DWORD PTR [rax]
+    1378:	4d 39 e7             	cmp    r15,r12
+    137b:	0f 84 2f fa ff ff    	je     db0 <parse(int, char**, Options&)+0x120>
+    1381:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+    1386:	4c 89 ff             	mov    rdi,r15
+    1389:	48 8d 70 01          	lea    rsi,[rax+0x1]
+    138d:	e8 00 00 00 00       	call   1392 <parse(int, char**, Options&)+0x702>
+    1392:	e9 19 fa ff ff       	jmp    db0 <parse(int, char**, Options&)+0x120>
+    1397:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    139e:	00 00 
+    13a0:	4c 89 ff             	mov    rdi,r15
+    13a3:	e9 c9 fe ff ff       	jmp    1271 <parse(int, char**, Options&)+0x5e1>
+    13a8:	0f b6 44 24 50       	movzx  eax,BYTE PTR [rsp+0x50]
+    13ad:	88 07                	mov    BYTE PTR [rdi],al
+    13af:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+    13b4:	48 8b 7d 00          	mov    rdi,QWORD PTR [rbp+0x0]
+    13b8:	48 89 55 08          	mov    QWORD PTR [rbp+0x8],rdx
+    13bc:	c6 04 17 00          	mov    BYTE PTR [rdi+rdx*1],0x0
+    13c0:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+    13c5:	e9 18 fd ff ff       	jmp    10e2 <parse(int, char**, Options&)+0x452>
+    13ca:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 13d1 <parse(int, char**, Options&)+0x741>
+    13d1:	e8 00 00 00 00       	call   13d6 <parse(int, char**, Options&)+0x746>
+    13d6:	48 89 c3             	mov    rbx,rax
+    13d9:	c5 f8 77             	vzeroupper
+    13dc:	e9 00 00 00 00       	jmp    13e1 <parse(int, char**, Options&)+0x751>
+    13e1:	48 89 c3             	mov    rbx,rax
+    13e4:	c5 f8 77             	vzeroupper
+    13e7:	e9 00 00 00 00       	jmp    13ec <parse(int, char**, Options&)+0x75c>
+    13ec:	48 89 c3             	mov    rbx,rax
+    13ef:	e9 00 00 00 00       	jmp    13f4 <parse(int, char**, Options&)+0x764>
+    13f4:	48 89 c5             	mov    rbp,rax
+    13f7:	e9 00 00 00 00       	jmp    13fc <parse(int, char**, Options&)+0x76c>
+    13fc:	48 89 c3             	mov    rbx,rax
+    13ff:	c5 f8 77             	vzeroupper
+    1402:	e9 00 00 00 00       	jmp    1407 <parse(int, char**, Options&)+0x777>
+    1407:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    140e:	00 00 
+
+0000000000001410 <binomial(int)>:
+    1410:	48 63 d6             	movsxd rdx,esi
+    1413:	41 54                	push   r12
+    1415:	48 89 d0             	mov    rax,rdx
+    1418:	55                   	push   rbp
+    1419:	48 c1 e8 3d          	shr    rax,0x3d
+    141d:	53                   	push   rbx
+    141e:	0f 85 92 00 00 00    	jne    14b6 <binomial(int)+0xa6>
+    1424:	48 c7 07 00 00 00 00 	mov    QWORD PTR [rdi],0x0
+    142b:	49 89 fc             	mov    r12,rdi
+    142e:	48 c7 47 08 00 00 00 	mov    QWORD PTR [rdi+0x8],0x0
+    1435:	00 
+    1436:	48 c7 47 10 00 00 00 	mov    QWORD PTR [rdi+0x10],0x0
+    143d:	00 
+    143e:	48 85 d2             	test   rdx,rdx
+    1441:	74 6b                	je     14ae <binomial(int)+0x9e>
+    1443:	48 8d 2c 95 00 00 00 	lea    rbp,[rdx*4+0x0]
+    144a:	00 
+    144b:	48 89 d3             	mov    rbx,rdx
+    144e:	48 89 ef             	mov    rdi,rbp
+    1451:	e8 00 00 00 00       	call   1456 <binomial(int)+0x46>
+    1456:	48 8d 14 28          	lea    rdx,[rax+rbp*1]
+    145a:	49 89 04 24          	mov    QWORD PTR [r12],rax
+    145e:	48 89 c6             	mov    rsi,rax
+    1461:	49 89 54 24 10       	mov    QWORD PTR [r12+0x10],rdx
+    1466:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    146d:	00 00 00 
+    1470:	c7 00 01 00 00 00    	mov    DWORD PTR [rax],0x1
+    1476:	48 83 c0 04          	add    rax,0x4
+    147a:	48 39 d0             	cmp    rax,rdx
+    147d:	75 f1                	jne    1470 <binomial(int)+0x60>
+    147f:	49 89 44 24 08       	mov    QWORD PTR [r12+0x8],rax
+    1484:	83 fb 02             	cmp    ebx,0x2
+    1487:	7e 25                	jle    14ae <binomial(int)+0x9e>
+    1489:	8b 06                	mov    eax,DWORD PTR [rsi]
+    148b:	8d 7b ff             	lea    edi,[rbx-0x1]
+    148e:	b9 01 00 00 00       	mov    ecx,0x1
+    1493:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+    1498:	89 da                	mov    edx,ebx
+    149a:	29 ca                	sub    edx,ecx
+    149c:	0f af c2             	imul   eax,edx
+    149f:	31 d2                	xor    edx,edx
+    14a1:	f7 f1                	div    ecx
+    14a3:	89 04 8e             	mov    DWORD PTR [rsi+rcx*4],eax
+    14a6:	48 ff c1             	inc    rcx
+    14a9:	48 39 cf             	cmp    rdi,rcx
+    14ac:	75 ea                	jne    1498 <binomial(int)+0x88>
+    14ae:	4c 89 e0             	mov    rax,r12
+    14b1:	5b                   	pop    rbx
+    14b2:	5d                   	pop    rbp
+    14b3:	41 5c                	pop    r12
+    14b5:	c3                   	ret
+    14b6:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 14bd <binomial(int)+0xad>
+    14bd:	e8 00 00 00 00       	call   14c2 <binomial(int)+0xb2>
+    14c2:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    14c9:	00 00 00 00 
+    14cd:	0f 1f 00             	nop    DWORD PTR [rax]
+
+00000000000014d0 <hash_bytes(unsigned char const*, unsigned long)>:
+    14d0:	48 b8 83 03 9d 73 b0 	movabs rax,0x14650fb0739d0383
+    14d7:	0f 65 14 
+    14da:	48 85 f6             	test   rsi,rsi
+    14dd:	74 23                	je     1502 <hash_bytes(unsigned char const*, unsigned long)+0x32>
+    14df:	48 b9 b3 01 00 00 00 	movabs rcx,0x100000001b3
+    14e6:	01 00 00 
+    14e9:	48 01 fe             	add    rsi,rdi
+    14ec:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+    14f0:	0f b6 17             	movzx  edx,BYTE PTR [rdi]
+    14f3:	48 ff c7             	inc    rdi
+    14f6:	48 31 d0             	xor    rax,rdx
+    14f9:	48 0f af c1          	imul   rax,rcx
+    14fd:	48 39 fe             	cmp    rsi,rdi
+    1500:	75 ee                	jne    14f0 <hash_bytes(unsigned char const*, unsigned long)+0x20>
+    1502:	c3                   	ret
+    1503:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    150a:	00 00 00 00 
+    150e:	66 90                	xchg   ax,ax
+
+0000000000001510 <unpack(unsigned char const*, Planes&, int, int)>:
+    1510:	48 83 ec 28          	sub    rsp,0x28
+    1514:	89 4c 24 14          	mov    DWORD PTR [rsp+0x14],ecx
+    1518:	31 c9                	xor    ecx,ecx
+    151a:	89 54 24 10          	mov    DWORD PTR [rsp+0x10],edx
+    151e:	31 d2                	xor    edx,edx
+    1520:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+    1524:	48 8d 3d d5 ea ff ff 	lea    rdi,[rip+0xffffffffffffead5]        # 0 <unpack(unsigned char const*, Planes&, int, int) [clone ._omp_fn.0]>
+    152b:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+    1530:	48 89 e6             	mov    rsi,rsp
+    1533:	e8 00 00 00 00       	call   1538 <unpack(unsigned char const*, Planes&, int, int)+0x28>
+    1538:	48 83 c4 28          	add    rsp,0x28
+    153c:	c3                   	ret
+    153d:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000001540 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    1540:	55                   	push   rbp
+    1541:	41 89 ca             	mov    r10d,ecx
+    1544:	49 89 f1             	mov    r9,rsi
+    1547:	89 d6                	mov    esi,edx
+    1549:	53                   	push   rbx
+    154a:	89 f3                	mov    ebx,esi
+    154c:	48 83 ec 38          	sub    rsp,0x38
+    1550:	49 8b 68 08          	mov    rbp,QWORD PTR [r8+0x8]
+    1554:	49 8b 00             	mov    rax,QWORD PTR [r8]
+    1557:	48 89 e9             	mov    rcx,rbp
+    155a:	48 29 c1             	sub    rcx,rax
+    155d:	48 c1 f9 02          	sar    rcx,0x2
+    1561:	89 ca                	mov    edx,ecx
+    1563:	c1 ea 1f             	shr    edx,0x1f
+    1566:	01 ca                	add    edx,ecx
+    1568:	41 89 d3             	mov    r11d,edx
+    156b:	83 e2 fe             	and    edx,0xfffffffe
+    156e:	41 d1 fb             	sar    r11d,1
+    1571:	29 d3                	sub    ebx,edx
+    1573:	48 39 c5             	cmp    rbp,rax
+    1576:	74 68                	je     15e0 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0xa0>
+    1578:	48 89 c2             	mov    rdx,rax
+    157b:	31 c9                	xor    ecx,ecx
+    157d:	0f 1f 00             	nop    DWORD PTR [rax]
+    1580:	03 0a                	add    ecx,DWORD PTR [rdx]
+    1582:	48 83 c2 04          	add    rdx,0x4
+    1586:	48 39 ea             	cmp    rdx,rbp
+    1589:	75 f5                	jne    1580 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x40>
+    158b:	31 d2                	xor    edx,edx
+    158d:	0f 1f 00             	nop    DWORD PTR [rax]
+    1590:	03 10                	add    edx,DWORD PTR [rax]
+    1592:	48 83 c0 04          	add    rax,0x4
+    1596:	48 39 c5             	cmp    rbp,rax
+    1599:	75 f5                	jne    1590 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x50>
+    159b:	48 0f af d1          	imul   rdx,rcx
+    159f:	48 89 54 24 18       	mov    QWORD PTR [rsp+0x18],rdx
+    15a4:	31 c9                	xor    ecx,ecx
+    15a6:	31 d2                	xor    edx,edx
+    15a8:	89 74 24 20          	mov    DWORD PTR [rsp+0x20],esi
+    15ac:	48 89 e6             	mov    rsi,rsp
+    15af:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+    15b3:	48 8d 3d 56 eb ff ff 	lea    rdi,[rip+0xffffffffffffeb56]        # 110 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    15ba:	89 5c 24 2c          	mov    DWORD PTR [rsp+0x2c],ebx
+    15be:	44 89 5c 24 28       	mov    DWORD PTR [rsp+0x28],r11d
+    15c3:	44 89 54 24 24       	mov    DWORD PTR [rsp+0x24],r10d
+    15c8:	4c 89 4c 24 08       	mov    QWORD PTR [rsp+0x8],r9
+    15cd:	4c 89 44 24 10       	mov    QWORD PTR [rsp+0x10],r8
+    15d2:	e8 00 00 00 00       	call   15d7 <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x97>
+    15d7:	48 83 c4 38          	add    rsp,0x38
+    15db:	5b                   	pop    rbx
+    15dc:	5d                   	pop    rbp
+    15dd:	c3                   	ret
+    15de:	66 90                	xchg   ax,ax
+    15e0:	31 d2                	xor    edx,edx
+    15e2:	eb bb                	jmp    159f <direct(unsigned char const*, unsigned char*, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x5f>
+    15e4:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    15eb:	00 00 00 00 
+    15ef:	90                   	nop
+
+00000000000015f0 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    15f0:	48 83 ec 38          	sub    rsp,0x38
+    15f4:	49 8b 40 08          	mov    rax,QWORD PTR [r8+0x8]
+    15f8:	49 2b 00             	sub    rax,QWORD PTR [r8]
+    15fb:	41 89 c9             	mov    r9d,ecx
+    15fe:	48 c1 f8 02          	sar    rax,0x2
+    1602:	89 d1                	mov    ecx,edx
+    1604:	89 54 24 18          	mov    DWORD PTR [rsp+0x18],edx
+    1608:	31 d2                	xor    edx,edx
+    160a:	29 c1                	sub    ecx,eax
+    160c:	48 89 3c 24          	mov    QWORD PTR [rsp],rdi
+    1610:	48 8d 3d 79 ee ff ff 	lea    rdi,[rip+0xffffffffffffee79]        # 490 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    1617:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+    161c:	8d 41 01             	lea    eax,[rcx+0x1]
+    161f:	48 89 e6             	mov    rsi,rsp
+    1622:	31 c9                	xor    ecx,ecx
+    1624:	89 44 24 20          	mov    DWORD PTR [rsp+0x20],eax
+    1628:	44 89 4c 24 1c       	mov    DWORD PTR [rsp+0x1c],r9d
+    162d:	4c 89 44 24 10       	mov    QWORD PTR [rsp+0x10],r8
+    1632:	e8 00 00 00 00       	call   1637 <horizontal(std::vector<unsigned char, std::allocator<unsigned char> > const&, std::vector<unsigned int, std::allocator<unsigned int> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x47>
+    1637:	48 83 c4 38          	add    rsp,0x38
+    163b:	c3                   	ret
+    163c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000001640 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)>:
+    1640:	48 83 ec 38          	sub    rsp,0x38
+    1644:	49 89 fa             	mov    r10,rdi
+    1647:	49 8b 00             	mov    rax,QWORD PTR [r8]
+    164a:	49 8b 78 08          	mov    rdi,QWORD PTR [r8+0x8]
+    164e:	49 89 f1             	mov    r9,rsi
+    1651:	48 39 f8             	cmp    rax,rdi
+    1654:	74 52                	je     16a8 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x68>
+    1656:	31 f6                	xor    esi,esi
+    1658:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    165f:	00 
+    1660:	03 30                	add    esi,DWORD PTR [rax]
+    1662:	48 83 c0 04          	add    rax,0x4
+    1666:	48 39 c7             	cmp    rdi,rax
+    1669:	75 f5                	jne    1660 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x20>
+    166b:	48 0f af f6          	imul   rsi,rsi
+    166f:	48 89 74 24 18       	mov    QWORD PTR [rsp+0x18],rsi
+    1674:	48 8d 3d 85 ef ff ff 	lea    rdi,[rip+0xffffffffffffef85]        # 600 <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&) [clone ._omp_fn.0]>
+    167b:	48 89 e6             	mov    rsi,rsp
+    167e:	89 4c 24 24          	mov    DWORD PTR [rsp+0x24],ecx
+    1682:	31 c9                	xor    ecx,ecx
+    1684:	89 54 24 20          	mov    DWORD PTR [rsp+0x20],edx
+    1688:	31 d2                	xor    edx,edx
+    168a:	4c 89 14 24          	mov    QWORD PTR [rsp],r10
+    168e:	4c 89 4c 24 08       	mov    QWORD PTR [rsp+0x8],r9
+    1693:	4c 89 44 24 10       	mov    QWORD PTR [rsp+0x10],r8
+    1698:	e8 00 00 00 00       	call   169d <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x5d>
+    169d:	48 83 c4 38          	add    rsp,0x38
+    16a1:	c3                   	ret
+    16a2:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    16a8:	31 f6                	xor    esi,esi
+    16aa:	eb c3                	jmp    166f <vertical(std::vector<unsigned int, std::allocator<unsigned int> > const&, std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, std::vector<unsigned int, std::allocator<unsigned int> > const&)+0x2f>
+
+Disassembly of section .text._ZNSt10filesystem7__cxx114pathD2Ev:
+
+0000000000000000 <std::filesystem::__cxx11::path::~path()>:
+   0:	53                   	push   rbx
+   1:	48 8b 77 20          	mov    rsi,QWORD PTR [rdi+0x20]
+   5:	48 89 fb             	mov    rbx,rdi
+   8:	48 85 f6             	test   rsi,rsi
+   b:	74 09                	je     16 <std::filesystem::__cxx11::path::~path()+0x16>
+   d:	48 8d 7f 20          	lea    rdi,[rdi+0x20]
+  11:	e8 00 00 00 00       	call   16 <std::filesystem::__cxx11::path::~path()+0x16>
+  16:	48 8b 3b             	mov    rdi,QWORD PTR [rbx]
+  19:	48 8d 43 10          	lea    rax,[rbx+0x10]
+  1d:	48 39 c7             	cmp    rdi,rax
+  20:	74 0e                	je     30 <std::filesystem::__cxx11::path::~path()+0x30>
+  22:	48 8b 73 10          	mov    rsi,QWORD PTR [rbx+0x10]
+  26:	5b                   	pop    rbx
+  27:	48 ff c6             	inc    rsi
+  2a:	e9 00 00 00 00       	jmp    2f <std::filesystem::__cxx11::path::~path()+0x2f>
+  2f:	90                   	nop
+  30:	5b                   	pop    rbx
+  31:	c3                   	ret
+
+Disassembly of section .text.unlikely:
+
+0000000000000000 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]>:
+   0:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+   5:	48 8d 44 24 30       	lea    rax,[rsp+0x30]
+   a:	48 39 c7             	cmp    rdi,rax
+   d:	74 4b                	je     5a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x5a>
+   f:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+  14:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  18:	c5 f8 77             	vzeroupper
+  1b:	e8 00 00 00 00       	call   20 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x20>
+  20:	48 89 df             	mov    rdi,rbx
+  23:	e8 00 00 00 00       	call   28 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x28>
+  28:	48 89 ef             	mov    rdi,rbp
+  2b:	e8 00 00 00 00       	call   30 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x30>
+  30:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+  35:	4c 39 f7             	cmp    rdi,r14
+  38:	75 25                	jne    5f <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x5f>
+  3a:	c5 f8 77             	vzeroupper
+  3d:	48 89 df             	mov    rdi,rbx
+  40:	e8 00 00 00 00       	call   45 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x45>
+  45:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+  4a:	4c 39 f7             	cmp    rdi,r14
+  4d:	75 23                	jne    72 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x72>
+  4f:	c5 f8 77             	vzeroupper
+  52:	48 89 df             	mov    rdi,rbx
+  55:	e8 00 00 00 00       	call   5a <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x5a>
+  5a:	c5 f8 77             	vzeroupper
+  5d:	eb c1                	jmp    20 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x20>
+  5f:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+  64:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  68:	c5 f8 77             	vzeroupper
+  6b:	e8 00 00 00 00       	call   70 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x70>
+  70:	eb cb                	jmp    3d <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x3d>
+  72:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+  77:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  7b:	c5 f8 77             	vzeroupper
+  7e:	e8 00 00 00 00       	call   83 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x83>
+  83:	eb cd                	jmp    52 <main::{lambda(char const*, double)#5}::operator()(char const*, double) const [clone .cold]+0x52>
+
+0000000000000085 <parse(int, char**, Options&) [clone .cold]>:
+  85:	48 8b 74 24 60       	mov    rsi,QWORD PTR [rsp+0x60]
+  8a:	48 85 f6             	test   rsi,rsi
+  8d:	75 78                	jne    107 <parse(int, char**, Options&) [clone .cold]+0x82>
+  8f:	c5 f8 77             	vzeroupper
+  92:	48 89 eb             	mov    rbx,rbp
+  95:	48 8b 7c 24 40       	mov    rdi,QWORD PTR [rsp+0x40]
+  9a:	4c 39 ff             	cmp    rdi,r15
+  9d:	74 0e                	je     ad <parse(int, char**, Options&) [clone .cold]+0x28>
+  9f:	48 8b 44 24 50       	mov    rax,QWORD PTR [rsp+0x50]
+  a4:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  a8:	e8 00 00 00 00       	call   ad <parse(int, char**, Options&) [clone .cold]+0x28>
+  ad:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+  b2:	4c 39 e7             	cmp    rdi,r12
+  b5:	74 0e                	je     c5 <parse(int, char**, Options&) [clone .cold]+0x40>
+  b7:	48 8b 44 24 30       	mov    rax,QWORD PTR [rsp+0x30]
+  bc:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  c0:	e8 00 00 00 00       	call   c5 <parse(int, char**, Options&) [clone .cold]+0x40>
+  c5:	48 89 df             	mov    rdi,rbx
+  c8:	e8 00 00 00 00       	call   cd <parse(int, char**, Options&) [clone .cold]+0x48>
+  cd:	48 8b b4 24 90 00 00 	mov    rsi,QWORD PTR [rsp+0x90]
+  d4:	00 
+  d5:	48 85 f6             	test   rsi,rsi
+  d8:	74 28                	je     102 <parse(int, char**, Options&) [clone .cold]+0x7d>
+  da:	4c 89 ef             	mov    rdi,r13
+  dd:	c5 f8 77             	vzeroupper
+  e0:	e8 00 00 00 00       	call   e5 <parse(int, char**, Options&) [clone .cold]+0x60>
+  e5:	48 8b 7c 24 70       	mov    rdi,QWORD PTR [rsp+0x70]
+  ea:	4c 39 f7             	cmp    rdi,r14
+  ed:	74 be                	je     ad <parse(int, char**, Options&) [clone .cold]+0x28>
+  ef:	48 8b 84 24 80 00 00 	mov    rax,QWORD PTR [rsp+0x80]
+  f6:	00 
+  f7:	48 8d 70 01          	lea    rsi,[rax+0x1]
+  fb:	e8 00 00 00 00       	call   100 <parse(int, char**, Options&) [clone .cold]+0x7b>
+ 100:	eb ab                	jmp    ad <parse(int, char**, Options&) [clone .cold]+0x28>
+ 102:	c5 f8 77             	vzeroupper
+ 105:	eb de                	jmp    e5 <parse(int, char**, Options&) [clone .cold]+0x60>
+ 107:	48 89 df             	mov    rdi,rbx
+ 10a:	c5 f8 77             	vzeroupper
+ 10d:	e8 00 00 00 00       	call   112 <parse(int, char**, Options&) [clone .cold]+0x8d>
+ 112:	e9 7b ff ff ff       	jmp    92 <parse(int, char**, Options&) [clone .cold]+0xd>
+
+0000000000000117 <main.cold>:
+ 117:	48 89 df             	mov    rdi,rbx
+ 11a:	c5 f8 77             	vzeroupper
+ 11d:	4c 89 e3             	mov    rbx,r12
+ 120:	e8 00 00 00 00       	call   125 <main.cold+0xe>
+ 125:	48 8b bc 24 20 01 00 	mov    rdi,QWORD PTR [rsp+0x120]
+ 12c:	00 
+ 12d:	48 8b b4 24 30 01 00 	mov    rsi,QWORD PTR [rsp+0x130]
+ 134:	00 
+ 135:	48 29 fe             	sub    rsi,rdi
+ 138:	48 85 ff             	test   rdi,rdi
+ 13b:	74 05                	je     142 <main.cold+0x2b>
+ 13d:	e8 00 00 00 00       	call   142 <main.cold+0x2b>
+ 142:	48 8b bc 24 00 01 00 	mov    rdi,QWORD PTR [rsp+0x100]
+ 149:	00 
+ 14a:	48 8b b4 24 10 01 00 	mov    rsi,QWORD PTR [rsp+0x110]
+ 151:	00 
+ 152:	48 29 fe             	sub    rsi,rdi
+ 155:	48 85 ff             	test   rdi,rdi
+ 158:	74 05                	je     15f <main.cold+0x48>
+ 15a:	e8 00 00 00 00       	call   15f <main.cold+0x48>
+ 15f:	48 8b 7c 24 30       	mov    rdi,QWORD PTR [rsp+0x30]
+ 164:	e8 00 00 00 00       	call   169 <main.cold+0x52>
+ 169:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+ 16e:	e8 00 00 00 00       	call   173 <main.cold+0x5c>
+ 173:	48 8b bc 24 e0 00 00 	mov    rdi,QWORD PTR [rsp+0xe0]
+ 17a:	00 
+ 17b:	48 8b b4 24 f0 00 00 	mov    rsi,QWORD PTR [rsp+0xf0]
+ 182:	00 
+ 183:	48 29 fe             	sub    rsi,rdi
+ 186:	48 85 ff             	test   rdi,rdi
+ 189:	74 05                	je     190 <main.cold+0x79>
+ 18b:	e8 00 00 00 00       	call   190 <main.cold+0x79>
+ 190:	48 8b bc 24 c0 00 00 	mov    rdi,QWORD PTR [rsp+0xc0]
+ 197:	00 
+ 198:	48 8b b4 24 d0 00 00 	mov    rsi,QWORD PTR [rsp+0xd0]
+ 19f:	00 
+ 1a0:	48 29 fe             	sub    rsi,rdi
+ 1a3:	48 85 ff             	test   rdi,rdi
+ 1a6:	74 05                	je     1ad <main.cold+0x96>
+ 1a8:	e8 00 00 00 00       	call   1ad <main.cold+0x96>
+ 1ad:	48 83 7c 24 50 00    	cmp    QWORD PTR [rsp+0x50],0x0
+ 1b3:	74 0f                	je     1c4 <main.cold+0xad>
+ 1b5:	48 8b 74 24 48       	mov    rsi,QWORD PTR [rsp+0x48]
+ 1ba:	48 8b 7c 24 50       	mov    rdi,QWORD PTR [rsp+0x50]
+ 1bf:	e8 00 00 00 00       	call   1c4 <main.cold+0xad>
+ 1c4:	48 89 ef             	mov    rdi,rbp
+ 1c7:	e8 00 00 00 00       	call   1cc <main.cold+0xb5>
+ 1cc:	48 8b 7c 24 28       	mov    rdi,QWORD PTR [rsp+0x28]
+ 1d1:	e8 00 00 00 00       	call   1d6 <main.cold+0xbf>
+ 1d6:	48 89 df             	mov    rdi,rbx
+ 1d9:	e8 00 00 00 00       	call   1de <main.cold+0xc7>
+ 1de:	48 8b bc 24 60 02 00 	mov    rdi,QWORD PTR [rsp+0x260]
+ 1e5:	00 
+ 1e6:	48 8d 84 24 70 02 00 	lea    rax,[rsp+0x270]
+ 1ed:	00 
+ 1ee:	48 39 c7             	cmp    rdi,rax
+ 1f1:	74 1e                	je     211 <main.cold+0xfa>
+ 1f3:	48 8b 84 24 70 02 00 	mov    rax,QWORD PTR [rsp+0x270]
+ 1fa:	00 
+ 1fb:	48 8d 70 01          	lea    rsi,[rax+0x1]
+ 1ff:	c5 f8 77             	vzeroupper
+ 202:	e8 00 00 00 00       	call   207 <main.cold+0xf0>
+ 207:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 20e:	00 
+ 20f:	eb b3                	jmp    1c4 <main.cold+0xad>
+ 211:	c5 f8 77             	vzeroupper
+ 214:	eb f1                	jmp    207 <main.cold+0xf0>
+
+Disassembly of section .text._ZN6PlanesC2Em:
+
+0000000000000000 <Planes::Planes(unsigned long)>:
+   0:	41 55                	push   r13
+   2:	41 54                	push   r12
+   4:	55                   	push   rbp
+   5:	53                   	push   rbx
+   6:	48 83 ec 08          	sub    rsp,0x8
+   a:	48 85 f6             	test   rsi,rsi
+   d:	0f 88 80 01 00 00    	js     193 <Planes::Planes(unsigned long)+0x193>
+  13:	48 c7 07 00 00 00 00 	mov    QWORD PTR [rdi],0x0
+  1a:	48 89 fb             	mov    rbx,rdi
+  1d:	48 c7 47 08 00 00 00 	mov    QWORD PTR [rdi+0x8],0x0
+  24:	00 
+  25:	48 c7 47 10 00 00 00 	mov    QWORD PTR [rdi+0x10],0x0
+  2c:	00 
+  2d:	0f 84 f5 00 00 00    	je     128 <Planes::Planes(unsigned long)+0x128>
+  33:	48 89 f7             	mov    rdi,rsi
+  36:	48 89 f5             	mov    rbp,rsi
+  39:	e8 00 00 00 00       	call   3e <Planes::Planes(unsigned long)+0x3e>
+  3e:	49 89 ec             	mov    r12,rbp
+  41:	4c 8d 2c 28          	lea    r13,[rax+rbp*1]
+  45:	48 89 03             	mov    QWORD PTR [rbx],rax
+  48:	48 8d 78 01          	lea    rdi,[rax+0x1]
+  4c:	4c 89 6b 10          	mov    QWORD PTR [rbx+0x10],r13
+  50:	c6 00 00             	mov    BYTE PTR [rax],0x0
+  53:	49 ff cc             	dec    r12
+  56:	0f 85 9c 00 00 00    	jne    f8 <Planes::Planes(unsigned long)+0xf8>
+  5c:	48 89 7b 08          	mov    QWORD PTR [rbx+0x8],rdi
+  60:	48 c7 43 18 00 00 00 	mov    QWORD PTR [rbx+0x18],0x0
+  67:	00 
+  68:	48 c7 43 20 00 00 00 	mov    QWORD PTR [rbx+0x20],0x0
+  6f:	00 
+  70:	48 c7 43 28 00 00 00 	mov    QWORD PTR [rbx+0x28],0x0
+  77:	00 
+  78:	48 89 ef             	mov    rdi,rbp
+  7b:	e8 00 00 00 00       	call   80 <Planes::Planes(unsigned long)+0x80>
+  80:	4c 8d 2c 28          	lea    r13,[rax+rbp*1]
+  84:	48 89 43 18          	mov    QWORD PTR [rbx+0x18],rax
+  88:	48 8d 78 01          	lea    rdi,[rax+0x1]
+  8c:	4c 89 6b 28          	mov    QWORD PTR [rbx+0x28],r13
+  90:	c6 00 00             	mov    BYTE PTR [rax],0x0
+  93:	4d 85 e4             	test   r12,r12
+  96:	0f 85 cc 00 00 00    	jne    168 <Planes::Planes(unsigned long)+0x168>
+  9c:	48 89 7b 20          	mov    QWORD PTR [rbx+0x20],rdi
+  a0:	48 c7 43 30 00 00 00 	mov    QWORD PTR [rbx+0x30],0x0
+  a7:	00 
+  a8:	48 c7 43 38 00 00 00 	mov    QWORD PTR [rbx+0x38],0x0
+  af:	00 
+  b0:	48 c7 43 40 00 00 00 	mov    QWORD PTR [rbx+0x40],0x0
+  b7:	00 
+  b8:	48 89 ef             	mov    rdi,rbp
+  bb:	e8 00 00 00 00       	call   c0 <Planes::Planes(unsigned long)+0xc0>
+  c0:	48 01 c5             	add    rbp,rax
+  c3:	48 89 43 30          	mov    QWORD PTR [rbx+0x30],rax
+  c7:	48 8d 78 01          	lea    rdi,[rax+0x1]
+  cb:	48 89 6b 40          	mov    QWORD PTR [rbx+0x40],rbp
+  cf:	c6 00 00             	mov    BYTE PTR [rax],0x0
+  d2:	4d 85 e4             	test   r12,r12
+  d5:	74 0d                	je     e4 <Planes::Planes(unsigned long)+0xe4>
+  d7:	4c 89 e2             	mov    rdx,r12
+  da:	31 f6                	xor    esi,esi
+  dc:	e8 00 00 00 00       	call   e1 <Planes::Planes(unsigned long)+0xe1>
+  e1:	48 89 ef             	mov    rdi,rbp
+  e4:	48 89 7b 38          	mov    QWORD PTR [rbx+0x38],rdi
+  e8:	48 83 c4 08          	add    rsp,0x8
+  ec:	5b                   	pop    rbx
+  ed:	5d                   	pop    rbp
+  ee:	41 5c                	pop    r12
+  f0:	41 5d                	pop    r13
+  f2:	c3                   	ret
+  f3:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+  f8:	4c 89 e2             	mov    rdx,r12
+  fb:	31 f6                	xor    esi,esi
+  fd:	e8 00 00 00 00       	call   102 <Planes::Planes(unsigned long)+0x102>
+ 102:	4c 89 6b 08          	mov    QWORD PTR [rbx+0x8],r13
+ 106:	48 c7 43 18 00 00 00 	mov    QWORD PTR [rbx+0x18],0x0
+ 10d:	00 
+ 10e:	48 c7 43 20 00 00 00 	mov    QWORD PTR [rbx+0x20],0x0
+ 115:	00 
+ 116:	48 c7 43 28 00 00 00 	mov    QWORD PTR [rbx+0x28],0x0
+ 11d:	00 
+ 11e:	e9 55 ff ff ff       	jmp    78 <Planes::Planes(unsigned long)+0x78>
+ 123:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+ 128:	48 c7 47 18 00 00 00 	mov    QWORD PTR [rdi+0x18],0x0
+ 12f:	00 
+ 130:	48 c7 47 28 00 00 00 	mov    QWORD PTR [rdi+0x28],0x0
+ 137:	00 
+ 138:	48 c7 47 20 00 00 00 	mov    QWORD PTR [rdi+0x20],0x0
+ 13f:	00 
+ 140:	48 c7 47 30 00 00 00 	mov    QWORD PTR [rdi+0x30],0x0
+ 147:	00 
+ 148:	48 c7 47 40 00 00 00 	mov    QWORD PTR [rdi+0x40],0x0
+ 14f:	00 
+ 150:	31 ff                	xor    edi,edi
+ 152:	48 89 7b 38          	mov    QWORD PTR [rbx+0x38],rdi
+ 156:	48 83 c4 08          	add    rsp,0x8
+ 15a:	5b                   	pop    rbx
+ 15b:	5d                   	pop    rbp
+ 15c:	41 5c                	pop    r12
+ 15e:	41 5d                	pop    r13
+ 160:	c3                   	ret
+ 161:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+ 168:	4c 89 e2             	mov    rdx,r12
+ 16b:	31 f6                	xor    esi,esi
+ 16d:	e8 00 00 00 00       	call   172 <Planes::Planes(unsigned long)+0x172>
+ 172:	4c 89 6b 20          	mov    QWORD PTR [rbx+0x20],r13
+ 176:	48 c7 43 30 00 00 00 	mov    QWORD PTR [rbx+0x30],0x0
+ 17d:	00 
+ 17e:	48 c7 43 38 00 00 00 	mov    QWORD PTR [rbx+0x38],0x0
+ 185:	00 
+ 186:	48 c7 43 40 00 00 00 	mov    QWORD PTR [rbx+0x40],0x0
+ 18d:	00 
+ 18e:	e9 25 ff ff ff       	jmp    b8 <Planes::Planes(unsigned long)+0xb8>
+ 193:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 19a <Planes::Planes(unsigned long)+0x19a>
+ 19a:	e8 00 00 00 00       	call   19f <Planes::Planes(unsigned long)+0x19f>
+ 19f:	48 89 c5             	mov    rbp,rax
+ 1a2:	eb 1b                	jmp    1bf <Planes::Planes(unsigned long)+0x1bf>
+ 1a4:	48 89 c5             	mov    rbp,rax
+ 1a7:	48 8b 7b 18          	mov    rdi,QWORD PTR [rbx+0x18]
+ 1ab:	48 8b 73 28          	mov    rsi,QWORD PTR [rbx+0x28]
+ 1af:	48 29 fe             	sub    rsi,rdi
+ 1b2:	48 85 ff             	test   rdi,rdi
+ 1b5:	74 08                	je     1bf <Planes::Planes(unsigned long)+0x1bf>
+ 1b7:	c5 f8 77             	vzeroupper
+ 1ba:	e8 00 00 00 00       	call   1bf <Planes::Planes(unsigned long)+0x1bf>
+ 1bf:	48 8b 3b             	mov    rdi,QWORD PTR [rbx]
+ 1c2:	48 8b 73 10          	mov    rsi,QWORD PTR [rbx+0x10]
+ 1c6:	48 29 fe             	sub    rsi,rdi
+ 1c9:	48 85 ff             	test   rdi,rdi
+ 1cc:	75 0b                	jne    1d9 <Planes::Planes(unsigned long)+0x1d9>
+ 1ce:	c5 f8 77             	vzeroupper
+ 1d1:	48 89 ef             	mov    rdi,rbp
+ 1d4:	e8 00 00 00 00       	call   1d9 <Planes::Planes(unsigned long)+0x1d9>
+ 1d9:	c5 f8 77             	vzeroupper
+ 1dc:	e8 00 00 00 00       	call   1e1 <Planes::Planes(unsigned long)+0x1e1>
+ 1e1:	eb ee                	jmp    1d1 <Planes::Planes(unsigned long)+0x1d1>
+
+Disassembly of section .text._ZN6PlanesD2Ev:
+
+0000000000000000 <Planes::~Planes()>:
+   0:	53                   	push   rbx
+   1:	48 89 fb             	mov    rbx,rdi
+   4:	48 8b 7f 30          	mov    rdi,QWORD PTR [rdi+0x30]
+   8:	48 85 ff             	test   rdi,rdi
+   b:	74 0c                	je     19 <Planes::~Planes()+0x19>
+   d:	48 8b 73 40          	mov    rsi,QWORD PTR [rbx+0x40]
+  11:	48 29 fe             	sub    rsi,rdi
+  14:	e8 00 00 00 00       	call   19 <Planes::~Planes()+0x19>
+  19:	48 8b 7b 18          	mov    rdi,QWORD PTR [rbx+0x18]
+  1d:	48 85 ff             	test   rdi,rdi
+  20:	74 0c                	je     2e <Planes::~Planes()+0x2e>
+  22:	48 8b 73 28          	mov    rsi,QWORD PTR [rbx+0x28]
+  26:	48 29 fe             	sub    rsi,rdi
+  29:	e8 00 00 00 00       	call   2e <Planes::~Planes()+0x2e>
+  2e:	48 8b 3b             	mov    rdi,QWORD PTR [rbx]
+  31:	48 85 ff             	test   rdi,rdi
+  34:	74 12                	je     48 <Planes::~Planes()+0x48>
+  36:	48 8b 73 10          	mov    rsi,QWORD PTR [rbx+0x10]
+  3a:	5b                   	pop    rbx
+  3b:	48 29 fe             	sub    rsi,rdi
+  3e:	e9 00 00 00 00       	jmp    43 <Planes::~Planes()+0x43>
+  43:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+  48:	5b                   	pop    rbx
+  49:	c3                   	ret
+
+Disassembly of section .text._ZNSt6vectorIhSaIhEEC2EmRKS0_:
+
+0000000000000000 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)>:
+   0:	41 54                	push   r12
+   2:	55                   	push   rbp
+   3:	53                   	push   rbx
+   4:	48 85 f6             	test   rsi,rsi
+   7:	78 72                	js     7b <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x7b>
+   9:	48 c7 07 00 00 00 00 	mov    QWORD PTR [rdi],0x0
+  10:	48 89 fb             	mov    rbx,rdi
+  13:	48 c7 47 08 00 00 00 	mov    QWORD PTR [rdi+0x8],0x0
+  1a:	00 
+  1b:	48 c7 47 10 00 00 00 	mov    QWORD PTR [rdi+0x10],0x0
+  22:	00 
+  23:	74 4b                	je     70 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x70>
+  25:	48 89 f7             	mov    rdi,rsi
+  28:	48 89 f5             	mov    rbp,rsi
+  2b:	e8 00 00 00 00       	call   30 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x30>
+  30:	4c 8d 24 28          	lea    r12,[rax+rbp*1]
+  34:	48 89 03             	mov    QWORD PTR [rbx],rax
+  37:	48 8d 78 01          	lea    rdi,[rax+0x1]
+  3b:	4c 89 63 10          	mov    QWORD PTR [rbx+0x10],r12
+  3f:	c6 00 00             	mov    BYTE PTR [rax],0x0
+  42:	48 ff cd             	dec    rbp
+  45:	75 09                	jne    50 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x50>
+  47:	48 89 7b 08          	mov    QWORD PTR [rbx+0x8],rdi
+  4b:	5b                   	pop    rbx
+  4c:	5d                   	pop    rbp
+  4d:	41 5c                	pop    r12
+  4f:	c3                   	ret
+  50:	48 89 ea             	mov    rdx,rbp
+  53:	31 f6                	xor    esi,esi
+  55:	e8 00 00 00 00       	call   5a <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x5a>
+  5a:	4c 89 e7             	mov    rdi,r12
+  5d:	48 89 7b 08          	mov    QWORD PTR [rbx+0x8],rdi
+  61:	5b                   	pop    rbx
+  62:	5d                   	pop    rbp
+  63:	41 5c                	pop    r12
+  65:	c3                   	ret
+  66:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+  6d:	00 00 00 
+  70:	31 ff                	xor    edi,edi
+  72:	48 89 7b 08          	mov    QWORD PTR [rbx+0x8],rdi
+  76:	5b                   	pop    rbx
+  77:	5d                   	pop    rbp
+  78:	41 5c                	pop    r12
+  7a:	c3                   	ret
+  7b:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 82 <std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&)+0x82>
+  82:	e8 00 00 00 00       	call   87 <parse(int, char**, Options&) [clone .cold]+0x2>
+
+Disassembly of section .text.startup:
+
+0000000000000000 <main>:
+   0:	41 57                	push   r15
+   2:	41 56                	push   r14
+   4:	41 55                	push   r13
+   6:	41 54                	push   r12
+   8:	55                   	push   rbp
+   9:	48 89 f5             	mov    rbp,rsi
+   c:	53                   	push   rbx
+   d:	89 fb                	mov    ebx,edi
+   f:	48 81 ec 68 04 00 00 	sub    rsp,0x468
+  16:	48 8d 84 24 10 02 00 	lea    rax,[rsp+0x210]
+  1d:	00 
+  1e:	4c 8d b4 24 00 02 00 	lea    r14,[rsp+0x200]
+  25:	00 
+  26:	48 c7 84 24 08 02 00 	mov    QWORD PTR [rsp+0x208],0x0
+  2d:	00 00 00 00 00 
+  32:	48 8d bc 24 20 02 00 	lea    rdi,[rsp+0x220]
+  39:	00 
+  3a:	48 89 84 24 00 02 00 	mov    QWORD PTR [rsp+0x200],rax
+  41:	00 
+  42:	4c 89 74 24 28       	mov    QWORD PTR [rsp+0x28],r14
+  47:	c6 84 24 10 02 00 00 	mov    BYTE PTR [rsp+0x210],0x0
+  4e:	00 
+  4f:	e8 00 00 00 00       	call   54 <main+0x54>
+  54:	48 8d 84 24 38 02 00 	lea    rax,[rsp+0x238]
+  5b:	00 
+  5c:	48 8d bc 24 48 02 00 	lea    rdi,[rsp+0x248]
+  63:	00 
+  64:	48 c7 84 24 30 02 00 	mov    QWORD PTR [rsp+0x230],0x0
+  6b:	00 00 00 00 00 
+  70:	48 89 84 24 28 02 00 	mov    QWORD PTR [rsp+0x228],rax
+  77:	00 
+  78:	c6 84 24 38 02 00 00 	mov    BYTE PTR [rsp+0x238],0x0
+  7f:	00 
+  80:	e8 00 00 00 00       	call   85 <main+0x85>
+  85:	4c 89 f2             	mov    rdx,r14
+  88:	48 89 ee             	mov    rsi,rbp
+  8b:	89 df                	mov    edi,ebx
+  8d:	48 b8 0b 00 00 00 01 	movabs rax,0x10000000b
+  94:	00 00 00 
+  97:	c6 84 24 58 02 00 00 	mov    BYTE PTR [rsp+0x258],0x0
+  9e:	00 
+  9f:	48 89 84 24 50 02 00 	mov    QWORD PTR [rsp+0x250],rax
+  a6:	00 
+  a7:	e8 00 00 00 00       	call   ac <main+0xac>
+  ac:	84 c0                	test   al,al
+  ae:	0f 84 3e 06 00 00    	je     6f2 <main+0x6f2>
+  b4:	48 8d 9c 24 60 02 00 	lea    rbx,[rsp+0x260]
+  bb:	00 
+  bc:	48 8b 94 24 08 02 00 	mov    rdx,QWORD PTR [rsp+0x208]
+  c3:	00 
+  c4:	48 8b b4 24 00 02 00 	mov    rsi,QWORD PTR [rsp+0x200]
+  cb:	00 
+  cc:	c5 f9 ef c0          	vpxor  xmm0,xmm0,xmm0
+  d0:	48 c7 84 24 b0 00 00 	mov    QWORD PTR [rsp+0xb0],0x0
+  d7:	00 00 00 00 00 
+  dc:	48 89 df             	mov    rdi,rbx
+  df:	c5 f9 7f 84 24 a0 00 	vmovdqa XMMWORD PTR [rsp+0xa0],xmm0
+  e6:	00 00 
+  e8:	e8 00 00 00 00       	call   ed <main+0xed>
+  ed:	48 8b bc 24 60 02 00 	mov    rdi,QWORD PTR [rsp+0x260]
+  f4:	00 
+  f5:	48 8d b4 24 a0 00 00 	lea    rsi,[rsp+0xa0]
+  fc:	00 
+  fd:	e8 00 00 00 00       	call   102 <main+0x102>
+ 102:	48 8b bc 24 60 02 00 	mov    rdi,QWORD PTR [rsp+0x260]
+ 109:	00 
+ 10a:	89 c5                	mov    ebp,eax
+ 10c:	48 8d 84 24 70 02 00 	lea    rax,[rsp+0x270]
+ 113:	00 
+ 114:	48 39 c7             	cmp    rdi,rax
+ 117:	74 11                	je     12a <main+0x12a>
+ 119:	48 8b 84 24 70 02 00 	mov    rax,QWORD PTR [rsp+0x270]
+ 120:	00 
+ 121:	48 8d 70 01          	lea    rsi,[rax+0x1]
+ 125:	e8 00 00 00 00       	call   12a <main+0x12a>
+ 12a:	40 84 ed             	test   bpl,bpl
+ 12d:	75 33                	jne    162 <main+0x162>
+ 12f:	bb 01 00 00 00       	mov    ebx,0x1
+ 134:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 13b:	00 
+ 13c:	48 89 ef             	mov    rdi,rbp
+ 13f:	e8 00 00 00 00       	call   144 <main+0x144>
+ 144:	48 8b 7c 24 28       	mov    rdi,QWORD PTR [rsp+0x28]
+ 149:	e8 00 00 00 00       	call   14e <main+0x14e>
+ 14e:	48 81 c4 68 04 00 00 	add    rsp,0x468
+ 155:	89 d8                	mov    eax,ebx
+ 157:	5b                   	pop    rbx
+ 158:	5d                   	pop    rbp
+ 159:	41 5c                	pop    r12
+ 15b:	41 5d                	pop    r13
+ 15d:	41 5e                	pop    r14
+ 15f:	41 5f                	pop    r15
+ 161:	c3                   	ret
+ 162:	48 63 84 24 a8 00 00 	movsxd rax,DWORD PTR [rsp+0xa8]
+ 169:	00 
+ 16a:	48 63 94 24 ac 00 00 	movsxd rdx,DWORD PTR [rsp+0xac]
+ 171:	00 
+ 172:	48 8b ac 24 a0 00 00 	mov    rbp,QWORD PTR [rsp+0xa0]
+ 179:	00 
+ 17a:	48 0f af c2          	imul   rax,rdx
+ 17e:	48 8d 3c 40          	lea    rdi,[rax+rax*2]
+ 182:	48 89 7c 24 48       	mov    QWORD PTR [rsp+0x48],rdi
+ 187:	48 85 ff             	test   rdi,rdi
+ 18a:	0f 88 38 07 00 00    	js     8c8 <main+0x8c8>
+ 190:	48 85 c0             	test   rax,rax
+ 193:	0f 84 e4 06 00 00    	je     87d <main+0x87d>
+ 199:	48 8b 7c 24 48       	mov    rdi,QWORD PTR [rsp+0x48]
+ 19e:	e8 00 00 00 00       	call   1a3 <main+0x1a3>
+ 1a3:	48 89 44 24 50       	mov    QWORD PTR [rsp+0x50],rax
+ 1a8:	48 83 7c 24 48 00    	cmp    QWORD PTR [rsp+0x48],0x0
+ 1ae:	0f 85 63 05 00 00    	jne    717 <main+0x717>
+ 1b4:	48 8b bc 24 a0 00 00 	mov    rdi,QWORD PTR [rsp+0xa0]
+ 1bb:	00 
+ 1bc:	e8 00 00 00 00       	call   1c1 <main+0x1c1>
+ 1c1:	8b 94 24 50 02 00 00 	mov    edx,DWORD PTR [rsp+0x250]
+ 1c8:	8b 84 24 a8 00 00 00 	mov    eax,DWORD PTR [rsp+0xa8]
+ 1cf:	29 d0                	sub    eax,edx
+ 1d1:	8d 78 01             	lea    edi,[rax+0x1]
+ 1d4:	8b 84 24 ac 00 00 00 	mov    eax,DWORD PTR [rsp+0xac]
+ 1db:	4c 63 ef             	movsxd r13,edi
+ 1de:	89 7c 24 38          	mov    DWORD PTR [rsp+0x38],edi
+ 1e2:	29 d0                	sub    eax,edx
+ 1e4:	48 89 da             	mov    rdx,rbx
+ 1e7:	ff c0                	inc    eax
+ 1e9:	48 63 e8             	movsxd rbp,eax
+ 1ec:	89 44 24 3c          	mov    DWORD PTR [rsp+0x3c],eax
+ 1f0:	48 8d 84 24 c0 00 00 	lea    rax,[rsp+0xc0]
+ 1f7:	00 
+ 1f8:	49 0f af ed          	imul   rbp,r13
+ 1fc:	48 89 c7             	mov    rdi,rax
+ 1ff:	48 89 44 24 70       	mov    QWORD PTR [rsp+0x70],rax
+ 204:	4c 8d 64 6d 00       	lea    r12,[rbp+rbp*2+0x0]
+ 209:	4c 89 e6             	mov    rsi,r12
+ 20c:	e8 00 00 00 00       	call   211 <main+0x211>
+ 211:	48 8d 84 24 e0 00 00 	lea    rax,[rsp+0xe0]
+ 218:	00 
+ 219:	48 89 da             	mov    rdx,rbx
+ 21c:	4c 89 e6             	mov    rsi,r12
+ 21f:	48 89 c7             	mov    rdi,rax
+ 222:	48 89 44 24 78       	mov    QWORD PTR [rsp+0x78],rax
+ 227:	e8 00 00 00 00       	call   22c <main+0x22c>
+ 22c:	48 63 84 24 ac 00 00 	movsxd rax,DWORD PTR [rsp+0xac]
+ 233:	00 
+ 234:	48 63 b4 24 a8 00 00 	movsxd rsi,DWORD PTR [rsp+0xa8]
+ 23b:	00 
+ 23c:	48 0f af f0          	imul   rsi,rax
+ 240:	48 8d 84 24 60 01 00 	lea    rax,[rsp+0x160]
+ 247:	00 
+ 248:	48 89 c7             	mov    rdi,rax
+ 24b:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+ 250:	e8 00 00 00 00       	call   255 <main+0x255>
+ 255:	48 8d 84 24 b0 01 00 	lea    rax,[rsp+0x1b0]
+ 25c:	00 
+ 25d:	48 89 ee             	mov    rsi,rbp
+ 260:	48 89 c7             	mov    rdi,rax
+ 263:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+ 268:	e8 00 00 00 00       	call   26d <main+0x26d>
+ 26d:	4c 63 a4 24 ac 00 00 	movsxd r12,DWORD PTR [rsp+0xac]
+ 274:	00 
+ 275:	48 b8 ff ff ff ff ff 	movabs rax,0x1fffffffffffffff
+ 27c:	ff ff 1f 
+ 27f:	4d 0f af e5          	imul   r12,r13
+ 283:	4c 39 e0             	cmp    rax,r12
+ 286:	0f 82 30 06 00 00    	jb     8bc <main+0x8bc>
+ 28c:	31 c9                	xor    ecx,ecx
+ 28e:	31 ff                	xor    edi,edi
+ 290:	48 89 8c 24 00 01 00 	mov    QWORD PTR [rsp+0x100],rcx
+ 297:	00 
+ 298:	48 89 8c 24 08 01 00 	mov    QWORD PTR [rsp+0x108],rcx
+ 29f:	00 
+ 2a0:	48 89 8c 24 10 01 00 	mov    QWORD PTR [rsp+0x110],rcx
+ 2a7:	00 
+ 2a8:	4d 85 e4             	test   r12,r12
+ 2ab:	74 44                	je     2f1 <main+0x2f1>
+ 2ad:	4e 8d 2c a5 00 00 00 	lea    r13,[r12*4+0x0]
+ 2b4:	00 
+ 2b5:	4c 89 ef             	mov    rdi,r13
+ 2b8:	e8 00 00 00 00       	call   2bd <main+0x2bd>
+ 2bd:	31 d2                	xor    edx,edx
+ 2bf:	4e 8d 3c 28          	lea    r15,[rax+r13*1]
+ 2c3:	48 8d 78 04          	lea    rdi,[rax+0x4]
+ 2c7:	49 ff cc             	dec    r12
+ 2ca:	48 89 84 24 00 01 00 	mov    QWORD PTR [rsp+0x100],rax
+ 2d1:	00 
+ 2d2:	4c 89 bc 24 10 01 00 	mov    QWORD PTR [rsp+0x110],r15
+ 2d9:	00 
+ 2da:	89 10                	mov    DWORD PTR [rax],edx
+ 2dc:	74 13                	je     2f1 <main+0x2f1>
+ 2de:	4c 39 ff             	cmp    rdi,r15
+ 2e1:	74 0b                	je     2ee <main+0x2ee>
+ 2e3:	49 8d 55 fc          	lea    rdx,[r13-0x4]
+ 2e7:	31 f6                	xor    esi,esi
+ 2e9:	e8 00 00 00 00       	call   2ee <main+0x2ee>
+ 2ee:	4c 89 ff             	mov    rdi,r15
+ 2f1:	4c 8d ac 24 20 01 00 	lea    r13,[rsp+0x120]
+ 2f8:	00 
+ 2f9:	8b b4 24 50 02 00 00 	mov    esi,DWORD PTR [rsp+0x250]
+ 300:	48 89 bc 24 08 01 00 	mov    QWORD PTR [rsp+0x108],rdi
+ 307:	00 
+ 308:	4c 89 ef             	mov    rdi,r13
+ 30b:	e8 00 00 00 00       	call   310 <main+0x310>
+ 310:	e8 00 00 00 00       	call   315 <main+0x315>
+ 315:	4c 8b 7c 24 50       	mov    r15,QWORD PTR [rsp+0x50]
+ 31a:	31 c9                	xor    ecx,ecx
+ 31c:	31 d2                	xor    edx,edx
+ 31e:	4c 8b 74 24 20       	mov    r14,QWORD PTR [rsp+0x20]
+ 323:	48 89 84 24 90 00 00 	mov    QWORD PTR [rsp+0x90],rax
+ 32a:	00 
+ 32b:	48 89 de             	mov    rsi,rbx
+ 32e:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 335 <main+0x335>
+ 335:	48 8b 84 24 a8 00 00 	mov    rax,QWORD PTR [rsp+0xa8]
+ 33c:	00 
+ 33d:	4c 89 bc 24 60 02 00 	mov    QWORD PTR [rsp+0x260],r15
+ 344:	00 
+ 345:	4c 89 b4 24 68 02 00 	mov    QWORD PTR [rsp+0x268],r14
+ 34c:	00 
+ 34d:	48 89 84 24 70 02 00 	mov    QWORD PTR [rsp+0x270],rax
+ 354:	00 
+ 355:	e8 00 00 00 00       	call   35a <main+0x35a>
+ 35a:	e8 00 00 00 00       	call   35f <main+0x35f>
+ 35f:	48 89 84 24 80 00 00 	mov    QWORD PTR [rsp+0x80],rax
+ 366:	00 
+ 367:	e8 00 00 00 00       	call   36c <main+0x36c>
+ 36c:	48 8b b4 24 c0 00 00 	mov    rsi,QWORD PTR [rsp+0xc0]
+ 373:	00 
+ 374:	4c 89 ff             	mov    rdi,r15
+ 377:	4d 89 e8             	mov    r8,r13
+ 37a:	8b 8c 24 ac 00 00 00 	mov    ecx,DWORD PTR [rsp+0xac]
+ 381:	8b 94 24 a8 00 00 00 	mov    edx,DWORD PTR [rsp+0xa8]
+ 388:	48 89 84 24 98 00 00 	mov    QWORD PTR [rsp+0x98],rax
+ 38f:	00 
+ 390:	4c 8d bc 24 00 01 00 	lea    r15,[rsp+0x100]
+ 397:	00 
+ 398:	e8 00 00 00 00       	call   39d <main+0x39d>
+ 39d:	e8 00 00 00 00       	call   3a2 <main+0x3a2>
+ 3a2:	48 8d b4 24 78 01 00 	lea    rsi,[rsp+0x178]
+ 3a9:	00 
+ 3aa:	48 89 6c 24 60       	mov    QWORD PTR [rsp+0x60],rbp
+ 3af:	48 89 84 24 88 00 00 	mov    QWORD PTR [rsp+0x88],rax
+ 3b6:	00 
+ 3b7:	48 8d 84 24 90 01 00 	lea    rax,[rsp+0x190]
+ 3be:	00 
+ 3bf:	4c 89 b4 24 40 01 00 	mov    QWORD PTR [rsp+0x140],r14
+ 3c6:	00 
+ 3c7:	4c 8d b4 24 40 01 00 	lea    r14,[rsp+0x140]
+ 3ce:	00 
+ 3cf:	48 89 84 24 50 01 00 	mov    QWORD PTR [rsp+0x150],rax
+ 3d6:	00 
+ 3d7:	4d 89 f4             	mov    r12,r14
+ 3da:	48 8d 84 24 58 01 00 	lea    rax,[rsp+0x158]
+ 3e1:	00 
+ 3e2:	48 89 b4 24 48 01 00 	mov    QWORD PTR [rsp+0x148],rsi
+ 3e9:	00 
+ 3ea:	48 89 44 24 40       	mov    QWORD PTR [rsp+0x40],rax
+ 3ef:	48 c7 44 24 18 00 00 	mov    QWORD PTR [rsp+0x18],0x0
+ 3f6:	00 00 
+ 3f8:	48 c7 44 24 10 00 00 	mov    QWORD PTR [rsp+0x10],0x0
+ 3ff:	00 00 
+ 401:	4c 89 74 24 68       	mov    QWORD PTR [rsp+0x68],r14
+ 406:	48 89 74 24 58       	mov    QWORD PTR [rsp+0x58],rsi
+ 40b:	48 89 5c 24 08       	mov    QWORD PTR [rsp+0x8],rbx
+ 410:	4d 8b 34 24          	mov    r14,QWORD PTR [r12]
+ 414:	e8 00 00 00 00       	call   419 <main+0x419>
+ 419:	48 8b 94 24 28 01 00 	mov    rdx,QWORD PTR [rsp+0x128]
+ 420:	00 
+ 421:	31 c9                	xor    ecx,ecx
+ 423:	48 2b 94 24 20 01 00 	sub    rdx,QWORD PTR [rsp+0x120]
+ 42a:	00 
+ 42b:	48 89 c5             	mov    rbp,rax
+ 42e:	48 c1 fa 02          	sar    rdx,0x2
+ 432:	8b 84 24 a8 00 00 00 	mov    eax,DWORD PTR [rsp+0xa8]
+ 439:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+ 43e:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 445 <main+0x445>
+ 445:	4c 89 b4 24 60 02 00 	mov    QWORD PTR [rsp+0x260],r14
+ 44c:	00 
+ 44d:	29 d0                	sub    eax,edx
+ 44f:	31 d2                	xor    edx,edx
+ 451:	4c 89 bc 24 68 02 00 	mov    QWORD PTR [rsp+0x268],r15
+ 458:	00 
+ 459:	ff c0                	inc    eax
+ 45b:	4c 89 ac 24 70 02 00 	mov    QWORD PTR [rsp+0x270],r13
+ 462:	00 
+ 463:	89 84 24 80 02 00 00 	mov    DWORD PTR [rsp+0x280],eax
+ 46a:	48 8b 84 24 a8 00 00 	mov    rax,QWORD PTR [rsp+0xa8]
+ 471:	00 
+ 472:	48 89 84 24 78 02 00 	mov    QWORD PTR [rsp+0x278],rax
+ 479:	00 
+ 47a:	e8 00 00 00 00       	call   47f <main+0x47f>
+ 47f:	e8 00 00 00 00       	call   484 <main+0x484>
+ 484:	c5 f1 57 c9          	vxorpd xmm1,xmm1,xmm1
+ 488:	48 8b 5c 24 30       	mov    rbx,QWORD PTR [rsp+0x30]
+ 48d:	48 29 e8             	sub    rax,rbp
+ 490:	c4 e1 f3 2a c0       	vcvtsi2sd xmm0,xmm1,rax
+ 495:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 49d <main+0x49d>
+ 49c:	00 
+ 49d:	c5 fb 58 54 24 10    	vaddsd xmm2,xmm0,QWORD PTR [rsp+0x10]
+ 4a3:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+ 4a8:	c5 fb 11 54 24 10    	vmovsd QWORD PTR [rsp+0x10],xmm2
+ 4ae:	49 39 c6             	cmp    r14,rax
+ 4b1:	74 1f                	je     4d2 <main+0x4d2>
+ 4b3:	48 8b 5c 24 58       	mov    rbx,QWORD PTR [rsp+0x58]
+ 4b8:	48 8d 84 24 c8 01 00 	lea    rax,[rsp+0x1c8]
+ 4bf:	00 
+ 4c0:	48 8d b4 24 e0 01 00 	lea    rsi,[rsp+0x1e0]
+ 4c7:	00 
+ 4c8:	49 39 de             	cmp    r14,rbx
+ 4cb:	48 0f 45 c6          	cmovne rax,rsi
+ 4cf:	48 89 c3             	mov    rbx,rax
+ 4d2:	e8 00 00 00 00       	call   4d7 <main+0x4d7>
+ 4d7:	48 8b 8c 24 28 01 00 	mov    rcx,QWORD PTR [rsp+0x128]
+ 4de:	00 
+ 4df:	48 89 c5             	mov    rbp,rax
+ 4e2:	48 8b 84 24 20 01 00 	mov    rax,QWORD PTR [rsp+0x120]
+ 4e9:	00 
+ 4ea:	48 39 c1             	cmp    rcx,rax
+ 4ed:	0f 84 83 03 00 00    	je     876 <main+0x876>
+ 4f3:	31 d2                	xor    edx,edx
+ 4f5:	0f 1f 00             	nop    DWORD PTR [rax]
+ 4f8:	03 10                	add    edx,DWORD PTR [rax]
+ 4fa:	48 83 c0 04          	add    rax,0x4
+ 4fe:	48 39 c8             	cmp    rax,rcx
+ 501:	75 f5                	jne    4f8 <main+0x4f8>
+ 503:	8b 44 24 3c          	mov    eax,DWORD PTR [rsp+0x3c]
+ 507:	48 0f af d2          	imul   rdx,rdx
+ 50b:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+ 510:	31 c9                	xor    ecx,ecx
+ 512:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 519 <main+0x519>
+ 519:	4c 89 bc 24 60 02 00 	mov    QWORD PTR [rsp+0x260],r15
+ 520:	00 
+ 521:	49 83 c4 08          	add    r12,0x8
+ 525:	89 84 24 84 02 00 00 	mov    DWORD PTR [rsp+0x284],eax
+ 52c:	8b 44 24 38          	mov    eax,DWORD PTR [rsp+0x38]
+ 530:	48 89 94 24 78 02 00 	mov    QWORD PTR [rsp+0x278],rdx
+ 537:	00 
+ 538:	31 d2                	xor    edx,edx
+ 53a:	89 84 24 80 02 00 00 	mov    DWORD PTR [rsp+0x280],eax
+ 541:	48 89 9c 24 68 02 00 	mov    QWORD PTR [rsp+0x268],rbx
+ 548:	00 
+ 549:	4c 89 ac 24 70 02 00 	mov    QWORD PTR [rsp+0x270],r13
+ 550:	00 
+ 551:	e8 00 00 00 00       	call   556 <main+0x556>
+ 556:	e8 00 00 00 00       	call   55b <main+0x55b>
+ 55b:	c5 d9 57 e4          	vxorpd xmm4,xmm4,xmm4
+ 55f:	48 29 e8             	sub    rax,rbp
+ 562:	c4 e1 db 2a c0       	vcvtsi2sd xmm0,xmm4,rax
+ 567:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 56f <main+0x56f>
+ 56e:	00 
+ 56f:	c5 fb 58 6c 24 18    	vaddsd xmm5,xmm0,QWORD PTR [rsp+0x18]
+ 575:	c5 fb 11 6c 24 18    	vmovsd QWORD PTR [rsp+0x18],xmm5
+ 57b:	4c 39 64 24 40       	cmp    QWORD PTR [rsp+0x40],r12
+ 580:	0f 85 8a fe ff ff    	jne    410 <main+0x410>
+ 586:	48 8b 6c 24 60       	mov    rbp,QWORD PTR [rsp+0x60]
+ 58b:	4c 8b 74 24 68       	mov    r14,QWORD PTR [rsp+0x68]
+ 590:	31 d2                	xor    edx,edx
+ 592:	31 c0                	xor    eax,eax
+ 594:	48 8b 5c 24 08       	mov    rbx,QWORD PTR [rsp+0x8]
+ 599:	48 85 ed             	test   rbp,rbp
+ 59c:	74 58                	je     5f6 <main+0x5f6>
+ 59e:	66 90                	xchg   ax,ax
+ 5a0:	48 8b 8c 24 b0 01 00 	mov    rcx,QWORD PTR [rsp+0x1b0]
+ 5a7:	00 
+ 5a8:	0f b6 34 01          	movzx  esi,BYTE PTR [rcx+rax*1]
+ 5ac:	48 8b 8c 24 e0 00 00 	mov    rcx,QWORD PTR [rsp+0xe0]
+ 5b3:	00 
+ 5b4:	40 88 34 11          	mov    BYTE PTR [rcx+rdx*1],sil
+ 5b8:	48 8b 8c 24 c8 01 00 	mov    rcx,QWORD PTR [rsp+0x1c8]
+ 5bf:	00 
+ 5c0:	0f b6 34 01          	movzx  esi,BYTE PTR [rcx+rax*1]
+ 5c4:	48 8b 8c 24 e0 00 00 	mov    rcx,QWORD PTR [rsp+0xe0]
+ 5cb:	00 
+ 5cc:	40 88 74 11 01       	mov    BYTE PTR [rcx+rdx*1+0x1],sil
+ 5d1:	48 8b 8c 24 e0 01 00 	mov    rcx,QWORD PTR [rsp+0x1e0]
+ 5d8:	00 
+ 5d9:	0f b6 34 01          	movzx  esi,BYTE PTR [rcx+rax*1]
+ 5dd:	48 8b 8c 24 e0 00 00 	mov    rcx,QWORD PTR [rsp+0xe0]
+ 5e4:	00 
+ 5e5:	48 ff c0             	inc    rax
+ 5e8:	40 88 74 11 02       	mov    BYTE PTR [rcx+rdx*1+0x2],sil
+ 5ed:	48 83 c2 03          	add    rdx,0x3
+ 5f1:	48 39 c5             	cmp    rbp,rax
+ 5f4:	75 aa                	jne    5a0 <main+0x5a0>
+ 5f6:	48 8b bc 24 c0 00 00 	mov    rdi,QWORD PTR [rsp+0xc0]
+ 5fd:	00 
+ 5fe:	48 8b b4 24 e0 00 00 	mov    rsi,QWORD PTR [rsp+0xe0]
+ 605:	00 
+ 606:	48 8b 94 24 c8 00 00 	mov    rdx,QWORD PTR [rsp+0xc8]
+ 60d:	00 
+ 60e:	48 8b 84 24 e8 00 00 	mov    rax,QWORD PTR [rsp+0xe8]
+ 615:	00 
+ 616:	48 29 fa             	sub    rdx,rdi
+ 619:	48 29 f0             	sub    rax,rsi
+ 61c:	48 39 c2             	cmp    rdx,rax
+ 61f:	0f 84 09 01 00 00    	je     72e <main+0x72e>
+ 625:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 62c <main+0x62c>
+ 62c:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 633 <main+0x633>
+ 633:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 63a:	00 
+ 63b:	e8 00 00 00 00       	call   640 <main+0x640>
+ 640:	bb 01 00 00 00       	mov    ebx,0x1
+ 645:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 64c:	00 
+ 64d:	48 8b bc 24 20 01 00 	mov    rdi,QWORD PTR [rsp+0x120]
+ 654:	00 
+ 655:	48 85 ff             	test   rdi,rdi
+ 658:	74 10                	je     66a <main+0x66a>
+ 65a:	48 8b b4 24 30 01 00 	mov    rsi,QWORD PTR [rsp+0x130]
+ 661:	00 
+ 662:	48 29 fe             	sub    rsi,rdi
+ 665:	e8 00 00 00 00       	call   66a <main+0x66a>
+ 66a:	48 8b bc 24 00 01 00 	mov    rdi,QWORD PTR [rsp+0x100]
+ 671:	00 
+ 672:	48 85 ff             	test   rdi,rdi
+ 675:	74 10                	je     687 <main+0x687>
+ 677:	48 8b b4 24 10 01 00 	mov    rsi,QWORD PTR [rsp+0x110]
+ 67e:	00 
+ 67f:	48 29 fe             	sub    rsi,rdi
+ 682:	e8 00 00 00 00       	call   687 <main+0x687>
+ 687:	48 8b 7c 24 30       	mov    rdi,QWORD PTR [rsp+0x30]
+ 68c:	e8 00 00 00 00       	call   691 <main+0x691>
+ 691:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+ 696:	e8 00 00 00 00       	call   69b <main+0x69b>
+ 69b:	48 8b bc 24 e0 00 00 	mov    rdi,QWORD PTR [rsp+0xe0]
+ 6a2:	00 
+ 6a3:	48 85 ff             	test   rdi,rdi
+ 6a6:	74 10                	je     6b8 <main+0x6b8>
+ 6a8:	48 8b b4 24 f0 00 00 	mov    rsi,QWORD PTR [rsp+0xf0]
+ 6af:	00 
+ 6b0:	48 29 fe             	sub    rsi,rdi
+ 6b3:	e8 00 00 00 00       	call   6b8 <main+0x6b8>
+ 6b8:	48 8b bc 24 c0 00 00 	mov    rdi,QWORD PTR [rsp+0xc0]
+ 6bf:	00 
+ 6c0:	48 85 ff             	test   rdi,rdi
+ 6c3:	74 10                	je     6d5 <main+0x6d5>
+ 6c5:	48 8b b4 24 d0 00 00 	mov    rsi,QWORD PTR [rsp+0xd0]
+ 6cc:	00 
+ 6cd:	48 29 fe             	sub    rsi,rdi
+ 6d0:	e8 00 00 00 00       	call   6d5 <main+0x6d5>
+ 6d5:	48 8b 7c 24 50       	mov    rdi,QWORD PTR [rsp+0x50]
+ 6da:	48 85 ff             	test   rdi,rdi
+ 6dd:	0f 84 59 fa ff ff    	je     13c <main+0x13c>
+ 6e3:	48 8b 74 24 48       	mov    rsi,QWORD PTR [rsp+0x48]
+ 6e8:	e8 00 00 00 00       	call   6ed <main+0x6ed>
+ 6ed:	e9 4a fa ff ff       	jmp    13c <main+0x13c>
+ 6f2:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 6f9 <main+0x6f9>
+ 6f9:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 700 <main+0x700>
+ 700:	e8 00 00 00 00       	call   705 <main+0x705>
+ 705:	bb 02 00 00 00       	mov    ebx,0x2
+ 70a:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 711:	00 
+ 712:	e9 25 fa ff ff       	jmp    13c <main+0x13c>
+ 717:	48 8b 54 24 48       	mov    rdx,QWORD PTR [rsp+0x48]
+ 71c:	48 8b 7c 24 50       	mov    rdi,QWORD PTR [rsp+0x50]
+ 721:	48 89 ee             	mov    rsi,rbp
+ 724:	e8 00 00 00 00       	call   729 <main+0x729>
+ 729:	e9 86 fa ff ff       	jmp    1b4 <main+0x1b4>
+ 72e:	48 85 d2             	test   rdx,rdx
+ 731:	74 0d                	je     740 <main+0x740>
+ 733:	e8 00 00 00 00       	call   738 <main+0x738>
+ 738:	85 c0                	test   eax,eax
+ 73a:	0f 85 e5 fe ff ff    	jne    625 <main+0x625>
+ 740:	80 bc 24 58 02 00 00 	cmp    BYTE PTR [rsp+0x258],0x0
+ 747:	00 
+ 748:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 74f:	00 
+ 750:	74 07                	je     759 <main+0x759>
+ 752:	31 db                	xor    ebx,ebx
+ 754:	e9 f4 fe ff ff       	jmp    64d <main+0x64d>
+ 759:	48 89 ef             	mov    rdi,rbp
+ 75c:	e8 00 00 00 00       	call   761 <main+0x761>
+ 761:	84 c0                	test   al,al
+ 763:	0f 85 20 01 00 00    	jne    889 <main+0x889>
+ 769:	48 8b b4 24 28 02 00 	mov    rsi,QWORD PTR [rsp+0x228]
+ 770:	00 
+ 771:	ba 01 00 00 00       	mov    edx,0x1
+ 776:	48 89 df             	mov    rdi,rbx
+ 779:	e8 00 00 00 00       	call   77e <main+0x77e>
+ 77e:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 785 <main+0x785>
+ 785:	48 89 df             	mov    rdi,rbx
+ 788:	e8 00 00 00 00       	call   78d <main+0x78d>
+ 78d:	48 8b 44 24 28       	mov    rax,QWORD PTR [rsp+0x28]
+ 792:	48 8b bc 24 98 00 00 	mov    rdi,QWORD PTR [rsp+0x98]
+ 799:	00 
+ 79a:	c5 c1 57 ff          	vxorpd xmm7,xmm7,xmm7
+ 79e:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 7a5 <main+0x7a5>
+ 7a5:	48 89 9c 24 40 01 00 	mov    QWORD PTR [rsp+0x140],rbx
+ 7ac:	00 
+ 7ad:	48 89 84 24 48 01 00 	mov    QWORD PTR [rsp+0x148],rax
+ 7b4:	00 
+ 7b5:	48 8b 44 24 70       	mov    rax,QWORD PTR [rsp+0x70]
+ 7ba:	48 89 84 24 50 01 00 	mov    QWORD PTR [rsp+0x150],rax
+ 7c1:	00 
+ 7c2:	48 8b 44 24 78       	mov    rax,QWORD PTR [rsp+0x78]
+ 7c7:	48 89 84 24 58 01 00 	mov    QWORD PTR [rsp+0x158],rax
+ 7ce:	00 
+ 7cf:	48 8b 84 24 88 00 00 	mov    rax,QWORD PTR [rsp+0x88]
+ 7d6:	00 
+ 7d7:	48 29 f8             	sub    rax,rdi
+ 7da:	4c 89 f7             	mov    rdi,r14
+ 7dd:	c4 e1 c3 2a c0       	vcvtsi2sd xmm0,xmm7,rax
+ 7e2:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 7ea <main+0x7ea>
+ 7e9:	00 
+ 7ea:	e8 00 00 00 00       	call   7ef <main+0x7ef>
+ 7ef:	48 8b bc 24 90 00 00 	mov    rdi,QWORD PTR [rsp+0x90]
+ 7f6:	00 
+ 7f7:	48 8b 84 24 80 00 00 	mov    rax,QWORD PTR [rsp+0x80]
+ 7fe:	00 
+ 7ff:	c5 c1 57 ff          	vxorpd xmm7,xmm7,xmm7
+ 803:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 80a <main+0x80a>
+ 80a:	48 29 f8             	sub    rax,rdi
+ 80d:	4c 89 f7             	mov    rdi,r14
+ 810:	c4 e1 c3 2a c0       	vcvtsi2sd xmm0,xmm7,rax
+ 815:	c5 fb 5e 05 00 00 00 	vdivsd xmm0,xmm0,QWORD PTR [rip+0x0]        # 81d <main+0x81d>
+ 81c:	00 
+ 81d:	e8 00 00 00 00       	call   822 <main+0x822>
+ 822:	c5 fb 10 44 24 10    	vmovsd xmm0,QWORD PTR [rsp+0x10]
+ 828:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 82f <main+0x82f>
+ 82f:	4c 89 f7             	mov    rdi,r14
+ 832:	e8 00 00 00 00       	call   837 <main+0x837>
+ 837:	c5 fb 10 44 24 18    	vmovsd xmm0,QWORD PTR [rsp+0x18]
+ 83d:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 844 <main+0x844>
+ 844:	4c 89 f7             	mov    rdi,r14
+ 847:	e8 00 00 00 00       	call   84c <main+0x84c>
+ 84c:	c5 fb 10 7c 24 10    	vmovsd xmm7,QWORD PTR [rsp+0x10]
+ 852:	c5 c3 58 44 24 18    	vaddsd xmm0,xmm7,QWORD PTR [rsp+0x18]
+ 858:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 85f <main+0x85f>
+ 85f:	4c 89 f7             	mov    rdi,r14
+ 862:	e8 00 00 00 00       	call   867 <main+0x867>
+ 867:	48 89 df             	mov    rdi,rbx
+ 86a:	31 db                	xor    ebx,ebx
+ 86c:	e8 00 00 00 00       	call   871 <main+0x871>
+ 871:	e9 d7 fd ff ff       	jmp    64d <main+0x64d>
+ 876:	31 d2                	xor    edx,edx
+ 878:	e9 86 fc ff ff       	jmp    503 <main+0x503>
+ 87d:	31 f6                	xor    esi,esi
+ 87f:	48 89 74 24 50       	mov    QWORD PTR [rsp+0x50],rsi
+ 884:	e9 1f f9 ff ff       	jmp    1a8 <main+0x1a8>
+ 889:	fe c0                	inc    al
+ 88b:	0f 84 d8 fe ff ff    	je     769 <main+0x769>
+ 891:	48 89 ef             	mov    rdi,rbp
+ 894:	e8 00 00 00 00       	call   899 <main+0x899>
+ 899:	48 8b b4 24 28 02 00 	mov    rsi,QWORD PTR [rsp+0x228]
+ 8a0:	00 
+ 8a1:	ba 01 00 00 00       	mov    edx,0x1
+ 8a6:	48 89 df             	mov    rdi,rbx
+ 8a9:	48 85 c0             	test   rax,rax
+ 8ac:	0f 84 c7 fe ff ff    	je     779 <main+0x779>
+ 8b2:	e8 00 00 00 00       	call   8b7 <main+0x8b7>
+ 8b7:	e9 d1 fe ff ff       	jmp    78d <main+0x78d>
+ 8bc:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 8c3 <main+0x8c3>
+ 8c3:	e8 00 00 00 00       	call   8c8 <main+0x8c8>
+ 8c8:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 8cf <main+0x8cf>
+ 8cf:	e8 00 00 00 00       	call   8d4 <main+0x8d4>
+ 8d4:	48 89 c3             	mov    rbx,rax
+ 8d7:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 8de:	00 
+ 8df:	c5 f8 77             	vzeroupper
+ 8e2:	e9 00 00 00 00       	jmp    8e7 <main+0x8e7>
+ 8e7:	49 89 c4             	mov    r12,rax
+ 8ea:	e9 00 00 00 00       	jmp    8ef <main+0x8ef>
+ 8ef:	48 89 c3             	mov    rbx,rax
+ 8f2:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 8f9:	00 
+ 8fa:	c5 f8 77             	vzeroupper
+ 8fd:	e9 00 00 00 00       	jmp    902 <main+0x902>
+ 902:	48 89 c3             	mov    rbx,rax
+ 905:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 90c:	00 
+ 90d:	c5 f8 77             	vzeroupper
+ 910:	e9 00 00 00 00       	jmp    915 <main+0x915>
+ 915:	48 89 c3             	mov    rbx,rax
+ 918:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 91f:	00 
+ 920:	c5 f8 77             	vzeroupper
+ 923:	e9 00 00 00 00       	jmp    928 <main+0x928>
+ 928:	48 89 c3             	mov    rbx,rax
+ 92b:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 932:	00 
+ 933:	c5 f8 77             	vzeroupper
+ 936:	e9 00 00 00 00       	jmp    93b <main+0x93b>
+ 93b:	48 89 c3             	mov    rbx,rax
+ 93e:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 945:	00 
+ 946:	c5 f8 77             	vzeroupper
+ 949:	e9 00 00 00 00       	jmp    94e <main+0x94e>
+ 94e:	48 89 c3             	mov    rbx,rax
+ 951:	c5 f8 77             	vzeroupper
+ 954:	e9 00 00 00 00       	jmp    959 <main+0x959>
+ 959:	48 89 c3             	mov    rbx,rax
+ 95c:	e9 00 00 00 00       	jmp    961 <main+0x961>
+ 961:	48 89 c3             	mov    rbx,rax
+ 964:	48 8d ac 24 28 02 00 	lea    rbp,[rsp+0x228]
+ 96b:	00 
+ 96c:	c5 f8 77             	vzeroupper
+ 96f:	e9 00 00 00 00       	jmp    974 <main+0x974>
+ 974:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+ 97b:	00 00 00 00 
+ 97f:	90                   	nop
+
+0000000000000980 <_GLOBAL__sub_I__Z5parseiPPcR7Options>:
+ 980:	53                   	push   rbx
+ 981:	48 8d 1d 00 00 00 00 	lea    rbx,[rip+0x0]        # 988 <_GLOBAL__sub_I__Z5parseiPPcR7Options+0x8>
+ 988:	48 89 df             	mov    rdi,rbx
+ 98b:	e8 00 00 00 00       	call   990 <_GLOBAL__sub_I__Z5parseiPPcR7Options+0x10>
+ 990:	48 8b 3d 00 00 00 00 	mov    rdi,QWORD PTR [rip+0x0]        # 997 <_GLOBAL__sub_I__Z5parseiPPcR7Options+0x17>
+ 997:	48 89 de             	mov    rsi,rbx
+ 99a:	5b                   	pop    rbx
+ 99b:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 9a2 <_GLOBAL__sub_I__Z5parseiPPcR7Options+0x22>
+ 9a2:	e9 00 00 00 00       	jmp    9a7 <_GLOBAL__sub_I__Z5parseiPPcR7Options+0x27>
