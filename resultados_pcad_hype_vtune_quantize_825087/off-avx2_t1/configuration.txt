@@ -1,0 +1,5 @@
+build=off-avx2
+threads=1
+schedule=static
+iterations=100
+image=images/6000x6000.png

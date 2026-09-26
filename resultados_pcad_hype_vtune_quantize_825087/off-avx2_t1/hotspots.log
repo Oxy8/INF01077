@@ -1,0 +1,4 @@
+vtune: Collection started. To stop the collection, either press CTRL-C or enter from another console window: vtune -r /home/users/efsilva/teste/INF01077/resultados_pcad_hype_vtune_quantize_825087/off-avx2_t1/hotspots -command stop.
+vtune: Error: [Instrumentation Engine]: Source/pin/elfio/img_elf.cpp: ProcessSectionHeaders: 927: unknown section type 0x13 for sec[54,.relr.dyn] in /lib64/ld-linux-x86-64.so.2 
+vtune: Collection failed.
+vtune: Internal Error

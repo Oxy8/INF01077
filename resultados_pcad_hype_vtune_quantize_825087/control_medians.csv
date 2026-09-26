@@ -1,0 +1,7 @@
+Threads,Build,Samples,Median_lookup_ms
+1,auto-avx2,10,38.761296
+1,off-avx2,10,38.581346
+1,omp-avx2,10,64.342799
+20,auto-avx2,10,3.917967
+20,off-avx2,10,3.809462
+20,omp-avx2,10,4.508445
