@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cerrno>
 #include <chrono>
 #include <cmath>
 #include <cstdint>
@@ -50,6 +51,7 @@ struct Options {
     int repeat = 1;
     bool warmup = false;
     bool check_production = false;
+    int profile_quantize_lookup = 0;
 };
 
 struct Picture {
@@ -150,17 +152,28 @@ void add_phases(std::vector<Row>& rows, const std::string& variant,
 bool parse(int argc, char** argv, Options& options) {
     for (int index = 1; index < argc; ++index) {
         const std::string argument = argv[index];
-        if ((argument == "--image" || argument == "--operation" || argument == "--repeat") && index + 1 < argc) {
+        if ((argument == "--image" || argument == "--operation" || argument == "--repeat" ||
+             argument == "--profile-quantize-lookup") && index + 1 < argc) {
             const char* value = argv[++index];
             if (argument == "--image") options.image = value;
             else if (argument == "--operation") options.operation = value;
-            else options.repeat = std::atoi(value);
+            else if (argument == "--repeat") options.repeat = std::atoi(value);
+            else {
+                char* end = nullptr;
+                errno = 0;
+                const long count = std::strtol(value, &end, 10);
+                if (errno == ERANGE || end == value || *end != '\0' ||
+                    count < 1 || count > std::numeric_limits<int>::max())
+                    return false;
+                options.profile_quantize_lookup = static_cast<int>(count);
+            }
         } else if (argument == "--warmup") options.warmup = true;
         else if (argument == "--check-production") options.check_production = true;
         else if (!argument.empty() && argument[0] != '-' && options.csv.empty()) options.csv = argument;
         else return false;
     }
-    return !options.image.empty() && !options.csv.empty() && !options.operation.empty() && options.repeat >= 0;
+    return !options.image.empty() && !options.csv.empty() && !options.operation.empty() && options.repeat >= 0 &&
+           (options.profile_quantize_lookup == 0 || options.operation == "Quantize");
 }
 
 // Uma thread recebe uma linha inteira; o laço SIMD percorre bytes RGB
@@ -469,6 +482,57 @@ bool run_quantize(const Picture& input, std::vector<Row>& rows) {
     return difference(candidate, reference).count == 0;
 }
 
+// Repete o MESMO lookup da campanha principal. Restaurar os bytes antes de
+// cada chamada evita que as repetições perfílem pixels já quantizados. O
+// wrapper não-inline mantém uma região reconhecível na visão de funções do
+// VTune sem alterar o caminho normal de run_quantize().
+#if defined(__GNUC__)
+__attribute__((noinline))
+#endif
+void profile_quantize_lookup_kernel(Byte* data, int width, int height, Byte minimum, Byte maximum) {
+    quantize_lut(data, width, height, minimum, maximum);
+}
+
+bool run_quantize_lookup_profile(const Picture& input, int iterations, std::vector<Row>& rows) {
+    Picture reference = input;
+    ImageState reference_state{reference.bytes.data(), reference.width, reference.height, false};
+    quantize_gray(reference_state, 16);
+
+    Picture prepared = input;
+    ImageState prepared_state{prepared.bytes.data(), prepared.width, prepared.height, false};
+    apply_gray_scale_inplace(prepared_state);
+    const auto extrema = find_min_and_max_luminance_on_gray_scale_image(
+        prepared_state.width, prepared_state.height, prepared_state.data);
+    if (static_cast<int>(extrema[1]) - extrema[0] + 1 <= 16) {
+        std::cerr << "A imagem não ativa o lookup de Quantize (intervalo de luminância <= 16).\n";
+        return false;
+    }
+
+    Picture working = prepared;
+    double reset_total_ms = 0.0;
+    double lookup_total_ms = 0.0;
+    for (int iteration = 0; iteration < iterations; ++iteration) {
+        reset_total_ms += milliseconds([&] {
+            std::copy(prepared.bytes.begin(), prepared.bytes.end(), working.bytes.begin());
+        });
+        lookup_total_ms += milliseconds([&] {
+            profile_quantize_lookup_kernel(working.bytes.data(), working.width, working.height,
+                                           extrema[0], extrema[1]);
+        });
+    }
+    const Difference diff = difference(working, reference);
+    if (diff.count != 0) return false;
+    add_phases(rows, "quantize_lut_profile",
+               {{"reset_average", reset_total_ms / iterations},
+                {"lookup_average", lookup_total_ms / iterations}}, working, reference);
+    std::cout << "Quantize lookup: " << iterations << " iteracoes; min="
+              << static_cast<int>(extrema[0]) << "; max=" << static_cast<int>(extrema[1])
+              << "; restauracao="
+              << reset_total_ms << " ms; lookup=" << lookup_total_ms
+              << " ms; lookup medio=" << lookup_total_ms / iterations << " ms\n";
+    return true;
+}
+
 bool run_equalize(const Picture& input, std::vector<Row>& rows) {
     Picture reference = input;
     const double reference_ms = milliseconds([&] {
@@ -651,7 +715,7 @@ bool write_csv(const Options& options, const Picture& input, const std::vector<R
 int main(int argc, char** argv) {
     Options options;
     if (!parse(argc, argv, options)) {
-        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production]\n";
+        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production] [--profile-quantize-lookup N]\n";
         return 2;
     }
     ImageState loaded{};
@@ -664,7 +728,11 @@ int main(int argc, char** argv) {
     bool valid = false;
     if (options.operation == "Negative" || options.operation == "Adjust_Brightness" || options.operation == "Adjust_Contrast")
         valid = run_pointwise(input, options.operation, rows);
-    else if (options.operation == "Quantize") valid = run_quantize(input, rows);
+    else if (options.operation == "Quantize") {
+        valid = options.profile_quantize_lookup > 0
+            ? run_quantize_lookup_profile(input, options.profile_quantize_lookup, rows)
+            : run_quantize(input, rows);
+    }
     else if (options.operation == "Equalize_Histogram") valid = run_equalize(input, rows);
     else if (options.operation == "Flip_Horizontal" || options.operation == "Rotate_CW" || options.operation == "Rotate_CCW")
         valid = run_geometry(input, options.operation, rows);
