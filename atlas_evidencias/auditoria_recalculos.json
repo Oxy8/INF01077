@@ -1,0 +1,21 @@
+{
+  "method": "medianas recalculadas dos CSVs brutos; schedules = média geométrica de 4 razões de medianas",
+  "ratios": {
+    "Grayscale_1t_off_over_avx": 1.2769990677569267,
+    "Grayscale_20t_off_over_avx": 1.1591441019495148,
+    "Zoom_In_1t_off_over_avx": 1.2218765642354303,
+    "Zoom_In_20t_off_over_avx": 1.0459843721281936,
+    "Gaussian_11x11_1t_off_over_avx": 1.000803630837307,
+    "Gaussian_11x11_20t_off_over_avx": 1.0019063021983718,
+    "AoS_Naive_1t_off_over_avx": 1.0018492302235051,
+    "AoS_Naive_20t_off_over_avx": 1.0005970781414668,
+    "SoA_Naive_1t_off_over_avx": 0.5079669268378922,
+    "SoA_Naive_20t_off_over_avx": 0.5026508622031274,
+    "SoA_Separable_1t_off_over_avx": 2.4436867114291014,
+    "SoA_Separable_20t_off_over_avx": 1.361184847695464,
+    "historical_Flip_Horizontal_dynamic1_geomean": 1.1358689058378475,
+    "historical_Flip_Horizontal_dynamic16_geomean": 1.0596905074077307,
+    "historical_Adjust_Brightness_dynamic1_geomean": 1.129166494714598,
+    "historical_Adjust_Brightness_dynamic16_geomean": 1.1063274059748363
+  }
+}

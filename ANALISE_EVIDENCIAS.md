@@ -6,6 +6,14 @@ de experimento**. Ele usa as campanhas finais listadas em
 [`RESULTADOS.md`](RESULTADOS.md), incluindo as coletas complementares 823586
 e 824167--824170.
 
+**Atualização após os jobs 824453 e 824454:** a recompilação e dez novas
+medições corrigem a conclusão antiga sobre Grayscale. A implementação atual
+ganha 1,277× com AVX2 em uma thread e 1,159× em 20 threads; o GCC confirma
+vetorização do loop por pixel. Consulte
+[`ANALISE_SIMD_824453_824454.md`](ANALISE_SIMD_824453_824454.md) para a
+comparação completa. Os números de 822851 abaixo permanecem como registro
+histórico da versão anterior do código.
+
 ## Convenções e rastreabilidade
 
 - `off-avx2`: vetorização automática desativada com `-fno-tree-vectorize`.
@@ -93,13 +101,12 @@ fase vertical passa a 47,16 ms, abaixo da horizontal.
 ### Conclusão e limite da evidência
 
 Há evidência forte de que AVX2 acelera a fase vertical, onde o laço interno
-tem acessos lineares em `i` e trabalho aritmético simples. O job de evidência
-do compilador (823585) preservou os binários assembly, mas os arquivos
-textuais de `-fopt-info-vec-all` ficaram vazios e não há relatório estruturado
-que associe cada laço a uma decisão de vetorização. Portanto, a conclusão é
-experimental e baseada em tempos por fase, não uma prova da sequência exata de
-instruções emitida. A análise de assembly por função ainda é um possível
-aprofundamento, não um resultado já obtido.
+tem acessos lineares em `i` e trabalho aritmético simples. O job 823585 não
+trouxe relatórios textuais utilizáveis, mas o job **824453** corrigiu essa
+lacuna: o GCC reporta vetorização de 32 bytes no loop vertical, e o assembly
+da função contém cargas, somas e stores vetoriais com registradores `ymm`.
+O relatório não mostra vetorização equivalente da cópia e da interpolação
+horizontal.
 
 ---
 
@@ -113,7 +120,7 @@ geométrico agregado (**1,119×** em 42 comparações), enquanto Grayscale é
 próximas de 1×. A tabela é
 `visualizacoes_pcad_hype_final_benchmark_principal/tables/simd_por_operacao.csv`.
 
-O recorte direto mais limpo é Grayscale na imagem de 36 MP:
+Na implementação usada em 822851, o recorte Grayscale na imagem de 36 MP foi:
 
 | Operação/configuração | `off-avx2` | `omp-avx2` | Resultado |
 | --- | ---: | ---: | --- |
@@ -129,27 +136,36 @@ contexto é `02_simd_matriz_36mp_static.svg`.
 Grayscale trabalha sobre RGB intercalado:
 
 ```cpp
-// image_manipulation.cpp:975-987
+// estrutura do laço atual em image_manipulation.cpp:975-987
 for (int i = 0; i < width; i++) {
     int index = (j * width + i) * 3;
     unsigned char r = data[index];
     unsigned char g = data[index + 1];
     unsigned char b = data[index + 2];
-    unsigned char gray = (unsigned char)(0.3*r + 0.59*g + 0.11*b);
+    unsigned char gray = (unsigned char)(0.299*r + 0.587*g + 0.114*b);
     data[index] = data[index + 1] = data[index + 2] = gray;
 }
 ```
 
-Há independência entre pixels, portanto SIMD é semanticamente permitido. Mas
-permitido não significa ganho grande. Um pixel ocupa três bytes e exige três
-cargas, conversões/cálculo em ponto flutuante e três stores. O agrupamento de
-pixels RGB em vetores pode exigir desempacotamento/embaralhamento; além disso,
-o kernel lê e escreve continuamente a mesma imagem. Quando a banda de memória
-limita o throughput, diminuir instruções aritméticas pouco reduz o tempo.
+Há independência entre pixels. Um pixel ocupa três bytes e exige três cargas,
+conversões/cálculo em ponto flutuante e três stores. O agrupamento de RGB em
+vetores exige embaralhamento, mas isso não impediu um ganho na implementação
+atual: o assembly de 824453 mostra `vpshufb`/`vpermq` e o loop por pixel
+vetorizado em 32 bytes. No job 824454, as medianas foram **78,044/61,115 ms
+(1,277×)** em uma thread e **6,165/5,319 ms (1,159×)** em 20.
 
-O VTune sustenta essa parte da explicação para 20 threads: Grayscale AVX2 teve
-`Memory Bound = 30,2%`, `Cache Bound = 11,6%` e alta banda de DRAM durante
-35,3% do tempo; já seu tempo de referência não melhorou. Veja
+Entre as campanhas, o commit `cdace49` extraiu o corpo do Grayscale para
+`apply_gray_scale_buffer(unsigned char*, int, int)`. O relatório otimizado de
+822851 não registra vetorização do loop por pixel; o de 824453 registra o
+loop vetorizado. Os hashes de saída do Grayscale para 36 MP
+coincidem entre as campanhas. Essa mudança de código/compilação é uma
+explicação plausível para a mudança de desempenho, mas não foi isolada num
+teste A/B de revisões no mesmo job.
+
+O VTune da versão anterior mediu Grayscale AVX2 com `Memory Bound = 30,2%`,
+`Cache Bound = 11,6%` e alta banda de DRAM durante 35,3% do tempo. Isso é
+evidência de pressão de memória naquele perfil, mas não prova que o código
+atual deixou de ganhar com SIMD. Veja
 `02_hpc_dram_bandwidth.svg` e a tabela
 `visualizacoes_pcad_hype_final_experimentos_complementares/tables/hpc_metricas.csv`.
 
@@ -163,15 +179,14 @@ pergunta 1.
 
 ### Conclusão e limite
 
-Não existe uma causa única para “as outras operações”: os limites podem ser
-banda, layout RGB, custo de shuffles, pouca aritmética por byte ou uma decisão
-do compilador. As medições sustentam fortemente a falta de ganho em Grayscale
-e mostram pressão de memória; elas não permitem atribuir, operação por
-operação, uma porcentagem a cada causa. O job 823585 não produziu relatórios
-textuais utilizáveis do vetorizador; preservou apenas assembly e, portanto,
-não permite afirmar qual laço o compilador escolheu ou rejeitou em cada
-operação. Essa atribuição fina ainda exigiria uma coleta de compilação
-corrigida, com logs separados por arquivo e inspeção do assembly do kernel.
+Não existe uma causa única para as demais operações. Em 824453, o GCC
+confirma vetorização do Grayscale e da fase vertical do Zoom, mas não do
+loop principal de Negative, Brightness ou das Gaussianas diretas. Um pragma
+`omp simd` no fonte não basta para concluir que houve vetorização útil do
+loop. O job 824453 fornece a coleta de compilação que faltava em 823585. O
+[job 824542](ANALISE_MEMORIA_824542.md) acrescenta contadores de cache da
+implementação atual, mas os das operações regulares incluem o processo
+inteiro. Eles ainda não isolam banda DRAM nem o kernel de cada operação.
 
 ---
 
@@ -353,9 +368,10 @@ Ao forçar SIMD nesse padrão de 121 taps, o resultado é consistente com uma
 estratégia desfavorável para este processador/layout: o mesmo kernel fica
 quase duas vezes mais lento, enquanto AoS direto permanece estável. A
 evidência é experimental, não apenas visual: sem SIMD, AoS e SoA ingênuo são
-praticamente iguais; a regressão aparece somente com `omp simd`. Como o
-relatório textual do vetorizador ficou vazio, não se deve afirmar qual
-decisão interna do compilador causou a regressão.
+praticamente iguais; a regressão aparece somente com `omp simd`. O relatório
+completo posterior do GCC (job 824453) registra vetorização de 8 bytes
+associada a um laço de taps, mas isso, sozinho, não atribui a regressão a uma
+única decisão interna do compilador.
 
 ### O que agora foi medido e o que continua aberto
 
@@ -365,12 +381,13 @@ Bound, contra 3,3% e 2,7% no AoS direto. Isso dá suporte quantitativo à
 hipótese de maior pressão de cache/memória no kernel vetorizado ingênuo e
 elimina a conversão como explicação.
 
-Ainda não é correto chamar esses percentuais de contagem direta de misses L1
-ou L2: são métricas normalizadas do VTune HPC e não isolam spills, redução
-vetorial, cache e latência. Também não há relatório textual confiável do
-vetorizador para afirmar qual estratégia foi escolhida. A explicação permanece
-a combinação de 121 taps, redução longa e SIMD explícito induzindo um kernel
-com pressão de recursos muito maior.
+Esses percentuais do VTune não são contagem direta de misses L1 ou L2. Os
+[contadores do job 824542](ANALISE_MEMORIA_824542.md) mostram, no processo
+com SoA ingênuo, aproximadamente 54% mais instruções e 64–66% mais misses
+de leitura na LLC com AVX2, mas não mais misses de leitura na L1. Isso
+fortalece a conclusão de um kernel com maior custo de instruções e pressão
+em cache profundo; não separa em segundos os efeitos de redução vetorial,
+spills, latência e tráfego DRAM.
 
 ---
 
@@ -556,10 +573,13 @@ rotacionar os lugares OpenMP entre núcleos e registrar frequência por núcleo.
 
 1. AVX2 foi decisivo no Zoom porque acelerou a interpolação vertical; não foi
    um ganho uniforme do programa.
-2. Grayscale e vários kernels simples não ganharam porque o trabalho é pouco
-   intensivo em computação e/ou difícil de organizar eficientemente para RGB
-   intercalado; a coleta HPC mostra pressão de memória em 20 threads.
-3. Ao escalar Zoom, AVX2 encontra mais cedo o teto de banda/cache compartilhado.
+2. A implementação atual de Grayscale ganhou 1,277× em uma thread e 1,159×
+   em 20. O GCC gerou um loop vetorial de 32 bytes, mesmo com RGB intercalado.
+   A conclusão antiga de empate se refere ao código da campanha 822851.
+3. Ao escalar Zoom, o ganho AVX2 cai. O job 824542 não aponta aumento
+   seletivo dos misses de leitura L1 nessa transição, mas não mediu banda
+   DRAM nem separou contadores por fase; pressão de memória compartilhada
+   permanece hipótese, não conclusão demonstrada.
 4. `static` é a escolha de referência para cargas uniformes; `dynamic` é
    valioso para carga irregular e pode compensar heterogeneidade da plataforma,
    como no Flip, mas tem custo e pode destruir localidade, como no Zoom.

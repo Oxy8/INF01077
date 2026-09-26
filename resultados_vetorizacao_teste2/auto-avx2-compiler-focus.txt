@@ -1,0 +1,1089 @@
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:170:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:98: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:179:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:183:79: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:189:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:193:41: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:209:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: data ref analysis failed: result_29 = MEM <struct array> [(value_type &)_28]._M_elems[_27];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:211:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:250:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:64: missed: not vectorized: data ref analysis failed: _30 = MEM <const struct array> [(const value_type &)_28]._M_elems[_27];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:301:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:306:49: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:302:37: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:330:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:333:83: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:331:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:376:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:376:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:43: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:39: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:43: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:350:52: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:350:52: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:350:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:351:37: missed: not vectorized: relevant stmt not supported: _97 = (unsigned int) _98;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:347:27: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:350:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:351:37: missed: not vectorized: relevant stmt not supported: _53 = (unsigned int) _52;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:367:52: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:367:52: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:365:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:365:27: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:365:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:365:27: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:367:38: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:204:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:205:59: missed: not vectorized: unsupported data-type double
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:238:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)bins_18(D)]._M_elems[_3] and MEM <struct array> [(value_type &)bins_18(D)]._M_elems[bin_31]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:259:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:260:87: missed: not vectorized, possible dependence between data-refs *_27 and *_23
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:322:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:114:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:112:104: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:151:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:151:31: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 17
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 15
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:621:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:621:27: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 77
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 76
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:622:24: missed: not vectorized: statement can throw an exception: D.112660 = csv_text (&D.112659); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:623:38: missed: not vectorized: statement can throw an exception: _57 = std::basic_ostream<char>::operator<< (_420, _4);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:623:61: missed: not vectorized: statement can throw an exception: _61 = std::basic_ostream<char>::operator<< (_429, _5);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:624:47: missed: not vectorized: statement can throw an exception: _66 = std::basic_ostream<char>::operator<< (_438, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:623:108: missed: not vectorized: statement can throw an exception: D.112666 = csv_text (&schedule); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:624:72: missed: not vectorized: statement can throw an exception: _75 = std::basic_ostream<char>::operator<< (_465, _7);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:627:41: missed: not vectorized: statement can throw an exception: _91 = std::basic_ostream<char>::operator<< (_521, _11);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:626:64: missed: not vectorized: statement can throw an exception: D.112674 = csv_text (&D.112673); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:626:96: missed: not vectorized: statement can throw an exception: D.112677 = csv_text (&D.112676); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:627:31: missed: not vectorized: statement can throw an exception: D.112678 = csv_text (&host); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 82
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 81
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 24
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 19
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:613:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_96.difference = *__args#0_14(D).difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *__cur_166.difference = *__first_149.difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.104797.hash = hash_picture (actual_8(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.104797.reference_hash = hash_picture (reference_9(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: more than one data ref in stmt: D.104797.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_96.difference = MEM[(struct Row &)&D.104797].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 5
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:607:42: missed: not vectorized: statement can throw an exception: _239 = zoom_in_image_to_buffer (&image, _224, _3, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:603:93: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:609:25: missed: not vectorized: statement can throw an exception: add_row (rows_56(D), &D.112466, &D.112468, _214, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:591:6: missed: not vectorized: statement can throw an exception: resx 38
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:591:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:596:37: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:598:16: missed: not vectorized: statement can throw an exception: add_row (rows_56(D), &D.112419, &D.112421, _145, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:591:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:591:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:145:98: missed: not vectorized: statement can throw an exception: reference_hash = hash_picture (reference_16(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:148:1: missed: not vectorized: more than one data ref in stmt: D.106738.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_147.difference = MEM[(struct Row &)&D.106738].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 6
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:426:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:426:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:415:69: missed: not vectorized: statement can throw an exception: adjust_brightness (&state, 127);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:29: missed: not vectorized: statement can throw an exception: adjust_contrast (&state, 1.5e+0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:52: missed: not vectorized: statement can throw an exception: apply_negative (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:418:12: missed: not vectorized: statement can throw an exception: add_row (rows_27(D), &D.110166, &D.110168, _143, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 59
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 57
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:426:15: missed: not vectorized: statement can throw an exception: add_phases (rows_27(D), &D.110538, &D.110622, &linear, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 26
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:410:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:448:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:448:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:434:22: missed: not vectorized: statement can throw an exception: quantize_gray (&state, 16);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:436:12: missed: not vectorized: statement can throw an exception: add_row (rows_29(D), &D.110660, &D.110662, _171, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:440:71: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:443:65: missed: not vectorized: statement can throw an exception: extrema = find_min_and_max_luminance_on_gray_scale_image (_268, _267, _266);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 65
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:448:15: missed: not vectorized: statement can throw an exception: add_phases (rows_29(D), &D.111040, &D.111073, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:430:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:469:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:469:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)&bins]._M_elems[_283] and MEM <struct array> [(value_type &)&bins]._M_elems[bin_36]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:458:27: missed: not vectorized: statement can throw an exception: equalize_histogram (&state, &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:460:12: missed: not vectorized: statement can throw an exception: add_row (rows_28(D), &D.111112, &D.111114, _165, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:464:65: missed: not vectorized: statement can throw an exception: histogram_private (input_20(D), &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 65
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:469:15: missed: not vectorized: statement can throw an exception: add_phases (rows_28(D), &D.111339, &D.111372, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:527:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:527:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:517:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:517:35: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:507:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:507:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:483:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:483:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:481:81: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 213
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 211
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:483:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.111424, &D.111431, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 216
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 215
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 218
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 217
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 221
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 219
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.111561, &D.111571, &planar_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 225
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 223
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:507:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.111801, &D.111835, &aos_separable, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 228
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 227
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 231
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 229
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:527:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.112049, &D.112099, &separable_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:544:65: missed: not vectorized: statement can throw an exception: _1703 = apply_11_by_11_convolution (&state, &GAUSSIAN_KERNEL_11X11, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:543:62: missed: not vectorized: statement can throw an exception: _1698 = apply_9_by_9_convolution (&state, &GAUSSIAN_KERNEL_9X9, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:542:62: missed: not vectorized: statement can throw an exception: _1693 = apply_7_by_7_convolution (&state, &GAUSSIAN_KERNEL_7X7, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:541:62: missed: not vectorized: statement can throw an exception: _2791 = apply_5_by_5_convolution (&state, &GAUSSIAN_KERNEL_5X5, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:540:62: missed: not vectorized: statement can throw an exception: _1683 = apply_3_by_3_convolution (&state, &GAUSSIAN_KERNEL_3X3, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:550:16: missed: not vectorized: statement can throw an exception: add_row (rows_162(D), &D.112169, &D.112171, _1678, &production, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 175
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 171
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 167
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 233
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 144
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 140
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 137
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 134
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 129
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 118
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 113
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 97
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 93
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 90
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 87
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 80
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 75
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 56
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 52
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 49
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 47
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 40
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 20
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:474:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:586:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:586:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:577:12: missed: not vectorized: statement can throw an exception: add_row (rows_66(D), &D.112239, &D.112241, _209, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 66
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 64
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:586:15: missed: not vectorized: statement can throw an exception: add_phases (rows_66(D), &variant, &D.112380, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 42
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 37
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:634:15: missed: not vectorized: statement can throw an exception: _30 = parse (argc_27(D), argv_28(D), &options);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:639:20: missed: not vectorized: statement can throw an exception: _35 = load_image (_62, &loaded);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:655:55: missed: not vectorized: statement can throw an exception: suffix = std::__cxx11::basic_string<char>::substr (&options.operation, 9, 18446744073709551615); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:657:64: missed: not vectorized: statement can throw an exception: D.112802 = std::__cxx11::basic_string<char>::substr (&suffix, 0, _12); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:657:33: missed: not vectorized: statement can throw an exception: _71 = run_gaussian (&input, _165, _11, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:653:28: missed: not vectorized: statement can throw an exception: _77 = run_control (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:29: missed: not vectorized: statement can throw an exception: _79 = run_geometry (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:649:77: missed: not vectorized: statement can throw an exception: _81 = run_equalize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:648:67: missed: not vectorized: statement can throw an exception: _83 = run_quantize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:647:30: missed: not vectorized: statement can throw an exception: _85 = run_pointwise (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:663:19: missed: not vectorized: statement can throw an exception: _87 = write_csv (&options, &input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:664:69: missed: not vectorized: statement can throw an exception: _89 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (&cerr, &options.csv);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:664:69: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_89, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:660:122: missed: not vectorized: statement can throw an exception: _93 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (_44, &options.image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:660:122: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_93, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 33
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:5: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:635:22: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production]\n");
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:170:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:98: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:179:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:183:79: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:189:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:193:41: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:209:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: data ref analysis failed: result_29 = MEM <struct array> [(value_type &)_28]._M_elems[_27];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:211:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:250:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:64: missed: not vectorized: data ref analysis failed: _30 = MEM <const struct array> [(const value_type &)_28]._M_elems[_27];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:301:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:306:49: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:302:37: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:330:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:333:83: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:331:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:48: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:48: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:348:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:348:38: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:357:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:356:37: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:356:37: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:52: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:52: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:374:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:374:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:387:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:388:64: missed: not vectorized: no vectype for stmt: _40 = *_39;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:383:58: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:382:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:204:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:205:59: missed: not vectorized: unsupported data-type double
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:238:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)bins_18(D)]._M_elems[_3] and MEM <struct array> [(value_type &)bins_18(D)]._M_elems[bin_31]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:259:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:260:87: missed: not vectorized, possible dependence between data-refs *_27 and *_23
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:322:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:114:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:112:104: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:151:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:151:31: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 17
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 15
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:640:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:640:27: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 77
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 76
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:641:24: missed: not vectorized: statement can throw an exception: D.113734 = csv_text (&D.113733); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:38: missed: not vectorized: statement can throw an exception: _57 = std::basic_ostream<char>::operator<< (_420, _4);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:61: missed: not vectorized: statement can throw an exception: _61 = std::basic_ostream<char>::operator<< (_429, _5);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:643:47: missed: not vectorized: statement can throw an exception: _66 = std::basic_ostream<char>::operator<< (_438, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:108: missed: not vectorized: statement can throw an exception: D.113740 = csv_text (&schedule); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:643:72: missed: not vectorized: statement can throw an exception: _75 = std::basic_ostream<char>::operator<< (_465, _7);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:646:41: missed: not vectorized: statement can throw an exception: _91 = std::basic_ostream<char>::operator<< (_521, _11);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:645:64: missed: not vectorized: statement can throw an exception: D.113748 = csv_text (&D.113747); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:645:96: missed: not vectorized: statement can throw an exception: D.113751 = csv_text (&D.113750); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:646:31: missed: not vectorized: statement can throw an exception: D.113752 = csv_text (&host); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 82
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 81
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 24
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 19
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_96.difference = *__args#0_14(D).difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *__cur_166.difference = *__first_149.difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.104797.hash = hash_picture (actual_8(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.104797.reference_hash = hash_picture (reference_9(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: more than one data ref in stmt: D.104797.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_96.difference = MEM[(struct Row &)&D.104797].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 5
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:626:42: missed: not vectorized: statement can throw an exception: _239 = zoom_in_image_to_buffer (&image, _224, _3, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:622:93: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:628:25: missed: not vectorized: statement can throw an exception: add_row (rows_56(D), &D.113540, &D.113542, _214, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 38
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:615:37: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:617:16: missed: not vectorized: statement can throw an exception: add_row (rows_56(D), &D.113493, &D.113495, _145, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:145:98: missed: not vectorized: statement can throw an exception: reference_hash = hash_picture (reference_16(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:148:1: missed: not vectorized: more than one data ref in stmt: D.106738.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_147.difference = MEM[(struct Row &)&D.106738].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 6
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:434:69: missed: not vectorized: statement can throw an exception: adjust_brightness (&state, 127);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:435:29: missed: not vectorized: statement can throw an exception: adjust_contrast (&state, 1.5e+0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:433:52: missed: not vectorized: statement can throw an exception: apply_negative (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:437:12: missed: not vectorized: statement can throw an exception: add_row (rows_27(D), &D.111254, &D.111256, _143, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 59
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 57
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: not vectorized: statement can throw an exception: add_phases (rows_27(D), &D.111626, &D.111710, &linear, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 26
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:22: missed: not vectorized: statement can throw an exception: quantize_gray (&state, 16);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:455:12: missed: not vectorized: statement can throw an exception: add_row (rows_29(D), &D.111748, &D.111750, _171, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:459:71: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:462:65: missed: not vectorized: statement can throw an exception: extrema = find_min_and_max_luminance_on_gray_scale_image (_268, _267, _266);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 65
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: not vectorized: statement can throw an exception: add_phases (rows_29(D), &D.112128, &D.112161, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)&bins]._M_elems[_283] and MEM <struct array> [(value_type &)&bins]._M_elems[bin_36]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:477:27: missed: not vectorized: statement can throw an exception: equalize_histogram (&state, &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:479:12: missed: not vectorized: statement can throw an exception: add_row (rows_28(D), &D.112200, &D.112202, _165, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:483:65: missed: not vectorized: statement can throw an exception: histogram_private (input_20(D), &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 65
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: not vectorized: statement can throw an exception: add_phases (rows_28(D), &D.112427, &D.112460, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:536:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:536:35: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:500:81: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 213
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 211
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.112512, &D.112519, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 216
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 215
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 218
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 217
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 221
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 219
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.112649, &D.112659, &planar_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 225
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 223
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.112875, &D.112909, &aos_separable, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 228
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 227
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 231
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 229
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: not vectorized: statement can throw an exception: add_phases (rows_162(D), &D.113123, &D.113173, &separable_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:563:65: missed: not vectorized: statement can throw an exception: _1715 = apply_11_by_11_convolution (&state, &GAUSSIAN_KERNEL_11X11, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:562:62: missed: not vectorized: statement can throw an exception: _1710 = apply_9_by_9_convolution (&state, &GAUSSIAN_KERNEL_9X9, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:561:62: missed: not vectorized: statement can throw an exception: _1705 = apply_7_by_7_convolution (&state, &GAUSSIAN_KERNEL_7X7, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:560:62: missed: not vectorized: statement can throw an exception: _2801 = apply_5_by_5_convolution (&state, &GAUSSIAN_KERNEL_5X5, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:62: missed: not vectorized: statement can throw an exception: _1695 = apply_3_by_3_convolution (&state, &GAUSSIAN_KERNEL_3X3, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:569:16: missed: not vectorized: statement can throw an exception: add_row (rows_162(D), &D.113243, &D.113245, _1690, &production, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 175
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 171
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 167
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 233
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 144
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 140
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 137
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 134
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 129
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 118
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 113
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 97
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 93
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 90
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 87
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 80
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 75
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 56
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 52
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 49
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 47
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 40
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 20
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:596:12: missed: not vectorized: statement can throw an exception: add_row (rows_66(D), &D.113313, &D.113315, _209, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 66
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 64
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: not vectorized: statement can throw an exception: add_phases (rows_66(D), &variant, &D.113454, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 42
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 37
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:653:15: missed: not vectorized: statement can throw an exception: _30 = parse (argc_27(D), argv_28(D), &options);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:658:20: missed: not vectorized: statement can throw an exception: _35 = load_image (_62, &loaded);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:674:55: missed: not vectorized: statement can throw an exception: suffix = std::__cxx11::basic_string<char>::substr (&options.operation, 9, 18446744073709551615); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:676:64: missed: not vectorized: statement can throw an exception: D.113876 = std::__cxx11::basic_string<char>::substr (&suffix, 0, _12); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:676:33: missed: not vectorized: statement can throw an exception: _71 = run_gaussian (&input, _165, _11, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:672:28: missed: not vectorized: statement can throw an exception: _77 = run_control (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:670:29: missed: not vectorized: statement can throw an exception: _79 = run_geometry (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:668:77: missed: not vectorized: statement can throw an exception: _81 = run_equalize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:667:67: missed: not vectorized: statement can throw an exception: _83 = run_quantize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:666:30: missed: not vectorized: statement can throw an exception: _85 = run_pointwise (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:682:19: missed: not vectorized: statement can throw an exception: _87 = write_csv (&options, &input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:683:69: missed: not vectorized: statement can throw an exception: _89 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (&cerr, &options.csv);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:683:69: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_89, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:679:122: missed: not vectorized: statement can throw an exception: _93 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (_44, &options.image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:679:122: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_93, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 33
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:654:22: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production]\n");
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:169:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:170:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:98: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:173:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:178:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:179:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:183:79: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:182:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:188:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:189:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:193:41: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:192:33: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:209:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:213:50: missed: not vectorized: data ref analysis failed: result_32 = MEM <struct array> [(value_type &)_31]._M_elems[_30];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:211:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:33: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:228:48: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:229:31: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:98: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:250:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:64: missed: not vectorized: data ref analysis failed: _33 = MEM <const struct array> [(const value_type &)_31]._M_elems[_30];
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:253:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:266:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:268:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:279:45: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:281:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:297:45: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:299:27: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:301:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:306:49: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:302:37: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:332:64: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:326:46: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:328:31: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:330:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:333:83: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:331:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:48: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:48: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:348:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:348:38: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:352:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:357:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:356:37: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:356:37: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:395:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:397:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:56: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:56: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:50: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:39: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:56: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:414:56: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:416:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:52: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:52: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:374:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:374:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:387:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:388:64: missed: not vectorized: no vectype for stmt: _44 = *_43;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:378:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:383:58: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:382:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:84:19: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:81:13: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:127:34: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:152:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:152:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 17
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 15
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:150:6: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:204:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:205:59: missed: not vectorized: unsupported data-type double
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:238:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:70: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:239:34: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)bins_18(D)]._M_elems[_3] and MEM <struct array> [(value_type &)bins_18(D)]._M_elems[bin_31]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:259:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:260:87: missed: not vectorized, possible dependence between data-refs *_27 and *_15
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:322:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:114:31: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:112:104: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:111:49: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:109:13: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:640:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:640:27: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 77
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 76
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 82
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 81
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:641:24: missed: not vectorized: statement can throw an exception: D.118416 = csv_text (&D.118415); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:38: missed: not vectorized: statement can throw an exception: _56 = std::basic_ostream<char>::operator<< (_419, _4);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:61: missed: not vectorized: statement can throw an exception: _60 = std::basic_ostream<char>::operator<< (_428, _5);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:643:47: missed: not vectorized: statement can throw an exception: _65 = std::basic_ostream<char>::operator<< (_437, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:642:108: missed: not vectorized: statement can throw an exception: D.118450 = csv_text (&schedule); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:643:72: missed: not vectorized: statement can throw an exception: _74 = std::basic_ostream<char>::operator<< (_464, _7);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:646:41: missed: not vectorized: statement can throw an exception: _90 = std::basic_ostream<char>::operator<< (_520, _11);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:645:64: missed: not vectorized: statement can throw an exception: D.118494 = csv_text (&D.118493); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:645:96: missed: not vectorized: statement can throw an exception: D.118501 = csv_text (&D.118500); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:646:31: missed: not vectorized: statement can throw an exception: D.118506 = csv_text (&host); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 24
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 19
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:632:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_2.difference = *__args#0_22(D).difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *__cur_67.difference = *__first_61.difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *__cur_275.difference = *__first_62.difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.109248.hash = hash_picture (actual_10(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: statement can throw an exception: D.109248.reference_hash = hash_picture (reference_11(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:139:1: missed: not vectorized: more than one data ref in stmt: D.109248.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_72.difference = MEM[(struct Row &)&D.109248].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 5
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:135:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:626:42: missed: not vectorized: statement can throw an exception: _228 = zoom_in_image_to_buffer (&image, _215, _3, _6);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:622:93: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:628:25: missed: not vectorized: statement can throw an exception: add_row (rows_53(D), &D.118208, &D.118210, _203, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 38
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:615:37: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:617:16: missed: not vectorized: statement can throw an exception: add_row (rows_53(D), &D.118161, &D.118163, _125, &result, &result);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:610:6: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:146:30: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:145:98: missed: not vectorized: statement can throw an exception: reference_hash = hash_picture (reference_19(D)); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:148:1: missed: not vectorized: more than one data ref in stmt: D.111192.difference = diff;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 10
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 6
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:141:6: missed: not vectorized: statement can throw an exception: resx 3
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:71:8: missed: not vectorized: more than one data ref in stmt: *_122.difference = MEM[(struct Row &)&D.111192].difference;
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:434:69: missed: not vectorized: statement can throw an exception: adjust_brightness (&state, 127);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:435:29: missed: not vectorized: statement can throw an exception: adjust_contrast (&state, 1.5e+0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:433:52: missed: not vectorized: statement can throw an exception: apply_negative (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:437:12: missed: not vectorized: statement can throw an exception: add_row (rows_28(D), &D.115767, &D.115769, _123, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 57
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 55
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:445:15: missed: not vectorized: statement can throw an exception: add_phases (rows_28(D), &D.116167, &D.116263, &linear, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 27
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 26
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:429:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:453:22: missed: not vectorized: statement can throw an exception: quantize_gray (&state, 16);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:455:12: missed: not vectorized: statement can throw an exception: add_row (rows_32(D), &D.116301, &D.116303, _153, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:459:71: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&state);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:462:65: missed: not vectorized: statement can throw an exception: extrema = find_min_and_max_luminance_on_gray_scale_image (_252, _251, _250);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 61
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:467:15: missed: not vectorized: statement can throw an exception: add_phases (rows_32(D), &D.116687, &D.116726, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:449:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:245:48: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:244:62: missed: not vectorized, possible dependence between data-refs MEM <struct array> [(value_type &)&bins]._M_elems[_265] and MEM <struct array> [(value_type &)&bins]._M_elems[bin_40]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:477:27: missed: not vectorized: statement can throw an exception: equalize_histogram (&state, &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:479:12: missed: not vectorized: statement can throw an exception: add_row (rows_29(D), &D.116765, &D.116767, _145, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:483:65: missed: not vectorized: statement can throw an exception: histogram_private (input_21(D), &bins);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 63
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 61
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:488:15: missed: not vectorized: statement can throw an exception: add_phases (rows_29(D), &D.116998, &D.117037, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 30
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 21
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:472:6: missed: not vectorized: statement can throw an exception: resx 8
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:536:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:536:35: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:500:81: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 205
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 203
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:502:15: missed: not vectorized: statement can throw an exception: add_phases (rows_167(D), &D.117089, &D.117096, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 208
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 207
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 210
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 209
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 213
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 211
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:512:15: missed: not vectorized: statement can throw an exception: add_phases (rows_167(D), &D.117226, &D.117236, &planar_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 217
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 215
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:526:15: missed: not vectorized: statement can throw an exception: add_phases (rows_167(D), &D.117458, &D.117498, &aos_separable, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 220
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 219
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 223
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 221
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:546:15: missed: not vectorized: statement can throw an exception: add_phases (rows_167(D), &D.117712, &D.117774, &separable_output, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:563:65: missed: not vectorized: statement can throw an exception: _1580 = apply_11_by_11_convolution (&state, &GAUSSIAN_KERNEL_11X11, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:562:62: missed: not vectorized: statement can throw an exception: _1575 = apply_9_by_9_convolution (&state, &GAUSSIAN_KERNEL_9X9, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:561:62: missed: not vectorized: statement can throw an exception: _1570 = apply_7_by_7_convolution (&state, &GAUSSIAN_KERNEL_7X7, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:560:62: missed: not vectorized: statement can throw an exception: _399 = apply_5_by_5_convolution (&state, &GAUSSIAN_KERNEL_5X5, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:559:62: missed: not vectorized: statement can throw an exception: _1560 = apply_3_by_3_convolution (&state, &GAUSSIAN_KERNEL_3X3, 0, 0);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:569:16: missed: not vectorized: statement can throw an exception: add_row (rows_167(D), &D.117883, &D.117885, _1555, &production, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 169
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 165
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 161
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 225
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 140
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 136
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 133
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 130
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 125
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 114
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 109
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 95
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 91
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 88
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 85
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 78
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 73
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 56
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 52
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 49
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 47
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 40
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 35
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 32
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 20
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:493:6: missed: not vectorized: statement can throw an exception: resx 7
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:596:12: missed: not vectorized: statement can throw an exception: add_row (rows_65(D), &D.117969, &D.117971, _191, &reference, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 64
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 62
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:605:15: missed: not vectorized: statement can throw an exception: add_phases (rows_65(D), &variant, &D.118114, &candidate, &reference);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 42
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 39
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 37
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:578:6: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:653:15: missed: not vectorized: statement can throw an exception: _30 = parse (argc_27(D), argv_28(D), &options);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:658:20: missed: not vectorized: statement can throw an exception: _34 = load_image (_61, &loaded);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:674:55: missed: not vectorized: statement can throw an exception: suffix = std::__cxx11::basic_string<char>::substr (&options.operation, 9, 18446744073709551615); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:676:64: missed: not vectorized: statement can throw an exception: D.118762 = std::__cxx11::basic_string<char>::substr (&suffix, 0, _12); [return slot optimization]
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:676:33: missed: not vectorized: statement can throw an exception: _71 = run_gaussian (&input, __ret_179, _11, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 34
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 16
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 14
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:672:28: missed: not vectorized: statement can throw an exception: _77 = run_control (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:670:29: missed: not vectorized: statement can throw an exception: _79 = run_geometry (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:668:77: missed: not vectorized: statement can throw an exception: _81 = run_equalize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:667:67: missed: not vectorized: statement can throw an exception: _83 = run_quantize (&input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:666:30: missed: not vectorized: statement can throw an exception: _85 = run_pointwise (&input, &options.operation, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:682:19: missed: not vectorized: statement can throw an exception: _87 = write_csv (&options, &input, &rows);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:683:69: missed: not vectorized: statement can throw an exception: _89 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (&cerr, &options.csv);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:683:69: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_89, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:679:122: missed: not vectorized: statement can throw an exception: _92 = std::filesystem::__cxx11::operator<< <char, std::char_traits<char> > (_42, &options.image);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:679:122: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_92, 10);
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 12
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 33
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:651:5: missed: not vectorized: statement can throw an exception: resx 4
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:654:22: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production]\n");

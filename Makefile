@@ -13,6 +13,7 @@ LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
 DIAGNOSTIC_TARGET := $(BUILD_DIR)/diagnostic_runner
 FLIP_PROFILE_TARGET := $(BUILD_DIR)/flip_profile_runner
 GAUSSIAN_SIZES_TARGET := $(BUILD_DIR)/gaussian_sizes_benchmark
+VECTORIZATION_TARGET := $(BUILD_DIR)/vectorization_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
 CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
@@ -22,9 +23,10 @@ LAYOUT_OBJECT := $(BUILD_DIR)/layout_benchmark.o
 DIAGNOSTIC_OBJECT := $(BUILD_DIR)/diagnostic_runner.o
 FLIP_PROFILE_OBJECT := $(BUILD_DIR)/flip_profile_runner.o
 GAUSSIAN_SIZES_OBJECT := $(BUILD_DIR)/gaussian_sizes_benchmark.o
+VECTORIZATION_OBJECT := $(BUILD_DIR)/vectorization_benchmark.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
 GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT)
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT) $(VECTORIZATION_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
@@ -49,11 +51,13 @@ DEPFLAGS := -MMD -MP
 COMPILER_DIAGNOSTICS ?= 0
 COMPILER_DIAGNOSTIC_CORE_FLAGS :=
 COMPILER_DIAGNOSTIC_LAYOUT_FLAGS :=
+COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS :=
 ifeq ($(COMPILER_DIAGNOSTICS),1)
 # Relatório amplo: registra tanto laços aceitos quanto recusados pelo
 # vetorizador. É usado somente no job de evidência, não nos benchmarks.
 COMPILER_DIAGNOSTIC_CORE_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-core-all.log
 COMPILER_DIAGNOSTIC_LAYOUT_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-layout-all.log
+COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-experiment-all.log
 endif
 
 ifeq ($(SIMD),off)
@@ -62,6 +66,9 @@ VECTOR_REPORT_FLAG :=
 else ifeq ($(SIMD),off-avx2)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -march=haswell
 VECTOR_REPORT_FLAG :=
+else ifeq ($(SIMD),auto-avx2)
+SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=0 -march=haswell
+VECTOR_REPORT_FLAG :=
 else ifeq ($(SIMD),omp)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=1
 VECTOR_REPORT_FLAG := -fopt-info-vec-optimized=$(BUILD_DIR)/vectorization-core.log
@@ -69,7 +76,7 @@ else ifeq ($(SIMD),omp-avx2)
 SIMD_FLAGS := -DOMP_EXPLICIT_SIMD=1 -march=haswell
 VECTOR_REPORT_FLAG := -fopt-info-vec-optimized=$(BUILD_DIR)/vectorization-core.log
 else
-$(error SIMD must be "off", "off-avx2", "omp" or "omp-avx2"; got "$(SIMD)")
+$(error SIMD must be "off", "off-avx2", "auto-avx2", "omp" or "omp-avx2"; got "$(SIMD)")
 endif
 
 # O GCC aceita apenas um arquivo de saída para -fopt-info em uma compilação.
@@ -89,7 +96,7 @@ CXXFLAGS += $(SIMD_FLAGS)
 # flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
 CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
-.PHONY: all layout diagnostics flip-profile gaussian-sizes compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all layout diagnostics flip-profile gaussian-sizes vectorization compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
@@ -100,6 +107,8 @@ diagnostics: $(DIAGNOSTIC_TARGET)
 flip-profile: $(FLIP_PROFILE_TARGET)
 
 gaussian-sizes: $(GAUSSIAN_SIZES_TARGET)
+
+vectorization: $(VECTORIZATION_TARGET)
 
 compiler-evidence:
 	$(MAKE) -B DEBUG=1 SIMD=off-avx2 COMPILER_DIAGNOSTICS=1 layout all
@@ -148,6 +157,9 @@ $(FLIP_PROFILE_TARGET): $(CORE_OBJECT) $(FLIP_PROFILE_OBJECT)
 $(GAUSSIAN_SIZES_TARGET): $(CORE_OBJECT) $(GAUSSIAN_SIZES_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(VECTORIZATION_TARGET): $(CORE_OBJECT) $(VECTORIZATION_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -171,6 +183,9 @@ $(FLIP_PROFILE_OBJECT): $(PROJECT_DIR)/flip_profile_runner.cpp | check-compiler 
 
 $(GAUSSIAN_SIZES_OBJECT): $(PROJECT_DIR)/gaussian_sizes_benchmark.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(VECTORIZATION_OBJECT): $(PROJECT_DIR)/vectorization_benchmark.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@

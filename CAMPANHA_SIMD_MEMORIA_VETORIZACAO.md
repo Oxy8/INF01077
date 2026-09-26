@@ -11,7 +11,7 @@ memória/cache.
 | Tempo | 17 operações regulares; off-avx2 e omp-avx2; 1 e 20 threads; static; 10 amostras | mediana de ms/pixel e razão das medianas | não contém contadores |
 | Layout Gaussiana | AoS direto, SoA ingênuo e SoA separável; 1 e 20 threads; 10 amostras | tempo de cada fase; kernels sem conversão | somente 11x11 especializado |
 | Vetorização GCC | os fontes dos kernels regulares e Gaussianas, nos dois builds | mensagens accepted/missed, dump da passagem vect, assembly/objdump | estático: não mede tempo |
-| Memória/perf | as 17 operações; dois builds; 1 e 20 threads; 10 amostras por grupo de eventos | misses por pixel e MPKI | regular/ inclui PNG, backup e hash |
+| Memória/perf | as 17 operações; dois builds; 1 e 20 threads; 5 amostras por grupo de eventos | misses por pixel e MPKI | regular/ inclui PNG, backup e hash |
 | Memória/perf Gaussiana | três layouts 11x11 com repetição longa | misses por pixel do kernel dominante | não é diretamente comparável ao tempo de outro executável |
 
 A configuração de OpenMP fixa apenas o que o experimento exige:
@@ -36,8 +36,10 @@ coleta de memória durante um teste inicial, use, por exemplo:
 sbatch --export=ALL,REGULAR_MEMORY_REPEATS=1 scripts/pcad_hype_regular_memory_1_20.sbatch
 ```
 
-A campanha final usa dez repetições para tempo e memória. Cada job cria um
-diretório `resultados_pcad_hype_..._<jobid>`.
+A campanha final usa dez repetições de tempo e cinco de memória; a segunda
+coleta é mais longa porque o `perf` executa cada operação separadamente para
+cada grupo de eventos. Cada job cria um diretório
+`resultados_pcad_hype_..._<jobid>`.
 
 ## Como interpretar
 

@@ -1,0 +1,7 @@
+Layout,Threads,Process_instructions_avx_over_off,Process_LLC_load_misses_avx_over_off,LLC_coverage_off_pct,LLC_coverage_avx_pct,Job,Samples_per_build,Note
+AoS_Naive,1,1.0208908750425705,1.1522416580169816,74.0,74.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts
+AoS_Naive,20,1.020901255686566,1.186387453292179,75.0,75.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts
+SoA_Naive,1,1.5431219659896205,1.6428829328549874,74.0,74.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts
+SoA_Naive,20,1.5427084217487181,1.6620392376015043,75.0,75.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts
+SoA_Separable,1,0.30462630998610396,2.2713180215842272,74.0,74.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts
+SoA_Separable,20,0.31592306255121,3.641769443678809,76.0,75.0,824542,5,Comparação dentro do mesmo layout; perf envolve processo inteiro; iterações diferem entre layouts

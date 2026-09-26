@@ -171,7 +171,9 @@ def main() -> None:
         for case in sorted(root.glob("[0-9][0-9]_*")):
             rows = read_csv(case / "threads.csv")
             first = rows[0]
-            key = case.name.split("_", 2)[2]
+            # Nomes como 00_t20_static_serial incluem o número de threads.
+            # Preservá-lo evita misturar os controles de 10t e 20t e gerar NaN.
+            key = case.name.split("_", 1)[1]
             works = [float(row["Work_ms"]) for row in rows]
             row_counts = [int(row["Rows"]) for row in rows]
             flip_controls[key].append({"Job": root.name.rsplit("_", 1)[-1], "Case": key, "Threads": len(rows), "Init": first["Init_Mode"], "Schedule": "dynamic,1" if "dynamic" in key else "static", "Control_ms": float(first["Control_ms"]), "Work_Mean_ms": statistics.fmean(works), "Work_CV_pct": statistics.pstdev(works) / statistics.fmean(works) * 100, "Rows_Min": min(row_counts), "Rows_Max": max(row_counts), "First_Half_Work_ms": statistics.fmean(works[:len(works)//2]), "Second_Half_Work_ms": statistics.fmean(works[len(works)//2:])})
@@ -193,13 +195,10 @@ def main() -> None:
     figures.append(("04_flip_primeiro_toque_20t.svg", "Razão de tempos: acima de 1× favorece dynamic,1; abaixo de 1× favorece static. Agora o gráfico evidencia a inversão causada pelo primeiro toque."))
 
     imbalance_labels = ["10 threads / init paralelo-static", "20 threads / init serial", "20 threads / init paralelo-static"]
-    imbalance_ratios = [
-        safe_ratio(cv("t10_static_parallel-static"), cv("t10_dynamic_1_parallel-static")),
-        safe_ratio(cv("t20_static_serial"), cv("t20_dynamic_1_serial")),
-        safe_ratio(cv("t20_static_parallel-static"), cv("t20_dynamic_1_parallel-static")),
-    ]
-    bar_chart(figures_dir / "05_flip_desequilibrio_temporal.svg", "Flip: quanto dynamic,1 reduz a variação temporal entre threads", imbalance_labels, [("CV(static) / CV(dynamic,1)", imbalance_ratios, "#d62728")], "Speedup de uniformidade temporal", baseline=1.0)
-    figures.append(("05_flip_desequilibrio_temporal.svg", "Razão dos coeficientes de variação de Work_ms. Acima de 1× significa que dynamic,1 deixou os tempos por thread mais uniformes."))
+    static_cv = [cv("t10_static_parallel-static"), cv("t20_static_serial"), cv("t20_static_parallel-static")]
+    dynamic_cv = [cv("t10_dynamic_1_parallel-static"), cv("t20_dynamic_1_serial"), cv("t20_dynamic_1_parallel-static")]
+    bar_chart(figures_dir / "05_flip_desequilibrio_temporal.svg", "Flip: dispersão do tempo de trabalho entre threads", imbalance_labels, [("static", static_cv, "#1f77b4"), ("dynamic,1", dynamic_cv, "#d62728")], "CV do tempo de trabalho por thread (%)", baseline=0.0)
+    figures.append(("05_flip_desequilibrio_temporal.svg", "Coeficiente de variação do tempo de trabalho por thread, em porcentagem. Valores menores significam término mais uniforme; não representam ganho de velocidade."))
 
     hpc_flip: list[dict[str, object]] = []
     for root in flip_roots:

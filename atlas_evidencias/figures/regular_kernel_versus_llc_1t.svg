@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="888" viewBox="0 0 1200 888" role="img" aria-label="17 operações, 1 thread(s): ganho do kernel e LLC do processo">
+<title>17 operações, 1 thread(s): ganho do kernel e LLC do processo</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">17 operações, 1 thread(s): ganho do kernel e LLC do processo</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="255.0" y="835">0.00×</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="443.8" y="835">0.38×</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="632.5" y="835">0.76×</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="821.2" y="835">1.14×</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="835">1.52×</text>
+<rect class="frame" x="255" y="70" width="755" height="743"/>
+<line x1="751.7" x2="751.7" y1="70" y2="813" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<text class="axis" text-anchor="end" x="243" y="98.8">Adjust_Brightness</text>
+<rect x="255.0" y="77.0" width="493.0" height="9.7" fill="#1f77b4"/>
+<text class="small" x="754.0" y="84.6">0.99×</text>
+<rect x="255.0" y="89.5" width="628.0" height="9.7" fill="#d48419"/>
+<text class="small" x="889.0" y="97.1">1.26×</text>
+<text class="axis" text-anchor="end" x="243" y="142.6">Adjust_Contrast</text>
+<rect x="255.0" y="120.7" width="502.9" height="9.7" fill="#1f77b4"/>
+<text class="small" x="763.9" y="128.3">1.01×</text>
+<rect x="255.0" y="133.2" width="646.6" height="9.7" fill="#d48419"/>
+<text class="small" x="907.6" y="140.8">1.30×</text>
+<text class="axis" text-anchor="end" x="243" y="186.3">Equalize_Histogram</text>
+<rect x="255.0" y="164.4" width="496.4" height="9.7" fill="#1f77b4"/>
+<text class="small" x="757.4" y="172.0">1.00×</text>
+<rect x="255.0" y="176.9" width="646.4" height="9.7" fill="#d48419"/>
+<text class="small" x="907.4" y="184.5">1.30×</text>
+<text class="axis" text-anchor="end" x="243" y="230.0">Flip_Horizontal</text>
+<rect x="255.0" y="208.1" width="494.5" height="9.7" fill="#1f77b4"/>
+<text class="small" x="755.5" y="215.7">1.00×</text>
+<rect x="255.0" y="220.6" width="631.0" height="9.7" fill="#d48419"/>
+<text class="small" x="892.0" y="228.2">1.27×</text>
+<text class="axis" text-anchor="end" x="243" y="273.7">Flip_Vertical</text>
+<rect x="255.0" y="251.8" width="494.4" height="9.7" fill="#1f77b4"/>
+<text class="small" x="755.4" y="259.4">1.00×</text>
+<rect x="255.0" y="264.3" width="598.0" height="9.7" fill="#d48419"/>
+<text class="small" x="859.0" y="271.9">1.20×</text>
+<text class="axis" text-anchor="end" x="243" y="317.4">Gaussian_11x11</text>
+<rect x="255.0" y="295.5" width="497.1" height="9.7" fill="#1f77b4"/>
+<text class="small" x="758.1" y="303.1">1.00×</text>
+<rect x="255.0" y="308.0" width="640.8" height="9.7" fill="#d48419"/>
+<text class="small" x="901.8" y="315.6">1.29×</text>
+<text class="axis" text-anchor="end" x="243" y="361.1">Gaussian_3x3</text>
+<rect x="255.0" y="339.2" width="493.5" height="9.7" fill="#1f77b4"/>
+<text class="small" x="754.5" y="346.8">0.99×</text>
+<rect x="255.0" y="351.7" width="664.8" height="9.7" fill="#d48419"/>
+<text class="small" x="925.8" y="359.3">1.34×</text>
+<text class="axis" text-anchor="end" x="243" y="404.8">Gaussian_5x5</text>
+<rect x="255.0" y="382.9" width="500.1" height="9.7" fill="#1f77b4"/>
+<text class="small" x="761.1" y="390.6">1.01×</text>
+<rect x="255.0" y="395.4" width="636.3" height="9.7" fill="#d48419"/>
+<text class="small" x="897.3" y="403.0">1.28×</text>
+<text class="axis" text-anchor="end" x="243" y="448.5">Gaussian_7x7</text>
+<rect x="255.0" y="426.6" width="497.6" height="9.7" fill="#1f77b4"/>
+<text class="small" x="758.6" y="434.3">1.00×</text>
+<rect x="255.0" y="439.1" width="628.7" height="9.7" fill="#d48419"/>
+<text class="small" x="889.7" y="446.7">1.27×</text>
+<text class="axis" text-anchor="end" x="243" y="492.2">Gaussian_9x9</text>
+<rect x="255.0" y="470.3" width="495.7" height="9.7" fill="#1f77b4"/>
+<text class="small" x="756.7" y="478.0">1.00×</text>
+<rect x="255.0" y="482.8" width="625.7" height="9.7" fill="#d48419"/>
+<text class="small" x="886.7" y="490.5">1.26×</text>
+<text class="axis" text-anchor="end" x="243" y="535.9">Grayscale</text>
+<rect x="255.0" y="514.1" width="634.3" height="9.7" fill="#1f77b4"/>
+<text class="small" x="895.3" y="521.7">1.28×</text>
+<rect x="255.0" y="526.5" width="647.3" height="9.7" fill="#d48419"/>
+<text class="small" x="908.3" y="534.2">1.30×</text>
+<text class="axis" text-anchor="end" x="243" y="579.6">Negative</text>
+<rect x="255.0" y="557.8" width="512.5" height="9.7" fill="#1f77b4"/>
+<text class="small" x="773.5" y="565.4">1.03×</text>
+<rect x="255.0" y="570.2" width="632.6" height="9.7" fill="#d48419"/>
+<text class="small" x="893.6" y="577.9">1.27×</text>
+<text class="axis" text-anchor="end" x="243" y="623.3">Quantize</text>
+<rect x="255.0" y="601.5" width="517.0" height="9.7" fill="#1f77b4"/>
+<text class="small" x="778.0" y="609.1">1.04×</text>
+<rect x="255.0" y="614.0" width="664.3" height="9.7" fill="#d48419"/>
+<text class="small" x="925.3" y="621.6">1.34×</text>
+<text class="axis" text-anchor="end" x="243" y="667.0">Rotate_CCW</text>
+<rect x="255.0" y="645.2" width="490.6" height="9.7" fill="#1f77b4"/>
+<text class="small" x="751.6" y="652.8">0.99×</text>
+<rect x="255.0" y="657.7" width="568.3" height="9.7" fill="#d48419"/>
+<text class="small" x="829.3" y="665.3">1.14×</text>
+<text class="axis" text-anchor="end" x="243" y="710.7">Rotate_CW</text>
+<rect x="255.0" y="688.9" width="487.8" height="9.7" fill="#1f77b4"/>
+<text class="small" x="748.8" y="696.5">0.98×</text>
+<rect x="255.0" y="701.4" width="565.0" height="9.7" fill="#d48419"/>
+<text class="small" x="826.0" y="709.0">1.14×</text>
+<text class="axis" text-anchor="end" x="243" y="754.4">Zoom_In</text>
+<rect x="255.0" y="732.6" width="606.9" height="9.7" fill="#1f77b4"/>
+<text class="small" x="867.9" y="740.2">1.22×</text>
+<rect x="255.0" y="745.1" width="686.4" height="9.7" fill="#d48419"/>
+<text class="small" x="947.4" y="752.7">1.38×</text>
+<text class="axis" text-anchor="end" x="243" y="798.1">Zoom_Out</text>
+<rect x="255.0" y="776.3" width="481.9" height="9.7" fill="#1f77b4"/>
+<text class="small" x="742.9" y="783.9">0.97×</text>
+<rect x="255.0" y="788.8" width="640.8" height="9.7" fill="#d48419"/>
+<text class="small" x="901.8" y="796.4">1.29×</text>
+<rect x="255" y="840" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="852">tempo off/AVX do kernel</text>
+<rect x="435" y="840" width="15" height="15" fill="#d48419"/>
+<text class="legend" x="457" y="852">LLC AVX/off do processo</text>
+<text class="axis" text-anchor="middle" x="632.5" y="876">Razão (×); numerador indicado na legenda</text>
+</svg>

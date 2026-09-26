@@ -103,5 +103,5 @@
 <text class="legend" x="277" y="852">dynamic,1</text>
 <rect x="435" y="840" width="15" height="15" fill="#2ca02c"/>
 <text class="legend" x="457" y="852">dynamic,16</text>
-<text class="axis" text-anchor="middle" x="632.5" y="876">Razão de medianas (static / dynamic)</text>
+<text class="axis" text-anchor="middle" x="632.5" y="876">Média geométrica de 4 razões de medianas (static / dynamic)</text>
 </svg>

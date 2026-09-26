@@ -2,18 +2,24 @@
 <title>Flip, 20 threads: o primeiro toque inverte o resultado</title>
 <style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
 <text class="title" x="255" y="34">Flip, 20 threads: o primeiro toque inverte o resultado</text>
-<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
-<text class="axis" text-anchor="middle" x="nan" y="487">0.00×</text>
-<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
-<text class="axis" text-anchor="middle" x="nan" y="487">1.00×</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.91×</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">0.96×</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">1.01×</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">1.06×</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">1.11×</text>
 <rect class="frame" x="255" y="70" width="755" height="395"/>
-<line x1="nan" x2="nan" y1="70" y2="465" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="604.1" x2="604.1" y1="70" y2="465" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
 <text class="axis" text-anchor="end" x="243" y="200.3">20 threads / init serial</text>
-<rect x="nan" y="101.6" width="0.0" height="61.6" fill="#1f77b4"/>
-<text class="small" x="962.0" y="149.8">nan×</text>
+<rect x="255.0" y="101.6" width="692.1" height="61.6" fill="#1f77b4"/>
+<text class="small" x="953.1" y="149.8">1.09×</text>
 <text class="axis" text-anchor="end" x="243" y="397.9">20 threads / init paralelo-static</text>
-<rect x="nan" y="299.1" width="0.0" height="61.6" fill="#1f77b4"/>
-<text class="small" x="962.0" y="347.3">nan×</text>
+<rect x="255.0" y="299.1" width="62.9" height="61.6" fill="#1f77b4"/>
+<text class="small" x="323.9" y="347.3">0.93×</text>
 <rect x="255" y="492" width="15" height="15" fill="#1f77b4"/>
 <text class="legend" x="277" y="504">static / dynamic,1</text>
 <text class="axis" text-anchor="middle" x="632.5" y="528">Speedup static / dynamic,1</text>

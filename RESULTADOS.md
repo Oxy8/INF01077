@@ -13,8 +13,16 @@ origem no cluster PCAD, partição `hype`.
 | `resultados_pcad_hype_final_vtune_hotspots_823234` | Nove coletas VTune Hotspots por amostragem de hardware | Hotspots e utilização de CPU |
 | `resultados_pcad_hype_final_hpc_simd_zoom_grayscale_823348` | HPC Performance: Zoom In e Grayscale, 1/20 threads, escalar/AVX2 | Relação entre SIMD, paralelismo e memória |
 | `resultados_pcad_hype_final_schedules_confirmacao_10reps_823349` | Confirmação de schedules: seis operações, 20 threads, 10 repetições intercaladas | Verificar ganhos/perdas de `dynamic` por mediana |
+| `resultados_pcad_hype_regular_1_20_824454` | 17 operações regulares e layouts do Gaussian 11x11, 1/20 threads, scalar/AVX2, 10 repetições | Reavaliar ganho SIMD com maior número de amostras |
+| `resultados_pcad_hype_compiler_evidence_824453` | Relatórios de vetorização, dumps e assembly para os kernels principais e gaussianos | Conferir o que o GCC efetivamente vetorizou |
 
 ## Visualizações e relatório
+
+O [atlas de evidências](atlas_evidencias/index.html) organiza os gráficos por
+pergunta e operação, com fichas de proveniência e um catálogo integral. A
+[revisão do atlas](atlas_evidencias/REVISAO.md) documenta correções de figuras,
+cruzamentos novos e limites de interpretação. Os diretórios originais e seus
+CSVs continuam preservados.
 
 | Diretório | Origem |
 | --- | --- |
@@ -34,6 +42,8 @@ Para respostas rastreáveis às perguntas de interpretação — SIMD, schedules
 Zoom, Flip e layouts — consulte [`ANALISE_EVIDENCIAS.md`](ANALISE_EVIDENCIAS.md).
 Os resultados das lacunas experimentais executadas e suas ressalvas
 metodológicas estão em [`ANALISE_COMPLEMENTAR_FINAL.md`](ANALISE_COMPLEMENTAR_FINAL.md).
+O cruzamento dos novos tempos com o código gerado está em
+[`ANALISE_SIMD_824453_824454.md`](ANALISE_SIMD_824453_824454.md).
 Os jobs que fecham as lacunas experimentais estão em
 [`EXPERIMENTOS_COMPLEMENTARES_FINAIS.md`](EXPERIMENTOS_COMPLEMENTARES_FINAIS.md).
 

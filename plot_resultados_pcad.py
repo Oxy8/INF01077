@@ -222,6 +222,7 @@ def bar_chart(path: Path, title: str, labels: Sequence[str], groups_: Sequence[t
     if baseline is not None:
         values.append(baseline)
     is_speedup = "Speedup" in y_label
+    is_percent = y_label.endswith("(%)")
     low, high = (min(values), max(values)) if is_speedup else (min(0.0, min(values)), max(values))
     if low == high:
         low, high = low - (0.1 if is_speedup else 1), high + (0.1 if is_speedup else 1)
@@ -237,7 +238,7 @@ def bar_chart(path: Path, title: str, labels: Sequence[str], groups_: Sequence[t
     for value in ticks(low, high):
         x = sx(value)
         lines.append(f'<line class="grid" x1="{x:.1f}" x2="{x:.1f}" y1="{top}" y2="{top + plot_h}"/>')
-        text = fmt_ms(value) if "ms" in y_label else f"{value:.2f}×"
+        text = fmt_ms(value) if "ms" in y_label else f"{value:.2f}%" if is_percent else f"{value:.2f}×"
         lines.append(f'<text class="axis" text-anchor="middle" x="{x:.1f}" y="{top + plot_h + 22}">{esc(text)}</text>')
     lines.append(f'<rect class="frame" x="{left}" y="{top}" width="{plot_w}" height="{plot_h}"/>')
     if baseline is not None:
@@ -252,7 +253,7 @@ def bar_chart(path: Path, title: str, labels: Sequence[str], groups_: Sequence[t
             # Horizontal bars improve label readability. Width is on numeric x scale.
             x_value = sx(value)
             lines.append(f'<rect x="{sx(low):.1f}" y="{y:.1f}" width="{max(0, x_value-sx(low)):.1f}" height="{bar_h * .78:.1f}" fill="{color}"/>')
-            lines.append(f'<text class="small" x="{min(left + plot_w - 48, x_value + 6):.1f}" y="{y + bar_h * .61:.1f}">{esc(fmt_ms(value) if "ms" in y_label else f"{value:.2f}×")}</text>')
+            lines.append(f'<text class="small" x="{min(left + plot_w - 48, x_value + 6):.1f}" y="{y + bar_h * .61:.1f}">{esc(fmt_ms(value) if "ms" in y_label else f"{value:.2f}%" if is_percent else f"{value:.2f}×")}</text>')
     for idx, (name, _, color) in enumerate(groups_):
         x = left + idx * 180
         lines.append(f'<rect x="{x}" y="{height - 48}" width="15" height="15" fill="{color}"/>')
@@ -428,7 +429,7 @@ def regular_figures(rows: list[dict[str, object]], figures: Path, tables: Path) 
     write_csv(tables / "schedules_regulares_20_threads.csv", ["Operation", *schedules], schedule_rows)
     write_csv(tables / "schedules_regulares_detalhe_20_threads.csv", ["Image", "Operation", "Build", "Schedule", "Static_median_ms", "Static_min_ms", "Static_max_ms", "Dynamic_median_ms", "Dynamic_min_ms", "Dynamic_max_ms", "Speedup_static_over_dynamic", "Ranges_overlap"], schedule_details)
     path = figures / "03_schedules_regulares_20_threads.svg"
-    bar_chart(path, "Schedules dinâmicos versus static — operações regulares, 20 threads", operations, [(schedule, [float(next(r for r in schedule_rows if r["Operation"] == op)[schedule]) for op in operations], SCHEDULE_COLORS[schedule]) for schedule in schedules], "Razão de medianas (static / dynamic)", baseline=1.0)
+    bar_chart(path, "Schedules dinâmicos versus static — operações regulares, 20 threads", operations, [(schedule, [float(next(r for r in schedule_rows if r["Operation"] == op)[schedule]) for op in operations], SCHEDULE_COLORS[schedule]) for schedule in schedules], "Média geométrica de 4 razões de medianas (static / dynamic)", baseline=1.0)
     links.append((path.name, "Impacto de dynamic,1 e dynamic,16 nas operações regulares"))
 
     # A agregação é útil como visão geral, mas pode esconder que apenas uma

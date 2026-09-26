@@ -1,23 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Flip: quanto dynamic,1 reduz a variação temporal entre threads">
-<title>Flip: quanto dynamic,1 reduz a variação temporal entre threads</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Flip: dispersão do tempo de trabalho entre threads">
+<title>Flip: dispersão do tempo de trabalho entre threads</title>
 <style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
-<text class="title" x="255" y="34">Flip: quanto dynamic,1 reduz a variação temporal entre threads</text>
-<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
-<text class="axis" text-anchor="middle" x="nan" y="487">0.00×</text>
-<line class="grid" x1="nan" x2="nan" y1="70" y2="465"/>
-<text class="axis" text-anchor="middle" x="nan" y="487">1.00×</text>
+<text class="title" x="255" y="34">Flip: dispersão do tempo de trabalho entre threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="255.0" y="487">0.00%</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="443.8" y="487">2.53%</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="632.5" y="487">5.06%</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="821.2" y="487">7.59%</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="465"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="487">10.11%</text>
 <rect class="frame" x="255" y="70" width="755" height="395"/>
-<line x1="nan" x2="nan" y1="70" y2="465" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="255.0" x2="255.0" y1="70" y2="465" stroke="#555" stroke-width="2" stroke-dasharray="6,4"/>
 <text class="axis" text-anchor="end" x="243" y="156.9">10 threads / init paralelo-static</text>
-<rect x="nan" y="91.1" width="0.0" height="41.1" fill="#d62728"/>
-<text class="small" x="962.0" y="123.2">nan×</text>
+<rect x="255.0" y="91.1" width="616.6" height="29.3" fill="#1f77b4"/>
+<text class="small" x="877.6" y="114.0">8.26%</text>
+<rect x="255.0" y="128.7" width="1.9" height="29.3" fill="#d62728"/>
+<text class="small" x="262.9" y="151.6">0.03%</text>
 <text class="axis" text-anchor="end" x="243" y="288.6">20 threads / init serial</text>
-<rect x="nan" y="222.7" width="0.0" height="41.1" fill="#d62728"/>
-<text class="small" x="962.0" y="254.9">nan×</text>
+<rect x="255.0" y="222.7" width="686.4" height="29.3" fill="#1f77b4"/>
+<text class="small" x="947.4" y="245.7">9.19%</text>
+<rect x="255.0" y="260.4" width="33.2" height="29.3" fill="#d62728"/>
+<text class="small" x="294.2" y="283.3">0.44%</text>
 <text class="axis" text-anchor="end" x="243" y="420.2">20 threads / init paralelo-static</text>
-<rect x="nan" y="354.4" width="0.0" height="41.1" fill="#d62728"/>
-<text class="small" x="962.0" y="386.5">nan×</text>
-<rect x="255" y="492" width="15" height="15" fill="#d62728"/>
-<text class="legend" x="277" y="504">CV(static) / CV(dynamic,1)</text>
-<text class="axis" text-anchor="middle" x="632.5" y="528">Speedup de uniformidade temporal</text>
+<rect x="255.0" y="354.4" width="251.7" height="29.3" fill="#1f77b4"/>
+<text class="small" x="512.7" y="377.3">3.37%</text>
+<rect x="255.0" y="392.0" width="5.7" height="29.3" fill="#d62728"/>
+<text class="small" x="266.7" y="415.0">0.08%</text>
+<rect x="255" y="492" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="504">static</text>
+<rect x="435" y="492" width="15" height="15" fill="#d62728"/>
+<text class="legend" x="457" y="504">dynamic,1</text>
+<text class="axis" text-anchor="middle" x="632.5" y="528">CV do tempo de trabalho por thread (%)</text>
 </svg>
