@@ -30,6 +30,19 @@ partir da raiz do projeto:
 sbatch scripts/pcad_hype_vtune_quantize_lookup.sbatch
 ```
 
+Para recuperar **somente Hotspots** de uma campanha cujos controles e perfis
+HPC já estejam completos (como o job 825087), use:
+
+```bash
+sbatch --export=ALL,QUANTIZE_VTUNE_ONLY_HOTSPOTS=1 \
+  scripts/pcad_hype_vtune_quantize_lookup.sbatch
+```
+
+Esse modo recompila os três builds no próprio diretório temporário, mas pula
+as dez amostras de controle e todas as coletas HPC. As coletas Hotspots usam
+`sampling-mode=hw`: no VTune 2021.1.1 do hype, o modo padrão baseado em Pin
+falha ao encontrar a seção ELF `.relr.dyn` do carregador do sistema.
+
 O job solicita um nó hype exclusivo, com 20 CPUs, e usa a imagem
 `images/6000x6000.png`. O limite é de duas horas; não é uma previsão de
 duração. Para usar outra imagem já presente no projeto:
@@ -68,8 +81,7 @@ thread ou 500 chamadas com 20 threads. Os resultados são salvos em
 `resultados_pcad_hype_vtune_quantize_<jobid>/`.
 
 Por caso, consulte `hotspots_functions.txt`, `hotspots_summary.txt` e
-`hpc-performance_summary.txt`. O `hpc_bottom_up.txt` é exportado quando essa
-versão do VTune oferece o relatório por função. Os diretórios `hotspots/` e
+`hpc-performance_summary.txt`. Os diretórios `hotspots/` e
 `hpc-performance/` guardam os projetos VTune completos. Os arquivos
 `<build>_compiler.txt` e `<build>_assembly.txt` permitem conferir o laço
 vetorizado e as instruções emitidas. Uma falha em uma coleta não impede as

@@ -68,6 +68,11 @@ env | grep '^OMP_' | sort > "$RESULT_DIR/openmp_environment.txt" || true
 
 BUILDS=(off-avx2 auto-avx2 omp-avx2)
 THREADS=(1 20)
+case "${QUANTIZE_VTUNE_ONLY_HOTSPOTS:-0}" in
+    0) ANALYSES=(hotspots hpc-performance) ;;
+    1) ANALYSES=(hotspots) ;;
+    *) echo 'QUANTIZE_VTUNE_ONLY_HOTSPOTS deve ser 0 ou 1.' >&2; exit 2 ;;
+esac
 for build in "${BUILDS[@]}"; do
     make -B DEBUG=1 SIMD="$build" COMPILER_DIAGNOSTICS=1 vectorization \
         > "$RESULT_DIR/${build}_build.log" 2>&1
@@ -80,6 +85,7 @@ done
 
 # Controles sem VTune: dez amostras por build/thread, alternando a ordem dos
 # builds. O modo com N=1 mede a mesma entrada e o mesmo lookup dos perfis.
+if [[ "${QUANTIZE_VTUNE_ONLY_HOTSPOTS:-0}" == 0 ]]; then
 CONTROL_CSV="$RESULT_DIR/control_raw.csv"
 for threads in "${THREADS[@]}"; do
     for build in "${BUILDS[@]}"; do
@@ -117,6 +123,7 @@ awk -F, 'NR > 1 && $4 == "lookup_average" { print $7 "," $9 "," $11 }' "$CONTROL
         END { emit() }
     ' > "$RESULT_DIR/control_medians.csv"
 cat "$RESULT_DIR/control_medians.csv"
+fi
 
 failures=0
 for threads in "${THREADS[@]}"; do
@@ -126,10 +133,16 @@ for threads in "${THREADS[@]}"; do
         mkdir -p "$case_dir"
         printf 'build=%s\nthreads=%s\nschedule=static\niterations=%s\nimage=%s\n' \
             "$build" "$threads" "$iterations" "$IMAGE" > "$case_dir/configuration.txt"
-        for analysis in hotspots hpc-performance; do
+        for analysis in "${ANALYSES[@]}"; do
             result="$case_dir/$analysis"
             echo "VTune: $build, $threads thread(s), $analysis"
-            if OMP_NUM_THREADS="$threads" vtune -collect "$analysis" -result-dir "$result" -- \
+            vtune_args=(-collect "$analysis" -result-dir "$result")
+            if [[ "$analysis" == hotspots ]]; then
+                # O modo padrão usa Pin, que falha na seção ELF .relr.dyn
+                # do loader do hype. Hardware sampling já foi validado aqui.
+                vtune_args+=(-knob sampling-mode=hw)
+            fi
+            if OMP_NUM_THREADS="$threads" vtune "${vtune_args[@]}" -- \
                 "build/$build/vectorization_benchmark" --image "$IMAGE" \
                 --operation Quantize "$case_dir/profile.csv" \
                 --profile-quantize-lookup "$iterations" --warmup \
@@ -139,12 +152,6 @@ for threads in "${THREADS[@]}"; do
                 if [[ "$analysis" == hotspots ]]; then
                     vtune -report hotspots -r "$result" \
                         -report-output "$case_dir/hotspots_functions.txt" \
-                        >> "$case_dir/${analysis}_report.log" 2>&1 || true
-                else
-                    # Relatório opcional: nessa versão do VTune alguns campos
-                    # HPC por função podem estar indisponíveis.
-                    vtune -report bottom-up -r "$result" \
-                        -report-output "$case_dir/hpc_bottom_up.txt" \
                         >> "$case_dir/${analysis}_report.log" 2>&1 || true
                 fi
             else
