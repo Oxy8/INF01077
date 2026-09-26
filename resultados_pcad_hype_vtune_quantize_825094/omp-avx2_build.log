@@ -1,0 +1,53 @@
+mkdir -p build/omp-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell  -fopt-info-vec-all=build/omp-avx2/vectorization-core-all.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp-avx2/image_manipulation.o
+In file included from 577262-FPI-Relatorio2/image_manipulation.cpp:4:
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  514 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:514:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_bmp(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  522 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:522:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  613 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:613:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_tga(const char*, int, int, int, const void*)’:
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  621 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:621:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr_to_func(void (*)(void*, void*, int), void*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  789 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:789:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_hdr(const char*, int, int, int, const float*)’:
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+  796 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:796:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg_to_func(void (*)(void*, void*, int), void*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1609 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1609:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h: In function ‘int stbi_write_jpg(const char*, int, int, int, const void*, int)’:
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::context’ [-Wmissing-field-initializers]
+ 1618 |    stbi__write_context s = { 0 };
+      |                                ^
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buffer’ [-Wmissing-field-initializers]
+577262-FPI-Relatorio2/stb_image_write.h:1618:32: warning: missing initializer for member ‘stbi__write_context::buf_used’ [-Wmissing-field-initializers]
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=1 -march=haswell -fopt-info-vec-all=build/omp-avx2/vectorization-experiment-all.log -MMD -MP -c 577262-FPI-Relatorio2/vectorization_benchmark.cpp -o build/omp-avx2/vectorization_benchmark.o
+g++ -fopenmp build/omp-avx2/image_manipulation.o build/omp-avx2/vectorization_benchmark.o  -o build/omp-avx2/vectorization_benchmark

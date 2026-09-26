@@ -1,0 +1,5 @@
+255 [140336498206400] INFO mrtehelpers.mrteenv <> - Product libs directory: /home/intel/oneapi/vtune/2021.1.1/lib64
+255 [140336498206400] INFO mrtehelpers.mrteenv <> - File mask: amplxe_samplingmrte_clrprof*
+766 [140336498206400] INFO mrtehelpers.mrteenv <> - File name: libamplxe_samplingmrte_clrprof_1.0.so
+766 [140336498206400] INFO mrtehelpers.mrteenv <> - File mask: amplxe_samplingmrte_clrprof*
+795 [140336498206400] INFO mrtehelpers.mrteenv <> - File name: libamplxe_samplingmrte_clrprof_1.0.so

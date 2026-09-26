@@ -1,0 +1,78 @@
+Elapsed Time: 10.690s
+    CPU Time: 95.581s
+        Effective Time: 95.581s
+            Idle: 0.010s
+            Poor: 95.571s
+            Ok: 0s
+            Ideal: 0s
+            Over: 0s
+        Spin Time: 0s
+        Overhead Time: 0s
+    Instructions Retired: 169,015,500,000
+    Microarchitecture Usage: 36.1% of Pipeline Slots
+     | You code efficiency on this platform is too low.
+     | 
+     | Possible cause: memory stalls, instruction starvation, branch
+     | misprediction or long latency instructions.
+     | 
+     | Next steps: Run Microarchitecture Exploration analysis to identify the
+     | cause of the low microarchitecture usage efficiency.
+     |
+        CPI Rate: 1.487
+         | The CPI may be too high. This could be caused by issues such as
+         | memory stalls, instruction starvation, branch misprediction or long
+         | latency instructions. Explore the other hardware-related metrics to
+         | identify what is causing high CPI.
+         |
+    Total Thread Count: 20
+    Paused Time: 0s
+
+Top Hotspots
+Function                     Module                   CPU Time
+---------------------------  -----------------------  --------
+quantize_lut._omp_fn.0       vectorization_benchmark   62.695s
+func@0x1f5fd                 libgomp.so.1.0.0          18.518s
+func@0x1f784                 libgomp.so.1.0.0           5.643s
+__memcpy_avx_unaligned_erms  libc.so.6                  4.686s
+stbi__parse_zlib             vectorization_benchmark    0.937s
+[Others]                     N/A                        3.102s
+Effective Physical Core Utilization: 29.1% (5.821 out of 20)
+ | The metric value is low, which may signal a poor physical CPU cores
+ | utilization caused by:
+ |     - load imbalance
+ |     - threading runtime overhead
+ |     - contended synchronization
+ |     - thread/process underutilization
+ |     - incorrect affinity that utilizes logical cores instead of physical
+ |       cores
+ | Explore sub-metrics to estimate the efficiency of MPI and OpenMP parallelism
+ | or run the Locks and Waits analysis to identify parallel bottlenecks for
+ | other parallel runtimes.
+ |
+    Effective Logical Core Utilization: 22.4% (8.941 out of 40)
+     | The metric value is low, which may signal a poor logical CPU cores
+     | utilization. Consider improving physical core utilization as the first
+     | step and then look at opportunities to utilize logical cores, which in
+     | some cases can improve processor throughput and overall performance of
+     | multi-threaded applications.
+     |
+Collection and Platform Info
+    Application Command Line: build/omp-avx2/vectorization_benchmark "--image" "images/6000x6000.png" "--operation" "Quantize" "/home/users/efsilva/teste/INF01077/resultados_pcad_hype_vtune_quantize_825094/omp-avx2_t20/profile.csv" "--profile-quantize-lookup" "500" "--warmup" 
+    Operating System: 6.1.0-45-amd64 12.15
+    Computer Name: hype5
+    Result Size: 25.4 MB 
+    Collection start time: 19:08:58 26/09/2026 UTC
+    Collection stop time: 19:09:08 26/09/2026 UTC
+    Collector Type: Driverless Perf per-process sampling
+    CPU
+        Name: Intel(R) Xeon(R) E5/E7 v3 Processor code named Haswell
+        Frequency: 2.295 GHz 
+        Logical CPU Count: 40
+        Cache Allocation Technology
+            Level 2 capability: not detected
+            Level 3 capability: not detected
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: vtune -report summary -report-knob show-issues=false -r <my_result_dir>.
+Alternatively, you may view the report in the csv format: vtune -report
+<report_name> -format=csv.
