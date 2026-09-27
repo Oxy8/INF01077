@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="434" viewBox="0 0 1260 434" role="img" aria-label="Efeito do build SIMD no mesmo código — 6000x6000.png, static">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="305" y="35" font-size="25" font-weight="700" fill="#172b40">Efeito do build SIMD no mesmo código — 6000x6000.png, static</text>
+<text x="305" y="60" font-size="15" fill="#42566b">Razão das medianas; &gt;1× favorece o denominador. Zoom: campanha complementar, 10 amostras; demais: job 825200, 5 amostras.</text>
+<text x="535.0" y="91" text-anchor="middle" font-size="17" font-weight="700" fill="#172b40">1 thread</text>
+<text x="995.0" y="91" text-anchor="middle" font-size="17" font-weight="700" fill="#172b40">20 threads</text>
+<text x="381.7" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / auto</text>
+<text x="535.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / omp</text>
+<text x="688.3" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">auto / omp</text>
+<text x="841.7" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / auto</text>
+<text x="995.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / omp</text>
+<text x="1148.3" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">auto / omp</text>
+<text x="295" y="161.0" text-anchor="end" font-size="14" fill="#25394f">Negative · linha de bytes</text>
+<rect x="305.0" y="136.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.65×</text>
+<rect x="458.3" y="136.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.63×</text>
+<rect x="611.7" y="136.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="136.0" width="153.3" height="38" fill="#d2e6f1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.11×</text>
+<rect x="918.3" y="136.0" width="153.3" height="38" fill="#cfe5f1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.13×</text>
+<rect x="1071.7" y="136.0" width="153.3" height="38" fill="#deedf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.02×</text>
+<text x="295" y="199.0" text-anchor="end" font-size="14" fill="#25394f">Brightness · linha de bytes</text>
+<rect x="305.0" y="174.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">6.67×</text>
+<rect x="458.3" y="174.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">6.64×</text>
+<rect x="611.7" y="174.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="174.0" width="153.3" height="38" fill="#a4cde4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.54×</text>
+<rect x="918.3" y="174.0" width="153.3" height="38" fill="#a8cfe5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.50×</text>
+<rect x="1071.7" y="174.0" width="153.3" height="38" fill="#f9e9dd" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.97×</text>
+<text x="295" y="237.0" text-anchor="end" font-size="14" fill="#25394f">Contrast · linha de bytes</text>
+<rect x="305.0" y="212.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">6.11×</text>
+<rect x="458.3" y="212.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">6.13×</text>
+<rect x="611.7" y="212.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="212.0" width="153.3" height="38" fill="#53a0cb" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2.74×</text>
+<rect x="918.3" y="212.0" width="153.3" height="38" fill="#53a0cb" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2.75×</text>
+<rect x="1071.7" y="212.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<text x="295" y="275.0" text-anchor="end" font-size="14" fill="#25394f">Histograma · remap linear</text>
+<rect x="305.0" y="250.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="458.3" y="250.0" width="153.3" height="38" fill="#d6e8f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.08×</text>
+<rect x="611.7" y="250.0" width="153.3" height="38" fill="#d6e8f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.08×</text>
+<rect x="765.0" y="250.0" width="153.3" height="38" fill="#deedf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.02×</text>
+<rect x="918.3" y="250.0" width="153.3" height="38" fill="#daebf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.04×</text>
+<rect x="1071.7" y="250.0" width="153.3" height="38" fill="#dcecf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.03×</text>
+<text x="295" y="313.0" text-anchor="end" font-size="14" fill="#25394f">Gauss 11×11 · linha AoS</text>
+<rect x="305.0" y="288.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.00×</text>
+<rect x="458.3" y="288.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.05×</text>
+<rect x="611.7" y="288.0" width="153.3" height="38" fill="#dfedf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.01×</text>
+<rect x="765.0" y="288.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.21×</text>
+<rect x="918.3" y="288.0" width="153.3" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.25×</text>
+<rect x="1071.7" y="288.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<text x="295" y="351.0" text-anchor="end" font-size="14" fill="#25394f">Grayscale · controle</text>
+<rect x="305.0" y="326.0" width="153.3" height="38" fill="#bedbeb" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.28×</text>
+<rect x="458.3" y="326.0" width="153.3" height="38" fill="#bedbeb" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.28×</text>
+<rect x="611.7" y="326.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="326.0" width="153.3" height="38" fill="#cae2ef" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.17×</text>
+<rect x="918.3" y="326.0" width="153.3" height="38" fill="#cae2ef" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.17×</text>
+<rect x="1071.7" y="326.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<text x="295" y="389.0" text-anchor="end" font-size="14" fill="#25394f">Zoom In · controle · campanha complementar</text>
+<rect x="305.0" y="364.0" width="153.3" height="38" fill="#b3d5e8" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="381.7" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.38×</text>
+<rect x="458.3" y="364.0" width="153.3" height="38" fill="#b3d5e8" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.39×</text>
+<rect x="611.7" y="364.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="688.3" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="765.0" y="364.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="841.7" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="918.3" y="364.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="1071.7" y="364.0" width="153.3" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1148.3" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+</g>
+</svg>

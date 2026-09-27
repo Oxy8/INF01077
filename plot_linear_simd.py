@@ -73,7 +73,8 @@ def medians(raw: Path) -> dict[tuple[str, str, str, str, int, str], float]:
     return {key: median(values) for key, values in groups.items()}
 
 
-def make_maps(data: dict, output: Path, supplemental_zoom: bool = False) -> None:
+def make_maps(data: dict, output: Path, supplemental_zoom: bool = False,
+              exclude_quantize: bool = False) -> None:
     output.mkdir(parents=True, exist_ok=True)
     with (output / "efeito_estrutura.csv").open("w", newline="", encoding="utf-8") as stream:
         writer = csv.writer(stream)
@@ -82,6 +83,8 @@ def make_maps(data: dict, output: Path, supplemental_zoom: bool = False) -> None
         for image in ("4000x3000.png", "6000x6000.png"):
             rows, matrix = [], []
             for operation, variant, label in OPERATIONS:
+                if exclude_quantize and operation == "Quantize":
+                    continue
                 if operation == "Zoom_In" and (image, operation, variant, "total", 1, "off-avx2") not in data:
                     continue
                 values = []
@@ -116,6 +119,8 @@ if __name__ == "__main__":
     parser.add_argument("--raw", type=Path, required=True)
     parser.add_argument("--zoom-raw", type=Path,
                         help="CSV suplementar só de Zoom In; mantém os dados originais intactos")
+    parser.add_argument("--exclude-quantize", action="store_true",
+                        help="Omitir o controle Quantize, cujo total inclui Grayscale")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     data = medians(args.raw)
@@ -131,4 +136,4 @@ if __name__ == "__main__":
         if any(key[1] != "Zoom_In" or key[2:4] != ("original", "total") for key in extra):
             raise ValueError("--zoom-raw deve conter somente o controle original de Zoom In")
         data.update(extra)
-    make_maps(data, args.out, args.zoom_raw is not None)
+    make_maps(data, args.out, args.zoom_raw is not None, args.exclude_quantize)

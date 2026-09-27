@@ -1,14 +1,20 @@
 # Apresentação OpenMP: 10 minutos no total
 
-## Roteiro vigente: jobs 825196 e 825200
+## Roteiro vigente: jobs 825196, 825200 e 825290
 
 Para a parte de SIMD (até cinco minutos), use o [relatório atualizado e seu
 roteiro de slides](RELATORIO_SIMD_ABORDAGENS_825196_825200.md#três-exemplos-para-os-slides-de-simd).
-O **primeiro mapa** agora é o [mapa das funções de produção do job 825196](resultados_pcad_hype_simd_followup_825196/visualizacoes/figures/01_simd_producao_atual_825196.svg),
-com 36 MP e Zoom In. O **segundo** é o [mapa das variantes reestruturadas do
-job 825200](resultados_pcad_hype_linear_simd_825200/figures/simd_mesma_variante_36mp.svg),
-com 1 e 20 threads; Zoom In de 36 MP não foi medido nesse job. Os três exemplos
-de código são Contrast, Gaussiana 11×11 e remapeamento do histograma.
+O **primeiro mapa** é a [abordagem original atualizada](visualizacoes_simd_finais/01_abordagem_original.svg):
+Negative, Brightness, Contrast, Convolução 11×11 e Equalize vêm do job 825196;
+Quantize sem Grayscale, Zoom In e Grayscale vêm do 825290. O **segundo** é a
+[abordagem linearizada atualizada](visualizacoes_simd_finais/02_abordagem_linearizada.svg):
+os candidatos lineares e o remapeamento linear de Equalize vêm do 825200;
+Equalize original, Quantize sem Grayscale, Zoom In e Grayscale vêm do 825290.
+Ambos mostram 36 MP com 1 e 20 threads. Cada célula compara builds **do mesmo
+job e da mesma variante**; a [tabela de proveniência](visualizacoes_simd_finais/dados_mapas.csv)
+registra os tempos e o número de amostras. Para reproduzir os SVGs a partir
+dos CSVs brutos, execute `python3 plot_simd_final_maps.py` na raiz. Os três
+exemplos de código são Contrast, Convolução 11×11 e remapeamento do histograma.
 
 ## Roteiro anterior — histórico, não usar como apresentação final
 

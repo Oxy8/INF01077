@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="472" viewBox="0 0 1260 472" role="img" aria-label="SIMD na abordagem original — 6000×6000, static">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="305" y="35" font-size="25" font-weight="700" fill="#172b40">SIMD na abordagem original — 6000×6000, static</text>
+<text x="305" y="60" font-size="15" fill="#42566b">Razão das medianas; &gt;1× favorece omp. * Job 825290; demais: 825196. Quantize sem Grayscale.</text>
+<text x="535.0" y="91" text-anchor="middle" font-size="17" font-weight="700" fill="#172b40">1 thread</text>
+<text x="995.0" y="91" text-anchor="middle" font-size="17" font-weight="700" fill="#172b40">20 threads</text>
+<text x="535.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / omp</text>
+<text x="995.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">off / omp</text>
+<text x="295" y="161.0" text-anchor="end" font-size="14" fill="#25394f">Negative</text>
+<rect x="305.0" y="136.0" width="460.0" height="38" fill="#dcecf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.03×</text>
+<rect x="765.0" y="136.0" width="460.0" height="38" fill="#dcecf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.03×</text>
+<text x="295" y="199.0" text-anchor="end" font-size="14" fill="#25394f">Adjust Brightness</text>
+<rect x="305.0" y="174.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">0.99×</text>
+<rect x="765.0" y="174.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">0.99×</text>
+<text x="295" y="237.0" text-anchor="end" font-size="14" fill="#25394f">Adjust Contrast</text>
+<rect x="305.0" y="212.0" width="460.0" height="38" fill="#dfedf5" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.01×</text>
+<rect x="765.0" y="212.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<text x="295" y="275.0" text-anchor="end" font-size="14" fill="#25394f">Convolução 11×11</text>
+<rect x="305.0" y="250.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="250.0" width="460.0" height="38" fill="#f9e8da" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.96×</text>
+<text x="295" y="313.0" text-anchor="end" font-size="14" fill="#25394f">Equalize Histogram</text>
+<rect x="305.0" y="288.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="288.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">0.99×</text>
+<text x="295" y="351.0" text-anchor="end" font-size="14" fill="#25394f">Quantize sem Grayscale*</text>
+<rect x="305.0" y="326.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="765.0" y="326.0" width="460.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">0.99×</text>
+<text x="295" y="389.0" text-anchor="end" font-size="14" fill="#25394f">Zoom In*</text>
+<rect x="305.0" y="364.0" width="460.0" height="38" fill="#c4deed" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.23×</text>
+<rect x="765.0" y="364.0" width="460.0" height="38" fill="#d9eaf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.05×</text>
+<text x="295" y="427.0" text-anchor="end" font-size="14" fill="#25394f">Grayscale*</text>
+<rect x="305.0" y="402.0" width="460.0" height="38" fill="#bedbeb" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="427.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.28×</text>
+<rect x="765.0" y="402.0" width="460.0" height="38" fill="#cae2ef" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="427.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.17×</text>
+</g>
+</svg>
