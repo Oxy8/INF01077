@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="282" viewBox="0 0 1260 282" role="img" aria-label="Zoom In — três builds, 6000x6000.png, static">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="305" y="35" font-size="25" font-weight="700" fill="#172b40">Zoom In — três builds, 6000x6000.png, static</text>
+<text x="305" y="60" font-size="15" fill="#42566b">Razão de medianas; 20 amostras por ponto; &gt;1× favorece o denominador.</text>
+<text x="351.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">1</text>
+<text x="443.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">2</text>
+<text x="535.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">4</text>
+<text x="627.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">8</text>
+<text x="719.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">12</text>
+<text x="811.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">16</text>
+<text x="903.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">17</text>
+<text x="995.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">18</text>
+<text x="1087.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">19</text>
+<text x="1179.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">20</text>
+<text x="295" y="161.0" text-anchor="end" font-size="14" fill="#25394f">off / auto</text>
+<rect x="305.0" y="136.0" width="92.0" height="38" fill="#c4deed" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="351.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.22×</text>
+<rect x="397.0" y="136.0" width="92.0" height="38" fill="#c3deed" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="443.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.24×</text>
+<rect x="489.0" y="136.0" width="92.0" height="38" fill="#c7e0ee" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.20×</text>
+<rect x="581.0" y="136.0" width="92.0" height="38" fill="#c8e1ef" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="627.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.19×</text>
+<rect x="673.0" y="136.0" width="92.0" height="38" fill="#cde3f0" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="719.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.15×</text>
+<rect x="765.0" y="136.0" width="92.0" height="38" fill="#d5e8f2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="811.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.09×</text>
+<rect x="857.0" y="136.0" width="92.0" height="38" fill="#d5e8f2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="903.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.08×</text>
+<rect x="949.0" y="136.0" width="92.0" height="38" fill="#d6e8f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.07×</text>
+<rect x="1041.0" y="136.0" width="92.0" height="38" fill="#d7e9f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1087.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.07×</text>
+<rect x="1133.0" y="136.0" width="92.0" height="38" fill="#d9eaf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1179.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.05×</text>
+<text x="295" y="199.0" text-anchor="end" font-size="14" fill="#25394f">off / omp</text>
+<rect x="305.0" y="174.0" width="92.0" height="38" fill="#c4deed" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="351.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.23×</text>
+<rect x="397.0" y="174.0" width="92.0" height="38" fill="#c3deed" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="443.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.23×</text>
+<rect x="489.0" y="174.0" width="92.0" height="38" fill="#c6dfee" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.21×</text>
+<rect x="581.0" y="174.0" width="92.0" height="38" fill="#c8e0ee" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="627.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.19×</text>
+<rect x="673.0" y="174.0" width="92.0" height="38" fill="#cde3f0" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="719.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.15×</text>
+<rect x="765.0" y="174.0" width="92.0" height="38" fill="#d4e7f2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="811.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.09×</text>
+<rect x="857.0" y="174.0" width="92.0" height="38" fill="#d4e7f2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="903.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.09×</text>
+<rect x="949.0" y="174.0" width="92.0" height="38" fill="#d7e9f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.07×</text>
+<rect x="1041.0" y="174.0" width="92.0" height="38" fill="#d7e9f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1087.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.07×</text>
+<rect x="1133.0" y="174.0" width="92.0" height="38" fill="#d9eaf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1179.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.05×</text>
+<text x="295" y="237.0" text-anchor="end" font-size="14" fill="#25394f">auto / omp</text>
+<rect x="305.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="351.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="397.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="443.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="489.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="535.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="581.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="627.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="673.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="719.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="765.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="811.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="857.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="903.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<rect x="949.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="995.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="1041.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1087.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="1133.0" y="212.0" width="92.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1179.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+</g>
+</svg>

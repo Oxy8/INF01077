@@ -1,0 +1,1238 @@
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_8, _11);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_4, _7);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_12, _15);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_8, _11);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_4, _7);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:42:8: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:42:8: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:106:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:106:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:105:13: note: vectorized 0 loops in function.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:105:13: missed: statement clobbers memory: _15 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (0, _13, 1, &.istart0.53, &.iend0.54);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:105:13: missed: statement clobbers memory: _24 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.53, &.iend0.54);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:105:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:27: note: ***** Analysis failed with vector mode V8SF
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:108:27: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:130:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:130:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:27: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:27: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: vectorized 0 loops in function.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: missed: statement clobbers memory: _16 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_start (0, _14, 1, &.istart0.60, &.iend0.61);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: missed: statement clobbers memory: _25 = __builtin_GOMP_loop_maybe_nonmonotonic_runtime_next (&.istart0.60, &.iend0.61);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: missed: statement clobbers memory: __builtin_GOMP_loop_end_nowait ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:27: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:132:27: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_algobase.h:105:25: missed: statement clobbers memory: _8 = __builtin_memcmp (ISRA.740_12(D), ISRA.742_14(D), _4);
+/usr/include/c++/12/bits/stl_vector.h:2037:58: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _2 = __builtin_strlen (__s_1(D));
+/usr/include/c++/12/bits/basic_string.h:1647:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_replace (this_3(D), 0, _4, __s_1(D), _2);
+/usr/include/c++/12/bits/basic_string.h:1648:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:1648:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _4 = __builtin_strlen (__s_3(D));
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _14 = std::__cxx11::basic_string<char>::_M_create (this_1(D), &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_26, __s_3(D), _4);
+/usr/include/c++/12/bits/basic_string.h:639:28: missed: statement clobbers memory: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/12/bits/basic_string.h:639:28: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:639:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_construct.h:162:19: missed: couldn't vectorize loop
+/usr/include/c++/12/bits/stl_construct.h:162:19: missed: not vectorized: control flow in loop.
+/usr/include/c++/12/bits/stl_vector.h:728:7: note: vectorized 0 loops in function.
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_17, _20);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_21, _24);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_7, _25);
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_uninitialized.h:1091:22: missed: couldn't vectorize loop
+/usr/include/c++/12/bits/stl_uninitialized.h:1091:22: missed: not vectorized: control flow in loop.
+/usr/include/c++/12/bits/vector.tcc:111:7: note: vectorized 0 loops in function.
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: statement clobbers memory: _74 = operator new (_73);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (_33, _34);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (_36, _37);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_95, _97, _99);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_88, _90, _92);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_84, _87);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_56, _129);
+/usr/include/c++/12/bits/stl_vector.h:1894:24: missed: statement clobbers memory: std::__throw_length_error ("vector::_M_realloc_insert");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (_4, _6);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:50:8: missed: statement clobbers memory: std::__cxx11::basic_string<char>::basic_string (_8, _9);
+/usr/include/c++/12/bits/vector.tcc:515:30: note: ***** Analysis succeeded with vector mode V4DI
+/usr/include/c++/12/bits/vector.tcc:515:30: note: SLPing BB part
+/usr/include/c++/12/bits/vector.tcc:515:30: note: Costing subgraph: 
+/usr/include/c++/12/bits/vector.tcc:515:30: note: node 0x22767368 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/vector.tcc:515:30: note: op template: this_1(D)->D.102821._M_impl.D.102160._M_start = iftmp.68_31;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	stmt 0 this_1(D)->D.102821._M_impl.D.102160._M_start = iftmp.68_31;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	stmt 1 this_1(D)->D.102821._M_impl.D.102160._M_finish = __new_finish_44;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	children 0x22767468
+/usr/include/c++/12/bits/vector.tcc:515:30: note: node (external) 0x22767468 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	{ iftmp.68_31, __new_finish_44 }
+/usr/include/c++/12/bits/vector.tcc:515:30: note: Cost model analysis: 
+/usr/include/c++/12/bits/vector.tcc:515:30: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/usr/include/c++/12/bits/vector.tcc:515:30: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/vector.tcc:515:30: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/vector.tcc:515:30: note: node 0x22767368 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/vector.tcc:515:30: note: op template: this_1(D)->D.102821._M_impl.D.102160._M_start = iftmp.68_31;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	stmt 0 this_1(D)->D.102821._M_impl.D.102160._M_start = iftmp.68_31;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	stmt 1 this_1(D)->D.102821._M_impl.D.102160._M_finish = __new_finish_44;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	children 0x22767468
+/usr/include/c++/12/bits/vector.tcc:515:30: note: node (external) 0x22767468 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/vector.tcc:515:30: note: 	{ iftmp.68_31, __new_finish_44 }
+/usr/include/c++/12/bits/vector.tcc:515:30: note: ------>vectorizing SLP node starting from: this_1(D)->D.102821._M_impl.D.102160._M_start = iftmp.68_31;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: vect_is_simple_use: operand __cur_142 + 72, type of def: internal
+/usr/include/c++/12/bits/vector.tcc:515:30: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/vector.tcc:515:30: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: this_1(D)->D.102821._M_impl.D.102160._M_start
+/usr/include/c++/12/bits/vector.tcc:515:30: note: created vectp.770_131
+/usr/include/c++/12/bits/vector.tcc:515:30: note: add new stmt: MEM <vector(2) long unsigned int> [(struct Measurement * *)vectp.770_131] = _134;
+/usr/include/c++/12/bits/vector.tcc:515:30: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/vector.tcc:515:30: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/vector.tcc:515:30: note: ***** The result for vector mode V32QI would be the same
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:93:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:93:33: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:91:13: note: vectorized 0 loops in function.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:91:13: missed: splitting region at control altering definition _77 = std::__cxx11::basic_string<char>::_M_create (_11(D), &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.h:1528:19: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::_M_mutate (&result, prephitmp_105, 0, 0B, 1);
+/usr/include/c++/12/bits/basic_string.h:1437:18: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::_M_append (&result, "\"\"", 2);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _77 = std::__cxx11::basic_string<char>::_M_create (_11(D), &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:354:7: note: ***** Analysis succeeded with vector mode V4DI
+/usr/include/c++/12/bits/char_traits.h:354:7: note: SLPing BB part
+/usr/include/c++/12/bits/char_traits.h:354:7: note: Costing subgraph: 
+/usr/include/c++/12/bits/char_traits.h:354:7: note: node 0x22647968 (max_nunits=2, refcnt=1) vector(2) char
+/usr/include/c++/12/bits/char_traits.h:354:7: note: op template: MEM[(char_type &)&result + 16] = 34;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	stmt 0 MEM[(char_type &)&result + 16] = 34;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	stmt 1 MEM[(char_type &)&result + 17] = 0;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	children 0x226479e8
+/usr/include/c++/12/bits/char_traits.h:354:7: note: node (constant) 0x226479e8 (max_nunits=1, refcnt=1) vector(2) char
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	{ 34, 0 }
+/usr/include/c++/12/bits/char_traits.h:354:7: note: Cost model analysis: 
+/usr/include/c++/12/bits/char_traits.h:354:7: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 24
+/usr/include/c++/12/bits/char_traits.h:354:7: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/char_traits.h:354:7: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/char_traits.h:354:7: note: node 0x22647968 (max_nunits=2, refcnt=1) vector(2) char
+/usr/include/c++/12/bits/char_traits.h:354:7: note: op template: MEM[(char_type &)&result + 16] = 34;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	stmt 0 MEM[(char_type &)&result + 16] = 34;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	stmt 1 MEM[(char_type &)&result + 17] = 0;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	children 0x226479e8
+/usr/include/c++/12/bits/char_traits.h:354:7: note: node (constant) 0x226479e8 (max_nunits=1, refcnt=1) vector(2) char
+/usr/include/c++/12/bits/char_traits.h:354:7: note: 	{ 34, 0 }
+/usr/include/c++/12/bits/char_traits.h:354:7: note: ------>vectorizing SLP node starting from: MEM[(char_type &)&result + 16] = 34;
+/usr/include/c++/12/bits/char_traits.h:354:7: note: vect_is_simple_use: operand 0, type of def: constant
+/usr/include/c++/12/bits/char_traits.h:354:7: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/char_traits.h:354:7: note: create vector_type-pointer variable to type: vector(2) char  vectorizing a pointer ref: MEM[(char_type &)&result + 16]
+/usr/include/c++/12/bits/char_traits.h:354:7: note: created &MEM[(char_type &)&result + 16]
+/usr/include/c++/12/bits/char_traits.h:354:7: note: add new stmt: MEM <vector(2) char> [(char_type &)&result + 16] = { 34, 0 };
+/usr/include/c++/12/bits/char_traits.h:354:7: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/char_traits.h:354:7: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/char_traits.h:354:7: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/char_traits.h:354:7: missed: splitting region at dominance boundary bb20
+/usr/include/c++/12/bits/char_traits.h:354:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/char_traits.h:354:7: missed: splitting region at dominance boundary bb24
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb25
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_8, prephitmp_88, prephitmp_1);
+/usr/include/c++/12/bits/basic_string.h:234:28: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:234:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:234:28: missed: splitting region at dominance boundary bb38
+/usr/include/c++/12/bits/basic_string.h:1451:30: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::_M_replace_aux (_11(D), _71, 0, 1, 34);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_72, _74);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:91:13: missed: not vectorized: statement can throw an exception: resx 11
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_19, _21);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:97:21: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:97:21: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:97:21: missed: splitting region at dominance boundary bb5
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:97:21: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:97:21: missed: splitting region at dominance boundary bb34
+/usr/include/c++/12/bits/basic_string.h:393:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("basic_string::append");
+/usr/include/c++/12/bits/basic_string.h:393:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_22, _24);
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (_9, _8);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_4, _7);
+/usr/include/c++/12/bits/fs_path.h:354:5: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/fs_path.h:354:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: statement clobbers memory: _28 = operator new (_6);
+/usr/include/c++/12/bits/stl_algobase.h:431:23: missed: statement clobbers memory: __builtin_memmove (iftmp.33_29, _15, _Num.36_12);
+/usr/include/c++/12/bits/new_allocator.h:126:28: missed: statement clobbers memory: std::__throw_bad_alloc ();
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: ***** Analysis succeeded with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: SLPing BB part
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node 0x226279c8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)this_4(D)]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_4(D)]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_4(D)]._M_finish = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	children 0x22627a48
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node (constant) 0x22627a48 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 24
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Costing subgraph: 
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node 0x22627b48 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: op template: MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 0 MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 1 MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_finish = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	children 0x22627bc8
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node (external) 0x22627bc8 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	{ iftmp.33_29, iftmp.33_29 }
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Cost model analysis: 
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node 0x226279c8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: op template: MEM[(struct _Vector_impl_data *)this_4(D)]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_4(D)]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_4(D)]._M_finish = 0B;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	children 0x22627a48
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node (constant) 0x22627a48 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	{ 0B, 0B }
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: ------>vectorizing SLP node starting from: MEM[(struct _Vector_impl_data *)this_4(D)]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: vect_is_simple_use: operand 0B, type of def: constant
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: MEM[(struct _Vector_impl_data *)this_4(D)]._M_start
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: created vectp.803_13
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: add new stmt: MEM <vector(2) long unsigned int> [(unsigned char * *)vectp.803_13] = { 0, 0 };
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/stl_vector.h:395:25: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node 0x22627b48 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: op template: MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 0 MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	stmt 1 MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_finish = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	children 0x22627bc8
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: node (external) 0x22627bc8 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: 	{ iftmp.33_29, iftmp.33_29 }
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: ------>vectorizing SLP node starting from: MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start = iftmp.33_29;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: vect_is_simple_use: operand iftmp.33_29 = PHI <0B(10), _28(5)>, type of def: internal
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: MEM[(struct _Vector_base *)this_4(D)]._M_impl.D.100489._M_start
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: created vectp.805_24
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: add new stmt: MEM <vector(2) long unsigned int> [(unsigned char * *)vectp.805_24] = _38;
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/stl_vector.h:395:25: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:395:25: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: statement clobbers memory: _34 = std::__cxx11::basic_string<char>::_M_create (_1, &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_46, _12, _7);
+/usr/include/c++/12/bits/fs_path.h:330:70: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (_2);
+/usr/include/c++/12/bits/fs_path.h:331:23: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_M_split_cmpts (this_5(D));
+/usr/include/c++/12/bits/unique_ptr.h:396:17: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_Impl_deleter::operator() (_2, _13);
+/usr/include/c++/12/bits/fs_path.h:329:7: missed: not vectorized: statement can throw an exception: resx 8
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_15, _18);
+/usr/include/c++/12/bits/basic_string.h:618:28: missed: statement clobbers memory: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V16QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V16QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V8QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V8QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V4QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V4QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:80:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:81:14: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:124:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:124:55: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:123:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:123:55: missed: not vectorized, possible dependence between data-refs *_724 and *_726
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:66:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:66:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: vectorized 0 loops in function.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at control altering definition _482 = std::__cxx11::basic_string<char>::_M_create (&argument, &__dnew, 0);
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _478 = __builtin_strlen (_422);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _482 = std::__cxx11::basic_string<char>::_M_create (&argument, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb8
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb12
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb13
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_793, _422, _478);
+/usr/include/c++/12/bits/basic_string.h:234:28: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:234:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:234:28: missed: splitting region at loop 2 exit at bb43
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _423 = std::__cxx11::basic_string<char>::compare (&argument, "--warmup");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _424 = std::__cxx11::basic_string<char>::compare (&argument, "--image");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _431 = std::__cxx11::basic_string<char>::compare (&argument, "--operation");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _433 = std::__cxx11::basic_string<char>::compare (&argument, "--repeat");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _440 = std::__cxx11::basic_string<char>::compare (&argument, "--csv");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:71:38: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:71:38: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:71:38: missed: splitting region at dominance boundary bb44
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_451, _458);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at loop 2 exit at bb45
+/usr/include/c++/12/bits/char_traits.h:395:25: missed: statement clobbers memory: _505 = __builtin_strlen (_455);
+/usr/include/c++/12/bits/basic_string.h:1647:19: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::_M_replace (&options.csv, 0, _506, _455, _505);
+/usr/include/c++/12/bits/basic_string.h:1647:19: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:1647:19: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:1647:19: missed: splitting region at dominance boundary bb25
+/usr/include/c++/12/bits/basic_string.h:1647:19: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:1647:19: missed: splitting region at loop 2 exit at bb26
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.124811, _444);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: missed: splitting region at dominance boundary bb27
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: missed: splitting region at loop 2 exit at bb31
+/usr/include/c++/12/ext/string_conversions.h:80:34: missed: statement clobbers memory: _496 = strtol (_445, &__endptr, 10);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_447, _449);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:70:84: missed: splitting region at dominance boundary bb28
+/usr/include/c++/12/ext/string_conversions.h:86:27: missed: not vectorized: statement can throw an exception: std::__throw_out_of_range ("stoi");
+/usr/include/c++/12/ext/string_conversions.h:86:27: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ext/string_conversions.h:86:27: missed: splitting region at dominance boundary bb37
+/usr/include/c++/12/ext/string_conversions.h:83:31: missed: not vectorized: statement can throw an exception: std::__throw_invalid_argument ("stoi");
+/usr/include/c++/12/ext/string_conversions.h:83:31: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ext/string_conversions.h:83:31: missed: splitting region at dominance boundary bb21
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 93
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_471, _473);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 92
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V8SI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at loop 2 exit at bb22
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::assign.isra (&options.operation, _437);
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: splitting region at dominance boundary bb17
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: splitting region at loop 2 exit at bb60
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::assign.isra (&options.image, _429);
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: splitting region at dominance boundary bb61
+/usr/include/c++/12/bits/basic_string.h:815:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:815:28: missed: splitting region at dominance boundary bb14
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_474, _476);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 91
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb48
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:67:52: note: ***** Analysis failed with vector mode V32QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:67:52: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V32QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:67:52: missed: splitting region at loop 2 exit at bb51
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_459, _461);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:65:23: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:65:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:65:23: missed: splitting region at dominance boundary bb65
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _468 = std::__cxx11::basic_string<char>::compare (&options.operation, "Quantize");
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _469 = std::__cxx11::basic_string<char>::compare (&options.operation, "Equalize_Histogram");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:75:45: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:75:45: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:75:45: missed: splitting region at dominance boundary bb66
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:75:45: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:75:45: missed: splitting region at dominance boundary bb69
+/usr/include/c++/12/ostream:620:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cerr, "Uso: simd_phase_benchmark --image ARQUIVO --operation Quantize|Equalize_Histogram --csv ARQUIVO [--repeat N] [--warmup]\n", 120);
+/usr/include/c++/12/ostream:620:18: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ostream:620:18: missed: splitting region at control altering definition _50 = load_image (_163, &loaded);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:196:20: missed: not vectorized: statement can throw an exception: _50 = load_image (_163, &loaded);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:196:20: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:196:20: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:196:20: missed: splitting region at control altering definition _522 = operator new (bytes_54);
+/usr/include/c++/12/bits/new_allocator.h:137:48: missed: not vectorized: statement can throw an exception: _522 = operator new (bytes_54);
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: ***** Analysis succeeded with vector mode V8SI
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: SLPing BB part
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node 0x226f72f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)&source]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&source]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&source]._M_finish = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	children 0x226f7378
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node (constant) 0x226f7378 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 24
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node 0x226f72f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)&source]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&source]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&source]._M_finish = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	children 0x226f7378
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node (constant) 0x226f7378 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: ------>vectorizing SLP node starting from: MEM[(struct _Vector_impl_data *)&source]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: vect_is_simple_use: operand 0B, type of def: constant
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: MEM[(struct _Vector_impl_data *)&source]._M_start
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: created &MEM[(struct _Vector_impl_data *)&source]._M_start
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: add new stmt: MEM <vector(2) long unsigned int> [(unsigned char * *)&source] = { 0, 0 };
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/stl_vector.h:100:4: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at dominance boundary bb77
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:100:4: missed: splitting region at control altering definition extrema = find_min_and_max_luminance_on_gray_scale_image (width_52, height_53, _667);
+/usr/include/c++/12/bits/stl_algobase.h:431:23: missed: statement clobbers memory: __builtin_memcpy (iftmp.33_523, _5, bytes_54);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:200:14: missed: statement clobbers memory: free (_7);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:142:30: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&full, &source);
+/usr/include/c++/12/bits/basic_string.h:3601:27: missed: statement clobbers memory: _529 = std::__cxx11::basic_string<char>::compare (&options.operation, "Quantize");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:168:62: missed: not vectorized: statement can throw an exception: equalize_histogram (&full_image, &full_hist);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126215.phase, "production_total");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126215.scope, "production");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_609, _611);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126215);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:169:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126215);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 109
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 108
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:169:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126215);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:171:36: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&staged, &source);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:174:61: missed: not vectorized: statement can throw an exception: compute_histogram (&stage, &hist, 0);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126219.phase, "histogram_count");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126219.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_613, _615);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126219);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:175:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126219);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 112
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 111
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:175:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126219);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126223.phase, "cdf_normalize");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126223.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_617, _619);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126223);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:177:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126223);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 114
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 113
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:177:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126223);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_ZN12_GLOBAL__N_114equalize_remapER10ImageStatePKj._omp_fn.0, &.omp_data_o.59, 0, 0);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126227.phase, "remap");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126227.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_621, _623);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126227);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:179:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126227);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 116
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 115
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_558, _626);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 110
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:179:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126227);
+/usr/include/c++/12/bits/stl_vector.h:2082:20: missed: statement clobbers memory: _564 = std::operator==.isra (_558, _640, _525, _642);
+/usr/include/c++/12/bits/stl_algobase.h:105:25: missed: statement clobbers memory: _565 = __builtin_memcmp (&hist, &full_hist, 1024);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_558, _1857);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_558, _1857);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_525, _880);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:145:57: missed: not vectorized: statement can throw an exception: quantize_gray (&full_image, 16);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126195.phase, "production_total");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126195.scope, "production");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_583, _585);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126195);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:146:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126195);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 97
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 96
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:146:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126195);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:148:36: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&staged, &source);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:150:67: missed: not vectorized: statement can throw an exception: apply_gray_scale_inplace (&stage);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126199.phase, "grayscale");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126199.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_587, _589);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126199);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:151:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126199);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 100
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 99
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:151:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126199);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:153:38: missed: not vectorized: statement can throw an exception: std::vector<unsigned char>::vector (&prepared, &staged);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:155:64: missed: not vectorized: statement can throw an exception: quantize_gray (&post_gray, 16);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126203.phase, "production_after_gray");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126203.scope, "production_prepared_input");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_591, _593);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126203);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:156:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126203);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 103
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 102
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:156:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126203);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:160:69: missed: not vectorized: statement can throw an exception: extrema = find_min_and_max_luminance_on_gray_scale_image (width_52, height_53, _667);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ***** Analysis succeeded with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: SLPing BB part
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node 0x226f7378 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)&measurements]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&measurements]._M_start = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&measurements]._M_finish = 0B;
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	children 0x226f7278
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: node (constant) 0x226f7278 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/12/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: Costing subgraph: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: node 0x226f73f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: op template: full_image.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: 	stmt 0 full_image.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: 	stmt 1 full_image.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: 	children 0x226f7478
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: node (external) 0x226f7478 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: Cost model analysis: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:143:60: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: Costing subgraph: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: node 0x226f74f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: op template: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: 	stmt 0 stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: 	stmt 1 stage.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: 	children 0x226f7578
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: node (external) 0x226f7578 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: Cost model analysis: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:172:61: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: Costing subgraph: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: node 0x226f75f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: op template: .omp_data_o.59.image = &stage;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: 	stmt 0 .omp_data_o.59.image = &stage;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: 	stmt 1 .omp_data_o.59.hist = &hist;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: 	children 0x226f7678
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: node (external) 0x226f7678 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: 	{ &stage, &hist }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: Cost model analysis: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:129:13: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: Costing subgraph: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: node 0x226f76f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: op template: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: 	stmt 0 stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: 	stmt 1 stage.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: 	children 0x226f7778
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: node (external) 0x226f7778 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: Cost model analysis: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:149:61: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Costing subgraph: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f77f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: post_gray.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 post_gray.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 post_gray.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7878
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7878 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Cost model analysis: 
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Basic block will be vectorized using SLP
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f7378 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: MEM[(struct _Vector_impl_data *)&measurements]._M_start = 0B;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&measurements]._M_start = 0B;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&measurements]._M_finish = 0B;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7278
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (constant) 0x226f7278 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ 0B, 0B }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: MEM[(struct _Vector_impl_data *)&measurements]._M_start = 0B;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand 0B, type of def: constant
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: MEM[(struct _Vector_impl_data *)&measurements]._M_start
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &MEM[(struct _Vector_impl_data *)&measurements]._M_start
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) long unsigned int> [(struct Measurement * *)&measurements] = { 0, 0 };
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f73f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: full_image.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 full_image.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 full_image.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7478
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7478 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: full_image.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand loaded.height, type of def: external
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) int  vectorizing a pointer ref: full_image.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &full_image.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) int> [(int *)&full_image + 8B] = _1829;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f74f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 stage.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7578
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7578 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand loaded.height, type of def: external
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) int  vectorizing a pointer ref: stage.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &stage.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) int> [(int *)&stage + 8B] = _1827;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f75f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: .omp_data_o.59.image = &stage;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 .omp_data_o.59.image = &stage;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 .omp_data_o.59.hist = &hist;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7678
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7678 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ &stage, &hist }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: .omp_data_o.59.image = &stage;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand &hist, type of def: external
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: conflicting alias set types.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .omp_data_o.59.image
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &.omp_data_o.59.image
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) long unsigned int> [(void *)&.omp_data_o.59] = _1823;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f76f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 stage.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7778
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7778 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: stage.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand loaded.height, type of def: external
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) int  vectorizing a pointer ref: stage.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &stage.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) int> [(int *)&stage + 8B] = _1821;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: Vectorizing SLP tree:
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node 0x226f77f8 (max_nunits=2, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: op template: post_gray.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 0 post_gray.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	stmt 1 post_gray.height = height_53;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	children 0x226f7878
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: node (external) 0x226f7878 (max_nunits=1, refcnt=1) vector(2) int
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: 	{ width_52, height_53 }
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ------>vectorizing SLP node starting from: post_gray.width = width_52;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vect_is_simple_use: operand loaded.height, type of def: external
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: transform store. ncopies = 1
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: create vector_type-pointer variable to type: vector(2) int  vectorizing a pointer ref: post_gray.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: created &post_gray.width
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: add new stmt: MEM <vector(2) int> [(int *)&post_gray + 8B] = _1815;
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: vectorizing stmts using SLP.
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: optimized: basic block part vectorized using 32 byte vectors
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ***** The result for vector mode V32QI would be the same
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: missed: splitting region at dominance boundary bb105
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:154:66: missed: splitting region at dominance boundary bb230
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126207.phase, "minmax");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126207.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_595, _597);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126207);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:162:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126207);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 105
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 104
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:162:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126207);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:58:34: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: statement clobbers memory: __builtin_GOMP_parallel (_ZN12_GLOBAL__N_114quantize_remapER10ImageStatehhi._omp_fn.0, &.omp_data_o.52, 0, 0);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:60:32: missed: statement clobbers memory: end = std::chrono::_V2::steady_clock::now ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126211.phase, "remap");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:185:1: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.126211.scope, "phase_replica");
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_599, _601);
+/usr/include/c++/12/bits/stl_vector.h:1294:21: missed: not vectorized: statement can throw an exception: std::vector<{anonymous}::Measurement>::emplace_back.isra (&measurements, &D.126211);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:164:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126211);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 107
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 106
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:164:31: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:164:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:164:31: missed: splitting region at dominance boundary bb235
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_535, _604);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 101
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb115
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_531, _607);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 98
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb162
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:164:31: missed: statement clobbers memory: {anonymous}::Measurement::~Measurement (&D.126211);
+/usr/include/c++/12/bits/stl_vector.h:2082:20: missed: statement clobbers memory: _541 = std::operator==.isra (_531, _632, _525, _634);
+/usr/include/c++/12/bits/stl_vector.h:2082:20: missed: statement clobbers memory: _542 = std::operator==.isra (_535, _636, _525, _634);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_535, _1851);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_531, _556);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at control altering definition D.126230 = std::__cxx11::basic_stringbuf<char>::str (&result._M_stringbuf); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:86:24: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_ostringstream<char>::basic_ostringstream (&result);
+/usr/include/c++/12/bits/locale_facets.h:884:21: missed: not vectorized: statement can throw an exception: std::ctype<char>::_M_widen_init (_770);
+/usr/include/c++/12/bits/locale_facets.h:885:23: missed: not vectorized: statement can throw an exception: OBJ_TYPE_REF(_785;_770->6B) (_770, 32);
+/usr/include/c++/12/ostream:171:25: missed: not vectorized: statement can throw an exception: std::basic_ostream<char>::_M_insert<long unsigned int> (&result.D.76243, hash_761);
+/usr/include/c++/12/sstream:918:33: missed: not vectorized: statement can throw an exception: D.126230 = std::__cxx11::basic_stringbuf<char>::str (&result._M_stringbuf); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Analysis failed with vector mode V32QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** The result for vector mode V32QI would be the same
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Re-trying analysis with vector mode V16QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Analysis failed with vector mode V16QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Re-trying analysis with vector mode V8QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Analysis failed with vector mode V8QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Re-trying analysis with vector mode V4QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Analysis failed with vector mode V4QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: missed: splitting region at dominance boundary bb179
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:84:10: missed: splitting region at control altering definition D.122612 = std::filesystem::status (&D.103641);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:89:1: missed: statement clobbers memory: std::__cxx11::basic_ostringstream<char>::~basic_ostringstream (&result);
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_789, &D.126230.D.48550._M_local_buf, _796);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_574, _576);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_525, _849);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:49: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::path<std::__cxx11::basic_string<char> > (&D.103641, &options.csv, 2);
+/usr/include/c++/12/bits/fs_ops.h:134:18: missed: not vectorized: statement can throw an exception: D.122612 = std::filesystem::status (&D.103641);
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ***** Analysis succeeded with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:229:26: note: SLPing BB part
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Costing subgraph: 
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f77f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: output_hash._M_string_length = _528;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 output_hash._M_string_length = _528;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 output_hash.D.48550._M_allocated_capacity = _557;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	children 0x226f7878
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f7878 (max_nunits=2, refcnt=1) const vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: _528 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 _528 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 _557 = D.126230.D.48550._M_allocated_capacity;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Cost model analysis: 
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 40
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Costing subgraph: 
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f76f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: output_hash._M_string_length = _802;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 output_hash._M_string_length = _802;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 output_hash.D.48550._M_allocated_capacity = _803;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	children 0x226f7778
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f7778 (max_nunits=2, refcnt=1) const vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: _802 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 _802 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 _803 = D.126230.D.48550._M_allocated_capacity;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Cost model analysis: 
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Cost model analysis for part in loop 0:
+  Vector cost: 24
+  Scalar cost: 40
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Basic block will be vectorized using SLP
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f77f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: output_hash._M_string_length = _528;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 output_hash._M_string_length = _528;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 output_hash.D.48550._M_allocated_capacity = _557;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	children 0x226f7878
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f7878 (max_nunits=2, refcnt=1) const vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: _528 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 _528 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 _557 = D.126230.D.48550._M_allocated_capacity;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ------>vectorizing SLP node starting from: _528 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: transform load. ncopies = 1
+/usr/include/c++/12/bits/basic_string.h:229:26: note: conflicting alias set types.
+/usr/include/c++/12/bits/basic_string.h:229:26: note: create vector_type-pointer variable to type: const vector(2) long unsigned int  vectorizing a pointer ref: D.126230._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: created &D.126230._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: add new stmt: vect__528.838_1813 = MEM <const vector(2) long unsigned int> [(void *)&D.126230 + 8B];
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ------>vectorizing SLP node starting from: output_hash._M_string_length = _528;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vect_is_simple_use: operand D.126230._M_string_length, type of def: internal
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vect_is_simple_use: operand D.126230.D.48550._M_allocated_capacity, type of def: internal
+/usr/include/c++/12/bits/basic_string.h:229:26: note: conflicting alias set types.
+/usr/include/c++/12/bits/basic_string.h:229:26: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/basic_string.h:229:26: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: output_hash._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: created &output_hash._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: add new stmt: MEM <vector(2) long unsigned int> [(void *)&output_hash + 8B] = vect__528.838_1813;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: note: Vectorizing SLP tree:
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f76f8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: output_hash._M_string_length = _802;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 output_hash._M_string_length = _802;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 output_hash.D.48550._M_allocated_capacity = _803;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	children 0x226f7778
+/usr/include/c++/12/bits/basic_string.h:229:26: note: node 0x226f7778 (max_nunits=2, refcnt=1) const vector(2) long unsigned int
+/usr/include/c++/12/bits/basic_string.h:229:26: note: op template: _802 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 0 _802 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: 	stmt 1 _803 = D.126230.D.48550._M_allocated_capacity;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ------>vectorizing SLP node starting from: _802 = D.126230._M_string_length;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: transform load. ncopies = 1
+/usr/include/c++/12/bits/basic_string.h:229:26: note: conflicting alias set types.
+/usr/include/c++/12/bits/basic_string.h:229:26: note: create vector_type-pointer variable to type: const vector(2) long unsigned int  vectorizing a pointer ref: D.126230._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: created &D.126230._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: add new stmt: vect__802.843_1811 = MEM <const vector(2) long unsigned int> [(void *)&D.126230 + 8B];
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ------>vectorizing SLP node starting from: output_hash._M_string_length = _802;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vect_is_simple_use: operand D.126230._M_string_length, type of def: internal
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vect_is_simple_use: operand D.126230.D.48550._M_allocated_capacity, type of def: internal
+/usr/include/c++/12/bits/basic_string.h:229:26: note: conflicting alias set types.
+/usr/include/c++/12/bits/basic_string.h:229:26: note: transform store. ncopies = 1
+/usr/include/c++/12/bits/basic_string.h:229:26: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: output_hash._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: created &output_hash._M_string_length
+/usr/include/c++/12/bits/basic_string.h:229:26: note: add new stmt: MEM <vector(2) long unsigned int> [(void *)&output_hash + 8B] = vect__802.843_1811;
+/usr/include/c++/12/bits/basic_string.h:229:26: note: vectorizing stmts using SLP.
+/usr/include/c++/12/bits/basic_string.h:229:26: optimized: basic block part vectorized using 32 byte vectors
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/basic_string.h:229:26: missed: splitting region at dominance boundary bb282
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 13
+/usr/include/c++/12/bits/basic_string.h:229:26: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:229:26: missed: splitting region at control altering definition _67 = std::filesystem::file_size (&D.103642);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::path<std::__cxx11::basic_string<char> > (&D.103642, &options.csv, 2);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: not vectorized: statement can throw an exception: _67 = std::filesystem::file_size (&D.103642);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode V32QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V32QI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at dominance boundary bb286
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103642);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at control altering definition _882 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.103819], &__dnew, 0);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:49: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103641);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:210:49: missed: not vectorized: statement can throw an exception: std::basic_ofstream<char>::basic_ofstream (&csv, &options.csv, 1);
+/usr/include/c++/12/ostream:620:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&csv.D.98265, "Image,Operation,Phase,Threads,Build,Repeat,Elapsed_ms,Output_Hash,Exact,Scope,Compiler,Flags\n", 93);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::path<std::__cxx11::basic_string<char> > (&D.103818, &options.image, 2);
+/usr/include/c++/12/bits/fs_path.h:1329:43: missed: statement clobbers memory: _831 = std::filesystem::__cxx11::path::_List::end (&D.103818._M_cmpts);
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.103819 + 32B]);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _882 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.103819], &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode V8SI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb319
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb323
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb324
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_788, _872, _873);
+/usr/include/c++/12/bits/char_traits.h:431:49: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: splitting region at loop 1 exit at bb325
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.103819 + 32B], _876);
+/usr/include/c++/12/bits/fs_path.h:316:5: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/fs_path.h:316:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: splitting region at dominance boundary bb312
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_877, _879);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 122
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb298
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.103819 + 32B]);
+/usr/include/c++/12/bits/fs_path.h:314:21: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/fs_path.h:314:21: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: splitting region at control altering definition _858 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.103819], &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _858 = std::__cxx11::basic_string<char>::_M_create (&MEM <struct string_type> [(void *)&D.103819], &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb300
+/usr/include/c++/12/bits/basic_string.tcc:225:13: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: splitting region at dominance boundary bb303
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb304
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_783, _848, _817);
+/usr/include/c++/12/bits/char_traits.h:431:49: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: splitting region at loop 1 exit at bb306
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: not vectorized: statement can throw an exception: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.103819 + 32B], &D.103818._M_cmpts);
+/usr/include/c++/12/bits/fs_path.h:316:5: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/fs_path.h:316:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/fs_path.h:316:5: missed: splitting region at dominance boundary bb305
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_853, _855);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 121
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb296
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb330
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: statement clobbers memory: std::filesystem::__cxx11::path::_List::_List (&MEM <struct _List> [(void *)&D.103819 + 32B]);
+/usr/include/c++/12/bits/fs_path.h:314:21: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/fs_path.h:314:21: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/fs_path.h:314:21: missed: splitting region at control altering definition _901 = std::__cxx11::basic_string<char>::_M_create (&D.103820, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.tcc:225:13: missed: not vectorized: statement can throw an exception: _901 = std::__cxx11::basic_string<char>::_M_create (&D.103820, &__dnew, 0);
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V16QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V16QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V8QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V8QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Re-trying analysis with vector mode V4QI
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode V4QI
+/usr/include/c++/12/bits/basic_string.h:617:15: missed: splitting region at dominance boundary bb335
+/usr/include/c++/12/bits/basic_string.h:617:15: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:617:15: missed: splitting region at dominance boundary bb339
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:261:31: missed: splitting region at dominance boundary bb340
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: statement clobbers memory: __builtin_memcpy (_778, _176, _177);
+/usr/include/c++/12/bits/char_traits.h:431:49: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/char_traits.h:431:49: missed: splitting region at control altering definition D.103821 = {anonymous}::csv_escape (&D.103820); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:26: missed: not vectorized: statement can throw an exception: D.103821 = {anonymous}::csv_escape (&D.103820); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:26: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:26: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:26: missed: splitting region at control altering definition _181 = std::__ostream_insert<char, std::char_traits<char> > (&csv.D.98265, _180, _179);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _181 = std::__ostream_insert<char, std::char_traits<char> > (&csv.D.98265, _180, _179);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb342
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _81 = std::operator<< <std::char_traits<char> > (_181, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: not vectorized: statement can throw an exception: _81 = std::operator<< <std::char_traits<char> > (_181, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: splitting region at control altering definition D.103822 = {anonymous}::csv_escape (&options.operation); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:26: missed: not vectorized: statement can throw an exception: D.103822 = {anonymous}::csv_escape (&options.operation); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:26: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:26: missed: splitting region at control altering definition _185 = std::__ostream_insert<char, std::char_traits<char> > (_81, _184, _183);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _185 = std::__ostream_insert<char, std::char_traits<char> > (_81, _184, _183);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb347
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _84 = std::operator<< <std::char_traits<char> > (_185, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: not vectorized: statement can throw an exception: _84 = std::operator<< <std::char_traits<char> > (_185, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: splitting region at control altering definition D.103823 = {anonymous}::csv_escape (_11); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:66: missed: not vectorized: statement can throw an exception: D.103823 = {anonymous}::csv_escape (_11); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:66: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:66: missed: splitting region at control altering definition _189 = std::__ostream_insert<char, std::char_traits<char> > (_84, _188, _187);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _189 = std::__ostream_insert<char, std::char_traits<char> > (_84, _188, _187);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb352
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _87 = std::operator<< <std::char_traits<char> > (_189, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: not vectorized: statement can throw an exception: _87 = std::operator<< <std::char_traits<char> > (_189, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:215:82: missed: splitting region at control altering definition _90 = std::basic_ostream<char>::operator<< (_87, _12);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: statement clobbers memory: _12 = omp_get_max_threads ();
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: not vectorized: statement can throw an exception: _90 = std::basic_ostream<char>::operator<< (_87, _12);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: splitting region at control altering definition _92 = std::operator<< <std::char_traits<char> > (_90, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: not vectorized: statement can throw an exception: _92 = std::operator<< <std::char_traits<char> > (_90, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: splitting region at control altering definition D.103826 = {anonymous}::csv_escape (&D.103825); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:58: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.103825, "auto-avx2");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:58: missed: not vectorized: statement can throw an exception: D.103826 = {anonymous}::csv_escape (&D.103825); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:58: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:58: missed: splitting region at control altering definition _193 = std::__ostream_insert<char, std::char_traits<char> > (_92, _192, _191);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _193 = std::__ostream_insert<char, std::char_traits<char> > (_92, _192, _191);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb362
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _97 = std::operator<< <std::char_traits<char> > (_193, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: not vectorized: statement can throw an exception: _97 = std::operator<< <std::char_traits<char> > (_193, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:216:84: missed: splitting region at control altering definition _99 = std::basic_ostream<char>::operator<< (_97, _13);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: missed: not vectorized: statement can throw an exception: _99 = std::basic_ostream<char>::operator<< (_97, _13);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: note: ***** Analysis failed with vector mode V8SI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: missed: splitting region at control altering definition _101 = std::operator<< <std::char_traits<char> > (_99, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: missed: not vectorized: statement can throw an exception: _101 = std::operator<< <std::char_traits<char> > (_99, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:217:60: missed: splitting region at control altering definition _194 = std::basic_ostream<char>::_M_insert<double> (_101, _14);
+/usr/include/c++/12/ostream:221:25: missed: not vectorized: statement can throw an exception: _194 = std::basic_ostream<char>::_M_insert<double> (_101, _14);
+/usr/include/c++/12/ostream:221:25: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/ostream:221:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/ostream:221:25: missed: splitting region at dominance boundary bb370
+/usr/include/c++/12/ostream:221:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ostream:221:25: missed: splitting region at control altering definition _103 = std::operator<< <std::char_traits<char> > (_194, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: not vectorized: statement can throw an exception: _103 = std::operator<< <std::char_traits<char> > (_194, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: splitting region at control altering definition _202 = std::__ostream_insert<char, std::char_traits<char> > (_103, _201, _200);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _202 = std::__ostream_insert<char, std::char_traits<char> > (_103, _201, _200);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb374
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at loop 1 exit at bb375
+/usr/include/c++/12/ostream:620:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_202, ",yes,", 5);
+/usr/include/c++/12/ostream:620:18: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ostream:620:18: missed: splitting region at dominance boundary bb376
+/usr/include/c++/12/ostream:620:18: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/ostream:620:18: missed: splitting region at control altering definition D.103838 = {anonymous}::csv_escape (_15); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:218:52: missed: not vectorized: statement can throw an exception: D.103838 = {anonymous}::csv_escape (_15); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:218:52: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:218:52: missed: splitting region at control altering definition _206 = std::__ostream_insert<char, std::char_traits<char> > (_202, _205, _204);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _206 = std::__ostream_insert<char, std::char_traits<char> > (_202, _205, _204);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb379
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _106 = std::operator<< <std::char_traits<char> > (_206, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: not vectorized: statement can throw an exception: _106 = std::operator<< <std::char_traits<char> > (_206, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: splitting region at control altering definition D.103841 = {anonymous}::csv_escape (&D.103840); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:26: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.103840, "12.2.0");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:26: missed: not vectorized: statement can throw an exception: D.103841 = {anonymous}::csv_escape (&D.103840); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:26: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:26: missed: splitting region at control altering definition _210 = std::__ostream_insert<char, std::char_traits<char> > (_106, _209, _208);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _210 = std::__ostream_insert<char, std::char_traits<char> > (_106, _209, _208);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb385
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at control altering definition _111 = std::operator<< <std::char_traits<char> > (_210, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: not vectorized: statement can throw an exception: _111 = std::operator<< <std::char_traits<char> > (_210, 44);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: splitting region at control altering definition D.103844 = {anonymous}::csv_escape (&D.103843); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:60: missed: not vectorized: statement can throw an exception: std::__cxx11::basic_string<char>::__ct_base .constprop (&D.103843, "-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -g -DOMP_EXPLICIT_SIMD=0 -march=haswell");
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:60: missed: not vectorized: statement can throw an exception: D.103844 = {anonymous}::csv_escape (&D.103843); [return slot optimization]
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:60: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:60: missed: splitting region at control altering definition _214 = std::__ostream_insert<char, std::char_traits<char> > (_111, _213, _212);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _214 = std::__ostream_insert<char, std::char_traits<char> > (_111, _213, _212);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb391
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb292
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:219:87: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_214, 10);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_246, _248);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_243, _245);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_240, _242);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_237, _239);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_234, _236);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_231, _233);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_228, _230);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_225, _227);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_222, _224);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_219, _221);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_216, _218);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:72: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103819);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103818);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: note: ***** Analysis failed with vector mode V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: splitting region at dominance boundary bb513
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: splitting region at dominance boundary bb392
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: splitting region at dominance boundary bb435
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:213:29: missed: splitting region at dominance boundary bb439
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_256, _258);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 51
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb440
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb388
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_259, _261);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 50
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb386
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb445
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb449
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_262, _264);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 45
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb450
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb382
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_265, _267);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 44
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb380
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb455
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb377
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_268, _270);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 39
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb371
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb367
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb365
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb363
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb460
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb464
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_271, _273);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 37
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb465
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb359
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_274, _276);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 36
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb357
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb355
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb353
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb470
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb350
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_277, _279);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 31
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb348
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb475
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb345
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_280, _282);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 29
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb343
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb480
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb484
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_283, _285);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 27
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb485
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb331
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_286, _288);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 26
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:795:23: missed: splitting region at dominance boundary bb490
+/usr/include/c++/12/bits/basic_string.h:618:28: missed: not vectorized: statement can throw an exception: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/12/bits/basic_string.h:618:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:618:28: missed: splitting region at dominance boundary bb493
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:72: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103819);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 25
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:72: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:72: missed: splitting region at dominance boundary bb294
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103818);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 24
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: missed: splitting region at dominance boundary bb496
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:214:44: missed: splitting region at dominance boundary bb416
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: std::basic_ofstream<char>::~basic_ofstream (&csv);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 18
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: splitting region at dominance boundary bb287
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: std::basic_ofstream<char>::~basic_ofstream (&csv);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: splitting region at dominance boundary bb423
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: splitting region at dominance boundary bb425
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103642);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at dominance boundary bb431
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at dominance boundary bb428
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:49: missed: statement clobbers memory: std::filesystem::__cxx11::path::~path (&D.103641);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:49: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:49: missed: splitting region at dominance boundary bb432
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 13
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at dominance boundary bb168
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 11
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:209:92: missed: splitting region at dominance boundary bb181
+/usr/include/c++/12/bits/basic_ios.h:50:18: missed: not vectorized: statement can throw an exception: std::__throw_bad_cast ();
+/usr/include/c++/12/bits/basic_ios.h:50:18: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_ios.h:50:18: missed: splitting region at dominance boundary bb269
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:89:1: missed: statement clobbers memory: std::__cxx11::basic_ostringstream<char>::~basic_ostringstream (&result);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 117
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:89:1: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:89:1: missed: splitting region at dominance boundary bb514
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_525, _630);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 95
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb119
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb125
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_535, _1851);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_531, _553);
+/usr/include/c++/12/bits/stl_vector.h:386:2: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:386:2: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:386:2: missed: splitting region at dominance boundary bb198
+/usr/include/c++/12/bits/stl_vector.h:386:2: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:386:2: missed: splitting region at dominance boundary bb273
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_525, _673);
+/usr/include/c++/12/bits/new_allocator.h:158:26: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: splitting region at control altering definition _93 = std::__ostream_insert<char, std::char_traits<char> > (&cerr, _107, _112);
+/usr/include/c++/12/ostream:620:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cerr, "Diverg\xc3\xaancia entre fases e opera\xc3\xa7\xc3\xa3o de produ\xc3\xa7\xc3\xa3o: ", 53);
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: not vectorized: statement can throw an exception: _93 = std::__ostream_insert<char, std::char_traits<char> > (&cerr, _107, _112);
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb277
+/usr/include/c++/12/bits/basic_string.h:3888:30: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/basic_string.h:3888:30: missed: splitting region at dominance boundary bb417
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:205:102: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_93, 10);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:205:102: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:205:102: missed: splitting region at dominance boundary bb278
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_253, _255);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: std::vector<{anonymous}::Measurement>::~vector (&measurements);
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (iftmp.33_523, bytes_54);
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb499
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb73
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_289, _291);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 9
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: std::vector<{anonymous}::Measurement>::~vector (&measurements);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 8
+/usr/include/c++/12/bits/new_allocator.h:158:26: missed: statement clobbers memory: operator delete (_292, _295);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 7
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/12/bits/stl_vector.h:733:7: missed: splitting region at dominance boundary bb81
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/12/bits/stl_vector.h:1905:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb67
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: not vectorized: statement can throw an exception: resx 94
+/usr/include/c++/12/bits/stl_vector.h:1905:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb422
+/usr/include/c++/12/bits/stl_vector.h:1905:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/bits/stl_vector.h:1905:24: missed: splitting region at dominance boundary bb70
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: {anonymous}::Options::~Options (&options);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at dominance boundary bb517
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at dominance boundary bb4
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:188:5: missed: splitting region at dominance boundary bb508
+/usr/include/c++/12/bits/basic_string.h:639:28: missed: not vectorized: statement can throw an exception: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/12/bits/basic_string.h:639:28: note: ***** Analysis failed with vector mode VOID
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: missed: statement clobbers memory: {anonymous}::Options::~Options (&options);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/12/iostream:74:25: missed: statement clobbers memory: std::ios_base::Init::Init (&__ioinit);
+/usr/include/c++/12/iostream:74:25: missed: statement clobbers memory: __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+577262-FPI-Relatorio2/simd_phase_benchmark.cpp:222:1: note: ***** Analysis failed with vector mode VOID
