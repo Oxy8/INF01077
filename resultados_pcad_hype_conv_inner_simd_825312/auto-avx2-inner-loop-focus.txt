@@ -1,0 +1,2 @@
+Build: auto-avx2 | pragma: linha 471 | laço l: linha 473
+577262-FPI-Relatorio2/vectorization_benchmark.cpp:473:36: missed: couldn't vectorize loop

@@ -1,0 +1,3 @@
+Image,Threads,Repetitions,Auto_Median_ms,Auto_Min_ms,Auto_Max_ms,OMP_Median_ms,OMP_Min_ms,OMP_Max_ms,Auto_over_OMP,Auto_Differing_Bytes_Median,OMP_Differing_Bytes_Median,Auto_Max_Abs_Error,OMP_Max_Abs_Error,Auto_Exact,OMP_Exact,Auto_Hashes,OMP_Hashes
+4000x3000.png,1,3,3089.684921,3083.659887,3092.000865,3771.297738,3758.745856,3772.893475,0.819263,0,193,0,1,True,False,b3c35b96dcca37e6,93aca781caa1bb13
+4000x3000.png,20,3,178.482069,178.471873,178.609607,217.755959,217.706007,217.869908,0.819643,0,193,0,1,True,False,b3c35b96dcca37e6,93aca781caa1bb13

@@ -1,0 +1,12 @@
+hype2
+mkdir -p build/auto-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"auto-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -march=haswell  -fopt-info-vec-all=build/auto-avx2/vectorization-core-all.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/auto-avx2/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"auto-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=0 -march=haswell -fopt-info-vec-all=build/auto-avx2/vectorization-experiment-all.log -MMD -MP -c 577262-FPI-Relatorio2/vectorization_benchmark.cpp -o build/auto-avx2/vectorization_benchmark.o
+g++ -fopenmp build/auto-avx2/image_manipulation.o build/auto-avx2/vectorization_benchmark.o  -o build/auto-avx2/vectorization_benchmark
+mkdir -p build/omp-avx2
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=1 -march=haswell  -fopt-info-vec-all=build/omp-avx2/vectorization-core-all.log -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/omp-avx2/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"omp-avx2\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=1 -march=haswell"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DOMP_EXPLICIT_SIMD=1 -march=haswell -fopt-info-vec-all=build/omp-avx2/vectorization-experiment-all.log -MMD -MP -c 577262-FPI-Relatorio2/vectorization_benchmark.cpp -o build/omp-avx2/vectorization_benchmark.o
+g++ -fopenmp build/omp-avx2/image_manipulation.o build/omp-avx2/vectorization_benchmark.o  -o build/omp-avx2/vectorization_benchmark
+Resumo validado: /home/users/efsilva/teste/INF01077/resultados_pcad_hype_conv_inner_simd_825312/inner_simd_summary.csv
+Campanha concluída: /home/users/efsilva/teste/INF01077/resultados_pcad_hype_conv_inner_simd_825312
+Resultados: /home/users/efsilva/teste/INF01077/resultados_pcad_hype_conv_inner_simd_825312
