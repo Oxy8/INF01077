@@ -2,7 +2,7 @@
 
 ## Escopo e critério
 
-Este relatório complementa a [auditoria das 17 operações originais](RELATORIO_LOOPS_SIMD_17_OPERACOES.md). Examina as variantes isoladas em [`vectorization_benchmark.cpp`](577262-FPI-Relatorio2/vectorization_benchmark.cpp) e as medições do job **824931** no hype, sem substituir as funções de produção. A nova campanha contém **15 operações**: Flip Vertical e Zoom Out não receberam candidatos; Grayscale e Zoom In são controles que continuam chamando o código original. As cinco Gaussianas usam as mesmas quatro funções parametrizadas pelo número de taps.
+Este relatório complementa a [auditoria das 17 operações originais](RELATORIO_LOOPS_SIMD_17_OPERACOES.md). Examina as variantes isoladas em [`vectorization_benchmark.cpp`](577262-FPI-Relatorio2/vectorization_benchmark.cpp) e as medições do job **824931** no hype, sem substituir as funções de produção. A nova campanha contém **15 operações**: Flip Vertical e Zoom Out não receberam candidatos; Grayscale e Zoom In são controles que chamam as funções de produção **na revisão do job 824931**, não necessariamente o mesmo código-fonte das campanhas antigas. As cinco Gaussianas usam as mesmas quatro funções parametrizadas pelo número de taps.
 
 Evidência primária: [CSV bruto](resultados_pcad_hype_vectorization_824931/vectorization_raw.csv), [resumo](resultados_pcad_hype_vectorization_824931/vectorization_summary.csv), diagnósticos completos do GCC 12.2 para [`auto-avx2`](resultados_pcad_hype_vectorization_824931/auto-avx2-compiler.txt), [`omp-avx2`](resultados_pcad_hype_vectorization_824931/omp-avx2-compiler.txt) e [funções originais](resultados_pcad_hype_vectorization_824931/omp-avx2-original-core-compiler.txt). O job registra o commit `6b134bbfa340df58d7ca5107973ff4e8fbdf46dc` em [`git_commit.txt`](resultados_pcad_hype_vectorization_824931/git_commit.txt). O [script da campanha](run_vectorization_tests.sh) fixa `OMP_SCHEDULE=static`, usa 1 e 20 threads, imagens de 12 e 36 MP, um aquecimento e dez amostras; as Gaussianas de 36 MP têm cinco. Zoom In não foi executado em 36 MP. O alvo é Haswell nos três builds:
 
@@ -252,7 +252,7 @@ Flip **397** e rotação **416** são **N em auto e omp**, mesmo com `EXP_SIMD` 
 
 ## 6. Controles sem reescrita: Grayscale e Zoom In
 
-O executável chama [`apply_gray_scale_inplace`](577262-FPI-Relatorio2/vectorization_benchmark.cpp#L611) e [`zoom_in_image_to_buffer`](577262-FPI-Relatorio2/vectorization_benchmark.cpp#L620). Não há `EXP_SIMD` novo nesses controles: os pragmas são os `OMP_SIMD` do [código original](577262-FPI-Relatorio2/image_manipulation.cpp), que também se expandem somente quando `OMP_EXPLICIT_SIMD=1`. No job atual, GCC confirma **V32 + V16** no laço de pixels do Grayscale, linha **979**, e na fase de interpolação vertical do Zoom In, linha **714**, tanto em auto como em omp. As fases de cópia **689** e interpolação horizontal **701** do Zoom continuam sem confirmação. Em 12 MP/1 thread, o Zoom `off/auto` é **1,40×**; em 20 threads, **1,00×**. O ganho incremental do pragma é aproximadamente **1,00×** nos dois casos. Grayscale tem `off/auto` de **1,28×** em 1 thread e **1,16×** em 20.
+O executável chama [`apply_gray_scale_inplace`](577262-FPI-Relatorio2/vectorization_benchmark.cpp#L611) e [`zoom_in_image_to_buffer`](577262-FPI-Relatorio2/vectorization_benchmark.cpp#L620). Não há `EXP_SIMD` novo nesses controles: os pragmas são os `OMP_SIMD` das [funções de produção atuais](577262-FPI-Relatorio2/image_manipulation.cpp), que também se expandem somente quando `OMP_EXPLICIT_SIMD=1`. No job atual, GCC confirma **V32 + V16** no laço de pixels do Grayscale, linha **979**, e na fase de interpolação vertical do Zoom In, linha **714**, tanto em auto como em omp. As fases de cópia **689** e interpolação horizontal **701** do Zoom continuam sem confirmação. Em 12 MP/1 thread, o Zoom `off/auto` é **1,40×**; em 20 threads, **1,00×**. O ganho incremental do pragma é aproximadamente **1,00×** nos dois casos. Grayscale tem `off/auto` de **1,28×** em 1 thread e **1,16×** em 20. O Grayscale foi refatorado para `apply_gray_scale_buffer` entre os jobs 822851 e 824931; portanto, esses ganhos não devem ser contrapostos diretamente aos do mapa inicial como se os dois jobs tivessem compilado o mesmo laço.
 
 Trechos dos laços de controle (aqui `OMP_SIMD`, não `EXP_SIMD`, é o macro do código de produção):
 
@@ -325,7 +325,7 @@ Na tabela, cada célula contém `off/auto ; auto/omp`, usando `Phase=total`. As 
 | Flip out-of-place | **1,00× ; 1,03×** | **1,01× ; 1,00×** |
 | Rotate CW blocked | **1,00× ; 1,02×** | **0,99× ; 1,02×** |
 | Rotate CCW blocked | **1,00× ; 1,04×** | **1,01× ; 1,05×** |
-| Grayscale original | **1,28× ; 1,00×** | **1,16× ; 1,01×** |
+| Grayscale, função de produção atual | **1,28× ; 1,00×** | **1,16× ; 1,01×** |
 | Zoom In original, 12 MP | **1,40× ; 1,00×** | **1,00× ; 0,99×** |
 | Gauss 3×3 AoS separável | **1,12× ; 0,99×** | **1,16× ; 1,00×** |
 | Gauss 5×5 AoS separável | **1,23× ; 1,00×** | **1,26× ; 1,00×** |
@@ -337,15 +337,23 @@ Todos os candidatos medidos foram byte a byte iguais à referência designada. A
 
 ## Gráficos
 
-Os seis SVGs abaixo são gerados diretamente do [CSV bruto](resultados_pcad_hype_vectorization_824931/vectorization_raw.csv) por [`plot_vetorizacao_824931.py`](plot_vetorizacao_824931.py), sem alterar dados. Cada figura separa `off/auto` de `auto/omp`; nenhuma barra "SIMD" junta reescrita algorítmica com efeito do compilador.
+Os oito SVGs abaixo são gerados diretamente do [CSV bruto](resultados_pcad_hype_vectorization_824931/vectorization_raw.csv) por [`plot_vetorizacao_824931.py`](plot_vetorizacao_824931.py), sem alterar dados. Os mapas de calor mostram `off/auto`, `off/omp` e `auto/omp` em células separadas para 1 e 20 threads; os demais gráficos separam `off/auto` de `auto/omp`. Nenhuma razão junta reescrita algorítmica com efeito do compilador.
 
-### 12 MP: todas as 15 operações, dez amostras
+### Mapas de calor para apresentação
+
+Este recorte mostra uma única convolução, **Gaussiana 11×11 RGB direta** (`aos_direct`), sem variantes separáveis. Em 12 MP há 8 linhas, incluindo Zoom In; em 36 MP há 7. Flip e rotações não aparecem nos panoramas SIMD porque seus laços principais não receberam vetorização confirmada; continuam documentados na seção 5. Os gráficos detalhados das Gaussianas abaixo preservam todas as variantes para consulta técnica. A convolução direta tem `off/auto ≈ 0,81×` em 36 MP tanto com 1 quanto com 20 threads: o GCC vetorizou `dx`, mas não o laço de pixels `x`; ver seção 4.1.
+
+![Builds SIMD das reescritas, 12 MP, 1 e 20 threads](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_12mp.svg)
+
+![Builds SIMD das reescritas, 36 MP, 1 e 20 threads](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_36mp.svg)
+
+### 12 MP: 12 operações selecionadas, dez amostras
 
 ![Razões de builds para 12 MP e 1 thread](visualizacoes_pcad_hype_vetorizacao_824931/figures/ganho_builds_12mp_1t.svg)
 
 ![Razões de builds para 12 MP e 20 threads](visualizacoes_pcad_hype_vetorizacao_824931/figures/ganho_builds_12mp_20t.svg)
 
-### 36 MP: 14 operações (Zoom omitido)
+### 36 MP: 11 operações selecionadas (Zoom omitido)
 
 ![Razões de builds para 36 MP e 1 thread](visualizacoes_pcad_hype_vetorizacao_824931/figures/ganho_builds_36mp_1t.svg)
 
@@ -358,4 +366,4 @@ Os seis SVGs abaixo são gerados diretamente do [CSV bruto](resultados_pcad_hype
 ![Razões dos builds nas variantes gaussianas em 20 threads](visualizacoes_pcad_hype_vetorizacao_824931/figures/gaussianas_variantes_36mp_20t.svg)
 
 Regeneração: `python3 plot_vetorizacao_824931.py`. Os gráficos usam mediana por combinação `(imagem, operação, variante, threads, build)` calculada de novo a partir das amostras `Phase=total`. A escala de cada painel é própria e está rotulada; **não** compare comprimentos visuais entre os dois painéis como se partilhassem o mesmo eixo.
-Nos panoramas das 15/14 operações, o painel `off/auto` usa escala logarítmica para tornar legíveis tanto regressões quanto ganhos acima de 6×; o painel `auto/omp` é linear e mostra diferenças próximas de 1×. Os painéis de variantes Gaussianas usam escalas lineares próprias.
+Nos panoramas das 12/11 operações selecionadas, o painel `off/auto` usa escala logarítmica para tornar legíveis tanto regressões quanto ganhos acima de 6×; o painel `auto/omp` é linear e mostra diferenças próximas de 1×. Os painéis de variantes Gaussianas usam escalas lineares próprias.

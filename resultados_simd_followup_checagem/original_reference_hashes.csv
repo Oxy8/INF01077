@@ -1,0 +1,9 @@
+Image,Operation,Result_Hash
+poke.jpg,Grayscale,02600c3767ff875b
+poke.jpg,Adjust_Brightness,877acf7227ec8fe0
+poke.jpg,Quantize,a823c0a658aec905
+poke.jpg,Adjust_Contrast,fe8ba4dae8ebdc33
+poke.jpg,Negative,fabb30cc4c045fe0
+poke.jpg,Equalize_Histogram,3f5e98660edbe40f
+poke.jpg,Zoom_In,d4f9d2279a057ae5
+poke.jpg,Gaussian_11x11,cbe4aa05128ee27b

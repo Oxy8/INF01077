@@ -262,7 +262,8 @@ def bar_chart(path: Path, title: str, labels: Sequence[str], groups_: Sequence[t
     write_svg(path, lines)
 
 
-def heatmap(path: Path, title: str, x_labels: Sequence[str], y_labels: Sequence[str], values: list[list[float]], legend: str) -> None:
+def heatmap(path: Path, title: str, x_labels: Sequence[str], y_labels: Sequence[str], values: list[list[float]], legend: str,
+            *, white_background: bool = False) -> None:
     width, height = 1200, max(560, 150 + 42 * len(y_labels))
     left, top, right, bottom = 250, 105, 120, 100
     plot_w, plot_h = width - left - right, height - top - bottom
@@ -271,6 +272,8 @@ def heatmap(path: Path, title: str, x_labels: Sequence[str], y_labels: Sequence[
     magnitude = max(magnitude, 0.03)
     cell_w, cell_h = plot_w / len(x_labels), plot_h / len(y_labels)
     lines = svg_header(width, height, title)
+    if white_background:
+        lines.append(f'<rect width="{width}" height="{height}" fill="#fff"/>')
     lines.append(f'<text class="title" x="{left}" y="34">{esc(title)}</text>')
     lines.append(f'<text class="note" x="{left}" y="58">{esc(legend)}</text>')
     for y_idx, label in enumerate(y_labels):

@@ -1,0 +1,4 @@
+Imagem: images/poke.jpg
+Operações: Adjust_Brightness,Adjust_Contrast,Equalize_Histogram,Gaussian_11x11,Grayscale,Negative,Quantize,Zoom_In
+Threads: 1
+Repetições: 1

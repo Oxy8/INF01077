@@ -76,12 +76,30 @@ esac
 for build in "${BUILDS[@]}"; do
     make -B DEBUG=1 SIMD="$build" COMPILER_DIAGNOSTICS=1 vectorization \
         > "$RESULT_DIR/${build}_build.log" 2>&1
+    # O scratch desaparece ao fim do job. O VTune precisa do ELF original
+    # (com -g), não apenas do relatório nem do texto do disassembly, para
+    # abrir a visão de código-fonte/instruções em outra máquina.
+    mkdir -p "$RESULT_DIR/binaries/$build"
+    cp -p "build/$build/vectorization_benchmark" \
+        "$RESULT_DIR/binaries/$build/vectorization_benchmark"
+    if command -v sha256sum >/dev/null 2>&1; then
+        sha256sum "$RESULT_DIR/binaries/$build/vectorization_benchmark" \
+            >> "$RESULT_DIR/binaries_sha256.txt"
+    fi
     cp "build/$build/vectorization-experiment-all.log" "$RESULT_DIR/${build}_compiler.txt"
     if command -v objdump >/dev/null 2>&1; then
         objdump -d -C --no-show-raw-insn "build/$build/vectorization_benchmark" \
             > "$RESULT_DIR/${build}_assembly.txt"
     fi
 done
+
+cat > "$RESULT_DIR/binaries/LEIA-ME.txt" <<'EOF'
+Os executaveis Linux nesta pasta sao os mesmos usados durante as coletas.
+Ao abrir um perfil em outra maquina, se o VTune pedir o arquivo do modulo,
+selecione binaries/<build>/vectorization_benchmark correspondente ao perfil.
+Nao selecione um .exe Windows nem um build recompilado posteriormente.
+Os arquivos-fonte da coleta estao em source/.
+EOF
 
 # Controles sem VTune: dez amostras por build/thread, alternando a ordem dos
 # builds. O modo com N=1 mede a mesma entrada e o mesmo lookup dos perfis.

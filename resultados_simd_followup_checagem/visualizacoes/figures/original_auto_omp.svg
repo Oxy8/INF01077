@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="472" viewBox="0 0 1260 472" role="img" aria-label="Operações originais — auto-avx2 / omp-avx2, poke.jpg, static">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="305" y="35" font-size="25" font-weight="700" fill="#172b40">Operações originais — auto-avx2 / omp-avx2, poke.jpg, static</text>
+<text x="305" y="60" font-size="15" fill="#42566b">Razão das medianas; acima de 1× favorece o denominador. Azul: melhora; laranja: piora.</text>
+<text x="765.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">1</text>
+<text x="295" y="161.0" text-anchor="end" font-size="14" fill="#25394f">Adjust_Brightness</text>
+<rect x="305.0" y="136.0" width="920.0" height="38" fill="#d9eaf4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.05×</text>
+<text x="295" y="199.0" text-anchor="end" font-size="14" fill="#25394f">Adjust_Contrast</text>
+<rect x="305.0" y="174.0" width="920.0" height="38" fill="#faebdf" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.99×</text>
+<text x="295" y="237.0" text-anchor="end" font-size="14" fill="#25394f">Equalize_Histogram</text>
+<rect x="305.0" y="212.0" width="920.0" height="38" fill="#c9e1ef" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.18×</text>
+<text x="295" y="275.0" text-anchor="end" font-size="14" fill="#25394f">Gaussian_11x11</text>
+<rect x="305.0" y="250.0" width="920.0" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.01×</text>
+<text x="295" y="313.0" text-anchor="end" font-size="14" fill="#25394f">Grayscale</text>
+<rect x="305.0" y="288.0" width="920.0" height="38" fill="#f7e1cf" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="313.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.88×</text>
+<text x="295" y="351.0" text-anchor="end" font-size="14" fill="#25394f">Negative</text>
+<rect x="305.0" y="326.0" width="920.0" height="38" fill="#d8e9f3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="351.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.06×</text>
+<text x="295" y="389.0" text-anchor="end" font-size="14" fill="#25394f">Quantize</text>
+<rect x="305.0" y="364.0" width="920.0" height="38" fill="#f9e9dd" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="389.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.98×</text>
+<text x="295" y="427.0" text-anchor="end" font-size="14" fill="#25394f">Zoom_In</text>
+<rect x="305.0" y="402.0" width="920.0" height="38" fill="#d3e7f2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="427.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">1.10×</text>
+</g>
+</svg>

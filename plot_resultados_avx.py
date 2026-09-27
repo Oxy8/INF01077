@@ -10,6 +10,7 @@ import math
 from pathlib import Path
 
 from plot_resultados_pcad import PALETTE, ROOT, THREADS, bar_chart, heatmap, line_chart, lookup, read_summary, safe_ratio
+from plot_simd_heatmap import presentation_heatmap
 
 
 BUILD_ORDER = ("off", "off-avx2", "omp", "omp-avx2")
@@ -64,6 +65,39 @@ def regular(rows: list[dict[str, object]], figures: Path, tables: Path) -> list[
             heatmap(path, f"{title} — {image}, static", [str(thread) for thread in THREADS], labels, values, f"Tempo {scalar} / tempo {simd}. Acima de 1× favorece SIMD.")
             links.append((path.name, title))
     write_csv(tables / "efeito_simd_por_build.csv", ["Image", "Operation", "Threads", "Scalar_build", "SIMD_build", "Scalar_median_ms", "Scalar_min_ms", "Scalar_max_ms", "SIMD_median_ms", "SIMD_min_ms", "SIMD_max_ms", "Speedup_scalar_over_simd"], extracted)
+
+    # Recorte de apresentação: uma Gaussiana representa a família de filtros.
+    # As operações posicionais sem pragma continuam fora da comparação SIMD.
+    if {"off-avx2", "omp-avx2"}.issubset(builds(rows)):
+        chosen = [operation for operation in operations
+                  if not operation.startswith("Gaussian_") or operation == "Gaussian_11x11"]
+        matrix, labels = [], []
+        presentation_rows = []
+        for operation in chosen:
+            values = []
+            for thread in THREADS:
+                base = lookup(rows, Image=image, Operation=operation, Threads=thread,
+                              Schedule="static", Chunk="", Simd_Build="off-avx2")
+                tested = lookup(rows, Image=image, Operation=operation, Threads=thread,
+                                Schedule="static", Chunk="", Simd_Build="omp-avx2")
+                ratio = safe_ratio(median(base), median(tested)) if base and tested else math.nan
+                values.append(ratio)
+                if base and tested:
+                    presentation_rows.append({"Image": image, "Operation": operation, "Threads": thread,
+                                              "Off_median_ms": base["Median_ms"],
+                                              "Omp_median_ms": tested["Median_ms"], "Off_over_Omp": ratio})
+            if all(math.isfinite(value) for value in values):
+                labels.append("Convolução RGB 11×11" if operation == "Gaussian_11x11" else operation)
+                matrix.append(values)
+        write_csv(tables / "simd_resumo_apresentacao.csv",
+                  ["Image", "Operation", "Threads", "Off_median_ms", "Omp_median_ms",
+                   "Off_over_Omp"], presentation_rows)
+        path = figures / "01_simd_avx2_resumo_apresentacao.svg"
+        presentation_heatmap(
+            path, f"Pragma SIMD na versão inicial — {image}, static",
+            "off-avx2 / omp-avx2; acima de 1× favorece omp-avx2. Azul: melhora; laranja: piora.",
+            [str(thread) for thread in THREADS], labels, matrix)
+        links.append((path.name, "SIMD no código original: resumo para apresentação"))
 
     # Isola a troca do alvo: ambos os lados mantêm os pragmas omp simd.
     if {"omp", "omp-avx2"}.issubset(builds(rows)):

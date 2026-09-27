@@ -1,0 +1,1892 @@
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _25 = *_24;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_46];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_61] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_26];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_41] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_301 = (*_299)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_347 = (*_345)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_393 = (*_391)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_78 = (*_76)[_77];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4800 = (*_4801)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4872 = GAUSSIAN_KERNEL_11X11[_4888][_4873];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5225 = (*_5226)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5332 = GAUSSIAN_KERNEL_9X9[_5342][_5333];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5612 = (*_5613)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5680 = GAUSSIAN_KERNEL_7X7[_5690][_5681];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_620 = (*_849)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_901 = GAUSSIAN_KERNEL_5X5[_927][_864];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6058 = GAUSSIAN_KERNEL_3X3[_6075][_6059];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1892 = (*_1890)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_62 = GAUSSIAN_KERNEL_11X11[_5855][_61];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_169 = GAUSSIAN_KERNEL_9X9[_5518][_168];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1284 = (*_1282)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_276 = GAUSSIAN_KERNEL_7X7[_5235][_275];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1094 = (*_1092)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_383 = GAUSSIAN_KERNEL_5X5[_5010][_382];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_490 = GAUSSIAN_KERNEL_3X3[_6260][_489];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _14 = compute_sobel_detail_map (image_12(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _25 = *_24;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_46];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_61] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_26];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_41] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_301 = (*_299)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_347 = (*_345)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_393 = (*_391)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_78 = (*_76)[_77];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4800 = (*_4801)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4872 = GAUSSIAN_KERNEL_11X11[_4888][_4873];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5225 = (*_5226)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5332 = GAUSSIAN_KERNEL_9X9[_5342][_5333];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5612 = (*_5613)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5680 = GAUSSIAN_KERNEL_7X7[_5690][_5681];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_620 = (*_849)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_901 = GAUSSIAN_KERNEL_5X5[_927][_864];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6058 = GAUSSIAN_KERNEL_3X3[_6075][_6059];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1892 = (*_1890)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_62 = GAUSSIAN_KERNEL_11X11[_5855][_61];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_169 = GAUSSIAN_KERNEL_9X9[_5518][_168];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1284 = (*_1282)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_276 = GAUSSIAN_KERNEL_7X7[_5235][_275];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1094 = (*_1092)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_383 = GAUSSIAN_KERNEL_5X5[_5010][_382];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_490 = GAUSSIAN_KERNEL_3X3[_6260][_489];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _14 = compute_sobel_detail_map (image_12(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:556:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:556:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:554:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:554:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:556:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:556:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:370:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:370:34: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _28 = *_27;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_305 = (*_303)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_351 = (*_349)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_397 = (*_395)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_84 = (*_82)[_83];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4740 = (*_4741)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4816 = GAUSSIAN_KERNEL_11X11[_4826][_4817];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5162 = (*_5163)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5248 = GAUSSIAN_KERNEL_9X9[_5259][_5249];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5526 = (*_5527)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5641 = GAUSSIAN_KERNEL_7X7[_5651][_5642];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_6205 = (*_6206)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_1066 = GAUSSIAN_KERNEL_5X5[_1094][_891];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6027 = GAUSSIAN_KERNEL_3X3[_6048][_6028];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1995 = (*_1993)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_81 = GAUSSIAN_KERNEL_11X11[_5873][_80];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_195 = GAUSSIAN_KERNEL_9X9[_5536][_194];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1387 = (*_1385)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_309 = GAUSSIAN_KERNEL_7X7[_5253][_308];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1210 = (*_1203)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_423 = GAUSSIAN_KERNEL_5X5[_5028][_422];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_531 = GAUSSIAN_KERNEL_3X3[_6278][_530];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _16 = compute_sobel_detail_map (image_14(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _25 = *_24;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_46];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_61] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_26];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_41] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_301 = (*_299)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_347 = (*_345)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_393 = (*_391)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_78 = (*_76)[_77];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4800 = (*_4801)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4872 = GAUSSIAN_KERNEL_11X11[_4888][_4873];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5225 = (*_5226)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5332 = GAUSSIAN_KERNEL_9X9[_5342][_5333];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5612 = (*_5613)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5680 = GAUSSIAN_KERNEL_7X7[_5690][_5681];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_620 = (*_849)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_901 = GAUSSIAN_KERNEL_5X5[_927][_864];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6058 = GAUSSIAN_KERNEL_3X3[_6075][_6059];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1892 = (*_1890)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_62 = GAUSSIAN_KERNEL_11X11[_5855][_61];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_169 = GAUSSIAN_KERNEL_9X9[_5518][_168];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1284 = (*_1282)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_276 = GAUSSIAN_KERNEL_7X7[_5235][_275];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1094 = (*_1092)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_383 = GAUSSIAN_KERNEL_5X5[_5010][_382];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_490 = GAUSSIAN_KERNEL_3X3[_6260][_489];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _14 = compute_sobel_detail_map (image_12(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:28: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:690:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:690:32: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:702:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:702:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _25 = *_24;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:715:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:715:40: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:715:40: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:36: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:842:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:842:28: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:32: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:868:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:868:28: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:32: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:893:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:893:28: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:32: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:908:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:908:28: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:930:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:945:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:980:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:980:36: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:980:36: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:32: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1017:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1017:28: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1041:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1041:32: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_46];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_61] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1063:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:33: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1105:32: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1105:32: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:797:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:797:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1027:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1027:28: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_26];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_41] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:33: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:436:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:436:83: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:33: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:436:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:436:83: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:33: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:458:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:458:83: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_301 = (*_299)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:33: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:480:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:480:83: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_347 = (*_345)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:33: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:502:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:502:83: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_393 = (*_391)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:33: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:524:83: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:524:83: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_78 = (*_76)[_77];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:35: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:597:71: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:597:71: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4800 = (*_4801)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4872 = GAUSSIAN_KERNEL_11X11[_4888][_4873];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5225 = (*_5226)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5332 = GAUSSIAN_KERNEL_9X9[_5342][_5333];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5612 = (*_5613)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5680 = GAUSSIAN_KERNEL_7X7[_5690][_5681];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_620 = (*_849)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_901 = GAUSSIAN_KERNEL_5X5[_927][_864];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6058 = GAUSSIAN_KERNEL_3X3[_6075][_6059];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:35: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:597:71: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:597:71: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1892 = (*_1890)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_62 = GAUSSIAN_KERNEL_11X11[_5855][_61];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_169 = GAUSSIAN_KERNEL_9X9[_5518][_168];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1284 = (*_1282)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_276 = GAUSSIAN_KERNEL_7X7[_5235][_275];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1094 = (*_1092)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_383 = GAUSSIAN_KERNEL_5X5[_5010][_382];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_490 = GAUSSIAN_KERNEL_3X3[_6260][_489];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _14 = compute_sobel_detail_map (image_12(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:372:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _25 = *_24;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_46];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_61] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: unsupported data-type
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:726:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer] = MEM <unsigned char[3]> [(char * {ref-all})_26];
+577262-FPI-Relatorio2/image_manipulation.cpp:729:15: missed: not vectorized: more than one data ref in stmt: MEM <unsigned char[3]> [(char * {ref-all})_41] = MEM <unsigned char[3]> [(char * {ref-all})&pixel_buffer];
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: unsupported control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: could not determine main exit from loop with multiple exits.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_301 = (*_299)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_347 = (*_345)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_393 = (*_391)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _184 = (*_182)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_78 = (*_76)[_77];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4800 = (*_4801)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4872 = GAUSSIAN_KERNEL_11X11[_4888][_4873];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5225 = (*_5226)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5332 = GAUSSIAN_KERNEL_9X9[_5342][_5333];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5612 = (*_5613)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5680 = GAUSSIAN_KERNEL_7X7[_5690][_5681];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_620 = (*_849)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_901 = GAUSSIAN_KERNEL_5X5[_927][_864];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6058 = GAUSSIAN_KERNEL_3X3[_6075][_6059];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1892 = (*_1890)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_62 = GAUSSIAN_KERNEL_11X11[_5855][_61];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_169 = GAUSSIAN_KERNEL_9X9[_5518][_168];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1284 = (*_1282)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_276 = GAUSSIAN_KERNEL_7X7[_5235][_275];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1094 = (*_1092)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_383 = GAUSSIAN_KERNEL_5X5[_5010][_382];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_490 = GAUSSIAN_KERNEL_3X3[_6260][_489];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:566:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:26: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _14 = compute_sobel_detail_map (image_12(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:812:26: missed: not vectorized: unsupported outerloop form.
+577262-FPI-Relatorio2/image_manipulation.cpp:814:30: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:819:19: missed: not vectorized: unsupported use in stmt.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:725:23: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:556:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:556:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:554:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:554:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:556:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:556:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:401:35: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:370:34: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:370:34: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:646:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:647:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:665:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:666:26: missed: not vectorized: number of iterations cannot be computed.
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:686:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:687:43: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:689:46: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:698:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:699:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:701:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:703:73: missed: not vectorized: relevant stmt not supported: _28 = *_27;
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:711:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:712:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:716:85: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:714:43: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:839:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:841:47: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:865:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:867:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:890:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:892:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:905:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:907:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:927:68: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:37: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:928:50: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:929:35: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:942:60: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:943:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:944:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:976:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:977:38: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:981:27: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:979:41: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:28: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1014:40: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1016:43: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1025:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1026:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1034:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1040:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1057:13: missed: not vectorized: inner-loop count not invariant.
+577262-FPI-Relatorio2/image_manipulation.cpp:1062:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1077:13: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1078:36: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 32 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1079:26: optimized: loop vectorized using 16 byte vectors
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1102:42: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1104:45: missed: not vectorized: latch block not empty.
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:796:89: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:791:40: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:795:26: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:433:46: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:435:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:29: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:455:46: missed: not vectorized: multiple nested loops.
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:457:49: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_305 = (*_303)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:477:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:479:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:169:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:172:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_351 = (*_349)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:499:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:501:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:200:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:203:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_397 = (*_395)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:521:46: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:523:49: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:231:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:234:43: missed: not vectorized: no vectype for stmt: _194 = (*_127)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:246:52: missed: not vectorized: complicated access pattern.
+577262-FPI-Relatorio2/image_manipulation.cpp:243:28: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_84 = (*_82)[_83];
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:29: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_4740 = (*_4741)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_4816 = GAUSSIAN_KERNEL_11X11[_4826][_4817];
+577262-FPI-Relatorio2/image_manipulation.cpp:211:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:214:25: missed: not vectorized: no vectype for stmt: weight_5162 = (*_5163)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_5248 = GAUSSIAN_KERNEL_9X9[_5259][_5249];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_5526 = (*_5527)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_5641 = GAUSSIAN_KERNEL_7X7[_5651][_5642];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_6205 = (*_6206)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_1066 = GAUSSIAN_KERNEL_5X5[_1094][_891];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_6027 = GAUSSIAN_KERNEL_3X3[_6048][_6028];
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:594:44: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:596:47: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+577262-FPI-Relatorio2/image_manipulation.cpp:242:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:245:25: missed: not vectorized: no vectype for stmt: weight_1995 = (*_1993)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:352:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:353:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:355:25: missed: not vectorized: no vectype for stmt: weight_81 = GAUSSIAN_KERNEL_11X11[_5873][_80];
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:330:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:331:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:333:25: missed: not vectorized: no vectype for stmt: weight_195 = GAUSSIAN_KERNEL_9X9[_5536][_194];
+577262-FPI-Relatorio2/image_manipulation.cpp:180:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:183:25: missed: not vectorized: no vectype for stmt: weight_1387 = (*_1385)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:308:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:309:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:311:25: missed: not vectorized: no vectype for stmt: weight_309 = GAUSSIAN_KERNEL_7X7[_5253][_308];
+577262-FPI-Relatorio2/image_manipulation.cpp:149:24: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:152:25: missed: not vectorized: no vectype for stmt: weight_1210 = (*_1203)[0];
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:286:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:287:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:289:25: missed: not vectorized: no vectype for stmt: weight_423 = GAUSSIAN_KERNEL_5X5[_5028][_422];
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:264:29: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:265:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:267:25: missed: not vectorized: no vectype for stmt: weight_531 = GAUSSIAN_KERNEL_3X3[_6278][_530];
+577262-FPI-Relatorio2/image_manipulation.cpp:443:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:465:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:487:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:509:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:531:15: missed: not vectorized: vectorization is not profitable.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:567:44: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:581:33: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:582:9: missed: not vectorized: no vectype for stmt: _2 = MEM <struct array> [(value_type &)&histogram]._M_elems[_1];
+577262-FPI-Relatorio2/image_manipulation.cpp:578:34: missed: not vectorized: statement can throw an exception: _16 = compute_sobel_detail_map (image_14(D), &detail_map);
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:813:9: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:815:13: missed: not vectorized: control flow in loop.
+577262-FPI-Relatorio2/image_manipulation.cpp:883:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:884:29: missed: not vectorized: unsupported data-type float
+577262-FPI-Relatorio2/image_manipulation.cpp:880:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:881:29: missed: not vectorized, possible dependence between data-refs *_8 and *_10
+577262-FPI-Relatorio2/image_manipulation.cpp:835:22: missed: couldn't vectorize loop
+577262-FPI-Relatorio2/image_manipulation.cpp:1001:39: missed: couldn't vectorize loop

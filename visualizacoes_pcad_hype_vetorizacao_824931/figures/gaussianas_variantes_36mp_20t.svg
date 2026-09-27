@@ -169,6 +169,6 @@
 <circle cx="1193.9" cy="843.0" r="5.5" fill="#c56a14"/>
 <text x="1202.9" y="848.0" text-anchor="start" font-size="13" fill="#c56a14" font-weight="700">1.00×</text>
 <text x="32.0" y="905.0" text-anchor="start" font-size="14" fill="#536579" font-weight="400">n=5 para Gaussianas de 36 MP; n=10 para as demais operações.</text>
-<text x="32.0" y="928.0" text-anchor="start" font-size="14" fill="#536579" font-weight="400">Grayscale e Zoom são controles do código original; os demais nomes identificam variantes isoladas.</text>
+<text x="32.0" y="928.0" text-anchor="start" font-size="14" fill="#536579" font-weight="400">Grayscale e Zoom chamam as funções de produção atuais; os demais nomes identificam variantes isoladas.</text>
 <text x="32.0" y="951.0" text-anchor="start" font-size="14" fill="#536579" font-weight="400">Fonte: vectorization_raw.csv do job 824931; medianas recalculadas pelo gerador.</text>
 </g></svg>

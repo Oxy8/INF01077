@@ -52,6 +52,7 @@ struct Options {
     bool warmup = false;
     bool check_production = false;
     int profile_quantize_lookup = 0;
+    std::string float_convolution_variant;
 };
 
 struct Picture {
@@ -153,11 +154,12 @@ bool parse(int argc, char** argv, Options& options) {
     for (int index = 1; index < argc; ++index) {
         const std::string argument = argv[index];
         if ((argument == "--image" || argument == "--operation" || argument == "--repeat" ||
-             argument == "--profile-quantize-lookup") && index + 1 < argc) {
+             argument == "--profile-quantize-lookup" || argument == "--float-convolution-variant") && index + 1 < argc) {
             const char* value = argv[++index];
             if (argument == "--image") options.image = value;
             else if (argument == "--operation") options.operation = value;
             else if (argument == "--repeat") options.repeat = std::atoi(value);
+            else if (argument == "--float-convolution-variant") options.float_convolution_variant = value;
             else {
                 char* end = nullptr;
                 errno = 0;
@@ -172,8 +174,15 @@ bool parse(int argc, char** argv, Options& options) {
         else if (!argument.empty() && argument[0] != '-' && options.csv.empty()) options.csv = argument;
         else return false;
     }
+    const bool valid_float_variant = options.float_convolution_variant.empty() ||
+        options.float_convolution_variant == "float_pixel_outer" ||
+        options.float_convolution_variant == "float_tap_products" ||
+        options.float_convolution_variant == "float_tap_reduction" ||
+        options.float_convolution_variant == "float_row_aos" ||
+        options.float_convolution_variant == "float_row_soa";
     return !options.image.empty() && !options.csv.empty() && !options.operation.empty() && options.repeat >= 0 &&
-           (options.profile_quantize_lookup == 0 || options.operation == "Quantize");
+           (options.profile_quantize_lookup == 0 || options.operation == "Quantize") && valid_float_variant &&
+           (options.float_convolution_variant.empty() || options.operation == "Gaussian_11x11");
 }
 
 // Uma thread recebe uma linha inteira; o laço SIMD percorre bytes RGB
@@ -403,6 +412,142 @@ void gaussian_vertical(const std::vector<uint32_t>& intermediate, std::vector<By
     }
 }
 
+// Estas quatro variantes preservam os 121 pesos float da convolução de
+// produção. Não usam a decomposição separável nem os pesos inteiros acima.
+Byte clamp_float_convolution(float value) {
+    return static_cast<Byte>(std::max(0, std::min(255, static_cast<int>(std::round(value)))));
+}
+
+void float_pixel_outer(const Picture& input, Picture& output) {
+    #pragma omp parallel for schedule(runtime)
+    for (int y = 0; y < output.height; ++y) {
+        EXP_SIMD
+        for (int x = 0; x < output.width; ++x) {
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+            for (int k = -5; k <= 5; ++k)
+                for (int l = -5; l <= 5; ++l) {
+                    const size_t source = (static_cast<size_t>(y + 5 - k) * input.width + x + 5 - l) * 3;
+                    const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+                    sum_r += weight * input.bytes[source];
+                    sum_g += weight * input.bytes[source + 1];
+                    sum_b += weight * input.bytes[source + 2];
+                }
+            const size_t target = (static_cast<size_t>(y) * output.width + x) * 3;
+            output.bytes[target] = clamp_float_convolution(sum_r);
+            output.bytes[target + 1] = clamp_float_convolution(sum_g);
+            output.bytes[target + 2] = clamp_float_convolution(sum_b);
+        }
+    }
+}
+
+void float_tap_reduction(const Picture& input, Picture& output) {
+    #pragma omp parallel for schedule(runtime)
+    for (int y = 0; y < output.height; ++y) {
+        for (int x = 0; x < output.width; ++x) {
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+            for (int k = -5; k <= 5; ++k) {
+#if OMP_EXPLICIT_SIMD
+                #pragma omp simd reduction(+:sum_r,sum_g,sum_b)
+#endif
+                for (int l = -5; l <= 5; ++l) {
+                    const size_t source = (static_cast<size_t>(y + 5 - k) * input.width + x + 5 - l) * 3;
+                    const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+                    sum_r += weight * input.bytes[source];
+                    sum_g += weight * input.bytes[source + 1];
+                    sum_b += weight * input.bytes[source + 2];
+                }
+            }
+            const size_t target = (static_cast<size_t>(y) * output.width + x) * 3;
+            output.bytes[target] = clamp_float_convolution(sum_r);
+            output.bytes[target + 1] = clamp_float_convolution(sum_g);
+            output.bytes[target + 2] = clamp_float_convolution(sum_b);
+        }
+    }
+}
+
+void float_tap_products(const Picture& input, Picture& output) {
+    #pragma omp parallel for schedule(runtime)
+    for (int y = 0; y < output.height; ++y) {
+        for (int x = 0; x < output.width; ++x) {
+            float sum_r = 0.0f, sum_g = 0.0f, sum_b = 0.0f;
+            for (int k = -5; k <= 5; ++k) {
+                float products_r[11], products_g[11], products_b[11];
+                EXP_SIMD
+                for (int l = -5; l <= 5; ++l) {
+                    const size_t source = (static_cast<size_t>(y + 5 - k) * input.width + x + 5 - l) * 3;
+                    const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+                    products_r[l + 5] = weight * input.bytes[source];
+                    products_g[l + 5] = weight * input.bytes[source + 1];
+                    products_b[l + 5] = weight * input.bytes[source + 2];
+                }
+                // A soma permanece na ordem original: não há reassociação
+                // em ponto flutuante nem mudança dos bytes de saída.
+                for (int l = 0; l < 11; ++l) {
+                    sum_r += products_r[l];
+                    sum_g += products_g[l];
+                    sum_b += products_b[l];
+                }
+            }
+            const size_t target = (static_cast<size_t>(y) * output.width + x) * 3;
+            output.bytes[target] = clamp_float_convolution(sum_r);
+            output.bytes[target + 1] = clamp_float_convolution(sum_g);
+            output.bytes[target + 2] = clamp_float_convolution(sum_b);
+        }
+    }
+}
+
+void float_row_aos(const Picture& input, Picture& output) {
+    const int row_bytes = output.width * 3;
+    #pragma omp parallel
+    {
+        std::vector<float> sums(static_cast<size_t>(row_bytes));
+        #pragma omp for schedule(runtime)
+        for (int y = 0; y < output.height; ++y) {
+            std::fill(sums.begin(), sums.end(), 0.0f);
+            for (int k = -5; k <= 5; ++k)
+                for (int l = -5; l <= 5; ++l) {
+                    const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+                    const Byte* source = input.bytes.data() +
+                        (static_cast<size_t>(y + 5 - k) * input.width + 5 - l) * 3;
+                    EXP_SIMD
+                    for (int byte = 0; byte < row_bytes; ++byte)
+                        sums[byte] += weight * source[byte];
+                }
+            Byte* target = output.bytes.data() + static_cast<size_t>(y) * row_bytes;
+            for (int byte = 0; byte < row_bytes; ++byte)
+                target[byte] = clamp_float_convolution(sums[byte]);
+        }
+    }
+}
+
+void float_row_soa(const Planes& input, Planes& output, int width, int out_width, int out_height) {
+    const std::array<const std::vector<Byte>*, 3> sources = {&input.r, &input.g, &input.b};
+    const std::array<std::vector<Byte>*, 3> targets = {&output.r, &output.g, &output.b};
+    for (int channel = 0; channel < 3; ++channel) {
+        const Byte* plane = sources[channel]->data();
+        Byte* destination = targets[channel]->data();
+        #pragma omp parallel
+        {
+            std::vector<float> sums(static_cast<size_t>(out_width));
+            #pragma omp for schedule(runtime)
+            for (int y = 0; y < out_height; ++y) {
+                std::fill(sums.begin(), sums.end(), 0.0f);
+                for (int k = -5; k <= 5; ++k)
+                    for (int l = -5; l <= 5; ++l) {
+                        const float weight = GAUSSIAN_KERNEL_11X11[5 + k][5 + l];
+                        const Byte* source = plane + static_cast<size_t>(y + 5 - k) * width + 5 - l;
+                        EXP_SIMD
+                        for (int x = 0; x < out_width; ++x)
+                            sums[x] += weight * source[x];
+                    }
+                Byte* target = destination + static_cast<size_t>(y) * out_width;
+                for (int x = 0; x < out_width; ++x)
+                    target[x] = clamp_float_convolution(sums[x]);
+            }
+        }
+    }
+}
+
 void flip_out_of_place(const Picture& input, Picture& output) {
     #pragma omp parallel for schedule(runtime)
     for (int y = 0; y < input.height; ++y) {
@@ -552,6 +697,63 @@ bool run_equalize(const Picture& input, std::vector<Row>& rows) {
     add_phases(rows, "private_histogram", {{"count", count_ms}, {"cumulative", cumulative_ms},
                {"remap", remap_ms}, {"total", count_ms + cumulative_ms + remap_ms}}, candidate, reference);
     return difference(candidate, reference).count == 0;
+}
+
+bool run_float_convolution(const Picture& input, const std::string& variant,
+                           bool check_production, std::vector<Row>& rows) {
+    if (input.width < 11 || input.height < 11) return false;
+    const int width = input.width - 10, height = input.height - 10;
+    const size_t bytes = static_cast<size_t>(width) * height * 3;
+    Picture reference{width, height, std::vector<Byte>(bytes)};
+    // Referência pré-alocada fora do cronômetro; cada invocação mede apenas
+    // a variante pedida, permitindo alternar a ordem delas no script.
+    float_pixel_outer(input, reference);
+    if (check_production) {
+        Byte* copy = static_cast<Byte*>(std::malloc(input.bytes.size()));
+        if (!copy) return false;
+        std::memcpy(copy, input.bytes.data(), input.bytes.size());
+        ImageState production{copy, input.width, input.height, false};
+        const bool success = apply_11_by_11_convolution(production, GAUSSIAN_KERNEL_11X11, false, false);
+        if (!success) { std::free(production.data); return false; }
+        Picture actual{production.width, production.height,
+                       std::vector<Byte>(production.data, production.data + bytes)};
+        std::free(production.data);
+        if (difference(actual, reference).count != 0) {
+            std::cerr << "Referência float não coincide com a função de produção: "
+                      << difference(actual, reference).count << " bytes.\n";
+            return false;
+        }
+    }
+
+    Picture result{width, height, std::vector<Byte>(bytes)};
+    if (variant == "float_pixel_outer" || variant == "float_tap_products" ||
+        variant == "float_tap_reduction" || variant == "float_row_aos") {
+        const double elapsed = milliseconds([&] {
+            if (variant == "float_pixel_outer") float_pixel_outer(input, result);
+            else if (variant == "float_tap_products") float_tap_products(input, result);
+            else if (variant == "float_tap_reduction") float_tap_reduction(input, result);
+            else float_row_aos(input, result);
+        });
+        add_phases(rows, variant, {{"kernel", elapsed}, {"total", elapsed}}, result, reference);
+    } else if (variant == "float_row_soa") {
+        Planes source(static_cast<size_t>(input.width) * input.height);
+        const double unpack_ms = milliseconds([&] { unpack(input, source); });
+        Planes planar(static_cast<size_t>(width) * height);
+        const double kernel_ms = milliseconds([&] {
+            float_row_soa(source, planar, input.width, width, height);
+        });
+        const double pack_ms = milliseconds([&] { pack(planar, result); });
+        add_phases(rows, variant, {{"aos_to_soa", unpack_ms}, {"kernel", kernel_ms},
+                   {"soa_to_aos", pack_ms}, {"total", unpack_ms + kernel_ms + pack_ms}},
+                   result, reference);
+    } else return false;
+    const Difference diff = difference(result, reference);
+    if (diff.maximum > 1 || (variant != "float_tap_reduction" && diff.count != 0)) {
+        std::cerr << "Divergência da variante float " << variant << ": " << diff.count
+                  << " bytes; erro máximo " << diff.maximum << ".\n";
+        return false;
+    }
+    return true;
 }
 
 bool run_gaussian(const Picture& input, int taps, bool check_production, std::vector<Row>& rows) {
@@ -715,7 +917,7 @@ bool write_csv(const Options& options, const Picture& input, const std::vector<R
 int main(int argc, char** argv) {
     Options options;
     if (!parse(argc, argv, options)) {
-        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production] [--profile-quantize-lookup N]\n";
+        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production] [--profile-quantize-lookup N] [--float-convolution-variant NOME]\n";
         return 2;
     }
     ImageState loaded{};
@@ -738,6 +940,9 @@ int main(int argc, char** argv) {
         valid = run_geometry(input, options.operation, rows);
     else if (options.operation == "Grayscale" || options.operation == "Zoom_In")
         valid = run_control(input, options.operation, rows);
+    else if (!options.float_convolution_variant.empty())
+        valid = run_float_convolution(input, options.float_convolution_variant,
+                                      options.check_production, rows);
     else if (options.operation.rfind("Gaussian_", 0) == 0) {
         const auto suffix = options.operation.substr(9);
         if (suffix == "3x3" || suffix == "5x5" || suffix == "7x7" || suffix == "9x9" || suffix == "11x11")
