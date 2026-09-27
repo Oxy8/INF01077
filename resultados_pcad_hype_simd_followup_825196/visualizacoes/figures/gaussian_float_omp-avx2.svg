@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="320" viewBox="0 0 1260 320" role="img" aria-label="Gaussiana float 11×11 — omp-avx2, 6000x6000.png, static">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="305" y="35" font-size="25" font-weight="700" fill="#172b40">Gaussiana float 11×11 — omp-avx2, 6000x6000.png, static</text>
+<text x="305" y="60" font-size="15" fill="#42566b">Pixel externo / variante; SoA inclui conversões. Todas as saídas devem ser idênticas.</text>
+<text x="370.7" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">1</text>
+<text x="502.1" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">2</text>
+<text x="633.6" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">4</text>
+<text x="765.0" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">8</text>
+<text x="896.4" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">12</text>
+<text x="1027.9" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">16</text>
+<text x="1159.3" y="123" text-anchor="middle" font-size="14" font-weight="700" fill="#25394f">20</text>
+<text x="295" y="161.0" text-anchor="end" font-size="14" fill="#25394f">Pixel externo (referência)</text>
+<rect x="305.0" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="370.7" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="436.4" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="502.1" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="567.9" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="633.6" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="699.3" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="830.7" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="896.4" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="962.1" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1027.9" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<rect x="1093.6" y="136.0" width="131.4" height="38" fill="#ffffff" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1159.3" y="161.0" text-anchor="middle" font-size="15" font-weight="700" fill="#25313f">1.00×</text>
+<text x="295" y="199.0" text-anchor="end" font-size="14" fill="#25394f">Produtos dos taps</text>
+<rect x="305.0" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="370.7" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.83×</text>
+<rect x="436.4" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="502.1" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.83×</text>
+<rect x="567.9" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="633.6" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.84×</text>
+<rect x="699.3" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.84×</text>
+<rect x="830.7" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="896.4" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.83×</text>
+<rect x="962.1" y="174.0" width="131.4" height="38" fill="#f6dbc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1027.9" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.83×</text>
+<rect x="1093.6" y="174.0" width="131.4" height="38" fill="#f6dcc7" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1159.3" y="199.0" text-anchor="middle" font-size="15" font-weight="700" fill="#203044">0.83×</text>
+<text x="295" y="237.0" text-anchor="end" font-size="14" fill="#25394f">Linha RGB contígua</text>
+<rect x="305.0" y="212.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="370.7" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.54×</text>
+<rect x="436.4" y="212.0" width="131.4" height="38" fill="#3b92c4" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="502.1" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.27×</text>
+<rect x="567.9" y="212.0" width="131.4" height="38" fill="#3a92c3" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="633.6" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.29×</text>
+<rect x="699.3" y="212.0" width="131.4" height="38" fill="#3690c2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.38×</text>
+<rect x="830.7" y="212.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="896.4" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.47×</text>
+<rect x="962.1" y="212.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1027.9" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.45×</text>
+<rect x="1093.6" y="212.0" width="131.4" height="38" fill="#348fc2" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1159.3" y="237.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.44×</text>
+<text x="295" y="275.0" text-anchor="end" font-size="14" fill="#25394f">Linha SoA + conversões</text>
+<rect x="305.0" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="370.7" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.07×</text>
+<rect x="436.4" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="502.1" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.84×</text>
+<rect x="567.9" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="633.6" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.84×</text>
+<rect x="699.3" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="765.0" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.95×</text>
+<rect x="830.7" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="896.4" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.04×</text>
+<rect x="962.1" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1027.9" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4.03×</text>
+<rect x="1093.6" y="250.0" width="131.4" height="38" fill="#338ec1" stroke="#dce4ec" stroke-width="0.8"/>
+<text x="1159.3" y="275.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3.97×</text>
+</g>
+</svg>
