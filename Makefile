@@ -14,6 +14,7 @@ DIAGNOSTIC_TARGET := $(BUILD_DIR)/diagnostic_runner
 FLIP_PROFILE_TARGET := $(BUILD_DIR)/flip_profile_runner
 GAUSSIAN_SIZES_TARGET := $(BUILD_DIR)/gaussian_sizes_benchmark
 VECTORIZATION_TARGET := $(BUILD_DIR)/vectorization_benchmark
+SIMD_PHASE_TARGET := $(BUILD_DIR)/simd_phase_benchmark
 GUI_TARGET := $(BUILD_DIR)/image_editor
 CONTROL_GENERATOR := $(BUILD_DIR)/generate_controls
 
@@ -24,9 +25,10 @@ DIAGNOSTIC_OBJECT := $(BUILD_DIR)/diagnostic_runner.o
 FLIP_PROFILE_OBJECT := $(BUILD_DIR)/flip_profile_runner.o
 GAUSSIAN_SIZES_OBJECT := $(BUILD_DIR)/gaussian_sizes_benchmark.o
 VECTORIZATION_OBJECT := $(BUILD_DIR)/vectorization_benchmark.o
+SIMD_PHASE_OBJECT := $(BUILD_DIR)/simd_phase_benchmark.o
 GUI_OBJECT := $(BUILD_DIR)/main.o
 GENERATOR_OBJECT := $(BUILD_DIR)/generate_images.o
-OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT) $(VECTORIZATION_OBJECT)
+OBJECTS := $(CORE_OBJECT) $(BENCHMARK_OBJECT) $(LAYOUT_OBJECT) $(DIAGNOSTIC_OBJECT) $(GUI_OBJECT) $(GENERATOR_OBJECT) $(VECTORIZATION_OBJECT) $(SIMD_PHASE_OBJECT)
 DEPS := $(OBJECTS:.o=.d)
 
 GTK_CFLAGS = $(shell $(PKG_CONFIG) --cflags gtk4 2>/dev/null)
@@ -52,12 +54,14 @@ COMPILER_DIAGNOSTICS ?= 0
 COMPILER_DIAGNOSTIC_CORE_FLAGS :=
 COMPILER_DIAGNOSTIC_LAYOUT_FLAGS :=
 COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS :=
+COMPILER_DIAGNOSTIC_SIMD_PHASE_FLAGS :=
 ifeq ($(COMPILER_DIAGNOSTICS),1)
 # Relatório amplo: registra tanto laços aceitos quanto recusados pelo
 # vetorizador. É usado somente no job de evidência, não nos benchmarks.
 COMPILER_DIAGNOSTIC_CORE_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-core-all.log
 COMPILER_DIAGNOSTIC_LAYOUT_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-layout-all.log
 COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-experiment-all.log
+COMPILER_DIAGNOSTIC_SIMD_PHASE_FLAGS := -fopt-info-vec-all=$(BUILD_DIR)/vectorization-simd-phases-all.log
 endif
 
 ifeq ($(SIMD),off)
@@ -96,7 +100,7 @@ CXXFLAGS += $(SIMD_FLAGS)
 # flag (por exemplo -fno-tree-vectorize) receberia uma aspas literal.
 CPPFLAGS += -DBENCHMARK_SIMD_BUILD=\"$(SIMD)\" '-DBENCHMARK_BUILD_FLAGS="$(CXXFLAGS)"'
 
-.PHONY: all layout diagnostics flip-profile gaussian-sizes vectorization compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
+.PHONY: all layout diagnostics flip-profile gaussian-sizes vectorization simd-phases compiler-evidence gui generator generate-controls check-compiler check-gtk run run-benchmark-image run-benchmark-folder clean
 
 all: $(BENCHMARK_TARGET)
 
@@ -109,6 +113,8 @@ flip-profile: $(FLIP_PROFILE_TARGET)
 gaussian-sizes: $(GAUSSIAN_SIZES_TARGET)
 
 vectorization: $(VECTORIZATION_TARGET)
+
+simd-phases: $(SIMD_PHASE_TARGET)
 
 compiler-evidence:
 	$(MAKE) -B DEBUG=1 SIMD=off-avx2 COMPILER_DIAGNOSTICS=1 layout all
@@ -160,6 +166,9 @@ $(GAUSSIAN_SIZES_TARGET): $(CORE_OBJECT) $(GAUSSIAN_SIZES_OBJECT)
 $(VECTORIZATION_TARGET): $(CORE_OBJECT) $(VECTORIZATION_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
+$(SIMD_PHASE_TARGET): $(CORE_OBJECT) $(SIMD_PHASE_OBJECT)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
 $(GUI_TARGET): $(CORE_OBJECT) $(GUI_OBJECT)
 	$(CXX) $(LDFLAGS) $^ $(GTK_LIBS) $(LDLIBS) -o $@
 
@@ -186,6 +195,9 @@ $(GAUSSIAN_SIZES_OBJECT): $(PROJECT_DIR)/gaussian_sizes_benchmark.cpp | check-co
 
 $(VECTORIZATION_OBJECT): $(PROJECT_DIR)/vectorization_benchmark.cpp | check-compiler $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(COMPILER_DIAGNOSTIC_VECTORIZATION_FLAGS) $(DEPFLAGS) -c $< -o $@
+
+$(SIMD_PHASE_OBJECT): $(PROJECT_DIR)/simd_phase_benchmark.cpp | check-compiler $(BUILD_DIR)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(COMPILER_DIAGNOSTIC_SIMD_PHASE_FLAGS) $(DEPFLAGS) -c $< -o $@
 
 $(GUI_OBJECT): $(PROJECT_DIR)/main.cpp | check-gtk $(BUILD_DIR)
 	$(CXX) $(CPPFLAGS) $(GTK_CFLAGS) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@

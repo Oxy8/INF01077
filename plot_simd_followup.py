@@ -26,6 +26,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--summary", required=True, type=Path)
     parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--presentation-job", help="ID do job para gerar um mapa adicional de apresentação")
     args = parser.parse_args()
     with args.summary.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
@@ -40,6 +41,9 @@ def main():
             for row in rows}
     if len(data) != len(rows):
         raise ValueError("Configurações duplicadas no resumo")
+    samples = {int(row["Samples"]) for row in rows}
+    if any(row["All_Exact"] != "yes" for row in rows) or len(samples) != 1 or min(samples) < 1:
+        raise ValueError("O mapa exige saídas exatas e número consistente de amostras")
     figures = args.out / "figures"
     figures.mkdir(parents=True, exist_ok=True)
     links = []
@@ -65,6 +69,17 @@ def main():
             "Razão das medianas; acima de 1× favorece o denominador. Azul: melhora; laranja: piora.",
             [str(count) for count in threads], list(OPERATIONS), matrix)
         links.append((path.name, f"Operações originais: {numerator} / {denominator}"))
+        if name == "original_off_omp" and args.presentation_job:
+            if image != "6000x6000.png" or threads != [1, 2, 4, 8, 12, 16, 20] or samples != {5}:
+                raise ValueError("O mapa de apresentação exige 36 MP, sete pontos de threads e cinco amostras")
+            presentation = figures / f"01_simd_producao_atual_{args.presentation_job}.svg"
+            presentation_heatmap(
+                presentation,
+                f"SIMD nas funções de produção atuais — {image}, static (job {args.presentation_job})",
+                "Tempo off-avx2 / omp-avx2; acima de 1× favorece omp-avx2. "
+                "O build omp também permite autovetorização.",
+                [str(count) for count in threads], list(OPERATIONS), matrix)
+            links.insert(0, (presentation.name, "Mapa para apresentação: funções atuais"))
 
     for build in BUILDS:
         matrix = []

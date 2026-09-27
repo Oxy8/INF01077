@@ -1,5 +1,17 @@
 # Apresentação OpenMP: 10 minutos no total
 
+## Roteiro vigente: jobs 825196 e 825200
+
+Para a parte de SIMD (até cinco minutos), use o [relatório atualizado e seu
+roteiro de slides](RELATORIO_SIMD_ABORDAGENS_825196_825200.md#três-exemplos-para-os-slides-de-simd).
+O **primeiro mapa** agora é o [mapa das funções de produção do job 825196](resultados_pcad_hype_simd_followup_825196/visualizacoes/figures/01_simd_producao_atual_825196.svg),
+com 36 MP e Zoom In. O **segundo** é o [mapa das variantes reestruturadas do
+job 825200](resultados_pcad_hype_linear_simd_825200/figures/simd_mesma_variante_36mp.svg),
+com 1 e 20 threads; Zoom In de 36 MP não foi medido nesse job. Os três exemplos
+de código são Contrast, Gaussiana 11×11 e remapeamento do histograma.
+
+## Roteiro anterior — histórico, não usar como apresentação final
+
 Reservar **até cinco minutos para sua parte sobre SIMD** e os outros
 **cinco minutos para a parte sobre static versus dynamic do colega**. O roteiro
 abaixo detalha somente sua fala; o colega decide seus próprios slides. Não
