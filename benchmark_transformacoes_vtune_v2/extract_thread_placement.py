@@ -24,6 +24,7 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, Iterator, List, Mapping, Sequence, Tuple
@@ -470,11 +471,20 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         collection_reports: Dict[str, Path] = {}
         try:
-            for spec in specs:
+            for report_index, spec in enumerate(specs, start=1):
                 report_path = cache_dir / collection_id / f"{spec.name}.csv"
+                cached = report_path.is_file() and not arguments.force
+                action = "checking cache" if cached else "exporting"
+                print(
+                    f"  [{report_index}/{len(specs)}] {spec.name}: {action}",
+                    flush=True,
+                )
+                report_started = time.perf_counter()
                 header = generate_report(
                     vtune, result_dir, report_path, spec, arguments.force
                 )
+                report_elapsed = time.perf_counter() - report_started
+                print(f"      complete in {report_elapsed:.1f}s", flush=True)
                 headers.extend(header)
                 collection_reports[spec.name] = report_path
         except (ExportError, OSError) as error:
