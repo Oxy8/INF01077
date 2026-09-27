@@ -14,13 +14,14 @@ do padrão inicial.
 | 1. Contexto e threads | 0:35 | [Speedup das operações regulares com static](visualizacoes_pcad_hype_final_benchmark_principal/figures/00_speedup_total_operacoes_static.svg). Processamento de imagens em CPU com OpenMP; mais threads reduzem o tempo, com ganho abaixo do ideal. A [eficiência](visualizacoes_pcad_hype_final_benchmark_principal/figures/00_eficiencia_total_operacoes_static.svg) fica no material de apoio. |
 | 2. Primeira tentativa com SIMD | 0:55 | [Mapa resumido da versão inicial](visualizacoes_pcad_hype_final_simd_avx2_adaptativo/figures/01_simd_avx2_resumo_apresentacao.svg). Os pragmas quase não mudaram os tempos na maioria das operações; Zoom In foi a exceção visível. |
 | 3. O formato do laço | 1:10 | Projetar o contraste entre os dois trechos de Negative abaixo. Acrescentar uma frase sobre o laço da convolução RGB direta. |
-| 4. Resultado após reestruturar | 1:25 | [Mapa resumido do experimento de reescrita, 36 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_36mp.svg). Marcar Negative, Brightness e Contrast como vetorizados automaticamente; marcar a convolução como vetorizada **só nos taps internos** e mais lenta. Não atribuir a diferença do Grayscale entre campanhas ao pragma. |
+| 4. Resultado da linearização isolada | 1:25 | [Mapa dos três laços ponto a ponto, 36 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_36mp.svg). Negative, Brightness e Contrast mantêm a aritmética original e mudam apenas a travessia para bytes contíguos. O GCC vetorizou os três automaticamente; o pragma acrescentou pouco. **Não** usar esse mapa para alegar ganho da reescrita inteira sobre o código antigo. |
 | 5. Síntese e passagem ao colega | 0:30 | O pragma indica uma intenção; o GCC decide **qual laço** vetorizar. Os tempos mostram se essa decisão ajudou. Deixar a pergunta sobre schedules para a segunda metade. |
 
 Sua fala planejada: **4:35**, com **0:25 de margem** até os cinco minutos.
 O colega dispõe dos **cinco minutos restantes**; a apresentação inteira tem
-**10:00**. O [mapa de 12 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_12mp.svg),
-que inclui Zoom In, e o caso Quantize/VTune ficam como material de apoio.
+**10:00**. O [mapa de 12 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_12mp.svg)
+mostra os mesmos três laços; Zoom In e Quantize/VTune ficam como material de apoio
+nos resultados detalhados, não nesse mapa de linearização isolada.
 
 ## Trechos para os slides 2 e 3
 
@@ -139,25 +140,26 @@ não tinham `OMP_SIMD`, e as variantes novas não tiveram seus laços
 principais vetorizados pelo GCC; ver as [auditorias do código original](RELATORIO_LOOPS_SIMD_17_OPERACOES.md)
 e [das variantes experimentais](RELATORIO_LOOPS_SIMD_REESCRITAS_824931.md).
 
-O [mapa novo de 36 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_36mp.svg)
-compara 1 e 20 threads. Os três build têm o mesmo alvo Haswell:
+O [mapa de linearização de 36 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_36mp.svg)
+compara 1 e 20 threads **somente para Negative, Brightness e Contrast**.
+Os três builds têm o mesmo alvo Haswell:
 `off-avx2` desliga vetorização automática de **laços**;
 `auto-avx2` permite ao GCC decidir; `omp-avx2` acrescenta o pragma.
 Cada célula é uma razão de medianas da **mesma variante**: `off/auto`,
 `off/omp`, `auto/omp`. Azul significa que o denominador foi mais rápido;
 laranja, mais lento. Os números tornam a leitura independente das cores.
-A única convolução mostrada é **Gaussiana 11×11 RGB direta**, com cinco
-amostras por build; as demais operações têm dez. O mapa de
-[12 MP](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_12mp.svg)
-inclui Zoom In. Grayscale e Zoom In são controles que **chamam as funções
-de produção na revisão atual**, identificados no gráfico. Isso não quer
+A Gaussiana, Quantize e Equalize_Histogram foram retirados do mapa porque
+suas variantes do job 824931 alteram a matemática ou a estratégia do algoritmo.
+Grayscale e Zoom In também foram retirados: são controles que chamam as funções
+de produção na revisão atual, e não candidatos linearizados. Eles continuam
+nos gráficos técnicos e no CSV. Isso não quer
 dizer que a função Grayscale seja exatamente a mesma compilada na campanha
 inicial: entre os jobs 822851 e 824931, `apply_gray_scale_inplace` passou
 a chamar o novo laço `apply_gray_scale_buffer` sobre ponteiro e dimensões
 passados diretamente. A fórmula da luminância foi preservada, mas o formato
 do código mudou. O gráfico inicial compara `off-avx2/omp-avx2` e mediu,
-para Grayscale em 36 MP, **140,16/139,02 ms = 1,01×** em 1 thread; o novo
-compara `off-avx2/auto-avx2` na revisão atual e mediu
+para Grayscale em 36 MP, **140,16/139,02 ms = 1,01×** em 1 thread; o CSV
+do job 824931 compara `off-avx2/auto-avx2` na revisão atual e mediu
 **78,02/61,07 ms = 1,28×**. Em 20 threads, as razões são aproximadamente
 **1,00×** e **1,16×**, respectivamente. No job novo, `auto/omp ≈ 1,00×`
 em 1 thread, e `off/omp` também é **1,28×**: a diferença para a campanha
@@ -183,7 +185,8 @@ localizam a função quente. Deixar como reserva para perguntas. O resumo
 HPC mede o processo inteiro e não demonstra sozinho a causa fina da
 regressão. Nenhum novo job VTune é indispensável ao roteiro.
 
-Fontes e reprodutibilidade: [gráfico original](plot_resultados_avx.py),
+Fontes e reprodutibilidade: [auditoria de comparabilidade](AUDITORIA_COMPARABILIDADE_SIMD_824931.md),
+[gráfico original](plot_resultados_avx.py),
 [gráfico novo](plot_vetorizacao_824931.py),
 [script da campanha](run_vectorization_tests.sh),
 [Makefile](Makefile#L62) e

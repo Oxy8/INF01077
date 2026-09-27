@@ -29,10 +29,14 @@ REGULAR = (
     *((f"Gaussian_{tap}x{tap}", "aos_separable", f"Gauss {tap}×{tap} · AoS separável")
       for tap in (3, 5, 7, 9, 11)),
 )
-# Recorte para apresentação: uma convolução RGB direta representa os filtros.
-# Os gráficos detalhados abaixo continuam disponíveis para a análise completa.
-PRESENTATION = tuple(row for row in REGULAR if not row[0].startswith("Gaussian_")) + (
-    ("Gaussian_11x11", "aos_direct", "Convolução 11×11 · RGB direto"),
+# Apenas estas três candidatas diferem da implementação anterior pela
+# linearização do laço sobre bytes, sem LUT, nova redução, novo layout ou
+# mudança de aritmética. As demais variantes continuam nos gráficos técnicos,
+# mas não podem ser apresentadas como ganho causado só por essa reestruturação.
+LINEARIZATION_ONLY = (
+    ("Negative", "linear_bytes", "Negative"),
+    ("Adjust_Brightness", "linear_bytes", "Brightness"),
+    ("Adjust_Contrast", "linear_bytes", "Contrast"),
 )
 GAUSSIAN = tuple(
     (f"Gaussian_{tap}x{tap}", variant, f"{tap}×{tap} · {label}")
@@ -106,7 +110,7 @@ def build_figure(medians: dict, image: str, threads: int, operations: tuple,
         '<g font-family="Arial,Helvetica,sans-serif">',
         label(32, 42, title, size=25, weight=700),
         label(32, 70, "Razão das medianas de tempo; acima de 1×, o build do denominador é mais rápido.", size=15),
-        label(32, 94, "Mesmo código, GCC 12.2, -march=haswell, static. O gráfico não atribui ganho à reescrita do algoritmo.",
+        label(32, 94, "Mesmo código em cada linha, GCC 12.2, -march=haswell, static; variantes diferem em algoritmo/layout.",
               size=14, color="#536579"),
     ]
     for index in range(len(rows)):
@@ -146,7 +150,7 @@ def build_figure(medians: dict, image: str, threads: int, operations: tuple,
     note = ("n=5 para Gaussianas de 36 MP; n=10 para as demais operações."
             if image == "6000x6000.png" else "n=10 em todas as operações de 12 MP.")
     elements.append(label(32, height - 75, note, size=14, color="#536579"))
-    elements.append(label(32, height - 52, "Grayscale e Zoom chamam as funções de produção atuais; os demais nomes identificam variantes isoladas.",
+    elements.append(label(32, height - 52, "Grayscale/Zoom: controles; Quantize/Histograma/Gaussianas: variantes algorítmicas, não só linearização.",
                           size=14, color="#536579"))
     elements.append(label(32, height - 29, "Fonte: vectorization_raw.csv do job 824931; medianas recalculadas pelo gerador.",
                           size=14, color="#536579"))
@@ -167,11 +171,13 @@ def build_heatmap(medians: dict, image: str, operations: tuple, out: Path) -> No
             values.extend((off / auto, off / omp, auto / omp))
         if len(set(counts)) != 1:
             raise ValueError(f"Número de amostras desigual: {image} {operation} {variant}")
+        if counts[0] != 10:
+            raise ValueError(f"Esperadas dez amostras na linearização isolada: {image} {operation} {variant}")
         names.append(display)
         matrix.append(values)
     presentation_heatmap(
-        out, f"Builds SIMD na versão atual — {image}, static",
-        "Razão das medianas; acima de 1× favorece o denominador. Azul: melhora; laranja: piora.",
+        out, f"Laços linearizados sem troca de algoritmo — {image}, static",
+        "Medianas de 10 execuções (job 824931); mesmo código nos três builds. Acima de 1× favorece o denominador.",
         ["off / auto", "off / omp", "auto / omp"] * 2,
         names, matrix, [("1 thread", 0, 2), ("20 threads", 3, 5)])
 
@@ -186,8 +192,7 @@ def main() -> None:
     for image, scale in (("4000x3000.png", "12mp"), ("6000x6000.png", "36mp")):
         items = REGULAR if scale == "12mp" else tuple(row for row in REGULAR if row[0] != "Zoom_In")
         heatmap = args.output / f"mapa_calor_builds_{scale}.svg"
-        short_items = PRESENTATION if scale == "12mp" else tuple(row for row in PRESENTATION if row[0] != "Zoom_In")
-        build_heatmap(medians, image, short_items, heatmap)
+        build_heatmap(medians, image, LINEARIZATION_ONLY, heatmap)
         print(heatmap)
         for threads in (1, 20):
             path = args.output / f"ganho_builds_{scale}_{threads}t.svg"

@@ -24,7 +24,7 @@ O pragma aparece no fonte como macro, definido nas [linhas 27–34](577262-FPI-R
 
 Assim, todo `EXP_SIMD` mostrado abaixo **é `#pragma omp simd` somente no build `omp-avx2`**. `#pragma omp parallel for schedule(runtime)` distribui iterações entre threads; não é evidência de vetorização SIMD. `V32` significa mensagem do GCC `optimized: loop vectorized using 32 byte vectors`; algumas regiões também têm caminho V16 para resto. `N` significa ausência de confirmação positiva e, onde indicado, mensagem explícita de recusa. Linhas `missed` e `optimized` podem surgir para transformações diferentes da mesma região: uma recusa não anula um `optimized` identificado para o laço relevante. Uma instrução vetorial isolada, `memset` ou laço auxiliar vetorizado não prova que a varredura principal de pixels foi vetorizada.
 
-As razões dos gráficos e da tabela de tempos são **razões de medianas**, não médias de razões: `off/auto` isola o vetorizador automático na mesma variante; `auto/omp` isola o acréscimo do pragma na mesma variante. Razão maior que 1 indica que o denominador foi mais rápido. `Original_to_Variant`, quando usado, é comparação de **código/algoritmo** dentro do mesmo build, não um ganho SIMD.
+As razões dos gráficos e da tabela de tempos são **razões de medianas**, não médias de razões: `off/auto` isola o vetorizador automático na mesma variante; `auto/omp` isola o acréscimo do pragma na mesma variante. Razão maior que 1 indica que o denominador foi mais rápido. `Original_to_Variant`, quando usado, é comparação de **código/algoritmo** dentro do mesmo build, não um ganho SIMD. **Correção de interpretação:** somente Negative, Brightness e Contrast são candidatos de linearização sem troca de algoritmo. O lookup de Quantize, a contagem privada do histograma e as Gaussianas inteiras/separáveis são experimentos distintos; a [auditoria de comparabilidade](AUDITORIA_COMPARABILIDADE_SIMD_824931.md) os classifica.
 
 ## 1. Operações ponto a ponto: Negative, Brightness e Contrast
 
@@ -337,11 +337,11 @@ Todos os candidatos medidos foram byte a byte iguais à referência designada. A
 
 ## Gráficos
 
-Os oito SVGs abaixo são gerados diretamente do [CSV bruto](resultados_pcad_hype_vectorization_824931/vectorization_raw.csv) por [`plot_vetorizacao_824931.py`](plot_vetorizacao_824931.py), sem alterar dados. Os mapas de calor mostram `off/auto`, `off/omp` e `auto/omp` em células separadas para 1 e 20 threads; os demais gráficos separam `off/auto` de `auto/omp`. Nenhuma razão junta reescrita algorítmica com efeito do compilador.
+Os oito SVGs abaixo são gerados diretamente do [CSV bruto](resultados_pcad_hype_vectorization_824931/vectorization_raw.csv) por [`plot_vetorizacao_824931.py`](plot_vetorizacao_824931.py), sem alterar dados. Os mapas de calor mostram `off/auto`, `off/omp` e `auto/omp` em células separadas para 1 e 20 threads; os demais gráficos separam `off/auto` de `auto/omp`. Cada razão entre builds usa a **mesma variante**, mas isso não autoriza atribuir diferenças entre a variante e a função original exclusivamente ao SIMD.
 
 ### Mapas de calor para apresentação
 
-Este recorte mostra uma única convolução, **Gaussiana 11×11 RGB direta** (`aos_direct`), sem variantes separáveis. Em 12 MP há 8 linhas, incluindo Zoom In; em 36 MP há 7. Flip e rotações não aparecem nos panoramas SIMD porque seus laços principais não receberam vetorização confirmada; continuam documentados na seção 5. Os gráficos detalhados das Gaussianas abaixo preservam todas as variantes para consulta técnica. A convolução direta tem `off/auto ≈ 0,81×` em 36 MP tanto com 1 quanto com 20 threads: o GCC vetorizou `dx`, mas não o laço de pixels `x`; ver seção 4.1.
+**Após a auditoria, este recorte contém apenas Negative, Brightness e Contrast**, em 12 e 36 MP. Nesses três casos, a candidata preserva a aritmética e lineariza o percurso dos bytes RGB. Quantize com lookup, histograma privado e convolução inteira foram retirados deste mapa; Grayscale e Zoom In são controles de produção sem reescrita isolada. Flip e rotações não aparecem porque seus laços principais não receberam vetorização confirmada. Os gráficos detalhados abaixo conservam todas as variantes para investigação técnica, inclusive a convolução direta inteira (que tem `off/auto ≈ 0,81×` em 36 MP). **Os arquivos antigos do job 824931 e seus dados brutos não foram modificados.**
 
 ![Builds SIMD das reescritas, 12 MP, 1 e 20 threads](visualizacoes_pcad_hype_vetorizacao_824931/figures/mapa_calor_builds_12mp.svg)
 

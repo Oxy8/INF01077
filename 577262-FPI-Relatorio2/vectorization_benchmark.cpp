@@ -51,6 +51,7 @@ struct Options {
     int repeat = 1;
     bool warmup = false;
     bool check_production = false;
+    bool clean_linearization = false;
     int profile_quantize_lookup = 0;
     std::string float_convolution_variant;
 };
@@ -171,6 +172,7 @@ bool parse(int argc, char** argv, Options& options) {
             }
         } else if (argument == "--warmup") options.warmup = true;
         else if (argument == "--check-production") options.check_production = true;
+        else if (argument == "--clean-linearization") options.clean_linearization = true;
         else if (!argument.empty() && argument[0] != '-' && options.csv.empty()) options.csv = argument;
         else return false;
     }
@@ -182,7 +184,9 @@ bool parse(int argc, char** argv, Options& options) {
         options.float_convolution_variant == "float_row_soa";
     return !options.image.empty() && !options.csv.empty() && !options.operation.empty() && options.repeat >= 0 &&
            (options.profile_quantize_lookup == 0 || options.operation == "Quantize") && valid_float_variant &&
-           (options.float_convolution_variant.empty() || options.operation == "Gaussian_11x11");
+           (options.float_convolution_variant.empty() || options.operation == "Gaussian_11x11") &&
+           (!options.clean_linearization ||
+            (options.profile_quantize_lookup == 0 && options.float_convolution_variant.empty()));
 }
 
 // Uma thread recebe uma linha inteira; o laço SIMD percorre bytes RGB
@@ -218,6 +222,8 @@ void contrast_linear(Byte* data, int width, int height) {
     }
 }
 
+// Variante algorítmica exploratória: substitui a fórmula por pixel por uma
+// tabela. NÃO representa apenas linearização do Quantize de produção.
 void quantize_lut(Byte* data, int width, int height, Byte minimum, Byte maximum) {
     const int count = static_cast<int>(maximum) - minimum + 1;
     if (count <= 16) return;
@@ -240,6 +246,8 @@ void quantize_lut(Byte* data, int width, int height, Byte minimum, Byte maximum)
     }
 }
 
+// Variante algorítmica exploratória: altera a redução OpenMP original para
+// histogramas privados por thread. NÃO isola somente a linearização do remap.
 void histogram_private(const Picture& input, std::array<unsigned int, 256>& output) {
     const int threads = omp_get_max_threads();
     std::vector<std::array<unsigned int, 256>> private_bins(static_cast<size_t>(threads));
@@ -273,6 +281,18 @@ void histogram_remap(Byte* data, int width, int height, const std::array<unsigne
         Byte* row = data + static_cast<size_t>(y) * width * 3;
         EXP_SIMD
         for (int byte = 0; byte < width * 3; ++byte) row[byte] = static_cast<Byte>(bins[row[byte]]);
+    }
+}
+
+// Candidata controlada: mantém a contagem/redução originais e muda apenas a
+// travessia do remapeamento de pixel/canal para os bytes RGB contíguos.
+void histogram_remap_linear(Byte* data, int width, int height, const unsigned int bins[256]) {
+    #pragma omp parallel for schedule(runtime)
+    for (int y = 0; y < height; ++y) {
+        Byte* row = data + static_cast<size_t>(y) * width * 3;
+        EXP_SIMD
+        for (int byte = 0; byte < width * 3; ++byte)
+            row[byte] = static_cast<Byte>(bins[row[byte]]);
     }
 }
 
@@ -310,7 +330,8 @@ void pack(const Planes& input, Picture& output) {
 }
 
 // Acumuladores de 64 bits mantêm todas as quatro variantes gaussianas exatas
-// para os coeficientes binomiais de 3 a 11 taps.
+// para os coeficientes binomiais de 3 a 11 taps. Esses pesos inteiros e as
+// variantes separáveis NÃO são a convolução float de produção linearizada.
 void gaussian_direct_aos(const Picture& input, Picture& output, const std::vector<uint32_t>& weights) {
     const int taps = static_cast<int>(weights.size());
     const uint64_t sum_weights = std::accumulate(weights.begin(), weights.end(), 0ULL);
@@ -699,6 +720,69 @@ bool run_equalize(const Picture& input, std::vector<Row>& rows) {
     return difference(candidate, reference).count == 0;
 }
 
+// Modo para uma campanha sem LUT nem histograma privado. Quantize já percorre
+// pixels independentes e fica como controle original; não se inventa variante.
+bool run_quantize_clean(const Picture& input, std::vector<Row>& rows) {
+    Picture result = input;
+    const double elapsed = milliseconds([&] {
+        ImageState state{result.bytes.data(), result.width, result.height, false};
+        quantize_gray(state, 16);
+    });
+    add_row(rows, "original_control", "total", elapsed, result, result);
+    return true;
+}
+
+bool run_equalize_clean(const Picture& input, std::vector<Row>& rows) {
+    Picture reference = input;
+    const double original_ms = milliseconds([&] {
+        ImageState state{reference.bytes.data(), reference.width, reference.height, false};
+        unsigned int bins[256]{};
+        equalize_histogram(state, bins);
+    });
+    add_row(rows, "original", "total", original_ms, reference, reference);
+
+    Picture candidate = input;
+    ImageState state{candidate.bytes.data(), candidate.width, candidate.height, false};
+    unsigned int bins[256]{};
+    const double count_ms = milliseconds([&] {
+        compute_normalized_cummulative_histogram(state, bins);
+    });
+    const double remap_ms = milliseconds([&] {
+        histogram_remap_linear(state.data, state.width, state.height, bins);
+    });
+    add_phases(rows, "linear_remap", { {"count_and_normalize", count_ms},
+               {"remap", remap_ms}, {"total", count_ms + remap_ms} }, candidate, reference);
+    return difference(candidate, reference).count == 0;
+}
+
+bool run_gaussian_clean(const Picture& input, bool check_production, std::vector<Row>& rows) {
+    if (input.width < 11 || input.height < 11) return false;
+    const int width = input.width - 10, height = input.height - 10;
+    const size_t bytes = static_cast<size_t>(width) * height * 3;
+    Picture reference{width, height, std::vector<Byte>(bytes)};
+    const double original_ms = milliseconds([&] { float_pixel_outer(input, reference); });
+    add_row(rows, "pixel_outer", "kernel", original_ms, reference, reference);
+    add_row(rows, "pixel_outer", "total", original_ms, reference, reference);
+
+    Picture candidate{width, height, std::vector<Byte>(bytes)};
+    const double linear_ms = milliseconds([&] { float_row_aos(input, candidate); });
+    add_phases(rows, "row_linear_aos", { {"kernel", linear_ms}, {"total", linear_ms} },
+               candidate, reference);
+    if (difference(candidate, reference).count != 0) return false;
+    if (!check_production) return true;
+
+    Byte* copy = static_cast<Byte*>(std::malloc(input.bytes.size()));
+    if (!copy) return false;
+    std::memcpy(copy, input.bytes.data(), input.bytes.size());
+    ImageState production{copy, input.width, input.height, false};
+    const bool success = apply_11_by_11_convolution(production, GAUSSIAN_KERNEL_11X11, false, false);
+    if (!success) { std::free(production.data); return false; }
+    Picture actual{production.width, production.height,
+                   std::vector<Byte>(production.data, production.data + bytes)};
+    std::free(production.data);
+    return difference(actual, reference).count == 0;
+}
+
 bool run_float_convolution(const Picture& input, const std::string& variant,
                            bool check_production, std::vector<Row>& rows) {
     if (input.width < 11 || input.height < 11) return false;
@@ -917,7 +1001,7 @@ bool write_csv(const Options& options, const Picture& input, const std::vector<R
 int main(int argc, char** argv) {
     Options options;
     if (!parse(argc, argv, options)) {
-        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production] [--profile-quantize-lookup N] [--float-convolution-variant NOME]\n";
+        std::cerr << "Uso: vectorization_benchmark --image ARQUIVO --operation NOME CSV [--repeat N] [--warmup] [--check-production] [--clean-linearization] [--profile-quantize-lookup N] [--float-convolution-variant NOME]\n";
         return 2;
     }
     ImageState loaded{};
@@ -928,7 +1012,17 @@ int main(int argc, char** argv) {
 
     std::vector<Row> rows;
     bool valid = false;
-    if (options.operation == "Negative" || options.operation == "Adjust_Brightness" || options.operation == "Adjust_Contrast")
+    if (options.clean_linearization && options.operation == "Quantize")
+        valid = run_quantize_clean(input, rows);
+    else if (options.clean_linearization && options.operation == "Equalize_Histogram")
+        valid = run_equalize_clean(input, rows);
+    else if (options.clean_linearization && options.operation == "Gaussian_11x11")
+        valid = run_gaussian_clean(input, options.check_production, rows);
+    else if (options.clean_linearization && options.operation != "Negative" &&
+             options.operation != "Adjust_Brightness" && options.operation != "Adjust_Contrast" &&
+             options.operation != "Grayscale" && options.operation != "Zoom_In")
+        valid = false;
+    else if (options.operation == "Negative" || options.operation == "Adjust_Brightness" || options.operation == "Adjust_Contrast")
         valid = run_pointwise(input, options.operation, rows);
     else if (options.operation == "Quantize") {
         valid = options.profile_quantize_lookup > 0

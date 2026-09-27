@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Reescritas isoladas: original vs candidato, 1/20 threads, static, três builds.
+# Variantes experimentais heterogêneas: algumas só linearizam laços, outras
+# mudam algoritmo/layout. off/auto/omp é controlado DENTRO de cada variante;
+# original/candidato não deve ser atribuído exclusivamente ao SIMD.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

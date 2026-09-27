@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=openmp-linear-simd
+#SBATCH --partition=hype
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --exclusive
+#SBATCH --time=1-00:00:00
+#SBATCH --output=slurm-linear-simd-%j.out
+#SBATCH --error=slurm-linear-simd-%j.err
+set -euo pipefail
+
+SUBMIT_DIR="${SLURM_SUBMIT_DIR:?Submeta a partir da raiz do repositório.}"
+[[ -f "$SUBMIT_DIR/Makefile" && -f "$SUBMIT_DIR/run_linear_simd_tests.sh" ]] || {
+    echo 'Submeta a partir da raiz do repositório.' >&2; exit 2;
+}
+SCRATCH_BASE="${SLURM_TMPDIR:-/tmp}"
+SCRATCH_BASE="$(cd "$SCRATCH_BASE" && pwd -P)"
+WORK_DIR="$SCRATCH_BASE/${USER}_linear_simd_${SLURM_JOB_ID}"
+RESULT_DIR="$SUBMIT_DIR/resultados_pcad_hype_linear_simd_${SLURM_JOB_ID}"
+[[ ! -e "$WORK_DIR" && ! -e "$RESULT_DIR" ]] || {
+    echo 'Diretório temporário ou de resultados já existe.' >&2; exit 2;
+}
+mkdir -p "$WORK_DIR/images"
+cleanup() {
+    if [[ -d "$WORK_DIR" ]]; then
+        resolved="$(cd "$WORK_DIR" && pwd -P)"
+        if [[ "$resolved" == "$SCRATCH_BASE/${USER}_linear_simd_${SLURM_JOB_ID}" ]]; then
+            rm -rf -- "$resolved"
+        fi
+    fi
+}
+trap cleanup EXIT
+cp -a "$SUBMIT_DIR/Makefile" "$SUBMIT_DIR/run_linear_simd_tests.sh" \
+      "$SUBMIT_DIR/summarize_linear_simd.py" "$SUBMIT_DIR/plot_linear_simd.py" \
+      "$SUBMIT_DIR/plot_simd_heatmap.py" "$WORK_DIR/"
+cp -a "$SUBMIT_DIR/577262-FPI-Relatorio2" "$WORK_DIR/"
+cp -a "$SUBMIT_DIR/images/4000x3000.png" "$SUBMIT_DIR/images/6000x6000.png" \
+      "$SUBMIT_DIR/images/poke.jpg" "$WORK_DIR/images/"
+cd "$WORK_DIR"
+hostname
+bash ./run_linear_simd_tests.sh --output "$RESULT_DIR"
+git -C "$SUBMIT_DIR" rev-parse HEAD > "$RESULT_DIR/git_commit.txt" 2>/dev/null || true
+echo "Resultados: $RESULT_DIR"
