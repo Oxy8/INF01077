@@ -1,0 +1,31 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xc040 in rotate_90_degrees_counterclockwise._omp_fn.0]	2.783221	2.783221	0.0	2.783221	0.0	0.0	0.0	0.0	0.0	49.6	17.0	N/A with HT on	27.2	0.0	10016500000	0.823192	2962574373.625899
+clear_page_erms	0.365423	0.365423	0.005006	0.360417	0.0	0.0	0.0	0.0	0.0	46.0	0.0	N/A with HT on	82.4	0.0	0		3021156832.438356
+[Loop@0xc040 in _Z34rotate_90_degrees_counterclockwiseR10ImageState._omp_fn.0]	0.015017	0.015017	0.0	0.015017	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	310500000	0.370370	7657793360.000000
+_raw_spin_lock_irqsave	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+asm_exc_page_fault	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338008.000000
+asm_sysvec_apic_timer_interrupt	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+cpuacct_charge	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+free_pcp_prepare	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	2297338008.000000
+get_page_from_freelist	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+timekeeping_advance	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_process_times	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__handle_mm_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__list_del_entry_valid	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__x86_indirect_thunk_r13	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_compound_head	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+account_process_tick	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+acpi_os_read_memory	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+check_new_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+clock_gettime	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+common_interrupt_return	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+exit_to_user_mode_prepare	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+free_pcppages_bulk	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+handle_mm_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+mt_find	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_task_tick	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+perf_iterate_ctx	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+reweight_entity	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_curr	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_load_avg	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_vsyscall	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		

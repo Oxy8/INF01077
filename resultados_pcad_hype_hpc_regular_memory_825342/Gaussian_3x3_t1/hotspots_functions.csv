@@ -1,0 +1,22 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xdff8 in apply_3_by_3_convolution._omp_fn.0]	3.268783	3.268783	0.0	3.268783	0.0	0.0	0.0	0.0	0.0	0.0	1.5	N/A with HT on	0.0	0.0	26806500000	0.349206	2863756710.566616
+roundf	0.720834	0.720834	0.0	0.720834	0.0	0.0	0.0	0.0	0.0	4.7	2.8	N/A with HT on	0.0	0.0	7015000000	0.360656	3509821944.444444
+clear_page_erms	0.105122	0.105122	0.0	0.105122	0.0	0.0	0.0	0.0	0.0	33.7	0.0	N/A with HT on	58.0	0.0	11500000	21.000000	2297338000.000000
+roundf	0.090104	0.090104	0.0	0.090104	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	1242000000	0.324074	4467046111.111111
+func@0x8410	0.050058	0.050058	0.0	0.050058	0.0	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	391000000	0.264706	2067604200.000000
+[Loop@0xdff8 in _Z24apply_3_by_3_convolutionR10ImageStatePA3_Kfbb._omp_fn.0]	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+asm_exc_page_fault	0.005006	0.005006	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+free_pcp_prepare	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__hrtimer_run_queues	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__update_load_avg_se	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_compound_head	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+_raw_spin_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+_raw_spin_unlock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+acpi_os_read_memory	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+cgroup_rstat_updated	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+check_new_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+error_entry	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+ktime_get_update_offsets_now	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_apic_msr_write	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_task_tick	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_swevent_stop	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0

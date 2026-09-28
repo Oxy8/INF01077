@@ -1,0 +1,40 @@
+mkdir -p build/off-itt
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DBENCHMARK_USE_ITT -I/home/intel/oneapi/vtune/2021.1.1/sdk/include -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DBENCHMARK_USE_ITT -I/home/intel/oneapi/vtune/2021.1.1/sdk/include -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize   -MMD -MP -c 577262-FPI-Relatorio2/image_manipulation.cpp -o build/off-itt/image_manipulation.o
+g++ -I577262-FPI-Relatorio2 -DBENCHMARK_SIMD_BUILD=\"off\" '-DBENCHMARK_BUILD_FLAGS="-O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DBENCHMARK_USE_ITT -I/home/intel/oneapi/vtune/2021.1.1/sdk/include -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize"' -O3 -Wall -Wextra -std=c++17 -fopenmp -ffp-contract=off -DBENCHMARK_USE_ITT -I/home/intel/oneapi/vtune/2021.1.1/sdk/include -g -DOMP_EXPLICIT_SIMD=0 -fno-tree-vectorize -MMD -MP -c 577262-FPI-Relatorio2/benchmark_runner.cpp -o build/off-itt/benchmark_runner.o
+g++ -fopenmp build/off-itt/image_manipulation.o build/off-itt/benchmark_runner.o /home/intel/oneapi/vtune/2021.1.1/sdk/lib64/libittnotify.a -ldl -o build/off-itt/image_benchmark
+[Adjust_Brightness_t1] VTune HPC: 17 repetições; controle mediano 186.186485 ms
+[Adjust_Brightness_t20] VTune HPC: 119 repetições; controle mediano 12.357748 ms
+[Adjust_Contrast_t1] VTune HPC: 11 repetições; controle mediano 278.329431 ms
+[Adjust_Contrast_t20] VTune HPC: 119 repetições; controle mediano 17.779214 ms
+[Equalize_Histogram_t1] VTune HPC: 16 repetições; controle mediano 189.218204 ms
+[Equalize_Histogram_t20] VTune HPC: 119 repetições; controle mediano 12.893358 ms
+[Flip_Horizontal_t1] VTune HPC: 46 repetições; controle mediano 65.757626 ms
+[Flip_Horizontal_t20] VTune HPC: 119 repetições; controle mediano 6.259332 ms
+[Flip_Vertical_t1] VTune HPC: 119 repetições; controle mediano 16.487392 ms
+[Flip_Vertical_t20] VTune HPC: 119 repetições; controle mediano 5.622104 ms
+[Gaussian_3x3_t1] VTune HPC: 3 repetições; controle mediano 1405.263034 ms
+[Gaussian_3x3_t20] VTune HPC: 36 repetições; controle mediano 85.301995 ms
+[Gaussian_5x5_t1] VTune HPC: 2 repetições; controle mediano 2488.918811 ms
+[Gaussian_5x5_t20] VTune HPC: 21 repetições; controle mediano 146.748604 ms
+[Gaussian_7x7_t1] VTune HPC: 2 repetições; controle mediano 4270.684026 ms
+[Gaussian_7x7_t20] VTune HPC: 13 repetições; controle mediano 249.509432 ms
+[Gaussian_9x9_t1] VTune HPC: 2 repetições; controle mediano 6622.895125 ms
+[Gaussian_9x9_t20] VTune HPC: 8 repetições; controle mediano 386.200174 ms
+[Gaussian_11x11_t1] VTune HPC: 2 repetições; controle mediano 9524.291926 ms
+[Gaussian_11x11_t20] VTune HPC: 6 repetições; controle mediano 553.361909 ms
+[Grayscale_t1] VTune HPC: 38 repetições; controle mediano 80.600483 ms
+[Grayscale_t20] VTune HPC: 119 repetições; controle mediano 6.358269 ms
+[Negative_t1] VTune HPC: 29 repetições; controle mediano 105.050121 ms
+[Negative_t20] VTune HPC: 119 repetições; controle mediano 7.822396 ms
+[Quantize_t1] VTune HPC: 6 repetições; controle mediano 505.314236 ms
+[Quantize_t20] VTune HPC: 93 repetições; controle mediano 32.555335 ms
+[Rotate_CCW_t1] VTune HPC: 13 repetições; controle mediano 241.840378 ms
+[Rotate_CCW_t20] VTune HPC: 79 repetições; controle mediano 38.334644 ms
+[Rotate_CW_t1] VTune HPC: 13 repetições; controle mediano 245.120475 ms
+[Rotate_CW_t20] VTune HPC: 76 repetições; controle mediano 39.777201 ms
+[Zoom_In_t1] VTune HPC: 9 repetições; controle mediano 349.037390 ms
+[Zoom_In_t20] VTune HPC: 47 repetições; controle mediano 28.409551 ms
+[Zoom_Out_t1] VTune HPC: 11 repetições; controle mediano 295.340281 ms
+[Zoom_Out_t20] VTune HPC: 119 repetições; controle mediano 19.797544 ms
+Resultados: /home/users/efsilva/teste/INF01077/resultados_pcad_hype_hpc_regular_memory_825342
+As regiões amostradas excluem decodificação, cópias de entrada e hash.

@@ -1,0 +1,12 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xcbe0 in adjust_brightness._omp_fn.0]	3.133627	3.133627	0.015017	3.118610	0.0	0.0	0.0	0.0	0.0	1.7	1.5	N/A with HT on	0.0	0.0	24966500000	0.373561	2976263652.766773
+[Loop@0xcbe0 in _Z17adjust_brightnessR10ImageStatei._omp_fn.0]	0.065075	0.065075	0.0	0.065075	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	747500000	0.323077	3711084319.384615
+perf_event_task_tick	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_raw_spin_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+asm_sysvec_apic_timer_interrupt	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+exc_nmi	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+flush_tlb_one_kernel	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+memcpy_fromio	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_sched_clock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_nmi_handler	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_cfs_group	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		

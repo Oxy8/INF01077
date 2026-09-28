@@ -1,0 +1,35 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+clear_page_erms	1.076246	1.076246	0.015017	1.061228	0.0	0.0	0.0	0.0	0.0	42.4	0.0	N/A with HT on	87.3	0.0	23000000	136.000000	2906399706.120930
+[Loop@0xc360 in (anonymous namespace)::zoom_interpolate_vertical._omp_fn.0]	1.016176	1.016176	0.0	1.016176	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	12305000000	0.245794	2976354161.522168
+[Loop@0xc128 in (anonymous namespace)::zoom_copy_source_pixels._omp_fn.0]	0.535620	0.535620	0.0	0.535620	0.0	0.0	0.0	0.0	0.0	68.6	4.4	N/A with HT on	0.0	0.0	4864500000	0.328605	2984392359.037383
+[Loop@0xc240 in (anonymous namespace)::zoom_interpolate_horizontal._omp_fn.0]	0.530614	0.530614	0.0	0.530614	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	5830500000	0.280079	3077566004.018868
+clear_huge_page	0.010012	0.010012	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	0		1148669001.500000
+[Loop@0xc220 in _ZN12_GLOBAL__N_127zoom_interpolate_horizontalEPhii._omp_fn.0]	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	2297338003.000000
+asm_exc_page_fault	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		4594676006.000000
+check_new_pages	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	2297338003.000000
+common_interrupt_return	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_iterate_ctx	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338003.000000
+psi_group_change	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+reweight_entity	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+task_tick_fair	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+[Loop@0xc220 in (anonymous namespace)::zoom_interpolate_horizontal._omp_fn.0]	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__cond_resched	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__count_memcg_events	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__mod_lruvec_page_state	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_raw_spin_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+asm_exc_nmi	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+blk_cgroup_congested	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+cgroup_rstat_updated	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+charge_memcg	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+do_user_addr_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+folio_lruvec_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+free_pcp_prepare	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	
+free_unref_page_list	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+get_page_from_freelist	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	3.000000	
+lru_add_fn	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+memcg_check_events	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+mtree_range_walk	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_sched_clock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+page_add_new_anon_rmap	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+pmd_val	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+rmqueue_bulk	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0

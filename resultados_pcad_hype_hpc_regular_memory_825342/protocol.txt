@@ -1,0 +1,8 @@
+image=images/6000x6000.png
+build=off
+schedule=static
+threads=1,20
+control_repeats=5
+profile_target_ms=3000
+memory_budget_bytes=25769803776
+hashes=match_with_resultados_pcad_hype_final_regular_avx2_5reps_822851/reference_hashes.csv

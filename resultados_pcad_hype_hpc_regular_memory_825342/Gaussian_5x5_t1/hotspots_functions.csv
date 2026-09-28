@@ -1,0 +1,25 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xedf8 in apply_5_by_5_convolution._omp_fn.0]	3.689270	3.689270	0.0	3.689270	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	32223000000	0.327980	2864658829.945726
+[Loop@0xed50 in apply_5_by_5_convolution._omp_fn.0]	0.600695	0.600695	0.0	0.600695	0.0	0.0	0.0	0.0	0.0	78.7	3.5	N/A with HT on	0.0	0.0	5198000000	0.382743	3311995515.750000
+roundf	0.490568	0.490568	0.005006	0.485562	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	3427000000	0.453020	3164700209.693878
+roundf	0.090104	0.090104	0.0	0.090104	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	391000000	0.529412	2297337930.000000
+clear_page_erms	0.055064	0.055064	0.0	0.055064	0.0	0.0	0.0	0.0	0.0	24.3	0.0	N/A with HT on	32.0	0.0	0		3968129151.818182
+func@0x8410	0.050058	0.050058	0.0	0.050058	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	506000000	0.500000	5054143446.000000
+[Loop@0xedf8 in _Z24apply_5_by_5_convolutionR10ImageStatePA5_Kfbb._omp_fn.0]	0.030035	0.030035	0.005006	0.025029	0.0	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	345000000	0.433333	4977565515.000000
+get_page_from_freelist	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_write_msr	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__calc_delta	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+_raw_spin_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+acpi_os_read_memory	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+common_interrupt_return	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+native_sched_clock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_set_fixmap	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+page_counter_uncharge	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+pvclock_gtod_notify	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+read_tsc	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+release_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+task_tick_fair	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+tick_sched_handle	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_curr	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+validate_xmit_skb	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+x86_pmu_disable	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0

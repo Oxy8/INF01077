@@ -1,0 +1,9 @@
+operation=Rotate_CW
+threads=20
+build=off
+schedule=static
+image=images/6000x6000.png
+control_median_ms=39.777201
+profile_iterations=76
+input_bytes=108000000
+reserved_factor=2

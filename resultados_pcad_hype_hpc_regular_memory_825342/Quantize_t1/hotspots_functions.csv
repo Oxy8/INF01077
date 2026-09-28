@@ -1,0 +1,13 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xd170 in quantize_gray._omp_fn.0]	1.481715	1.481715	0.005006	1.476709	0.0	0.0	0.0	0.0	0.0	16.8	8.0	N/A with HT on	0.0	0.0	6405500000	0.684022	2957046556.307432
+roundf64	0.610707	0.610707	0.0	0.610707	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	3841000000	0.520958	3276531255.885246
+[Loop@0xcab8 in (anonymous namespace)::apply_gray_scale_buffer._omp_fn.0]	0.495574	0.495574	0.005006	0.490568	0.0	0.0	0.0	0.0	0.0	8.0	4.8	N/A with HT on	0.0	0.0	4531000000	0.324873	2970295605.010101
+[Loop@0xd030 in find_min_and_max_luminance_on_gray_scale_image._omp_fn.0]	0.260301	0.260301	0.0	0.260301	0.0	0.0	0.0	0.0	0.0	100.0	26.5	N/A with HT on	0.0	0.0	1725000000	0.460000	3048390816.980769
+roundf64	0.135156	0.135156	0.0	0.135156	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	759000000	0.409091	2297338007.000000
+[Loop@0xd170 in _Z13quantize_grayR10ImageStatei._omp_fn.0]	0.090104	0.090104	0.0	0.090104	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	218500000	1.000000	2424967896.277778
+do_futex	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+error_entry	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+func@0x81c0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_sched_clock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+reweight_entity	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+timerqueue_add	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		

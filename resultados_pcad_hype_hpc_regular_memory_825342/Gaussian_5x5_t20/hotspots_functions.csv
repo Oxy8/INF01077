@@ -1,0 +1,112 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xedf8 in apply_5_by_5_convolution._omp_fn.0]	44.501505	44.501505	0.0	0.961112	43.540393	0.0	0.0	0.0	0.0	0.4	0.6	N/A with HT on	0.0	0.0	336099000000	0.344111	2598912080.623285
+[Loop@0xed50 in apply_5_by_5_convolution._omp_fn.0]	7.859096	7.859096	0.0	0.195226	7.663870	0.0	0.0	0.0	0.0	2.8	2.4	N/A with HT on	0.0	0.0	55004500000	0.373406	2613404898.864968
+roundf	6.082039	6.082039	0.0	0.105122	5.976918	0.0	0.0	0.0	0.0	0.7	0.9	N/A with HT on	0.0	0.0	37559000000	0.422841	2611213000.784362
+roundf	0.961112	0.961112	0.0	0.020023	0.941089	0.0	0.0	0.0	0.0	16.8	2.9	N/A with HT on	0.0	0.0	4910500000	0.498829	2548609358.171875
+[Loop@0x1f7d8 in func@0x1f784]	0.660765	0.660765	0.0	0.170197	0.490568	0.0	0.0	0.0	0.0	7.3	4.2	N/A with HT on	0.0	0.0	805000000	2.085714	2540995074.984848
+[Loop@0xedf8 in _Z24apply_5_by_5_convolutionR10ImageStatePA5_Kfbb._omp_fn.0]	0.655759	0.655759	0.0	0.010012	0.645747	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	3921500000	0.387097	2314874944.396946
+func@0x8410	0.575666	0.575666	0.0	0.0	0.575666	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	4784000000	0.353365	2936597286.182609
+clear_page_erms	0.530614	0.530614	0.0	0.040046	0.490568	0.0	0.0	0.0	0.0	14.2	0.0	N/A with HT on	15.9	0.0	23000000	57.500000	2492395014.103774
+[Loop@0x1f620 in func@0x1f5fd]	0.230267	0.230267	0.0	0.085098	0.145168	0.0	0.0	0.0	0.0	15.4	12.7	N/A with HT on	0.0	0.0	264500000	2.086957	2397222274.434783
+update_load_avg	0.020023	0.020023	0.0	0.005006	0.015017	0.0	0.0	0.0	0.0	100.0	100.0	N/A with HT on	0.0	0.0	0		2871672516.250000
+asm_sysvec_apic_timer_interrupt	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		1148669006.500000
+common_interrupt_return	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		4594676026.000000
+perf_event_task_tick	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0		100.0	N/A with HT on	0.0	0.0	0		10338021058.500000
+perf_iterate_ctx	0.010012	0.010012	0.0	0.005006	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338013.000000
+update_cfs_group	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0		87.0	N/A with HT on	0.0	0.0	0		8040683045.500000
+update_curr	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+[Loop@0xece9 in apply_5_by_5_convolution._omp_fn.0]	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+___slab_alloc	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__kmem_cache_alloc_node	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__list_del_entry_valid	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__perf_event_task_sched_out	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+_compound_head	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+check_new_pages	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		4594676026.000000
+get_mem_cgroup_from_mm	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+hrtimer_active	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		100.0	N/A with HT on	0.0	0.0	0		2297338013.000000
+hrtimer_interrupt	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+inherit_task_group.isra.0	0.005006	0.005006	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+kfree	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+ktime_get_update_offsets_now	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338013.000000
+mas_update_gap	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_apic_msr_eoi_write	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_queued_spin_lock_slowpath	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0		2297338013.000000
+native_write_msr	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+page_remove_rmap	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+psi_group_change	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338013.000000
+reweight_entity	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+run_posix_cpu_timers	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+sched_balance_newidle	0.005006	0.005006	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+task_tick_fair	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__alloc_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	
+__alloc_skb	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__calc_delta	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__cond_resched	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__count_memcg_events	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__free_one_page	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__handle_mm_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__list_add_valid	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	
+__mod_lruvec_state	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__mod_node_page_state	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__mod_zone_page_state	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__perf_addr_filters_adjust	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__rcu_read_lock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__rcu_read_unlock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__sysvec_apic_timer_interrupt	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__update_load_avg_cfs_rq	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__update_load_avg_se	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	34500000	0.0	0.0
+__x86_indirect_thunk_array	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__x86_indirect_thunk_r13	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_raw_spin_lock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_raw_spin_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+_raw_spin_trylock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+_raw_spin_unlock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+account_user_time	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+acct_account_cputime	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+acpi_os_read_memory	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+asm_exc_nmi	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+asm_exc_page_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+bpf_lsm_mmap_file	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+charge_memcg	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+clear_huge_page	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+cpuacct_account_field	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+cpuacct_charge	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+ct_nmi_enter	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+dequeue_entity	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+error_entry	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+exc_nmi	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+fill_pte	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+flush_tlb_one_kernel	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+folio_add_lru	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+folio_lruvec_lock_irqsave	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+free_pcp_prepare	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	46000000	0.250000	
+get_page_from_freelist	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	2.000000	
+ghes_notify_nmi	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+handle_mm_fault	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+intel_pebs_constraints	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+intel_pmu_handle_irq	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+kmem_cache_alloc_node	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+lapic_next_deadline	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+list_add_event	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+load_balance	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+memcpy_fromio	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+memset_erms	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0		
+merge_sched_in	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+native_flush_tlb_one_user	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+native_sched_clock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+net_rx_action	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+page_add_new_anon_rmap	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_alloc	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+perf_event_groups_insert	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+perf_event_init_task	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_nmi_handler	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_task_output	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+perf_group_attach	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+rcu_sched_clock_irq	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+release_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+set_pte_vaddr	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+set_pte_vaddr_p4d	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+timerqueue_add	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+unmap_page_range	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+update_min_vruntime	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+x86_get_event_constraints	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0

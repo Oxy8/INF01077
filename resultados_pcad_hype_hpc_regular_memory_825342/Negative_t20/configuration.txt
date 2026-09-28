@@ -1,0 +1,9 @@
+operation=Negative
+threads=20
+build=off
+schedule=static
+image=images/6000x6000.png
+control_median_ms=7.822396
+profile_iterations=119
+input_bytes=108000000
+reserved_factor=2

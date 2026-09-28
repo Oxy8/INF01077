@@ -1,0 +1,84 @@
+Function	CPU Time	CPU Time:Effective Time	CPU Time:Effective Time:Idle	CPU Time:Effective Time:Poor	CPU Time:Effective Time:Ok	CPU Time:Effective Time:Ideal	CPU Time:Effective Time:Over	CPU Time:Spin Time	CPU Time:Overhead Time	Memory Bound(%)	Memory Bound:L1 Bound(%)	Memory Bound:DRAM Bound	Memory Bound:Store Bound(%)	NUMA: % of Remote Accesses(%)	Instructions Retired	CPI Rate	Average CPU Frequency
+[Loop@0xd820 in flip_horizontal._omp_fn.0]	15.628088	15.628088	0.005006	0.230267	15.392815	0.0	0.0	0.0	0.0	4.9	6.3	N/A with HT on	0.0	0.0	82581500000	0.500766	2646133091.841127
+[Loop@0x1f7d8 in func@0x1f784]	0.936083	0.936083	0.0	0.070081	0.866002	0.0	0.0	0.0	0.0	11.6	11.3	N/A with HT on	0.0	0.0	908500000	2.721519	2641324459.197861
+[Loop@0xd820 in _Z15flip_horizontalR10ImageState._omp_fn.0]	0.250290	0.250290	0.0	0.010012	0.240278	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	1081000000	0.414894	1791923654.040000
+[Loop@0x1f620 in func@0x1f5fd]	0.235272	0.235272	0.0	0.035041	0.200232	0.0	0.0	0.0	0.0	1.6	15.6	N/A with HT on	0.0	0.0	80500000	5.571429	1906301759.617021
+common_interrupt_return	0.145168	0.145168	0.0	0.0	0.145168	0.0	0.0	0.0	0.0	25.1	16.0	N/A with HT on	0.0	0.0	23000000	19.000000	3010304989.103448
+native_flush_tlb_one_user	0.085098	0.085098	0.0	0.0	0.085098	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	11500000	7.000000	945962713.294118
+asm_sysvec_call_function	0.080093	0.080093	0.0	0.0	0.080093	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	10.000000	1435836261.250000
+__flush_smp_call_function_queue	0.050058	0.050058	0.0	0.0	0.050058	0.0	0.0	0.0	0.0		50.7	N/A with HT on	0.0	0.0	0		2756805621.600000
+clear_page_erms	0.025029	0.025029	0.0	0.025029	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		1837870414.400000
+flush_tlb_func	0.025029	0.025029	0.0	0.0	0.025029	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	7.000000	3216273225.200000
+error_entry	0.020023	0.020023	0.0	0.0	0.020023	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	9.000000	5169010540.500000
+llist_reverse_order	0.015017	0.015017	0.0	0.0	0.015017	0.0	0.0	0.0	0.0		100.0	N/A with HT on	0.0	0.0	0		4594676036.000000
+native_apic_msr_eoi_write	0.015017	0.015017	0.0	0.0	0.015017	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	0		2297338018.000000
+perf_event_task_tick	0.015017	0.015017	0.0	0.0	0.015017	0.0	0.0	0.0	0.0	100.0	100.0	N/A with HT on	0.0	0.0	0		3063117357.333333
+__irq_exit_rcu	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+early_xen_iret_patch	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+exit_to_user_mode_prepare	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+memset_erms	0.010012	0.010012	0.0	0.010012	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+rb_next	0.010012	0.010012	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+update_load_avg	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		3446007027.000000
+update_min_vruntime	0.010012	0.010012	0.0	0.0	0.010012	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+[Loop@0x1fc30 in func@0x1fbf4]	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338018.000000
+__cgroup_account_cputime_field	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__kmem_cache_alloc_node	0.005006	0.005006	0.005006	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__sysvec_call_function	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__update_load_avg_cfs_rq	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		4594676036.000000
+__update_load_avg_se	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+_raw_spin_lock	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+account_process_tick	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+acct_account_cputime	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+func@0x1e7c4	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+hrtimer_interrupt	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_mux_hrtimer_handler	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+psi_group_change	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+read_tsc	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+reweight_entity	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+sync_regs	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		2297338018.000000
+update_curr	0.005006	0.005006	0.0	0.0	0.005006	0.0	0.0	0.0	0.0		100.0	N/A with HT on	0.0	0.0	0		11486690090.000000
+GOMP_loop_maybe_nonmonotonic_runtime_next	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+[Loop@0x1cd60 in func@0x1cc44]	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+[Loop@0xd810 in flip_horizontal._omp_fn.0]	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	34500000	0.333333	
+___slab_alloc	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	
+__calc_delta	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__cond_resched	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+__hrtimer_next_event_base	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__kmem_cache_free	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+__list_add_valid	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__perf_event_task_sched_out	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__x64_sys_futex	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+__x86_indirect_thunk_array	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+account_user_time	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+amd_clear_divider	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+asm_sysvec_apic_timer_interrupt	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+calc_global_load_tick	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+check_new_pages	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+cpuacct_account_field	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+cpuacct_charge	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+deactivate_slab	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+fpregs_assert_state_consistent	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+func@0xe514	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+futex_q_lock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+get_page_from_freelist	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+hrtimer_active	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+idr_get_free	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+irq_enter_rcu	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	11500000	1.000000	
+mem_cgroup_handle_over_high	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+memcg_slab_post_alloc_hook	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+mutex_lock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+mutex_unlock	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+perf_event_alloc	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+perf_event_groups_insert	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+perf_group_attach	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+rebalance_domains	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+security_perf_event_alloc	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+sysvec_call_function	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	-0.0	0.0	N/A with HT on	0.0	0.0	0		
+task_tick_fair	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+tick_program_event	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+timerqueue_add	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		
+update_cfs_group	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0		0.0	N/A with HT on	0.0	0.0	11500000	0.0	0.0
+update_sd_lb_stats.constprop.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+wake_up_q	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+x86_pmu_hw_config	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0	0.0	0.0
+x86_reserve_hardware	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	N/A with HT on	0.0	0.0	0		

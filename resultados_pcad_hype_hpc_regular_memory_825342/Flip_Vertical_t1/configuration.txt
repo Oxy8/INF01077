@@ -1,0 +1,9 @@
+operation=Flip_Vertical
+threads=1
+build=off
+schedule=static
+image=images/6000x6000.png
+control_median_ms=16.487392
+profile_iterations=119
+input_bytes=108000000
+reserved_factor=2
