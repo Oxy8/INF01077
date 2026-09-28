@@ -35,6 +35,8 @@ SCHEDULE_COLORS = {"static": "#1f77b4", "dynamic,1": "#d62728", "dynamic,16": "#
 SIMD_COLORS = {"off": "#555555", "omp": "#8a2be2"}
 THREADS = [1, 2, 4, 8, 12, 16, 20]
 SELECTED_OPS = ["Grayscale", "Negative", "Zoom_In", "Gaussian_3x3", "Gaussian_11x11"]
+EXPANDED_OPS = ["Grayscale", "Negative", "Adjust_Contrast", "Zoom_In", "Flip_Horizontal", "Flip_Vertical", "Gaussian_3x3", "Gaussian_11x11"]
+GENERAL_BUILD = "off"  # Gráficos gerais isolam threads/schedule, sem comparação SIMD.
 
 
 def number(value: str) -> float:
@@ -151,6 +153,7 @@ def line_chart(
     reference: tuple[str, float, str] | None = None,
     numeric_x: bool = False,
     log_x: bool = False,
+    log_y: bool = False,
     x_label: str = "Threads",
 ) -> None:
     width, height = 1200, 700
@@ -163,12 +166,20 @@ def line_chart(
             values.extend(v - e for v, e in zip(data, errors))
     if reference:
         values.append(reference[1])
-    low, high = min(values), max(values)
-    if y_zero:
-        low = min(0.0, low)
-    pad = (high - low) * 0.09 or 1.0
-    low -= 0 if y_zero else pad
-    high += pad
+    if log_y:
+        if any(value <= 0 for value in values):
+            raise ValueError("Escala logarítmica requer tempos positivos")
+        low, high = math.log10(min(values)), math.log10(max(values))
+        pad = (high - low) * 0.06 or 0.06
+        low -= pad
+        high += pad
+    else:
+        low, high = min(values), max(values)
+        if y_zero:
+            low = min(0.0, low)
+        pad = (high - low) * 0.09 or 1.0
+        low -= 0 if y_zero else pad
+        high += pad
     if log_x:
         numeric_values = [math.log2(float(value)) for value in x_values]
         x_low, x_high = min(numeric_values), max(numeric_values)
@@ -180,13 +191,14 @@ def line_chart(
     else:
         x_count = max(1, len(x_values) - 1)
         sx = lambda i: left + plot_w * i / x_count
-    sy = lambda y: top + plot_h * (high - y) / (high - low)
+    sy = lambda y: top + plot_h * (high - (math.log10(y) if log_y else y)) / (high - low)
     lines = svg_header(width, height, title)
     lines.append(f'<text class="title" x="{left}" y="34">{esc(title)}</text>')
     for value in ticks(low, high):
-        y = sy(value)
+        tick_value = 10 ** value if log_y else value
+        y = sy(tick_value)
         lines.append(f'<line class="grid" x1="{left}" x2="{left + plot_w}" y1="{y:.1f}" y2="{y:.1f}"/>')
-        lines.append(f'<text class="axis" text-anchor="end" x="{left - 10}" y="{y + 5:.1f}">{esc(fmt_ms(value) if "ms" in y_label else f"{value:.2f}")}</text>')
+        lines.append(f'<text class="axis" text-anchor="end" x="{left - 10}" y="{y + 5:.1f}">{esc(fmt_ms(tick_value) if "ms" in y_label else f"{tick_value:.2f}")}</text>')
     lines.append(f'<rect class="frame" x="{left}" y="{top}" width="{plot_w}" height="{plot_h}"/>')
     for i, label in enumerate(x_values):
         x = sx(i)
@@ -196,7 +208,8 @@ def line_chart(
         name, value, color = reference
         y = sy(value)
         lines.append(f'<line x1="{left}" x2="{left + plot_w}" y1="{y:.1f}" y2="{y:.1f}" stroke="{color}" stroke-width="2" stroke-dasharray="7,5"/>')
-        lines.append(f'<text class="note" x="{left + plot_w + 10}" y="{y + 4:.1f}">{esc(name)}</text>')
+        if name:
+            lines.append(f'<text class="note" x="{left + plot_w + 10}" y="{y + 4:.1f}">{esc(name)}</text>')
     for index, (name, data, color, errors) in enumerate(series):
         points = " ".join(f"{sx(i):.1f},{sy(value):.1f}" for i, value in enumerate(data))
         lines.append(f'<polyline points="{points}" fill="none" stroke="{color}" stroke-width="2.5"/>')
@@ -331,17 +344,15 @@ def regular_figures(rows: list[dict[str, object]], figures: Path, tables: Path) 
     total_speedup_series = []
     total_efficiency_series = []
     for index, image_name in enumerate(images):
-        for simd in ("off", "omp"):
-            data = [next((row for row in static_totals if row["Image"] == image_name and row["Threads"] == thread and row["Simd"] == simd), None) for thread in THREADS]
-            if any(row is None for row in data):
-                continue
-            values = [float(row["Total_median_ms"]) for row in data if row]
-            label = f"{image_name} ({simd})"
-            color = PALETTE[(index * 2 + (1 if simd == "omp" else 0)) % len(PALETTE)]
-            total_series.append((label, values, color, None))
-            speedups = [safe_ratio(values[0], value) for value in values]
-            total_speedup_series.append((label, speedups, color, None))
-            total_efficiency_series.append((label, [speedup / thread * 100 for speedup, thread in zip(speedups, THREADS)], color, None))
+        data = [next((row for row in static_totals if row["Image"] == image_name and row["Threads"] == thread and row["Simd"] == GENERAL_BUILD), None) for thread in THREADS]
+        if any(row is None for row in data):
+            continue
+        values = [float(row["Total_median_ms"]) for row in data if row]
+        color = PALETTE[index % len(PALETTE)]
+        total_series.append((image_name, values, color, None))
+        speedups = [safe_ratio(values[0], value) for value in values]
+        total_speedup_series.append((image_name, speedups, color, None))
+        total_efficiency_series.append((image_name, [speedup / thread * 100 for speedup, thread in zip(speedups, THREADS)], color, None))
     path = figures / "00_tempo_total_operacoes_static.svg"
     line_chart(path, "Tempo total das 17 operações regulares — static", THREADS, total_series, "Soma das medianas (ms)", numeric_x=True)
     links.append((path.name, "Tempo total do conjunto de operações por threads"))
@@ -353,15 +364,14 @@ def regular_figures(rows: list[dict[str, object]], figures: Path, tables: Path) 
     links.append((path.name, "Eficiência do conjunto de operações por threads"))
 
     dataset_totals: list[dict[str, object]] = []
-    for simd in ("off", "omp"):
-        for schedule, chunk in (("static", ""), ("dynamic", "1"), ("dynamic", "16")):
-            selected = [row for row in totals if row["Threads"] == 20 and row["Simd"] == simd and row["Schedule"] == schedule and row["Chunk"] == chunk]
-            dataset_totals.append({"Simd": simd, "Schedule": schedule if not chunk else f"{schedule},{chunk}", "Total_median_ms": sum(float(row["Total_median_ms"]) for row in selected)})
+    for schedule, chunk in (("static", ""), ("dynamic", "1"), ("dynamic", "16")):
+        selected = [row for row in totals if row["Threads"] == 20 and row["Simd"] == GENERAL_BUILD and row["Schedule"] == schedule and row["Chunk"] == chunk]
+        dataset_totals.append({"Simd": GENERAL_BUILD, "Schedule": schedule if not chunk else f"{schedule},{chunk}", "Total_median_ms": sum(float(row["Total_median_ms"]) for row in selected)})
     write_csv(tables / "tempo_total_dataset_schedules_20_threads.csv", ["Simd", "Schedule", "Total_median_ms"], dataset_totals)
     schedule_names = ["static", "dynamic,1", "dynamic,16"]
     path = figures / "00_tempo_total_dataset_por_schedule.svg"
-    bar_chart(path, "Tempo total das operações regulares — 20 threads", ["SIMD off", "SIMD omp"], [(schedule, [float(next(row for row in dataset_totals if row["Simd"] == simd and row["Schedule"] == schedule)["Total_median_ms"]) for simd in ("off", "omp")], SCHEDULE_COLORS[schedule]) for schedule in schedule_names], "Soma das medianas (ms)")
-    links.append((path.name, "Tempo total do dataset por schedule, como no script legado"))
+    bar_chart(path, "Tempo total das operações regulares — 20 threads", schedule_names, [("17 operações", [float(next(row for row in dataset_totals if row["Schedule"] == schedule)["Total_median_ms"]) for schedule in schedule_names], PALETTE[0])], "Soma das medianas (ms)")
+    links.append((path.name, "Soma das medianas das 17 operações por schedule"))
 
     # SIMD effect by operation across all comparable regular configurations.
     simd_pairs: list[dict[str, object]] = []
@@ -396,84 +406,124 @@ def regular_figures(rows: list[dict[str, object]], figures: Path, tables: Path) 
     links.append((path.name, "Mapa de calor do efeito SIMD por operação e threads"))
 
     # Dynamic schedule gain at 20 threads. Cada razão vem das medianas; a
-    # figura agrega as quatro configurações (duas imagens e dois builds) por
-    # média geométrica. A tabela detalhada preserva os intervalos observados.
+    # figura agrega as duas imagens no build geral por média geométrica. A
+    # tabela detalhada preserva os intervalos observados.
     schedules = ["dynamic,1", "dynamic,16"]
     schedule_rows: list[dict[str, object]] = []
     schedule_details: list[dict[str, object]] = []
     for op in operations:
         values: dict[str, list[float]] = {schedule: [] for schedule in schedules}
         for image_name in images:
-            for simd in ("off", "omp"):
-                static = lookup(rows, Image=image_name, Operation=op, Threads=20, Schedule="static", Chunk="", Simd_Build=simd)
-                if not static:
-                    continue
-                for schedule in schedules:
-                    kind, chunk = schedule.split(",")
-                    dynamic = lookup(rows, Image=image_name, Operation=op, Threads=20, Schedule=kind, Chunk=chunk, Simd_Build=simd)
-                    if dynamic:
-                        ratio = safe_ratio(float(static["Median_ms"]), float(dynamic["Median_ms"]))
-                        values[schedule].append(ratio)
-                        schedule_details.append({
-                            "Image": image_name,
-                            "Operation": op,
-                            "Build": simd,
-                            "Schedule": schedule,
-                            "Static_median_ms": static["Median_ms"],
-                            "Static_min_ms": static["Min_ms"],
-                            "Static_max_ms": static["Max_ms"],
-                            "Dynamic_median_ms": dynamic["Median_ms"],
-                            "Dynamic_min_ms": dynamic["Min_ms"],
-                            "Dynamic_max_ms": dynamic["Max_ms"],
-                            "Speedup_static_over_dynamic": ratio,
-                            "Ranges_overlap": not (float(static["Max_ms"]) < float(dynamic["Min_ms"]) or float(dynamic["Max_ms"]) < float(static["Min_ms"])),
-                        })
+            static = lookup(rows, Image=image_name, Operation=op, Threads=20, Schedule="static", Chunk="", Simd_Build=GENERAL_BUILD)
+            if not static:
+                continue
+            for schedule in schedules:
+                kind, chunk = schedule.split(",")
+                dynamic = lookup(rows, Image=image_name, Operation=op, Threads=20, Schedule=kind, Chunk=chunk, Simd_Build=GENERAL_BUILD)
+                if dynamic:
+                    ratio = safe_ratio(float(static["Median_ms"]), float(dynamic["Median_ms"]))
+                    values[schedule].append(ratio)
+                    schedule_details.append({
+                        "Image": image_name,
+                        "Operation": op,
+                        "Build": GENERAL_BUILD,
+                        "Schedule": schedule,
+                        "Static_median_ms": static["Median_ms"],
+                        "Static_min_ms": static["Min_ms"],
+                        "Static_max_ms": static["Max_ms"],
+                        "Dynamic_median_ms": dynamic["Median_ms"],
+                        "Dynamic_min_ms": dynamic["Min_ms"],
+                        "Dynamic_max_ms": dynamic["Max_ms"],
+                        "Speedup_static_over_dynamic": ratio,
+                        "Ranges_overlap": not (float(static["Max_ms"]) < float(dynamic["Min_ms"]) or float(dynamic["Max_ms"]) < float(static["Min_ms"])),
+                    })
         schedule_rows.append({"Operation": op, **{schedule: geometric_mean(values[schedule]) for schedule in schedules}})
     write_csv(tables / "schedules_regulares_20_threads.csv", ["Operation", *schedules], schedule_rows)
     write_csv(tables / "schedules_regulares_detalhe_20_threads.csv", ["Image", "Operation", "Build", "Schedule", "Static_median_ms", "Static_min_ms", "Static_max_ms", "Dynamic_median_ms", "Dynamic_min_ms", "Dynamic_max_ms", "Speedup_static_over_dynamic", "Ranges_overlap"], schedule_details)
     path = figures / "03_schedules_regulares_20_threads.svg"
-    bar_chart(path, "Schedules dinâmicos versus static — operações regulares, 20 threads", operations, [(schedule, [float(next(r for r in schedule_rows if r["Operation"] == op)[schedule]) for op in operations], SCHEDULE_COLORS[schedule]) for schedule in schedules], "Média geométrica de 4 razões de medianas (static / dynamic)", baseline=1.0)
+    bar_chart(path, "Schedules dinâmicos versus static — operações regulares, 20 threads", operations, [(schedule, [float(next(r for r in schedule_rows if r["Operation"] == op)[schedule]) for op in operations], SCHEDULE_COLORS[schedule]) for schedule in schedules], "Média geométrica de 2 razões de medianas (static / dynamic)", baseline=1.0)
     links.append((path.name, "Impacto de dynamic,1 e dynamic,16 nas operações regulares"))
 
     # A agregação é útil como visão geral, mas pode esconder que apenas uma
-    # imagem/build contém dispersão. O mapa mostra todas as quatro razões que
+    # imagem contém dispersão. O mapa mostra as duas razões que
     # alimentam cada barra e permite verificar essa consistência diretamente.
-    configurations = [(image_name, simd) for image_name in images for simd in ("off", "omp")]
-    detail_labels = [f"d{chunk} · {Path(image_name).stem} · {simd}" for chunk in ("1", "16") for image_name, simd in configurations]
+    detail_labels = [f"d{chunk} · {Path(image_name).stem}" for chunk in ("1", "16") for image_name in images]
     detail_matrix = []
     for op in operations:
         row_values = []
         for schedule in schedules:
-            for image_name, simd in configurations:
-                detail = next((item for item in schedule_details if item["Image"] == image_name and item["Operation"] == op and item["Build"] == simd and item["Schedule"] == schedule), None)
+            for image_name in images:
+                detail = next((item for item in schedule_details if item["Image"] == image_name and item["Operation"] == op and item["Schedule"] == schedule), None)
                 row_values.append(float(detail["Speedup_static_over_dynamic"]) if detail else math.nan)
         detail_matrix.append(row_values)
     path = figures / "03b_schedules_regulares_por_configuracao_20_threads.svg"
-    heatmap(path, "Schedules regulares: cada imagem e build, 20 threads", detail_labels, operations, detail_matrix, "Cada célula é mediana(static) / mediana(dynamic); acima de 1× favorece dynamic. Consulte a tabela para mínimo--máximo.")
-    links.append((path.name, "Efeito de schedule sem agregação entre imagem e build"))
+    heatmap(path, "Schedules regulares: cada imagem, 20 threads", detail_labels, operations, detail_matrix, "Cada célula é mediana(static) / mediana(dynamic); acima de 1× favorece dynamic. Consulte a tabela para mínimo--máximo.")
+    links.append((path.name, "Efeito de schedule separado por imagem"))
 
     # Representative scalability and efficiency retain the important plots from the legacy script.
     for image_name in images:
         lines: list[tuple[str, Sequence[float], str, Sequence[float] | None]] = []
         efficiency: list[tuple[str, Sequence[float], str, Sequence[float] | None]] = []
+        scalability_ops = [op for op in SELECTED_OPS if not (image_name == "6000x6000.png" and op == "Gaussian_11x11")]
         for op_index, op in enumerate(SELECTED_OPS):
-            for simd in ("off", "omp"):
-                data = [lookup(rows, Image=image_name, Operation=op, Threads=t, Schedule="static", Chunk="", Simd_Build=simd) for t in THREADS]
-                if any(item is None for item in data):
-                    continue
-                label = f"{op} ({simd})"
-                color = PALETTE[(op_index * 2 + (1 if simd == 'omp' else 0)) % len(PALETTE)]
-                values = [float(item["Median_ms"]) for item in data if item]
-                lines.append((label, values, color, None))
-                t1 = values[0]
-                efficiency.append((label, [safe_ratio(t1, value) / thread * 100 for value, thread in zip(values, THREADS)], color, None))
+            data = [lookup(rows, Image=image_name, Operation=op, Threads=t, Schedule="static", Chunk="", Simd_Build=GENERAL_BUILD) for t in THREADS]
+            if any(item is None for item in data):
+                continue
+            color = PALETTE[op_index % len(PALETTE)]
+            values = [float(item["Median_ms"]) for item in data if item]
+            if op in scalability_ops:
+                lines.append((op, values, color, None))
+            t1 = values[0]
+            efficiency.append((op, [safe_ratio(t1, value) / thread * 100 for value, thread in zip(values, THREADS)], color, None))
         suffix = Path(image_name).stem
         path = figures / f"04_escalabilidade_static_{suffix}.svg"
-        line_chart(path, f"Escalabilidade static — {image_name}", THREADS, lines, "Tempo mediano (ms)", numeric_x=True)
+        line_chart(path, f"Escalabilidade static — {image_name}", THREADS, lines, "Tempo mediano (ms)", numeric_x=True, y_zero=True)
         links.append((path.name, f"Tempo por threads para operações representativas em {image_name}"))
         path = figures / f"05_eficiencia_static_{suffix}.svg"
-        line_chart(path, f"Eficiência paralela — {image_name}", THREADS, efficiency, "Eficiência (%)", reference=("ideal: 100%", 100.0, "#555"), numeric_x=True)
+        line_chart(path, f"Eficiência paralela — {image_name}", THREADS, efficiency, "Eficiência (%)", reference=("", 100.0, "#555"), numeric_x=True)
         links.append((path.name, f"Eficiência T1/(Tn·n) das operações representativas em {image_name}"))
+
+    # Alternativas não substituem as figuras 04/05: permitem julgar se mais
+    # operações ajudam ou tornam o gráfico de apresentação excessivamente denso.
+    image_name = "6000x6000.png"
+    expanded_time = []
+    expanded_time_all = []
+    expanded_efficiency = []
+    for op_index, op in enumerate(EXPANDED_OPS):
+        data = [lookup(rows, Image=image_name, Operation=op, Threads=t, Schedule="static", Chunk="", Simd_Build=GENERAL_BUILD) for t in THREADS]
+        if any(item is None for item in data):
+            continue
+        values = [float(item["Median_ms"]) for item in data if item]
+        color = PALETTE[op_index]
+        expanded_time_all.append((op, values, color, None))
+        if op != "Gaussian_11x11":
+            expanded_time.append((op, values, color, None))
+        expanded_efficiency.append((op, [100 * safe_ratio(values[0], value) / thread for value, thread in zip(values, THREADS)], color, None))
+    path = figures / "04b_escalabilidade_static_6000x6000_ampliado.svg"
+    line_chart(path, "Escalabilidade static — 6000×6000, seleção ampliada", THREADS, expanded_time, "Tempo mediano (ms)", numeric_x=True, y_zero=True)
+    links.append((path.name, "Alternativa ampliada: tempo de sete operações, sem Gaussiana 11×11"))
+    path = figures / "04c_escalabilidade_static_6000x6000_ampliado_log.svg"
+    line_chart(path, "Escalabilidade static — 6000×6000, seleção ampliada", THREADS,
+               expanded_time_all, "Tempo mediano (ms, escala logarítmica)", numeric_x=True, log_y=True)
+    links.append((path.name, "Alternativa ampliada em escala logarítmica: tempo de oito operações"))
+    path = figures / "05c_eficiencia_static_6000x6000_ampliado.svg"
+    line_chart(path, "Eficiência static — 6000×6000, seleção ampliada", THREADS, expanded_efficiency, "Eficiência (%)", reference=("", 100.0, "#555"), numeric_x=True)
+    links.append((path.name, "Alternativa ampliada: eficiência de oito operações"))
+
+    # As curvas de apresentação são seleções, não cobrem as 17 operações.
+    # A visão completa evita atribuir a Zoom o pior comportamento de todas.
+    image_name = "6000x6000.png"
+    efficiency_rows = []
+    for op in operations:
+        t1 = lookup(rows, Image=image_name, Operation=op, Threads=1, Schedule="static", Chunk="", Simd_Build=GENERAL_BUILD)
+        t20 = lookup(rows, Image=image_name, Operation=op, Threads=20, Schedule="static", Chunk="", Simd_Build=GENERAL_BUILD)
+        if t1 and t20:
+            efficiency_rows.append({"Operation": op, "T1_median_ms": t1["Median_ms"], "T20_median_ms": t20["Median_ms"], "Efficiency_20_pct": 100 * safe_ratio(float(t1["Median_ms"]), float(t20["Median_ms"])) / 20})
+    efficiency_rows.sort(key=lambda row: float(row["Efficiency_20_pct"]), reverse=True)
+    write_csv(tables / "eficiencia_17_operacoes_6000x6000_static.csv", ["Operation", "T1_median_ms", "T20_median_ms", "Efficiency_20_pct"], efficiency_rows)
+    path = figures / "05b_eficiencia_17_operacoes_6000x6000_static.svg"
+    bar_chart(path, "Eficiência das 17 operações — 6000×6000, static, 20 threads", [str(row["Operation"]) for row in efficiency_rows], [("Eficiência", [float(row["Efficiency_20_pct"]) for row in efficiency_rows], PALETTE[0])], "Eficiência em 20 threads (%)")
+    links.append((path.name, "Eficiência em 20 threads para todas as 17 operações"))
     return links
 
 
@@ -502,11 +552,9 @@ def adaptive_figures(rows: list[dict[str, object]], figures: Path, tables: Path)
     for image in images:
         series = []
         labels = [label for _, _, label in chunk_configs]
-        for simd in ("off", "omp"):
-            data = [lookup(rows, Image=image, Threads=20, Schedule=schedule, Chunk=chunk, Simd_Build=simd) for schedule, chunk, _ in chunk_configs]
-            if any(item is None for item in data):
-                continue
-            series.append((f"SIMD {simd}", [float(item["Median_ms"]) for item in data if item], SIMD_COLORS[simd], None))
+        data = [lookup(rows, Image=image, Threads=20, Schedule=schedule, Chunk=chunk, Simd_Build=GENERAL_BUILD) for schedule, chunk, _ in chunk_configs]
+        if all(item is not None for item in data):
+            series.append(("Tempo", [float(item["Median_ms"]) for item in data if item], SCHEDULE_COLORS["static"], None))
         if series:
             path = figures / f"06_tempo_chunks_adaptativo_{Path(image).stem}.svg"
             line_chart(path, f"Filtro adaptativo: tempo por chunk — {image}, 20 threads", labels, series, "Tempo mediano (ms)", x_label="Schedule OpenMP")
@@ -525,9 +573,10 @@ def adaptive_figures(rows: list[dict[str, object]], figures: Path, tables: Path)
             totals[(simd, label)] = total
             total_rows.append({"Simd": simd, "Schedule": label, "Images": len(images), "Total_median_ms": total})
     write_csv(tables / "adaptive_total_por_chunk_20_threads.csv", ["Simd", "Schedule", "Images", "Total_median_ms"], total_rows)
-    if len(totals) == len(chunk_configs) * 2:
+    if all((GENERAL_BUILD, label) in totals for _, _, label in chunk_configs):
         path = figures / "06_tempo_total_chunks_adaptativo.svg"
-        bar_chart(path, "Filtro adaptativo: soma das medianas por chunk — 8 imagens, 20 threads", ["SIMD off", "SIMD omp"], [(label, [totals[(simd, label)] for simd in ("off", "omp")], PALETTE[index % len(PALETTE)]) for index, (_, _, label) in enumerate(chunk_configs)], "Soma das medianas (ms)")
+        labels = [label for _, _, label in chunk_configs]
+        bar_chart(path, "Filtro adaptativo: soma das medianas por chunk — 8 imagens, 20 threads", labels, [("Tempo", [totals[(GENERAL_BUILD, label)] for label in labels], PALETTE[0])], "Soma das medianas (ms)")
         links.append((path.name, "Soma dos tempos static e dynamic por chunk nas 8 imagens"))
 
     # As curvas normalizadas respondem à pergunta complementar: quanto cada
@@ -553,23 +602,17 @@ def adaptive_figures(rows: list[dict[str, object]], figures: Path, tables: Path)
                 compare_rows.append({"Image": image, "Simd": simd, "Static_median_ms": static["Median_ms"], "Static_min_ms": static["Min_ms"], "Static_max_ms": static["Max_ms"], "Dynamic16_median_ms": dynamic["Median_ms"], "Dynamic16_min_ms": dynamic["Min_ms"], "Dynamic16_max_ms": dynamic["Max_ms"], "Speedup_static_over_dynamic16": safe_ratio(float(static["Median_ms"]), float(dynamic["Median_ms"]))})
     write_csv(tables / "adaptive_static_vs_dynamic16_20_threads.csv", ["Image", "Simd", "Static_median_ms", "Static_min_ms", "Static_max_ms", "Dynamic16_median_ms", "Dynamic16_min_ms", "Dynamic16_max_ms", "Speedup_static_over_dynamic16"], compare_rows)
     path = figures / "07_adaptativo_static_vs_dynamic16.svg"
-    bar_chart(path, "Filtro adaptativo, 20 threads: dynamic,16 versus static", images, [(simd, [float(next(r for r in compare_rows if r["Image"] == image and r["Simd"] == simd)["Speedup_static_over_dynamic16"]) for image in images], SIMD_COLORS[simd]) for simd in ("off", "omp")], "Speedup (static / dynamic,16)", baseline=1.0)
+    bar_chart(path, "Filtro adaptativo, 20 threads: dynamic,16 versus static", images, [("dynamic,16", [float(next(r for r in compare_rows if r["Image"] == image and r["Simd"] == GENERAL_BUILD)["Speedup_static_over_dynamic16"]) for image in images], SCHEDULE_COLORS["dynamic,16"])], "Speedup (static / dynamic,16)", baseline=1.0)
     links.append((path.name, "Ganho do dynamic,16 por imagem adaptativa"))
 
     # Scalability: two representative images expose regular and irregular detail distributions.
     representatives = ["control_half_noise_6000x6000.png", "rain_paisage.jpg"]
     for image in [name for name in representatives if name in images]:
         series = []
-        for simd in ("off", "omp"):
-            for schedule, color in (("static", SIMD_COLORS[simd]), ("dynamic", "#d62728" if simd == "off" else "#ff7f0e")):
-                data = []
-                for thread in THREADS:
-                    chunk = "" if schedule == "static" else "16"
-                    row = lookup(rows, Image=image, Threads=thread, Schedule=schedule, Chunk=chunk, Simd_Build=simd)
-                    if row:
-                        data.append(row)
-                if len(data) == len(THREADS):
-                    series.append((f"{simd}, {schedule}{',16' if schedule == 'dynamic' else ''}", [float(row["Median_ms"]) for row in data], color, None))
+        for schedule, chunk, label in (("static", "", "static"), ("dynamic", "16", "dynamic,16")):
+            data = [lookup(rows, Image=image, Threads=thread, Schedule=schedule, Chunk=chunk, Simd_Build=GENERAL_BUILD) for thread in THREADS]
+            if all(row is not None for row in data):
+                series.append((label, [float(row["Median_ms"]) for row in data if row], SCHEDULE_COLORS[label], None))
         path = figures / f"08_escalabilidade_adaptativo_{Path(image).stem}.svg"
         line_chart(path, f"Escalabilidade do filtro adaptativo — {image}", THREADS, series, "Tempo mediano (ms)", numeric_x=True)
         links.append((path.name, f"Escalabilidade static e dynamic,16 para {image}"))
@@ -618,9 +661,10 @@ def write_index(output: Path, links: list[tuple[str, str]], overview: list[dict[
     content = f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><title>Visualização dos experimentos OpenMP</title>
 <style>body{{font-family:Arial,sans-serif;max-width:1100px;margin:32px auto;padding:0 18px;color:#202124}}h1{{margin-bottom:4px}}h2{{margin-top:32px}}table{{border-collapse:collapse;width:100%}}th,td{{border:1px solid #ddd;padding:8px;text-align:left}}th{{background:#f4f4f4}}li{{margin:9px 0}}a{{color:#0757a8}}</style></head>
-<body><h1>Experimentos OpenMP no PCAD</h1><p>As figuras usam medianas. As tabelas preservam mínimo e máximo; a tabela detalhada de schedules permite verificar a dispersão antes de interpretar ganhos.</p>
+<body><h1>Experimentos OpenMP no PCAD</h1><p>As figuras gerais de threads e schedules usam apenas o build sem SIMD (<code>off</code>), sem misturar builds na legenda. As figuras 01–02 são comparações SIMD próprias; as figuras 09–10 de SMT só têm dados do build <code>omp</code>. Os tempos são medianas; as tabelas preservam mínimo e máximo para avaliar dispersão.</p>
 <h2>Campanhas usadas</h2><table><thead><tr><th>Campanha</th><th>Diretório</th><th>Grupos</th><th>Amostras</th><th>Nó</th><th>Operações</th><th>Imagens</th></tr></thead><tbody>{rows}</tbody></table>
 <h2>Figuras</h2><ol>{figures}</ol>
+<h2>Memória e eficiência</h2><p>O gráfico 05b mostra a eficiência das 17 operações. A hipótese de limitação por memória ainda não foi testada uniformemente para as 17: a coleta VTune de <em>Memory Bound</em> com kernel repetido cobre somente <a href="../visualizacoes_pcad_hype_final_experimentos_complementares/figures/01_hpc_memory_bound.svg">Zoom In e Grayscale</a>, em outro build (<code>off-avx2</code>). A campanha <code>perf</code> 824542 inclui as 17, mas seus contadores abrangem o processo inteiro, e misses de LLC não são equivalentes a <em>Memory Bound</em>. Não use esses dados para atribuir uma porcentagem de Memory Bound a cada kernel. Seria necessária uma nova coleta VTune HPC isolando e repetindo cada operação com protocolo e build comparáveis.</p>
 <h2>Tabelas derivadas</h2><p>Consulte a pasta <code>tables/</code> para as tabelas usadas nas figuras.</p></body></html>"""
     (output / "index.html").write_text(content, encoding="utf-8")
 

@@ -20,6 +20,10 @@
 
 #include <omp.h>
 
+#ifdef BENCHMARK_USE_ITT
+#include <ittnotify.h>
+#endif
+
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
@@ -116,6 +120,7 @@ struct Options {
     std::string run_id = "manual";
     int repeat = 1;
     int profile_iterations = 1;
+    bool profile_all_regular = false;
     bool warmup = false;
     bool hash_only = false;
     fs::path reference_hashes;
@@ -261,6 +266,51 @@ bool profile_zoom_in_kernel(const ImageState& source, int iterations) {
     return true;
 }
 
+// Perfil controlado das 17 operações originais. Cada iteração recebe uma cópia
+// independente preparada ANTES da coleta, pois algumas transformações alteram
+// pixels ou dimensões. Assim, o resumo global do VTune representa somente as
+// chamadas das operações (incluindo alocações que fazem parte delas), sem
+// decodificação da imagem, restauração por memcpy ou hash da saída.
+bool profile_regular_operation(const ImageState& source, const TransformationInfo& transformation, int iterations) {
+    if (iterations < 1 || transformation.adaptive) return false;
+    const size_t input_size = static_cast<size_t>(source.width) * source.height * 3;
+    const auto prepare_start = std::chrono::steady_clock::now();
+    std::vector<ImageState> inputs;
+    inputs.reserve(static_cast<size_t>(iterations));
+    for (int iteration = 0; iteration < iterations; ++iteration) {
+        unsigned char* data = static_cast<unsigned char*>(std::malloc(input_size));
+        if (!data) {
+            for (ImageState& input : inputs) std::free(input.data);
+            return false;
+        }
+        std::memcpy(data, source.data, input_size);
+        inputs.push_back(ImageState{data, source.width, source.height, source.isGrayScale});
+    }
+    const auto prepare_end = std::chrono::steady_clock::now();
+    const double prepare_ms = std::chrono::duration<double, std::milli>(prepare_end - prepare_start).count();
+    double kernel_ms = 0.0;
+    bool success = true;
+#ifdef BENCHMARK_USE_ITT
+    // O job inicia o VTune com -start-paused. Apenas um resume/pause engloba
+    // todas as chamadas, sem alternâncias rápidas no mecanismo de coleta.
+    __itt_resume();
+#endif
+    for (ImageState& input : inputs) {
+        const auto kernel_start = std::chrono::steady_clock::now();
+        success = transformation.apply(input);
+        const auto kernel_end = std::chrono::steady_clock::now();
+        kernel_ms += std::chrono::duration<double, std::milli>(kernel_end - kernel_start).count();
+        if (!success) break;
+    }
+#ifdef BENCHMARK_USE_ITT
+    __itt_pause();
+#endif
+    for (ImageState& input : inputs) std::free(input.data);
+    std::cout << "PROFILE_REGION," << transformation.name << ',' << iterations << ','
+              << std::fixed << std::setprecision(6) << prepare_ms << ',' << kernel_ms << ',' << input_size << '\n';
+    return success;
+}
+
 bool process_image(const fs::path& path, std::ofstream* csv, std::ofstream* hash_output, const HashMap& references, const Options& options) {
     ImageState image{};
     const std::string filename = path.string();
@@ -293,13 +343,15 @@ bool process_image(const fs::path& path, std::ofstream* csv, std::ofstream* hash
         reset(image, original_data, original_width, original_height);
         if (options.profile_iterations > 1) {
             const std::string operation_name = transformation.name;
-            const bool profiled = operation_name == "Zoom_In"
+            const bool profiled = options.profile_all_regular
+                ? profile_regular_operation(image, transformation, options.profile_iterations)
+                : operation_name == "Zoom_In"
                 ? profile_zoom_in_kernel(image, options.profile_iterations)
                 : operation_name == "Grayscale"
                     ? profile_gray_scale_kernel(image, options.profile_iterations)
                     : false;
             if (!profiled) {
-                std::cerr << "--profile-iterations só é suportado para Zoom_In e Grayscale neste executável.\n";
+                std::cerr << "Falha no perfil. Sem --profile-all-regular, --profile-iterations só aceita Zoom_In e Grayscale.\n";
                 success = false;
                 break;
             }
@@ -392,7 +444,8 @@ void print_usage(const char* executable) {
               << "     " << executable << " --folder CAMINHO [CSV] [opções]\n\n"
               << "Opções:\n"
               << "  --operations all|regular|adaptive|NOME[,NOME...]\n"
-              << "  --run-id ID --repeat N --profile-iterations N --warmup --hash-only\n"
+              << "  --run-id ID --repeat N --profile-iterations N --profile-all-regular\n"
+              << "  --warmup --hash-only\n"
               << "  --reference-hashes ARQUIVO --write-hashes ARQUIVO\n";
 }
 
@@ -417,6 +470,8 @@ bool parse_options(int argc, char** argv, Options& options) {
             const char* text = value(); if (!text) return false;
             try { options.profile_iterations = std::stoi(text); } catch (...) { return false; }
             if (options.profile_iterations < 1) return false;
+        } else if (argument == "--profile-all-regular") {
+            options.profile_all_regular = true;
         } else if (argument == "--reference-hashes") {
             const char* text = value(); if (!text) return false; options.reference_hashes = text;
         } else if (argument == "--write-hashes") {
@@ -429,6 +484,10 @@ bool parse_options(int argc, char** argv, Options& options) {
             return false;
         }
     }
+    if (options.profile_all_regular &&
+        (options.mode != "--image" || options.profile_iterations < 2 ||
+         options.operations == "all" || options.operations == "regular" ||
+         options.operations == "adaptive" || options.operations.find(',') != std::string::npos)) return false;
     return options.mode == "--image" || options.mode == "--folder";
 }
 

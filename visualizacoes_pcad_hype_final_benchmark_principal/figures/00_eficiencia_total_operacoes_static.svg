@@ -38,37 +38,17 @@
 <circle cx="756.3" cy="470.9" r="4" fill="#1f77b4"/>
 <circle cx="930.0" cy="564.3" r="4" fill="#1f77b4"/>
 <line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
-<text class="legend" x="980" y="76">4000x3000.png (off)</text>
-<polyline points="105.0,112.7 148.4,140.3 235.3,192.4 408.9,383.0 582.6,451.3 756.3,472.1 930.0,510.7" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<text class="legend" x="980" y="76">4000x3000.png</text>
+<polyline points="105.0,112.7 148.4,127.3 235.3,178.0 408.9,369.6 582.6,429.3 756.3,444.8 930.0,465.9" fill="none" stroke="#d62728" stroke-width="2.5"/>
 <circle cx="105.0" cy="112.7" r="4" fill="#d62728"/>
-<circle cx="148.4" cy="140.3" r="4" fill="#d62728"/>
-<circle cx="235.3" cy="192.4" r="4" fill="#d62728"/>
-<circle cx="408.9" cy="383.0" r="4" fill="#d62728"/>
-<circle cx="582.6" cy="451.3" r="4" fill="#d62728"/>
-<circle cx="756.3" cy="472.1" r="4" fill="#d62728"/>
-<circle cx="930.0" cy="510.7" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="127.3" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="178.0" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="369.6" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="429.3" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="444.8" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="465.9" r="4" fill="#d62728"/>
 <line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
-<text class="legend" x="980" y="98">4000x3000.png (omp)</text>
-<polyline points="105.0,112.7 148.4,127.3 235.3,178.0 408.9,369.6 582.6,429.3 756.3,444.8 930.0,465.9" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
-<circle cx="105.0" cy="112.7" r="4" fill="#2ca02c"/>
-<circle cx="148.4" cy="127.3" r="4" fill="#2ca02c"/>
-<circle cx="235.3" cy="178.0" r="4" fill="#2ca02c"/>
-<circle cx="408.9" cy="369.6" r="4" fill="#2ca02c"/>
-<circle cx="582.6" cy="429.3" r="4" fill="#2ca02c"/>
-<circle cx="756.3" cy="444.8" r="4" fill="#2ca02c"/>
-<circle cx="930.0" cy="465.9" r="4" fill="#2ca02c"/>
-<line x1="948" x2="972" y1="116" y2="116" stroke="#2ca02c" stroke-width="3"/>
-<text class="legend" x="980" y="120">6000x6000.png (off)</text>
-<polyline points="105.0,112.7 148.4,125.3 235.3,180.0 408.9,370.7 582.6,433.8 756.3,449.9 930.0,475.0" fill="none" stroke="#9467bd" stroke-width="2.5"/>
-<circle cx="105.0" cy="112.7" r="4" fill="#9467bd"/>
-<circle cx="148.4" cy="125.3" r="4" fill="#9467bd"/>
-<circle cx="235.3" cy="180.0" r="4" fill="#9467bd"/>
-<circle cx="408.9" cy="370.7" r="4" fill="#9467bd"/>
-<circle cx="582.6" cy="433.8" r="4" fill="#9467bd"/>
-<circle cx="756.3" cy="449.9" r="4" fill="#9467bd"/>
-<circle cx="930.0" cy="475.0" r="4" fill="#9467bd"/>
-<line x1="948" x2="972" y1="138" y2="138" stroke="#9467bd" stroke-width="3"/>
-<text class="legend" x="980" y="142">6000x6000.png (omp)</text>
+<text class="legend" x="980" y="98">6000x6000.png</text>
 <text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
 <text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Eficiência (%)</text>
 </svg>

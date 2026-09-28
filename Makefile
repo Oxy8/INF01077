@@ -7,7 +7,9 @@ PROJECT_DIR := 577262-FPI-Relatorio2
 SIMD ?= off
 ARCH ?=
 DEBUG ?= 0
-BUILD_DIR := build/$(SIMD)
+VTUNE_ITT ?= 0
+VTUNE_SDK ?=
+BUILD_DIR := build/$(SIMD)$(if $(filter 1,$(VTUNE_ITT)),-itt,)
 BENCHMARK_TARGET := $(BUILD_DIR)/image_benchmark
 LAYOUT_TARGET := $(BUILD_DIR)/layout_benchmark
 DIAGNOSTIC_TARGET := $(BUILD_DIR)/diagnostic_runner
@@ -44,6 +46,13 @@ CXXFLAGS += $(OPENMP_FLAGS)
 # o arredondamento de expressões como a luminância, invalidando hashes mesmo
 # quando o algoritmo e os dados são os mesmos. AVX2 continua habilitado.
 CXXFLAGS += -ffp-contract=off
+ifeq ($(VTUNE_ITT),1)
+ifeq ($(strip $(VTUNE_SDK)),)
+$(error VTUNE_ITT=1 requer VTUNE_SDK=/caminho/para/vtune/sdk)
+endif
+CXXFLAGS += -DBENCHMARK_USE_ITT -I$(VTUNE_SDK)/include
+LDLIBS += $(VTUNE_SDK)/lib64/libittnotify.a -ldl
+endif
 ifeq ($(DEBUG),1)
 # Símbolos para atribuição de linhas pelo VTune; não altera as otimizações.
 CXXFLAGS += -g

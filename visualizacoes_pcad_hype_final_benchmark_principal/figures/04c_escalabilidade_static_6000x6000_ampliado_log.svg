@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Escalabilidade static — 6000×6000, seleção ampliada">
+<title>Escalabilidade static — 6000×6000, seleção ampliada</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="105" y="34">Escalabilidade static — 6000×6000, seleção ampliada</text>
+<line class="grid" x1="105" x2="930" y1="605.0" y2="605.0"/>
+<text class="axis" text-anchor="end" x="95" y="610.0">2.74 ms</text>
+<line class="grid" x1="105" x2="930" y1="471.8" y2="471.8"/>
+<text class="axis" text-anchor="end" x="95" y="476.8">23.63 ms</text>
+<line class="grid" x1="105" x2="930" y1="338.5" y2="338.5"/>
+<text class="axis" text-anchor="end" x="95" y="343.5">203.66 ms</text>
+<line class="grid" x1="105" x2="930" y1="205.2" y2="205.2"/>
+<text class="axis" text-anchor="end" x="95" y="210.2">1.76 s</text>
+<line class="grid" x1="105" x2="930" y1="72.0" y2="72.0"/>
+<text class="axis" text-anchor="end" x="95" y="77.0">15.13 s</text>
+<rect class="frame" x="105" y="72" width="825" height="533"/>
+<line class="frame" x1="105.0" x2="105.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="105.0" y="632">1</text>
+<line class="frame" x1="148.4" x2="148.4" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="148.4" y="632">2</text>
+<line class="frame" x1="235.3" x2="235.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="235.3" y="632">4</text>
+<line class="frame" x1="408.9" x2="408.9" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="408.9" y="632">8</text>
+<line class="frame" x1="582.6" x2="582.6" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="582.6" y="632">12</text>
+<line class="frame" x1="756.3" x2="756.3" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="756.3" y="632">16</text>
+<line class="frame" x1="930.0" x2="930.0" y1="605" y2="611"/>
+<text class="axis" text-anchor="middle" x="930.0" y="632">20</text>
+<polyline points="105.0,362.3 148.4,402.4 235.3,442.0 408.9,478.8 582.6,500.5 756.3,516.3 930.0,527.3" fill="none" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="105.0" cy="362.3" r="4" fill="#1f77b4"/>
+<circle cx="148.4" cy="402.4" r="4" fill="#1f77b4"/>
+<circle cx="235.3" cy="442.0" r="4" fill="#1f77b4"/>
+<circle cx="408.9" cy="478.8" r="4" fill="#1f77b4"/>
+<circle cx="582.6" cy="500.5" r="4" fill="#1f77b4"/>
+<circle cx="756.3" cy="516.3" r="4" fill="#1f77b4"/>
+<circle cx="930.0" cy="527.3" r="4" fill="#1f77b4"/>
+<line x1="948" x2="972" y1="72" y2="72" stroke="#1f77b4" stroke-width="3"/>
+<text class="legend" x="980" y="76">Grayscale</text>
+<polyline points="105.0,379.4 148.4,419.7 235.3,460.3 408.9,496.3 582.6,519.7 756.3,536.2 930.0,549.2" fill="none" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="105.0" cy="379.4" r="4" fill="#d62728"/>
+<circle cx="148.4" cy="419.7" r="4" fill="#d62728"/>
+<circle cx="235.3" cy="460.3" r="4" fill="#d62728"/>
+<circle cx="408.9" cy="496.3" r="4" fill="#d62728"/>
+<circle cx="582.6" cy="519.7" r="4" fill="#d62728"/>
+<circle cx="756.3" cy="536.2" r="4" fill="#d62728"/>
+<circle cx="930.0" cy="549.2" r="4" fill="#d62728"/>
+<line x1="948" x2="972" y1="94" y2="94" stroke="#d62728" stroke-width="3"/>
+<text class="legend" x="980" y="98">Negative</text>
+<polyline points="105.0,319.0 148.4,361.4 235.3,401.8 408.9,438.4 582.6,461.3 756.3,479.1 930.0,491.7" fill="none" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="105.0" cy="319.0" r="4" fill="#2ca02c"/>
+<circle cx="148.4" cy="361.4" r="4" fill="#2ca02c"/>
+<circle cx="235.3" cy="401.8" r="4" fill="#2ca02c"/>
+<circle cx="408.9" cy="438.4" r="4" fill="#2ca02c"/>
+<circle cx="582.6" cy="461.3" r="4" fill="#2ca02c"/>
+<circle cx="756.3" cy="479.1" r="4" fill="#2ca02c"/>
+<circle cx="930.0" cy="491.7" r="4" fill="#2ca02c"/>
+<line x1="948" x2="972" y1="116" y2="116" stroke="#2ca02c" stroke-width="3"/>
+<text class="legend" x="980" y="120">Adjust_Contrast</text>
+<polyline points="105.0,305.2 148.4,345.7 235.3,377.8 408.9,413.4 582.6,436.4 756.3,455.2 930.0,462.2" fill="none" stroke="#9467bd" stroke-width="2.5"/>
+<circle cx="105.0" cy="305.2" r="4" fill="#9467bd"/>
+<circle cx="148.4" cy="345.7" r="4" fill="#9467bd"/>
+<circle cx="235.3" cy="377.8" r="4" fill="#9467bd"/>
+<circle cx="408.9" cy="413.4" r="4" fill="#9467bd"/>
+<circle cx="582.6" cy="436.4" r="4" fill="#9467bd"/>
+<circle cx="756.3" cy="455.2" r="4" fill="#9467bd"/>
+<circle cx="930.0" cy="462.2" r="4" fill="#9467bd"/>
+<line x1="948" x2="972" y1="138" y2="138" stroke="#9467bd" stroke-width="3"/>
+<text class="legend" x="980" y="142">Zoom_In</text>
+<polyline points="105.0,430.9 148.4,458.1 235.3,489.7 408.9,529.1 582.6,552.0 756.3,565.7 930.0,572.2" fill="none" stroke="#ff7f0e" stroke-width="2.5"/>
+<circle cx="105.0" cy="430.9" r="4" fill="#ff7f0e"/>
+<circle cx="148.4" cy="458.1" r="4" fill="#ff7f0e"/>
+<circle cx="235.3" cy="489.7" r="4" fill="#ff7f0e"/>
+<circle cx="408.9" cy="529.1" r="4" fill="#ff7f0e"/>
+<circle cx="582.6" cy="552.0" r="4" fill="#ff7f0e"/>
+<circle cx="756.3" cy="565.7" r="4" fill="#ff7f0e"/>
+<circle cx="930.0" cy="572.2" r="4" fill="#ff7f0e"/>
+<line x1="948" x2="972" y1="160" y2="160" stroke="#ff7f0e" stroke-width="3"/>
+<text class="legend" x="980" y="164">Flip_Horizontal</text>
+<polyline points="105.0,494.8 148.4,535.9 235.3,561.6 408.9,576.4 582.6,576.2 756.3,575.3 930.0,570.8" fill="none" stroke="#17becf" stroke-width="2.5"/>
+<circle cx="105.0" cy="494.8" r="4" fill="#17becf"/>
+<circle cx="148.4" cy="535.9" r="4" fill="#17becf"/>
+<circle cx="235.3" cy="561.6" r="4" fill="#17becf"/>
+<circle cx="408.9" cy="576.4" r="4" fill="#17becf"/>
+<circle cx="582.6" cy="576.2" r="4" fill="#17becf"/>
+<circle cx="756.3" cy="575.3" r="4" fill="#17becf"/>
+<circle cx="930.0" cy="570.8" r="4" fill="#17becf"/>
+<line x1="948" x2="972" y1="182" y2="182" stroke="#17becf" stroke-width="3"/>
+<text class="legend" x="980" y="186">Flip_Vertical</text>
+<polyline points="105.0,219.1 148.4,261.7 235.3,303.8 408.9,339.6 582.6,362.6 756.3,379.9 930.0,392.9" fill="none" stroke="#8c564b" stroke-width="2.5"/>
+<circle cx="105.0" cy="219.1" r="4" fill="#8c564b"/>
+<circle cx="148.4" cy="261.7" r="4" fill="#8c564b"/>
+<circle cx="235.3" cy="303.8" r="4" fill="#8c564b"/>
+<circle cx="408.9" cy="339.6" r="4" fill="#8c564b"/>
+<circle cx="582.6" cy="362.6" r="4" fill="#8c564b"/>
+<circle cx="756.3" cy="379.9" r="4" fill="#8c564b"/>
+<circle cx="930.0" cy="392.9" r="4" fill="#8c564b"/>
+<line x1="948" x2="972" y1="204" y2="204" stroke="#8c564b" stroke-width="3"/>
+<text class="legend" x="980" y="208">Gaussian_3x3</text>
+<polyline points="105.0,100.6 148.4,143.3 235.3,185.3 408.9,222.4 582.6,245.4 756.3,263.1 930.0,276.8" fill="none" stroke="#e377c2" stroke-width="2.5"/>
+<circle cx="105.0" cy="100.6" r="4" fill="#e377c2"/>
+<circle cx="148.4" cy="143.3" r="4" fill="#e377c2"/>
+<circle cx="235.3" cy="185.3" r="4" fill="#e377c2"/>
+<circle cx="408.9" cy="222.4" r="4" fill="#e377c2"/>
+<circle cx="582.6" cy="245.4" r="4" fill="#e377c2"/>
+<circle cx="756.3" cy="263.1" r="4" fill="#e377c2"/>
+<circle cx="930.0" cy="276.8" r="4" fill="#e377c2"/>
+<line x1="948" x2="972" y1="226" y2="226" stroke="#e377c2" stroke-width="3"/>
+<text class="legend" x="980" y="230">Gaussian_11x11</text>
+<text class="axis" text-anchor="middle" x="517.5" y="675">Threads</text>
+<text class="axis" text-anchor="middle" transform="translate(25 338.5) rotate(-90)">Tempo mediano (ms, escala logarítmica)</text>
+</svg>

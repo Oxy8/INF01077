@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="888" viewBox="0 0 1200 888" role="img" aria-label="Eficiência das 17 operações — 6000×6000, static, 20 threads">
+<title>Eficiência das 17 operações — 6000×6000, static, 20 threads</title>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.axis{font-size:13px}.small{font-size:12px}.title{font-size:20px;font-weight:700}.legend{font-size:12px}.grid{stroke:#d9d9d9;stroke-width:1}.frame{fill:none;stroke:#555;stroke-width:1}.note{font-size:11px;fill:#555}</style>
+<text class="title" x="255" y="34">Eficiência das 17 operações — 6000×6000, static, 20 threads</text>
+<line class="grid" x1="255.0" x2="255.0" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="255.0" y="835">0.00%</text>
+<line class="grid" x1="443.8" x2="443.8" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="443.8" y="835">23.73%</text>
+<line class="grid" x1="632.5" x2="632.5" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="632.5" y="835">47.46%</text>
+<line class="grid" x1="821.2" x2="821.2" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="821.2" y="835">71.20%</text>
+<line class="grid" x1="1010.0" x2="1010.0" y1="70" y2="813"/>
+<text class="axis" text-anchor="middle" x="1010.0" y="835">94.93%</text>
+<rect class="frame" x="255" y="70" width="755" height="743"/>
+<text class="axis" text-anchor="end" x="243" y="98.8">Gaussian_11x11</text>
+<rect x="255.0" y="77.0" width="686.4" height="13.6" fill="#1f77b4"/>
+<text class="small" x="947.4" y="87.7">86.30%</text>
+<text class="axis" text-anchor="end" x="243" y="142.6">Gaussian_9x9</text>
+<rect x="255.0" y="120.7" width="684.5" height="13.6" fill="#1f77b4"/>
+<text class="small" x="945.5" y="131.4">86.07%</text>
+<text class="axis" text-anchor="end" x="243" y="186.3">Gaussian_7x7</text>
+<rect x="255.0" y="164.4" width="683.3" height="13.6" fill="#1f77b4"/>
+<text class="small" x="944.3" y="175.1">85.91%</text>
+<text class="axis" text-anchor="end" x="243" y="230.0">Gaussian_5x5</text>
+<rect x="255.0" y="208.1" width="679.0" height="13.6" fill="#1f77b4"/>
+<text class="small" x="940.0" y="218.8">85.37%</text>
+<text class="axis" text-anchor="end" x="243" y="273.7">Gaussian_3x3</text>
+<rect x="255.0" y="251.8" width="661.0" height="13.6" fill="#1f77b4"/>
+<text class="small" x="922.0" y="262.5">83.11%</text>
+<text class="axis" text-anchor="end" x="243" y="317.4">Adjust_Contrast</text>
+<rect x="255.0" y="295.5" width="648.3" height="13.6" fill="#1f77b4"/>
+<text class="small" x="909.3" y="306.2">81.52%</text>
+<text class="axis" text-anchor="end" x="243" y="361.1">Adjust_Brightness</text>
+<rect x="255.0" y="339.2" width="642.4" height="13.6" fill="#1f77b4"/>
+<text class="small" x="903.4" y="349.9">80.77%</text>
+<text class="axis" text-anchor="end" x="243" y="404.8">Quantize</text>
+<rect x="255.0" y="382.9" width="640.3" height="13.6" fill="#1f77b4"/>
+<text class="small" x="901.3" y="393.6">80.51%</text>
+<text class="axis" text-anchor="end" x="243" y="448.5">Equalize_Histogram</text>
+<rect x="255.0" y="426.6" width="626.9" height="13.6" fill="#1f77b4"/>
+<text class="small" x="887.9" y="437.3">78.83%</text>
+<text class="axis" text-anchor="end" x="243" y="492.2">Zoom_Out</text>
+<rect x="255.0" y="470.3" width="622.4" height="13.6" fill="#1f77b4"/>
+<text class="small" x="883.4" y="481.0">78.26%</text>
+<text class="axis" text-anchor="end" x="243" y="535.9">Negative</text>
+<rect x="255.0" y="514.1" width="619.3" height="13.6" fill="#1f77b4"/>
+<text class="small" x="880.3" y="524.7">77.87%</text>
+<text class="axis" text-anchor="end" x="243" y="579.6">Grayscale</text>
+<rect x="255.0" y="557.8" width="573.3" height="13.6" fill="#1f77b4"/>
+<text class="small" x="834.3" y="568.4">72.08%</text>
+<text class="axis" text-anchor="end" x="243" y="623.3">Zoom_In</text>
+<rect x="255.0" y="601.5" width="503.1" height="13.6" fill="#1f77b4"/>
+<text class="small" x="764.1" y="612.1">63.26%</text>
+<text class="axis" text-anchor="end" x="243" y="667.0">Flip_Horizontal</text>
+<rect x="255.0" y="645.2" width="390.6" height="13.6" fill="#1f77b4"/>
+<text class="small" x="651.6" y="655.8">49.12%</text>
+<text class="axis" text-anchor="end" x="243" y="710.7">Rotate_CW</text>
+<rect x="255.0" y="688.9" width="261.1" height="13.6" fill="#1f77b4"/>
+<text class="small" x="522.1" y="699.5">32.83%</text>
+<text class="axis" text-anchor="end" x="243" y="754.4">Rotate_CCW</text>
+<rect x="255.0" y="732.6" width="250.0" height="13.6" fill="#1f77b4"/>
+<text class="small" x="511.0" y="743.2">31.43%</text>
+<text class="axis" text-anchor="end" x="243" y="798.1">Flip_Vertical</text>
+<rect x="255.0" y="776.3" width="135.9" height="13.6" fill="#1f77b4"/>
+<text class="small" x="396.9" y="787.0">17.08%</text>
+<rect x="255" y="840" width="15" height="15" fill="#1f77b4"/>
+<text class="legend" x="277" y="852">Eficiência</text>
+<text class="axis" text-anchor="middle" x="632.5" y="876">Eficiência em 20 threads (%)</text>
+</svg>
